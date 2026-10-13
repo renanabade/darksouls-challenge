@@ -1,0 +1,21 @@
+{
+  "name": "@darksouls-challenge/core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Domain core: requirement expressions, world traversal, orders and the feasibility validator. Pure TypeScript, no I/O.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}
