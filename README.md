@@ -15,9 +15,23 @@ possible to finish.
 
 ## Repository layout
 
-| Path | What |
-| --- | --- |
-| `data/ds1/` | The Dark Souls: Remastered data set and its schema (`data/ds1/SCHEMA.md`) |
+| Path             | What                                                                      |
+| ---------------- | ------------------------------------------------------------------------- |
+| `data/ds1/`      | The Dark Souls: Remastered data set and its schema (`data/ds1/SCHEMA.md`) |
+| `packages/core/` | Domain core in pure TypeScript: requirement expressions (more to come)    |
+| `docs/adr/`      | Architecture decision records                                             |
+
+## Development
+
+Requires Node 24 and pnpm (enabled with `corepack enable pnpm`).
+
+```sh
+pnpm install
+pnpm check   # format, lint, typecheck, tests: the same as CI
+pnpm build
+```
+
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), checked on commit.
 
 ## Licenses
 
