@@ -1,0 +1,393 @@
+[
+ {
+  "dlc": false,
+  "id": "depths",
+  "name": "Depths",
+  "placeNameId": 1000,
+  "regions": [
+   "depths",
+   "depths-after-gaping-dragon",
+   "depths-gaping-dragon",
+   "depths-to-blighttown-door"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "undead-burg",
+  "name": "Undead Burg",
+  "placeNameId": 1010,
+  "regions": [
+   "lower-undead-burg",
+   "lower-undead-burg-after-capra-demon",
+   "lower-undead-burg-after-residence-key",
+   "lower-undead-burg-capra-demon",
+   "lower-undead-burg-female-undead-merchant",
+   "undead-burg-basement-door",
+   "upper-undead-burg",
+   "upper-undead-burg-before-fog",
+   "upper-undead-burg-fog",
+   "upper-undead-burg-hellkite-bridge",
+   "upper-undead-burg-male-undead-merchant",
+   "upper-undead-burg-pine-resin-chest",
+   "upper-undead-burg-taurus-demon",
+   "watchtower-basement"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "undead-parish",
+  "name": "Undead Parish",
+  "placeNameId": 1011,
+  "regions": [
+   "undead-parish",
+   "undead-parish-andre-of-astora",
+   "undead-parish-before-fog",
+   "undead-parish-bell-gargoyles",
+   "undead-parish-fog",
+   "undead-parish-oswald-of-carim"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "firelink-shrine",
+  "name": "Firelink Shrine",
+  "placeNameId": 1020,
+  "regions": [
+   "firelink-shrine",
+   "firelink-shrine-after-undead-parish-elevator",
+   "firelink-shrine-domhnall-of-zena",
+   "firelink-shrine-domhnall-of-zena-after-gwyndolin",
+   "firelink-shrine-domhnall-of-zena-after-iron-golem",
+   "firelink-shrine-domhnall-of-zena-after-o-s",
+   "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias",
+   "firelink-shrine-griggs-of-vinheim",
+   "firelink-shrine-griggs-of-vinheim-after-logan-leaves",
+   "firelink-shrine-laurentius-of-the-great-swamp",
+   "firelink-shrine-petrus-of-thorolund",
+   "firelink-shrine-rhea-of-thorolund",
+   "firelink-shrine-trusty-patches"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "painted-world-of-ariamis",
+  "name": "Painted World of Ariamis",
+  "placeNameId": 1100,
+  "regions": [
+   "painted-world-of-ariamis",
+   "painted-world-of-ariamis-after-annex-key",
+   "painted-world-of-ariamis-after-fog",
+   "painted-world-of-ariamis-crossbreed-priscilla"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "darkroot-garden",
+  "name": "Darkroot Garden",
+  "placeNameId": 1200,
+  "regions": [
+   "darkroot-garden",
+   "darkroot-garden-after-moonlight-butterfly",
+   "darkroot-garden-before-fog",
+   "darkroot-garden-behind-artorias-door",
+   "darkroot-garden-moonlight-butterfly"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "darkroot-basin",
+  "name": "Darkroot Basin",
+  "placeNameId": 1201,
+  "regions": [
+   "darkroot-basin",
+   "darkroot-basin-princess-dusk"
+  ]
+ },
+ {
+  "dlc": true,
+  "id": "sanctuary-garden",
+  "name": "Sanctuary Garden",
+  "placeNameId": 1210,
+  "regions": [
+   "sanctuary-garden",
+   "sanctuary-garden-sanctuary-guardian"
+  ]
+ },
+ {
+  "dlc": true,
+  "id": "oolacile-sanctuary",
+  "name": "Oolacile Sanctuary",
+  "placeNameId": 1211,
+  "regions": [
+   "oolacile-sanctuary",
+   "oolacile-sanctuary-elizabeth"
+  ]
+ },
+ {
+  "dlc": true,
+  "id": "royal-wood",
+  "name": "Royal Wood",
+  "placeNameId": 1212,
+  "regions": [
+   "royal-wood",
+   "royal-wood-after-hawkeye-gough",
+   "royal-wood-artorias",
+   "royal-wood-hawkeye-gough",
+   "royal-wood-marvelous-chester"
+  ]
+ },
+ {
+  "dlc": true,
+  "id": "oolacile-township",
+  "name": "Oolacile Township",
+  "placeNameId": 1213,
+  "regions": [
+   "oolacile-township",
+   "oolacile-township-behind-light-dispelled-walls"
+  ]
+ },
+ {
+  "dlc": true,
+  "id": "chasm-of-the-abyss",
+  "name": "Chasm of the Abyss",
+  "placeNameId": 1214,
+  "regions": [
+   "chasm-of-the-abyss",
+   "chasm-of-the-abyss-manus"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "the-catacombs",
+  "name": "The Catacombs",
+  "placeNameId": 1300,
+  "regions": [
+   "the-catacombs",
+   "the-catacombs-after-door-1",
+   "the-catacombs-after-pinwheel",
+   "the-catacombs-door-1",
+   "the-catacombs-fog",
+   "the-catacombs-pinwheel",
+   "the-catacombs-vamos"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "tomb-of-the-giants",
+  "name": "Tomb of the Giants",
+  "placeNameId": 1310,
+  "regions": [
+   "tomb-of-the-giants",
+   "tomb-of-the-giants-after-nito",
+   "tomb-of-the-giants-after-white-fog",
+   "tomb-of-the-giants-behind-golden-fog-wall",
+   "tomb-of-the-giants-nito"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "the-great-hollow",
+  "name": "The Great Hollow",
+  "placeNameId": 1320,
+  "regions": [
+   "the-great-hollow"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "ash-lake",
+  "name": "Ash Lake",
+  "placeNameId": 1321,
+  "regions": [
+   "ash-lake"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "blighttown",
+  "name": "Blighttown",
+  "placeNameId": 1400,
+  "regions": [
+   "lower-blighttown",
+   "lower-blighttown-quelana-of-izalith",
+   "lower-blighttown-shiva-of-the-east",
+   "upper-blighttown-depths-side",
+   "upper-blighttown-votd-side"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "quelaags-domain",
+  "name": "Quelaag's Domain",
+  "placeNameId": 1401,
+  "regions": [
+   "lower-blighttown-after-quelaag",
+   "lower-blighttown-eingyi",
+   "lower-blighttown-fog",
+   "lower-blighttown-quelaag"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "demon-ruins",
+  "name": "Demon Ruins",
+  "placeNameId": 1410,
+  "regions": [
+   "demon-ruins",
+   "demon-ruins-after-demon-firesage",
+   "demon-ruins-after-orange-charred-ring",
+   "demon-ruins-ceaseless-discharge",
+   "demon-ruins-centipede-demon",
+   "demon-ruins-demon-firesage",
+   "demon-ruins-early",
+   "demon-ruins-shortcut"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "lost-izalith",
+  "name": "Lost Izalith",
+  "placeNameId": 1411,
+  "regions": [
+   "lost-izalith",
+   "lost-izalith-bed-of-chaos"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "sens-fortress",
+  "name": "Sen's Fortress",
+  "placeNameId": 1500,
+  "regions": [
+   "sens-fortress",
+   "sens-fortress-after-cage-key",
+   "sens-fortress-after-first-fog",
+   "sens-fortress-after-iron-golem",
+   "sens-fortress-after-second-fog",
+   "sens-fortress-crestfallen-merchant",
+   "sens-fortress-iron-golem"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "anor-londo",
+  "name": "Anor Londo",
+  "placeNameId": 1510,
+  "regions": [
+   "anor-londo",
+   "anor-londo-after-first-fog",
+   "anor-londo-after-gwyndolin",
+   "anor-londo-after-ornstein-and-smough",
+   "anor-londo-after-second-fog",
+   "anor-londo-giant-blacksmith",
+   "anor-londo-gwyndolin",
+   "anor-londo-ornstein-and-smough",
+   "anor-londo-painting-room"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "new-londo-ruins",
+  "name": "New Londo Ruins",
+  "placeNameId": 1600,
+  "regions": [
+   "door-between-upper-new-londo-and-valley-of-the-drakes",
+   "lower-new-londo-ruins",
+   "lower-new-londo-ruins-fog",
+   "new-londo-ruins-door-to-the-seal",
+   "upper-new-londo-ruins",
+   "upper-new-londo-ruins-after-fog",
+   "upper-new-londo-ruins-ingward",
+   "upper-new-londo-ruins-ingward-after-lordvessel",
+   "upper-new-londo-ruins-rickert-of-vinheim"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "the-abyss",
+  "name": "The Abyss",
+  "placeNameId": 1601,
+  "regions": [
+   "the-abyss",
+   "the-abyss-after-four-kings"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "valley-of-drakes",
+  "name": "Valley of Drakes",
+  "placeNameId": 1602,
+  "regions": [
+   "valley-of-the-drakes",
+   "valley-of-the-drakes-after-defeating-four-kings"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "the-dukes-archives",
+  "name": "The Duke's Archives",
+  "placeNameId": 1700,
+  "regions": [
+   "the-dukes-archives",
+   "the-dukes-archives-after-archive-prison-extra-key",
+   "the-dukes-archives-after-archive-tower-cell-key",
+   "the-dukes-archives-after-archive-tower-giant-door-key",
+   "the-dukes-archives-after-first-seath-encounter",
+   "the-dukes-archives-big-hat-logan",
+   "the-dukes-archives-courtyard",
+   "the-dukes-archives-first-arena-after-seaths-death",
+   "the-dukes-archives-giant-cell",
+   "the-dukes-archives-golem-after-dusk-rescue",
+   "the-dukes-archives-out-of-cell"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "crystal-cave",
+  "name": "Crystal Cave",
+  "placeNameId": 1701,
+  "regions": [
+   "crystal-cave",
+   "crystal-cave-after-seath"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "kiln-of-the-first-flame",
+  "name": "Kiln of the First Flame",
+  "placeNameId": 1800,
+  "regions": [
+   "kiln-of-the-first-flame",
+   "kiln-of-the-first-flame-gwyn"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "firelink-altar",
+  "name": "Firelink Altar",
+  "placeNameId": 1801,
+  "regions": [
+   "firelink-altar",
+   "firelink-altar-with-lordvessel"
+  ]
+ },
+ {
+  "dlc": false,
+  "id": "northern-undead-asylum",
+  "name": "Northern Undead Asylum",
+  "placeNameId": 1810,
+  "regions": [
+   "northern-undead-asylum",
+   "northern-undead-asylum-after-f2-east-door",
+   "northern-undead-asylum-after-fog",
+   "northern-undead-asylum-big-pilgrim-door",
+   "northern-undead-asylum-f2-east-door",
+   "northern-undead-asylum-second-visit",
+   "northern-undead-asylum-second-visit-behind-f2-west-door",
+   "northern-undead-asylum-second-visit-cell",
+   "northern-undead-asylum-second-visit-f2-west-door",
+   "undead-asylum-cell",
+   "undead-asylum-cell-door"
+  ]
+ }
+]

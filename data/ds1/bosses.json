@@ -1,0 +1,791 @@
+[
+ {
+  "earliestSphere": 7,
+  "flag": 2,
+  "id": "gaping-dragon",
+  "mandatoryByGraph": false,
+  "name": "Gaping Dragon",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 2589,
+    "immune": [
+     "poison",
+     "toxic"
+    ],
+    "noDamage": [],
+    "npcParam": 526000,
+    "resist": {
+     "bleed": 118,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "depths-gaping-dragon",
+  "requires": []
+ },
+ {
+  "earliestSphere": 4,
+  "flag": 3,
+  "id": "bell-gargoyles",
+  "mandatoryByGraph": false,
+  "name": "Bell Gargoyles",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 833,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 535000,
+    "resist": {
+     "bleed": 230,
+     "curse": 0,
+     "poison": 260,
+     "toxic": 260
+    }
+   },
+   {
+    "flags": [],
+    "hp": 833,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 535001,
+    "resist": {
+     "bleed": 230,
+     "curse": 0,
+     "poison": 260,
+     "toxic": 260
+    }
+   }
+  ],
+  "region": "undead-parish-bell-gargoyles",
+  "requires": []
+ },
+ {
+  "earliestSphere": 7,
+  "flag": 4,
+  "id": "crossbreed-priscilla",
+  "mandatoryByGraph": false,
+  "name": "Crossbreed Priscilla",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 920,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 273000,
+    "resist": {
+     "bleed": 125,
+     "curse": 0,
+     "poison": 370,
+     "toxic": 370
+    }
+   }
+  ],
+  "region": "painted-world-of-ariamis-crossbreed-priscilla",
+  "requires": []
+ },
+ {
+  "earliestSphere": 4,
+  "flag": 5,
+  "id": "great-grey-wolf-sif",
+  "mandatoryByGraph": false,
+  "name": "Great Grey Wolf Sif",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1560,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 521000,
+    "resist": {
+     "bleed": 200,
+     "curse": 0,
+     "poison": 320,
+     "toxic": 320
+    }
+   }
+  ],
+  "region": "darkroot-garden-behind-artorias-door",
+  "requires": []
+ },
+ {
+  "earliestSphere": 3,
+  "flag": 6,
+  "id": "pinwheel",
+  "mandatoryByGraph": true,
+  "name": "Pinwheel",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 780,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 332000,
+    "resist": {
+     "bleed": 200,
+     "curse": 0,
+     "poison": 200,
+     "toxic": 200
+    }
+   }
+  ],
+  "region": "the-catacombs-pinwheel",
+  "requires": []
+ },
+ {
+  "earliestSphere": 10,
+  "flag": 7,
+  "id": "gravelord-nito",
+  "mandatoryByGraph": true,
+  "name": "Gravelord Nito",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1877,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 522000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "tomb-of-the-giants-nito",
+  "requires": []
+ },
+ {
+  "earliestSphere": 4,
+  "flag": 9,
+  "id": "chaos-witch-quelaag",
+  "mandatoryByGraph": true,
+  "name": "Chaos Witch Quelaag",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1744,
+    "immune": [
+     "poison",
+     "toxic"
+    ],
+    "noDamage": [
+     "fire"
+    ],
+    "npcParam": 528000,
+    "resist": {
+     "bleed": 110,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "lower-blighttown-quelaag",
+  "requires": []
+ },
+ {
+  "earliestSphere": 12,
+  "flag": 10,
+  "id": "bed-of-chaos",
+  "mandatoryByGraph": true,
+  "name": "Bed of Chaos",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 999,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [
+     "mag",
+     "fire",
+     "thunder"
+    ],
+    "npcParam": 540000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   },
+   {
+    "flags": [],
+    "hp": 999,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 523000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "lost-izalith-bed-of-chaos",
+  "requires": []
+ },
+ {
+  "earliestSphere": 6,
+  "flag": 11,
+  "id": "iron-golem",
+  "mandatoryByGraph": true,
+  "name": "Iron Golem",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1440,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 232000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "sens-fortress-iron-golem",
+  "requires": []
+ },
+ {
+  "earliestSphere": 7,
+  "flag": 12,
+  "id": "ornstein-and-smough",
+  "mandatoryByGraph": true,
+  "name": "Ornstein and Smough",
+  "parts": [
+   {
+    "flags": [
+     "isWeakA"
+    ],
+    "hp": 782,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 527000,
+    "resist": {
+     "bleed": 240,
+     "curse": 0,
+     "poison": 130,
+     "toxic": 130
+    }
+   },
+   {
+    "flags": [
+     "isWeakA"
+    ],
+    "hp": 1420,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 527100,
+    "resist": {
+     "bleed": 240,
+     "curse": 0,
+     "poison": 130,
+     "toxic": 130
+    }
+   }
+  ],
+  "region": "anor-londo-ornstein-and-smough",
+  "requires": []
+ },
+ {
+  "earliestSphere": 10,
+  "flag": 13,
+  "id": "4-kings",
+  "mandatoryByGraph": true,
+  "name": "4 Kings",
+  "parts": [
+   {
+    "flags": [
+     "isWeakB"
+    ],
+    "hp": 4320,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 539000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   },
+   {
+    "flags": [
+     "isWeakB"
+    ],
+    "hp": 1080,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 539001,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "the-abyss",
+  "requires": [
+   {
+    "evidence": "m16_00_00_00 events 11605397/11605398: without SpEffect 2200 (the ring's effect) the player entering region 1602900 gets character collision disabled and is waited on until dead (flag 8120 is set); flag 13 (Four Kings dead) lifts it. Fextralife and Fandom agree (wearing it is required for the whole fight).",
+    "id": 138,
+    "item": "Covenant of Artorias",
+    "kind": "ring"
+   }
+  ]
+ },
+ {
+  "earliestSphere": 12,
+  "flag": 14,
+  "id": "seath-the-scaleless",
+  "mandatoryByGraph": true,
+  "name": "Seath the Scaleless",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 2210,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 529000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "crystal-cave",
+  "requires": []
+ },
+ {
+  "earliestSphere": 14,
+  "flag": 15,
+  "id": "gwyn-lord-of-cinder",
+  "mandatoryByGraph": true,
+  "name": "Gwyn, Lord of Cinder",
+  "parts": [
+   {
+    "flags": [
+     "isWeakA"
+    ],
+    "hp": 1550,
+    "immune": [
+     "poison",
+     "toxic"
+    ],
+    "noDamage": [],
+    "npcParam": 537000,
+    "resist": {
+     "bleed": 240,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "kiln-of-the-first-flame-gwyn",
+  "requires": []
+ },
+ {
+  "earliestSphere": 2,
+  "flag": 16,
+  "id": "asylum-demon",
+  "mandatoryByGraph": true,
+  "name": "Asylum Demon",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 813,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 223200,
+    "resist": {
+     "bleed": 75,
+     "curse": 0,
+     "poison": 104,
+     "toxic": 104
+    }
+   }
+  ],
+  "region": "northern-undead-asylum-after-f2-east-door",
+  "requires": []
+ },
+ {
+  "earliestSphere": 3,
+  "flag": 11010901,
+  "id": "taurus-demon",
+  "mandatoryByGraph": true,
+  "name": "Taurus Demon",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 1215,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 225000,
+    "resist": {
+     "bleed": 150,
+     "curse": 0,
+     "poison": 150,
+     "toxic": 150
+    }
+   }
+  ],
+  "region": "upper-undead-burg-taurus-demon",
+  "requires": []
+ },
+ {
+  "earliestSphere": 5,
+  "flag": 11010902,
+  "id": "capra-demon",
+  "mandatoryByGraph": false,
+  "name": "Capra Demon",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 980,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 224000,
+    "resist": {
+     "bleed": 220,
+     "curse": 0,
+     "poison": 220,
+     "toxic": 220
+    }
+   }
+  ],
+  "region": "lower-undead-burg-capra-demon",
+  "requires": []
+ },
+ {
+  "earliestSphere": 4,
+  "flag": 11200900,
+  "id": "moonlight-butterfly",
+  "mandatoryByGraph": false,
+  "name": "Moonlight Butterfly",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1004,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 323000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "darkroot-garden-moonlight-butterfly",
+  "requires": []
+ },
+ {
+  "earliestSphere": 11,
+  "flag": 11210000,
+  "id": "sanctuary-guardian",
+  "mandatoryByGraph": false,
+  "name": "Sanctuary Guardian",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1024,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 347100,
+    "resist": {
+     "bleed": 100,
+     "curse": 0,
+     "poison": 250,
+     "toxic": 250
+    }
+   }
+  ],
+  "region": "sanctuary-garden-sanctuary-guardian",
+  "requires": []
+ },
+ {
+  "earliestSphere": 12,
+  "flag": 11210001,
+  "id": "knight-artorias",
+  "mandatoryByGraph": false,
+  "name": "Knight Artorias",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1500,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 410000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "royal-wood-artorias",
+  "requires": []
+ },
+ {
+  "earliestSphere": 13,
+  "flag": 11210002,
+  "id": "manus-father-of-the-abyss",
+  "mandatoryByGraph": false,
+  "name": "Manus, Father of the Abyss",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 2666,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [],
+    "npcParam": 450000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "chasm-of-the-abyss-manus",
+  "requires": []
+ },
+ {
+  "earliestSphere": 14,
+  "flag": 11210004,
+  "id": "black-dragon-kalameet",
+  "mandatoryByGraph": false,
+  "name": "Black Dragon Kalameet",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 2000,
+    "immune": [
+     "poison",
+     "toxic"
+    ],
+    "noDamage": [],
+    "npcParam": 451001,
+    "resist": {
+     "bleed": 333,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   },
+   {
+    "flags": [],
+    "hp": 2000,
+    "immune": [
+     "poison",
+     "toxic"
+    ],
+    "noDamage": [],
+    "npcParam": 451000,
+    "resist": {
+     "bleed": 333,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "royal-wood-after-hawkeye-gough",
+  "requires": []
+ },
+ {
+  "earliestSphere": 10,
+  "flag": 11410410,
+  "id": "demon-firesage",
+  "mandatoryByGraph": true,
+  "name": "Demon Firesage",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 2270,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 223100,
+    "resist": {
+     "bleed": 75,
+     "curse": 0,
+     "poison": 104,
+     "toxic": 104
+    }
+   }
+  ],
+  "region": "demon-ruins-demon-firesage",
+  "requires": []
+ },
+ {
+  "earliestSphere": 5,
+  "flag": 11410900,
+  "id": "ceaseless-discharge",
+  "mandatoryByGraph": true,
+  "name": "Ceaseless Discharge",
+  "parts": [
+   {
+    "flags": [],
+    "hp": 1750,
+    "immune": [
+     "poison",
+     "toxic",
+     "bleed"
+    ],
+    "noDamage": [
+     "fire"
+    ],
+    "npcParam": 525000,
+    "resist": {
+     "bleed": 999,
+     "curse": 0,
+     "poison": 999,
+     "toxic": 999
+    }
+   }
+  ],
+  "region": "demon-ruins-ceaseless-discharge",
+  "requires": []
+ },
+ {
+  "earliestSphere": 11,
+  "flag": 11410901,
+  "id": "centipede-demon",
+  "mandatoryByGraph": false,
+  "name": "Centipede Demon",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 1430,
+    "immune": [],
+    "noDamage": [
+     "fire"
+    ],
+    "npcParam": 520000,
+    "resist": {
+     "bleed": 195,
+     "curse": 0,
+     "poison": 230,
+     "toxic": 230
+    }
+   }
+  ],
+  "region": "demon-ruins-centipede-demon",
+  "requires": []
+ },
+ {
+  "earliestSphere": 7,
+  "flag": 11510900,
+  "id": "gwyndolin",
+  "mandatoryByGraph": false,
+  "name": "Gwyndolin",
+  "parts": [
+   {
+    "flags": [
+     "isWeakA"
+    ],
+    "hp": 958,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 532000,
+    "resist": {
+     "bleed": 160,
+     "curse": 0,
+     "poison": 318,
+     "toxic": 318
+    }
+   }
+  ],
+  "region": "anor-londo-gwyndolin",
+  "requires": []
+ },
+ {
+  "earliestSphere": 4,
+  "flag": 11810900,
+  "id": "stray-demon",
+  "mandatoryByGraph": false,
+  "name": "Stray Demon",
+  "parts": [
+   {
+    "flags": [
+     "isDemon"
+    ],
+    "hp": 2100,
+    "immune": [],
+    "noDamage": [],
+    "npcParam": 223000,
+    "resist": {
+     "bleed": 75,
+     "curse": 0,
+     "poison": 104,
+     "toxic": 104
+    }
+   }
+  ],
+  "region": "northern-undead-asylum-second-visit",
+  "requires": []
+ }
+]

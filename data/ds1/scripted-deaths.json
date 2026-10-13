@@ -1,0 +1,29 @@
+[
+ {
+  "countsAsDeath": false,
+  "event": "m17_00_00_00:11705100",
+  "eventRegion": 1702890,
+  "id": "seath-capture",
+  "only": "first death in that room",
+  "region": "the-dukes-archives",
+  "why": "mandatory: Seath is invulnerable there and the death sends you to the cell"
+ },
+ {
+  "countsAsDeath": true,
+  "event": "m10_02_00_00:11020351",
+  "id": "firelink-altar-hole",
+  "region": "firelink-shrine",
+  "why": "avoidable: jumping into the hole without the Lordvessel"
+ },
+ {
+  "countsAsDeath": true,
+  "event": "m15_00_00_00:11500831",
+  "eventRegion": [
+   1502811,
+   1502812
+  ],
+  "id": "sens-boulder-volumes",
+  "region": "sens-fortress",
+  "why": "avoidable environment kill tied to the boulder paths (event 11500750)"
+ }
+]

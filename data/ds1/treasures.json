@@ -1,0 +1,9241 @@
+[
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1120,
+    "kind": "good",
+    "name": "Demon Titanite"
+   }
+  ],
+  "lots": [
+   1510510
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing"
+   }
+  ],
+  "lots": [
+   1510520
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1130,
+    "kind": "good",
+    "name": "Twinkling Titanite"
+   }
+  ],
+  "lots": [
+   1510670
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1120,
+    "kind": "good",
+    "name": "Demon Titanite"
+   }
+  ],
+  "lots": [
+   1510680
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 148,
+    "kind": "ring",
+    "name": "Ring of the Sun's Firstborn"
+   }
+  ],
+  "lots": [
+   1510030
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1510050
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 5900,
+    "kind": "good",
+    "name": "Miracle: Sunlight Blade"
+   }
+  ],
+  "lots": [
+   1510620
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-gwyndolin",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 450000,
+    "kind": "armor",
+    "name": "Brass Helm"
+   },
+   {
+    "count": 1,
+    "id": 451000,
+    "kind": "armor",
+    "name": "Brass Armor"
+   },
+   {
+    "count": 1,
+    "id": 452000,
+    "kind": "armor",
+    "name": "Brass Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 453000,
+    "kind": "armor",
+    "name": "Brass Leggings"
+   }
+  ],
+  "lots": [
+   1510660
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-gwyndolin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1030,
+    "kind": "good",
+    "name": "Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1510040
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1203000,
+    "kind": "weapon",
+    "name": "Dragonslayer Greatbow"
+   },
+   {
+    "count": 1,
+    "id": 2007000,
+    "kind": "weapon",
+    "name": "Dragonslayer Arrow"
+   }
+  ],
+  "lots": [
+   1510060
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 100000,
+    "kind": "armor",
+    "name": "Helm of Favor"
+   },
+   {
+    "count": 1,
+    "id": 101000,
+    "kind": "armor",
+    "name": "Embraced Armor of Favor"
+   },
+   {
+    "count": 1,
+    "id": 102000,
+    "kind": "armor",
+    "name": "Gauntlets of Favor"
+   },
+   {
+    "count": 1,
+    "id": 103000,
+    "kind": "armor",
+    "name": "Leggings of Favor"
+   }
+  ],
+  "lots": [
+   1510080
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 440000,
+    "kind": "armor",
+    "name": "Havel's Helm"
+   },
+   {
+    "count": 1,
+    "id": 441000,
+    "kind": "armor",
+    "name": "Havel's Armor"
+   }
+  ],
+  "lots": [
+   1510530
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 442000,
+    "kind": "armor",
+    "name": "Havel's Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 443000,
+    "kind": "armor",
+    "name": "Havel's Leggings"
+   }
+  ],
+  "lots": [
+   1510540
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1505000,
+    "kind": "weapon",
+    "name": "Havel's Greatshield"
+   }
+  ],
+  "lots": [
+   1510560
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 854000,
+    "kind": "weapon",
+    "name": "Dragon Tooth"
+   }
+  ],
+  "lots": [
+   1510570
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 420000,
+    "kind": "armor",
+    "name": "Silver Knight Helm"
+   },
+   {
+    "count": 1,
+    "id": 421000,
+    "kind": "armor",
+    "name": "Silver Knight Armor"
+   }
+  ],
+  "lots": [
+   1510580
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 422000,
+    "kind": "armor",
+    "name": "Silver Knight Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 423000,
+    "kind": "armor",
+    "name": "Silver Knight Leggings"
+   }
+  ],
+  "lots": [
+   1510590
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 2,
+    "id": 1120,
+    "kind": "good",
+    "name": "Demon Titanite"
+   }
+  ],
+  "lots": [
+   1510600
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 119,
+    "kind": "ring",
+    "name": "Hawk Ring"
+   }
+  ],
+  "lots": [
+   1510610
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 3,
+    "id": 375,
+    "kind": "good",
+    "name": "Sunlight Medal"
+   }
+  ],
+  "lots": [
+   1510690
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1510700
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 3110,
+    "kind": "good",
+    "name": "Sorcery: Great Magic Weapon"
+   }
+  ],
+  "lots": [
+   1510000
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-painting-room",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 70000,
+    "kind": "armor",
+    "name": "Black Iron Helm"
+   },
+   {
+    "count": 1,
+    "id": 71000,
+    "kind": "armor",
+    "name": "Black Iron Armor"
+   },
+   {
+    "count": 1,
+    "id": 72000,
+    "kind": "armor",
+    "name": "Black Iron Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 73000,
+    "kind": "armor",
+    "name": "Black Iron Leggings"
+   },
+   {
+    "count": 1,
+    "id": 351000,
+    "kind": "weapon",
+    "name": "Greatsword"
+   },
+   {
+    "count": 1,
+    "id": 9003000,
+    "kind": "weapon",
+    "name": "Black Iron Greatshield"
+   }
+  ],
+  "lots": [
+   1510070
+  ],
+  "map": "m15_01_00_00",
+  "perClass": false,
+  "region": "anor-londo-painting-room",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1110,
+    "kind": "good",
+    "name": "Dragon Scale"
+   }
+  ],
+  "lots": [
+   1320140
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "ash-lake",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1110,
+    "kind": "good",
+    "name": "Dragon Scale"
+   }
+  ],
+  "lots": [
+   1320150
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "ash-lake",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1110,
+    "kind": "good",
+    "name": "Dragon Scale"
+   }
+  ],
+  "lots": [
+   1320160
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "ash-lake",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 5610,
+    "kind": "good",
+    "name": "Miracle: Great Magic Barrier"
+   }
+  ],
+  "lots": [
+   1320170
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "ash-lake",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 3720,
+    "kind": "good",
+    "name": "Dark Bead"
+   }
+  ],
+  "lots": [
+   1210270
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 4530,
+    "kind": "good",
+    "name": "Black Flame"
+   }
+  ],
+  "lots": [
+   1210280
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1090,
+    "kind": "good",
+    "name": "White Titanite Slab"
+   }
+  ],
+  "lots": [
+   1210290
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1210300
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1210330
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 514,
+    "kind": "good",
+    "name": "Help me! Carving"
+   }
+  ],
+  "lots": [
+   1210340
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1210440
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "chasm-of-the-abyss",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1700150
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "crystal-cave",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1080,
+    "kind": "good",
+    "name": "Blue Titanite Slab"
+   }
+  ],
+  "lots": [
+   1700160
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "crystal-cave",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1040,
+    "kind": "good",
+    "name": "Blue Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1700170
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "crystal-cave",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1700180
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "crystal-cave",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 241000,
+    "kind": "armor",
+    "name": "Leather Armor"
+   },
+   {
+    "count": 1,
+    "id": 242000,
+    "kind": "armor",
+    "name": "Leather Gloves"
+   },
+   {
+    "count": 1,
+    "id": 243000,
+    "kind": "armor",
+    "name": "Leather Boots"
+   },
+   {
+    "count": 1,
+    "id": 1201000,
+    "kind": "weapon",
+    "name": "Longbow"
+   },
+   {
+    "count": 16,
+    "id": 2002000,
+    "kind": "weapon",
+    "name": "Feather Arrow"
+   }
+  ],
+  "lots": [
+   1200020
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-basin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1200040
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-basin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 330000,
+    "kind": "armor",
+    "name": "Crown of Dusk"
+   },
+   {
+    "count": 1,
+    "id": 331000,
+    "kind": "armor",
+    "name": "Antiquated Dress"
+   },
+   {
+    "count": 1,
+    "id": 332000,
+    "kind": "armor",
+    "name": "Antiquated Gloves"
+   },
+   {
+    "count": 1,
+    "id": 333000,
+    "kind": "armor",
+    "name": "Antiquated Skirt"
+   }
+  ],
+  "lots": [
+   1200150
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-basin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1453000,
+    "kind": "weapon",
+    "name": "Grass Crest Shield"
+   }
+  ],
+  "lots": [
+   1200200
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-basin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 390000,
+    "kind": "armor",
+    "name": "Knight Helm"
+   },
+   {
+    "count": 1,
+    "id": 391000,
+    "kind": "armor",
+    "name": "Knight Armor"
+   },
+   {
+    "count": 1,
+    "id": 392000,
+    "kind": "armor",
+    "name": "Knight Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 393000,
+    "kind": "armor",
+    "name": "Knight Leggings"
+   }
+  ],
+  "lots": [
+   1200210
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-basin",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1002000,
+    "kind": "weapon",
+    "name": "Partizan"
+   }
+  ],
+  "lots": [
+   1200010
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 146,
+    "kind": "ring",
+    "name": "Wolf Ring"
+   }
+  ],
+  "lots": [
+   1200060
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 350000,
+    "kind": "armor",
+    "name": "Elite Knight Helm"
+   },
+   {
+    "count": 1,
+    "id": 351000,
+    "kind": "armor",
+    "name": "Elite Knight Armor"
+   },
+   {
+    "count": 1,
+    "id": 352000,
+    "kind": "armor",
+    "name": "Elite Knight Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 353000,
+    "kind": "armor",
+    "name": "Elite Knight Leggings"
+   }
+  ],
+  "lots": [
+   1200070
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1200180
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2019,
+    "kind": "good",
+    "name": "Watchtower Basement Key"
+   },
+   {
+    "count": 1,
+    "id": 808,
+    "kind": "good",
+    "name": "Divine Ember"
+   },
+   {
+    "count": 1,
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone"
+   }
+  ],
+  "lots": [
+   1200140
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-after-moonlight-butterfly",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1200030
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1200170
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 280000,
+    "kind": "armor",
+    "name": "Eastern Helm"
+   },
+   {
+    "count": 1,
+    "id": 281000,
+    "kind": "armor",
+    "name": "Eastern Armor"
+   },
+   {
+    "count": 1,
+    "id": 282000,
+    "kind": "armor",
+    "name": "Eastern Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 283000,
+    "kind": "armor",
+    "name": "Eastern Leggings"
+   }
+  ],
+  "lots": [
+   1200080
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 407,
+    "kind": "good",
+    "name": "Large Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1200120
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 117,
+    "kind": "ring",
+    "name": "Hornet Ring"
+   }
+  ],
+  "lots": [
+   1200160
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1200190
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 807,
+    "kind": "good",
+    "name": "Enchanted Ember"
+   }
+  ],
+  "lots": [
+   1200500
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 120000,
+    "kind": "armor",
+    "name": "Stone Helm"
+   },
+   {
+    "count": 1,
+    "id": 121000,
+    "kind": "armor",
+    "name": "Stone Armor"
+   },
+   {
+    "count": 1,
+    "id": 122000,
+    "kind": "armor",
+    "name": "Stone Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 123000,
+    "kind": "armor",
+    "name": "Stone Leggings"
+   }
+  ],
+  "lots": [
+   1200510
+  ],
+  "map": "m12_00_00_01",
+  "perClass": false,
+  "region": "darkroot-garden-behind-artorias-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1410050
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1410080
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1410090
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 812,
+    "kind": "good",
+    "name": "Large Flame Ember"
+   }
+  ],
+  "lots": [
+   1410100
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410140
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1410510
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410160
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-after-demon-firesage",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410230
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-after-demon-firesage",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410250
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-after-demon-firesage",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1410060
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-after-orange-charred-ring",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 813,
+    "kind": "good",
+    "name": "Chaos Flame Ember"
+   }
+  ],
+  "lots": [
+   1410530
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-after-orange-charred-ring",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 460000,
+    "kind": "armor",
+    "name": "Gold-Hemmed Black Hood"
+   },
+   {
+    "count": 1,
+    "id": 461000,
+    "kind": "armor",
+    "name": "Gold-Hemmed Black Cloak"
+   },
+   {
+    "count": 1,
+    "id": 462000,
+    "kind": "armor",
+    "name": "Gold-Hemmed Black Gloves"
+   },
+   {
+    "count": 1,
+    "id": 463000,
+    "kind": "armor",
+    "name": "Gold-Hemmed Black Skirt"
+   }
+  ],
+  "lots": [
+   1410180
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-ceaseless-discharge",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1410270
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "demon-ruins-centipede-demon",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1000000
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000010
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 750000,
+    "kind": "weapon",
+    "name": "Greataxe"
+   }
+  ],
+  "lots": [
+   1000020
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000030
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000040
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000050
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1462000,
+    "kind": "weapon",
+    "name": "Spider Shield"
+   }
+  ],
+  "lots": [
+   1000090
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1000100
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000120
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000140
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 142,
+    "kind": "ring",
+    "name": "Ring of the Evil Eye"
+   }
+  ],
+  "lots": [
+   1000170
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1000180
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1251000,
+    "kind": "weapon",
+    "name": "Heavy Crossbow"
+   },
+   {
+    "count": 11,
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt"
+   }
+  ],
+  "lots": [
+   1000190
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2018,
+    "kind": "good",
+    "name": "Sewer Chamber Key"
+   }
+  ],
+  "lots": [
+   1000240
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 800,
+    "kind": "good",
+    "name": "Large Ember"
+   }
+  ],
+  "lots": [
+   1000500
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 210000,
+    "kind": "armor",
+    "name": "Standard Helm"
+   },
+   {
+    "count": 1,
+    "id": 211000,
+    "kind": "armor",
+    "name": "Hard Leather Armor"
+   },
+   {
+    "count": 1,
+    "id": 212000,
+    "kind": "armor",
+    "name": "Hard Leather Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 213000,
+    "kind": "armor",
+    "name": "Hard Leather Boots"
+   }
+  ],
+  "lots": [
+   1000210
+  ],
+  "map": "m10_00_00_00",
+  "perClass": false,
+  "region": "depths-gaping-dragon",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400000,
+    "kind": "armor",
+    "name": "Dingy Hood"
+   },
+   {
+    "count": 1,
+    "id": 401000,
+    "kind": "armor",
+    "name": "Dingy Robe"
+   },
+   {
+    "count": 1,
+    "id": 402000,
+    "kind": "armor",
+    "name": "Dingy Gloves"
+   },
+   {
+    "count": 1,
+    "id": 403000,
+    "kind": "armor",
+    "name": "Blood-Stained Skirt"
+   },
+   {
+    "count": 1,
+    "id": 115,
+    "kind": "good",
+    "name": "Black Eye Orb"
+   }
+  ],
+  "lots": [
+   2030
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2001,
+    "kind": "good",
+    "name": "Basement Key"
+   },
+   {
+    "count": 1,
+    "id": 2002,
+    "kind": "good",
+    "name": "Crest of Artorias"
+   },
+   {
+    "count": 1,
+    "id": 2003,
+    "kind": "good",
+    "name": "Cage Key"
+   },
+   {
+    "count": 1,
+    "id": 2004,
+    "kind": "good",
+    "name": "Archive Tower Cell Key"
+   },
+   {
+    "count": 1,
+    "id": 2005,
+    "kind": "good",
+    "name": "Archive Tower Giant Door Key"
+   },
+   {
+    "count": 1,
+    "id": 2006,
+    "kind": "good",
+    "name": "Archive Tower Giant Cell Key"
+   },
+   {
+    "count": 1,
+    "id": 2007,
+    "kind": "good",
+    "name": "Blighttown Key"
+   },
+   {
+    "count": 1,
+    "id": 2008,
+    "kind": "good",
+    "name": "Key to New Londo Ruins"
+   },
+   {
+    "count": 1,
+    "id": 2009,
+    "kind": "good",
+    "name": "Annex Key"
+   }
+  ],
+  "lots": [
+   4000
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2010,
+    "kind": "good",
+    "name": "Dungeon Cell Key"
+   },
+   {
+    "count": 1,
+    "id": 2011,
+    "kind": "good",
+    "name": "Big Pilgrim's Key"
+   },
+   {
+    "count": 1,
+    "id": 2012,
+    "kind": "good",
+    "name": "Undead Asylum F2 East Key"
+   },
+   {
+    "count": 1,
+    "id": 2013,
+    "kind": "good",
+    "name": "Key to the Seal"
+   },
+   {
+    "count": 1,
+    "id": 2014,
+    "kind": "good",
+    "name": "Key to Depths"
+   },
+   {
+    "count": 1,
+    "id": 2015,
+    "kind": "good",
+    "name": "Lift Chamber Key"
+   },
+   {
+    "count": 1,
+    "id": 2016,
+    "kind": "good",
+    "name": "Undead Asylum F2 West Key"
+   },
+   {
+    "count": 1,
+    "id": 2017,
+    "kind": "good",
+    "name": "Mystery Key"
+   },
+   {
+    "count": 1,
+    "id": 2018,
+    "kind": "good",
+    "name": "Sewer Chamber Key"
+   }
+  ],
+  "lots": [
+   4010
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2019,
+    "kind": "good",
+    "name": "Watchtower Basement Key"
+   },
+   {
+    "count": 1,
+    "id": 2020,
+    "kind": "good",
+    "name": "Archive Prison Extra Key"
+   },
+   {
+    "count": 1,
+    "id": 2021,
+    "kind": "good",
+    "name": "Residence Key"
+   },
+   {
+    "count": 1,
+    "id": 2500,
+    "kind": "good",
+    "name": "Lord Soul"
+   },
+   {
+    "count": 1,
+    "id": 2501,
+    "kind": "good",
+    "name": "Lord Soul"
+   },
+   {
+    "count": 1,
+    "id": 2502,
+    "kind": "good",
+    "name": "Bequeathed Lord Soul Shard"
+   },
+   {
+    "count": 1,
+    "id": 2503,
+    "kind": "good",
+    "name": "Bequeathed Lord Soul Shard"
+   },
+   {
+    "count": 1,
+    "id": 2510,
+    "kind": "good",
+    "name": "Lordvessel"
+   },
+   {
+    "count": 1,
+    "id": 138,
+    "kind": "ring",
+    "name": "Covenant of Artorias"
+   }
+  ],
+  "lots": [
+   4020
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 139,
+    "kind": "ring",
+    "name": "Orange Charred Ring"
+   },
+   {
+    "count": 1,
+    "id": 100,
+    "kind": "good",
+    "name": "White Sign Soapstone"
+   },
+   {
+    "count": 1,
+    "id": 101,
+    "kind": "good",
+    "name": "Red Sign Soapstone"
+   },
+   {
+    "count": 1,
+    "id": 102,
+    "kind": "good",
+    "name": "Red Eye Orb"
+   },
+   {
+    "count": 1,
+    "id": 103,
+    "kind": "good",
+    "name": "Black Separation Crystal"
+   },
+   {
+    "count": 1,
+    "id": 106,
+    "kind": "good",
+    "name": "Orange Guidance Soapstone"
+   },
+   {
+    "count": 1,
+    "id": 108,
+    "kind": "good",
+    "name": "Book of the Guilty"
+   },
+   {
+    "count": 1,
+    "id": 112,
+    "kind": "good",
+    "name": "Servant Roster"
+   },
+   {
+    "count": 1,
+    "id": 113,
+    "kind": "good",
+    "name": "Blue Eye Orb"
+   }
+  ],
+  "lots": [
+   4030
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 114,
+    "kind": "good",
+    "name": "Dragon Eye"
+   },
+   {
+    "count": 1,
+    "id": 117,
+    "kind": "good",
+    "name": "Darksign"
+   },
+   {
+    "count": 1,
+    "id": 200,
+    "kind": "good",
+    "name": "Estus Flask"
+   },
+   {
+    "count": 1,
+    "id": 202,
+    "kind": "good",
+    "name": "Estus Flask+1"
+   },
+   {
+    "count": 1,
+    "id": 204,
+    "kind": "good",
+    "name": "Estus Flask+2"
+   },
+   {
+    "count": 1,
+    "id": 206,
+    "kind": "good",
+    "name": "Estus Flask+3"
+   },
+   {
+    "count": 1,
+    "id": 208,
+    "kind": "good",
+    "name": "Estus Flask+4"
+   },
+   {
+    "count": 1,
+    "id": 210,
+    "kind": "good",
+    "name": "Estus Flask+5"
+   },
+   {
+    "count": 1,
+    "id": 212,
+    "kind": "good",
+    "name": "Estus Flask+6"
+   }
+  ],
+  "lots": [
+   4040
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 214,
+    "kind": "good",
+    "name": "Estus Flask+7"
+   },
+   {
+    "count": 1,
+    "id": 384,
+    "kind": "good",
+    "name": "Peculiar Doll"
+   },
+   {
+    "count": 1,
+    "id": 2600,
+    "kind": "good",
+    "name": "Weapon Smithbox"
+   },
+   {
+    "count": 1,
+    "id": 2601,
+    "kind": "good",
+    "name": "Armor Smithbox"
+   },
+   {
+    "count": 1,
+    "id": 2602,
+    "kind": "good",
+    "name": "Repairbox"
+   },
+   {
+    "count": 1,
+    "id": 2607,
+    "kind": "good",
+    "name": "Rite of Kindling"
+   },
+   {
+    "count": 1,
+    "id": 2608,
+    "kind": "good",
+    "name": "Bottomless Box"
+   },
+   {
+    "count": 1,
+    "id": 102,
+    "kind": "ring",
+    "name": "Darkmoon Blade Covenant Ring"
+   },
+   {
+    "count": 1,
+    "id": 103,
+    "kind": "ring",
+    "name": "Cat Covenant Ring"
+   }
+  ],
+  "lots": [
+   4050
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 377,
+    "kind": "good",
+    "name": "Dragon Head Stone"
+   },
+   {
+    "count": 1,
+    "id": 378,
+    "kind": "good",
+    "name": "Dragon Torso Stone"
+   },
+   {
+    "count": 1,
+    "id": 800,
+    "kind": "good",
+    "name": "Large Ember"
+   },
+   {
+    "count": 1,
+    "id": 801,
+    "kind": "good",
+    "name": "Very Large Ember"
+   },
+   {
+    "count": 1,
+    "id": 802,
+    "kind": "good",
+    "name": "Crystal Ember"
+   },
+   {
+    "count": 1,
+    "id": 806,
+    "kind": "good",
+    "name": "Large Magic Ember"
+   },
+   {
+    "count": 1,
+    "id": 807,
+    "kind": "good",
+    "name": "Enchanted Ember"
+   },
+   {
+    "count": 1,
+    "id": 808,
+    "kind": "good",
+    "name": "Divine Ember"
+   },
+   {
+    "count": 1,
+    "id": 809,
+    "kind": "good",
+    "name": "Large Divine Ember"
+   }
+  ],
+  "lots": [
+   4060
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "chest",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 810,
+    "kind": "good",
+    "name": "Dark Ember"
+   },
+   {
+    "count": 1,
+    "id": 812,
+    "kind": "good",
+    "name": "Large Flame Ember"
+   },
+   {
+    "count": 1,
+    "id": 813,
+    "kind": "good",
+    "name": "Chaos Flame Ember"
+   },
+   {
+    "count": 1,
+    "id": 2100,
+    "kind": "good",
+    "name": "Master Key"
+   },
+   {
+    "count": 1,
+    "id": 2022,
+    "kind": "good",
+    "name": "Crest Key"
+   },
+   {
+    "count": 1,
+    "id": 2520,
+    "kind": "good",
+    "name": "Broken Pendant"
+   },
+   {
+    "count": 1,
+    "id": 118,
+    "kind": "good",
+    "name": "Purple Coward's Crystal"
+   },
+   {
+    "count": 1,
+    "id": 385,
+    "kind": "good",
+    "name": "Dried Finger"
+   }
+  ],
+  "lots": [
+   4070
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": true
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 3,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1020000
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020010
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1410000,
+    "kind": "weapon",
+    "name": "Caduceus Round Shield"
+   }
+  ],
+  "lots": [
+   1020020
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020030
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020040
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020050
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020060
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 4,
+    "id": 296,
+    "kind": "good",
+    "name": "Lloyd's Talisman"
+   }
+  ],
+  "lots": [
+   1020070
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020090
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 6,
+    "id": 292,
+    "kind": "good",
+    "name": "Firebomb"
+   }
+  ],
+  "lots": [
+   1020110
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020120
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 126,
+    "kind": "ring",
+    "name": "Ring of Sacrifice"
+   }
+  ],
+  "lots": [
+   1020130
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1020140
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 350000,
+    "kind": "weapon",
+    "name": "Zweihander"
+   }
+  ],
+  "lots": [
+   1020150
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1001000,
+    "kind": "weapon",
+    "name": "Winged Spear"
+   }
+  ],
+  "lots": [
+   1020160
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 371,
+    "kind": "good",
+    "name": "Binoculars"
+   }
+  ],
+  "lots": [
+   1020170
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 802000,
+    "kind": "weapon",
+    "name": "Morning Star"
+   },
+   {
+    "count": 1,
+    "id": 1360000,
+    "kind": "weapon",
+    "name": "Talisman"
+   }
+  ],
+  "lots": [
+   1020180
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 6,
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone"
+   }
+  ],
+  "lots": [
+   1020190
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 4,
+    "id": 111,
+    "kind": "good",
+    "name": "Cracked Red Eye Orb"
+   }
+  ],
+  "lots": [
+   1020200
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2016,
+    "kind": "good",
+    "name": "Undead Asylum F2 West Key"
+   }
+  ],
+  "lots": [
+   1020210
+  ],
+  "map": "m10_02_00_00",
+  "perClass": false,
+  "region": "firelink-shrine-after-undead-parish-elevator",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 320000,
+    "kind": "armor",
+    "name": "Black Knight Helm"
+   },
+   {
+    "count": 1,
+    "id": 321000,
+    "kind": "armor",
+    "name": "Black Knight Armor"
+   },
+   {
+    "count": 1,
+    "id": 322000,
+    "kind": "armor",
+    "name": "Black Knight Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 323000,
+    "kind": "armor",
+    "name": "Black Knight Leggings"
+   }
+  ],
+  "lots": [
+   1800050
+  ],
+  "map": "m18_00_00_00",
+  "perClass": false,
+  "region": "kiln-of-the-first-flame",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 200000,
+    "kind": "armor",
+    "name": "Helm of Thorns"
+   },
+   {
+    "count": 1,
+    "id": 201000,
+    "kind": "armor",
+    "name": "Armor of Thorns"
+   },
+   {
+    "count": 1,
+    "id": 202000,
+    "kind": "armor",
+    "name": "Gauntlets of Thorns"
+   },
+   {
+    "count": 1,
+    "id": 203000,
+    "kind": "armor",
+    "name": "Leggings of Thorns"
+   }
+  ],
+  "lots": [
+   1400370
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1060,
+    "kind": "good",
+    "name": "Red Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1410000
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1060,
+    "kind": "good",
+    "name": "Red Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1410010
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410020
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1410030
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410310
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410320
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing"
+   }
+  ],
+  "lots": [
+   1410330
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing"
+   }
+  ],
+  "lots": [
+   1410340
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1410360
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 127,
+    "kind": "ring",
+    "name": "Rare Ring of Sacrifice"
+   }
+  ],
+  "lots": [
+   1410380
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 407,
+    "kind": "good",
+    "name": "Large Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1410390
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1410400
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1100,
+    "kind": "good",
+    "name": "Red Titanite Slab"
+   }
+  ],
+  "lots": [
+   1410410
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 409,
+    "kind": "good",
+    "name": "Soul of a Great Hero"
+   }
+  ],
+  "lots": [
+   1410500
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 4520,
+    "kind": "good",
+    "name": "Pyromancy: Chaos Fire Whip"
+   }
+  ],
+  "lots": [
+   1410520
+  ],
+  "map": "m14_01_00_00",
+  "perClass": false,
+  "region": "lost-izalith",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1409000,
+    "kind": "weapon",
+    "name": "Plank Shield"
+   }
+  ],
+  "lots": [
+   1320000
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1320180
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1400230
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 850000,
+    "kind": "weapon",
+    "name": "Great Club"
+   }
+  ],
+  "lots": [
+   1400250
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400260
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 230000,
+    "kind": "armor",
+    "name": "Tattered Cloth Hood"
+   },
+   {
+    "count": 1,
+    "id": 231000,
+    "kind": "armor",
+    "name": "Tattered Cloth Robe"
+   },
+   {
+    "count": 1,
+    "id": 232000,
+    "kind": "armor",
+    "name": "Tattered Cloth Manchette"
+   },
+   {
+    "count": 1,
+    "id": 233000,
+    "kind": "armor",
+    "name": "Heavy Boots"
+   },
+   {
+    "count": 1,
+    "id": 4200,
+    "kind": "good",
+    "name": "Pyromancy: Poison Mist"
+   }
+  ],
+  "lots": [
+   1400270
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400280
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1400290
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1400300
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 360000,
+    "kind": "armor",
+    "name": "Wanderer Hood"
+   },
+   {
+    "count": 1,
+    "id": 361000,
+    "kind": "armor",
+    "name": "Wanderer Coat"
+   },
+   {
+    "count": 1,
+    "id": 362000,
+    "kind": "armor",
+    "name": "Wanderer Manchette"
+   },
+   {
+    "count": 1,
+    "id": 363000,
+    "kind": "armor",
+    "name": "Wanderer Boots"
+   },
+   {
+    "count": 1,
+    "id": 401000,
+    "kind": "weapon",
+    "name": "Falchion"
+   }
+  ],
+  "lots": [
+   1400310
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400320
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 450000,
+    "kind": "weapon",
+    "name": "Server"
+   }
+  ],
+  "lots": [
+   1400360
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1110,
+    "kind": "good",
+    "name": "Dragon Scale"
+   }
+  ],
+  "lots": [
+   1400510
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "lower-blighttown",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600250
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1600260
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1600270
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600280
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1030,
+    "kind": "good",
+    "name": "Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1600290
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 6,
+    "id": 111,
+    "kind": "good",
+    "name": "Cracked Red Eye Orb"
+   }
+  ],
+  "lots": [
+   1600310
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600330
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600370
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 801,
+    "kind": "good",
+    "name": "Very Large Ember"
+   }
+  ],
+  "lots": [
+   1600500
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1030,
+    "kind": "good",
+    "name": "Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1600510
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "lower-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 600000,
+    "kind": "weapon",
+    "name": "Mail Breaker"
+   }
+  ],
+  "lots": [
+   1010020
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010370
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 300000,
+    "kind": "armor",
+    "name": "Thief Mask"
+   },
+   {
+    "count": 1,
+    "id": 301000,
+    "kind": "armor",
+    "name": "Black Leather Armor"
+   },
+   {
+    "count": 1,
+    "id": 302000,
+    "kind": "armor",
+    "name": "Black Leather Gloves"
+   },
+   {
+    "count": 1,
+    "id": 303000,
+    "kind": "armor",
+    "name": "Black Leather Boots"
+   },
+   {
+    "count": 1,
+    "id": 1404000,
+    "kind": "weapon",
+    "name": "Target Shield"
+   }
+  ],
+  "lots": [
+   1010380
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010430
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1010490
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 220000,
+    "kind": "armor",
+    "name": "Sorcerer Hat"
+   },
+   {
+    "count": 1,
+    "id": 221000,
+    "kind": "armor",
+    "name": "Sorcerer Cloak"
+   },
+   {
+    "count": 1,
+    "id": 222000,
+    "kind": "armor",
+    "name": "Sorcerer Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 223000,
+    "kind": "armor",
+    "name": "Sorcerer Boots"
+   },
+   {
+    "count": 1,
+    "id": 1300000,
+    "kind": "weapon",
+    "name": "Sorcerer's Catalyst"
+   }
+  ],
+  "lots": [
+   1010510
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "lower-undead-burg-after-residence-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 201000,
+    "kind": "weapon",
+    "name": "Longsword"
+   }
+  ],
+  "lots": [
+   1810100
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1450000,
+    "kind": "weapon",
+    "name": "Heater Shield"
+   }
+  ],
+  "lots": [
+   1810110
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 202000,
+    "kind": "weapon",
+    "name": "Broadsword"
+   }
+  ],
+  "lots": [
+   1810120
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1452000,
+    "kind": "weapon",
+    "name": "Tower Kite Shield"
+   }
+  ],
+  "lots": [
+   1810130
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400000,
+    "kind": "weapon",
+    "name": "Scimitar"
+   }
+  ],
+  "lots": [
+   1810140
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1408000,
+    "kind": "weapon",
+    "name": "Leather Shield"
+   }
+  ],
+  "lots": [
+   1810150
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 103000,
+    "kind": "weapon",
+    "name": "Bandit's Knife"
+   }
+  ],
+  "lots": [
+   1810160
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1404000,
+    "kind": "weapon",
+    "name": "Target Shield"
+   }
+  ],
+  "lots": [
+   1810170
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 701000,
+    "kind": "weapon",
+    "name": "Battle Axe"
+   }
+  ],
+  "lots": [
+   1810180
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1462000,
+    "kind": "weapon",
+    "name": "Spider Shield"
+   }
+  ],
+  "lots": [
+   1810190
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 200000,
+    "kind": "weapon",
+    "name": "Shortsword"
+   }
+  ],
+  "lots": [
+   1810200
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1402000,
+    "kind": "weapon",
+    "name": "Large Leather Shield"
+   }
+  ],
+  "lots": [
+   1810210
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1200000,
+    "kind": "weapon",
+    "name": "Short Bow"
+   },
+   {
+    "count": 30,
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow"
+   }
+  ],
+  "lots": [
+   1810220,
+   1810221
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 100000,
+    "kind": "weapon",
+    "name": "Dagger"
+   }
+  ],
+  "lots": [
+   1810230
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1403000,
+    "kind": "weapon",
+    "name": "Small Leather Shield"
+   }
+  ],
+  "lots": [
+   1810240
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1300000,
+    "kind": "weapon",
+    "name": "Sorcerer's Catalyst"
+   },
+   {
+    "count": 30,
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow"
+   }
+  ],
+  "lots": [
+   1810250,
+   1810221
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 700000,
+    "kind": "weapon",
+    "name": "Hand Axe"
+   }
+  ],
+  "lots": [
+   1810260
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1406000,
+    "kind": "weapon",
+    "name": "Cracked Round Shield"
+   }
+  ],
+  "lots": [
+   1810270
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1330000,
+    "kind": "weapon",
+    "name": "Pyromancy Flame"
+   },
+   {
+    "count": 30,
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow"
+   }
+  ],
+  "lots": [
+   1810280,
+   1810221
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 801000,
+    "kind": "weapon",
+    "name": "Mace"
+   }
+  ],
+  "lots": [
+   1810290
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1400000,
+    "kind": "weapon",
+    "name": "East-West Shield"
+   }
+  ],
+  "lots": [
+   1810300
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1361000,
+    "kind": "weapon",
+    "name": "Canvas Talisman"
+   },
+   {
+    "count": 30,
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow"
+   }
+  ],
+  "lots": [
+   1810310,
+   1810221
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 800000,
+    "kind": "weapon",
+    "name": "Club"
+   }
+  ],
+  "lots": [
+   1810320
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1409000,
+    "kind": "weapon",
+    "name": "Plank Shield"
+   }
+  ],
+  "lots": [
+   1810330
+  ],
+  "map": "m18_01_00_00",
+  "perClass": true,
+  "region": "northern-undead-asylum",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1810070
+  ],
+  "map": "m18_01_00_00",
+  "perClass": false,
+  "region": "northern-undead-asylum-after-f2-east-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 125,
+    "kind": "ring",
+    "name": "Rusted Iron Ring"
+   }
+  ],
+  "lots": [
+   1810060
+  ],
+  "map": "m18_01_00_00",
+  "perClass": false,
+  "region": "northern-undead-asylum-second-visit-behind-f2-west-door",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 384,
+    "kind": "good",
+    "name": "Peculiar Doll"
+   }
+  ],
+  "lots": [
+   1810080
+  ],
+  "map": "m18_01_00_00",
+  "perClass": false,
+  "region": "northern-undead-asylum-second-visit-cell",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1210010
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-sanctuary",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1210110
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210160
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1210190
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 380,
+    "kind": "good",
+    "name": "Rubbish"
+   }
+  ],
+  "lots": [
+   1210210
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210260
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210430
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1210450
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1210460
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 3710,
+    "kind": "good",
+    "name": "Dark Orb"
+   }
+  ],
+  "lots": [
+   1210540
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 3730,
+    "kind": "good",
+    "name": "Dark Fog"
+   }
+  ],
+  "lots": [
+   1211000
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1060,
+    "kind": "good",
+    "name": "Red Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1210510
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township-behind-light-dispelled-walls",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 220,
+    "kind": "good",
+    "name": "Silver Pendant"
+   }
+  ],
+  "lots": [
+   1210520
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "oolacile-township-behind-light-dispelled-walls",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100010
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100030
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100040
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities"
+   }
+  ],
+  "lots": [
+   1100050
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100070,
+   1100071
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 383,
+    "kind": "good",
+    "name": "Gold Coin"
+   }
+  ],
+  "lots": [
+   1100100
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 9002000,
+    "kind": "weapon",
+    "name": "Bloodshield"
+   }
+  ],
+  "lots": [
+   1100200
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100210
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 275,
+    "kind": "good",
+    "name": "Egg Vermifuge"
+   }
+  ],
+  "lots": [
+   1100250
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100260
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 101,
+    "kind": "good",
+    "name": "Red Sign Soapstone"
+   }
+  ],
+  "lots": [
+   1100330
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100340
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100350
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 250000,
+    "kind": "armor",
+    "name": "Painting Guardian Hood"
+   },
+   {
+    "count": 1,
+    "id": 251000,
+    "kind": "armor",
+    "name": "Painting Guardian Robe"
+   },
+   {
+    "count": 1,
+    "id": 252000,
+    "kind": "armor",
+    "name": "Painting Guardian Gloves"
+   },
+   {
+    "count": 1,
+    "id": 253000,
+    "kind": "armor",
+    "name": "Painting Guardian Waistcloth"
+   }
+  ],
+  "lots": [
+   1100500
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 150000,
+    "kind": "armor",
+    "name": "Mask of Velka"
+   },
+   {
+    "count": 1,
+    "id": 151000,
+    "kind": "armor",
+    "name": "Black Cleric Robe"
+   },
+   {
+    "count": 1,
+    "id": 152000,
+    "kind": "armor",
+    "name": "Black Manchette"
+   },
+   {
+    "count": 1,
+    "id": 153000,
+    "kind": "armor",
+    "name": "Black Tights"
+   }
+  ],
+  "lots": [
+   1100060
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-annex-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 5810,
+    "kind": "good",
+    "name": "Miracle: Vow of Silence"
+   }
+  ],
+  "lots": [
+   1100090
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-annex-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 603000,
+    "kind": "weapon",
+    "name": "Velka's Rapier"
+   }
+  ],
+  "lots": [
+   1100320
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-annex-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 810,
+    "kind": "good",
+    "name": "Dark Ember"
+   }
+  ],
+  "lots": [
+   1100370
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-annex-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100120
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100130
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2009,
+    "kind": "good",
+    "name": "Annex Key"
+   }
+  ],
+  "lots": [
+   1100140
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 126,
+    "kind": "ring",
+    "name": "Ring of Sacrifice"
+   }
+  ],
+  "lots": [
+   1100160
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1100170
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 4220,
+    "kind": "good",
+    "name": "Pyromancy: Acid Surge"
+   }
+  ],
+  "lots": [
+   1100190
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1100230
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1100240
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100280
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100290
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100300
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1100310
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 290000,
+    "kind": "armor",
+    "name": "Xanthous Crown"
+   },
+   {
+    "count": 1,
+    "id": 291000,
+    "kind": "armor",
+    "name": "Xanthous Overcoat"
+   },
+   {
+    "count": 1,
+    "id": 292000,
+    "kind": "armor",
+    "name": "Xanthous Gloves"
+   },
+   {
+    "count": 1,
+    "id": 293000,
+    "kind": "armor",
+    "name": "Xanthous Waistcloth"
+   }
+  ],
+  "lots": [
+   1100150
+  ],
+  "map": "m11_00_00_00",
+  "perClass": false,
+  "region": "painted-world-of-ariamis-crossbreed-priscilla",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1210020
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 383,
+    "kind": "good",
+    "name": "Gold Coin"
+   }
+  ],
+  "lots": [
+   1210030
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 693000,
+    "kind": "armor",
+    "name": "Guardian Leggings"
+   }
+  ],
+  "lots": [
+   1210040
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 691000,
+    "kind": "armor",
+    "name": "Guardian Armor"
+   }
+  ],
+  "lots": [
+   1210050
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 230,
+    "kind": "good",
+    "name": "Elizabeth's Mushroom"
+   }
+  ],
+  "lots": [
+   1210060
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 690000,
+    "kind": "armor",
+    "name": "Guardian Helm"
+   }
+  ],
+  "lots": [
+   1210070
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 8,
+    "id": 2008000,
+    "kind": "weapon",
+    "name": "Gough's Great Arrow"
+   }
+  ],
+  "lots": [
+   1210080
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1210090
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1210220
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210230
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210240
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 692000,
+    "kind": "armor",
+    "name": "Guardian Gauntlets"
+   }
+  ],
+  "lots": [
+   1210350
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210390
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210400
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 407,
+    "kind": "good",
+    "name": "Large Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1210470
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1080,
+    "kind": "good",
+    "name": "Blue Titanite Slab"
+   }
+  ],
+  "lots": [
+   1210500
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 3,
+    "id": 2008000,
+    "kind": "weapon",
+    "name": "Gough's Great Arrow"
+   }
+  ],
+  "lots": [
+   1210250
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood-after-hawkeye-gough",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1070,
+    "kind": "good",
+    "name": "Titanite Slab"
+   }
+  ],
+  "lots": [
+   1210550
+  ],
+  "map": "m12_01_00_00",
+  "perClass": false,
+  "region": "royal-wood-after-hawkeye-gough",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 120,
+    "kind": "ring",
+    "name": "Ring of Steel Protection"
+   }
+  ],
+  "lots": [
+   1500000
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1500010
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 2,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1500020
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402000,
+    "kind": "weapon",
+    "name": "Shotel"
+   }
+  ],
+  "lots": [
+   1500300
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1500330
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1500350
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1107000,
+    "kind": "weapon",
+    "name": "Scythe"
+   }
+  ],
+  "lots": [
+   1500360
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1500420
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-cage-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 640000,
+    "kind": "armor",
+    "name": "Black Sorcerer Hat"
+   },
+   {
+    "count": 1,
+    "id": 641000,
+    "kind": "armor",
+    "name": "Black Sorcerer Cloak"
+   },
+   {
+    "count": 1,
+    "id": 642000,
+    "kind": "armor",
+    "name": "Black Sorcerer Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 643000,
+    "kind": "armor",
+    "name": "Black Sorcerer Boots"
+   },
+   {
+    "count": 1,
+    "id": 3510,
+    "kind": "good",
+    "name": "Sorcery: Hush"
+   }
+  ],
+  "lots": [
+   1500060
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 121,
+    "kind": "ring",
+    "name": "Covetous Gold Serpent Ring"
+   }
+  ],
+  "lots": [
+   1500070
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1500080
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1500310
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 123,
+    "kind": "ring",
+    "name": "Slumbering Dragoncrest Ring"
+   }
+  ],
+  "lots": [
+   1500320
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-first-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing"
+   }
+  ],
+  "lots": [
+   1500040
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 105,
+    "kind": "ring",
+    "name": "Flame Stoneplate Ring"
+   }
+  ],
+  "lots": [
+   1500090
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 127,
+    "kind": "ring",
+    "name": "Rare Ring of Sacrifice"
+   }
+  ],
+  "lots": [
+   1500100
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2003,
+    "kind": "good",
+    "name": "Cage Key"
+   }
+  ],
+  "lots": [
+   1500150
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 407,
+    "kind": "good",
+    "name": "Large Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1500400
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard"
+   }
+  ],
+  "lots": [
+   1500410
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1253000,
+    "kind": "weapon",
+    "name": "Sniper Crossbow"
+   },
+   {
+    "count": 12,
+    "id": 2102000,
+    "kind": "weapon",
+    "name": "Sniper Bolt"
+   }
+  ],
+  "lots": [
+   1500440
+  ],
+  "map": "m15_00_00_00",
+  "perClass": false,
+  "region": "sens-fortress-after-second-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1300000
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1300010
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 149,
+    "kind": "ring",
+    "name": "Darkmoon Seance Ring"
+   }
+  ],
+  "lots": [
+   1300020
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 3,
+    "id": 109,
+    "kind": "good",
+    "name": "Eye of Death"
+   }
+  ],
+  "lots": [
+   1300030
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1106000,
+    "kind": "weapon",
+    "name": "Lucerne"
+   }
+  ],
+  "lots": [
+   1300070
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1300100
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1150000,
+    "kind": "weapon",
+    "name": "Great Scythe"
+   }
+  ],
+  "lots": [
+   1300110
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1300140
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1300150
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 310000,
+    "kind": "armor",
+    "name": "Priest's Hat"
+   },
+   {
+    "count": 1,
+    "id": 311000,
+    "kind": "armor",
+    "name": "Holy Robe"
+   },
+   {
+    "count": 1,
+    "id": 312000,
+    "kind": "armor",
+    "name": "Traveling Gloves"
+   },
+   {
+    "count": 1,
+    "id": 313000,
+    "kind": "armor",
+    "name": "Holy Trousers"
+   },
+   {
+    "count": 1,
+    "id": 801000,
+    "kind": "weapon",
+    "name": "Mace"
+   }
+  ],
+  "lots": [
+   1300190
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1300220
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 5800,
+    "kind": "good",
+    "name": "Miracle: Tranquil Walk of Peace"
+   }
+  ],
+  "lots": [
+   1300230
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1300240
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1300250
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-door-1",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1300210
+  ],
+  "map": "m13_00_00_00",
+  "perClass": false,
+  "region": "the-catacombs-after-pinwheel",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1700000
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1130,
+    "kind": "good",
+    "name": "Twinkling Titanite"
+   }
+  ],
+  "lots": [
+   1700010
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1130,
+    "kind": "good",
+    "name": "Twinkling Titanite"
+   }
+  ],
+  "lots": [
+   1700510
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1700060
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-prison-extra-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 407,
+    "kind": "good",
+    "name": "Large Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1700080
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-prison-extra-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2020,
+    "kind": "good",
+    "name": "Archive Prison Extra Key"
+   }
+  ],
+  "lots": [
+   1700210
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-cell-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1252000,
+    "kind": "weapon",
+    "name": "Avelyn"
+   }
+  ],
+  "lots": [
+   1700020
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 20,
+    "id": 370,
+    "kind": "good",
+    "name": "Prism Stone"
+   }
+  ],
+  "lots": [
+   1700050
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1130,
+    "kind": "good",
+    "name": "Twinkling Titanite"
+   }
+  ],
+  "lots": [
+   1700520
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 3310,
+    "kind": "good",
+    "name": "Sorcery: Strong Magic Shield"
+   }
+  ],
+  "lots": [
+   1700540
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 1040,
+    "kind": "good",
+    "name": "Blue Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1700560
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 90000,
+    "kind": "armor",
+    "name": "Six-Eyed Helm of the Channelers"
+   },
+   {
+    "count": 1,
+    "id": 91000,
+    "kind": "armor",
+    "name": "Robe of the Channelers"
+   },
+   {
+    "count": 1,
+    "id": 92000,
+    "kind": "armor",
+    "name": "Gauntlets of the Channelers"
+   },
+   {
+    "count": 1,
+    "id": 93000,
+    "kind": "armor",
+    "name": "Waistcloth of the Channelers"
+   }
+  ],
+  "lots": [
+   1700580
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2006,
+    "kind": "good",
+    "name": "Archive Tower Giant Cell Key"
+   }
+  ],
+  "lots": [
+   1700590
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 802,
+    "kind": "good",
+    "name": "Crystal Ember"
+   }
+  ],
+  "lots": [
+   1700600
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 381000,
+    "kind": "armor",
+    "name": "Sage Robe"
+   },
+   {
+    "count": 1,
+    "id": 382000,
+    "kind": "armor",
+    "name": "Traveling Gloves"
+   },
+   {
+    "count": 1,
+    "id": 383000,
+    "kind": "armor",
+    "name": "Traveling Boots"
+   },
+   {
+    "count": 1,
+    "id": 1303000,
+    "kind": "weapon",
+    "name": "Logan's Catalyst"
+   }
+  ],
+  "lots": [
+   1700640
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1040,
+    "kind": "good",
+    "name": "Blue Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1700120
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-courtyard",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 130000,
+    "kind": "armor",
+    "name": "Crystalline Helm"
+   },
+   {
+    "count": 1,
+    "id": 131000,
+    "kind": "armor",
+    "name": "Crystalline Armor"
+   },
+   {
+    "count": 1,
+    "id": 132000,
+    "kind": "armor",
+    "name": "Crystalline Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 133000,
+    "kind": "armor",
+    "name": "Crystalline Leggings"
+   }
+  ],
+  "lots": [
+   1700650
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-courtyard",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 409,
+    "kind": "good",
+    "name": "Soul of a Great Hero"
+   }
+  ],
+  "lots": [
+   1700040
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-first-arena-after-seaths-death",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 806,
+    "kind": "good",
+    "name": "Large Magic Ember"
+   }
+  ],
+  "lots": [
+   1700530
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-first-arena-after-seaths-death",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 395,
+    "kind": "good",
+    "name": "Fire Keeper Soul"
+   }
+  ],
+  "lots": [
+   1700200
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-giant-cell",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 410000,
+    "kind": "armor",
+    "name": "Maiden Hood"
+   },
+   {
+    "count": 1,
+    "id": 411000,
+    "kind": "armor",
+    "name": "Maiden Robe"
+   },
+   {
+    "count": 1,
+    "id": 412000,
+    "kind": "armor",
+    "name": "Maiden Gloves"
+   },
+   {
+    "count": 1,
+    "id": 413000,
+    "kind": "armor",
+    "name": "Maiden Skirt"
+   },
+   {
+    "count": 1,
+    "id": 114,
+    "kind": "ring",
+    "name": "White Seance Ring"
+   }
+  ],
+  "lots": [
+   1700070
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-out-of-cell",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2005,
+    "kind": "good",
+    "name": "Archive Tower Giant Door Key"
+   }
+  ],
+  "lots": [
+   1700630
+  ],
+  "map": "m17_00_00_00",
+  "perClass": false,
+  "region": "the-dukes-archives-out-of-cell",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 104,
+    "kind": "ring",
+    "name": "Cloranthy Ring"
+   }
+  ],
+  "lots": [
+   1320020
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1030,
+    "kind": "good",
+    "name": "Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320040
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1320050
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1040,
+    "kind": "good",
+    "name": "Blue Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320060
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1050,
+    "kind": "good",
+    "name": "White Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320070
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1060,
+    "kind": "good",
+    "name": "Red Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320080
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1040,
+    "kind": "good",
+    "name": "Blue Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320090
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1050,
+    "kind": "good",
+    "name": "White Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320100
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1320110
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1030,
+    "kind": "good",
+    "name": "Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320120
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1060,
+    "kind": "good",
+    "name": "Red Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1320190
+  ],
+  "map": "m13_02_00_00",
+  "perClass": false,
+  "region": "the-great-hollow",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310000
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310010
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1310020
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310030
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1310040
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310050
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310070
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 3,
+    "id": 109,
+    "kind": "good",
+    "name": "Eye of Death"
+   }
+  ],
+  "lots": [
+   1310080
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1396000,
+    "kind": "weapon",
+    "name": "Skull Lantern"
+   }
+  ],
+  "lots": [
+   1310090
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1050,
+    "kind": "good",
+    "name": "White Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1310100
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 405,
+    "kind": "good",
+    "name": "Large Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1310300
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 809,
+    "kind": "good",
+    "name": "Large Divine Ember"
+   }
+  ],
+  "lots": [
+   1310500
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1310110
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-after-white-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 9000000,
+    "kind": "weapon",
+    "name": "Effigy Shield"
+   }
+  ],
+  "lots": [
+   1310120
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-after-white-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 122,
+    "kind": "ring",
+    "name": "Covetous Silver Serpent Ring"
+   }
+  ],
+  "lots": [
+   1310140
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-after-white-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1050,
+    "kind": "good",
+    "name": "White Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1310160
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-after-white-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 406,
+    "kind": "good",
+    "name": "Soul of a Brave Warrior"
+   }
+  ],
+  "lots": [
+   1310180
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-after-white-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1310200
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-behind-golden-fog-wall",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1090,
+    "kind": "good",
+    "name": "White Titanite Slab"
+   }
+  ],
+  "lots": [
+   1310220
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-behind-golden-fog-wall",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 408,
+    "kind": "good",
+    "name": "Soul of a Hero"
+   }
+  ],
+  "lots": [
+   1310230
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-behind-golden-fog-wall",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 20000,
+    "kind": "armor",
+    "name": "Paladin Helm"
+   },
+   {
+    "count": 1,
+    "id": 21000,
+    "kind": "armor",
+    "name": "Paladin Armor"
+   },
+   {
+    "count": 1,
+    "id": 22000,
+    "kind": "armor",
+    "name": "Paladin Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 23000,
+    "kind": "armor",
+    "name": "Paladin Leggings"
+   }
+  ],
+  "lots": [
+   1310240
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-behind-golden-fog-wall",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1050,
+    "kind": "good",
+    "name": "White Titanite Chunk"
+   }
+  ],
+  "lots": [
+   1310290
+  ],
+  "map": "m13_01_00_00",
+  "perClass": false,
+  "region": "tomb-of-the-giants-behind-golden-fog-wall",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2010,
+    "kind": "good",
+    "name": "Dungeon Cell Key"
+   }
+  ],
+  "lots": [
+   1810000
+  ],
+  "map": "m18_01_00_00",
+  "perClass": false,
+  "region": "undead-asylum-cell",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1010040
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 396,
+    "kind": "good",
+    "name": "Fire Keeper Soul"
+   }
+  ],
+  "lots": [
+   1010050
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2001,
+    "kind": "good",
+    "name": "Basement Key"
+   }
+  ],
+  "lots": [
+   1010140
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1451000,
+    "kind": "weapon",
+    "name": "Knight Shield"
+   }
+  ],
+  "lots": [
+   1010300
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1010500
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1100000,
+    "kind": "weapon",
+    "name": "Halberd"
+   }
+  ],
+  "lots": [
+   1010520
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 2017,
+    "kind": "good",
+    "name": "Mystery Key"
+   }
+  ],
+  "lots": [
+   1010000
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 4,
+    "id": 294,
+    "kind": "good",
+    "name": "Alluring Skull"
+   }
+  ],
+  "lots": [
+   1010260
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010280
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "undead-parish-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400020
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 60000,
+    "kind": "armor",
+    "name": "Shadow Mask"
+   },
+   {
+    "count": 1,
+    "id": 61000,
+    "kind": "armor",
+    "name": "Shadow Garb"
+   },
+   {
+    "count": 1,
+    "id": 62000,
+    "kind": "armor",
+    "name": "Shadow Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 63000,
+    "kind": "armor",
+    "name": "Shadow Leggings"
+   }
+  ],
+  "lots": [
+   1400040
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1400050
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1400060
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 3,
+    "id": 272,
+    "kind": "good",
+    "name": "Blooming Purple Moss Clump"
+   }
+  ],
+  "lots": [
+   1400080
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400090
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400100
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 4400,
+    "kind": "good",
+    "name": "Pyromancy: Power Within"
+   }
+  ],
+  "lots": [
+   1400130
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1400140
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400150
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1500000,
+    "kind": "weapon",
+    "name": "Eagle Shield"
+   }
+  ],
+  "lots": [
+   1400160
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1600000,
+    "kind": "weapon",
+    "name": "Whip"
+   }
+  ],
+  "lots": [
+   1400180
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 502000,
+    "kind": "weapon",
+    "name": "Iaito"
+   }
+  ],
+  "lots": [
+   1400340
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-depths-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 140000,
+    "kind": "armor",
+    "name": "Mask of the Sealer"
+   },
+   {
+    "count": 1,
+    "id": 141000,
+    "kind": "armor",
+    "name": "Crimson Robe"
+   },
+   {
+    "count": 1,
+    "id": 142000,
+    "kind": "armor",
+    "name": "Crimson Gloves"
+   },
+   {
+    "count": 1,
+    "id": 143000,
+    "kind": "armor",
+    "name": "Crimson Waistcloth"
+   },
+   {
+    "count": 1,
+    "id": 1302000,
+    "kind": "weapon",
+    "name": "Tin Banishment Catalyst"
+   }
+  ],
+  "lots": [
+   1400190
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-votd-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1400210
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-votd-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 394,
+    "kind": "good",
+    "name": "Fire Keeper Soul"
+   }
+  ],
+  "lots": [
+   1400350
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-votd-side",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 2008,
+    "kind": "good",
+    "name": "Key to New Londo Ruins"
+   }
+  ],
+  "lots": [
+   1400500
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-votd-side",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 3610,
+    "kind": "good",
+    "name": "Sorcery: Remedy"
+   }
+  ],
+  "lots": [
+   1400520
+  ],
+  "map": "m14_00_00_00",
+  "perClass": false,
+  "region": "upper-blighttown-votd-side",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1600000
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 602000,
+    "kind": "weapon",
+    "name": "Estoc"
+   }
+  ],
+  "lots": [
+   1600020
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 393,
+    "kind": "good",
+    "name": "Fire Keeper Soul"
+   }
+  ],
+  "lots": [
+   1600030
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 2,
+    "id": 312,
+    "kind": "good",
+    "name": "Transient Curse"
+   }
+  ],
+  "lots": [
+   1600040
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 101000,
+    "kind": "weapon",
+    "name": "Parrying Dagger"
+   }
+  ],
+  "lots": [
+   1600060
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 2,
+    "id": 312,
+    "kind": "good",
+    "name": "Transient Curse"
+   }
+  ],
+  "lots": [
+   1600070
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 2,
+    "id": 312,
+    "kind": "good",
+    "name": "Transient Curse"
+   }
+  ],
+  "lots": [
+   1600520
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1600090
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard"
+   }
+  ],
+  "lots": [
+   1600100
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600110
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1600120
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 127,
+    "kind": "ring",
+    "name": "Rare Ring of Sacrifice"
+   }
+  ],
+  "lots": [
+   1600130
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 113,
+    "kind": "ring",
+    "name": "Cursebite Ring"
+   }
+  ],
+  "lots": [
+   1600140
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1600150
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1204000,
+    "kind": "weapon",
+    "name": "Composite Bow"
+   },
+   {
+    "count": 16,
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow"
+   }
+  ],
+  "lots": [
+   1600160
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "upper-new-londo-ruins-after-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1250000,
+    "kind": "weapon",
+    "name": "Light Crossbow"
+   },
+   {
+    "count": 16,
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt"
+   }
+  ],
+  "lots": [
+   1010090
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 10,
+    "id": 290,
+    "kind": "good",
+    "name": "Throwing Knife"
+   }
+  ],
+  "lots": [
+   1010120
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1401000,
+    "kind": "weapon",
+    "name": "Wooden Shield"
+   }
+  ],
+  "lots": [
+   1010130
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 147,
+    "kind": "ring",
+    "name": "Blue Tearstone Ring"
+   }
+  ],
+  "lots": [
+   1010160
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010440
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 5,
+    "id": 297,
+    "kind": "good",
+    "name": "Black Firebomb"
+   }
+  ],
+  "lots": [
+   1010450
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010470
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010070
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 380,
+    "kind": "good",
+    "name": "Rubbish"
+   }
+  ],
+  "lots": [
+   1010080
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1010100
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 400,
+    "kind": "good",
+    "name": "Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010400
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-before-fog",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 301000,
+    "kind": "weapon",
+    "name": "Claymore"
+   }
+  ],
+  "lots": [
+   1010210
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-hellkite-bridge",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 402,
+    "kind": "good",
+    "name": "Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1010220
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-hellkite-bridge",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 401,
+    "kind": "good",
+    "name": "Large Soul of a Lost Undead"
+   }
+  ],
+  "lots": [
+   1010480
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-hellkite-bridge",
+  "rescue": false
+ },
+ {
+  "container": "chest",
+  "eventControlled": false,
+  "hidden": true,
+  "items": [
+   {
+    "count": 3,
+    "id": 311,
+    "kind": "good",
+    "name": "Gold Pine Resin"
+   }
+  ],
+  "lots": [
+   1010460
+  ],
+  "map": "m10_01_00_00",
+  "perClass": false,
+  "region": "upper-undead-burg-pine-resin-chest",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 403,
+    "kind": "good",
+    "name": "Large Soul of a Nameless Soldier"
+   }
+  ],
+  "lots": [
+   1600170
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 209000,
+    "kind": "weapon",
+    "name": "Astora's Straight Sword"
+   }
+  ],
+  "lots": [
+   1600180
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 404,
+    "kind": "good",
+    "name": "Soul of a Proud Knight"
+   }
+  ],
+  "lots": [
+   1600190
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 1457000,
+    "kind": "weapon",
+    "name": "Dragon Crest Shield"
+   }
+  ],
+  "lots": [
+   1600200
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity"
+   }
+  ],
+  "lots": [
+   1600210
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 50000,
+    "kind": "armor",
+    "name": "Brigand Hood"
+   },
+   {
+    "count": 1,
+    "id": 51000,
+    "kind": "armor",
+    "name": "Brigand Armor"
+   },
+   {
+    "count": 1,
+    "id": 52000,
+    "kind": "armor",
+    "name": "Brigand Gauntlets"
+   },
+   {
+    "count": 1,
+    "id": 53000,
+    "kind": "armor",
+    "name": "Brigand Trousers"
+   },
+   {
+    "count": 1,
+    "id": 1462000,
+    "kind": "weapon",
+    "name": "Spider Shield"
+   }
+  ],
+  "lots": [
+   1600220
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": false,
+  "hidden": false,
+  "items": [
+   {
+    "count": 1,
+    "id": 101,
+    "kind": "ring",
+    "name": "Red Tearstone Ring"
+   }
+  ],
+  "lots": [
+   1600380
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes",
+  "rescue": false
+ },
+ {
+  "container": "corpse",
+  "eventControlled": true,
+  "hidden": true,
+  "items": [
+   {
+    "count": 1,
+    "id": 340000,
+    "kind": "armor",
+    "name": "Witch Hat"
+   },
+   {
+    "count": 1,
+    "id": 341000,
+    "kind": "armor",
+    "name": "Witch Cloak"
+   },
+   {
+    "count": 1,
+    "id": 342000,
+    "kind": "armor",
+    "name": "Witch Gloves"
+   },
+   {
+    "count": 1,
+    "id": 343000,
+    "kind": "armor",
+    "name": "Witch Skirt"
+   },
+   {
+    "count": 1,
+    "id": 1301000,
+    "kind": "weapon",
+    "name": "Beatrice's Catalyst"
+   }
+  ],
+  "lots": [
+   1600360
+  ],
+  "map": "m16_00_00_00",
+  "perClass": false,
+  "region": "valley-of-the-drakes-after-defeating-four-kings",
+  "rescue": false
+ }
+]

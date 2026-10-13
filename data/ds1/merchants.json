@@ -1,0 +1,3226 @@
+[
+ {
+  "id": "andre-of-astora",
+  "name": "Andre of Astora",
+  "rows": [
+   1400,
+   1499
+  ],
+  "stock": [
+   {
+    "id": 1000,
+    "kind": "good",
+    "name": "Titanite Shard",
+    "price": 800,
+    "quantity": -1,
+    "row": 1400
+   },
+   {
+    "id": 2002,
+    "kind": "good",
+    "name": "Crest of Artorias",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1401
+   },
+   {
+    "id": 2600,
+    "kind": "good",
+    "name": "Weapon Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 1402
+   },
+   {
+    "id": 2601,
+    "kind": "good",
+    "name": "Armor Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 1403
+   },
+   {
+    "id": 2602,
+    "kind": "good",
+    "name": "Repairbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 1404
+   },
+   {
+    "id": 201000,
+    "kind": "weapon",
+    "name": "Longsword",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1405
+   },
+   {
+    "id": 202000,
+    "kind": "weapon",
+    "name": "Broadsword",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1406
+   },
+   {
+    "id": 300000,
+    "kind": "weapon",
+    "name": "Bastard Sword",
+    "price": 3000,
+    "quantity": -1,
+    "row": 1407
+   },
+   {
+    "id": 701000,
+    "kind": "weapon",
+    "name": "Battle Axe",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1408
+   },
+   {
+    "id": 803000,
+    "kind": "weapon",
+    "name": "Warpick",
+    "price": 800,
+    "quantity": -1,
+    "row": 1409
+   },
+   {
+    "id": 901000,
+    "kind": "weapon",
+    "name": "Caestus",
+    "price": 200,
+    "quantity": -1,
+    "row": 1410
+   },
+   {
+    "id": 1050000,
+    "kind": "weapon",
+    "name": "Pike",
+    "price": 2000,
+    "quantity": -1,
+    "row": 1411
+   },
+   {
+    "id": 1402000,
+    "kind": "weapon",
+    "name": "Large Leather Shield",
+    "price": 800,
+    "quantity": -1,
+    "row": 1412
+   },
+   {
+    "id": 1452000,
+    "kind": "weapon",
+    "name": "Tower Kite Shield",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1413
+   },
+   {
+    "id": 1477000,
+    "kind": "weapon",
+    "name": "Caduceus Kite Shield",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1414
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 1415
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 1416
+   },
+   {
+    "id": 2006000,
+    "kind": "weapon",
+    "name": "Wooden Arrow",
+    "price": 3,
+    "quantity": -1,
+    "row": 1417
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 1418
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 1419
+   },
+   {
+    "id": 2103000,
+    "kind": "weapon",
+    "name": "Wood Bolt",
+    "price": 10,
+    "quantity": -1,
+    "row": 1420
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_01_00_00",
+    "rows": [
+     1400,
+     1499
+    ],
+    "talk": "t101619",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "crestfallen-merchant",
+  "name": "Crestfallen Merchant",
+  "rows": [
+   5300,
+   5599
+  ],
+  "stock": [
+   {
+    "id": 260,
+    "kind": "good",
+    "name": "Green Blossom",
+    "price": 1000,
+    "quantity": -1,
+    "row": 5300
+   },
+   {
+    "id": 297,
+    "kind": "good",
+    "name": "Black Firebomb",
+    "price": 500,
+    "quantity": -1,
+    "row": 5301
+   },
+   {
+    "id": 1000,
+    "kind": "good",
+    "name": "Titanite Shard",
+    "price": 1000,
+    "quantity": -1,
+    "row": 5302
+   },
+   {
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard",
+    "price": 4000,
+    "quantity": -1,
+    "row": 5303
+   },
+   {
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5304
+   },
+   {
+    "id": 106,
+    "kind": "ring",
+    "name": "Thunder Stoneplate Ring",
+    "price": 15000,
+    "quantity": 1,
+    "row": 5306
+   },
+   {
+    "id": 107,
+    "kind": "ring",
+    "name": "Spell Stoneplate Ring",
+    "price": 15000,
+    "quantity": 1,
+    "row": 5307
+   },
+   {
+    "id": 351000,
+    "kind": "weapon",
+    "name": "Greatsword",
+    "price": 8000,
+    "quantity": -1,
+    "row": 5308
+   },
+   {
+    "id": 750000,
+    "kind": "weapon",
+    "name": "Greataxe",
+    "price": 8000,
+    "quantity": -1,
+    "row": 5309
+   },
+   {
+    "id": 1455000,
+    "kind": "weapon",
+    "name": "Balder Shield",
+    "price": 4000,
+    "quantity": -1,
+    "row": 5310
+   },
+   {
+    "id": 1501000,
+    "kind": "weapon",
+    "name": "Tower Shield",
+    "price": 8000,
+    "quantity": -1,
+    "row": 5311
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 5312
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 5313
+   },
+   {
+    "id": 2002000,
+    "kind": "weapon",
+    "name": "Feather Arrow",
+    "price": 100,
+    "quantity": -1,
+    "row": 5314
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 5315
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 5316
+   },
+   {
+    "id": 2102000,
+    "kind": "weapon",
+    "name": "Sniper Bolt",
+    "price": 250,
+    "quantity": -1,
+    "row": 5317
+   },
+   {
+    "id": 10000,
+    "kind": "armor",
+    "name": "Catarina Helm",
+    "price": 10000,
+    "quantity": -1,
+    "row": 5318
+   },
+   {
+    "id": 11000,
+    "kind": "armor",
+    "name": "Catarina Armor",
+    "price": 10000,
+    "quantity": -1,
+    "row": 5319
+   },
+   {
+    "id": 12000,
+    "kind": "armor",
+    "name": "Catarina Gauntlets",
+    "price": 7000,
+    "quantity": -1,
+    "row": 5320
+   },
+   {
+    "id": 13000,
+    "kind": "armor",
+    "name": "Catarina Leggings",
+    "price": 7000,
+    "quantity": -1,
+    "row": 5321
+   },
+   {
+    "id": 490000,
+    "kind": "armor",
+    "name": "Steel Helm",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5322
+   },
+   {
+    "id": 491000,
+    "kind": "armor",
+    "name": "Steel Armor",
+    "price": 8000,
+    "quantity": -1,
+    "row": 5323
+   },
+   {
+    "id": 492000,
+    "kind": "armor",
+    "name": "Steel Gauntlets",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5324
+   },
+   {
+    "id": 493000,
+    "kind": "armor",
+    "name": "Steel Leggings",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5325
+   },
+   {
+    "id": 510000,
+    "kind": "armor",
+    "name": "Balder Helm",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5326
+   },
+   {
+    "id": 511000,
+    "kind": "armor",
+    "name": "Balder Armor",
+    "price": 8000,
+    "quantity": -1,
+    "row": 5327
+   },
+   {
+    "id": 512000,
+    "kind": "armor",
+    "name": "Balder Gauntlets",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5328
+   },
+   {
+    "id": 513000,
+    "kind": "armor",
+    "name": "Balder Leggings",
+    "price": 5000,
+    "quantity": -1,
+    "row": 5329
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m15_00_00_00",
+    "rows": [
+     5300,
+     5599
+    ],
+    "talk": "t150625",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "darkstalker-kaathe",
+  "name": "Darkstalker Kaathe",
+  "rows": [
+   6100,
+   6199
+  ],
+  "stock": [
+   {
+    "id": 111,
+    "kind": "good",
+    "name": "Cracked Red Eye Orb",
+    "price": 3000,
+    "quantity": -1,
+    "row": 6100
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m16_00_00_00",
+    "rows": [
+     6100,
+     6199
+    ],
+    "talk": "t160634",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m18_00_00_00",
+    "rows": [
+     6100,
+     6199
+    ],
+    "talk": "t180634",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "domhnall-of-zena",
+  "name": "Domhnall of Zena",
+  "rows": [
+   1500,
+   1599
+  ],
+  "stock": [
+   {
+    "id": 311,
+    "kind": "good",
+    "name": "Gold Pine Resin",
+    "price": 1000,
+    "quantity": 3,
+    "row": 1500
+   },
+   {
+    "id": 2608,
+    "kind": "good",
+    "name": "Bottomless Box",
+    "price": 1000,
+    "quantity": 1,
+    "row": 1501
+   },
+   {
+    "id": 205000,
+    "kind": "weapon",
+    "name": "Crystal Straight Sword",
+    "price": 4000,
+    "quantity": -1,
+    "row": 1502
+   },
+   {
+    "id": 304000,
+    "kind": "weapon",
+    "name": "Crystal Greatsword",
+    "price": 6000,
+    "quantity": -1,
+    "row": 1503
+   },
+   {
+    "id": 1471000,
+    "kind": "weapon",
+    "name": "Crystal Shield",
+    "price": 4000,
+    "quantity": -1,
+    "row": 1504
+   },
+   {
+    "id": 110000,
+    "kind": "armor",
+    "name": "Helm of the Wise",
+    "price": 12000,
+    "quantity": -1,
+    "row": 1505
+   },
+   {
+    "id": 111000,
+    "kind": "armor",
+    "name": "Armor of the Glorious",
+    "price": 15000,
+    "quantity": -1,
+    "row": 1506
+   },
+   {
+    "id": 112000,
+    "kind": "armor",
+    "name": "Gauntlets of the Vanquisher",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1507
+   },
+   {
+    "id": 113000,
+    "kind": "armor",
+    "name": "Boots of the Explorer",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1508
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 1509
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 1510
+   },
+   {
+    "id": 2006000,
+    "kind": "weapon",
+    "name": "Wooden Arrow",
+    "price": 3,
+    "quantity": -1,
+    "row": 1511
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 1512
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 1513
+   },
+   {
+    "id": 2103000,
+    "kind": "weapon",
+    "name": "Wood Bolt",
+    "price": 10,
+    "quantity": -1,
+    "row": 1514
+   },
+   {
+    "id": 470000,
+    "kind": "armor",
+    "name": "Golem Helm",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1550
+   },
+   {
+    "id": 471000,
+    "kind": "armor",
+    "name": "Golem Armor",
+    "price": 7000,
+    "quantity": 1,
+    "row": 1551
+   },
+   {
+    "id": 472000,
+    "kind": "armor",
+    "name": "Golem Gauntlets",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1552
+   },
+   {
+    "id": 473000,
+    "kind": "armor",
+    "name": "Golem Leggings",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1553
+   },
+   {
+    "id": 80000,
+    "kind": "armor",
+    "name": "Smough's Helm",
+    "price": 6000,
+    "quantity": 1,
+    "row": 1554
+   },
+   {
+    "id": 81000,
+    "kind": "armor",
+    "name": "Smough's Armor",
+    "price": 7000,
+    "quantity": 1,
+    "row": 1555
+   },
+   {
+    "id": 82000,
+    "kind": "armor",
+    "name": "Smough's Gauntlets",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1556
+   },
+   {
+    "id": 83000,
+    "kind": "armor",
+    "name": "Smough's Leggings",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1557
+   },
+   {
+    "id": 270000,
+    "kind": "armor",
+    "name": "Ornstein's Helm",
+    "price": 7000,
+    "quantity": 1,
+    "row": 1558
+   },
+   {
+    "id": 271000,
+    "kind": "armor",
+    "name": "Ornstein's Armor",
+    "price": 8000,
+    "quantity": 1,
+    "row": 1559
+   },
+   {
+    "id": 272000,
+    "kind": "armor",
+    "name": "Ornstein's Gauntlets",
+    "price": 6000,
+    "quantity": 1,
+    "row": 1560
+   },
+   {
+    "id": 273000,
+    "kind": "armor",
+    "name": "Ornstein's Leggings",
+    "price": 6000,
+    "quantity": 1,
+    "row": 1561
+   },
+   {
+    "id": 540000,
+    "kind": "armor",
+    "name": "Crown of the Dark Sun",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1562
+   },
+   {
+    "id": 541000,
+    "kind": "armor",
+    "name": "Moonlight Robe",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1563
+   },
+   {
+    "id": 542000,
+    "kind": "armor",
+    "name": "Moonlight Gloves",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1564
+   },
+   {
+    "id": 543000,
+    "kind": "armor",
+    "name": "Moonlight Waistcloth",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1565
+   },
+   {
+    "id": 550000,
+    "kind": "armor",
+    "name": "Crown of the Great Lord",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1566
+   },
+   {
+    "id": 551000,
+    "kind": "armor",
+    "name": "Robe of the Great Lord",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1567
+   },
+   {
+    "id": 552000,
+    "kind": "armor",
+    "name": "Bracelet of the Great Lord",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1568
+   },
+   {
+    "id": 553000,
+    "kind": "armor",
+    "name": "Anklet of the Great Lord",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1569
+   },
+   {
+    "id": 2100,
+    "kind": "good",
+    "name": "Master Key",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1580
+   },
+   {
+    "id": 660000,
+    "kind": "armor",
+    "name": "Helm of Artorias",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1581
+   },
+   {
+    "id": 661000,
+    "kind": "armor",
+    "name": "Armor of Artorias",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1582
+   },
+   {
+    "id": 662000,
+    "kind": "armor",
+    "name": "Gauntlets of Artorias",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1583
+   },
+   {
+    "id": 663000,
+    "kind": "armor",
+    "name": "Leggings of Artorias",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1584
+   }
+  ],
+  "variants": [
+   {
+    "flags": [
+     1430
+    ],
+    "map": "m10_00_00_00",
+    "rows": [
+     1500,
+     1569
+    ],
+    "talk": "t100626",
+    "when": [
+     "GetFlagState(1430) == 1"
+    ]
+   },
+   {
+    "flags": [
+     1431
+    ],
+    "map": "m10_00_00_00",
+    "rows": [
+     1500,
+     1599
+    ],
+    "talk": "t100626",
+    "when": [
+     "GetFlagState(1431) == 1"
+    ]
+   },
+   {
+    "flags": [
+     1430
+    ],
+    "map": "m10_02_00_00",
+    "rows": [
+     1500,
+     1569
+    ],
+    "talk": "t102626",
+    "when": [
+     "GetFlagState(1430) == 1"
+    ]
+   },
+   {
+    "flags": [
+     1431
+    ],
+    "map": "m10_02_00_00",
+    "rows": [
+     1500,
+     1599
+    ],
+    "talk": "t102626",
+    "when": [
+     "GetFlagState(1431) == 1"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dusk-of-oolacile",
+  "name": "Dusk of Oolacile",
+  "rows": [
+   2200,
+   2299
+  ],
+  "stock": [
+   {
+    "id": 3400,
+    "kind": "good",
+    "name": "Sorcery: Hidden Weapon",
+    "price": 2000,
+    "quantity": 1,
+    "row": 2200
+   },
+   {
+    "id": 3410,
+    "kind": "good",
+    "name": "Sorcery: Hidden Body",
+    "price": 2000,
+    "quantity": 1,
+    "row": 2201
+   },
+   {
+    "id": 3500,
+    "kind": "good",
+    "name": "Cast Light",
+    "price": 1000,
+    "quantity": 1,
+    "row": 2202
+   },
+   {
+    "id": 3530,
+    "kind": "good",
+    "name": "Sorcery: Repair",
+    "price": 10000,
+    "quantity": 1,
+    "row": 2203
+   },
+   {
+    "id": 3550,
+    "kind": "good",
+    "name": "Sorcery: Chameleon",
+    "price": 3000,
+    "quantity": 1,
+    "row": 2204
+   },
+   {
+    "id": 1305000,
+    "kind": "weapon",
+    "name": "Oolacile Ivory Catalyst",
+    "price": 1000,
+    "quantity": -1,
+    "row": 2205
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m12_00_00_00",
+    "rows": [
+     2200,
+     2299
+    ],
+    "talk": "t120605",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m12_00_00_00",
+    "rows": [
+     2200,
+     2299
+    ],
+    "talk": "t120663",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "eingyi",
+  "name": "Eingyi",
+  "rows": [
+   3200,
+   3299
+  ],
+  "stock": [
+   {
+    "id": 112,
+    "kind": "good",
+    "name": "Servant Roster",
+    "price": 500,
+    "quantity": 1,
+    "row": 3200
+   },
+   {
+    "id": 275,
+    "kind": "good",
+    "name": "Egg Vermifuge",
+    "price": 1000,
+    "quantity": -1,
+    "row": 3210
+   },
+   {
+    "id": 4200,
+    "kind": "good",
+    "name": "Pyromancy: Poison Mist",
+    "price": 10000,
+    "quantity": 1,
+    "row": 3211
+   },
+   {
+    "id": 4210,
+    "kind": "good",
+    "name": "Pyromancy: Toxic Mist",
+    "price": 25000,
+    "quantity": 1,
+    "row": 3212
+   }
+  ],
+  "variants": [
+   {
+    "flags": [
+     1286
+    ],
+    "map": "m14_00_00_00",
+    "rows": [
+     3200,
+     3209
+    ],
+    "talk": "t140616",
+    "when": [
+     "GetFlagState(1286) == 0"
+    ]
+   },
+   {
+    "flags": [
+     1286
+    ],
+    "map": "m14_00_00_00",
+    "rows": [
+     3200,
+     3299
+    ],
+    "talk": "t140616",
+    "when": [
+     "GetFlagState(1286) == 1"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elizabeth",
+  "name": "Elizabeth",
+  "rows": [
+   6500,
+   6599
+  ],
+  "stock": [
+   {
+    "id": 280,
+    "kind": "good",
+    "name": "Repair Powder",
+    "price": 300,
+    "quantity": -1,
+    "row": 6500
+   },
+   {
+    "id": 311,
+    "kind": "good",
+    "name": "Gold Pine Resin",
+    "price": 1000,
+    "quantity": 6,
+    "row": 6501
+   },
+   {
+    "id": 3400,
+    "kind": "good",
+    "name": "Sorcery: Hidden Weapon",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6502
+   },
+   {
+    "id": 3410,
+    "kind": "good",
+    "name": "Sorcery: Hidden Body",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6503
+   },
+   {
+    "id": 3500,
+    "kind": "good",
+    "name": "Cast Light",
+    "price": 1000,
+    "quantity": 1,
+    "row": 6504
+   },
+   {
+    "id": 3530,
+    "kind": "good",
+    "name": "Sorcery: Repair",
+    "price": 10000,
+    "quantity": 1,
+    "row": 6505
+   },
+   {
+    "id": 3550,
+    "kind": "good",
+    "name": "Sorcery: Chameleon",
+    "price": 3000,
+    "quantity": 1,
+    "row": 6506
+   },
+   {
+    "id": 1305000,
+    "kind": "weapon",
+    "name": "Oolacile Ivory Catalyst",
+    "price": 1000,
+    "quantity": -1,
+    "row": 6507
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m12_01_00_00",
+    "rows": [
+     6500,
+     6599
+    ],
+    "talk": "t121675",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "giant-blacksmith",
+  "name": "Giant Blacksmith",
+  "rows": [
+   6200,
+   6299
+  ],
+  "stock": [
+   {
+    "id": 1101000,
+    "kind": "weapon",
+    "name": "Giant's Halberd",
+    "price": 5000,
+    "quantity": -1,
+    "row": 6200
+   },
+   {
+    "id": 1502000,
+    "kind": "weapon",
+    "name": "Giant Shield",
+    "price": 10000,
+    "quantity": -1,
+    "row": 6201
+   },
+   {
+    "id": 2005000,
+    "kind": "weapon",
+    "name": "Moonlight Arrow",
+    "price": 500,
+    "quantity": -1,
+    "row": 6202
+   },
+   {
+    "id": 2007000,
+    "kind": "weapon",
+    "name": "Dragonslayer Arrow",
+    "price": 500,
+    "quantity": -1,
+    "row": 6203
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 6204
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 6205
+   },
+   {
+    "id": 2002000,
+    "kind": "weapon",
+    "name": "Feather Arrow",
+    "price": 100,
+    "quantity": -1,
+    "row": 6206
+   },
+   {
+    "id": 2104000,
+    "kind": "weapon",
+    "name": "Lightning Bolt",
+    "price": 700,
+    "quantity": -1,
+    "row": 6207
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 6208
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 6209
+   },
+   {
+    "id": 2102000,
+    "kind": "weapon",
+    "name": "Sniper Bolt",
+    "price": 250,
+    "quantity": -1,
+    "row": 6210
+   },
+   {
+    "id": 530000,
+    "kind": "armor",
+    "name": "Giant Helm",
+    "price": 6000,
+    "quantity": -1,
+    "row": 6211
+   },
+   {
+    "id": 531000,
+    "kind": "armor",
+    "name": "Giant Armor",
+    "price": 8000,
+    "quantity": -1,
+    "row": 6212
+   },
+   {
+    "id": 532000,
+    "kind": "armor",
+    "name": "Giant Gauntlets",
+    "price": 6000,
+    "quantity": -1,
+    "row": 6213
+   },
+   {
+    "id": 533000,
+    "kind": "armor",
+    "name": "Giant Leggings",
+    "price": 6000,
+    "quantity": -1,
+    "row": 6214
+   },
+   {
+    "id": 2600,
+    "kind": "good",
+    "name": "Weapon Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6215
+   },
+   {
+    "id": 2601,
+    "kind": "good",
+    "name": "Armor Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6216
+   },
+   {
+    "id": 2602,
+    "kind": "good",
+    "name": "Repairbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6217
+   },
+   {
+    "id": 1000,
+    "kind": "good",
+    "name": "Titanite Shard",
+    "price": 800,
+    "quantity": -1,
+    "row": 6218
+   },
+   {
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard",
+    "price": 3800,
+    "quantity": -1,
+    "row": 6219
+   },
+   {
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard",
+    "price": 4800,
+    "quantity": -1,
+    "row": 6220
+   },
+   {
+    "id": 1130,
+    "kind": "good",
+    "name": "Twinkling Titanite",
+    "price": 8000,
+    "quantity": -1,
+    "row": 6221
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m15_01_00_00",
+    "rows": [
+     6200,
+     6299
+    ],
+    "talk": "t151621",
+    "when": [
+     "GetTalkListEntryResult() == 7"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "griggs-of-vinheim",
+  "name": "Griggs of Vinheim",
+  "rows": [
+   2000,
+   2099
+  ],
+  "stock": [
+   {
+    "id": 3000,
+    "kind": "good",
+    "name": "Sorcery: Soul Arrow",
+    "price": 1000,
+    "quantity": 1,
+    "row": 2000
+   },
+   {
+    "id": 3010,
+    "kind": "good",
+    "name": "Sorcery: Great Soul Arrow",
+    "price": 6000,
+    "quantity": 1,
+    "row": 2001
+   },
+   {
+    "id": 3020,
+    "kind": "good",
+    "name": "Sorcery: Heavy Soul Arrow",
+    "price": 2000,
+    "quantity": 1,
+    "row": 2002
+   },
+   {
+    "id": 3030,
+    "kind": "good",
+    "name": "Sorcery: Great Heavy Soul Arrow",
+    "price": 8000,
+    "quantity": 1,
+    "row": 2003
+   },
+   {
+    "id": 3100,
+    "kind": "good",
+    "name": "Magic Weapon",
+    "price": 3000,
+    "quantity": 1,
+    "row": 2004
+   },
+   {
+    "id": 3300,
+    "kind": "good",
+    "name": "Sorcery: Magic Shield",
+    "price": 3000,
+    "quantity": 1,
+    "row": 2005
+   },
+   {
+    "id": 3520,
+    "kind": "good",
+    "name": "Sorcery: Aural Decoy",
+    "price": 1000,
+    "quantity": 1,
+    "row": 2006
+   },
+   {
+    "id": 3540,
+    "kind": "good",
+    "name": "Sorcery: Fall Control",
+    "price": 1500,
+    "quantity": 1,
+    "row": 2007
+   },
+   {
+    "id": 115,
+    "kind": "ring",
+    "name": "Bellowing Dragoncrest Ring",
+    "price": 20000,
+    "quantity": 1,
+    "row": 2008
+   },
+   {
+    "id": 141,
+    "kind": "ring",
+    "name": "Lingering Dragoncrest Ring",
+    "price": 20000,
+    "quantity": 1,
+    "row": 2009
+   },
+   {
+    "id": 1300000,
+    "kind": "weapon",
+    "name": "Sorcerer's Catalyst",
+    "price": 500,
+    "quantity": -1,
+    "row": 2010
+   },
+   {
+    "id": 3040,
+    "kind": "good",
+    "name": "Sorcery: Homing Soulmass",
+    "price": 20000,
+    "quantity": 1,
+    "row": 2020
+   },
+   {
+    "id": 3060,
+    "kind": "good",
+    "name": "Soul Spear",
+    "price": 40000,
+    "quantity": 1,
+    "row": 2021
+   }
+  ],
+  "variants": [
+   {
+    "flags": [
+     1112
+    ],
+    "map": "m10_02_00_00",
+    "rows": [
+     2000,
+     2019
+    ],
+    "talk": "t102604",
+    "when": [
+     "GetFlagState(1112) == 1"
+    ]
+   },
+   {
+    "flags": [
+     1113
+    ],
+    "map": "m10_02_00_00",
+    "rows": [
+     2000,
+     2099
+    ],
+    "talk": "t102604",
+    "when": [
+     "GetFlagState(1113) == 1"
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hawkeye-gough",
+  "name": "Hawkeye Gough",
+  "rows": [
+   6600,
+   6699
+  ],
+  "stock": [
+   {
+    "id": 293,
+    "kind": "good",
+    "name": "Dung Pie",
+    "price": 200,
+    "quantity": -1,
+    "row": 6600
+   },
+   {
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone",
+    "price": 300,
+    "quantity": -1,
+    "row": 6601
+   },
+   {
+    "id": 370,
+    "kind": "good",
+    "name": "Prism Stone",
+    "price": 10,
+    "quantity": -1,
+    "row": 6602
+   },
+   {
+    "id": 510,
+    "kind": "good",
+    "name": "Hello Carving",
+    "price": 5,
+    "quantity": 1,
+    "row": 6603
+   },
+   {
+    "id": 511,
+    "kind": "good",
+    "name": "Thank you Carving",
+    "price": 5,
+    "quantity": 1,
+    "row": 6604
+   },
+   {
+    "id": 1000,
+    "kind": "good",
+    "name": "Titanite Shard",
+    "price": 800,
+    "quantity": -1,
+    "row": 6608
+   },
+   {
+    "id": 1010,
+    "kind": "good",
+    "name": "Large Titanite Shard",
+    "price": 3800,
+    "quantity": -1,
+    "row": 6609
+   },
+   {
+    "id": 1020,
+    "kind": "good",
+    "name": "Green Titanite Shard",
+    "price": 4800,
+    "quantity": -1,
+    "row": 6610
+   },
+   {
+    "id": 2008000,
+    "kind": "weapon",
+    "name": "Gough's Great Arrow",
+    "price": 650,
+    "quantity": -1,
+    "row": 6611
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m12_01_00_00",
+    "rows": [
+     6600,
+     6699
+    ],
+    "talk": "t121672",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "ingward",
+  "name": "Ingward",
+  "rows": [
+   2400,
+   2499
+  ],
+  "stock": [
+   {
+    "id": 3600,
+    "kind": "good",
+    "name": "Sorcery: Resist Curse",
+    "price": 5000,
+    "quantity": 1,
+    "row": 2400
+   },
+   {
+    "id": 312,
+    "kind": "good",
+    "name": "Transient Curse",
+    "price": 1000,
+    "quantity": -1,
+    "row": 2401
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     2400,
+     2499
+    ],
+    "talk": "t102618",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m16_00_00_00",
+    "rows": [
+     2400,
+     2499
+    ],
+    "talk": "t160618",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "laurentius",
+  "name": "Laurentius",
+  "rows": [
+   3000,
+   3099
+  ],
+  "stock": [
+   {
+    "id": 4000,
+    "kind": "good",
+    "name": "Pyromancy: Fireball",
+    "price": 800,
+    "quantity": 1,
+    "row": 3000
+   },
+   {
+    "id": 4010,
+    "kind": "good",
+    "name": "Fire Orb",
+    "price": 8000,
+    "quantity": 1,
+    "row": 3001
+   },
+   {
+    "id": 4100,
+    "kind": "good",
+    "name": "Pyromancy: Combustion",
+    "price": 500,
+    "quantity": 1,
+    "row": 3002
+   },
+   {
+    "id": 4300,
+    "kind": "good",
+    "name": "Iron Flesh",
+    "price": 2000,
+    "quantity": 1,
+    "row": 3003
+   },
+   {
+    "id": 4310,
+    "kind": "good",
+    "name": "Pyromancy: Flash Sweat",
+    "price": 2000,
+    "quantity": 1,
+    "row": 3004
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     3000,
+     3099
+    ],
+    "talk": "t102613",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "logan",
+  "name": "Logan",
+  "rows": [
+   5000,
+   5099
+  ],
+  "stock": [
+   {
+    "id": 3000,
+    "kind": "good",
+    "name": "Sorcery: Soul Arrow",
+    "price": 1000,
+    "quantity": 1,
+    "row": 5000
+   },
+   {
+    "id": 3010,
+    "kind": "good",
+    "name": "Sorcery: Great Soul Arrow",
+    "price": 6000,
+    "quantity": 1,
+    "row": 5001
+   },
+   {
+    "id": 3020,
+    "kind": "good",
+    "name": "Sorcery: Heavy Soul Arrow",
+    "price": 2000,
+    "quantity": 1,
+    "row": 5002
+   },
+   {
+    "id": 3030,
+    "kind": "good",
+    "name": "Sorcery: Great Heavy Soul Arrow",
+    "price": 8000,
+    "quantity": 1,
+    "row": 5003
+   },
+   {
+    "id": 3040,
+    "kind": "good",
+    "name": "Sorcery: Homing Soulmass",
+    "price": 20000,
+    "quantity": 1,
+    "row": 5004
+   },
+   {
+    "id": 3060,
+    "kind": "good",
+    "name": "Soul Spear",
+    "price": 40000,
+    "quantity": 1,
+    "row": 5005
+   },
+   {
+    "id": 3100,
+    "kind": "good",
+    "name": "Magic Weapon",
+    "price": 3000,
+    "quantity": 1,
+    "row": 5006
+   },
+   {
+    "id": 3300,
+    "kind": "good",
+    "name": "Sorcery: Magic Shield",
+    "price": 3000,
+    "quantity": 1,
+    "row": 5007
+   },
+   {
+    "id": 3050,
+    "kind": "good",
+    "name": "Sorcery: Homing Crystal Soulmass",
+    "price": 30000,
+    "quantity": 1,
+    "row": 5020
+   },
+   {
+    "id": 3070,
+    "kind": "good",
+    "name": "Sorcery: Crystal Soul Spear",
+    "price": 50000,
+    "quantity": 1,
+    "row": 5021
+   },
+   {
+    "id": 3120,
+    "kind": "good",
+    "name": "Sorcery: Crystal Magic Weapon",
+    "price": 20000,
+    "quantity": 1,
+    "row": 5022
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     5000,
+     5019
+    ],
+    "talk": "t102603",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m17_00_00_00",
+    "rows": [
+     5000,
+     5099
+    ],
+    "talk": "t170603",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m17_00_00_00",
+    "rows": [
+     5000,
+     5099
+    ],
+    "talk": "t170643",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "marvellous-chester",
+  "name": "Marvellous Chester",
+  "rows": [
+   6400,
+   6499
+  ],
+  "stock": [
+   {
+    "id": 260,
+    "kind": "good",
+    "name": "Green Blossom",
+    "price": 1200,
+    "quantity": -1,
+    "row": 6410
+   },
+   {
+    "id": 270,
+    "kind": "good",
+    "name": "Bloodred Moss Clump",
+    "price": 400,
+    "quantity": -1,
+    "row": 6411
+   },
+   {
+    "id": 271,
+    "kind": "good",
+    "name": "Purple Moss Clump",
+    "price": 600,
+    "quantity": -1,
+    "row": 6412
+   },
+   {
+    "id": 272,
+    "kind": "good",
+    "name": "Blooming Purple Moss Clump",
+    "price": 1500,
+    "quantity": -1,
+    "row": 6413
+   },
+   {
+    "id": 290,
+    "kind": "good",
+    "name": "Throwing Knife",
+    "price": 30,
+    "quantity": -1,
+    "row": 6414
+   },
+   {
+    "id": 292,
+    "kind": "good",
+    "name": "Firebomb",
+    "price": 100,
+    "quantity": -1,
+    "row": 6415
+   },
+   {
+    "id": 294,
+    "kind": "good",
+    "name": "Alluring Skull",
+    "price": 800,
+    "quantity": -1,
+    "row": 6416
+   },
+   {
+    "id": 296,
+    "kind": "good",
+    "name": "Lloyd's Talisman",
+    "price": 800,
+    "quantity": -1,
+    "row": 6417
+   },
+   {
+    "id": 297,
+    "kind": "good",
+    "name": "Black Firebomb",
+    "price": 800,
+    "quantity": -1,
+    "row": 6418
+   },
+   {
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone",
+    "price": 600,
+    "quantity": -1,
+    "row": 6419
+   },
+   {
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity",
+    "price": 10000,
+    "quantity": 13,
+    "row": 6420
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 20,
+    "quantity": -1,
+    "row": 6421
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 100,
+    "quantity": -1,
+    "row": 6422
+   },
+   {
+    "id": 2002000,
+    "kind": "weapon",
+    "name": "Feather Arrow",
+    "price": 200,
+    "quantity": -1,
+    "row": 6423
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 50,
+    "quantity": -1,
+    "row": 6424
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 150,
+    "quantity": -1,
+    "row": 6425
+   },
+   {
+    "id": 2102000,
+    "kind": "weapon",
+    "name": "Sniper Bolt",
+    "price": 400,
+    "quantity": -1,
+    "row": 6426
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m12_01_00_00",
+    "rows": [
+     6400,
+     6499
+    ],
+    "talk": "t121673",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "oswald-of-carim",
+  "name": "Oswald of Carim",
+  "rows": [
+   4400,
+   4499
+  ],
+  "stock": [
+   {
+    "id": 108,
+    "kind": "good",
+    "name": "Book of the Guilty",
+    "price": 1000,
+    "quantity": 1,
+    "row": 4400
+   },
+   {
+    "id": 274,
+    "kind": "good",
+    "name": "Purging Stone",
+    "price": 3000,
+    "quantity": 5,
+    "row": 4401
+   },
+   {
+    "id": 373,
+    "kind": "good",
+    "name": "Indictment",
+    "price": 200,
+    "quantity": -1,
+    "row": 4402
+   },
+   {
+    "id": 5700,
+    "kind": "good",
+    "name": "Miracle: Karmic Justice",
+    "price": 40000,
+    "quantity": 1,
+    "row": 4403
+   },
+   {
+    "id": 1367000,
+    "kind": "weapon",
+    "name": "Velka's Talisman",
+    "price": 5000,
+    "quantity": -1,
+    "row": 4404
+   },
+   {
+    "id": 109,
+    "kind": "ring",
+    "name": "Bloodbite Ring",
+    "price": 10000,
+    "quantity": 1,
+    "row": 4405
+   },
+   {
+    "id": 110,
+    "kind": "ring",
+    "name": "Poisonbite Ring",
+    "price": 15000,
+    "quantity": 1,
+    "row": 4406
+   },
+   {
+    "id": 126,
+    "kind": "ring",
+    "name": "Ring of Sacrifice",
+    "price": 5000,
+    "quantity": 10,
+    "row": 4407
+   },
+   {
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone",
+    "price": 500,
+    "quantity": -1,
+    "row": 4408
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_01_00_00",
+    "rows": [
+     4400,
+     4499
+    ],
+    "talk": "t101637",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "petrus-of-thorolund",
+  "name": "Petrus of Thorolund",
+  "rows": [
+   4000,
+   4099
+  ],
+  "stock": [
+   {
+    "id": 5000,
+    "kind": "good",
+    "name": "Miracle: Heal",
+    "price": 4000,
+    "quantity": 1,
+    "row": 4000
+   },
+   {
+    "id": 5020,
+    "kind": "good",
+    "name": "Great Heal Excerpt",
+    "price": 10000,
+    "quantity": 1,
+    "row": 4001
+   },
+   {
+    "id": 5210,
+    "kind": "good",
+    "name": "Homeward",
+    "price": 8000,
+    "quantity": 1,
+    "row": 4002
+   },
+   {
+    "id": 5300,
+    "kind": "good",
+    "name": "Miracle: Force",
+    "price": 4000,
+    "quantity": 1,
+    "row": 4003
+   },
+   {
+    "id": 5400,
+    "kind": "good",
+    "name": "Seek Guidance",
+    "price": 2000,
+    "quantity": 1,
+    "row": 4004
+   },
+   {
+    "id": 1360000,
+    "kind": "weapon",
+    "name": "Talisman",
+    "price": 1000,
+    "quantity": -1,
+    "row": 4005
+   },
+   {
+    "id": 1362000,
+    "kind": "weapon",
+    "name": "Thorolund Talisman",
+    "price": 5000,
+    "quantity": -1,
+    "row": 4006
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     4000,
+     4099
+    ],
+    "talk": "t102608",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "quelana-of-izalith",
+  "name": "Quelana of Izalith",
+  "rows": [
+   3400,
+   3499
+  ],
+  "stock": [
+   {
+    "id": 4000,
+    "kind": "good",
+    "name": "Pyromancy: Fireball",
+    "price": 800,
+    "quantity": 1,
+    "row": 3400
+   },
+   {
+    "id": 4010,
+    "kind": "good",
+    "name": "Fire Orb",
+    "price": 8000,
+    "quantity": 1,
+    "row": 3401
+   },
+   {
+    "id": 4020,
+    "kind": "good",
+    "name": "Pyromancy: Great Fireball",
+    "price": 20000,
+    "quantity": 1,
+    "row": 3402
+   },
+   {
+    "id": 4030,
+    "kind": "good",
+    "name": "Pyromancy: Firestorm",
+    "price": 30000,
+    "quantity": 1,
+    "row": 3403
+   },
+   {
+    "id": 4060,
+    "kind": "good",
+    "name": "Pyromancy: Fire Whip",
+    "price": 10000,
+    "quantity": 1,
+    "row": 3404
+   },
+   {
+    "id": 4100,
+    "kind": "good",
+    "name": "Pyromancy: Combustion",
+    "price": 500,
+    "quantity": 1,
+    "row": 3405
+   },
+   {
+    "id": 4110,
+    "kind": "good",
+    "name": "Great Combustion",
+    "price": 5000,
+    "quantity": 1,
+    "row": 3406
+   },
+   {
+    "id": 4360,
+    "kind": "good",
+    "name": "Pyromancy: Undead Rapport",
+    "price": 10000,
+    "quantity": 1,
+    "row": 3407
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m14_00_00_00",
+    "rows": [
+     3400,
+     3499
+    ],
+    "talk": "t140617",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "rhea-of-thorolund",
+  "name": "Rhea of Thorolund",
+  "rows": [
+   4200,
+   4299
+  ],
+  "stock": [
+   {
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing",
+    "price": 1000,
+    "quantity": 1,
+    "row": 4200
+   },
+   {
+    "id": 5000,
+    "kind": "good",
+    "name": "Miracle: Heal",
+    "price": 1000,
+    "quantity": 1,
+    "row": 4201
+   },
+   {
+    "id": 5020,
+    "kind": "good",
+    "name": "Great Heal Excerpt",
+    "price": 2000,
+    "quantity": 1,
+    "row": 4202
+   },
+   {
+    "id": 5210,
+    "kind": "good",
+    "name": "Homeward",
+    "price": 1000,
+    "quantity": 1,
+    "row": 4203
+   },
+   {
+    "id": 5300,
+    "kind": "good",
+    "name": "Miracle: Force",
+    "price": 1000,
+    "quantity": 1,
+    "row": 4204
+   },
+   {
+    "id": 5010,
+    "kind": "good",
+    "name": "Miracle: Great Heal",
+    "price": 10000,
+    "quantity": 1,
+    "row": 4205
+   },
+   {
+    "id": 5310,
+    "kind": "good",
+    "name": "Miracle: Wrath of the Gods",
+    "price": 10000,
+    "quantity": 1,
+    "row": 4206
+   },
+   {
+    "id": 5400,
+    "kind": "good",
+    "name": "Seek Guidance",
+    "price": 500,
+    "quantity": 1,
+    "row": 4207
+   },
+   {
+    "id": 5600,
+    "kind": "good",
+    "name": "Miracle: Magic Barrier",
+    "price": 6000,
+    "quantity": 1,
+    "row": 4208
+   },
+   {
+    "id": 1360000,
+    "kind": "weapon",
+    "name": "Talisman",
+    "price": 200,
+    "quantity": -1,
+    "row": 4209
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_01_00_00",
+    "rows": [
+     4200,
+     4299
+    ],
+    "talk": "t101607",
+    "when": []
+   },
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     4200,
+     4299
+    ],
+    "talk": "t102607",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "rickert-of-vinheim",
+  "name": "Rickert of Vinheim",
+  "rows": [
+   2100,
+   2199
+  ],
+  "stock": [
+   {
+    "id": 3000,
+    "kind": "good",
+    "name": "Sorcery: Soul Arrow",
+    "price": 2000,
+    "quantity": 1,
+    "row": 2100
+   },
+   {
+    "id": 3020,
+    "kind": "good",
+    "name": "Sorcery: Heavy Soul Arrow",
+    "price": 4000,
+    "quantity": 1,
+    "row": 2101
+   },
+   {
+    "id": 1300000,
+    "kind": "weapon",
+    "name": "Sorcerer's Catalyst",
+    "price": 500,
+    "quantity": -1,
+    "row": 2102
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m16_00_00_00",
+    "rows": [
+     2100,
+     2199
+    ],
+    "talk": "t160622",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "shiva-of-the-east",
+  "name": "Shiva of the East",
+  "rows": [
+   1700,
+   1799
+  ],
+  "stock": [
+   {
+    "id": 145,
+    "kind": "ring",
+    "name": "East Wood Grain Ring",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1700
+   },
+   {
+    "id": 303000,
+    "kind": "weapon",
+    "name": "Flamberge",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1701
+   },
+   {
+    "id": 306000,
+    "kind": "weapon",
+    "name": "Stone Greatsword",
+    "price": 15000,
+    "quantity": -1,
+    "row": 1702
+   },
+   {
+    "id": 352000,
+    "kind": "weapon",
+    "name": "Demon Great Machete",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1703
+   },
+   {
+    "id": 402000,
+    "kind": "weapon",
+    "name": "Shotel",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1704
+   },
+   {
+    "id": 500000,
+    "kind": "weapon",
+    "name": "Uchigatana",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1705
+   },
+   {
+    "id": 501000,
+    "kind": "weapon",
+    "name": "Washing Pole",
+    "price": 20000,
+    "quantity": -1,
+    "row": 1706
+   },
+   {
+    "id": 751000,
+    "kind": "weapon",
+    "name": "Demon's Greataxe",
+    "price": 10000,
+    "quantity": -1,
+    "row": 1707
+   },
+   {
+    "id": 902000,
+    "kind": "weapon",
+    "name": "Claw",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1708
+   },
+   {
+    "id": 1003000,
+    "kind": "weapon",
+    "name": "Demon's Spear",
+    "price": 15000,
+    "quantity": -1,
+    "row": 1709
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m14_00_00_00",
+    "rows": [
+     1700,
+     1799
+    ],
+    "talk": "t140631",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "trusty-patches",
+  "name": "Trusty Patches",
+  "rows": [
+   1600,
+   1699
+  ],
+  "stock": [
+   {
+    "id": 109,
+    "kind": "good",
+    "name": "Eye of Death",
+    "price": 3000,
+    "quantity": 3,
+    "row": 1600
+   },
+   {
+    "id": 240,
+    "kind": "good",
+    "name": "Divine Blessing",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1601
+   },
+   {
+    "id": 370,
+    "kind": "good",
+    "name": "Prism Stone",
+    "price": 10,
+    "quantity": -1,
+    "row": 1602
+   },
+   {
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity",
+    "price": 10000,
+    "quantity": 3,
+    "row": 1603
+   },
+   {
+    "id": 501,
+    "kind": "good",
+    "name": "Twin Humanities",
+    "price": 20000,
+    "quantity": 1,
+    "row": 1604
+   },
+   {
+    "id": 5000,
+    "kind": "good",
+    "name": "Miracle: Heal",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1605
+   },
+   {
+    "id": 5020,
+    "kind": "good",
+    "name": "Great Heal Excerpt",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1606
+   },
+   {
+    "id": 702000,
+    "kind": "weapon",
+    "name": "Crescent Axe",
+    "price": 10000,
+    "quantity": 1,
+    "row": 1607
+   },
+   {
+    "id": 801000,
+    "kind": "weapon",
+    "name": "Mace",
+    "price": 3000,
+    "quantity": -1,
+    "row": 1608
+   },
+   {
+    "id": 1361000,
+    "kind": "weapon",
+    "name": "Canvas Talisman",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1609
+   },
+   {
+    "id": 1362000,
+    "kind": "weapon",
+    "name": "Thorolund Talisman",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1610
+   },
+   {
+    "id": 590000,
+    "kind": "armor",
+    "name": "Mask of the Father",
+    "price": 8000,
+    "quantity": -1,
+    "row": 1611
+   },
+   {
+    "id": 600000,
+    "kind": "armor",
+    "name": "Mask of the Mother",
+    "price": 8000,
+    "quantity": -1,
+    "row": 1612
+   },
+   {
+    "id": 610000,
+    "kind": "armor",
+    "name": "Mask of the Child",
+    "price": 8000,
+    "quantity": -1,
+    "row": 1613
+   },
+   {
+    "id": 180000,
+    "kind": "armor",
+    "name": "Cleric Helm",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1614
+   },
+   {
+    "id": 181000,
+    "kind": "armor",
+    "name": "Cleric Armor",
+    "price": 7000,
+    "quantity": -1,
+    "row": 1615
+   },
+   {
+    "id": 182000,
+    "kind": "armor",
+    "name": "Cleric Gauntlets",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1616
+   },
+   {
+    "id": 183000,
+    "kind": "armor",
+    "name": "Cleric Leggings",
+    "price": 5000,
+    "quantity": -1,
+    "row": 1617
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     1600,
+     1699
+    ],
+    "talk": "t102632",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "undead-merchant-female",
+  "name": "Undead Merchant (Female)",
+  "rows": [
+   1200,
+   1299
+  ],
+  "stock": [
+   {
+    "id": 270,
+    "kind": "good",
+    "name": "Bloodred Moss Clump",
+    "price": 300,
+    "quantity": -1,
+    "row": 1200
+   },
+   {
+    "id": 271,
+    "kind": "good",
+    "name": "Purple Moss Clump",
+    "price": 500,
+    "quantity": -1,
+    "row": 1201
+   },
+   {
+    "id": 272,
+    "kind": "good",
+    "name": "Blooming Purple Moss Clump",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1202
+   },
+   {
+    "id": 291,
+    "kind": "good",
+    "name": "Poison Throwing Knife",
+    "price": 100,
+    "quantity": -1,
+    "row": 1203
+   },
+   {
+    "id": 293,
+    "kind": "good",
+    "name": "Dung Pie",
+    "price": 200,
+    "quantity": -1,
+    "row": 1204
+   },
+   {
+    "id": 294,
+    "kind": "good",
+    "name": "Alluring Skull",
+    "price": 500,
+    "quantity": -1,
+    "row": 1205
+   },
+   {
+    "id": 310,
+    "kind": "good",
+    "name": "Charcoal Pine Resin",
+    "price": 500,
+    "quantity": -1,
+    "row": 1206
+   },
+   {
+    "id": 312,
+    "kind": "good",
+    "name": "Transient Curse",
+    "price": 4000,
+    "quantity": 4,
+    "row": 1207
+   },
+   {
+    "id": 313,
+    "kind": "good",
+    "name": "Rotten Pine Resin",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1208
+   },
+   {
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone",
+    "price": 500,
+    "quantity": -1,
+    "row": 1209
+   },
+   {
+    "id": 370,
+    "kind": "good",
+    "name": "Prism Stone",
+    "price": 10,
+    "quantity": -1,
+    "row": 1210
+   },
+   {
+    "id": 500,
+    "kind": "good",
+    "name": "Humanity",
+    "price": 5000,
+    "quantity": 1,
+    "row": 1211
+   },
+   {
+    "id": 2003000,
+    "kind": "weapon",
+    "name": "Fire Arrow",
+    "price": 100,
+    "quantity": -1,
+    "row": 1212
+   },
+   {
+    "id": 2004000,
+    "kind": "weapon",
+    "name": "Poison Arrow",
+    "price": 100,
+    "quantity": -1,
+    "row": 1213
+   },
+   {
+    "id": 274,
+    "kind": "good",
+    "name": "Purging Stone",
+    "price": 6000,
+    "quantity": -1,
+    "row": 1214
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 1215
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 1216
+   },
+   {
+    "id": 2006000,
+    "kind": "weapon",
+    "name": "Wooden Arrow",
+    "price": 3,
+    "quantity": -1,
+    "row": 1217
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 1218
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 1219
+   },
+   {
+    "id": 2103000,
+    "kind": "weapon",
+    "name": "Wood Bolt",
+    "price": 10,
+    "quantity": -1,
+    "row": 1220
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_02_00_00",
+    "rows": [
+     1200,
+     1299
+    ],
+    "talk": "t102624",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "undead-merchant-male",
+  "name": "Undead Merchant (Male)",
+  "rows": [
+   1100,
+   1199
+  ],
+  "stock": [
+   {
+    "id": 106,
+    "kind": "good",
+    "name": "Orange Guidance Soapstone",
+    "price": 100,
+    "quantity": 1,
+    "row": 1100
+   },
+   {
+    "id": 280,
+    "kind": "good",
+    "name": "Repair Powder",
+    "price": 500,
+    "quantity": -1,
+    "row": 1101
+   },
+   {
+    "id": 290,
+    "kind": "good",
+    "name": "Throwing Knife",
+    "price": 10,
+    "quantity": -1,
+    "row": 1102
+   },
+   {
+    "id": 292,
+    "kind": "good",
+    "name": "Firebomb",
+    "price": 50,
+    "quantity": -1,
+    "row": 1103
+   },
+   {
+    "id": 296,
+    "kind": "good",
+    "name": "Lloyd's Talisman",
+    "price": 500,
+    "quantity": -1,
+    "row": 1104
+   },
+   {
+    "id": 2021,
+    "kind": "good",
+    "name": "Residence Key",
+    "price": 1000,
+    "quantity": 1,
+    "row": 1105
+   },
+   {
+    "id": 2602,
+    "kind": "good",
+    "name": "Repairbox",
+    "price": 3000,
+    "quantity": 1,
+    "row": 1106
+   },
+   {
+    "id": 100000,
+    "kind": "weapon",
+    "name": "Dagger",
+    "price": 300,
+    "quantity": -1,
+    "row": 1107
+   },
+   {
+    "id": 200000,
+    "kind": "weapon",
+    "name": "Shortsword",
+    "price": 600,
+    "quantity": -1,
+    "row": 1108
+   },
+   {
+    "id": 400000,
+    "kind": "weapon",
+    "name": "Scimitar",
+    "price": 600,
+    "quantity": -1,
+    "row": 1110
+   },
+   {
+    "id": 601000,
+    "kind": "weapon",
+    "name": "Rapier",
+    "price": 600,
+    "quantity": -1,
+    "row": 1111
+   },
+   {
+    "id": 700000,
+    "kind": "weapon",
+    "name": "Hand Axe",
+    "price": 450,
+    "quantity": -1,
+    "row": 1112
+   },
+   {
+    "id": 800000,
+    "kind": "weapon",
+    "name": "Club",
+    "price": 150,
+    "quantity": -1,
+    "row": 1113
+   },
+   {
+    "id": 809000,
+    "kind": "weapon",
+    "name": "Reinforced Club",
+    "price": 350,
+    "quantity": -1,
+    "row": 1114
+   },
+   {
+    "id": 1000000,
+    "kind": "weapon",
+    "name": "Spear",
+    "price": 600,
+    "quantity": -1,
+    "row": 1115
+   },
+   {
+    "id": 1200000,
+    "kind": "weapon",
+    "name": "Short Bow",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1116
+   },
+   {
+    "id": 1400000,
+    "kind": "weapon",
+    "name": "East-West Shield",
+    "price": 400,
+    "quantity": -1,
+    "row": 1117
+   },
+   {
+    "id": 1403000,
+    "kind": "weapon",
+    "name": "Small Leather Shield",
+    "price": 600,
+    "quantity": -1,
+    "row": 1118
+   },
+   {
+    "id": 1405000,
+    "kind": "weapon",
+    "name": "Buckler",
+    "price": 800,
+    "quantity": -1,
+    "row": 1119
+   },
+   {
+    "id": 1408000,
+    "kind": "weapon",
+    "name": "Leather Shield",
+    "price": 800,
+    "quantity": -1,
+    "row": 1120
+   },
+   {
+    "id": 1450000,
+    "kind": "weapon",
+    "name": "Heater Shield",
+    "price": 1000,
+    "quantity": -1,
+    "row": 1121
+   },
+   {
+    "id": 1460000,
+    "kind": "weapon",
+    "name": "Warrior's Round Shield",
+    "price": 800,
+    "quantity": -1,
+    "row": 1122
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 1123
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 1124
+   },
+   {
+    "id": 2006000,
+    "kind": "weapon",
+    "name": "Wooden Arrow",
+    "price": 3,
+    "quantity": -1,
+    "row": 1125
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 1126
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 1127
+   },
+   {
+    "id": 2103000,
+    "kind": "weapon",
+    "name": "Wood Bolt",
+    "price": 10,
+    "quantity": -1,
+    "row": 1128
+   },
+   {
+    "id": 170000,
+    "kind": "armor",
+    "name": "Chain Helm",
+    "price": 500,
+    "quantity": -1,
+    "row": 1129
+   },
+   {
+    "id": 171000,
+    "kind": "armor",
+    "name": "Chain Armor",
+    "price": 800,
+    "quantity": -1,
+    "row": 1130
+   },
+   {
+    "id": 172000,
+    "kind": "armor",
+    "name": "Leather Gauntlets",
+    "price": 500,
+    "quantity": -1,
+    "row": 1131
+   },
+   {
+    "id": 173000,
+    "kind": "armor",
+    "name": "Chain Leggings",
+    "price": 500,
+    "quantity": -1,
+    "row": 1132
+   },
+   {
+    "id": 2608,
+    "kind": "good",
+    "name": "Bottomless Box",
+    "price": 1000,
+    "quantity": 1,
+    "row": 1133
+   },
+   {
+    "id": 385,
+    "kind": "good",
+    "name": "Dried Finger",
+    "price": 2000,
+    "quantity": 1,
+    "row": 1134
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m10_01_00_00",
+    "rows": [
+     1100,
+     1199
+    ],
+    "talk": "t101623",
+    "when": []
+   }
+  ]
+ },
+ {
+  "id": "vamos",
+  "name": "Vamos",
+  "rows": [
+   6300,
+   6399
+  ],
+  "stock": [
+   {
+    "id": 330,
+    "kind": "good",
+    "name": "Homeward Bone",
+    "price": 500,
+    "quantity": -1,
+    "row": 6300
+   },
+   {
+    "id": 1000,
+    "kind": "good",
+    "name": "Titanite Shard",
+    "price": 800,
+    "quantity": -1,
+    "row": 6301
+   },
+   {
+    "id": 2600,
+    "kind": "good",
+    "name": "Weapon Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6302
+   },
+   {
+    "id": 2601,
+    "kind": "good",
+    "name": "Armor Smithbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6303
+   },
+   {
+    "id": 2602,
+    "kind": "good",
+    "name": "Repairbox",
+    "price": 2000,
+    "quantity": 1,
+    "row": 6304
+   },
+   {
+    "id": 2000000,
+    "kind": "weapon",
+    "name": "Standard Arrow",
+    "price": 10,
+    "quantity": -1,
+    "row": 6305
+   },
+   {
+    "id": 2001000,
+    "kind": "weapon",
+    "name": "Large Arrow",
+    "price": 50,
+    "quantity": -1,
+    "row": 6306
+   },
+   {
+    "id": 2006000,
+    "kind": "weapon",
+    "name": "Wooden Arrow",
+    "price": 3,
+    "quantity": -1,
+    "row": 6307
+   },
+   {
+    "id": 2100000,
+    "kind": "weapon",
+    "name": "Standard Bolt",
+    "price": 30,
+    "quantity": -1,
+    "row": 6308
+   },
+   {
+    "id": 2101000,
+    "kind": "weapon",
+    "name": "Heavy Bolt",
+    "price": 100,
+    "quantity": -1,
+    "row": 6309
+   },
+   {
+    "id": 2103000,
+    "kind": "weapon",
+    "name": "Wood Bolt",
+    "price": 10,
+    "quantity": -1,
+    "row": 6310
+   }
+  ],
+  "variants": [
+   {
+    "flags": [],
+    "map": "m13_00_00_00",
+    "rows": [
+     6300,
+     6399
+    ],
+    "talk": "t130620",
+    "when": []
+   }
+  ]
+ }
+]

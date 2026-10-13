@@ -1,0 +1,266 @@
+[
+ {
+  "entityId": 1021960,
+  "flag": 200,
+  "name": "Firelink Shrine",
+  "region": "firelink-shrine"
+ },
+ {
+  "entityId": 1321960,
+  "flag": 201,
+  "name": "Ash Lake 2 - Stone Dragon",
+  "region": "ash-lake"
+ },
+ {
+  "entityId": 1401960,
+  "flag": 202,
+  "name": "Blighttown 3 - Daughter of Chaos",
+  "region": "lower-blighttown-after-quelaag"
+ },
+ {
+  "entityId": 1511960,
+  "flag": 203,
+  "name": "Anor Londo 1 - Firekeeper",
+  "region": "anor-londo"
+ },
+ {
+  "entityId": 1601950,
+  "flag": 204,
+  "name": "The Abyss",
+  "region": "the-abyss-after-four-kings"
+ },
+ {
+  "entityId": 1011961,
+  "flag": 205,
+  "name": "Undead Burg 2 - Sunlight Altar",
+  "region": "upper-undead-burg-hellkite-bridge"
+ },
+ {
+  "entityId": 1311950,
+  "flag": 206,
+  "name": "Tomb of the Giants 3 - Altar of the Gravelord",
+  "region": "tomb-of-the-giants-after-nito"
+ },
+ {
+  "entityId": 1511950,
+  "flag": 207,
+  "name": "Anor Londo 4 - Chamber of the Princess",
+  "region": "anor-londo-after-gwyndolin"
+ },
+ {
+  "entityId": 1511962,
+  "flag": 208,
+  "name": "Anor Londo 2 - Darkmoon Tomb",
+  "region": "anor-londo-after-first-fog"
+ },
+ {
+  "entityId": 1211963,
+  "flag": 209,
+  "name": "Oolacile 1 - Sanctuary Garden",
+  "region": "sanctuary-garden"
+ },
+ {
+  "entityId": 1211961,
+  "flag": 210,
+  "name": "Oolacile 2 - Sanctuary",
+  "region": "oolacile-sanctuary"
+ },
+ {
+  "entityId": 1211962,
+  "flag": 211,
+  "name": "Oolacile 3 - Township",
+  "region": "oolacile-township"
+ },
+ {
+  "entityId": 1211950,
+  "flag": 212,
+  "name": "Chasm of the Abyss",
+  "region": "chasm-of-the-abyss-manus"
+ },
+ {
+  "entityId": 1211964,
+  "flag": 213,
+  "name": "Oolacile 4 - Township Dungeon",
+  "region": "oolacile-township"
+ },
+ {
+  "entityId": 1001960,
+  "flag": 214,
+  "name": "Depths",
+  "region": "depths"
+ },
+ {
+  "entityId": 1011964,
+  "flag": 215,
+  "name": "Undead Parish",
+  "region": "undead-parish"
+ },
+ {
+  "entityId": 1101960,
+  "flag": 216,
+  "name": "Painted World of Ariamis",
+  "region": "painted-world-of-ariamis"
+ },
+ {
+  "entityId": 1311961,
+  "flag": 217,
+  "name": "Tomb of the Giants 1 - Patches",
+  "region": "tomb-of-the-giants"
+ },
+ {
+  "entityId": 1701960,
+  "flag": 218,
+  "name": "Duke's Archives 3 - Balcony",
+  "region": "the-dukes-archives-after-archive-tower-giant-door-key"
+ },
+ {
+  "entityId": 1701950,
+  "flag": 219,
+  "name": "Crystal Cave",
+  "region": "crystal-cave-after-seath"
+ },
+ {
+  "entityId": 1301962,
+  "flag": 220,
+  "name": "Catacombs 3 - Vamos",
+  "region": "the-catacombs-after-door-1"
+ },
+ {
+  "entityId": 1811960,
+  "flag": 221,
+  "name": "Undead Asylum 1 - Courtyard",
+  "region": "northern-undead-asylum"
+ },
+ {
+  "entityId": 1811961,
+  "flag": 222,
+  "name": "Undead Asylum 2 - Interior",
+  "region": "northern-undead-asylum"
+ },
+ {
+  "entityId": 1011962,
+  "flag": 223,
+  "name": "Undead Burg 1",
+  "region": "upper-undead-burg"
+ },
+ {
+  "entityId": 1401962,
+  "flag": 224,
+  "name": "Blighttown 1 - Catwalk",
+  "region": "upper-blighttown-depths-side"
+ },
+ {
+  "entityId": 1401961,
+  "flag": 225,
+  "name": "Blighttown 2 - Swamp",
+  "region": "lower-blighttown"
+ },
+ {
+  "entityId": 1201961,
+  "flag": 226,
+  "name": "Darkroot Garden",
+  "region": "darkroot-garden-before-fog"
+ },
+ {
+  "entityId": 1601961,
+  "flag": 227,
+  "name": "Darkroot Basin",
+  "region": "darkroot-basin"
+ },
+ {
+  "entityId": 1321962,
+  "flag": 228,
+  "name": "The Great Hollow",
+  "region": "the-great-hollow"
+ },
+ {
+  "entityId": 1321961,
+  "flag": 229,
+  "name": "Ash Lake 1 - Entrance",
+  "region": "ash-lake"
+ },
+ {
+  "entityId": 1501961,
+  "flag": 230,
+  "name": "Sen's Fortress",
+  "region": "sens-fortress-after-second-fog"
+ },
+ {
+  "entityId": 1511961,
+  "flag": 231,
+  "name": "Anor Londo 3 - Residence",
+  "region": "anor-londo-after-second-fog"
+ },
+ {
+  "entityId": 1701962,
+  "flag": 232,
+  "name": "Duke's Archives 1 - Entrance",
+  "region": "the-dukes-archives"
+ },
+ {
+  "entityId": 1701961,
+  "flag": 233,
+  "name": "Duke's Archives 2 - Cell",
+  "region": "the-dukes-archives-after-first-seath-encounter"
+ },
+ {
+  "entityId": 1411961,
+  "flag": 234,
+  "name": "Demon Ruins 1 - Entrance",
+  "region": "demon-ruins-early"
+ },
+ {
+  "entityId": 1411962,
+  "flag": 235,
+  "name": "Demon Ruins 2 - Staircase",
+  "region": "demon-ruins"
+ },
+ {
+  "entityId": 1411963,
+  "flag": 236,
+  "name": "Demon Ruins 3 - Toward Izalith",
+  "region": "demon-ruins-after-demon-firesage"
+ },
+ {
+  "entityId": 1411964,
+  "flag": 237,
+  "name": "Lost Izalith 1 - Lava Pits",
+  "region": "lost-izalith"
+ },
+ {
+  "entityId": 1411960,
+  "flag": 238,
+  "name": "Lost Izalith 2 - Past Illusory Wall",
+  "region": "lost-izalith"
+ },
+ {
+  "entityId": 1411950,
+  "flag": 239,
+  "name": "Lost Izalith 3 - Heart of Chaos",
+  "region": "lost-izalith-bed-of-chaos"
+ },
+ {
+  "entityId": 1301960,
+  "flag": 240,
+  "name": "Catacombs 1 - Entrance",
+  "region": "the-catacombs"
+ },
+ {
+  "entityId": 1301961,
+  "flag": 241,
+  "name": "Catacombs 2 - Past Illusory Wall",
+  "region": "the-catacombs-after-door-1"
+ },
+ {
+  "entityId": 1311960,
+  "flag": 242,
+  "name": "Tomb of the Giants 2 - Before Golden Fog",
+  "region": "tomb-of-the-giants-after-white-fog"
+ },
+ {
+  "entityId": 1801960,
+  "flag": 243,
+  "name": "Firelink Altar - Lordvessel",
+  "region": "firelink-altar-with-lordvessel"
+ }
+]

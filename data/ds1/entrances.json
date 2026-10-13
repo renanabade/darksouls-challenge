@@ -1,0 +1,1674 @@
+[
+ {
+  "from": "anor-londo",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo-after-first-fog",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo",
+  "note": "Bat Wing Demon ride back to Sen's Fortress: m15_01 event 11510240, talk to character 1510100 at the Anor Londo start. Lost for good if the player attacks that demon (event 11515050 disables it; flag 11515050). Missing from DSAP (2026-10-12).",
+  "origin": "override",
+  "requires": true,
+  "to": "sens-fortress-after-iron-golem",
+  "walkBack": false
+ },
+ {
+  "from": "anor-londo",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel Placed"
+  },
+  "to": "the-dukes-archives",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-after-first-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo-after-second-fog",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-after-first-fog",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Darkmoon Seance Ring"
+    },
+    {
+     "region": "anor-londo-after-ornstein-and-smough"
+    }
+   ]
+  },
+  "to": "anor-londo-gwyndolin",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-after-first-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo-painting-room",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-after-second-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo-giant-blacksmith",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-after-second-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo-ornstein-and-smough",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-giant-blacksmith",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "3-blacksmiths-smithboxen",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-giant-blacksmith",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "4-merchants-repairbox",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-gwyndolin",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Gwyndolin Defeated"
+  },
+  "to": "anor-londo-after-gwyndolin",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-ornstein-and-smough",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Ornstein and Smough Defeated"
+  },
+  "to": "anor-londo-after-ornstein-and-smough",
+  "walkBack": true
+ },
+ {
+  "from": "anor-londo-painting-room",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Peculiar Doll"
+  },
+  "to": "painted-world-of-ariamis",
+  "walkBack": false
+ },
+ {
+  "from": "chasm-of-the-abyss",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "chasm-of-the-abyss-manus",
+  "walkBack": true
+ },
+ {
+  "from": "chasm-of-the-abyss",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "oolacile-township",
+  "walkBack": true
+ },
+ {
+  "from": "crystal-cave",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Seath the Scaleless Defeated"
+  },
+  "to": "crystal-cave-after-seath",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-basin",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Princess Dusk Rescued"
+  },
+  "to": "darkroot-basin-princess-dusk",
+  "walkBack": false
+ },
+ {
+  "from": "darkroot-basin",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-garden-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-basin",
+  "note": "Ladder next to the Hydra in Darkroot Basin reaches the area behind the Crest of Artorias door. Confirmed by Renan, 2026-10-11. Missing from DSAP.",
+  "origin": "override",
+  "requires": true,
+  "to": "darkroot-garden-behind-artorias-door",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-basin",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Broken Pendant"
+  },
+  "to": "sanctuary-garden",
+  "walkBack": false
+ },
+ {
+  "from": "darkroot-basin",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-basin",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Watchtower Basement Key"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "watchtower-basement",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-garden-moonlight-butterfly",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-basin",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-garden",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden-before-fog",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Crest of Artorias"
+  },
+  "to": "darkroot-garden-behind-artorias-door",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish",
+  "walkBack": true
+ },
+ {
+  "from": "darkroot-garden-moonlight-butterfly",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Moonlight Butterfly Defeated"
+  },
+  "to": "darkroot-garden-after-moonlight-butterfly",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Orange Charred Ring"
+  },
+  "to": "demon-ruins-after-orange-charred-ring",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel Placed"
+  },
+  "to": "demon-ruins-demon-firesage",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-after-demon-firesage",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "demon-ruins-centipede-demon",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-centipede-demon",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Orange Charred Ring"
+  },
+  "to": "lost-izalith",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-demon-firesage",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Demon Firesage Defeated"
+  },
+  "to": "demon-ruins-after-demon-firesage",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-early",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "all": [
+    {
+     "region": "demon-ruins-ceaseless-discharge"
+    },
+    {
+     "has": "Ceaseless Discharge Defeated"
+    }
+   ]
+  },
+  "to": "demon-ruins",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-early",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "demon-ruins-ceaseless-discharge",
+  "walkBack": true
+ },
+ {
+  "from": "demon-ruins-early",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown-after-quelaag",
+  "walkBack": true
+ },
+ {
+  "from": "depths",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "depths-gaping-dragon",
+  "walkBack": true
+ },
+ {
+  "from": "depths",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Blighttown Key"
+  },
+  "to": "depths-to-blighttown-door",
+  "walkBack": true
+ },
+ {
+  "from": "depths-gaping-dragon",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Gaping Dragon Defeated"
+  },
+  "to": "depths-after-gaping-dragon",
+  "walkBack": true
+ },
+ {
+  "from": "depths-to-blighttown-door",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-blighttown-depths-side",
+  "walkBack": true
+ },
+ {
+  "from": "door-between-upper-new-londo-and-valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-new-londo-ruins",
+  "walkBack": true
+ },
+ {
+  "from": "door-between-upper-new-londo-and-valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-altar",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel"
+  },
+  "to": "firelink-altar-with-lordvessel",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-altar",
+  "note": "Frampt carries the player back: m18_00 event 11806200 (reads Frampt state flags 1643-1645 and 824). Return trip of the serpent route; DSAP only models the way in (2026-10-12).",
+  "origin": "override",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": false
+ },
+ {
+  "from": "firelink-altar",
+  "note": "Kaathe carries the player back to the Abyss: m18_00 event 11806201 (reads Kaathe state flags 1672-1674 and 825). Return trip of the serpent route (2026-10-12).",
+  "origin": "override",
+  "requires": true,
+  "to": "the-abyss-after-four-kings",
+  "walkBack": false
+ },
+ {
+  "from": "firelink-altar-with-lordvessel",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "has": "Lord Soul (Bed of Chaos)"
+    },
+    {
+     "has": "Lord Soul (Nito)"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Four Kings)"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Seath)"
+    },
+    {
+     "has": "Lordvessel"
+    }
+   ]
+  },
+  "to": "kiln-of-the-first-flame",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "has": "Bell of Awakening #1"
+    },
+    {
+     "has": "Bell of Awakening #2"
+    }
+   ]
+  },
+  "to": "firelink-altar",
+  "walkBack": false
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "region": "depths"
+    },
+    {
+     "has": "Bell of Awakening #1"
+    },
+    {
+     "has": "Bell of Awakening #2"
+    }
+   ]
+  },
+  "to": "firelink-shrine-domhnall-of-zena",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "region": "lower-undead-burg-after-residence-key"
+  },
+  "to": "firelink-shrine-griggs-of-vinheim",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "region": "depths"
+  },
+  "to": "firelink-shrine-laurentius-of-the-great-swamp",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine-petrus-of-thorolund",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "region": "tomb-of-the-giants"
+  },
+  "to": "firelink-shrine-rhea-of-thorolund",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Gravelord Nito Defeated"
+  },
+  "to": "firelink-shrine-trusty-patches",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-new-londo-ruins",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-after-undead-parish-elevator",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-after-undead-parish-elevator",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum-second-visit",
+  "walkBack": false
+ },
+ {
+  "from": "firelink-shrine-domhnall-of-zena",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "2-merchants-bottomless-box",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-domhnall-of-zena",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Gwyndolin Defeated"
+  },
+  "to": "firelink-shrine-domhnall-of-zena-after-gwyndolin",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-domhnall-of-zena",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Iron Golem Defeated"
+  },
+  "to": "firelink-shrine-domhnall-of-zena-after-iron-golem",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-domhnall-of-zena",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Ornstein and Smough Defeated"
+  },
+  "to": "firelink-shrine-domhnall-of-zena-after-o-s",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-domhnall-of-zena",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Artorias the Abysswalker Defeated"
+  },
+  "to": "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine-griggs-of-vinheim",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "region": "sens-fortress-after-cage-key"
+    },
+    {
+     "region": "the-dukes-archives-out-of-cell"
+    }
+   ]
+  },
+  "to": "firelink-shrine-griggs-of-vinheim-after-logan-leaves",
+  "walkBack": true
+ },
+ {
+  "from": "kiln-of-the-first-flame",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "kiln-of-the-first-flame-gwyn",
+  "walkBack": true
+ },
+ {
+  "from": "lost-izalith",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "demon-ruins-shortcut",
+  "walkBack": true
+ },
+ {
+  "from": "lost-izalith",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lost-izalith-bed-of-chaos",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown-fog",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown-quelaag",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": {
+   "region": "firelink-shrine-laurentius-of-the-great-swamp"
+  },
+  "to": "lower-blighttown-quelana-of-izalith",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": {
+   "region": "darkroot-garden-behind-artorias-door"
+  },
+  "to": "lower-blighttown-shiva-of-the-east",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-great-hollow",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-blighttown-votd-side",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown-after-quelaag",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "demon-ruins-early",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown-after-quelaag",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown-eingyi",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-blighttown-depths-side",
+  "walkBack": true
+ },
+ {
+  "from": "lower-blighttown-quelaag",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Chaos Witch Quelaag Defeated"
+  },
+  "to": "lower-blighttown-after-quelaag",
+  "walkBack": true
+ },
+ {
+  "from": "lower-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-new-londo-ruins-fog",
+  "walkBack": true
+ },
+ {
+  "from": "lower-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Covenant of Artorias"
+  },
+  "to": "the-abyss",
+  "walkBack": false
+ },
+ {
+  "from": "lower-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Key to Depths"
+  },
+  "to": "depths",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Residence Key"
+  },
+  "to": "lower-undead-burg-after-residence-key",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-undead-burg-capra-demon",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-undead-burg-female-undead-merchant",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg",
+  "walkBack": true
+ },
+ {
+  "from": "lower-undead-burg-capra-demon",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Capra Demon Defeated"
+  },
+  "to": "lower-undead-burg-after-capra-demon",
+  "walkBack": true
+ },
+ {
+  "from": "new-londo-ruins-door-to-the-seal",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-new-londo-ruins",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum-after-fog",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-after-f2-east-door",
+  "note": "The Big Pilgrim's Key is awarded by the Asylum Demon kill (event Event_970, flag 16, lot 2660: Big Pilgrim's Key + Demon's Great Hammer). Killing the Asylum Demon is mandatory; the first encounter is not (Renan, 2026-10-11). DSAP treats this door as always open.",
+  "origin": "override",
+  "requires": {
+   "has": "Big Pilgrim's Key"
+  },
+  "to": "northern-undead-asylum-big-pilgrim-door",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-after-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum-f2-east-door",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-big-pilgrim-door",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": false
+ },
+ {
+  "from": "northern-undead-asylum-f2-east-door",
+  "note": "ObjActParam 8537 requires Undead Asylum F2 East Key (good 2012), which DSAP places in 'Northern Undead Asylum - After Fog' (Oscar). DSAP leaves the door open (2026-10-12).",
+  "origin": "override",
+  "requires": {
+   "has": "Undead Asylum F2 East Key"
+  },
+  "to": "northern-undead-asylum-after-f2-east-door",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-second-visit",
+  "note": "crow ride from the Asylum (second visit) back to Firelink",
+  "origin": "way back",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": false
+ },
+ {
+  "from": "northern-undead-asylum-second-visit",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum-second-visit-cell",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-second-visit",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Undead Asylum F2 West Key"
+  },
+  "to": "northern-undead-asylum-second-visit-f2-west-door",
+  "walkBack": true
+ },
+ {
+  "from": "northern-undead-asylum-second-visit-f2-west-door",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum-second-visit-behind-f2-west-door",
+  "walkBack": true
+ },
+ {
+  "from": "oolacile-sanctuary",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "oolacile-sanctuary-elizabeth",
+  "walkBack": true
+ },
+ {
+  "from": "oolacile-sanctuary",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "royal-wood",
+  "walkBack": true
+ },
+ {
+  "from": "oolacile-sanctuary-elizabeth",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-basin-princess-dusk",
+  "walkBack": false
+ },
+ {
+  "from": "oolacile-township",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "chasm-of-the-abyss",
+  "walkBack": true
+ },
+ {
+  "from": "oolacile-township",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Skull Lantern"
+    },
+    {
+     "has": "Sunlight Maggot"
+    }
+   ]
+  },
+  "to": "oolacile-township-behind-light-dispelled-walls",
+  "walkBack": true
+ },
+ {
+  "from": "oolacile-township",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Crest Key"
+  },
+  "to": "royal-wood-hawkeye-gough",
+  "walkBack": true
+ },
+ {
+  "from": "painted-world-of-ariamis",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "painted-world-of-ariamis-after-fog",
+  "walkBack": true
+ },
+ {
+  "from": "painted-world-of-ariamis-after-fog",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Annex Key"
+  },
+  "to": "painted-world-of-ariamis-after-annex-key",
+  "walkBack": true
+ },
+ {
+  "from": "painted-world-of-ariamis-after-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "painted-world-of-ariamis-crossbreed-priscilla",
+  "walkBack": true
+ },
+ {
+  "from": "painted-world-of-ariamis-crossbreed-priscilla",
+  "note": "Painted World exit to Anor Londo: m11_00 event 11100710 (PlayCutscene to ANOR_LONDO). It fires only while flag 1691 (Priscilla hostile) is off or after she dies, so leaving without killing her is possible if she was never attacked. The 'hostile and alive' trap is a state, not an item, and is listed in traps.json. Missing from DSAP (2026-10-12).",
+  "origin": "override",
+  "requires": true,
+  "to": "anor-londo-painting-room",
+  "walkBack": false
+ },
+ {
+  "from": "royal-wood",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "royal-wood-artorias",
+  "walkBack": true
+ },
+ {
+  "from": "royal-wood",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "royal-wood-marvelous-chester",
+  "walkBack": true
+ },
+ {
+  "from": "royal-wood-artorias",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Artorias the Abysswalker Defeated"
+  },
+  "to": "oolacile-township",
+  "walkBack": true
+ },
+ {
+  "from": "royal-wood-hawkeye-gough",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "royal-wood-after-hawkeye-gough",
+  "walkBack": true
+ },
+ {
+  "from": "sanctuary-garden",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "sanctuary-garden-sanctuary-guardian",
+  "walkBack": true
+ },
+ {
+  "from": "sanctuary-garden-sanctuary-guardian",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Sanctuary Guardian Defeated"
+  },
+  "to": "oolacile-sanctuary",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "sens-fortress-after-first-fog",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress-after-first-fog",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Cage Key"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "sens-fortress-after-cage-key",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress-after-first-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "sens-fortress-after-second-fog",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress-after-iron-golem",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "anor-londo",
+  "walkBack": false
+ },
+ {
+  "from": "sens-fortress-after-second-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "sens-fortress-crestfallen-merchant",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress-after-second-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "sens-fortress-iron-golem",
+  "walkBack": true
+ },
+ {
+  "from": "sens-fortress-iron-golem",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Iron Golem Defeated"
+  },
+  "to": "sens-fortress-after-iron-golem",
+  "walkBack": true
+ },
+ {
+  "from": "the-abyss",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Four Kings Defeated"
+  },
+  "to": "the-abyss-after-four-kings",
+  "walkBack": true
+ },
+ {
+  "from": "the-abyss-after-four-kings",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-altar",
+  "walkBack": false
+ },
+ {
+  "from": "the-catacombs",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs-door-1",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-after-door-1",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs-fog",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-after-door-1",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs-pinwheel",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-after-door-1",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs-vamos",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-after-pinwheel",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "tomb-of-the-giants",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-door-1",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-catacombs-after-door-1",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-pinwheel",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Pinwheel Defeated"
+  },
+  "to": "the-catacombs-after-pinwheel",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-vamos",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "3-blacksmiths-smithboxen",
+  "walkBack": true
+ },
+ {
+  "from": "the-catacombs-vamos",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "4-merchants-repairbox",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-dukes-archives-after-first-seath-encounter",
+  "walkBack": false
+ },
+ {
+  "from": "the-dukes-archives",
+  "origin": "DSAP",
+  "requires": {
+   "region": "crystal-cave-after-seath"
+  },
+  "to": "the-dukes-archives-first-arena-after-seaths-death",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Princess Dusk Rescued"
+  },
+  "to": "the-dukes-archives-golem-after-dusk-rescue",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-archive-prison-extra-key",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-dukes-archives-out-of-cell",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-archive-tower-cell-key",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-dukes-archives-out-of-cell",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "note": "walking from the second library back to the first library and the elevator to Seath's study",
+  "origin": "way back",
+  "requires": true,
+  "to": "the-dukes-archives",
+  "walkBack": false
+ },
+ {
+  "from": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "region": "sens-fortress-after-cage-key"
+    },
+    {
+     "region": "the-dukes-archives-giant-cell"
+    },
+    {
+     "region": "crystal-cave-after-seath"
+    }
+   ]
+  },
+  "to": "the-dukes-archives-big-hat-logan",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "the-dukes-archives-courtyard",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-first-seath-encounter",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Archive Prison Extra Key"
+  },
+  "to": "the-dukes-archives-after-archive-prison-extra-key",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-after-first-seath-encounter",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Archive Tower Cell Key"
+  },
+  "to": "the-dukes-archives-after-archive-tower-cell-key",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-courtyard",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "crystal-cave",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-out-of-cell",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Archive Tower Giant Door Key"
+  },
+  "to": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "walkBack": true
+ },
+ {
+  "from": "the-dukes-archives-out-of-cell",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Archive Tower Giant Cell Key"
+  },
+  "to": "the-dukes-archives-giant-cell",
+  "walkBack": true
+ },
+ {
+  "from": "the-great-hollow",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "ash-lake",
+  "walkBack": true
+ },
+ {
+  "from": "tomb-of-the-giants",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "tomb-of-the-giants-after-white-fog",
+  "walkBack": true
+ },
+ {
+  "from": "tomb-of-the-giants-after-white-fog",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel Placed"
+  },
+  "to": "tomb-of-the-giants-behind-golden-fog-wall",
+  "walkBack": true
+ },
+ {
+  "from": "tomb-of-the-giants-behind-golden-fog-wall",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "tomb-of-the-giants-nito",
+  "walkBack": true
+ },
+ {
+  "from": "tomb-of-the-giants-nito",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Gravelord Nito Defeated"
+  },
+  "to": "tomb-of-the-giants-after-nito",
+  "walkBack": true
+ },
+ {
+  "from": "undead-asylum-cell",
+  "note": "ObjActParam 8540 (Asylum cell doors) requires Dungeon Cell Key (good 2010); the key is in the starting cell (treasure in region 'Undead Asylum Cell'). DSAP leaves the door open (2026-10-12).",
+  "origin": "override",
+  "requires": {
+   "has": "Dungeon Cell Key"
+  },
+  "to": "undead-asylum-cell-door",
+  "walkBack": true
+ },
+ {
+  "from": "undead-asylum-cell-door",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "northern-undead-asylum",
+  "walkBack": true
+ },
+ {
+  "from": "undead-burg-basement-door",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-undead-burg",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-garden-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine-after-undead-parish-elevator",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "has": "Bell of Awakening #1"
+    },
+    {
+     "has": "Bell of Awakening #2"
+    }
+   ]
+  },
+  "to": "sens-fortress",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-andre-of-astora",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-bell-gargoyles",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-fog",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-andre-of-astora",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "3-blacksmiths-smithboxen",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-andre-of-astora",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "4-merchants-repairbox",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-fog",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-hellkite-bridge",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-bell-gargoyles",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-oswald-of-carim",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-blighttown-depths-side",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel"
+  },
+  "to": "lower-blighttown",
+  "walkBack": true
+ },
+ {
+  "from": "upper-blighttown-depths-side",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-blighttown-votd-side",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "lower-blighttown",
+  "walkBack": true
+ },
+ {
+  "from": "upper-blighttown-votd-side",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Key to New Londo Ruins"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "door-between-upper-new-londo-and-valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-new-londo-ruins-after-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-new-londo-ruins-rickert-of-vinheim",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins-after-fog",
+  "origin": "DSAP",
+  "requires": {
+   "all": [
+    {
+     "has": "Key to the Seal"
+    },
+    {
+     "region": "anor-londo-after-ornstein-and-smough"
+    }
+   ]
+  },
+  "to": "new-londo-ruins-door-to-the-seal",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins-after-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-new-londo-ruins-ingward",
+  "walkBack": true
+ },
+ {
+  "from": "upper-new-londo-ruins-after-fog",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Lordvessel"
+  },
+  "to": "upper-new-londo-ruins-ingward-after-lordvessel",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-male-undead-merchant",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Residence Key"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "upper-undead-burg-pine-resin-chest",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-taurus-demon",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Watchtower Basement Key"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "watchtower-basement",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "firelink-shrine",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-before-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-fog",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-hellkite-bridge",
+  "origin": "DSAP",
+  "requires": {
+   "has": "Basement Key"
+  },
+  "to": "undead-burg-basement-door",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-hellkite-bridge",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "undead-parish-before-fog",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-hellkite-bridge",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-male-undead-merchant",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "2-merchants-bottomless-box",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-male-undead-merchant",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "4-merchants-repairbox",
+  "walkBack": true
+ },
+ {
+  "from": "upper-undead-burg-taurus-demon",
+  "origin": "DSAP + boss gate override",
+  "requires": {
+   "has": "Taurus Demon Defeated"
+  },
+  "to": "upper-undead-burg-hellkite-bridge",
+  "walkBack": true
+ },
+ {
+  "from": "valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-basin",
+  "walkBack": true
+ },
+ {
+  "from": "valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": {
+   "any": [
+    {
+     "has": "Key to New Londo Ruins"
+    },
+    {
+     "has": "Master Key"
+    }
+   ]
+  },
+  "to": "door-between-upper-new-londo-and-valley-of-the-drakes",
+  "walkBack": true
+ },
+ {
+  "from": "valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-blighttown-votd-side",
+  "walkBack": true
+ },
+ {
+  "from": "valley-of-the-drakes",
+  "origin": "DSAP",
+  "requires": {
+   "region": "the-abyss-after-four-kings"
+  },
+  "to": "valley-of-the-drakes-after-defeating-four-kings",
+  "walkBack": true
+ },
+ {
+  "from": "watchtower-basement",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "darkroot-basin",
+  "walkBack": true
+ },
+ {
+  "from": "watchtower-basement",
+  "origin": "DSAP",
+  "requires": true,
+  "to": "upper-undead-burg",
+  "walkBack": true
+ }
+]

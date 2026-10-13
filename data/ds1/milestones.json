@@ -1,0 +1,306 @@
+[
+ {
+  "earliestSphere": 7,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 2,
+  "id": "boss-gaping-dragon",
+  "kind": "boss",
+  "name": "Gaping Dragon defeated",
+  "region": "depths-gaping-dragon"
+ },
+ {
+  "earliestSphere": 4,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 3,
+  "id": "boss-bell-gargoyles",
+  "kind": "boss",
+  "name": "Bell Gargoyles defeated",
+  "region": "undead-parish-bell-gargoyles"
+ },
+ {
+  "earliestSphere": 7,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 4,
+  "id": "boss-crossbreed-priscilla",
+  "kind": "boss",
+  "name": "Crossbreed Priscilla defeated",
+  "region": "painted-world-of-ariamis-crossbreed-priscilla"
+ },
+ {
+  "earliestSphere": 4,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 5,
+  "id": "boss-great-grey-wolf-sif",
+  "kind": "boss",
+  "name": "Great Grey Wolf Sif defeated",
+  "region": "darkroot-garden-behind-artorias-door"
+ },
+ {
+  "earliestSphere": 3,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 6,
+  "id": "boss-pinwheel",
+  "kind": "boss",
+  "name": "Pinwheel defeated",
+  "region": "the-catacombs-pinwheel"
+ },
+ {
+  "earliestSphere": 10,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 7,
+  "id": "boss-gravelord-nito",
+  "kind": "boss",
+  "name": "Gravelord Nito defeated",
+  "region": "tomb-of-the-giants-nito"
+ },
+ {
+  "earliestSphere": 4,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 9,
+  "id": "boss-chaos-witch-quelaag",
+  "kind": "boss",
+  "name": "Chaos Witch Quelaag defeated",
+  "region": "lower-blighttown-quelaag"
+ },
+ {
+  "earliestSphere": 12,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 10,
+  "id": "boss-bed-of-chaos",
+  "kind": "boss",
+  "name": "Bed of Chaos defeated",
+  "region": "lost-izalith-bed-of-chaos"
+ },
+ {
+  "earliestSphere": 6,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11,
+  "id": "boss-iron-golem",
+  "kind": "boss",
+  "name": "Iron Golem defeated",
+  "region": "sens-fortress-iron-golem"
+ },
+ {
+  "earliestSphere": 7,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 12,
+  "id": "boss-ornstein-and-smough",
+  "kind": "boss",
+  "name": "Ornstein and Smough defeated",
+  "region": "anor-londo-ornstein-and-smough"
+ },
+ {
+  "earliestSphere": 10,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 13,
+  "id": "boss-4-kings",
+  "kind": "boss",
+  "name": "4 Kings defeated",
+  "region": "the-abyss"
+ },
+ {
+  "earliestSphere": 12,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 14,
+  "id": "boss-seath-the-scaleless",
+  "kind": "boss",
+  "name": "Seath the Scaleless defeated",
+  "region": "crystal-cave"
+ },
+ {
+  "earliestSphere": 14,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 15,
+  "id": "boss-gwyn-lord-of-cinder",
+  "kind": "boss",
+  "name": "Gwyn, Lord of Cinder defeated",
+  "region": "kiln-of-the-first-flame-gwyn"
+ },
+ {
+  "earliestSphere": 2,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 16,
+  "id": "boss-asylum-demon",
+  "kind": "boss",
+  "name": "Asylum Demon defeated",
+  "region": "northern-undead-asylum-after-f2-east-door"
+ },
+ {
+  "earliestSphere": 3,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11010901,
+  "id": "boss-taurus-demon",
+  "kind": "boss",
+  "name": "Taurus Demon defeated",
+  "region": "upper-undead-burg-taurus-demon"
+ },
+ {
+  "earliestSphere": 5,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11010902,
+  "id": "boss-capra-demon",
+  "kind": "boss",
+  "name": "Capra Demon defeated",
+  "region": "lower-undead-burg-capra-demon"
+ },
+ {
+  "earliestSphere": 4,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11200900,
+  "id": "boss-moonlight-butterfly",
+  "kind": "boss",
+  "name": "Moonlight Butterfly defeated",
+  "region": "darkroot-garden-moonlight-butterfly"
+ },
+ {
+  "earliestSphere": 11,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11210000,
+  "id": "boss-sanctuary-guardian",
+  "kind": "boss",
+  "name": "Sanctuary Guardian defeated",
+  "region": "sanctuary-garden-sanctuary-guardian"
+ },
+ {
+  "earliestSphere": 12,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11210001,
+  "id": "boss-knight-artorias",
+  "kind": "boss",
+  "name": "Knight Artorias defeated",
+  "region": "royal-wood-artorias"
+ },
+ {
+  "earliestSphere": 13,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11210002,
+  "id": "boss-manus-father-of-the-abyss",
+  "kind": "boss",
+  "name": "Manus, Father of the Abyss defeated",
+  "region": "chasm-of-the-abyss-manus"
+ },
+ {
+  "earliestSphere": 14,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11210004,
+  "id": "boss-black-dragon-kalameet",
+  "kind": "boss",
+  "name": "Black Dragon Kalameet defeated",
+  "region": "royal-wood-after-hawkeye-gough"
+ },
+ {
+  "earliestSphere": 10,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11410410,
+  "id": "boss-demon-firesage",
+  "kind": "boss",
+  "name": "Demon Firesage defeated",
+  "region": "demon-ruins-demon-firesage"
+ },
+ {
+  "earliestSphere": 5,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11410900,
+  "id": "boss-ceaseless-discharge",
+  "kind": "boss",
+  "name": "Ceaseless Discharge defeated",
+  "region": "demon-ruins-ceaseless-discharge"
+ },
+ {
+  "earliestSphere": 11,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11410901,
+  "id": "boss-centipede-demon",
+  "kind": "boss",
+  "name": "Centipede Demon defeated",
+  "region": "demon-ruins-centipede-demon"
+ },
+ {
+  "earliestSphere": 7,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11510900,
+  "id": "boss-gwyndolin",
+  "kind": "boss",
+  "name": "Gwyndolin defeated",
+  "region": "anor-londo-gwyndolin"
+ },
+ {
+  "earliestSphere": 4,
+  "evidence": "boss flag from the world build (Event_970 / boss events)",
+  "flag": 11810900,
+  "id": "boss-stray-demon",
+  "kind": "boss",
+  "name": "Stray Demon defeated",
+  "region": "northern-undead-asylum-second-visit"
+ },
+ {
+  "evidence": "m10_01 event 11010700 waits for the bell lever (object action 11010700) and ends",
+  "flag": 11010700,
+  "id": "bell-undead-parish",
+  "kind": "bell",
+  "name": "Undead Parish bell rung"
+ },
+ {
+  "evidence": "m14_00 event 11400200 waits for the bell lever (object action 11400201), enables 11400200",
+  "flag": 11400200,
+  "id": "bell-quelaags-domain",
+  "kind": "bell",
+  "name": "Quelaag's Domain bell rung"
+ },
+ {
+  "evidence": "set by whichever bell event runs second (11010700 / 11400200)",
+  "flag": 11500200,
+  "id": "both-bells",
+  "kind": "bell",
+  "name": "Both bells rung"
+ },
+ {
+  "evidence": "common event 710 waits for PlayerHasGood(2510) (Lordvessel) and enables 710",
+  "flag": 710,
+  "id": "lordvessel-obtained",
+  "kind": "lordvessel",
+  "name": "Lordvessel obtained"
+ },
+ {
+  "evidence": "m18_00 event 11800100 (end flag); read by 16 scripts",
+  "flag": 11800100,
+  "id": "lordvessel-placed",
+  "kind": "lordvessel",
+  "name": "Lordvessel placed at the Firelink Altar"
+ },
+ {
+  "evidence": "m18_00 event 11800200 enables 11800201–11800204",
+  "flag": 11800201,
+  "id": "lord-souls-placed-1",
+  "kind": "lord-souls",
+  "name": "Lord Soul placed (slot 1)"
+ },
+ {
+  "evidence": "m18_00 event 11800200",
+  "flag": 11800202,
+  "id": "lord-souls-placed-2",
+  "kind": "lord-souls",
+  "name": "Lord Soul placed (slot 2)"
+ },
+ {
+  "evidence": "m18_00 event 11800200",
+  "flag": 11800203,
+  "id": "lord-souls-placed-3",
+  "kind": "lord-souls",
+  "name": "Lord Soul placed (slot 3)"
+ },
+ {
+  "evidence": "m18_00 event 11800200",
+  "flag": 11800204,
+  "id": "lord-souls-placed-4",
+  "kind": "lord-souls",
+  "name": "Lord Soul placed (slot 4)"
+ },
+ {
+  "evidence": "m18_00 event 11800210 (end flag; also enables 11800211)",
+  "flag": 11800210,
+  "id": "kiln-open",
+  "kind": "kiln",
+  "name": "Kiln of the First Flame opened"
+ }
+]

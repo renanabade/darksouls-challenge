@@ -1,0 +1,113 @@
+[
+ {
+  "area": "painted-world-of-ariamis",
+  "exits": [
+   {
+    "means": "jump",
+    "requires": "Priscilla not hostile, or dead",
+    "source": "m11 event 11100710"
+   }
+  ],
+  "id": "painted-world",
+  "notWorking": [
+   "warp (common event 706)",
+   "homeward-bone (Renan 2026-10-12)",
+   "darksign (assumed same as Homeward Bone)"
+  ],
+  "note": "Entering sets the respawn point inside (m15_01 event 11510230)."
+ },
+ {
+  "areas": [
+   "sanctuary-garden",
+   "oolacile-sanctuary",
+   "royal-wood",
+   "oolacile-township",
+   "chasm-of-the-abyss"
+  ],
+  "exits": [
+   {
+    "means": "warp",
+    "requires": "sit at a lit DLC bonfire; Lordvessel (flag 710)",
+    "source": "Renan 2026-10-12; common event 706"
+   },
+   {
+    "means": "darksign"
+   },
+   {
+    "means": "homeward-bone"
+   },
+   {
+    "means": "death",
+    "requires": "no DLC bonfire rested at yet"
+   }
+  ],
+  "id": "dlc",
+  "note": "No walking or scripted way back to Darkroot exists in the game data."
+ },
+ {
+  "exits": [
+   {
+    "means": "warp",
+    "requires": "Four Kings dead (bonfire)"
+   },
+   {
+    "means": "darksign"
+   },
+   {
+    "means": "homeward-bone"
+   },
+   {
+    "means": "serpent",
+    "requires": "Kaathe (m16 event 11606200)"
+   }
+  ],
+  "id": "abyss",
+  "note": "No walking exit (Fandom; Renan 2026-10-11).",
+  "regions": [
+   "the-abyss"
+  ]
+ },
+ {
+  "exits": [
+   {
+    "means": "serpent",
+    "requires": "the serpent who brought you (m18 events 11806200 / 11806201)"
+   },
+   {
+    "means": "warp"
+   },
+   {
+    "means": "darksign"
+   },
+   {
+    "means": "homeward-bone"
+   }
+  ],
+  "id": "firelink-altar",
+  "regions": [
+   "firelink-altar",
+   "firelink-altar-with-lordvessel"
+  ]
+ },
+ {
+  "exits": [
+   {
+    "means": "key",
+    "requires": "Archive Tower Cell Key (Manserpent jailer drop, lot 26900100)"
+   },
+   {
+    "means": "darksign"
+   },
+   {
+    "means": "homeward-bone"
+   }
+  ],
+  "id": "archives-cell",
+  "notWorking": [
+   "warp inside region 1702402 (common event 706)"
+  ],
+  "regions": [
+   "the-dukes-archives-after-first-seath-encounter"
+  ]
+ }
+]

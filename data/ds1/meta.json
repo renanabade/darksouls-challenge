@@ -1,0 +1,23 @@
+{
+ "dataVersion": "0.1.0",
+ "game": "DARK SOULS: REMASTERED",
+ "glitches": false,
+ "goal": "Gwyn, Lord of Cinder Defeated",
+ "logicOptions": {
+  "BossFogwallSanity": false,
+  "CanWarpWithoutLordvessel": false,
+  "FogwallSanity": false,
+  "LogicToAccessCatacombs": "no_logic",
+  "LogicToAccessFirelinkAltar": "either_serpent",
+  "LogicToAccessTotG": "no_logic"
+ },
+ "sources": [
+  "Game files (extracted with Soulstruct, GPL-3.0-or-later)",
+  "DSAP (MIT): region graph and item locations",
+  "Souls Modding Wiki (CC BY-SA 4.0): merchant ranges, boss info",
+  "Hand corrections checked against the game's event scripts",
+  "Facts confirmed in play by the maintainer"
+ ],
+ "start": "undead-asylum-cell",
+ "steamBuild": 10943698
+}

@@ -1,0 +1,1080 @@
+[
+ {
+  "area": null,
+  "id": "2-merchants-bottomless-box",
+  "mandatory": false,
+  "name": "2 Merchants - Bottomless Box",
+  "virtual": true
+ },
+ {
+  "area": null,
+  "id": "3-blacksmiths-smithboxen",
+  "mandatory": false,
+  "name": "3 Blacksmiths - Smithboxen",
+  "virtual": true
+ },
+ {
+  "area": null,
+  "id": "4-merchants-repairbox",
+  "mandatory": false,
+  "name": "4 Merchants - Repairbox",
+  "virtual": true
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo",
+  "mandatory": true,
+  "name": "Anor Londo",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-after-first-fog",
+  "mandatory": true,
+  "name": "Anor Londo - After First Fog",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-after-gwyndolin",
+  "mandatory": false,
+  "name": "Anor Londo - After Gwyndolin",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-after-ornstein-and-smough",
+  "mandatory": true,
+  "name": "Anor Londo - After Ornstein and Smough",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-after-second-fog",
+  "mandatory": true,
+  "name": "Anor Londo - After Second Fog",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-giant-blacksmith",
+  "mandatory": false,
+  "name": "Anor Londo - Giant Blacksmith",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-gwyndolin",
+  "mandatory": false,
+  "name": "Anor Londo - Gwyndolin",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-ornstein-and-smough",
+  "mandatory": true,
+  "name": "Anor Londo - Ornstein and Smough",
+  "virtual": false
+ },
+ {
+  "area": "anor-londo",
+  "id": "anor-londo-painting-room",
+  "mandatory": false,
+  "name": "Anor Londo - Painting Room",
+  "virtual": false
+ },
+ {
+  "area": "ash-lake",
+  "id": "ash-lake",
+  "mandatory": false,
+  "name": "Ash Lake",
+  "virtual": false
+ },
+ {
+  "area": "chasm-of-the-abyss",
+  "id": "chasm-of-the-abyss",
+  "mandatory": false,
+  "name": "Chasm of the Abyss",
+  "virtual": false
+ },
+ {
+  "area": "chasm-of-the-abyss",
+  "id": "chasm-of-the-abyss-manus",
+  "mandatory": false,
+  "name": "Chasm of the Abyss - Manus",
+  "virtual": false
+ },
+ {
+  "area": "crystal-cave",
+  "id": "crystal-cave",
+  "mandatory": true,
+  "name": "Crystal Cave",
+  "virtual": false
+ },
+ {
+  "area": "crystal-cave",
+  "id": "crystal-cave-after-seath",
+  "mandatory": true,
+  "name": "Crystal Cave - After Seath",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-basin",
+  "id": "darkroot-basin",
+  "mandatory": false,
+  "name": "Darkroot Basin",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-basin",
+  "id": "darkroot-basin-princess-dusk",
+  "mandatory": false,
+  "name": "Darkroot Basin - Princess Dusk",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-garden",
+  "id": "darkroot-garden",
+  "mandatory": false,
+  "name": "Darkroot Garden",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-garden",
+  "id": "darkroot-garden-after-moonlight-butterfly",
+  "mandatory": false,
+  "name": "Darkroot Garden - After Moonlight Butterfly",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-garden",
+  "id": "darkroot-garden-before-fog",
+  "mandatory": false,
+  "name": "Darkroot Garden - Before Fog",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-garden",
+  "id": "darkroot-garden-behind-artorias-door",
+  "mandatory": false,
+  "name": "Darkroot Garden - Behind Artorias Door",
+  "virtual": false
+ },
+ {
+  "area": "darkroot-garden",
+  "id": "darkroot-garden-moonlight-butterfly",
+  "mandatory": false,
+  "name": "Darkroot Garden - Moonlight Butterfly",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins",
+  "mandatory": true,
+  "name": "Demon Ruins",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-after-demon-firesage",
+  "mandatory": true,
+  "name": "Demon Ruins - After Demon Firesage",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-after-orange-charred-ring",
+  "mandatory": false,
+  "name": "Demon Ruins - After Orange Charred Ring",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-ceaseless-discharge",
+  "mandatory": true,
+  "name": "Demon Ruins - Ceaseless Discharge",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-centipede-demon",
+  "mandatory": true,
+  "name": "Demon Ruins - Centipede Demon",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-demon-firesage",
+  "mandatory": true,
+  "name": "Demon Ruins - Demon Firesage",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-early",
+  "mandatory": true,
+  "name": "Demon Ruins - Early",
+  "virtual": false
+ },
+ {
+  "area": "demon-ruins",
+  "id": "demon-ruins-shortcut",
+  "mandatory": false,
+  "name": "Demon Ruins Shortcut",
+  "virtual": false
+ },
+ {
+  "area": "depths",
+  "id": "depths",
+  "mandatory": false,
+  "name": "Depths",
+  "virtual": false
+ },
+ {
+  "area": "depths",
+  "id": "depths-after-gaping-dragon",
+  "mandatory": false,
+  "name": "Depths - After Gaping Dragon",
+  "virtual": false
+ },
+ {
+  "area": "depths",
+  "id": "depths-gaping-dragon",
+  "mandatory": false,
+  "name": "Depths - Gaping Dragon",
+  "virtual": false
+ },
+ {
+  "area": "depths",
+  "id": "depths-to-blighttown-door",
+  "mandatory": false,
+  "name": "Depths to Blighttown Door",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "door-between-upper-new-londo-and-valley-of-the-drakes",
+  "mandatory": false,
+  "name": "Door between Upper New Londo and Valley of the Drakes",
+  "virtual": false
+ },
+ {
+  "area": "firelink-altar",
+  "id": "firelink-altar",
+  "mandatory": true,
+  "name": "Firelink Altar",
+  "virtual": false
+ },
+ {
+  "area": "firelink-altar",
+  "id": "firelink-altar-with-lordvessel",
+  "mandatory": true,
+  "name": "Firelink Altar - With Lordvessel",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine",
+  "mandatory": true,
+  "name": "Firelink Shrine",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-after-undead-parish-elevator",
+  "mandatory": false,
+  "name": "Firelink Shrine - After Undead Parish Elevator",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-domhnall-of-zena",
+  "mandatory": false,
+  "name": "Firelink Shrine - Domhnall of Zena",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-domhnall-of-zena-after-gwyndolin",
+  "mandatory": false,
+  "name": "Firelink Shrine - Domhnall of Zena After Gwyndolin",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-domhnall-of-zena-after-iron-golem",
+  "mandatory": false,
+  "name": "Firelink Shrine - Domhnall of Zena After Iron Golem",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-domhnall-of-zena-after-o-s",
+  "mandatory": false,
+  "name": "Firelink Shrine - Domhnall of Zena After O+S",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias",
+  "mandatory": false,
+  "name": "Firelink Shrine - Domhnall of Zena Under Aqueduct After Artorias",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-griggs-of-vinheim",
+  "mandatory": false,
+  "name": "Firelink Shrine - Griggs of Vinheim",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-griggs-of-vinheim-after-logan-leaves",
+  "mandatory": false,
+  "name": "Firelink Shrine - Griggs of Vinheim, After Logan Leaves",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-laurentius-of-the-great-swamp",
+  "mandatory": false,
+  "name": "Firelink Shrine - Laurentius of the Great Swamp",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-petrus-of-thorolund",
+  "mandatory": false,
+  "name": "Firelink Shrine - Petrus of Thorolund",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-rhea-of-thorolund",
+  "mandatory": false,
+  "name": "Firelink Shrine - Rhea of Thorolund",
+  "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-trusty-patches",
+  "mandatory": false,
+  "name": "Firelink Shrine - Trusty Patches",
+  "virtual": false
+ },
+ {
+  "area": "kiln-of-the-first-flame",
+  "id": "kiln-of-the-first-flame",
+  "mandatory": true,
+  "name": "Kiln of the First Flame",
+  "virtual": false
+ },
+ {
+  "area": "kiln-of-the-first-flame",
+  "id": "kiln-of-the-first-flame-gwyn",
+  "mandatory": true,
+  "name": "Kiln of the First Flame - Gwyn",
+  "virtual": false
+ },
+ {
+  "area": "lost-izalith",
+  "id": "lost-izalith",
+  "mandatory": true,
+  "name": "Lost Izalith",
+  "virtual": false
+ },
+ {
+  "area": "lost-izalith",
+  "id": "lost-izalith-bed-of-chaos",
+  "mandatory": true,
+  "name": "Lost Izalith - Bed of Chaos",
+  "virtual": false
+ },
+ {
+  "area": "blighttown",
+  "id": "lower-blighttown",
+  "mandatory": true,
+  "name": "Lower Blighttown",
+  "virtual": false
+ },
+ {
+  "area": "quelaags-domain",
+  "id": "lower-blighttown-after-quelaag",
+  "mandatory": true,
+  "name": "Lower Blighttown - After Quelaag",
+  "virtual": false
+ },
+ {
+  "area": "quelaags-domain",
+  "id": "lower-blighttown-eingyi",
+  "mandatory": false,
+  "name": "Lower Blighttown - Eingyi",
+  "virtual": false
+ },
+ {
+  "area": "quelaags-domain",
+  "id": "lower-blighttown-fog",
+  "mandatory": false,
+  "name": "Lower Blighttown - Fog",
+  "virtual": false
+ },
+ {
+  "area": "quelaags-domain",
+  "id": "lower-blighttown-quelaag",
+  "mandatory": true,
+  "name": "Lower Blighttown - Quelaag",
+  "virtual": false
+ },
+ {
+  "area": "blighttown",
+  "id": "lower-blighttown-quelana-of-izalith",
+  "mandatory": false,
+  "name": "Lower Blighttown - Quelana of Izalith",
+  "virtual": false
+ },
+ {
+  "area": "blighttown",
+  "id": "lower-blighttown-shiva-of-the-east",
+  "mandatory": false,
+  "name": "Lower Blighttown - Shiva of the East",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "lower-new-londo-ruins",
+  "mandatory": false,
+  "name": "Lower New Londo Ruins",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "lower-new-londo-ruins-fog",
+  "mandatory": false,
+  "name": "Lower New Londo Ruins - Fog",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "lower-undead-burg",
+  "mandatory": false,
+  "name": "Lower Undead Burg",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "lower-undead-burg-after-capra-demon",
+  "mandatory": false,
+  "name": "Lower Undead Burg - After Capra Demon",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "lower-undead-burg-after-residence-key",
+  "mandatory": false,
+  "name": "Lower Undead Burg - After Residence Key",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "lower-undead-burg-capra-demon",
+  "mandatory": false,
+  "name": "Lower Undead Burg - Capra Demon",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "lower-undead-burg-female-undead-merchant",
+  "mandatory": false,
+  "name": "Lower Undead Burg - Female Undead Merchant",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "new-londo-ruins-door-to-the-seal",
+  "mandatory": false,
+  "name": "New Londo Ruins Door to the Seal",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum",
+  "mandatory": true,
+  "name": "Northern Undead Asylum",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-after-f2-east-door",
+  "mandatory": true,
+  "name": "Northern Undead Asylum - After F2 East Door",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-after-fog",
+  "mandatory": true,
+  "name": "Northern Undead Asylum - After Fog",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-big-pilgrim-door",
+  "mandatory": true,
+  "name": "Northern Undead Asylum - Big Pilgrim Door",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-f2-east-door",
+  "mandatory": true,
+  "name": "Northern Undead Asylum - F2 East Door",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-second-visit",
+  "mandatory": false,
+  "name": "Northern Undead Asylum Second Visit",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-second-visit-behind-f2-west-door",
+  "mandatory": false,
+  "name": "Northern Undead Asylum Second Visit - Behind F2 West Door",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-second-visit-cell",
+  "mandatory": false,
+  "name": "Northern Undead Asylum Second Visit - Cell",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "northern-undead-asylum-second-visit-f2-west-door",
+  "mandatory": false,
+  "name": "Northern Undead Asylum Second Visit - F2 West Door",
+  "virtual": false
+ },
+ {
+  "area": "oolacile-sanctuary",
+  "id": "oolacile-sanctuary",
+  "mandatory": false,
+  "name": "Oolacile Sanctuary",
+  "virtual": false
+ },
+ {
+  "area": "oolacile-sanctuary",
+  "id": "oolacile-sanctuary-elizabeth",
+  "mandatory": false,
+  "name": "Oolacile Sanctuary - Elizabeth",
+  "virtual": false
+ },
+ {
+  "area": "oolacile-township",
+  "id": "oolacile-township",
+  "mandatory": false,
+  "name": "Oolacile Township",
+  "virtual": false
+ },
+ {
+  "area": "oolacile-township",
+  "id": "oolacile-township-behind-light-dispelled-walls",
+  "mandatory": false,
+  "name": "Oolacile Township - Behind Light-Dispelled Walls",
+  "virtual": false
+ },
+ {
+  "area": "painted-world-of-ariamis",
+  "id": "painted-world-of-ariamis",
+  "mandatory": false,
+  "name": "Painted World of Ariamis",
+  "virtual": false
+ },
+ {
+  "area": "painted-world-of-ariamis",
+  "id": "painted-world-of-ariamis-after-annex-key",
+  "mandatory": false,
+  "name": "Painted World of Ariamis - After Annex Key",
+  "virtual": false
+ },
+ {
+  "area": "painted-world-of-ariamis",
+  "id": "painted-world-of-ariamis-after-fog",
+  "mandatory": false,
+  "name": "Painted World of Ariamis - After Fog",
+  "virtual": false
+ },
+ {
+  "area": "painted-world-of-ariamis",
+  "id": "painted-world-of-ariamis-crossbreed-priscilla",
+  "mandatory": false,
+  "name": "Painted World of Ariamis - Crossbreed Priscilla",
+  "virtual": false
+ },
+ {
+  "area": "royal-wood",
+  "id": "royal-wood",
+  "mandatory": false,
+  "name": "Royal Wood",
+  "virtual": false
+ },
+ {
+  "area": "royal-wood",
+  "id": "royal-wood-after-hawkeye-gough",
+  "mandatory": false,
+  "name": "Royal Wood - After Hawkeye Gough",
+  "virtual": false
+ },
+ {
+  "area": "royal-wood",
+  "id": "royal-wood-artorias",
+  "mandatory": false,
+  "name": "Royal Wood - Artorias",
+  "virtual": false
+ },
+ {
+  "area": "royal-wood",
+  "id": "royal-wood-hawkeye-gough",
+  "mandatory": false,
+  "name": "Royal Wood - Hawkeye Gough",
+  "virtual": false
+ },
+ {
+  "area": "royal-wood",
+  "id": "royal-wood-marvelous-chester",
+  "mandatory": false,
+  "name": "Royal Wood - Marvelous Chester",
+  "virtual": false
+ },
+ {
+  "area": "sanctuary-garden",
+  "id": "sanctuary-garden",
+  "mandatory": false,
+  "name": "Sanctuary Garden",
+  "virtual": false
+ },
+ {
+  "area": "sanctuary-garden",
+  "id": "sanctuary-garden-sanctuary-guardian",
+  "mandatory": false,
+  "name": "Sanctuary Garden - Sanctuary Guardian",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress",
+  "mandatory": true,
+  "name": "Sen's Fortress",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-after-cage-key",
+  "mandatory": false,
+  "name": "Sen's Fortress - After Cage Key",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-after-first-fog",
+  "mandatory": true,
+  "name": "Sen's Fortress - After First Fog",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-after-iron-golem",
+  "mandatory": true,
+  "name": "Sen's Fortress - After Iron Golem",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-after-second-fog",
+  "mandatory": true,
+  "name": "Sen's Fortress - After Second Fog",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-crestfallen-merchant",
+  "mandatory": false,
+  "name": "Sen's Fortress - Crestfallen Merchant",
+  "virtual": false
+ },
+ {
+  "area": "sens-fortress",
+  "id": "sens-fortress-iron-golem",
+  "mandatory": true,
+  "name": "Sen's Fortress - Iron Golem",
+  "virtual": false
+ },
+ {
+  "area": "the-abyss",
+  "id": "the-abyss",
+  "mandatory": false,
+  "name": "The Abyss",
+  "virtual": false
+ },
+ {
+  "area": "the-abyss",
+  "id": "the-abyss-after-four-kings",
+  "mandatory": true,
+  "name": "The Abyss - After Four Kings",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs",
+  "mandatory": true,
+  "name": "The Catacombs",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-after-door-1",
+  "mandatory": true,
+  "name": "The Catacombs - After Door 1",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-after-pinwheel",
+  "mandatory": true,
+  "name": "The Catacombs - After Pinwheel",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-door-1",
+  "mandatory": true,
+  "name": "The Catacombs - Door 1",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-fog",
+  "mandatory": false,
+  "name": "The Catacombs - Fog",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-pinwheel",
+  "mandatory": true,
+  "name": "The Catacombs - Pinwheel",
+  "virtual": false
+ },
+ {
+  "area": "the-catacombs",
+  "id": "the-catacombs-vamos",
+  "mandatory": false,
+  "name": "The Catacombs - Vamos",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives",
+  "mandatory": true,
+  "name": "The Duke's Archives",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-after-archive-prison-extra-key",
+  "mandatory": false,
+  "name": "The Duke's Archives - After Archive Prison Extra Key",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-after-archive-tower-cell-key",
+  "mandatory": true,
+  "name": "The Duke's Archives - After Archive Tower Cell Key",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-after-archive-tower-giant-door-key",
+  "mandatory": true,
+  "name": "The Duke's Archives - After Archive Tower Giant Door Key",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-after-first-seath-encounter",
+  "mandatory": true,
+  "name": "The Duke's Archives - After First Seath Encounter",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-big-hat-logan",
+  "mandatory": false,
+  "name": "The Duke's Archives - Big Hat Logan",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-courtyard",
+  "mandatory": true,
+  "name": "The Duke's Archives - Courtyard",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-first-arena-after-seaths-death",
+  "mandatory": false,
+  "name": "The Duke's Archives - First Arena after Seath's Death",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-giant-cell",
+  "mandatory": false,
+  "name": "The Duke's Archives - Giant Cell",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-golem-after-dusk-rescue",
+  "mandatory": false,
+  "name": "The Duke's Archives - Golem After Dusk Rescue",
+  "virtual": false
+ },
+ {
+  "area": "the-dukes-archives",
+  "id": "the-dukes-archives-out-of-cell",
+  "mandatory": true,
+  "name": "The Duke's Archives - Out of Cell",
+  "virtual": false
+ },
+ {
+  "area": "the-great-hollow",
+  "id": "the-great-hollow",
+  "mandatory": false,
+  "name": "The Great Hollow",
+  "virtual": false
+ },
+ {
+  "area": "tomb-of-the-giants",
+  "id": "tomb-of-the-giants",
+  "mandatory": true,
+  "name": "Tomb of the Giants",
+  "virtual": false
+ },
+ {
+  "area": "tomb-of-the-giants",
+  "id": "tomb-of-the-giants-after-nito",
+  "mandatory": true,
+  "name": "Tomb of the Giants - After Nito",
+  "virtual": false
+ },
+ {
+  "area": "tomb-of-the-giants",
+  "id": "tomb-of-the-giants-after-white-fog",
+  "mandatory": true,
+  "name": "Tomb of the Giants - After White Fog",
+  "virtual": false
+ },
+ {
+  "area": "tomb-of-the-giants",
+  "id": "tomb-of-the-giants-behind-golden-fog-wall",
+  "mandatory": true,
+  "name": "Tomb of the Giants - Behind Golden Fog Wall",
+  "virtual": false
+ },
+ {
+  "area": "tomb-of-the-giants",
+  "id": "tomb-of-the-giants-nito",
+  "mandatory": true,
+  "name": "Tomb of the Giants - Nito",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "undead-asylum-cell",
+  "mandatory": false,
+  "name": "Undead Asylum Cell",
+  "virtual": false
+ },
+ {
+  "area": "northern-undead-asylum",
+  "id": "undead-asylum-cell-door",
+  "mandatory": true,
+  "name": "Undead Asylum Cell Door",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "undead-burg-basement-door",
+  "mandatory": false,
+  "name": "Undead Burg Basement Door",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish",
+  "mandatory": true,
+  "name": "Undead Parish",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-andre-of-astora",
+  "mandatory": false,
+  "name": "Undead Parish - Andre of Astora",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-before-fog",
+  "mandatory": true,
+  "name": "Undead Parish - Before Fog",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-bell-gargoyles",
+  "mandatory": true,
+  "name": "Undead Parish - Bell Gargoyles",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-fog",
+  "mandatory": true,
+  "name": "Undead Parish - Fog",
+  "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-oswald-of-carim",
+  "mandatory": false,
+  "name": "Undead Parish - Oswald of Carim",
+  "virtual": false
+ },
+ {
+  "area": "blighttown",
+  "id": "upper-blighttown-depths-side",
+  "mandatory": false,
+  "name": "Upper Blighttown Depths Side",
+  "virtual": false
+ },
+ {
+  "area": "blighttown",
+  "id": "upper-blighttown-votd-side",
+  "mandatory": false,
+  "name": "Upper Blighttown VotD Side",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "upper-new-londo-ruins",
+  "mandatory": false,
+  "name": "Upper New Londo Ruins",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "upper-new-londo-ruins-after-fog",
+  "mandatory": false,
+  "name": "Upper New Londo Ruins - After Fog",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "upper-new-londo-ruins-ingward",
+  "mandatory": false,
+  "name": "Upper New Londo Ruins - Ingward",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "upper-new-londo-ruins-ingward-after-lordvessel",
+  "mandatory": false,
+  "name": "Upper New Londo Ruins - Ingward, After Lordvessel",
+  "virtual": false
+ },
+ {
+  "area": "new-londo-ruins",
+  "id": "upper-new-londo-ruins-rickert-of-vinheim",
+  "mandatory": false,
+  "name": "Upper New Londo Ruins - Rickert of Vinheim",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg",
+  "mandatory": true,
+  "name": "Upper Undead Burg",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-before-fog",
+  "mandatory": true,
+  "name": "Upper Undead Burg - Before Fog",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-fog",
+  "mandatory": true,
+  "name": "Upper Undead Burg - Fog",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-hellkite-bridge",
+  "mandatory": true,
+  "name": "Upper Undead Burg - Hellkite Bridge",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-male-undead-merchant",
+  "mandatory": false,
+  "name": "Upper Undead Burg - Male Undead Merchant",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-pine-resin-chest",
+  "mandatory": false,
+  "name": "Upper Undead Burg - Pine Resin Chest",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "upper-undead-burg-taurus-demon",
+  "mandatory": true,
+  "name": "Upper Undead Burg - Taurus Demon",
+  "virtual": false
+ },
+ {
+  "area": "valley-of-drakes",
+  "id": "valley-of-the-drakes",
+  "mandatory": false,
+  "name": "Valley of the Drakes",
+  "virtual": false
+ },
+ {
+  "area": "valley-of-drakes",
+  "id": "valley-of-the-drakes-after-defeating-four-kings",
+  "mandatory": false,
+  "name": "Valley of the Drakes - After Defeating Four Kings",
+  "virtual": false
+ },
+ {
+  "area": "undead-burg",
+  "id": "watchtower-basement",
+  "mandatory": false,
+  "name": "Watchtower Basement",
+  "virtual": false
+ }
+]
