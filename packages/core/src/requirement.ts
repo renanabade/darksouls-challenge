@@ -38,6 +38,19 @@ export function itemsOf(requirement: Requirement): Set<string> {
   return items;
 }
 
+/** Every region an expression mentions. The counterpart of itemsOf. */
+export function regionsOf(requirement: Requirement): Set<string> {
+  const regions = new Set<string>();
+  const visit = (r: Requirement): void => {
+    if (typeof r === "boolean" || "has" in r) return;
+    if ("region" in r) regions.add(r.region);
+    else if ("all" in r) r.all.forEach(visit);
+    else r.any.forEach(visit);
+  };
+  visit(requirement);
+  return regions;
+}
+
 export class RequirementParseError extends Error {
   readonly path: string;
 
