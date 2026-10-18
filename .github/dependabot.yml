@@ -7,6 +7,13 @@ updates:
     groups:
       dev-tooling:
         dependency-type: development
+    ignore:
+      # typescript-eslint does not support TypeScript 7 yet (ADR 0001).
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      # Node types follow the Node version the project runs on (24).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: build
       include: scope
