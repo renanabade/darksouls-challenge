@@ -1,0 +1,23 @@
+name: Order idea
+description: Suggest a new order (a rule a challenge can give).
+labels: [idea]
+body:
+  - type: textarea
+    id: order
+    attributes:
+      label: The order
+      description: The text the manual would show, e.g. "In {area}, do not use any shield."
+    validations:
+      required: true
+  - type: textarea
+    id: pieces
+    attributes:
+      label: When it starts and how long it lasts
+      description: The trigger (run start, entering an area, defeating a boss...) and the scope (run, area, fight...).
+  - type: textarea
+    id: possible
+    attributes:
+      label: How to know it is possible
+      description: >
+        Every challenge must be possible to finish. What could make this order impossible, and what game data
+        would tell?

@@ -4,7 +4,8 @@ A challenge generator for Dark Souls: Remastered. It does not modify the game: i
 self-imposed rules, told in the voice of a game master — and guarantees that every challenge it generates is
 possible to finish.
 
-> **Status:** early development. The game data set is done (`data/ds1/`); the domain core is next.
+> **Status:** early development. The game data set (`data/ds1/`) is done. The domain core loads it, holds the order
+> catalog as data, and validates the orders that depend on the world graph; build and weapon checks are next.
 
 ## How it works
 
@@ -18,7 +19,7 @@ possible to finish.
 | Path             | What                                                                      |
 | ---------------- | ------------------------------------------------------------------------- |
 | `data/ds1/`      | The Dark Souls: Remastered data set and its schema (`data/ds1/SCHEMA.md`) |
-| `packages/core/` | Domain core in pure TypeScript: requirement expressions (more to come)    |
+| `packages/core/` | Domain core in pure TypeScript: world graph, order catalog, validator     |
 | `docs/adr/`      | Architecture decision records                                             |
 
 ## Development
@@ -31,7 +32,9 @@ pnpm check   # format, lint, typecheck, tests: the same as CI
 pnpm build
 ```
 
-Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), checked on commit.
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), checked on commit. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and
+[SECURITY.md](SECURITY.md).
 
 ## Licenses
 
