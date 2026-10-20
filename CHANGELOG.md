@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.3.0...darksouls-challenge-v0.4.0) (2026-10-20)
+
+
+### Features
+
+* **cli:** generate a challenge from the command line ([faff778](https://github.com/renanabade/darksouls-challenge/commit/faff7787f49eb36767fdd590989194a21149f5df))
+* **core:** generate static challenges from a seed ([2fef1be](https://github.com/renanabade/darksouls-challenge/commit/2fef1be345610852bab55abf5e9d5182f1ff4a9d))
+
 ## [0.3.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.2.0...darksouls-challenge-v0.3.0) (2026-10-20)
 
 
