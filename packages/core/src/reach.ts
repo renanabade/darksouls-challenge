@@ -1,5 +1,5 @@
 import { evaluate, type RequirementContext } from "./requirement.js";
-import type { World } from "./world.js";
+import type { Location, World } from "./world.js";
 
 export interface ReachOptions {
   /** What the player already holds at the start (a starting gift, for example). */
@@ -8,6 +8,8 @@ export interface ReachOptions {
   readonly forbiddenItems?: ReadonlySet<string>;
   /** Regions the player never enters. */
   readonly forbiddenRegions?: ReadonlySet<string>;
+  /** Locations the player never takes from, while the same item elsewhere is still allowed. */
+  readonly forbiddenLocations?: ReadonlySet<Location>;
 }
 
 export interface Reach {
@@ -26,12 +28,14 @@ export interface Reach {
 export function reach(world: World, options: ReachOptions = {}): Reach {
   const forbiddenItems = options.forbiddenItems ?? new Set<string>();
   const forbiddenRegions = options.forbiddenRegions ?? new Set<string>();
+  const forbiddenLocations = options.forbiddenLocations ?? new Set<Location>();
 
   const itemsByRegion = new Map<string, string[]>();
-  for (const { region, item } of world.locations) {
-    const items = itemsByRegion.get(region);
-    if (items === undefined) itemsByRegion.set(region, [item]);
-    else items.push(item);
+  for (const location of world.locations) {
+    if (forbiddenLocations.has(location)) continue;
+    const items = itemsByRegion.get(location.region);
+    if (items === undefined) itemsByRegion.set(location.region, [location.item]);
+    else items.push(location.item);
   }
 
   const regions = new Set<string>();

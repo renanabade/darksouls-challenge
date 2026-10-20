@@ -10,8 +10,21 @@ export {
   type RequirementContext,
 } from "./requirement.js";
 export {
+  BELLS,
+  InvalidOrderError,
+  validate,
+  type ArgValue,
+  type OrderInstance,
+  type OrderResult,
+  type Setup,
+  type Support,
+  type ValidationResult,
+  type Verdict,
+} from "./validator.js";
+export {
   parseWorld,
   WorldParseError,
+  type Boss,
   type Entrance,
   type GiftItem,
   type Location,
