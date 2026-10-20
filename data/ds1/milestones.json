@@ -93,9 +93,9 @@
   "earliestSphere": 10,
   "evidence": "boss flag from the world build (Event_970 / boss events)",
   "flag": 13,
-  "id": "boss-4-kings",
+  "id": "boss-four-kings",
   "kind": "boss",
-  "name": "4 Kings defeated",
+  "name": "Four Kings defeated",
   "region": "the-abyss"
  },
  {

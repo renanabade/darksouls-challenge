@@ -2,6 +2,11 @@
  {
   "id": "andre-of-astora",
   "name": "Andre of Astora",
+  "regions": [
+   "3-blacksmiths-smithboxen",
+   "4-merchants-repairbox",
+   "undead-parish-andre-of-astora"
+  ],
   "rows": [
    1400,
    1499
@@ -192,6 +197,9 @@
  {
   "id": "crestfallen-merchant",
   "name": "Crestfallen Merchant",
+  "regions": [
+   "sens-fortress-crestfallen-merchant"
+  ],
   "rows": [
    5300,
    5599
@@ -446,6 +454,7 @@
  {
   "id": "darkstalker-kaathe",
   "name": "Darkstalker Kaathe",
+  "regions": [],
   "rows": [
    6100,
    6199
@@ -486,6 +495,14 @@
  {
   "id": "domhnall-of-zena",
   "name": "Domhnall of Zena",
+  "regions": [
+   "2-merchants-bottomless-box",
+   "firelink-shrine-domhnall-of-zena",
+   "firelink-shrine-domhnall-of-zena-after-gwyndolin",
+   "firelink-shrine-domhnall-of-zena-after-iron-golem",
+   "firelink-shrine-domhnall-of-zena-after-o-s",
+   "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias"
+  ],
   "rows": [
    1500,
    1599
@@ -874,6 +891,9 @@
  {
   "id": "dusk-of-oolacile",
   "name": "Dusk of Oolacile",
+  "regions": [
+   "darkroot-basin-princess-dusk"
+  ],
   "rows": [
    2200,
    2299
@@ -954,6 +974,9 @@
  {
   "id": "eingyi",
   "name": "Eingyi",
+  "regions": [
+   "lower-blighttown-eingyi"
+  ],
   "rows": [
    3200,
    3299
@@ -1026,6 +1049,9 @@
  {
   "id": "elizabeth",
   "name": "Elizabeth",
+  "regions": [
+   "oolacile-sanctuary-elizabeth"
+  ],
   "rows": [
    6500,
    6599
@@ -1112,6 +1138,11 @@
  {
   "id": "giant-blacksmith",
   "name": "Giant Blacksmith",
+  "regions": [
+   "3-blacksmiths-smithboxen",
+   "4-merchants-repairbox",
+   "anor-londo-giant-blacksmith"
+  ],
   "rows": [
    6200,
    6299
@@ -1312,6 +1343,10 @@
  {
   "id": "griggs-of-vinheim",
   "name": "Griggs of Vinheim",
+  "regions": [
+   "firelink-shrine-griggs-of-vinheim",
+   "firelink-shrine-griggs-of-vinheim-after-logan-leaves"
+  ],
   "rows": [
    2000,
    2099
@@ -1456,6 +1491,9 @@
  {
   "id": "hawkeye-gough",
   "name": "Hawkeye Gough",
+  "regions": [
+   "royal-wood-hawkeye-gough"
+  ],
   "rows": [
    6600,
    6699
@@ -1550,6 +1588,9 @@
  {
   "id": "ingward",
   "name": "Ingward",
+  "regions": [
+   "upper-new-londo-ruins-ingward"
+  ],
   "rows": [
    2400,
    2499
@@ -1598,6 +1639,9 @@
  {
   "id": "laurentius",
   "name": "Laurentius",
+  "regions": [
+   "firelink-shrine-laurentius-of-the-great-swamp"
+  ],
   "rows": [
    3000,
    3099
@@ -1660,6 +1704,9 @@
  {
   "id": "logan",
   "name": "Logan",
+  "regions": [
+   "the-dukes-archives-big-hat-logan"
+  ],
   "rows": [
    5000,
    5099
@@ -1790,6 +1837,9 @@
  {
   "id": "marvellous-chester",
   "name": "Marvellous Chester",
+  "regions": [
+   "royal-wood-marvelous-chester"
+  ],
   "rows": [
    6400,
    6499
@@ -1948,6 +1998,9 @@
  {
   "id": "oswald-of-carim",
   "name": "Oswald of Carim",
+  "regions": [
+   "undead-parish-oswald-of-carim"
+  ],
   "rows": [
    4400,
    4499
@@ -2042,6 +2095,9 @@
  {
   "id": "petrus-of-thorolund",
   "name": "Petrus of Thorolund",
+  "regions": [
+   "firelink-shrine-petrus-of-thorolund"
+  ],
   "rows": [
    4000,
    4099
@@ -2120,6 +2176,9 @@
  {
   "id": "quelana-of-izalith",
   "name": "Quelana of Izalith",
+  "regions": [
+   "lower-blighttown-quelana-of-izalith"
+  ],
   "rows": [
    3400,
    3499
@@ -2206,6 +2265,9 @@
  {
   "id": "rhea-of-thorolund",
   "name": "Rhea of Thorolund",
+  "regions": [
+   "firelink-shrine-rhea-of-thorolund"
+  ],
   "rows": [
    4200,
    4299
@@ -2318,6 +2380,9 @@
  {
   "id": "rickert-of-vinheim",
   "name": "Rickert of Vinheim",
+  "regions": [
+   "upper-new-londo-ruins-rickert-of-vinheim"
+  ],
   "rows": [
    2100,
    2199
@@ -2364,6 +2429,9 @@
  {
   "id": "shiva-of-the-east",
   "name": "Shiva of the East",
+  "regions": [
+   "lower-blighttown-shiva-of-the-east"
+  ],
   "rows": [
    1700,
    1799
@@ -2466,6 +2534,9 @@
  {
   "id": "trusty-patches",
   "name": "Trusty Patches",
+  "regions": [
+   "firelink-shrine-trusty-patches"
+  ],
   "rows": [
    1600,
    1699
@@ -2632,6 +2703,9 @@
  {
   "id": "undead-merchant-female",
   "name": "Undead Merchant (Female)",
+  "regions": [
+   "lower-undead-burg-female-undead-merchant"
+  ],
   "rows": [
    1200,
    1299
@@ -2822,6 +2896,11 @@
  {
   "id": "undead-merchant-male",
   "name": "Undead Merchant (Male)",
+  "regions": [
+   "2-merchants-bottomless-box",
+   "4-merchants-repairbox",
+   "upper-undead-burg-male-undead-merchant"
+  ],
   "rows": [
    1100,
    1199
@@ -3116,6 +3195,11 @@
  {
   "id": "vamos",
   "name": "Vamos",
+  "regions": [
+   "3-blacksmiths-smithboxen",
+   "4-merchants-repairbox",
+   "the-catacombs-vamos"
+  ],
   "rows": [
    6300,
    6399
