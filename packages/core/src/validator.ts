@@ -74,6 +74,9 @@ export const BELLS: readonly string[] = ["Bell of Awakening #1", "Bell of Awaken
 /** Location categories of things bought from a merchant. */
 const SHOP = new Set(["SHOP_ITEM", "SHOP_EXTENDED_ITEM", "MISSABLE_SHOP_ITEM"]);
 
+/** A restriction and an order that cannot both hold: wearing what you find vs wearing no armor. */
+const CONFLICTS: readonly (readonly [string, string])[] = [["no-armor", "wear-what-you-find"]];
+
 interface Constraints {
   readonly regions: Set<string>;
   readonly locations: Set<Location>;
@@ -125,6 +128,7 @@ export function validate(
     return bosses;
   };
   // Build effects of restrictions and orders, read by the weapon checks (which run after every order is read).
+  const activeRestrictions = new Set<string>();
   let noLevelUps = false;
   let twoHanding = true;
   const build = (label: string): { stats: Stats; points: number } => {
@@ -293,6 +297,7 @@ export function validate(
       // start. Checking them all at once never accepts an impossible list (it may refuse a possible one).
       case "accumulated-curse":
         for (const id of listArg(args, "restrictions", label)) {
+          activeRestrictions.add(id);
           const restriction = restrictions.find((r) => r.id === id);
           if (restriction === undefined)
             throw new InvalidOrderError(`${label}: unknown restriction "${id}"`);
@@ -354,6 +359,18 @@ export function validate(
       default:
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
     }
+  }
+
+  // Orders that contradict each other whatever the world allows.
+  const ids = orders.map((o) => o.template.id);
+  const choosers = orders.filter((o) => ["assign", "swap"].includes(o.template.command.kind));
+  if (choosers.length > 1) {
+    const names = choosers.map((o) => o.template.id).join(", ");
+    checks.push(() => `only one order can choose your weapon (${names})`);
+  }
+  for (const [restriction, template] of CONFLICTS) {
+    if (activeRestrictions.has(restriction) && ids.includes(template))
+      checks.push(() => `the restriction "${restriction}" contradicts the order "${template}"`);
   }
 
   // Automatic exceptions, once every other constraint is known. Each candidate location is forbidden in

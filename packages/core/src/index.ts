@@ -11,6 +11,7 @@ export {
   type Stats,
   type Weapon,
 } from "./build.js";
+export * from "./generator/index.js";
 export * from "./orders/index.js";
 export { reach, type Reach, type ReachOptions } from "./reach.js";
 export {
@@ -37,6 +38,7 @@ export {
 export {
   parseWorld,
   WorldParseError,
+  type Area,
   type Entrance,
   type GiftItem,
   type Location,
