@@ -2,6 +2,8 @@ import {
   damages,
   isMeleeWeapon,
   pointsToWield,
+  SCHOOLS,
+  spellKit,
   type Boss,
   type Stats,
   type Weapon,
@@ -74,6 +76,12 @@ export const BELLS: readonly string[] = ["Bell of Awakening #1", "Bell of Awaken
 /** Location categories of things bought from a merchant. */
 const SHOP = new Set(["SHOP_ITEM", "SHOP_EXTENDED_ITEM", "MISSABLE_SHOP_ITEM"]);
 
+/** Where the first phase of a phase swap starts: after the first boss, fought with the class's kit. */
+const PHASE_SWAP_START = "boss-asylum-demon";
+const defeats = (bosses: readonly Boss[]): string[] => bosses.map((b) => b.defeatedItem);
+
+const isSchool = (style: string): boolean => (SCHOOLS as readonly string[]).includes(style);
+
 /** A restriction and an order that cannot both hold: wearing what you find vs wearing no armor. */
 const CONFLICTS: readonly (readonly [string, string])[] = [["no-armor", "wear-what-you-find"]];
 
@@ -129,6 +137,7 @@ export function validate(
   };
   // Build effects of restrictions and orders, read by the weapon checks (which run after every order is read).
   const activeRestrictions = new Set<string>();
+  const schoolStyles: string[] = [];
   let noLevelUps = false;
   let twoHanding = true;
   const build = (label: string): { stats: Stats; points: number } => {
@@ -280,13 +289,14 @@ export function validate(
           throw new InvalidOrderError(`${label}: "${name}" does not hold a melee weapon`);
         build(label);
         checks.push((c) => {
-          const before = run(c, new Set(itemsOf(until.requires)));
-          if (c.locations.has(location) || !before.regions.has(location.region))
-            return `${weapon.name} at "${name}" cannot be taken before ${until.name}`;
           const done = new Set(bossesRequiredFor(c, `milestone:${from.id}`, from.requires));
           const stretch = bossesRequiredFor(c, `milestone:${until.id}`, until.requires).filter(
             (b) => !done.has(b),
           );
+          // Taken without defeating any boss of the stretch: it is the weapon for all of them.
+          const before = run(c, new Set([...itemsOf(until.requires), ...defeats(stretch)]));
+          if (c.locations.has(location) || !before.regions.has(location.region))
+            return `${weapon.name} at "${name}" cannot be taken before the bosses until ${until.name}`;
           const problem = weaponProblem(weapon, label, stretch);
           return problem && `${problem} (from ${from.name} until ${until.name})`;
         });
@@ -319,34 +329,62 @@ export function validate(
         break;
 
       // Existence: some weapon of each style, taken in time, does for its phase, and one build fits both.
+      // A style is a family of melee weapons or a school of magic (a catalyst and a spell of the school).
       case "phase-swap": {
         const milestone = milestoneArg(world, args, "milestone", label);
         const styles = [stringArg(args, "before", label), stringArg(args, "after", label)];
         for (const style of styles) {
-          if (![...world.weapons.values()].some((w) => isMeleeWeapon(w) && w.category === style))
+          if (isSchool(style)) {
+            schoolStyles.push(style);
+            if (![...world.spells.values()].some((s) => s.school === style))
+              throw new InvalidOrderError(`${label}: no spells of the school "${style}"`);
+          } else if (
+            ![...world.weapons.values()].some((w) => isMeleeWeapon(w) && w.category === style)
+          )
             throw new InvalidOrderError(`${label}: no melee weapons of category "${style}"`);
         }
+        const kit = world.classes.get(setup.startingClass ?? "")?.kit ?? [];
         build(label);
         checks.push((c) => {
           const [before, after] = styles as [string, string];
-          const available = (r: Reach, style: string): Weapon[] => [
-            ...new Set(
-              world.locations
+          // What the player can hold by then: pickups and purchases in reach, and the class's kit, which is
+          // picked up in the Asylum before any boss.
+          const available = (r: Reach, style: string): Weapon[] => {
+            const items = new Set([
+              ...kit,
+              ...world.locations
                 .filter((l) => !c.locations.has(l) && r.regions.has(l.region))
-                .flatMap((l) => world.weapons.get(l.item) ?? [])
-                .filter((w) => isMeleeWeapon(w) && w.category === style),
-            ),
-          ];
-          const first = bossesRequiredFor(c, `milestone:${milestone.id}`, milestone.requires);
+                .map((l) => l.item),
+            ]);
+            const held = [...items].flatMap((i) => world.weapons.get(i) ?? []);
+            if (!isSchool(style))
+              return held.filter((w) => isMeleeWeapon(w) && w.category === style);
+            const spells = [...world.spells.values()].filter(
+              (s) => s.school === style && (items.has(s.item) || items.has(s.name)),
+            );
+            return held.flatMap((catalyst) => spells.flatMap((s) => spellKit(s, catalyst) ?? []));
+          };
+          // The first phase starts after the first boss, fought with the class's kit.
+          const start = world.milestones.get(PHASE_SWAP_START);
+          const done = new Set(
+            start ? bossesRequiredFor(c, `milestone:${start.id}`, start.requires) : [],
+          );
+          const first = bossesRequiredFor(
+            c,
+            `milestone:${milestone.id}`,
+            milestone.requires,
+          ).filter((b) => !done.has(b));
           const firstSet = new Set(first);
           const second = bossesRequiredFor(c, "goal", { has: world.goal }).filter(
-            (b) => !firstSet.has(b),
+            (b) => !firstSet.has(b) && !done.has(b),
           );
-          const a = available(run(c, new Set(itemsOf(milestone.requires))), before).filter((w) =>
+          // Each style is taken without defeating any boss of its phase: it is the weapon for all of them.
+          const forBefore = [...itemsOf(milestone.requires), ...defeats(first)];
+          const a = available(run(c, new Set(forBefore)), before).filter((w) =>
             first.every((b) => damages(w, b)),
           );
-          const b = available(run(c, new Set([world.goal])), after).filter((w) =>
-            second.every((boss) => damages(w, boss)),
+          const b = available(run(c, new Set([world.goal, ...defeats(second)])), after).filter(
+            (w) => second.every((boss) => damages(w, boss)),
           );
           if (a.length === 0) return `no ${before} can be taken before ${milestone.name}`;
           if (b.length === 0) return `no ${after} can be taken for after ${milestone.name}`;
@@ -371,6 +409,10 @@ export function validate(
   for (const [restriction, template] of CONFLICTS) {
     if (activeRestrictions.has(restriction) && ids.includes(template))
       checks.push(() => `the restriction "${restriction}" contradicts the order "${template}"`);
+  }
+  if (activeRestrictions.has("no-magic") && schoolStyles.length > 0) {
+    const schools = schoolStyles.join(", ");
+    checks.push(() => `the restriction "no-magic" contradicts fighting with ${schools}`);
   }
 
   // Automatic exceptions, once every other constraint is known. Each candidate location is forbidden in

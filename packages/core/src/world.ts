@@ -1,9 +1,11 @@
 import {
   parseBosses,
   parseClasses,
+  parseSpells,
   parseWeapons,
   type Boss,
   type StartingClass,
+  type Spell,
   type Weapon,
 } from "./build.js";
 import { Checker } from "./check.js";
@@ -93,6 +95,8 @@ export interface World {
   readonly milestones: ReadonlyMap<string, Milestone>;
   /** By name. */
   readonly weapons: ReadonlyMap<string, Weapon>;
+  /** By name. */
+  readonly spells: ReadonlyMap<string, Spell>;
   /** Starting classes, by name. */
   readonly classes: ReadonlyMap<string, StartingClass>;
   readonly areas: ReadonlyMap<string, Area>;
@@ -110,6 +114,7 @@ export interface RawDataSet {
   /** Absent means none: small test worlds need no milestones, weapons or area names. */
   readonly milestones?: unknown;
   readonly weapons?: unknown;
+  readonly spells?: unknown;
   readonly areas?: unknown;
 }
 
@@ -282,6 +287,7 @@ export function parseWorld(raw: RawDataSet): World {
   }
 
   const weapons = parseWeapons(check, raw.weapons ?? []);
+  const spells = parseSpells(check, raw.spells ?? []);
   const classList = parseClasses(check, classes["classes"] ?? []);
 
   const areas = new Map<string, Area>();
@@ -310,6 +316,7 @@ export function parseWorld(raw: RawDataSet): World {
     merchants,
     milestones,
     weapons,
+    spells,
     classes: classList,
     areas,
   };
