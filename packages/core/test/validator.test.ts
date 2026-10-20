@@ -151,10 +151,11 @@ describe("validate", () => {
     expect(both.orders.map((o) => o.exceptions)).toEqual([["Lantern"], []]);
   });
 
+  // Every static order has a check; the live-only ones wait for the live mode's state.
   it("reports which orders it cannot check yet", () => {
-    const result = validate(small, setup(), [
+    const result = validate(small, { ...setup(), mode: "live" }, [
       order("dry-fight", { boss: "gate-boss" }),
-      order("phase-swap", { milestone: "x", before: "a", after: "b" }),
+      order("boss-inheritance", { boss: "gate-boss", weapon: "x" }),
     ]);
     expect(result.orders.map((o) => o.support)).toEqual(["weightOnly", "pending"]);
     expect(result.complete).toBe(false);

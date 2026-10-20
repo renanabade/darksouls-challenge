@@ -42,6 +42,8 @@ export interface Location {
    * Undefined until the data set exports it; DSAP categories cannot tell (see the pipeline's data needs).
    */
   readonly found?: boolean;
+  /** weapon, armor, ring, spell, good, or other (graph events and renamed items). Undefined in older data. */
+  readonly kind?: string;
 }
 
 export interface GiftItem {
@@ -173,11 +175,11 @@ export function parseWorld(raw: RawDataSet): World {
       category: check.string(fields, "category", path),
       mandatory: check.boolean(fields, "mandatory", path),
     };
-    locations.push(
-      fields["found"] === undefined
-        ? location
-        : { ...location, found: check.boolean(fields, "found", path) },
-    );
+    locations.push({
+      ...location,
+      ...(fields["found"] !== undefined && { found: check.boolean(fields, "found", path) }),
+      ...(fields["kind"] !== undefined && { kind: check.string(fields, "kind", path) }),
+    });
   }
 
   const gifts: StartingGift[] = [];

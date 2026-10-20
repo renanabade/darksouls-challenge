@@ -1,4 +1,5 @@
 export { catalog } from "./catalog.js";
+export { restrictions, type Restriction, type RestrictionEffect } from "./restrictions.js";
 export {
   modesOf,
   paramRefsOf,
