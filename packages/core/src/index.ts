@@ -1,3 +1,16 @@
+export {
+  damages,
+  isMeleeWeapon,
+  pointsToWield,
+  strengthNeeded,
+  type Attribute,
+  type Boss,
+  type BossPart,
+  type Element,
+  type StartingClass,
+  type Stats,
+  type Weapon,
+} from "./build.js";
 export * from "./orders/index.js";
 export { reach, type Reach, type ReachOptions } from "./reach.js";
 export {
@@ -24,11 +37,11 @@ export {
 export {
   parseWorld,
   WorldParseError,
-  type Boss,
   type Entrance,
   type GiftItem,
   type Location,
   type Merchant,
+  type Milestone,
   type RawDataSet,
   type Region,
   type StartingGift,

@@ -1,0 +1,72 @@
+import { describe, expect, it } from "vitest";
+import {
+  damages,
+  isMeleeWeapon,
+  pointsToWield,
+  strengthNeeded,
+  type Boss,
+  type Weapon,
+} from "../src/index.js";
+
+const weapon = (overrides: Partial<Weapon> = {}): Weapon => ({
+  id: 1,
+  name: "Test Sword",
+  category: "sword",
+  melee: true,
+  twoHandable: true,
+  requirements: { str: 0, dex: 0, int: 0, fth: 0 },
+  damage: { phys: 100, magic: 0, fire: 0, thunder: 0 },
+  ...overrides,
+});
+const stats = { str: 10, dex: 10, int: 10, fth: 10 };
+const boss = (noDamage: Boss["parts"][number]["noDamage"][]): Boss => ({
+  id: "b",
+  name: "Boss",
+  region: "r",
+  defeatedItem: "Boss Defeated",
+  parts: noDamage.map((n) => ({ noDamage: n })),
+});
+
+describe("strengthNeeded", () => {
+  // Strength counts 1.5 times with both hands, rounded down (docs/04-dados.md, "Fatos de combate").
+  it("lets 27 Strength two-hand a 40 Strength weapon, as the game does", () => {
+    expect(strengthNeeded(40, true)).toBe(27);
+    expect(Math.floor(26 * 1.5)).toBeLessThan(40);
+  });
+
+  it("rounds the effective Strength down", () => {
+    expect(strengthNeeded(25, true)).toBe(17); // 16 * 1.5 = 24 < 25; 17 * 1.5 = 25.5 → 25
+    expect(strengthNeeded(24, true)).toBe(16);
+    expect(strengthNeeded(24, false)).toBe(24);
+  });
+});
+
+describe("pointsToWield", () => {
+  it("adds what each requirement lacks", () => {
+    const w = weapon({ requirements: { str: 10, dex: 14, int: 12, fth: 9 } });
+    expect(pointsToWield(w, stats)).toBe(4 + 2);
+  });
+
+  it("uses both hands when that costs fewer points", () => {
+    const heavy = weapon({ requirements: { str: 30, dex: 0, int: 0, fth: 0 } });
+    expect(pointsToWield(heavy, stats)).toBe(20 - 10);
+    expect(pointsToWield({ ...heavy, twoHandable: false }, stats)).toBe(30 - 10);
+  });
+});
+
+describe("damages", () => {
+  it("needs some element that every part of the boss takes", () => {
+    const magicOnly = weapon({ damage: { phys: 0, magic: 80, fire: 0, thunder: 0 } });
+    expect(damages(weapon(), boss([["fire"]]))).toBe(true);
+    expect(damages(magicOnly, boss([["magic"]]))).toBe(false);
+    expect(damages(magicOnly, boss([[], ["magic"]]))).toBe(false);
+  });
+});
+
+describe("isMeleeWeapon", () => {
+  it("leaves out shields, catalysts and ammunition", () => {
+    expect(isMeleeWeapon(weapon())).toBe(true);
+    expect(isMeleeWeapon(weapon({ category: "shield" }))).toBe(false);
+    expect(isMeleeWeapon(weapon({ category: "arrow", melee: false }))).toBe(false);
+  });
+});

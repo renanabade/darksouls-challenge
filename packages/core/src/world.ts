@@ -1,10 +1,13 @@
 import {
-  itemsOf,
-  parseRequirement,
-  regionsOf,
-  RequirementParseError,
-  type Requirement,
-} from "./requirement.js";
+  parseBosses,
+  parseClasses,
+  parseWeapons,
+  type Boss,
+  type StartingClass,
+  type Weapon,
+} from "./build.js";
+import { Checker } from "./check.js";
+import { itemsOf, regionsOf, type Requirement } from "./requirement.js";
 
 /**
  * The world graph the core works on, built from data/ds1 (see its SCHEMA.md).
@@ -52,15 +55,12 @@ export interface StartingGift {
   readonly items: readonly GiftItem[];
 }
 
-export interface Boss {
+/** A fixed point of the progression (a boss, a bell, the Lordvessel...), as a requirement on the graph. */
+export interface Milestone {
   readonly id: string;
   readonly name: string;
-  readonly region: string;
-  /**
-   * The graph item for this boss's death: the BOSS location of its region. Matched by region, not by
-   * name, because the names differ for some bosses ("4 Kings" here, "Four Kings Defeated" in the graph).
-   */
-  readonly defeatedItem: string;
+  readonly kind: string;
+  readonly requires: Requirement;
 }
 
 export interface Merchant {
@@ -79,6 +79,11 @@ export interface World {
   readonly gifts: readonly StartingGift[];
   readonly bosses: ReadonlyMap<string, Boss>;
   readonly merchants: ReadonlyMap<string, Merchant>;
+  readonly milestones: ReadonlyMap<string, Milestone>;
+  /** By name. */
+  readonly weapons: ReadonlyMap<string, Weapon>;
+  /** Starting classes, by name. */
+  readonly classes: ReadonlyMap<string, StartingClass>;
 }
 
 /** The parsed JSON of each data set file, still untrusted. Reading the files is the caller's job. */
@@ -90,6 +95,9 @@ export interface RawDataSet {
   readonly classes: unknown;
   readonly bosses: unknown;
   readonly merchants: unknown;
+  /** Absent means none: small test worlds need no milestones or weapons. */
+  readonly milestones?: unknown;
+  readonly weapons?: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -99,66 +107,6 @@ export class WorldParseError extends Error {
     super(`invalid data set (${String(problems.length)} problems):\n${problems.join("\n")}`);
     this.name = "WorldParseError";
     this.problems = problems;
-  }
-}
-
-type Fields = Readonly<Record<string, unknown>>;
-
-/** Collects every problem instead of stopping at the first, so one pipeline run can fix them all. */
-class Checker {
-  readonly problems: string[] = [];
-
-  fail(path: string, message: string): void {
-    this.problems.push(`${message} at ${path}`);
-  }
-
-  array(value: unknown, path: string): readonly unknown[] {
-    if (Array.isArray(value)) return value;
-    this.fail(path, "expected an array");
-    return [];
-  }
-
-  object(value: unknown, path: string): Fields | undefined {
-    if (typeof value === "object" && value !== null && !Array.isArray(value))
-      return value as Fields;
-    this.fail(path, "expected an object");
-    return undefined;
-  }
-
-  string(fields: Fields, key: string, path: string): string {
-    const value = fields[key];
-    if (typeof value === "string" && value !== "") return value;
-    this.fail(`${path}.${key}`, "expected a non-empty string");
-    return "";
-  }
-
-  nullableString(fields: Fields, key: string, path: string): string | null {
-    return fields[key] === null ? null : this.string(fields, key, path);
-  }
-
-  boolean(fields: Fields, key: string, path: string, fallback?: boolean): boolean {
-    const value = fields[key];
-    if (typeof value === "boolean") return value;
-    if (value === undefined && fallback !== undefined) return fallback;
-    this.fail(`${path}.${key}`, "expected a boolean");
-    return false;
-  }
-
-  integer(fields: Fields, key: string, path: string): number {
-    const value = fields[key];
-    if (Number.isInteger(value)) return value as number;
-    this.fail(`${path}.${key}`, "expected an integer");
-    return 0;
-  }
-
-  requirement(value: unknown, path: string): Requirement {
-    try {
-      return parseRequirement(value, path);
-    } catch (error) {
-      if (!(error instanceof RequirementParseError)) throw error;
-      this.problems.push(error.message);
-      return false;
-    }
   }
 }
 
@@ -274,25 +222,12 @@ export function parseWorld(raw: RawDataSet): World {
   }
   for (const [i, l] of locations.entries()) region(l.region, `locations[${String(i)}].region`);
 
-  const bosses = new Map<string, Boss>();
-  for (const [i, value] of check.array(raw.bosses, "bosses").entries()) {
-    const path = `bosses[${String(i)}]`;
-    const fields = check.object(value, path);
-    if (fields === undefined) continue;
-    const id = check.string(fields, "id", path);
-    const name = check.string(fields, "name", path);
-    const bossRegion = check.string(fields, "region", path);
-    region(bossRegion, `${path}.region`);
-    const deaths = locations.filter((l) => l.category === "BOSS" && l.region === bossRegion);
-    if (bossRegion !== "" && deaths.length !== 1) {
-      check.fail(
-        `${path}.region`,
-        `expected one BOSS location in "${bossRegion}", found ${String(deaths.length)}`,
-      );
-    }
-    if (bosses.has(id)) check.fail(`${path}.id`, `duplicate boss "${id}"`);
-    bosses.set(id, { id, name, region: bossRegion, defeatedItem: deaths[0]?.item ?? "" });
-  }
+  const bosses = parseBosses(check, raw.bosses, (r) =>
+    locations.filter((l) => l.category === "BOSS" && l.region === r).map((l) => l.item),
+  );
+  [...bosses.values()].forEach((b, i) => {
+    region(b.region, `bosses[${String(i)}].region`);
+  });
 
   const merchants = new Map<string, Merchant>();
   for (const [i, value] of check.array(raw.merchants, "merchants").entries()) {
@@ -313,6 +248,41 @@ export function parseWorld(raw: RawDataSet): World {
     merchants.set(id, { id, name: check.string(fields, "name", path), regions: merchantRegions });
   }
 
+  const milestones = new Map<string, Milestone>();
+  for (const [i, value] of check.array(raw.milestones ?? [], "milestones").entries()) {
+    const path = `milestones[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    const milestone: Milestone = {
+      id: check.string(fields, "id", path),
+      name: check.string(fields, "name", path),
+      kind: check.string(fields, "kind", path),
+      requires: check.requirement(fields["requires"], `${path}.requires`),
+    };
+    for (const item of itemsOf(milestone.requires)) {
+      if (!obtainable.has(item))
+        check.fail(`${path}.requires`, `item "${item}" cannot be obtained`);
+    }
+    if (milestones.has(milestone.id))
+      check.fail(`${path}.id`, `duplicate milestone "${milestone.id}"`);
+    milestones.set(milestone.id, milestone);
+  }
+
+  const weapons = parseWeapons(check, raw.weapons ?? []);
+  const classList = parseClasses(check, classes["classes"] ?? []);
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
-  return { start, goal, regions, entrances, locations, gifts, bosses, merchants };
+  return {
+    start,
+    goal,
+    regions,
+    entrances,
+    locations,
+    gifts,
+    bosses,
+    merchants,
+    milestones,
+    weapons,
+    classes: classList,
+  };
 }

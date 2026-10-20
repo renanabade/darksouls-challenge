@@ -154,7 +154,7 @@ describe("validate", () => {
   it("reports which orders it cannot check yet", () => {
     const result = validate(small, setup(), [
       order("dry-fight", { boss: "gate-boss" }),
-      order("first-weapon-of-area", { area: "hall", until: "x" }),
+      order("phase-swap", { milestone: "x", before: "a", after: "b" }),
     ]);
     expect(result.orders.map((o) => o.support)).toEqual(["weightOnly", "pending"]);
     expect(result.complete).toBe(false);
