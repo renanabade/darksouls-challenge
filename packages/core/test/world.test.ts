@@ -9,12 +9,12 @@ const region = (id: string, extra: object = {}) => ({
   mandatory: false,
   ...extra,
 });
-const location = (regionId: string, item: string) => ({
+const location = (regionId: string, item: string, category = "KEY") => ({
   name: `${regionId}: ${item}`,
   region: regionId,
   item,
   count: 1,
-  category: "KEY",
+  category,
   mandatory: false,
 });
 
@@ -25,7 +25,7 @@ const raw = (overrides: Partial<RawDataSet> = {}): RawDataSet => ({
     { from: "cell", to: "arena", requires: { any: [{ has: "Key" }, { has: "Master Key" }] } },
     { from: "arena", to: "cell", requires: true, walkBack: false },
   ],
-  locations: [location("cell", "Key"), location("arena", "Boss Defeated")],
+  locations: [location("cell", "Key"), location("arena", "Boss Defeated", "BOSS")],
   classes: {
     classes: [],
     gifts: [
@@ -33,6 +33,7 @@ const raw = (overrides: Partial<RawDataSet> = {}): RawDataSet => ({
       { row: 2, items: ["Master Key"] },
     ],
   },
+  bosses: [{ id: "the-boss", name: "The Boss", region: "arena" }],
   ...overrides,
 });
 
@@ -53,6 +54,21 @@ describe("parseWorld", () => {
     expect(world.regions.get("shop")).toMatchObject({ area: null, virtual: true });
     expect(world.regions.get("cell")?.virtual).toBe(false);
     expect(world.entrances.map((e) => e.walkBack)).toEqual([true, false]);
+  });
+
+  it("links each boss to the death item of its region, whatever the names", () => {
+    expect(parseWorld(raw()).bosses.get("the-boss")?.defeatedItem).toBe("Boss Defeated");
+  });
+
+  it("rejects a boss whose region has no single death item", () => {
+    const bosses = [
+      { id: "a", name: "A", region: "cell" },
+      { id: "a", name: "A", region: "arena" },
+    ];
+    expect(problemsOf(raw({ bosses }))).toEqual([
+      'expected one BOSS location in "cell", found 0 at bosses[0].region',
+      'duplicate boss "a" at bosses[1].id',
+    ]);
   });
 
   it("reads starting gifts, with counts and the empty gift", () => {
@@ -95,6 +111,7 @@ describe("parseWorld", () => {
       'unknown region "limbo" at entrances[0].requires',
       'item "Ghost Key" cannot be obtained at entrances[0].requires',
       'unknown region "attic" at locations[1].region',
+      'expected one BOSS location in "arena", found 0 at bosses[0].region',
     ]);
   });
 
@@ -133,6 +150,7 @@ describe("parseWorld", () => {
       'unknown region "cell" at entrances[1].to',
       'unknown region "cell" at locations[0].region',
       'unknown region "arena" at locations[1].region',
+      'unknown region "arena" at bosses[0].region',
     ]);
   });
 

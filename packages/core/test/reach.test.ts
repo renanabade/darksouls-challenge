@@ -17,6 +17,7 @@ const small: World = parseWorld({
     { name: "2", region: "a", item: "Gem", count: 1, category: "KEY", mandatory: true },
   ],
   classes: { gifts: [{ row: 1, items: ["Lockpick"] }] },
+  bosses: [],
 });
 
 const sorted = (set: ReadonlySet<string>): string[] => [...set].sort();

@@ -34,6 +34,11 @@ export interface Location {
   readonly count: number;
   readonly category: string;
   readonly mandatory: boolean;
+  /**
+   * A corpse or chest pickup (what the catalog calls "found"), joined to the game's treasures.
+   * Undefined until the data set exports it; DSAP categories cannot tell (see the pipeline's data needs).
+   */
+  readonly found?: boolean;
 }
 
 export interface GiftItem {
@@ -47,6 +52,17 @@ export interface StartingGift {
   readonly items: readonly GiftItem[];
 }
 
+export interface Boss {
+  readonly id: string;
+  readonly name: string;
+  readonly region: string;
+  /**
+   * The graph item for this boss's death: the BOSS location of its region. Matched by region, not by
+   * name, because the names differ for some bosses ("4 Kings" here, "Four Kings Defeated" in the graph).
+   */
+  readonly defeatedItem: string;
+}
+
 export interface World {
   readonly start: string;
   readonly goal: string;
@@ -54,6 +70,7 @@ export interface World {
   readonly entrances: readonly Entrance[];
   readonly locations: readonly Location[];
   readonly gifts: readonly StartingGift[];
+  readonly bosses: ReadonlyMap<string, Boss>;
 }
 
 /** The parsed JSON of each data set file, still untrusted. Reading the files is the caller's job. */
@@ -63,6 +80,7 @@ export interface RawDataSet {
   readonly entrances: unknown;
   readonly locations: unknown;
   readonly classes: unknown;
+  readonly bosses: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -190,14 +208,19 @@ export function parseWorld(raw: RawDataSet): World {
     const path = `locations[${String(i)}]`;
     const fields = check.object(value, path);
     if (fields === undefined) continue;
-    locations.push({
+    const location: Location = {
       name: check.string(fields, "name", path),
       region: check.string(fields, "region", path),
       item: check.string(fields, "item", path),
       count: check.integer(fields, "count", path),
       category: check.string(fields, "category", path),
       mandatory: check.boolean(fields, "mandatory", path),
-    });
+    };
+    locations.push(
+      fields["found"] === undefined
+        ? location
+        : { ...location, found: check.boolean(fields, "found", path) },
+    );
   }
 
   const gifts: StartingGift[] = [];
@@ -242,6 +265,26 @@ export function parseWorld(raw: RawDataSet): World {
   }
   for (const [i, l] of locations.entries()) region(l.region, `locations[${String(i)}].region`);
 
+  const bosses = new Map<string, Boss>();
+  for (const [i, value] of check.array(raw.bosses, "bosses").entries()) {
+    const path = `bosses[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    const id = check.string(fields, "id", path);
+    const name = check.string(fields, "name", path);
+    const bossRegion = check.string(fields, "region", path);
+    region(bossRegion, `${path}.region`);
+    const deaths = locations.filter((l) => l.category === "BOSS" && l.region === bossRegion);
+    if (bossRegion !== "" && deaths.length !== 1) {
+      check.fail(
+        `${path}.region`,
+        `expected one BOSS location in "${bossRegion}", found ${String(deaths.length)}`,
+      );
+    }
+    if (bosses.has(id)) check.fail(`${path}.id`, `duplicate boss "${id}"`);
+    bosses.set(id, { id, name, region: bossRegion, defeatedItem: deaths[0]?.item ?? "" });
+  }
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
-  return { start, goal, regions, entrances, locations, gifts };
+  return { start, goal, regions, entrances, locations, gifts, bosses };
 }

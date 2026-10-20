@@ -11,6 +11,7 @@ export function readDataSet(): RawDataSet {
     entrances: read("entrances"),
     locations: read("locations"),
     classes: read("classes"),
+    bosses: read("bosses"),
   };
 }
 
