@@ -6,7 +6,10 @@
   "id": "boss-gaping-dragon",
   "kind": "boss",
   "name": "Gaping Dragon defeated",
-  "region": "depths-gaping-dragon"
+  "region": "depths-gaping-dragon",
+  "requires": {
+   "has": "Gaping Dragon Defeated"
+  }
  },
  {
   "earliestSphere": 4,
@@ -15,7 +18,10 @@
   "id": "boss-bell-gargoyles",
   "kind": "boss",
   "name": "Bell Gargoyles defeated",
-  "region": "undead-parish-bell-gargoyles"
+  "region": "undead-parish-bell-gargoyles",
+  "requires": {
+   "has": "Bell Gargoyles Defeated"
+  }
  },
  {
   "earliestSphere": 7,
@@ -24,7 +30,10 @@
   "id": "boss-crossbreed-priscilla",
   "kind": "boss",
   "name": "Crossbreed Priscilla defeated",
-  "region": "painted-world-of-ariamis-crossbreed-priscilla"
+  "region": "painted-world-of-ariamis-crossbreed-priscilla",
+  "requires": {
+   "has": "Crossbreed Priscilla Defeated"
+  }
  },
  {
   "earliestSphere": 4,
@@ -33,7 +42,10 @@
   "id": "boss-great-grey-wolf-sif",
   "kind": "boss",
   "name": "Great Grey Wolf Sif defeated",
-  "region": "darkroot-garden-behind-artorias-door"
+  "region": "darkroot-garden-behind-artorias-door",
+  "requires": {
+   "has": "Great Grey Wolf Sif Defeated"
+  }
  },
  {
   "earliestSphere": 3,
@@ -42,7 +54,10 @@
   "id": "boss-pinwheel",
   "kind": "boss",
   "name": "Pinwheel defeated",
-  "region": "the-catacombs-pinwheel"
+  "region": "the-catacombs-pinwheel",
+  "requires": {
+   "has": "Pinwheel Defeated"
+  }
  },
  {
   "earliestSphere": 10,
@@ -51,7 +66,10 @@
   "id": "boss-gravelord-nito",
   "kind": "boss",
   "name": "Gravelord Nito defeated",
-  "region": "tomb-of-the-giants-nito"
+  "region": "tomb-of-the-giants-nito",
+  "requires": {
+   "has": "Gravelord Nito Defeated"
+  }
  },
  {
   "earliestSphere": 4,
@@ -60,7 +78,10 @@
   "id": "boss-chaos-witch-quelaag",
   "kind": "boss",
   "name": "Chaos Witch Quelaag defeated",
-  "region": "lower-blighttown-quelaag"
+  "region": "lower-blighttown-quelaag",
+  "requires": {
+   "has": "Chaos Witch Quelaag Defeated"
+  }
  },
  {
   "earliestSphere": 12,
@@ -69,7 +90,10 @@
   "id": "boss-bed-of-chaos",
   "kind": "boss",
   "name": "Bed of Chaos defeated",
-  "region": "lost-izalith-bed-of-chaos"
+  "region": "lost-izalith-bed-of-chaos",
+  "requires": {
+   "has": "Bed of Chaos Defeated"
+  }
  },
  {
   "earliestSphere": 6,
@@ -78,7 +102,10 @@
   "id": "boss-iron-golem",
   "kind": "boss",
   "name": "Iron Golem defeated",
-  "region": "sens-fortress-iron-golem"
+  "region": "sens-fortress-iron-golem",
+  "requires": {
+   "has": "Iron Golem Defeated"
+  }
  },
  {
   "earliestSphere": 7,
@@ -87,7 +114,10 @@
   "id": "boss-ornstein-and-smough",
   "kind": "boss",
   "name": "Ornstein and Smough defeated",
-  "region": "anor-londo-ornstein-and-smough"
+  "region": "anor-londo-ornstein-and-smough",
+  "requires": {
+   "has": "Ornstein and Smough Defeated"
+  }
  },
  {
   "earliestSphere": 10,
@@ -96,7 +126,10 @@
   "id": "boss-four-kings",
   "kind": "boss",
   "name": "Four Kings defeated",
-  "region": "the-abyss"
+  "region": "the-abyss",
+  "requires": {
+   "has": "Four Kings Defeated"
+  }
  },
  {
   "earliestSphere": 12,
@@ -105,7 +138,10 @@
   "id": "boss-seath-the-scaleless",
   "kind": "boss",
   "name": "Seath the Scaleless defeated",
-  "region": "crystal-cave"
+  "region": "crystal-cave",
+  "requires": {
+   "has": "Seath the Scaleless Defeated"
+  }
  },
  {
   "earliestSphere": 14,
@@ -114,7 +150,10 @@
   "id": "boss-gwyn-lord-of-cinder",
   "kind": "boss",
   "name": "Gwyn, Lord of Cinder defeated",
-  "region": "kiln-of-the-first-flame-gwyn"
+  "region": "kiln-of-the-first-flame-gwyn",
+  "requires": {
+   "has": "Gwyn, Lord of Cinder Defeated"
+  }
  },
  {
   "earliestSphere": 2,
@@ -123,7 +162,10 @@
   "id": "boss-asylum-demon",
   "kind": "boss",
   "name": "Asylum Demon defeated",
-  "region": "northern-undead-asylum-after-f2-east-door"
+  "region": "northern-undead-asylum-after-f2-east-door",
+  "requires": {
+   "has": "Asylum Demon Defeated"
+  }
  },
  {
   "earliestSphere": 3,
@@ -132,7 +174,10 @@
   "id": "boss-taurus-demon",
   "kind": "boss",
   "name": "Taurus Demon defeated",
-  "region": "upper-undead-burg-taurus-demon"
+  "region": "upper-undead-burg-taurus-demon",
+  "requires": {
+   "has": "Taurus Demon Defeated"
+  }
  },
  {
   "earliestSphere": 5,
@@ -141,7 +186,10 @@
   "id": "boss-capra-demon",
   "kind": "boss",
   "name": "Capra Demon defeated",
-  "region": "lower-undead-burg-capra-demon"
+  "region": "lower-undead-burg-capra-demon",
+  "requires": {
+   "has": "Capra Demon Defeated"
+  }
  },
  {
   "earliestSphere": 4,
@@ -150,7 +198,10 @@
   "id": "boss-moonlight-butterfly",
   "kind": "boss",
   "name": "Moonlight Butterfly defeated",
-  "region": "darkroot-garden-moonlight-butterfly"
+  "region": "darkroot-garden-moonlight-butterfly",
+  "requires": {
+   "has": "Moonlight Butterfly Defeated"
+  }
  },
  {
   "earliestSphere": 11,
@@ -159,7 +210,10 @@
   "id": "boss-sanctuary-guardian",
   "kind": "boss",
   "name": "Sanctuary Guardian defeated",
-  "region": "sanctuary-garden-sanctuary-guardian"
+  "region": "sanctuary-garden-sanctuary-guardian",
+  "requires": {
+   "has": "Sanctuary Guardian Defeated"
+  }
  },
  {
   "earliestSphere": 12,
@@ -168,7 +222,10 @@
   "id": "boss-knight-artorias",
   "kind": "boss",
   "name": "Knight Artorias defeated",
-  "region": "royal-wood-artorias"
+  "region": "royal-wood-artorias",
+  "requires": {
+   "has": "Artorias the Abysswalker Defeated"
+  }
  },
  {
   "earliestSphere": 13,
@@ -177,7 +234,10 @@
   "id": "boss-manus-father-of-the-abyss",
   "kind": "boss",
   "name": "Manus, Father of the Abyss defeated",
-  "region": "chasm-of-the-abyss-manus"
+  "region": "chasm-of-the-abyss-manus",
+  "requires": {
+   "has": "Manus, Father of the Abyss Defeated"
+  }
  },
  {
   "earliestSphere": 14,
@@ -186,7 +246,10 @@
   "id": "boss-black-dragon-kalameet",
   "kind": "boss",
   "name": "Black Dragon Kalameet defeated",
-  "region": "royal-wood-after-hawkeye-gough"
+  "region": "royal-wood-after-hawkeye-gough",
+  "requires": {
+   "has": "Black Dragon Kalameet Defeated"
+  }
  },
  {
   "earliestSphere": 10,
@@ -195,7 +258,10 @@
   "id": "boss-demon-firesage",
   "kind": "boss",
   "name": "Demon Firesage defeated",
-  "region": "demon-ruins-demon-firesage"
+  "region": "demon-ruins-demon-firesage",
+  "requires": {
+   "has": "Demon Firesage Defeated"
+  }
  },
  {
   "earliestSphere": 5,
@@ -204,7 +270,10 @@
   "id": "boss-ceaseless-discharge",
   "kind": "boss",
   "name": "Ceaseless Discharge defeated",
-  "region": "demon-ruins-ceaseless-discharge"
+  "region": "demon-ruins-ceaseless-discharge",
+  "requires": {
+   "has": "Ceaseless Discharge Defeated"
+  }
  },
  {
   "earliestSphere": 11,
@@ -213,7 +282,10 @@
   "id": "boss-centipede-demon",
   "kind": "boss",
   "name": "Centipede Demon defeated",
-  "region": "demon-ruins-centipede-demon"
+  "region": "demon-ruins-centipede-demon",
+  "requires": {
+   "has": "Centipede Demon Defeated"
+  }
  },
  {
   "earliestSphere": 7,
@@ -222,7 +294,10 @@
   "id": "boss-gwyndolin",
   "kind": "boss",
   "name": "Gwyndolin defeated",
-  "region": "anor-londo-gwyndolin"
+  "region": "anor-londo-gwyndolin",
+  "requires": {
+   "has": "Gwyndolin Defeated"
+  }
  },
  {
   "earliestSphere": 4,
@@ -231,76 +306,160 @@
   "id": "boss-stray-demon",
   "kind": "boss",
   "name": "Stray Demon defeated",
-  "region": "northern-undead-asylum-second-visit"
+  "region": "northern-undead-asylum-second-visit",
+  "requires": {
+   "has": "Stray Demon Defeated"
+  }
  },
  {
   "evidence": "m10_01 event 11010700 waits for the bell lever (object action 11010700) and ends",
   "flag": 11010700,
   "id": "bell-undead-parish",
   "kind": "bell",
-  "name": "Undead Parish bell rung"
+  "name": "Undead Parish bell rung",
+  "requires": {
+   "has": "Bell of Awakening #1"
+  }
  },
  {
   "evidence": "m14_00 event 11400200 waits for the bell lever (object action 11400201), enables 11400200",
   "flag": 11400200,
   "id": "bell-quelaags-domain",
   "kind": "bell",
-  "name": "Quelaag's Domain bell rung"
+  "name": "Quelaag's Domain bell rung",
+  "requires": {
+   "has": "Bell of Awakening #2"
+  }
  },
  {
   "evidence": "set by whichever bell event runs second (11010700 / 11400200)",
   "flag": 11500200,
   "id": "both-bells",
   "kind": "bell",
-  "name": "Both bells rung"
+  "name": "Both bells rung",
+  "requires": {
+   "all": [
+    {
+     "has": "Bell of Awakening #1"
+    },
+    {
+     "has": "Bell of Awakening #2"
+    }
+   ]
+  }
  },
  {
   "evidence": "common event 710 waits for PlayerHasGood(2510) (Lordvessel) and enables 710",
   "flag": 710,
   "id": "lordvessel-obtained",
   "kind": "lordvessel",
-  "name": "Lordvessel obtained"
+  "name": "Lordvessel obtained",
+  "requires": {
+   "has": "Lordvessel"
+  }
  },
  {
   "evidence": "m18_00 event 11800100 (end flag); read by 16 scripts",
   "flag": 11800100,
   "id": "lordvessel-placed",
   "kind": "lordvessel",
-  "name": "Lordvessel placed at the Firelink Altar"
+  "name": "Lordvessel placed at the Firelink Altar",
+  "requires": {
+   "has": "Lordvessel Placed"
+  }
  },
  {
   "evidence": "m18_00 event 11800200 enables 11800201–11800204",
   "flag": 11800201,
   "id": "lord-souls-placed-1",
   "kind": "lord-souls",
-  "name": "Lord Soul placed (slot 1)"
+  "name": "Lord Soul placed (slot 1)",
+  "requires": {
+   "all": [
+    {
+     "has": "Lordvessel Placed"
+    },
+    {
+     "has": "Lord Soul (Nito)"
+    }
+   ]
+  }
  },
  {
   "evidence": "m18_00 event 11800200",
   "flag": 11800202,
   "id": "lord-souls-placed-2",
   "kind": "lord-souls",
-  "name": "Lord Soul placed (slot 2)"
+  "name": "Lord Soul placed (slot 2)",
+  "requires": {
+   "all": [
+    {
+     "has": "Lordvessel Placed"
+    },
+    {
+     "has": "Lord Soul (Bed of Chaos)"
+    }
+   ]
+  }
  },
  {
   "evidence": "m18_00 event 11800200",
   "flag": 11800203,
   "id": "lord-souls-placed-3",
   "kind": "lord-souls",
-  "name": "Lord Soul placed (slot 3)"
+  "name": "Lord Soul placed (slot 3)",
+  "requires": {
+   "all": [
+    {
+     "has": "Lordvessel Placed"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Four Kings)"
+    }
+   ]
+  }
  },
  {
   "evidence": "m18_00 event 11800200",
   "flag": 11800204,
   "id": "lord-souls-placed-4",
   "kind": "lord-souls",
-  "name": "Lord Soul placed (slot 4)"
+  "name": "Lord Soul placed (slot 4)",
+  "requires": {
+   "all": [
+    {
+     "has": "Lordvessel Placed"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Seath)"
+    }
+   ]
+  }
  },
  {
   "evidence": "m18_00 event 11800210 (end flag; also enables 11800211)",
   "flag": 11800210,
   "id": "kiln-open",
   "kind": "kiln",
-  "name": "Kiln of the First Flame opened"
+  "name": "Kiln of the First Flame opened",
+  "requires": {
+   "all": [
+    {
+     "has": "Lordvessel Placed"
+    },
+    {
+     "has": "Lord Soul (Nito)"
+    },
+    {
+     "has": "Lord Soul (Bed of Chaos)"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Four Kings)"
+    },
+    {
+     "has": "Bequeathed Lord Soul Shard (Seath)"
+    }
+   ]
+  }
  }
 ]
