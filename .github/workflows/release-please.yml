@@ -1,0 +1,34 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    name: Release PR and tag
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Opens or updates the release PR from the Conventional Commits on main; tags and releases when it is merged.
+      - id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+      # A PR pushed with GITHUB_TOKEN does not trigger other workflows, so the required CI checks would never run
+      # on the release PR. workflow_dispatch is the documented exception: run CI on the release branch explicitly.
+      - if: ${{ steps.release.outputs.prs_created == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ fromJSON(steps.release.outputs.pr).headBranchName }}
+        run: gh workflow run ci.yml --repo "$GITHUB_REPOSITORY" --ref "$BRANCH"
