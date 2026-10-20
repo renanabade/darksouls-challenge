@@ -28,6 +28,7 @@ export {
   type Entrance,
   type GiftItem,
   type Location,
+  type Merchant,
   type RawDataSet,
   type Region,
   type StartingGift,
