@@ -37,10 +37,11 @@ const weapon = (
   int: number,
   phys: number,
   magic: number,
+  category = "sword",
 ) => ({
   id,
   name,
-  category: "sword",
+  category,
   melee: true,
   level: 0,
   hands: { both: true },
@@ -97,8 +98,8 @@ const small: World = parseWorld({
     },
   ],
   weapons: [
-    weapon(1, "Club", 10, 0, 100, 0),
-    weapon(2, "Heavy Axe", 30, 0, 150, 0), // two-handed: 20 Strength, 8 points for the Knight
+    weapon(1, "Club", 10, 0, 100, 0, "hammer"),
+    weapon(2, "Heavy Axe", 30, 0, 150, 0, "axe"), // two-handed: 20 Strength, 8 points for the Knight
     weapon(3, "Moon Blade", 0, 15, 0, 80), // 7 Intelligence points
     weapon(4, "Crown Sword", 0, 0, 0, 120),
   ],
@@ -114,7 +115,7 @@ describe("first weapon of the area (worst case)", () => {
 
   it("needs every weapon of the area to be wieldable within the level cap", () => {
     expect(validate(small, setup(10), [yard]).problems).toEqual([
-      "Heavy Axe needs 8 attribute points; the level cap leaves 5 (found in yard, used until Brute defeated)",
+      "Heavy Axe needs 8 attribute points; the build leaves 5 (found in yard, used until Brute defeated)",
     ]);
     expect(validate(small, setup(13), [yard]).verdict).toBe("comfortable");
   });
@@ -160,6 +161,52 @@ describe("assigned weapon (existence)", () => {
   });
 });
 
+describe("build restrictions and earned levels (worst case)", () => {
+  const yard = order("first-weapon-of-area", { area: "yard", until: "brute-dead" });
+
+  it("leaves no points when levels must be earned", () => {
+    const earned = order("earned-levels", { condition: "x", points: 1 });
+    expect(validate(small, setup(30), [yard, earned]).problems).toEqual([
+      "Heavy Axe needs 8 attribute points; the build leaves 0 (found in yard, used until Brute defeated)",
+    ]);
+  });
+
+  it("applies every restriction of the curse from the start", () => {
+    const curse = (ids: string[]) => order("accumulated-curse", { restrictions: ids });
+    // One-handed, the Heavy Axe needs 30 Strength: 18 points for the Knight.
+    expect(validate(small, setup(20), [yard, curse(["no-estus"])]).verdict).toBe("comfortable");
+    expect(
+      validate(small, setup(20), [yard, curse(["no-estus", "one-handed"])]).problems[0],
+    ).toMatch(/^Heavy Axe needs 18 attribute points/);
+    expect(() => validate(small, setup(20), [curse(["no-such-thing"])])).toThrow(InvalidOrderError);
+  });
+});
+
+describe("phase swap (existence)", () => {
+  const swap = (before: string, after: string) =>
+    order("phase-swap", { milestone: "brute-dead", before, after });
+
+  it("finds a weapon of each style, in time, that one build can wield", () => {
+    // Club (hammer, yard) until the Brute; Moon Blade (sword, magic) for the Wraith: 7 Intelligence points.
+    expect(validate(small, setup(12), [swap("hammer", "sword")]).verdict).toBe("comfortable");
+    expect(validate(small, setup(11), [swap("hammer", "sword")]).problems).toEqual([
+      "no hammer and sword fit one build",
+    ]);
+  });
+
+  it("needs the second style to hurt the bosses after the milestone", () => {
+    expect(validate(small, setup(30), [swap("axe", "hammer")]).problems).toEqual([
+      "no hammer can be taken for after Brute defeated",
+    ]);
+  });
+
+  it("needs the first style before the milestone", () => {
+    expect(validate(small, setup(30), [swap("sword", "hammer")]).problems).toEqual([
+      "no sword can be taken before Brute defeated",
+    ]);
+  });
+});
+
 describe("weapon orders on the DS1 data set", () => {
   const world = parseWorld(readDataSet());
 
@@ -190,6 +237,23 @@ describe("weapon orders on the DS1 data set", () => {
       expect(run("Knight", 30, [first]).verdict, area).toBe("comfortable");
       expect(run("Pyromancer", 1, [first]).verdict, area).toBe("impossible");
     }
+  });
+
+  it("excepts from 'no rings' exactly the rings the run needs", () => {
+    const curse = order("accumulated-curse", { restrictions: ["no-rings", "no-estus"] });
+    const result = run("Knight", 30, [curse]);
+    expect(result.verdict).toBe("comfortable");
+    expect(result.orders[0]?.exceptions).toEqual(["Covenant of Artorias", "Orange Charred Ring"]);
+  });
+
+  it("swaps fighting style at the Lordvessel when one build fits both", () => {
+    const swap = order("phase-swap", {
+      milestone: "lordvessel-obtained",
+      before: "dagger",
+      after: "halberd",
+    });
+    expect(run("Knight", 10, [swap]).verdict).toBe("comfortable");
+    expect(run("Deprived", 6, [swap]).problems).toEqual(["no dagger and halberd fit one build"]);
   });
 
   it("assigns the Undead Parish halberd from the Asylum Demon to the first bell", () => {

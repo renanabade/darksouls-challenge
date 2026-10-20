@@ -5,6 +5,7 @@ import {
   modesOf,
   paramRefsOf,
   placeholdersOf,
+  restrictions,
   type MilestoneRef,
   type OrderTemplate,
 } from "../src/index.js";
@@ -83,6 +84,13 @@ describe("catalog", () => {
         expect(hard[0]).toBeGreaterThan(extreme[1]);
       }
     }
+  });
+});
+
+describe("restrictions", () => {
+  it("have unique ids and manual text", () => {
+    expect(new Set(restrictions.map((r) => r.id)).size).toBe(restrictions.length);
+    for (const r of restrictions) expect(r.text).toMatch(/^[A-Z].*\.$/);
   });
 });
 

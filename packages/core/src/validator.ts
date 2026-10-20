@@ -6,7 +6,12 @@ import {
   type Stats,
   type Weapon,
 } from "./build.js";
-import type { Mode, OrderTemplate } from "./orders/index.js";
+import {
+  restrictions,
+  type Mode,
+  type OrderTemplate,
+  type RestrictionEffect,
+} from "./orders/index.js";
 import { reach, type Reach } from "./reach.js";
 import { evaluate, itemsOf, type Requirement } from "./requirement.js";
 import type { Location, Milestone, StartingGift, World } from "./world.js";
@@ -119,6 +124,9 @@ export function validate(
     }
     return bosses;
   };
+  // Build effects of restrictions and orders, read by the weapon checks (which run after every order is read).
+  let noLevelUps = false;
+  let twoHanding = true;
   const build = (label: string): { stats: Stats; points: number } => {
     const startingClass = world.classes.get(setup.startingClass ?? "");
     if (startingClass === undefined || setup.levelCap === undefined)
@@ -126,20 +134,25 @@ export function validate(
     const points = setup.levelCap - startingClass.level;
     if (points < 0)
       throw new InvalidOrderError(`${label}: level cap below the ${startingClass.name}'s level`);
-    return { stats: startingClass.stats, points };
+    return { stats: startingClass.stats, points: noLevelUps ? 0 : points };
   };
-  /** Why the weapon fails the stretch, or undefined: wieldable within the cap and hurting every boss. */
+  /** Why the weapons fail, or undefined: wieldable together within the points, hurting every boss. */
   const weaponProblem = (
-    weapon: Weapon,
+    weapons: Weapon | readonly Weapon[],
     label: string,
     bosses: readonly Boss[],
   ): string | undefined => {
+    const list = "id" in weapons ? [weapons] : weapons;
+    const names = list.map((w) => w.name).join(" and ");
     const { stats, points } = build(label);
-    const needed = pointsToWield(weapon, stats);
+    const needed = pointsToWield(list, stats, twoHanding);
     if (needed > points)
-      return `${weapon.name} needs ${String(needed)} attribute points; the level cap leaves ${String(points)}`;
-    const immune = bosses.find((b) => !damages(weapon, b));
-    return immune && `${weapon.name} cannot damage ${immune.name}`;
+      return `${names} need${list.length === 1 ? "s" : ""} ${String(needed)} attribute points; the build leaves ${String(points)}`;
+    for (const weapon of list) {
+      const immune = bosses.find((b) => !damages(weapon, b));
+      if (immune) return `${weapon.name} cannot damage ${immune.name}`;
+    }
+    return undefined;
   };
 
   const results: { id: string; support: Support; exceptions: string[] }[] = [];
@@ -276,6 +289,68 @@ export function validate(
         break;
       }
 
+      // Worst case: the player chooses the boss order, so every restriction on the list may apply from the
+      // start. Checking them all at once never accepts an impossible list (it may refuse a possible one).
+      case "accumulated-curse":
+        for (const id of listArg(args, "restrictions", label)) {
+          const restriction = restrictions.find((r) => r.id === id);
+          if (restriction === undefined)
+            throw new InvalidOrderError(`${label}: unknown restriction "${id}"`);
+          const effect: RestrictionEffect = restriction.effect;
+          if (effect.kind === "oneHanded") twoHanding = false;
+          if (effect.kind === "noLevelUps") noLevelUps = true;
+          if (effect.kind === "noItemsOfKind") {
+            exceptionOrders.push({
+              result,
+              candidates: () => world.locations.filter((l) => l.kind === effect.itemKind),
+            });
+          }
+        }
+        break;
+
+      // Worst case: the player may never earn a point.
+      case "earned-levels":
+        noLevelUps = true;
+        break;
+
+      // Existence: some weapon of each style, taken in time, does for its phase, and one build fits both.
+      case "phase-swap": {
+        const milestone = milestoneArg(world, args, "milestone", label);
+        const styles = [stringArg(args, "before", label), stringArg(args, "after", label)];
+        for (const style of styles) {
+          if (![...world.weapons.values()].some((w) => isMeleeWeapon(w) && w.category === style))
+            throw new InvalidOrderError(`${label}: no melee weapons of category "${style}"`);
+        }
+        build(label);
+        checks.push((c) => {
+          const [before, after] = styles as [string, string];
+          const available = (r: Reach, style: string): Weapon[] => [
+            ...new Set(
+              world.locations
+                .filter((l) => !c.locations.has(l) && r.regions.has(l.region))
+                .flatMap((l) => world.weapons.get(l.item) ?? [])
+                .filter((w) => isMeleeWeapon(w) && w.category === style),
+            ),
+          ];
+          const first = bossesRequiredFor(c, `milestone:${milestone.id}`, milestone.requires);
+          const firstSet = new Set(first);
+          const second = bossesRequiredFor(c, "goal", { has: world.goal }).filter(
+            (b) => !firstSet.has(b),
+          );
+          const a = available(run(c, new Set(itemsOf(milestone.requires))), before).filter((w) =>
+            first.every((b) => damages(w, b)),
+          );
+          const b = available(run(c, new Set([world.goal])), after).filter((w) =>
+            second.every((boss) => damages(w, boss)),
+          );
+          if (a.length === 0) return `no ${before} can be taken before ${milestone.name}`;
+          if (b.length === 0) return `no ${after} can be taken for after ${milestone.name}`;
+          const fits = a.some((x) => b.some((y) => weaponProblem([x, y], label, []) === undefined));
+          return fits ? undefined : `no ${before} and ${after} fit one build`;
+        });
+        break;
+      }
+
       default:
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
     }
@@ -316,6 +391,13 @@ function stringArg(args: Readonly<Record<string, ArgValue>>, name: string, label
   const value = args[name];
   if (typeof value !== "string") throw new InvalidOrderError(`${label}: "${name}" must be an id`);
   return value;
+}
+
+function listArg(args: Readonly<Record<string, ArgValue>>, name: string, label: string): string[] {
+  const value = args[name];
+  if (!Array.isArray(value) || value.length === 0)
+    throw new InvalidOrderError(`${label}: "${name}" must be a non-empty list`);
+  return [...(value as readonly string[])];
 }
 
 function milestoneArg(

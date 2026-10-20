@@ -85,18 +85,25 @@ export function strengthNeeded(requirement: number, twoHanded: boolean): number 
   return twoHanded ? Math.ceil((2 * requirement) / 3) : requirement;
 }
 
-/** Attribute points a character must still spend to wield the weapon, choosing one or two hands. */
-export function pointsToWield(weapon: Weapon, stats: Stats): number {
-  const missing = (need: number, have: number): number => Math.max(0, need - have);
-  const others =
-    missing(weapon.requirements.dex, stats.dex) +
-    missing(weapon.requirements.int, stats.int) +
-    missing(weapon.requirements.fth, stats.fth);
-  const oneHanded = missing(strengthNeeded(weapon.requirements.str, false), stats.str);
-  const twoHanded = weapon.twoHandable
-    ? missing(strengthNeeded(weapon.requirements.str, true), stats.str)
-    : oneHanded;
-  return others + Math.min(oneHanded, twoHanded);
+/**
+ * Attribute points a character must still spend to wield every one of the weapons (one build for all of
+ * them: attributes only grow, so each needs its highest requirement). Each weapon is held with both hands
+ * when that needs less Strength, unless `twoHanding` is off.
+ */
+export function pointsToWield(
+  weapons: Weapon | readonly Weapon[],
+  stats: Stats,
+  twoHanding = true,
+): number {
+  const list = "id" in weapons ? [weapons] : weapons;
+  const need = (a: Attribute, w: Weapon): number =>
+    a === "str"
+      ? strengthNeeded(w.requirements.str, twoHanding && w.twoHandable)
+      : w.requirements[a];
+  return ATTRIBUTES.reduce(
+    (sum, a) => sum + Math.max(0, Math.max(0, ...list.map((w) => need(a, w))) - stats[a]),
+    0,
+  );
 }
 
 /** True when the weapon hurts every part of the boss: some element of its damage is not nullified there. */
