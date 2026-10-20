@@ -13,6 +13,8 @@ export function readDataSet(): RawDataSet {
     classes: read("classes"),
     bosses: read("bosses"),
     merchants: read("merchants"),
+    milestones: read("milestones"),
+    weapons: read("weapons"),
   };
 }
 

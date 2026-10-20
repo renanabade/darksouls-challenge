@@ -1,6 +1,15 @@
+import {
+  damages,
+  isMeleeWeapon,
+  pointsToWield,
+  type Boss,
+  type Stats,
+  type Weapon,
+} from "./build.js";
 import type { Mode, OrderTemplate } from "./orders/index.js";
 import { reach, type Reach } from "./reach.js";
-import type { Location, StartingGift, World } from "./world.js";
+import { evaluate, itemsOf, type Requirement } from "./requirement.js";
+import type { Location, Milestone, StartingGift, World } from "./world.js";
 
 /** A parameter value drawn by the generator: an id, a number, or a list of ids. */
 export type ArgValue = string | number | readonly string[];
@@ -11,10 +20,14 @@ export interface OrderInstance {
   readonly args: Readonly<Record<string, ArgValue>>;
 }
 
-/** The challenge parameters every check uses. The class and the level cap come with the build checks. */
+/** The challenge parameters every check uses. Weapon orders also need the class and the level cap. */
 export interface Setup {
   readonly mode: Mode;
   readonly gift: StartingGift;
+  /** Starting class name, e.g. "Knight". */
+  readonly startingClass?: string;
+  /** Highest soul level of the run; attribute points are the cap minus the class's starting level. */
+  readonly levelCap?: number;
 }
 
 /**
@@ -89,6 +102,45 @@ export function validate(
       run(c).items.has(world.goal) ? undefined : `the goal "${world.goal}" cannot be reached`,
   ];
   const failures = (c: Constraints): string[] => checks.flatMap((check) => check(c) ?? []);
+  const holds = (r: Reach, requirement: Requirement): boolean =>
+    evaluate(requirement, { has: (i) => r.items.has(i), reached: (id) => r.regions.has(id) });
+
+  // Bosses without whom a requirement cannot be met. Computed on the forbidden areas only: forbidden
+  // pickups would only make the goal check fail first. Memoized, since checks run many times.
+  const requiredBossesMemo = new Map<string, Boss[]>();
+  const bossesRequiredFor = (c: Constraints, key: string, requirement: Requirement): Boss[] => {
+    let bosses = requiredBossesMemo.get(key);
+    if (bosses === undefined) {
+      const regionsOnly: Constraints = { regions: c.regions, locations: new Set() };
+      bosses = [...world.bosses.values()].filter(
+        (b) => !holds(run(regionsOnly, new Set([b.defeatedItem])), requirement),
+      );
+      requiredBossesMemo.set(key, bosses);
+    }
+    return bosses;
+  };
+  const build = (label: string): { stats: Stats; points: number } => {
+    const startingClass = world.classes.get(setup.startingClass ?? "");
+    if (startingClass === undefined || setup.levelCap === undefined)
+      throw new InvalidOrderError(`${label}: weapon orders need a starting class and a level cap`);
+    const points = setup.levelCap - startingClass.level;
+    if (points < 0)
+      throw new InvalidOrderError(`${label}: level cap below the ${startingClass.name}'s level`);
+    return { stats: startingClass.stats, points };
+  };
+  /** Why the weapon fails the stretch, or undefined: wieldable within the cap and hurting every boss. */
+  const weaponProblem = (
+    weapon: Weapon,
+    label: string,
+    bosses: readonly Boss[],
+  ): string | undefined => {
+    const { stats, points } = build(label);
+    const needed = pointsToWield(weapon, stats);
+    if (needed > points)
+      return `${weapon.name} needs ${String(needed)} attribute points; the level cap leaves ${String(points)}`;
+    const immune = bosses.find((b) => !damages(weapon, b));
+    return immune && `${weapon.name} cannot damage ${immune.name}`;
+  };
 
   const results: { id: string; support: Support; exceptions: string[] }[] = [];
   // Orders that forbid locations but except what the game requires. Candidates are listed once every
@@ -168,6 +220,62 @@ export function validate(
         break;
       }
 
+      // Worst case: whichever weapon the player picks up first in the area must do for the stretch.
+      case "first-weapon-of-area": {
+        const area = stringArg(args, "area", label);
+        const regions = areaRegions(world, area, label);
+        const until = milestoneArg(world, args, "until", label);
+        build(label);
+        checks.push((c) => {
+          const before = run(c, new Set(itemsOf(until.requires)));
+          if (![...regions].some((r) => before.regions.has(r)))
+            return `${area} cannot be entered before ${until.name}`;
+          const weapons = world.locations
+            .filter((l) => l.found === true && regions.has(l.region) && !c.locations.has(l))
+            .flatMap((l) => world.weapons.get(l.item) ?? [])
+            .filter(isMeleeWeapon);
+          if (weapons.length === 0) return `there is no weapon to find in ${area}`;
+          const enterArea: Requirement = { any: [...regions].map((r) => ({ region: r })) };
+          const beforeArea = new Set(bossesRequiredFor(c, `area:${area}`, enterArea));
+          const stretch = bossesRequiredFor(c, `milestone:${until.id}`, until.requires).filter(
+            (b) => !beforeArea.has(b),
+          );
+          for (const weapon of weapons) {
+            const problem = weaponProblem(weapon, label, stretch);
+            if (problem !== undefined)
+              return `${problem} (found in ${area}, used until ${until.name})`;
+          }
+          return undefined;
+        });
+        break;
+      }
+
+      // Existence: the named weapon can be taken before the stretch ends and does for it.
+      case "assigned-weapon": {
+        const from = milestoneArg(world, args, "from", label);
+        const until = milestoneArg(world, args, "until", label);
+        const name = stringArg(args, "location", label);
+        const location = world.locations.find((l) => l.name === name);
+        if (location === undefined)
+          throw new InvalidOrderError(`${label}: unknown location "${name}"`);
+        const weapon = world.weapons.get(location.item);
+        if (weapon === undefined || !isMeleeWeapon(weapon))
+          throw new InvalidOrderError(`${label}: "${name}" does not hold a melee weapon`);
+        build(label);
+        checks.push((c) => {
+          const before = run(c, new Set(itemsOf(until.requires)));
+          if (c.locations.has(location) || !before.regions.has(location.region))
+            return `${weapon.name} at "${name}" cannot be taken before ${until.name}`;
+          const done = new Set(bossesRequiredFor(c, `milestone:${from.id}`, from.requires));
+          const stretch = bossesRequiredFor(c, `milestone:${until.id}`, until.requires).filter(
+            (b) => !done.has(b),
+          );
+          const problem = weaponProblem(weapon, label, stretch);
+          return problem && `${problem} (from ${from.name} until ${until.name})`;
+        });
+        break;
+      }
+
       default:
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
     }
@@ -208,6 +316,18 @@ function stringArg(args: Readonly<Record<string, ArgValue>>, name: string, label
   const value = args[name];
   if (typeof value !== "string") throw new InvalidOrderError(`${label}: "${name}" must be an id`);
   return value;
+}
+
+function milestoneArg(
+  world: World,
+  args: Readonly<Record<string, ArgValue>>,
+  name: string,
+  label: string,
+): Milestone {
+  const id = stringArg(args, name, label);
+  const milestone = world.milestones.get(id);
+  if (milestone === undefined) throw new InvalidOrderError(`${label}: unknown milestone "${id}"`);
+  return milestone;
 }
 
 function areaRegions(world: World, area: string, label: string): Set<string> {

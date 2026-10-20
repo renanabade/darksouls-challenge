@@ -1,0 +1,208 @@
+import { describe, expect, it } from "vitest";
+import {
+  catalog,
+  InvalidOrderError,
+  parseWorld,
+  validate,
+  type ArgValue,
+  type OrderInstance,
+  type OrderTemplate,
+  type Setup,
+  type World,
+} from "../src/index.js";
+import { readDataSet } from "./ds1.js";
+
+const order = (id: string, args: Record<string, ArgValue>): OrderInstance => ({
+  template: catalog.find((o) => o.id === id) as OrderTemplate,
+  args,
+});
+
+/**
+ * camp → yard (a Club and a Heavy Axe on corpses) → gate (the Brute) → keep (a Moon Blade, magic only)
+ * → crypt (the Wraith, whom physical damage does not hurt; the goal) → throne (a Crown Sword).
+ */
+const loc = (region: string, item: string, category = "CORPSE_ITEM", found = true) => ({
+  name: `${region}: ${item}`,
+  region,
+  item,
+  count: 1,
+  category,
+  mandatory: false,
+  found,
+});
+const weapon = (
+  id: number,
+  name: string,
+  str: number,
+  int: number,
+  phys: number,
+  magic: number,
+) => ({
+  id,
+  name,
+  category: "sword",
+  melee: true,
+  level: 0,
+  hands: { both: true },
+  req: { str, dex: 0, int, fth: 0 },
+  baseDamage: { phys, magic, fire: 0, thunder: 0 },
+});
+const small: World = parseWorld({
+  meta: { start: "camp", goal: "Wraith Defeated" },
+  regions: [
+    ["camp", "camp"],
+    ["yard", "yard"],
+    ["gate", "yard"],
+    ["keep", "keep"],
+    ["crypt", "keep"],
+    ["throne", "throne"],
+  ].map(([id, area]) => ({ id, name: id, area, mandatory: false })),
+  entrances: [
+    { from: "camp", to: "yard", requires: true },
+    { from: "yard", to: "gate", requires: true },
+    { from: "gate", to: "keep", requires: { has: "Brute Defeated" } },
+    { from: "keep", to: "crypt", requires: true },
+    { from: "crypt", to: "throne", requires: { has: "Wraith Defeated" } },
+  ],
+  locations: [
+    loc("yard", "Club"),
+    loc("yard", "Heavy Axe"),
+    loc("keep", "Moon Blade"),
+    loc("throne", "Crown Sword"),
+    loc("gate", "Brute Defeated", "BOSS", false),
+    loc("crypt", "Wraith Defeated", "BOSS", false),
+  ],
+  classes: {
+    classes: [
+      {
+        name: "Knight",
+        level: 5,
+        stats: { strength: 12, dexterity: 10, intelligence: 8, faith: 8 },
+      },
+    ],
+    gifts: [{ row: 1, items: ["(none)"] }],
+  },
+  bosses: [
+    { id: "brute", name: "Brute", region: "gate", parts: [{ noDamage: [] }] },
+    { id: "wraith", name: "Wraith", region: "crypt", parts: [{ noDamage: ["phys"] }] },
+  ],
+  merchants: [],
+  milestones: [
+    { id: "brute-dead", name: "Brute defeated", kind: "boss", requires: { has: "Brute Defeated" } },
+    {
+      id: "wraith-dead",
+      name: "Wraith defeated",
+      kind: "boss",
+      requires: { has: "Wraith Defeated" },
+    },
+  ],
+  weapons: [
+    weapon(1, "Club", 10, 0, 100, 0),
+    weapon(2, "Heavy Axe", 30, 0, 150, 0), // two-handed: 20 Strength, 8 points for the Knight
+    weapon(3, "Moon Blade", 0, 15, 0, 80), // 7 Intelligence points
+    weapon(4, "Crown Sword", 0, 0, 0, 120),
+  ],
+});
+const gift = small.gifts[0];
+const setup = (levelCap: number): Setup => {
+  if (gift === undefined) throw new Error("missing gift");
+  return { mode: "static", gift, startingClass: "Knight", levelCap };
+};
+
+describe("first weapon of the area (worst case)", () => {
+  const yard = order("first-weapon-of-area", { area: "yard", until: "brute-dead" });
+
+  it("needs every weapon of the area to be wieldable within the level cap", () => {
+    expect(validate(small, setup(10), [yard]).problems).toEqual([
+      "Heavy Axe needs 8 attribute points; the level cap leaves 5 (found in yard, used until Brute defeated)",
+    ]);
+    expect(validate(small, setup(13), [yard]).verdict).toBe("comfortable");
+  });
+
+  it("needs every weapon to hurt the bosses of the stretch", () => {
+    const keep = order("first-weapon-of-area", { area: "keep", until: "wraith-dead" });
+    expect(validate(small, setup(12), [keep]).verdict).toBe("comfortable");
+    const yardToWraith = order("first-weapon-of-area", { area: "yard", until: "wraith-dead" });
+    expect(validate(small, setup(20), [yardToWraith]).problems[0]).toMatch(/cannot damage Wraith/);
+  });
+
+  it("refuses an area with no weapon to find", () => {
+    const camp = order("first-weapon-of-area", { area: "camp", until: "brute-dead" });
+    expect(validate(small, setup(20), [camp]).problems).toEqual([
+      "there is no weapon to find in camp",
+    ]);
+  });
+});
+
+describe("assigned weapon (existence)", () => {
+  const assigned = (location: string) =>
+    order("assigned-weapon", { from: "brute-dead", until: "wraith-dead", location });
+
+  it("accepts a weapon taken before the stretch ends that hurts its bosses", () => {
+    expect(validate(small, setup(12), [assigned("keep: Moon Blade")]).verdict).toBe("comfortable");
+    expect(validate(small, setup(11), [assigned("keep: Moon Blade")]).verdict).toBe("impossible");
+  });
+
+  it("refuses a weapon the bosses of the stretch shrug off, or one found too late", () => {
+    expect(validate(small, setup(20), [assigned("yard: Club")]).problems[0]).toMatch(
+      /Club cannot damage Wraith/,
+    );
+    expect(validate(small, setup(20), [assigned("throne: Crown Sword")]).problems).toEqual([
+      'Crown Sword at "throne: Crown Sword" cannot be taken before Wraith defeated',
+    ]);
+  });
+
+  it("refuses to run without a class and a level cap", () => {
+    const noBuild = { mode: "static" as const, gift: setup(0).gift };
+    expect(() => validate(small, noBuild, [assigned("keep: Moon Blade")])).toThrow(
+      InvalidOrderError,
+    );
+  });
+});
+
+describe("weapon orders on the DS1 data set", () => {
+  const world = parseWorld(readDataSet());
+
+  const gift = world.gifts.find((g) => g.items.length === 0);
+  if (gift === undefined) throw new Error("missing gift");
+  const run = (startingClass: string, levelCap: number, orders: OrderInstance[]) =>
+    validate(world, { mode: "static", gift, startingClass, levelCap }, orders);
+  const areasWithWeapons = [
+    "anor-londo",
+    "blighttown",
+    "darkroot-garden",
+    "depths",
+    "firelink-shrine",
+    "new-londo-ruins",
+    "painted-world-of-ariamis",
+    "sens-fortress",
+    "the-catacombs",
+    "undead-burg",
+    "undead-parish",
+    "valley-of-drakes",
+  ];
+
+  // Derived from the data set (0.3.0): a Knight at soul level 30 can wield whatever melee weapon each
+  // area offers until the Kiln; a level-1 Pyromancer has no points to spend, and every one needs some.
+  it("gives a first weapon of the area that a Knight at level 30 can always use", () => {
+    for (const area of areasWithWeapons) {
+      const first = order("first-weapon-of-area", { area, until: "kiln-open" });
+      expect(run("Knight", 30, [first]).verdict, area).toBe("comfortable");
+      expect(run("Pyromancer", 1, [first]).verdict, area).toBe("impossible");
+    }
+  });
+
+  it("assigns the Undead Parish halberd from the Asylum Demon to the first bell", () => {
+    const halberd = world.locations.find((l) => l.found === true && l.item === "Halberd");
+    if (halberd === undefined) throw new Error("no halberd");
+    const assigned = order("assigned-weapon", {
+      from: "boss-asylum-demon",
+      until: "bell-undead-parish",
+      location: halberd.name,
+    });
+    expect(run("Knight", 10, [assigned]).verdict).toBe("comfortable");
+    expect(run("Pyromancer", 1, [assigned]).problems[0]).toMatch(
+      /^Halberd needs \d+ attribute points/,
+    );
+  });
+});
