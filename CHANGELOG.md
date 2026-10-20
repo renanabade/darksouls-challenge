@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.1.0...darksouls-challenge-v0.2.0) (2026-10-20)
+
+
+### Features
+
+* **core:** validate weapon orders against the level cap and the bosses ([4a01830](https://github.com/renanabade/darksouls-challenge/commit/4a01830fd3e77eca826c1ad25504baa818284fa0))
+* **data:** say what each milestone means on the graph (v0.3.0) ([b73494f](https://github.com/renanabade/darksouls-challenge/commit/b73494f572b6d4b72fe2c47704a8fef9857aeb76))
+
 ## 0.1.0 (2026-10-20)
 
 
