@@ -3020,6 +3020,16 @@
   "region": "firelink-shrine-griggs-of-vinheim-after-logan-leaves"
  },
  {
+  "category": "NPC_GIFT",
+  "count": 1,
+  "found": false,
+  "item": "Pyromancy Flame",
+  "kind": "weapon",
+  "mandatory": false,
+  "name": "FS: Pyromancy Flame - Laurentius' gift",
+  "region": "firelink-shrine-laurentius-of-the-great-swamp"
+ },
+ {
   "category": "SHOP_ITEM",
   "count": 1,
   "found": false,
