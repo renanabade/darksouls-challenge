@@ -1,6 +1,7 @@
-export { CONDITIONS, STRETCH_ENDS } from "./draw.js";
+export { CONDITIONS, DIFFICULTIES, STRETCH_ENDS } from "./draw.js";
 export {
   generate,
+  generateGroup,
   GENERATOR_VERSION,
   type Challenge,
   type GeneratedOrder,

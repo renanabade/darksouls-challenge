@@ -47,6 +47,17 @@ export class Random {
     }
     return out;
   }
+
+  /**
+   * A shuffled copy where items of larger weight tend to come first (Efraimidis–Spirakis: each item gets
+   * the key u^(1/weight) and the list is sorted by key, descending). Weights must be positive.
+   */
+  weightedShuffle<T>(list: readonly T[], weight: (item: T) => number): T[] {
+    return list
+      .map((item) => ({ item, key: this.next() ** (1 / weight(item)) }))
+      .sort((a, b) => b.key - a.key)
+      .map((k) => k.item);
+  }
 }
 
 function fnv1a(text: string): number {
