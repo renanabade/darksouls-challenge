@@ -156,7 +156,7 @@
  {
   "area": "darkroot-garden",
   "id": "darkroot-garden-behind-artorias-door",
-  "mandatory": false,
+  "mandatory": true,
   "name": "Darkroot Garden - Behind Artorias Door",
   "virtual": false
  },
@@ -443,7 +443,7 @@
  {
   "area": "new-londo-ruins",
   "id": "lower-new-londo-ruins",
-  "mandatory": false,
+  "mandatory": true,
   "name": "Lower New Londo Ruins",
   "virtual": false
  },
@@ -492,7 +492,7 @@
  {
   "area": "new-londo-ruins",
   "id": "new-londo-ruins-door-to-the-seal",
-  "mandatory": false,
+  "mandatory": true,
   "name": "New Londo Ruins Door to the Seal",
   "virtual": false
  },
@@ -716,7 +716,7 @@
  {
   "area": "the-abyss",
   "id": "the-abyss",
-  "mandatory": false,
+  "mandatory": true,
   "name": "The Abyss",
   "virtual": false
  },
@@ -975,14 +975,14 @@
  {
   "area": "new-londo-ruins",
   "id": "upper-new-londo-ruins",
-  "mandatory": false,
+  "mandatory": true,
   "name": "Upper New Londo Ruins",
   "virtual": false
  },
  {
   "area": "new-londo-ruins",
   "id": "upper-new-londo-ruins-after-fog",
-  "mandatory": false,
+  "mandatory": true,
   "name": "Upper New Londo Ruins - After Fog",
   "virtual": false
  },
@@ -996,7 +996,7 @@
  {
   "area": "new-londo-ruins",
   "id": "upper-new-londo-ruins-ingward-after-lordvessel",
-  "mandatory": false,
+  "mandatory": true,
   "name": "Upper New Londo Ruins - Ingward, After Lordvessel",
   "virtual": false
  },

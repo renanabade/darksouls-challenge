@@ -30,7 +30,7 @@ exports as long as the names do not change.
 | `areas.json` | The game's 30 place names: `id`, `name`, `placeNameId` (PlaceNames text id), `dlc`, `regions` |
 | `regions.json` | `id`, `name`, `area` (null only for `virtual` shop-logic nodes), `mandatory` (on every path to the goal) |
 | `entrances.json` | Directed edges `from` → `to` with `requires`; `walkBack`: false when the way back on foot is known not to exist (one-way drop, scripted ride); true is the default and an assumption for plain walking edges; `origin`: DSAP, override (hand correction with `note`), way back |
-| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops): `region`, `name`, `item`, `count`, `category`, `mandatory`, `found` |
+| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops): `region`, `name`, `item`, `count`, `category`, `mandatory`, `found`, `kind` (`weapon`, `armor`, `ring`, `spell`, `good`, or `other` for graph events and renamed items; from the game's name tables) |
 | `treasures.json` | Game treasures only (corpse or chest): `region`, `map`, `lots` (lot chain heads), `container`, `hidden`, `eventControlled`, `rescue` (Firelink rescue chest for missed items), `perClass` (Asylum class kit), `deathDrop` (shown only when someone dies), `items` |
 | `bonfires.json` | `name`, `region`, `flag` (lit), `entityId`. Warping needs the Lordvessel and sitting at a bonfire |
 | `bosses.json` | `id`, `name`, `flag` (defeated), `region`, `mandatoryByGraph`, `earliestSphere`, `parts` (per body part: `hp`, `resist`, `immune` status list, `noDamage` damage types, NpcParam `flags`), `requires` (hard requirements with evidence) |
