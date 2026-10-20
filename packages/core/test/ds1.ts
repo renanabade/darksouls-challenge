@@ -12,6 +12,7 @@ export function readDataSet(): RawDataSet {
     locations: read("locations"),
     classes: read("classes"),
     bosses: read("bosses"),
+    merchants: read("merchants"),
   };
 }
 

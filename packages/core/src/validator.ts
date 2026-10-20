@@ -53,6 +53,8 @@ export class InvalidOrderError extends Error {
 }
 
 export const BELLS: readonly string[] = ["Bell of Awakening #1", "Bell of Awakening #2"];
+/** Location categories of things bought from a merchant. */
+const SHOP = new Set(["SHOP_ITEM", "SHOP_EXTENDED_ITEM", "MISSABLE_SHOP_ITEM"]);
 
 interface Constraints {
   readonly regions: Set<string>;
@@ -89,7 +91,10 @@ export function validate(
   const failures = (c: Constraints): string[] => checks.flatMap((check) => check(c) ?? []);
 
   const results: { id: string; support: Support; exceptions: string[] }[] = [];
-  const groundOrders: { result: { exceptions: string[] }; regions: ReadonlySet<string> }[] = [];
+  // Orders that forbid locations but except what the game requires. Candidates are listed once every
+  // order is read, because a shared shop closes only when all its merchants are closed.
+  const exceptionOrders: { result: { exceptions: string[] }; candidates: () => Location[] }[] = [];
+  const closedMerchants = new Set<string>();
 
   for (const [index, { template, args }] of orders.entries()) {
     const label = `order ${String(index)} (${template.id})`;
@@ -133,9 +138,33 @@ export function validate(
       case "nothing-from-the-ground": {
         const regions = areaRegions(world, stringArg(args, "area", label), label);
         // Without the found flag, a required pickup could be missed and an impossible order pass.
-        if (world.locations.every((l) => l.found !== undefined))
-          groundOrders.push({ result, regions });
-        else result.support = "pending";
+        if (world.locations.every((l) => l.found !== undefined)) {
+          exceptionOrders.push({
+            result,
+            candidates: () =>
+              world.locations.filter((l) => l.found === true && regions.has(l.region)),
+          });
+        } else result.support = "pending";
+        break;
+      }
+
+      case "closed-merchant": {
+        const merchant = world.merchants.get(stringArg(args, "merchant", label));
+        if (merchant === undefined) throw new InvalidOrderError(`${label}: unknown merchant`);
+        closedMerchants.add(merchant.id);
+        // A shop region is closed when every merchant selling there is closed.
+        const isClosed = (region: string): boolean =>
+          [...world.merchants.values()].every(
+            (m) => !m.regions.includes(region) || closedMerchants.has(m.id),
+          );
+        exceptionOrders.push({
+          result,
+          candidates: () =>
+            world.locations.filter(
+              (l) =>
+                SHOP.has(l.category) && merchant.regions.includes(l.region) && isClosed(l.region),
+            ),
+        });
         break;
       }
 
@@ -144,14 +173,15 @@ export function validate(
     }
   }
 
-  // Automatic exceptions, once every other constraint is known. Each pickup of the area is forbidden in
+  // Automatic exceptions, once every other constraint is known. Each candidate location is forbidden in
   // turn; one that breaks a check stays allowed and goes on the list. Checks only get harder as more is
   // forbidden, so every item on the list is needed by the final set: the list cannot be shortened.
+  // A location two orders cover (a shop shared by two closed merchants) is decided by the first one.
   if (failures(constraints).length === 0) {
-    for (const { result, regions } of groundOrders) {
-      const pickups = world.locations.filter(
-        (l) => l.found === true && regions.has(l.region) && !constraints.locations.has(l),
-      );
+    const decided = new Set<Location>();
+    for (const { result, candidates } of exceptionOrders) {
+      const pickups = candidates().filter((l) => !decided.has(l));
+      pickups.forEach((l) => decided.add(l));
       pickups.forEach((l) => constraints.locations.add(l));
       if (failures(constraints).length === 0) continue;
       pickups.forEach((l) => constraints.locations.delete(l));
