@@ -1,0 +1,1298 @@
+[
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 110,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3000,
+  "item": "Sorcery: Soul Arrow",
+  "name": "Soul Arrow",
+  "req": {
+   "fth": 0,
+   "int": 10
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 30
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 150,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3010,
+  "item": "Sorcery: Great Soul Arrow",
+  "name": "Great Soul Arrow",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 200,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3020,
+  "item": "Sorcery: Heavy Soul Arrow",
+  "name": "Heavy Soul Arrow",
+  "req": {
+   "fth": 0,
+   "int": 12
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 12
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 240,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3030,
+  "item": "Sorcery: Great Heavy Soul Arrow",
+  "name": "Great Heavy Soul Arrow",
+  "req": {
+   "fth": 0,
+   "int": 16
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 8
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 95,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3040,
+  "item": "Sorcery: Homing Soulmass",
+  "name": "Homing Soulmass",
+  "req": {
+   "fth": 0,
+   "int": 18
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 10
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 115,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3050,
+  "item": "Sorcery: Homing Crystal Soulmass",
+  "name": "Homing Crystal Soulmass",
+  "req": {
+   "fth": 0,
+   "int": 24
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 10
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 300,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3060,
+  "item": "Sorcery: Soul Spear",
+  "name": "Soul Spear",
+  "req": {
+   "fth": 0,
+   "int": 36
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 360,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3070,
+  "item": "Sorcery: Crystal Soul Spear",
+  "name": "Crystal Soul Spear",
+  "req": {
+   "fth": 0,
+   "int": 44
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3100,
+  "item": "Sorcery: Magic Weapon",
+  "name": "Magic Weapon",
+  "req": {
+   "fth": 0,
+   "int": 10
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3110,
+  "item": "Sorcery: Great Magic Weapon",
+  "name": "Great Magic Weapon",
+  "req": {
+   "fth": 0,
+   "int": 15
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3120,
+  "item": "Sorcery: Crystal Magic Weapon",
+  "name": "Crystal Magic Weapon",
+  "req": {
+   "fth": 0,
+   "int": 25
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3300,
+  "item": "Sorcery: Magic Shield",
+  "name": "Magic Shield",
+  "req": {
+   "fth": 0,
+   "int": 10
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3310,
+  "item": "Sorcery: Strong Magic Shield",
+  "name": "Strong Magic Shield",
+  "req": {
+   "fth": 0,
+   "int": 15
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3400,
+  "item": "Sorcery: Hidden Weapon",
+  "name": "Hidden Weapon",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3410,
+  "item": "Sorcery: Hidden Body",
+  "name": "Hidden Body",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3500,
+  "item": "Sorcery: Cast Light",
+  "name": "Cast Light",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3510,
+  "item": "Sorcery: Hush",
+  "name": "Hush",
+  "req": {
+   "fth": 0,
+   "int": 15
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 6
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3520,
+  "item": "Sorcery: Aural Decoy",
+  "name": "Aural Decoy",
+  "req": {
+   "fth": 0,
+   "int": 10
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3530,
+  "item": "Sorcery: Repair",
+  "name": "Repair",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3540,
+  "item": "Sorcery: Fall Control",
+  "name": "Fall Control",
+  "req": {
+   "fth": 0,
+   "int": 15
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 10
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3550,
+  "item": "Sorcery: Chameleon",
+  "name": "Chameleon",
+  "req": {
+   "fth": 0,
+   "int": 14
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 11
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3600,
+  "item": "Sorcery: Resist Curse",
+  "name": "Resist Curse",
+  "req": {
+   "fth": 0,
+   "int": 16
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3610,
+  "item": "Sorcery: Remedy",
+  "name": "Remedy",
+  "req": {
+   "fth": 0,
+   "int": 16
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 280,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3700,
+  "item": "Sorcery: White Dragon Breath",
+  "name": "White Dragon Breath",
+  "req": {
+   "fth": 0,
+   "int": 50
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 170,
+   "phys": 150,
+   "thunder": 0
+  },
+  "id": 3710,
+  "item": "Sorcery: Dark Orb",
+  "name": "Dark Orb",
+  "req": {
+   "fth": 0,
+   "int": 16
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 12
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 110,
+   "phys": 100,
+   "thunder": 0
+  },
+  "id": 3720,
+  "item": "Sorcery: Dark Bead",
+  "name": "Dark Bead",
+  "req": {
+   "fth": 0,
+   "int": 16
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 6
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 3730,
+  "item": "Sorcery: Dark Fog",
+  "name": "Dark Fog",
+  "req": {
+   "fth": 0,
+   "int": 18
+  },
+  "school": "sorcery",
+  "slots": 1,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 130,
+   "phys": 120,
+   "thunder": 0
+  },
+  "id": 3740,
+  "item": "Sorcery: Pursuers",
+  "name": "Pursuers",
+  "req": {
+   "fth": 0,
+   "int": 32
+  },
+  "school": "sorcery",
+  "slots": 2,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 200,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4000,
+  "item": "Pyromancy: Fireball",
+  "name": "Fireball",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 8
+ },
+ {
+  "damage": {
+   "fire": 245,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4010,
+  "item": "Pyromancy: Fire Orb",
+  "name": "Fire Orb",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 6
+ },
+ {
+  "damage": {
+   "fire": 300,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4020,
+  "item": "Pyromancy: Great Fireball",
+  "name": "Great Fireball",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 320,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4030,
+  "item": "Pyromancy: Firestorm",
+  "name": "Firestorm",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 390,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4040,
+  "item": "Pyromancy: Fire Tempest",
+  "name": "Fire Tempest",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 55,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4050,
+  "item": "Pyromancy: Fire Surge",
+  "name": "Fire Surge",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 80
+ },
+ {
+  "damage": {
+   "fire": 260,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4060,
+  "item": "Pyromancy: Fire Whip",
+  "name": "Fire Whip",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 80
+ },
+ {
+  "damage": {
+   "fire": 180,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4100,
+  "item": "Pyromancy: Combustion",
+  "name": "Combustion",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 16
+ },
+ {
+  "damage": {
+   "fire": 240,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4110,
+  "item": "Pyromancy: Great Combustion",
+  "name": "Great Combustion",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 8
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4200,
+  "item": "Pyromancy: Poison Mist",
+  "name": "Poison Mist",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4210,
+  "item": "Pyromancy: Toxic Mist",
+  "name": "Toxic Mist",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4220,
+  "item": "Pyromancy: Acid Surge",
+  "name": "Acid Surge",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4300,
+  "item": "Pyromancy: Iron Flesh",
+  "name": "Iron Flesh",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4310,
+  "item": "Pyromancy: Flash Sweat",
+  "name": "Flash Sweat",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4360,
+  "item": "Pyromancy: Undead Rapport",
+  "name": "Undead Rapport",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 7
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4400,
+  "item": "Pyromancy: Power Within",
+  "name": "Power Within",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 300,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4500,
+  "item": "Pyromancy: Great Chaos Fireball",
+  "name": "Great Chaos Fireball",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 2,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 360,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4510,
+  "item": "Pyromancy: Chaos Storm",
+  "name": "Chaos Storm",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 2,
+  "uses": 20
+ },
+ {
+  "damage": {
+   "fire": 260,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 4520,
+  "item": "Pyromancy: Chaos Fire Whip",
+  "name": "Chaos Fire Whip",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 2,
+  "uses": 80
+ },
+ {
+  "damage": {
+   "fire": 200,
+   "magic": 0,
+   "phys": 160,
+   "thunder": 0
+  },
+  "id": 4530,
+  "item": "Pyromancy: Black Flame",
+  "name": "Black Flame",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "pyromancy",
+  "slots": 1,
+  "uses": 8
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5000,
+  "item": "Miracle: Heal",
+  "name": "Heal",
+  "req": {
+   "fth": 12,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5010,
+  "item": "Miracle: Great Heal",
+  "name": "Great Heal",
+  "req": {
+   "fth": 24,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5020,
+  "item": "Miracle: Great Heal Excerpt",
+  "name": "Great Heal Excerpt",
+  "req": {
+   "fth": 14,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5030,
+  "item": "Miracle: Soothing Sunlight",
+  "name": "Soothing Sunlight",
+  "req": {
+   "fth": 48,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 2,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5040,
+  "item": "Miracle: Replenishment",
+  "name": "Replenishment",
+  "req": {
+   "fth": 16,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5050,
+  "item": "Miracle: Bountiful Sunlight",
+  "name": "Bountiful Sunlight",
+  "req": {
+   "fth": 36,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 2,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 250,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5100,
+  "item": "Miracle: Gravelord Sword Dance",
+  "name": "Gravelord Sword Dance",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 40
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 310,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5110,
+  "item": "Miracle: Gravelord Greatsword Dance",
+  "name": "Gravelord Greatsword Dance",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 40
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5200,
+  "item": "Miracle: Escape Death",
+  "name": "Escape Death",
+  "req": {
+   "fth": 0,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5210,
+  "item": "Miracle: Homeward",
+  "name": "Homeward",
+  "req": {
+   "fth": 18,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5300,
+  "item": "Miracle: Force",
+  "name": "Force",
+  "req": {
+   "fth": 12,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 21
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 280,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5310,
+  "item": "Miracle: Wrath of the Gods",
+  "name": "Wrath of the Gods",
+  "req": {
+   "fth": 28,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 3
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 240,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5320,
+  "item": "Miracle: Emit Force",
+  "name": "Emit Force",
+  "req": {
+   "fth": 18,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 6
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5400,
+  "item": "Miracle: Seek Guidance",
+  "name": "Seek Guidance",
+  "req": {
+   "fth": 12,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 270
+  },
+  "id": 5500,
+  "item": "Miracle: Lightning Spear",
+  "name": "Lightning Spear",
+  "req": {
+   "fth": 20,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 10
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 300
+  },
+  "id": 5510,
+  "item": "Miracle: Great Lightning Spear",
+  "name": "Great Lightning Spear",
+  "req": {
+   "fth": 30,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 10
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 370
+  },
+  "id": 5520,
+  "item": "Miracle: Sunlight Spear",
+  "name": "Sunlight Spear",
+  "req": {
+   "fth": 50,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 2,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5600,
+  "item": "Miracle: Magic Barrier",
+  "name": "Magic Barrier",
+  "req": {
+   "fth": 14,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5610,
+  "item": "Miracle: Great Magic Barrier",
+  "name": "Great Magic Barrier",
+  "req": {
+   "fth": 24,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5700,
+  "item": "Miracle: Karmic Justice",
+  "name": "Karmic Justice",
+  "req": {
+   "fth": 20,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 4
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5800,
+  "item": "Miracle: Tranquil Walk of Peace",
+  "name": "Tranquil Walk of Peace",
+  "req": {
+   "fth": 18,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 5
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5810,
+  "item": "Miracle: Vow of Silence",
+  "name": "Vow of Silence",
+  "req": {
+   "fth": 30,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 2,
+  "uses": 2
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5900,
+  "item": "Miracle: Sunlight Blade",
+  "name": "Sunlight Blade",
+  "req": {
+   "fth": 30,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 1
+ },
+ {
+  "damage": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "thunder": 0
+  },
+  "id": 5910,
+  "item": "Miracle: Darkmoon Blade",
+  "name": "Darkmoon Blade",
+  "req": {
+   "fth": 30,
+   "int": 0
+  },
+  "school": "miracle",
+  "slots": 1,
+  "uses": 1
+ }
+]

@@ -30,13 +30,14 @@ exports as long as the names do not change.
 | `areas.json` | The game's 30 place names: `id`, `name`, `placeNameId` (PlaceNames text id), `dlc`, `regions` |
 | `regions.json` | `id`, `name`, `area` (null only for `virtual` shop-logic nodes), `mandatory` (on every path to the goal) |
 | `entrances.json` | Directed edges `from` → `to` with `requires`; `walkBack`: false when the way back on foot is known not to exist (one-way drop, scripted ride); true is the default and an assumption for plain walking edges; `origin`: DSAP, override (hand correction with `note`), way back |
-| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops): `region`, `name`, `item`, `count`, `category`, `mandatory`, `found`, `kind` (`weapon`, `armor`, `ring`, `spell`, `good`, or `other` for graph events and renamed items; from the game's name tables) |
+| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops), plus sources it lacks (category `NPC_GIFT`: Laurentius' Pyromancy Flame, from his talk script): `region`, `name`, `item`, `count`, `category`, `mandatory`, `found`, `kind` (`weapon`, `armor`, `ring`, `spell`, `good`, or `other` for graph events and renamed items; from the game's name tables) |
 | `treasures.json` | Game treasures only (corpse or chest): `region`, `map`, `lots` (lot chain heads), `container`, `hidden`, `eventControlled`, `rescue` (Firelink rescue chest for missed items), `perClass` (Asylum class kit), `deathDrop` (shown only when someone dies), `items` |
 | `bonfires.json` | `name`, `region`, `flag` (lit), `entityId`. Warping needs the Lordvessel and sitting at a bonfire |
 | `bosses.json` | `id`, `name`, `flag` (defeated), `region`, `mandatoryByGraph`, `earliestSphere`, `parts` (per body part: `hp`, `resist`, `immune` status list, `noDamage` damage types, NpcParam `flags`), `requires` (hard requirements with evidence) |
 | `milestones.json` | Progression flags (bosses, bells, Lordvessel, Lord Souls, Kiln): `id`, `name`, `flag`, `kind`, `region`, `earliestSphere`, `requires` (what reaching it means on the graph, as a requirement expression; boss milestones name the boss's death item) |
 | `merchants.json` | `id`, `name`, `regions` (graph regions holding their shop locations; a virtual region is shared by every merchant who sells there), ShopLineupParam `rows` range, `stock` (`kind`, `id`, `name`, `price`, `quantity` (-1 = unlimited)), `variants` (talk script, row range, flag conditions that select it) |
 | `weapons.json` | Every named weapon row: `family`, `infusion`, `category`, `melee`, `req` (str/dex/int/fth), `baseDamage`, `scaling`, `casts`, `hands`, `dmgType`, `weight` |
+| `spells.json` | Every named spell (Magic param): `id`, `name`, `item` (the name in `locations.json`, `Sorcery: Soul Arrow`), `school` (sorcery, miracle, pyromancy), `req` (int/fth), `slots` (attunement slots), `uses`, `damage` per element (from the attack of the spell's bullet and the bullets it spawns on hit; 0 for spells that deal none) |
 | `armor.json` | Every named armor piece: `slot`, `weight`, `poise`, `defense`, `resist` |
 | `classes.json` | Starting classes (level, stats, cell kit and full kit) and starting gifts |
 | `traps.json` | Places with no walking exit: `exits` (`means`: jump, warp, darksign, homeward-bone, serpent, key, death; with `requires`), `notWorking` |
@@ -51,4 +52,6 @@ exports as long as the names do not change.
 - The Gravelord coffin (Catacombs ↔ covenant room by Nito) is not in the graph, and covenant rewards (e.g. Gravelord
   Sword) are not locations yet.
 - Tail-cut weapons (e.g. Drake Sword) are not locations; weapons are exported at +0 only (no reinforcement levels).
-- The two-hand Strength rule is not in the game params and is not modelled.
+- The two-hand Strength rule and the attunement slot table are not in the game params (the table is in the executable,
+  whose code is protected); the core takes them from cross-checked sources (planning docs, docs/04).
+- Spell damage is the base attack only: no status (poison, toxic) and no scaling with the catalyst.
