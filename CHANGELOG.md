@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.5.0...darksouls-challenge-v0.6.0) (2026-10-20)
+
+
+### Features
+
+* **core:** schools of magic as a fighting style, two new restrictions ([2d30ee3](https://github.com/renanabade/darksouls-challenge/commit/2d30ee304b3e5a7845af9ffb8f4d79dd408e2135))
+* **data:** spells with school, requirements, slots and damage ([70aa185](https://github.com/renanabade/darksouls-challenge/commit/70aa1855d074abb6f382633c88b50f7e1c590e1f))
+
 ## [0.5.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.4.0...darksouls-challenge-v0.5.0) (2026-10-20)
 
 
