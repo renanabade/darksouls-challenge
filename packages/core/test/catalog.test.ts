@@ -72,18 +72,36 @@ describe("catalog", () => {
     expect(named.filter((id) => !ids.has(id))).toEqual([]);
   });
 
-  it("keeps count ranges ordered and growing easier to harder", () => {
+  // The group handicap moves a number to the same relative place in an easier range; that only eases the
+  // run if every bound of an easier range is at least the same bound of a harder one.
+  it("gives every count a range per difficulty, never harder for an easier difficulty", () => {
     for (const order of orders) {
-      for (const spec of Object.values(order.params)) {
-        if (spec.ranges === undefined) continue;
-        const { easy, medium, hard, extreme } = spec.ranges;
+      for (const [name, spec] of Object.entries(order.params)) {
+        if (spec.kind !== "count") continue;
+        const ranges = spec.ranges;
+        if (order.validation.static !== undefined)
+          expect(ranges, `${order.id}.${name}`).toBeDefined();
+        if (ranges === undefined) continue;
+        const { easy, medium, hard, extreme } = ranges;
         for (const [min, max] of [easy, medium, hard, extreme])
           expect(min).toBeLessThanOrEqual(max);
-        expect(easy[0]).toBeGreaterThan(medium[1]);
-        expect(medium[0]).toBeGreaterThan(hard[1]);
-        expect(hard[0]).toBeGreaterThan(extreme[1]);
+        for (const [easier, harder] of [
+          [easy, medium],
+          [medium, hard],
+          [hard, extreme],
+        ] as const) {
+          expect(easier[0]).toBeGreaterThanOrEqual(harder[0]);
+          expect(easier[1]).toBeGreaterThanOrEqual(harder[1]);
+        }
       }
     }
+  });
+
+  each("%i %s: has a deathless text only for a count that can be zero", (_n, _id, order) => {
+    const zero = order.textIfZero;
+    if (zero === undefined) return;
+    expect(order.params[zero.param]?.ranges?.extreme[0]).toBe(0);
+    expect(placeholdersOf(zero.text)).toEqual([]);
   });
 });
 
@@ -91,6 +109,12 @@ describe("restrictions", () => {
   it("have unique ids and manual text", () => {
     expect(new Set(restrictions.map((r) => r.id)).size).toBe(restrictions.length);
     for (const r of restrictions) expect(r.text).toMatch(/^[A-Z].*\.$/);
+  });
+
+  it("have light ones enough for an easy curse, and heavy ones for an extreme curse", () => {
+    const count = (tier: string) => restrictions.filter((r) => r.tier === tier).length;
+    expect(count("light")).toBeGreaterThanOrEqual(2);
+    expect(count("heavy")).toBeGreaterThanOrEqual(3);
   });
 });
 

@@ -104,6 +104,22 @@ export interface Exceptions {
   readonly rule: "requiredItemsInArea" | "requiredItemsSoldOnlyBy";
 }
 
+/**
+ * What an order costs in the budget of a challenge, on the two separate axes of docs/01: difficulty (skill
+ * it demands, 1–3) and friction (time, repetition, searching, 0–3). Hand-labelled first estimates
+ * (Proposto), to be recalibrated by played results.
+ */
+export interface Weight {
+  readonly difficulty: 1 | 2 | 3;
+  readonly friction: 0 | 1 | 2 | 3;
+}
+
+/** A text that replaces the order's when a count parameter is zero ("Do not die." for 0 deaths). */
+export interface TextIfZero {
+  readonly param: string;
+  readonly text: string;
+}
+
 /** What the live master asks the player. Static orders never ask anything. */
 export type Question = "weaponUsed" | "acceptWager" | "strengthAndDexterity";
 
@@ -114,7 +130,9 @@ export interface OrderTemplate {
   readonly title: string;
   /** Manual text; {name} placeholders are parameters or the exceptions list. */
   readonly text: string;
+  readonly textIfZero?: TextIfZero;
   readonly params: Readonly<Record<string, ParamSpec>>;
+  readonly weight: Weight;
   readonly trigger: Trigger;
   readonly scope: Scope;
   readonly command: Command;

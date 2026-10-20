@@ -4,6 +4,7 @@
  *
  *   pnpm generate --seed ashen-one --difficulty medium --length full
  *   pnpm generate --seed ashen-one --class Knight --gift 2406 --level-cap 30 --json
+ *   pnpm generate --seed ashen-one --players easy,hard   (one challenge for a group, with handicap)
  *
  * Without --seed, a random one is drawn and printed, so the challenge can be shared.
  */
@@ -11,16 +12,17 @@ import { randomBytes } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import {
+  DIFFICULTIES,
   generate,
+  generateGroup,
   orderText,
   parseWorld,
   renderManual,
-  type Difficulty,
+  type Challenge,
   type Length,
   type RawDataSet,
 } from "@darksouls-challenge/core";
 
-const DIFFICULTIES: readonly Difficulty[] = ["easy", "medium", "hard", "extreme"];
 const LENGTHS: readonly Length[] = ["short", "full"];
 
 function readDataSet(dir: URL): RawDataSet {
@@ -51,6 +53,7 @@ function main(): void {
     options: {
       seed: { type: "string" },
       difficulty: { type: "string", default: "medium" },
+      players: { type: "string" },
       length: { type: "string", default: "full" },
       class: { type: "string" },
       gift: { type: "string" },
@@ -63,24 +66,40 @@ function main(): void {
     ? new URL(`file:///${values.data.replace(/\\/g, "/").replace(/\/?$/, "/")}`)
     : new URL("../../../data/ds1/", import.meta.url);
   const world = parseWorld(readDataSet(dataDir));
-  const challenge = generate(world, {
+  const config = {
     seed: values.seed ?? randomBytes(4).toString("hex"),
-    difficulty: oneOf("difficulty", values.difficulty, DIFFICULTIES),
     length: oneOf("length", values.length, LENGTHS),
     ...(values.class !== undefined && { startingClass: values.class }),
     ...(values.gift !== undefined && { giftRow: Number(values.gift) }),
     ...(values["level-cap"] !== undefined && { levelCap: Number(values["level-cap"]) }),
-  });
+  };
+  const challenges: Challenge[] =
+    values.players === undefined
+      ? [
+          generate(world, {
+            ...config,
+            difficulty: oneOf("difficulty", values.difficulty, DIFFICULTIES),
+          }),
+        ]
+      : generateGroup(
+          world,
+          config,
+          values.players.split(/[\s,]+/).map((d) => oneOf("players", d, DIFFICULTIES)),
+        );
   if (values.json) {
-    const orders = challenge.orders.map((o) => ({
-      id: o.template.id,
-      args: o.args,
-      exceptions: o.exceptions,
-      text: orderText(world, o),
+    const json = challenges.map((challenge) => ({
+      ...challenge,
+      orders: challenge.orders.map((o) => ({
+        id: o.template.id,
+        args: o.args,
+        exceptions: o.exceptions,
+        text: orderText(world, o),
+      })),
     }));
-    process.stdout.write(`${JSON.stringify({ ...challenge, orders }, null, 2)}\n`);
+    const out = values.players === undefined ? json[0] : json;
+    process.stdout.write(`${JSON.stringify(out, null, 2)}\n`);
   } else {
-    process.stdout.write(renderManual(world, challenge));
+    process.stdout.write(challenges.map((c) => renderManual(world, c)).join("\n---\n\n"));
   }
 }
 

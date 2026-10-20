@@ -8,6 +8,7 @@ export const catalog = [
   {
     id: "first-weapon-of-area",
     number: 1,
+    weight: { difficulty: 2, friction: 1 },
     title: "First weapon of the area",
     text: "On entering {area}: the first weapon you pick up here is your only weapon until {until}.",
     params: { area: { kind: "area" }, until: { kind: "milestone" } },
@@ -19,8 +20,9 @@ export const catalog = [
   {
     id: "assigned-weapon",
     number: 2,
+    weight: { difficulty: 2, friction: 2 },
     title: "Assigned weapon",
-    text: "From {from} until {until}: your weapon is {location}.",
+    text: "From the moment {from} until {until}: your weapon is {location}.",
     params: {
       from: { kind: "milestone" },
       until: { kind: "milestone" },
@@ -34,6 +36,7 @@ export const catalog = [
   {
     id: "wear-what-you-find",
     number: 3,
+    weight: { difficulty: 1, friction: 0 },
     title: "Wear what you find",
     text: "In {area}: every armor piece you pick up must be put on at once, and stays on until you leave.",
     params: { area: { kind: "area" } },
@@ -45,6 +48,7 @@ export const catalog = [
   {
     id: "boss-inheritance",
     number: 4,
+    weight: { difficulty: 2, friction: 1 },
     title: "Boss inheritance",
     text: "You defeated {boss}. The weapon you used, {weapon}, is forbidden until the end.",
     params: { boss: { kind: "boss" }, weapon: { kind: "weapon" } },
@@ -57,6 +61,7 @@ export const catalog = [
   {
     id: "nothing-from-the-ground",
     number: 5,
+    weight: { difficulty: 1, friction: 1 },
     title: "Nothing from the ground",
     text: "In {area}: nothing you pick up from a corpse or chest may be used or equipped. Except: {exceptions}.",
     params: { area: { kind: "area" } },
@@ -71,6 +76,7 @@ export const catalog = [
   {
     id: "no-bonfire",
     number: 6,
+    weight: { difficulty: 2, friction: 1 },
     title: "No bonfire",
     text: "Do not rest at any bonfire in {area}.",
     params: { area: { kind: "area" } },
@@ -82,6 +88,7 @@ export const catalog = [
   {
     id: "dry-fight",
     number: 7,
+    weight: { difficulty: 2, friction: 0 },
     title: "Dry fight",
     text: "Against {boss}: do not use Estus.",
     params: { boss: { kind: "boss" } },
@@ -93,6 +100,7 @@ export const catalog = [
   {
     id: "closed-merchant",
     number: 8,
+    weight: { difficulty: 1, friction: 1 },
     title: "Closed merchant",
     text: "Do not buy anything from {merchant}. Except: {exceptions}.",
     params: { merchant: { kind: "merchant" } },
@@ -105,6 +113,7 @@ export const catalog = [
   {
     id: "counted-attempts",
     number: 9,
+    weight: { difficulty: 2, friction: 0 },
     title: "Counted attempts",
     text: "You have {attempts} attempts against {boss}.",
     params: {
@@ -122,9 +131,20 @@ export const catalog = [
   {
     id: "run-lives",
     number: 10,
+    weight: { difficulty: 3, friction: 0 },
     title: "Lives for the run",
     text: "You have {deaths} deaths for the whole run. Scripted deaths you cannot avoid do not count.",
-    params: { deaths: { kind: "count" } },
+    textIfZero: {
+      param: "deaths",
+      text: "Do not die for the whole run. Scripted deaths you cannot avoid do not count.",
+    },
+    params: {
+      deaths: {
+        kind: "count",
+        // Profiles (docs/07 in the workspace): a casual player dies far more than a veteran; 0 is deathless.
+        ranges: { easy: [60, 90], medium: [20, 35], hard: [6, 12], extreme: [0, 2] },
+      },
+    },
     trigger: { kind: "death" },
     scope: { kind: "run" },
     command: { kind: "limit", action: "deaths", max: "deaths" },
@@ -133,6 +153,7 @@ export const catalog = [
   {
     id: "accumulated-curse",
     number: 11,
+    weight: { difficulty: 3, friction: 0 },
     title: "Accumulated curse",
     text: "Each boss you defeat adds a new restriction, in this order: {restrictions}.",
     params: { restrictions: { kind: "restrictionList" } },
@@ -144,6 +165,7 @@ export const catalog = [
   {
     id: "wager",
     number: 12,
+    weight: { difficulty: 2, friction: 0 },
     title: "Wager",
     text:
       "Before {boss}: accept {restriction} for this fight only. " +
@@ -158,6 +180,7 @@ export const catalog = [
   {
     id: "phase-swap",
     number: 13,
+    weight: { difficulty: 2, friction: 1 },
     title: "Phase swap",
     text: "Until {milestone}: {before}. After it: drop what does not fit and follow {after}.",
     params: {
@@ -173,6 +196,7 @@ export const catalog = [
   {
     id: "lord-order",
     number: 14,
+    weight: { difficulty: 1, friction: 1 },
     title: "Order of the Lords",
     text: "Collect the four Lord Souls in this order: {order}.",
     params: { order: { kind: "lordSoulOrder" } },
@@ -184,6 +208,7 @@ export const catalog = [
   {
     id: "boss-before-bell",
     number: 15,
+    weight: { difficulty: 2, friction: 1 },
     title: "Boss before the bell",
     text: "Before you ring the first bell, defeat {boss}.",
     params: { boss: { kind: "boss" } },
@@ -195,6 +220,7 @@ export const catalog = [
   {
     id: "forbidden-area",
     number: 16,
+    weight: { difficulty: 1, friction: 1 },
     title: "Forbidden area",
     text: "Do not enter {area}.",
     params: { area: { kind: "area" } },
@@ -206,11 +232,18 @@ export const catalog = [
   {
     id: "earned-levels",
     number: 17,
+    weight: { difficulty: 2, friction: 0 },
     title: "Earned levels",
     text:
       "You may only level up with points. Each boss you defeat {condition} is worth {points} points; " +
       "one point, one level.",
-    params: { condition: { kind: "condition" }, points: { kind: "count" } },
+    params: {
+      condition: { kind: "condition" },
+      points: {
+        kind: "count",
+        ranges: { easy: [3, 4], medium: [2, 3], hard: [1, 2], extreme: [1, 1] },
+      },
+    },
     trigger: { kind: "defeatBoss" },
     scope: { kind: "run" },
     command: { kind: "limit", action: "levelUps", max: "points" },
@@ -220,6 +253,7 @@ export const catalog = [
   {
     id: "earned-upgrades",
     number: 18,
+    weight: { difficulty: 1, friction: 0 },
     title: "Earned upgrades",
     text: "Your weapon may gain only one upgrade level per boss you defeat.",
     params: {},
@@ -231,6 +265,7 @@ export const catalog = [
   {
     id: "adaptive-squeeze",
     number: 19,
+    weight: { difficulty: 2, friction: 0 },
     title: "Adaptive squeeze",
     text: "You defeated {boss} in {attempts} attempts or fewer, so a new restriction applies: {restriction}.",
     params: {
@@ -248,9 +283,10 @@ export const catalog = [
   {
     id: "build-question",
     number: 20,
+    weight: { difficulty: 2, friction: 1 },
     title: "Build question",
     text:
-      "From {from} until {until}: your weapon is {weapon}, " +
+      "From the moment {from} until {until}: your weapon is {weapon}, " +
       "chosen from those that fit your Strength and Dexterity.",
     params: {
       from: { kind: "milestone" },

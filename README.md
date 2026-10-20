@@ -38,7 +38,11 @@ Generate a challenge (prints its manual; `--json` for data):
 ```sh
 pnpm generate --seed ashen-one --difficulty medium --length full
 pnpm generate --seed ashen-one --class Knight --gift 2406 --level-cap 30
+pnpm generate --seed ashen-one --players "easy,extreme"
 ```
+
+`--players` generates one challenge for a group of players of different skill: everyone gets the same orders, and
+only the numbers (level cap, deaths, attempts, the size of the curse) follow each player's difficulty.
 
 Difficulty: `easy`, `medium`, `hard`, `extreme`. Length: `short` (4–6 orders) or `full` (8–12). Class, starting
 gift (row in `data/ds1/classes.json`) and soul level cap are drawn from the seed unless given.
