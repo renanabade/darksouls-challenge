@@ -15,6 +15,10 @@ exports as long as the names do not change.
   `locations.json` (`item`), or a starting gift (only ever inside an `any`, as an alternative).
   Boss deaths and other milestones are items named like `"Taurus Demon Defeated"`.
 - **Glitches** are not in the graph (`meta.glitches: false`).
+- **Found** (`locations.found`): a pickup from a corpse or chest placed in the map, matched to the game's treasures by
+  item lot, not by DSAP category. Excluded: the Firelink rescue chest, unused treasures, and treasures shown only when
+  someone dies (`treasures.deathDrop`: a drop is not a found item). Every location has the field.
+- **Names** come from the game's text where DSAP differs (boss "Four Kings").
 - **Unverified** facts stay in the pipeline's notes; this data set contains only what passed the verification flow
   or is explicitly flagged (fields named `...Assumed`, `note`, `why`).
 
@@ -26,12 +30,12 @@ exports as long as the names do not change.
 | `areas.json` | The game's 30 place names: `id`, `name`, `placeNameId` (PlaceNames text id), `dlc`, `regions` |
 | `regions.json` | `id`, `name`, `area` (null only for `virtual` shop-logic nodes), `mandatory` (on every path to the goal) |
 | `entrances.json` | Directed edges `from` → `to` with `requires`; `walkBack`: false when the way back on foot is known not to exist (one-way drop, scripted ride); true is the default and an assumption for plain walking edges; `origin`: DSAP, override (hand correction with `note`), way back |
-| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops): `region`, `name`, `item`, `count`, `category`, `mandatory` |
-| `treasures.json` | Game treasures only (corpse or chest; what order 2 calls "found"): `region`, `map`, `lots` (lot chain heads), `container`, `hidden`, `eventControlled`, `rescue` (Firelink rescue chest for missed items), `perClass` (Asylum class kit), `items` |
+| `locations.json` | Every item source DSAP lists (corpses, chests, drops, event rewards, shops): `region`, `name`, `item`, `count`, `category`, `mandatory`, `found` |
+| `treasures.json` | Game treasures only (corpse or chest): `region`, `map`, `lots` (lot chain heads), `container`, `hidden`, `eventControlled`, `rescue` (Firelink rescue chest for missed items), `perClass` (Asylum class kit), `deathDrop` (shown only when someone dies), `items` |
 | `bonfires.json` | `name`, `region`, `flag` (lit), `entityId`. Warping needs the Lordvessel and sitting at a bonfire |
 | `bosses.json` | `id`, `name`, `flag` (defeated), `region`, `mandatoryByGraph`, `earliestSphere`, `parts` (per body part: `hp`, `resist`, `immune` status list, `noDamage` damage types, NpcParam `flags`), `requires` (hard requirements with evidence) |
 | `milestones.json` | Progression flags (bosses, bells, Lordvessel, Lord Souls, Kiln): `id`, `name`, `flag`, `kind`, `region`, `earliestSphere` |
-| `merchants.json` | `id`, `name`, ShopLineupParam `rows` range, `stock` (`kind`, `id`, `name`, `price`, `quantity` (-1 = unlimited)), `variants` (talk script, row range, flag conditions that select it) |
+| `merchants.json` | `id`, `name`, `regions` (graph regions holding their shop locations; a virtual region is shared by every merchant who sells there), ShopLineupParam `rows` range, `stock` (`kind`, `id`, `name`, `price`, `quantity` (-1 = unlimited)), `variants` (talk script, row range, flag conditions that select it) |
 | `weapons.json` | Every named weapon row: `family`, `infusion`, `category`, `melee`, `req` (str/dex/int/fth), `baseDamage`, `scaling`, `casts`, `hands`, `dmgType`, `weight` |
 | `armor.json` | Every named armor piece: `slot`, `weight`, `poise`, `defense`, `resist` |
 | `classes.json` | Starting classes (level, stats, cell kit and full kit) and starting gifts |

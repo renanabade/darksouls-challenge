@@ -2,6 +2,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Bottomless Box",
   "mandatory": false,
   "name": "Male Undead Merchant or Domhnall of Zena: Bottomless Box",
@@ -10,6 +11,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Armor Smithbox",
   "mandatory": false,
   "name": "Blacksmith: Armor Smithbox",
@@ -18,6 +20,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Weapon Smithbox",
   "mandatory": false,
   "name": "Blacksmith: Weapon Smithbox",
@@ -26,6 +29,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Repairbox",
   "mandatory": false,
   "name": "Merchant: Repairbox",
@@ -34,6 +38,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Anor Londo",
   "mandatory": false,
   "name": "AL: Anor Londo Bonfire",
@@ -42,6 +47,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Crystal Halberd",
   "mandatory": false,
   "name": "AL: Crystal Halberd - Mimic Drop, Toward Archives",
@@ -50,6 +56,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Demon Titanite",
   "mandatory": false,
   "name": "AL: Demon Titanite - Anor Londo Elevator",
@@ -58,6 +65,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Demon Titanite",
   "mandatory": false,
   "name": "AL: Demon Titanite - Anor Londo Giants",
@@ -66,6 +74,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "AL: Divine Blessing - Anor Londo Rafters",
@@ -74,6 +83,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "AL: Twinkling Titanite - Anor Londo",
@@ -82,6 +92,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Darkmoon Tomb",
   "mandatory": false,
   "name": "AL: Darkmoon Tomb Bonfire",
@@ -90,6 +101,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Anor Londo #1 (Rafters)",
   "mandatory": false,
   "name": "AL: Fog Wall - Anor Londo #1 (Rafters)",
@@ -98,6 +110,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Ring of the Sun's Firstborn",
   "mandatory": false,
   "name": "AL: Ring of the Sun's Firstborn",
@@ -106,6 +119,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "AL: Soul of a Hero - Left Silver Archer",
@@ -114,6 +128,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brass Armor",
   "mandatory": false,
   "name": "AL: Brass Armor",
@@ -122,6 +137,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brass Gauntlets",
   "mandatory": false,
   "name": "AL: Brass Gauntlets",
@@ -130,6 +146,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brass Helm",
   "mandatory": false,
   "name": "AL: Brass Helm",
@@ -138,6 +155,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brass Leggings",
   "mandatory": false,
   "name": "AL: Brass Leggings",
@@ -146,6 +164,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Chamber of the Princess",
   "mandatory": false,
   "name": "AL: Chamber of the Princess Bonfire",
@@ -154,6 +173,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Miracle: Sunlight Blade",
   "mandatory": false,
   "name": "AL: Miracle: Sunlight Blade",
@@ -162,6 +182,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Gwyndolin",
   "mandatory": false,
   "name": "AL: Soul of Gwyndolin",
@@ -170,6 +191,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "AL: Humanity - O+S Drop",
@@ -178,6 +200,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Leo Ring",
   "mandatory": false,
   "name": "AL: Leo Ring - O+S Drop",
@@ -186,6 +209,7 @@
  {
   "category": "NPC_PROG_ITEM",
   "count": 1,
+  "found": false,
   "item": "Lordvessel",
   "mandatory": true,
   "name": "AL: Lordvessel",
@@ -194,6 +218,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Ornstein",
   "mandatory": false,
   "name": "AL: Soul of Ornstein",
@@ -202,6 +227,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Smough",
   "mandatory": false,
   "name": "AL: Soul of Smough",
@@ -210,6 +236,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Anor Londo - Residence",
   "mandatory": false,
   "name": "AL: Anor Londo - Residence Bonfire",
@@ -218,6 +245,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "AL: Anor Londo Bonfire Shortcut opened",
@@ -226,6 +254,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "AL: Anor Londo Giant Blacksmith Shortcut opened",
@@ -234,6 +263,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "AL: Anor Londo Main Hall Door opened",
@@ -242,6 +272,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 2,
+  "found": true,
   "item": "Demon Titanite",
   "mandatory": false,
   "name": "AL: Demon Titanite - Anor Londo Bedroom",
@@ -250,6 +281,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Tooth",
   "mandatory": false,
   "name": "AL: Dragon Tooth",
@@ -258,6 +290,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragonslayer Arrow",
   "mandatory": false,
   "name": "AL: Dragonslayer Arrow",
@@ -266,6 +299,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragonslayer Greatbow",
   "mandatory": false,
   "name": "AL: Dragonslayer Greatbow",
@@ -274,6 +308,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Anor Londo #2 (Archers)",
   "mandatory": false,
   "name": "AL: Fog Wall - Anor Londo #2 (Archers)",
@@ -282,6 +317,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Gold Coin",
   "mandatory": false,
   "name": "AL: Gold Coin - Mimic Drop",
@@ -290,6 +326,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Havel's Armor",
   "mandatory": false,
   "name": "AL: Havel's Armor",
@@ -298,6 +335,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Havel's Gauntlets",
   "mandatory": false,
   "name": "AL: Havel's Gauntlets",
@@ -306,6 +344,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Havel's Greatshield",
   "mandatory": false,
   "name": "AL: Havel's Greatshield",
@@ -314,6 +353,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Havel's Helm",
   "mandatory": false,
   "name": "AL: Havel's Helm",
@@ -322,6 +362,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Havel's Leggings",
   "mandatory": false,
   "name": "AL: Havel's Leggings",
@@ -330,6 +371,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Hawk Ring",
   "mandatory": false,
   "name": "AL: Hawk Ring",
@@ -338,6 +380,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Occult Club",
   "mandatory": false,
   "name": "AL: Occult Club - Basement Mimic Drop",
@@ -346,6 +389,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 5,
+  "found": false,
   "item": "Silver Coin",
   "mandatory": false,
   "name": "AL: Silver Coin - Mimic Drop",
@@ -354,6 +398,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Silver Knight Armor",
   "mandatory": false,
   "name": "AL: Silver Knight Armor",
@@ -362,6 +407,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Silver Knight Gauntlets",
   "mandatory": false,
   "name": "AL: Silver Knight Gauntlets",
@@ -370,6 +416,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Silver Knight Helm",
   "mandatory": false,
   "name": "AL: Silver Knight Helm",
@@ -378,6 +425,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Silver Knight Leggings",
   "mandatory": false,
   "name": "AL: Silver Knight Leggings",
@@ -386,6 +434,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "AL: Soul of a Hero - Anor Londo Rooms",
@@ -394,6 +443,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 3,
+  "found": true,
   "item": "Sunlight Medal",
   "mandatory": false,
   "name": "AL: Sunlight Medal - Anor Londo",
@@ -402,6 +452,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "AL: Titanite Chunk - near Giant Blacksmith",
@@ -410,6 +461,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "AL: Titanite Demon below Balcony",
@@ -418,6 +470,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Blacksmith Giant Hammer",
   "mandatory": false,
   "name": "Giant Blacksmith: Blacksmith Giant Hammer - Drop Added To Shop",
@@ -426,6 +479,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant Armor",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant Armor",
@@ -434,6 +488,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant Gauntlets",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant Gauntlets",
@@ -442,6 +497,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant Helm",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant Helm",
@@ -450,6 +506,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant Leggings",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant Leggings",
@@ -458,6 +515,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant Shield",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant Shield",
@@ -466,6 +524,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Giant's Halberd",
   "mandatory": false,
   "name": "Giant Blacksmith: Giant's Halberd",
@@ -474,6 +533,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Gwyndolin",
   "mandatory": false,
   "name": "AL: Boss Fog Wall - Gwyndolin",
@@ -482,6 +542,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Gwyndolin Defeated",
   "mandatory": false,
   "name": "AL: Gwyndolin Defeated",
@@ -490,6 +551,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Ornstein and Smough",
   "mandatory": false,
   "name": "AL: Boss Fog Wall - Ornstein and Smough",
@@ -498,6 +560,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Ornstein and Smough Defeated",
   "mandatory": true,
   "name": "AL: Ornstein and Smough Defeated",
@@ -506,6 +569,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Iron Armor",
   "mandatory": false,
   "name": "AL: Black Iron Armor",
@@ -514,6 +578,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Iron Gauntlets",
   "mandatory": false,
   "name": "AL: Black Iron Gauntlets",
@@ -522,6 +587,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Iron Greatshield",
   "mandatory": false,
   "name": "AL: Black Iron Greatshield",
@@ -530,6 +596,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Iron Helm",
   "mandatory": false,
   "name": "AL: Black Iron Helm",
@@ -538,6 +605,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Iron Leggings",
   "mandatory": false,
   "name": "AL: Black Iron Leggings",
@@ -546,6 +614,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Greatsword",
   "mandatory": false,
   "name": "AL: Greatsword",
@@ -554,6 +623,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Great Magic Weapon",
   "mandatory": false,
   "name": "AL: Sorcery: Great Magic Weapon",
@@ -562,6 +632,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Ash Lake - Entrance",
   "mandatory": false,
   "name": "ASH: Ash Lake Bonfire",
@@ -570,6 +641,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "ASH: Dragon Scale - Ash Lake Log",
@@ -578,6 +650,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "ASH: Dragon Scale - Ash Lake Start",
@@ -586,6 +659,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "ASH: Dragon Scale - Ash Lake Water",
@@ -594,6 +668,7 @@
  {
   "category": "MINIBOSS_DROP",
   "count": 2,
+  "found": false,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "ASH: Dragon Scale x2 - Hydra Drop",
@@ -602,6 +677,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Ash Lake Entrance",
   "mandatory": false,
   "name": "ASH: Fog Wall - Ash Lake Entrance",
@@ -610,6 +686,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Miracle: Great Magic Barrier",
   "mandatory": false,
   "name": "ASH: Miracle: Great Magic Barrier",
@@ -618,6 +695,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Stone Dragon",
   "mandatory": false,
   "name": "ASH: Stone Dragon Bonfire",
@@ -626,6 +704,7 @@
  {
   "category": "NPC_DROP",
   "count": 1,
+  "found": false,
   "item": "Cleansing Greatshield",
   "mandatory": false,
   "name": "CotA: Cleansing Greatshield",
@@ -634,6 +713,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra White Titanite",
   "mandatory": false,
   "name": "CotA: Extra Titanite - Crystal Lizard Drop, Entrance",
@@ -642,6 +722,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Carving: HELP ME!",
   "mandatory": false,
   "name": "CotA: Help Me! Carving",
@@ -650,6 +731,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "CotA: Humanity - Corpse after Prism Stone",
@@ -658,6 +740,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Pyromancy: Black Flame",
   "mandatory": false,
   "name": "CotA: Pyromancy: Black Flame",
@@ -666,6 +749,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Dark Bead",
   "mandatory": false,
   "name": "CotA: Sorcery: Dark Bead",
@@ -674,6 +758,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "CotA: Soul of a Hero - Left Ledge Before Boss",
@@ -682,6 +767,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "CotA: Twin Humanities - Under Pillar",
@@ -690,6 +776,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "CotA: Twinkling Titanite - Crystal Lizard Drop, Entrance",
@@ -698,6 +785,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Slab",
   "mandatory": false,
   "name": "CotA: White Titanite Slab - On Ledge",
@@ -706,6 +794,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Manus",
   "mandatory": false,
   "name": "CotA: Boss Fog Wall - Manus",
@@ -714,6 +803,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Chasm of the Abyss",
   "mandatory": false,
   "name": "CotA: Chasm of the Abyss Bonfire",
@@ -722,6 +812,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 10,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "CotA: Humanity x10 - Manus Drop",
@@ -730,6 +821,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Manus, Father of the Abyss Defeated",
   "mandatory": false,
   "name": "CotA: Manus, father of the Abyss Defeated",
@@ -738,6 +830,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Manus",
   "mandatory": false,
   "name": "CotA: Soul of Manus",
@@ -746,6 +839,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "CC: Blue Titanite Chunk - Crystal Cave",
@@ -754,6 +848,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Slab",
   "mandatory": false,
   "name": "CC: Blue Titanite Slab - Crystal Cave",
@@ -762,6 +857,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "CC: Extra Titanite - Crystal Lizard Drop, 1st Under Gold Golem",
@@ -770,6 +866,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "CC: Extra Titanite - Crystal Lizard Drop, 2nd Under Gold Golem",
@@ -778,6 +875,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "CC: Extra Titanite - Crystal Lizard Drop, 3rd Under Gold Golem",
@@ -786,6 +884,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "CC: Humanity - Crystal Cave",
@@ -794,6 +893,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Seath the Scaleless Defeated",
   "mandatory": true,
   "name": "CC: Seath the Scaleless Defeated",
@@ -802,6 +902,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "CC: Soul of a Hero - Crystal Cave",
@@ -810,6 +911,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "CC: Twinkling Titanite - Crystal Lizard Drop, 1st Under Gold Golem",
@@ -818,6 +920,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "CC: Twinkling Titanite - Crystal Lizard Drop, 2nd Under Gold Golem",
@@ -826,6 +929,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "CC: Twinkling Titanite - Crystal Lizard Drop, 3rd Under Gold Golem",
@@ -834,6 +938,7 @@
  {
   "category": "LORD_SOUL",
   "count": 1,
+  "found": false,
   "item": "Bequeathed Lord Soul Shard (Seath)",
   "mandatory": true,
   "name": "CC: Bequeathed Lord Soul Shard (Seath)",
@@ -842,6 +947,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Crystal Cave",
   "mandatory": false,
   "name": "CC: Crystal Cave Bonfire",
@@ -850,6 +956,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "CC: Humanity - Seath Drop",
@@ -858,6 +965,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Antiquated Dress",
   "mandatory": false,
   "name": "DB: Antiquated Dress",
@@ -866,6 +974,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Antiquated Gloves",
   "mandatory": false,
   "name": "DB: Antiquated Gloves",
@@ -874,6 +983,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Antiquated Skirt",
   "mandatory": false,
   "name": "DB: Antiquated Skirt",
@@ -882,6 +992,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Halberd",
   "mandatory": false,
   "name": "DB: Black Knight Halberd - Black Knight Drop",
@@ -890,6 +1001,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "DB: Blue Titanite Chunk - Black Knight Drop",
@@ -898,6 +1010,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Crown of Dusk",
   "mandatory": false,
   "name": "DB: Crown of Dusk",
@@ -906,6 +1019,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Darkroot Basin",
   "mandatory": false,
   "name": "DB: Darkroot Basin Bonfire",
@@ -914,6 +1028,7 @@
  {
   "category": "MINIBOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "DB: Dragon Scale - Hydra Drop",
@@ -922,6 +1037,7 @@
  {
   "category": "MINIBOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Dusk Crown Ring",
   "mandatory": false,
   "name": "DB: Dusk Crown Ring - Hydra Drop",
@@ -930,6 +1046,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Titanite",
   "mandatory": false,
   "name": "DB: Extra Titanite - Crystal Lizard Drop, Descending Toward Hunter Set",
@@ -938,6 +1055,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 16,
+  "found": true,
   "item": "Feather Arrow",
   "mandatory": false,
   "name": "DB: Feather Arrow",
@@ -946,6 +1064,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Grass Crest Shield",
   "mandatory": false,
   "name": "DB: Grass Crest Shield",
@@ -954,6 +1073,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Knight Armor",
   "mandatory": false,
   "name": "DB: Knight Armor",
@@ -962,6 +1082,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Knight Gauntlets",
   "mandatory": false,
   "name": "DB: Knight Gauntlets",
@@ -970,6 +1091,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Knight Helm",
   "mandatory": false,
   "name": "DB: Knight Helm",
@@ -978,6 +1100,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Knight Leggings",
   "mandatory": false,
   "name": "DB: Knight Leggings",
@@ -986,6 +1109,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DB: Large Soul of a Nameless Soldier - Darkroot Hydra",
@@ -994,6 +1118,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Leather Armor",
   "mandatory": false,
   "name": "DB: Leather Armor",
@@ -1002,6 +1127,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Leather Boots",
   "mandatory": false,
   "name": "DB: Leather Boots",
@@ -1010,6 +1136,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Leather Gloves",
   "mandatory": false,
   "name": "DB: Leather Gloves",
@@ -1018,6 +1145,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Longbow",
   "mandatory": false,
   "name": "DB: Longbow",
@@ -1026,6 +1154,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Princess Dusk Rescued",
   "mandatory": false,
   "name": "DB: Princess Dusk Rescued",
@@ -1034,6 +1163,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "DB: Twinkling Titanite - Crystal Lizard Drop, Descending Toward Hunter Set",
@@ -1042,6 +1172,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Cast Light",
   "mandatory": false,
   "name": "Princess Dusk: Sorcery: Cast Light",
@@ -1050,6 +1181,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Chameleon",
   "mandatory": false,
   "name": "Princess Dusk: Sorcery: Chameleon",
@@ -1058,6 +1190,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Hidden Body",
   "mandatory": false,
   "name": "Princess Dusk: Sorcery: Hidden Body",
@@ -1066,6 +1199,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Hidden Weapon",
   "mandatory": false,
   "name": "Princess Dusk: Sorcery: Hidden Weapon",
@@ -1074,6 +1208,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Repair",
   "mandatory": false,
   "name": "Princess Dusk: Sorcery: Repair",
@@ -1082,6 +1217,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Elite Knight Armor",
   "mandatory": false,
   "name": "DG: Elite Knight Armor",
@@ -1090,6 +1226,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Elite Knight Gauntlets",
   "mandatory": false,
   "name": "DG: Elite Knight Gauntlets",
@@ -1098,6 +1235,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Elite Knight Helm",
   "mandatory": false,
   "name": "DG: Elite Knight Helm",
@@ -1106,6 +1244,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Elite Knight Leggings",
   "mandatory": false,
   "name": "DG: Elite Knight Leggings",
@@ -1114,6 +1253,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Darkroot Garden",
   "mandatory": false,
   "name": "DG: Fog Wall - Darkroot Garden",
@@ -1122,6 +1262,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Partizan",
   "mandatory": false,
   "name": "DG: Partizan",
@@ -1130,6 +1271,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "DG: Soul of a Proud Knight - Past Fake Trees",
@@ -1138,6 +1280,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wolf Ring",
   "mandatory": false,
   "name": "DG: Wolf Ring",
@@ -1146,6 +1289,7 @@
  {
   "category": "FROZEN_BLACKSMITH",
   "count": 1,
+  "found": true,
   "item": "Divine Ember",
   "mandatory": false,
   "name": "DG: Divine Ember",
@@ -1154,6 +1298,7 @@
  {
   "category": "FROZEN_BLACKSMITH",
   "count": 1,
+  "found": true,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "DG: Homeward Bone - Frozen Blacksmith",
@@ -1162,6 +1307,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of the Moonlight Butterfly",
   "mandatory": false,
   "name": "DG: Soul of the Moonlight Butterfly",
@@ -1170,6 +1316,7 @@
  {
   "category": "FROZEN_BLACKSMITH",
   "count": 1,
+  "found": true,
   "item": "Watchtower Basement Key",
   "mandatory": false,
   "name": "DG: Watchtower Basement Key",
@@ -1178,6 +1325,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Darkroot Garden",
   "mandatory": false,
   "name": "DG: Darkroot Garden Bonfire",
@@ -1186,6 +1334,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DG: Large Soul of a Nameless Soldier - Darkroot Ambush",
@@ -1194,6 +1343,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DG: Large Soul of a Nameless Soldier - Darkroot Cliff",
@@ -1202,6 +1352,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "DG: Titanite Demon below Andre",
@@ -1210,6 +1361,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Black Bow of Pharis",
   "mandatory": false,
   "name": "DG: Black Bow of Pharis - Pharis Drop",
@@ -1218,6 +1370,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Covenant of Artorias",
   "mandatory": false,
   "name": "DG: Covenant of Artorias - Sif Drop",
@@ -1226,6 +1379,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Eastern Armor",
   "mandatory": false,
   "name": "DG: Eastern Armor",
@@ -1234,6 +1388,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Eastern Gauntlets",
   "mandatory": false,
   "name": "DG: Eastern Gauntlets",
@@ -1242,6 +1397,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Eastern Helm",
   "mandatory": false,
   "name": "DG: Eastern Helm",
@@ -1250,6 +1406,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Eastern Leggings",
   "mandatory": false,
   "name": "DG: Eastern Leggings",
@@ -1258,6 +1415,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Enchanted Ember",
   "mandatory": false,
   "name": "DG: Enchanted Ember",
@@ -1266,6 +1424,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Great Grey Wolf Sif Defeated",
   "mandatory": false,
   "name": "DG: Great Grey Wolf Sif Defeated",
@@ -1274,6 +1433,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "DG: Homeward Bone - Sif Drop",
@@ -1282,6 +1442,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Hornet Ring",
   "mandatory": false,
   "name": "DG: Hornet Ring",
@@ -1290,6 +1451,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "DG: Humanity - Sif Drop",
@@ -1298,6 +1460,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DG: Large Soul of a Brave Warrior - Darkroot Garden Cats",
@@ -1306,6 +1469,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Pharis's Hat",
   "mandatory": false,
   "name": "DG: Pharis's Hat - Pharis Drop",
@@ -1314,6 +1478,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Sif",
   "mandatory": false,
   "name": "DG: Soul of Sif",
@@ -1322,6 +1487,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DG: Soul of a Brave Warrior - Down Ladder before Stone Bridge",
@@ -1330,6 +1496,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Stone Armor",
   "mandatory": false,
   "name": "DG: Stone Armor",
@@ -1338,6 +1505,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Stone Gauntlets",
   "mandatory": false,
   "name": "DG: Stone Gauntlets",
@@ -1346,6 +1514,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Stone Helm",
   "mandatory": false,
   "name": "DG: Stone Helm",
@@ -1354,6 +1523,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Stone Leggings",
   "mandatory": false,
   "name": "DG: Stone Leggings",
@@ -1362,6 +1532,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "DG: Twin Humanities - Pharis Drop",
@@ -1370,6 +1541,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Moonlight Butterfly",
   "mandatory": false,
   "name": "DG: Boss Fog Wall - Moonlight Butterfly",
@@ -1378,6 +1550,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "DG: Humanity - Moonlight Butterfly Drop",
@@ -1386,6 +1559,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Moonlight Butterfly Defeated",
   "mandatory": false,
   "name": "DG: Moonlight Butterfly Defeated",
@@ -1394,6 +1568,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Demon Ruins - Burrowing Rockworm",
   "mandatory": false,
   "name": "DR: Demon Ruins - Burrowing Rockworm Bonfire",
@@ -1402,6 +1577,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "DR: Green Titanite Shard - 2x Green Titanite Shards under the Staircase",
@@ -1410,6 +1586,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Flame Ember",
   "mandatory": false,
   "name": "DR: Large Flame Ember",
@@ -1418,6 +1595,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DR: Soul of a Brave Warrior - Capra Outside Firesage",
@@ -1426,6 +1604,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "DR: Soul of a Proud Knight - Ceased Discharge",
@@ -1434,6 +1613,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "DR: Soul of a Proud Knight - Demon Ruins Bonfire",
@@ -1442,6 +1622,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "DR: Soul of a Proud Knight - Ledge Corpse Top of Stairs",
@@ -1450,6 +1631,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Demon Ruins - Catacombs",
   "mandatory": false,
   "name": "DR: Demon Ruins - Catacombs Bonfire",
@@ -1458,6 +1640,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DR: Soul of a Brave Warrior - Chaos Covenant Door",
@@ -1466,6 +1649,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DR: Soul of a Brave Warrior - On Platform Below Roots to Centipede",
@@ -1474,6 +1658,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DR: Soul of a Brave Warrior - Ruins/Domain Elevator",
@@ -1482,6 +1667,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Chaos Flame Ember",
   "mandatory": false,
   "name": "DR: Chaos Flame Ember",
@@ -1490,6 +1676,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "DR: Large Soul of a Proud Knight - First Jump over the Lava",
@@ -1498,6 +1685,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Ceaseless Discharge",
   "mandatory": false,
   "name": "DR: Boss Fog Wall - Ceaseless Discharge",
@@ -1506,6 +1694,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Ceaseless Discharge Defeated",
   "mandatory": true,
   "name": "DR: Ceaseless Discharge Defeated",
@@ -1514,6 +1703,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold-Hemmed Black Cloak",
   "mandatory": false,
   "name": "DR: Gold-Hemmed Black Cloak",
@@ -1522,6 +1712,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold-Hemmed Black Gloves",
   "mandatory": false,
   "name": "DR: Gold-Hemmed Black Gloves",
@@ -1530,6 +1721,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold-Hemmed Black Hood",
   "mandatory": false,
   "name": "DR: Gold-Hemmed Black Hood",
@@ -1538,6 +1730,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold-Hemmed Black Skirt",
   "mandatory": false,
   "name": "DR: Gold-Hemmed Black Skirt",
@@ -1546,6 +1739,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "DR: Homeward Bone - Ceaseless Discharge Drop",
@@ -1554,6 +1748,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "DR: Humanity - Ceaseless Discharge Drop",
@@ -1562,6 +1757,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Centipede Demon",
   "mandatory": false,
   "name": "DR: Boss Fog Wall - Centipede Demon",
@@ -1570,6 +1766,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Centipede Demon Defeated",
   "mandatory": false,
   "name": "DR: Centipede Demon Defeated",
@@ -1578,6 +1775,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "DR: Green Titanite Shard - Centipede Demon",
@@ -1586,6 +1784,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "DR: Homeward Bone - Centipede Demon Drop",
@@ -1594,6 +1793,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "DR: Humanity - Centipede Demon Drop",
@@ -1602,6 +1802,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Orange Charred Ring",
   "mandatory": true,
   "name": "DR: Orange Charred Ring",
@@ -1610,6 +1811,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Demon Firesage",
   "mandatory": false,
   "name": "DR: Boss Fog Wall - Demon Firesage",
@@ -1618,6 +1820,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Demon Firesage Defeated",
   "mandatory": true,
   "name": "DR: Demon Firesage Defeated",
@@ -1626,6 +1829,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Demon's Catalyst",
   "mandatory": false,
   "name": "DR: Demon's Catalyst - Demon Firesage Drop",
@@ -1634,6 +1838,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "DR: Humanity - Demon Firesage Drop",
@@ -1642,6 +1847,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Demon Ruins - Entrance",
   "mandatory": false,
   "name": "DR: Demon Ruins - Entrance Bonfire",
@@ -1650,6 +1856,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "DR: Demon Ruins Shortcut opened",
@@ -1658,6 +1865,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "DE: Depths Shortcut opened",
@@ -1666,6 +1874,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Depths Rat Room",
   "mandatory": false,
   "name": "DE: Fog Wall - Depths Rat Room",
@@ -1674,6 +1883,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Greataxe",
   "mandatory": false,
   "name": "DE: Greataxe",
@@ -1682,6 +1892,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 11,
+  "found": true,
   "item": "Heavy Bolt",
   "mandatory": false,
   "name": "DE: Heavy Bolt",
@@ -1690,6 +1901,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Heavy Crossbow",
   "mandatory": false,
   "name": "DE: Heavy Crossbow",
@@ -1698,6 +1910,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "DE: Humanity - Depths Pitfall Jump",
@@ -1706,6 +1919,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Ember",
   "mandatory": false,
   "name": "DE: Large Ember",
@@ -1714,6 +1928,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Large Soul of a Nameless Soldier - Depths Basalisks",
@@ -1722,6 +1937,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Large Soul of a Nameless Soldier - Depths Entrance",
@@ -1730,6 +1946,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "DE: Large Titanite Shard - Depths Channeler",
@@ -1738,6 +1955,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Ring of the Evil Eye",
   "mandatory": false,
   "name": "DE: Ring of the Evil Eye",
@@ -1746,6 +1964,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sewer Chamber Key",
   "mandatory": false,
   "name": "DE: Sewer Chamber Key",
@@ -1754,6 +1973,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Soul of a Nameless Soldier - Basilisk Sewer Maze",
@@ -1762,6 +1982,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Soul of a Nameless Soldier - Giant Rat",
@@ -1770,6 +1991,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Soul of a Nameless Soldier - Giant Rat Room Entrance",
@@ -1778,6 +2000,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Soul of a Nameless Soldier - Near Channeler",
@@ -1786,6 +2009,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "DE: Soul of a Nameless Soldier - Ooze Trap",
@@ -1794,6 +2018,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Spider Shield",
   "mandatory": false,
   "name": "DE: Spider Shield - Ledge near Giant Rat",
@@ -1802,6 +2027,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Blighttown Key",
   "mandatory": false,
   "name": "DE: Blighttown Key",
@@ -1810,6 +2036,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "DE: Homeward Bone - Gaping Dragon Drop",
@@ -1818,6 +2045,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "DE: Twin Humanities - Gaping Dragon Drop",
@@ -1826,6 +2054,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Gaping Dragon",
   "mandatory": false,
   "name": "DE: Boss Fog Wall - Gaping Dragon",
@@ -1834,6 +2063,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Gaping Dragon Defeated",
   "mandatory": false,
   "name": "DE: Gaping Dragon Defeated",
@@ -1842,6 +2072,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Hard Leather Armor",
   "mandatory": false,
   "name": "DE: Hard Leather Armor",
@@ -1850,6 +2081,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Hard Leather Boots",
   "mandatory": false,
   "name": "DE: Hard Leather Boots",
@@ -1858,6 +2090,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Hard Leather Gauntlets",
   "mandatory": false,
   "name": "DE: Hard Leather Gauntlets",
@@ -1866,6 +2099,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Standard Helm",
   "mandatory": false,
   "name": "DE: Standard Helm",
@@ -1874,6 +2108,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "DE: Depths -> Blighttown opened",
@@ -1882,6 +2117,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "VotD: New Londo Ruins -> Valley of the Drakes opened",
@@ -1890,6 +2126,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Firelink Altar - Lordvessel",
   "mandatory": false,
   "name": "FA: Lordvessel Bonfire",
@@ -1898,6 +2135,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Lordvessel Placed",
   "mandatory": true,
   "name": "FA: Lordvessel Placed",
@@ -1906,6 +2144,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Binoculars",
   "mandatory": false,
   "name": "FS: Binoculars",
@@ -1914,6 +2153,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Caduceus Round Shield",
   "mandatory": false,
   "name": "FS: Caduceus Round Shield",
@@ -1922,6 +2162,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 4,
+  "found": true,
   "item": "Cracked Red Eye Orb",
   "mandatory": false,
   "name": "FS: Cracked Red Eye Orb - Firelink Elevator Drop",
@@ -1930,6 +2171,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 6,
+  "found": true,
   "item": "Firebomb",
   "mandatory": false,
   "name": "FS: Firebomb - Outside Petrus",
@@ -1938,6 +2180,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Firelink Shrine",
   "mandatory": false,
   "name": "FS: Firelink Shrine Bonfire",
@@ -1946,6 +2189,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 6,
+  "found": true,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "FS: Homeward Bone - Firelink Elevator Drop",
@@ -1954,6 +2198,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 3,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "FS: Humanity - Firelink Well",
@@ -1962,6 +2207,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Large Soul of a Lost Undead - Graveyard 1",
@@ -1970,6 +2216,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Large Soul of a Lost Undead - Graveyard 2",
@@ -1978,6 +2225,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 4,
+  "found": true,
   "item": "Lloyd's Talisman",
   "mandatory": false,
   "name": "FS: Lloyd's Talisman",
@@ -1986,6 +2234,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Morning Star",
   "mandatory": false,
   "name": "FS: Morning Star",
@@ -1994,6 +2243,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Ring of Sacrifice",
   "mandatory": false,
   "name": "FS: Ring of Sacrifice - Jump onto Aqueduct",
@@ -2002,6 +2252,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Above Frampt",
@@ -2010,6 +2261,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Aqueduct Cliff",
@@ -2018,6 +2270,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Aqueduct Entrance",
@@ -2026,6 +2279,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Outside Firelink Elevator",
@@ -2034,6 +2288,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Outside Frampt",
@@ -2042,6 +2297,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "FS: Soul of a Lost Undead - Sewer Rat",
@@ -2050,6 +2306,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Talisman",
   "mandatory": false,
   "name": "FS: Talisman",
@@ -2058,6 +2315,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Winged Spear",
   "mandatory": false,
   "name": "FS: Winged Spear",
@@ -2066,6 +2324,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Zweihander",
   "mandatory": false,
   "name": "FS: Zweihander",
@@ -2074,6 +2333,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Undead Asylum F2 West Key",
   "mandatory": false,
   "name": "FS: Undead Asylum F2 West Key",
@@ -2082,6 +2342,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Filler",
   "mandatory": false,
   "name": "Domhnall of Zena Under Aqueduct: Master Key",
@@ -2090,6 +2351,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Armor of the Glorious",
   "mandatory": false,
   "name": "Domhnall of Zena: Armor of the Glorious",
@@ -2098,6 +2360,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Boots of the Explorer",
   "mandatory": false,
   "name": "Domhnall of Zena: Boots of the Explorer",
@@ -2106,6 +2369,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crystal Greatsword",
   "mandatory": false,
   "name": "Domhnall of Zena: Crystal Greatsword",
@@ -2114,6 +2378,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crystal Shield",
   "mandatory": false,
   "name": "Domhnall of Zena: Crystal Shield",
@@ -2122,6 +2387,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crystal Straight Sword",
   "mandatory": false,
   "name": "Domhnall of Zena: Crystal Straight Sword",
@@ -2130,6 +2396,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gauntlets of the Vanquisher",
   "mandatory": false,
   "name": "Domhnall of Zena: Gauntlets of the Vanquisher",
@@ -2138,6 +2405,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gold Pine Resin",
   "mandatory": false,
   "name": "Domhnall of Zena: Gold Pine Resin",
@@ -2146,6 +2414,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Helm of the Wise",
   "mandatory": false,
   "name": "Domhnall of Zena: Helm of the Wise",
@@ -2154,6 +2423,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crown of the Dark Sun",
   "mandatory": false,
   "name": "Domhnall of Zena After Gwyndolin: Crown of the Dark Sun",
@@ -2162,6 +2432,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Moonlight Gloves",
   "mandatory": false,
   "name": "Domhnall of Zena After Gwyndolin: Moonlight Gloves",
@@ -2170,6 +2441,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Moonlight Robe",
   "mandatory": false,
   "name": "Domhnall of Zena After Gwyndolin: Moonlight Robe",
@@ -2178,6 +2450,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Moonlight Waistcloth",
   "mandatory": false,
   "name": "Domhnall of Zena After Gwyndolin: Moonlight Waistcloth",
@@ -2186,6 +2459,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Golem Armor",
   "mandatory": false,
   "name": "Domhnall of Zena After Iron Golem: Golem Armor",
@@ -2194,6 +2468,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Golem Gauntlets",
   "mandatory": false,
   "name": "Domhnall of Zena After Iron Golem: Golem Gauntlets",
@@ -2202,6 +2477,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Golem Helm",
   "mandatory": false,
   "name": "Domhnall of Zena After Iron Golem: Golem Helm",
@@ -2210,6 +2486,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Golem Leggings",
   "mandatory": false,
   "name": "Domhnall of Zena After Iron Golem: Golem Leggings",
@@ -2218,6 +2495,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Ornstein's Armor",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Ornstein's Armor",
@@ -2226,6 +2504,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Ornstein's Gauntlets",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Ornstein's Gauntlets",
@@ -2234,6 +2513,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Ornstein's Helm",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Ornstein's Helm",
@@ -2242,6 +2522,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Ornstein's Leggings",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Ornstein's Leggings",
@@ -2250,6 +2531,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Smough's Armor",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Smough's Armor",
@@ -2258,6 +2540,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Smough's Gauntlets",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Smough's Gauntlets",
@@ -2266,6 +2549,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Smough's Helm",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Smough's Helm",
@@ -2274,6 +2558,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Smough's Leggings",
   "mandatory": false,
   "name": "Domhnall of Zena After O+S: Smough's Leggings",
@@ -2282,6 +2567,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Armor of Artorias",
   "mandatory": false,
   "name": "Domhnall of Zena Under Aqueduct After Artorias: Armor of Artorias",
@@ -2290,6 +2576,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gauntlets of Artorias",
   "mandatory": false,
   "name": "Domhnall of Zena Under Aqueduct After Artorias: Gauntlets of Artorias",
@@ -2298,6 +2585,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Helm of Artorias",
   "mandatory": false,
   "name": "Domhnall of Zena Under Aqueduct After Artorias: Helm of Artorias",
@@ -2306,6 +2594,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Leggings of Artorias",
   "mandatory": false,
   "name": "Domhnall of Zena Under Aqueduct After Artorias: Leggings of Artorias",
@@ -2314,6 +2603,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Bellowing Dragoncrest Ring",
   "mandatory": false,
   "name": "Griggs of Vinheim: Bellowing Dragoncrest Ring",
@@ -2322,6 +2612,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Lingering Dragoncrest Ring",
   "mandatory": false,
   "name": "Griggs of Vinheim: Lingering Dragoncrest Ring",
@@ -2330,6 +2621,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcerer's Catalyst",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcerer's Catalyst",
@@ -2338,6 +2630,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Aural Decoy",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Aural Decoy",
@@ -2346,6 +2639,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Fall Control",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Fall Control",
@@ -2354,6 +2648,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Great Heavy Soul Arrow",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Great Heavy Soul Arrow",
@@ -2362,6 +2657,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Great Soul Arrow",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Great Soul Arrow",
@@ -2370,6 +2666,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Heavy Soul Arrow",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Heavy Soul Arrow",
@@ -2378,6 +2675,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Magic Shield",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Magic Shield",
@@ -2386,6 +2684,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Magic Weapon",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Magic Weapon",
@@ -2394,6 +2693,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Soul Arrow",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Soul Arrow",
@@ -2402,6 +2702,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Homing Soulmass",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Homing Soulmass",
@@ -2410,6 +2711,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Soul Spear",
   "mandatory": false,
   "name": "Griggs of Vinheim: Sorcery: Soul Spear",
@@ -2418,6 +2720,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Combustion",
   "mandatory": false,
   "name": "Laurentius of the Great Swamp: Pyromancy: Combustion",
@@ -2426,6 +2729,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fire Orb",
   "mandatory": false,
   "name": "Laurentius of the Great Swamp: Pyromancy: Fire Orb",
@@ -2434,6 +2738,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fireball",
   "mandatory": false,
   "name": "Laurentius of the Great Swamp: Pyromancy: Fireball",
@@ -2442,6 +2747,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Flash Sweat",
   "mandatory": false,
   "name": "Laurentius of the Great Swamp: Pyromancy: Flash Sweat",
@@ -2450,6 +2756,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Iron Flesh",
   "mandatory": false,
   "name": "Laurentius of the Great Swamp: Pyromancy: Iron Flesh",
@@ -2458,6 +2765,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Copper Coin",
   "mandatory": false,
   "name": "Petrus of Thorolund: Copper Coin",
@@ -2466,6 +2774,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 2,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Petrus of Thorolund: Humanity - Drop Added to Shop",
@@ -2474,6 +2783,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Force",
   "mandatory": false,
   "name": "Petrus of Thorolund: Miracle: Force",
@@ -2482,6 +2792,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Great Heal Excerpt",
   "mandatory": false,
   "name": "Petrus of Thorolund: Miracle: Great Heal Excerpt",
@@ -2490,6 +2801,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Heal",
   "mandatory": false,
   "name": "Petrus of Thorolund: Miracle: Heal",
@@ -2498,6 +2810,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Homeward",
   "mandatory": false,
   "name": "Petrus of Thorolund: Miracle: Homeward",
@@ -2506,6 +2819,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Seek Guidance",
   "mandatory": false,
   "name": "Petrus of Thorolund: Miracle: Seek Guidance",
@@ -2514,6 +2828,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Talisman",
   "mandatory": false,
   "name": "Petrus of Thorolund: Talisman",
@@ -2522,6 +2837,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Thorolund Talisman",
   "mandatory": false,
   "name": "Petrus of Thorolund: Thorolund Talisman",
@@ -2530,6 +2846,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "Rhea of Thorolund: Divine Blessing",
@@ -2538,6 +2855,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Force",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Force",
@@ -2546,6 +2864,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Great Heal",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Great Heal",
@@ -2554,6 +2873,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Great Heal Excerpt",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Great Heal Excerpt",
@@ -2562,6 +2882,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Heal",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Heal",
@@ -2570,6 +2891,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Homeward",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Homeward",
@@ -2578,6 +2900,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Magic Barrier",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Magic Barrier",
@@ -2586,6 +2909,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Seek Guidance",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Seek Guidance",
@@ -2594,6 +2918,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Wrath of the Gods",
   "mandatory": false,
   "name": "Rhea of Thorolund: Miracle: Wrath of the Gods",
@@ -2602,6 +2927,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crescent Axe",
   "mandatory": false,
   "name": "Trusty Patches: Crescent Axe",
@@ -2610,6 +2936,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "Trusty Patches: Divine Blessing",
@@ -2618,6 +2945,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 3,
+  "found": false,
   "item": "Eye of Death",
   "mandatory": false,
   "name": "Trusty Patches: Eye of Death",
@@ -2626,6 +2954,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 3,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Trusty Patches: Humanity",
@@ -2634,6 +2963,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Great Heal Excerpt",
   "mandatory": false,
   "name": "Trusty Patches: Miracle: Great Heal Excerpt",
@@ -2642,6 +2972,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Heal",
   "mandatory": false,
   "name": "Trusty Patches: Miracle: Heal",
@@ -2650,6 +2981,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "Trusty Patches: Twin Humanities",
@@ -2658,6 +2990,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Knight Armor",
   "mandatory": false,
   "name": "KoFF: Black Knight Armor",
@@ -2666,6 +2999,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Knight Gauntlets",
   "mandatory": false,
   "name": "KoFF: Black Knight Gauntlets",
@@ -2674,6 +3008,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Knight Helm",
   "mandatory": false,
   "name": "KoFF: Black Knight Helm",
@@ -2682,6 +3017,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Knight Leggings",
   "mandatory": false,
   "name": "KoFF: Black Knight Leggings",
@@ -2690,6 +3026,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Gwyn",
   "mandatory": false,
   "name": "KoFF: Boss Fog Wall - Gwyn",
@@ -2698,6 +3035,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Gwyn, Lord of Cinder Defeated",
   "mandatory": false,
   "name": "KoFF: Gwyn, Lord of Cinder Defeated",
@@ -2706,6 +3044,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Soul of Gwyn, Lord of Cinder",
   "mandatory": false,
   "name": "KoFF: Soul of Gwyn",
@@ -2714,6 +3053,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Armor of Thorns",
   "mandatory": false,
   "name": "LI: Armor of Thorns",
@@ -2722,6 +3062,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "LI: Divine Blessing - Izalith Lava 1",
@@ -2730,6 +3071,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "LI: Divine Blessing - Izalith Lava 2",
@@ -2738,6 +3080,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Red Titanite",
   "mandatory": false,
   "name": "LI: Extra Titanite - Crystal Lizard Drop, Near DR Shortcut Door",
@@ -2746,6 +3089,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Gauntlets of Thorns",
   "mandatory": false,
   "name": "LI: Gauntlets of Thorns",
@@ -2754,6 +3098,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "LI: Green Titanite Shard - Chaos Eater Pit",
@@ -2762,6 +3107,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Helm of Thorns",
   "mandatory": false,
   "name": "LI: Helm of Thorns",
@@ -2770,6 +3116,7 @@
  {
   "category": "NPC_DROP",
   "count": 1,
+  "found": false,
   "item": "Izalith Catalyst",
   "mandatory": false,
   "name": "LI: Izalith Catalyst - Grana Drop, Before Bed of Chaos",
@@ -2778,6 +3125,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Brave Warrior",
   "mandatory": false,
   "name": "LI: Large Soul of a Brave Warrior - Izalith City",
@@ -2786,6 +3134,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Leggings of Thorns",
   "mandatory": false,
   "name": "LI: Leggings of Thorns",
@@ -2794,6 +3143,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Lost Izalith - Entrance",
   "mandatory": false,
   "name": "LI: Lost Izalith - Entrance Bonfire",
@@ -2802,6 +3152,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Lost Izalith - Past Illusory Wall",
   "mandatory": false,
   "name": "LI: Lost Izalith - Past Illusory Wall Bonfire",
@@ -2810,6 +3161,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Pyromancy: Chaos Fire Whip",
   "mandatory": false,
   "name": "LI: Pyromancy: Chaos Fire Whip",
@@ -2818,6 +3170,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rare Ring of Sacrifice",
   "mandatory": false,
   "name": "LI: Rare Ring of Sacrifice - Izalith City",
@@ -2826,6 +3179,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "LI: Red Titanite Chunk - After Chaos Eater Pit",
@@ -2834,6 +3188,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "LI: Red Titanite Chunk - Inside Chaos Eater Pit",
@@ -2842,6 +3197,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Slab",
   "mandatory": false,
   "name": "LI: Red Titanite Slab - Chaos Eater Pit",
@@ -2850,6 +3206,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "LI: Soul of a Brave Warrior - First Platform after Entrance",
@@ -2858,6 +3215,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "LI: Soul of a Brave Warrior - Inside Chaos Eater Pit",
@@ -2866,6 +3224,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "LI: Soul of a Brave Warrior - Near Soul of a Great Hero Chest",
@@ -2874,6 +3233,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Great Hero",
   "mandatory": false,
   "name": "LI: Soul of a Great Hero - Lost Izalith",
@@ -2882,6 +3242,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "LI: Soul of a Hero - Izalith City",
@@ -2890,6 +3251,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Sunlight Maggot",
   "mandatory": false,
   "name": "LI: Sunlight Maggot - Red Eye Maggot Drop",
@@ -2898,6 +3260,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "LI: Titanite Demon near Shortcut",
@@ -2906,6 +3269,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "LI: Twin Humanities - Lost Izalith",
@@ -2914,6 +3278,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "LI: Twinkling Titanite - Crystal Lizard Drop, Near DR Shortcut Door",
@@ -2922,6 +3287,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Bed of Chaos Defeated",
   "mandatory": false,
   "name": "LI: Bed of Chaos Defeated",
@@ -2930,6 +3296,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Bed of Chaos",
   "mandatory": false,
   "name": "LI: Boss Fog Wall - Bed of Chaos",
@@ -2938,6 +3305,7 @@
  {
   "category": "LORD_SOUL",
   "count": 1,
+  "found": false,
   "item": "Lord Soul (Bed of Chaos)",
   "mandatory": true,
   "name": "LI: Lord Soul (Bed of Chaos)",
@@ -2946,6 +3314,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Lost Izalith - Heart of Chaos",
   "mandatory": false,
   "name": "LI: Lost Izalith - Heart of Chaos Bonfire",
@@ -2954,6 +3323,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Blighttown Swamp",
   "mandatory": false,
   "name": "BT: Blighttown Swamp Bonfire",
@@ -2962,6 +3332,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Butcher Knife",
   "mandatory": false,
   "name": "BT: Butcher Knife",
@@ -2970,6 +3341,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "BT: Dragon Scale - Blighttown",
@@ -2978,6 +3350,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Falchion",
   "mandatory": false,
   "name": "BT: Falchion",
@@ -2986,6 +3359,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Great Club",
   "mandatory": false,
   "name": "BT: Great Club",
@@ -2994,6 +3368,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "BT: Green Titanite Shard - Blighttown",
@@ -3002,6 +3377,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Heavy Boots",
   "mandatory": false,
   "name": "BT: Heavy Boots",
@@ -3010,6 +3386,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 3,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "BT: Humanity - Maneater Mildred",
@@ -3018,6 +3395,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Large Soul of a Proud Knight - Corpse below Ramp",
@@ -3026,6 +3404,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Large Soul of a Proud Knight - Corpse between Bonfire and Great Hollow Entrance",
@@ -3034,6 +3413,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Large Soul of a Proud Knight - Quelana",
@@ -3042,6 +3422,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "BT: Large Titanite Shard - Near Quelana",
@@ -3050,6 +3431,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "BT: Large Titanite Shard - Near Server",
@@ -3058,6 +3440,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Plank Shield",
   "mandatory": false,
   "name": "BT: Plank Shield",
@@ -3066,6 +3449,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Pyromancy: Poison Mist",
   "mandatory": false,
   "name": "BT: Pyromancy: Poison Mist",
@@ -3074,6 +3458,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Server",
   "mandatory": false,
   "name": "BT: Server",
@@ -3082,6 +3467,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Tattered Cloth Hood",
   "mandatory": false,
   "name": "BT: Tattered Cloth Hood",
@@ -3090,6 +3476,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Tattered Cloth Manchette",
   "mandatory": false,
   "name": "BT: Tattered Cloth Manchette",
@@ -3098,6 +3485,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Tattered Cloth Robe",
   "mandatory": false,
   "name": "BT: Tattered Cloth Robe",
@@ -3106,6 +3494,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "BT: Twin Humanities - Great Hallow Entrance",
@@ -3114,6 +3503,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wanderer Boots",
   "mandatory": false,
   "name": "BT: Wanderer Boots",
@@ -3122,6 +3512,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wanderer Coat",
   "mandatory": false,
   "name": "BT: Wanderer Coat",
@@ -3130,6 +3521,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wanderer Hood",
   "mandatory": false,
   "name": "BT: Wanderer Hood",
@@ -3138,6 +3530,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wanderer Manchette",
   "mandatory": false,
   "name": "BT: Wanderer Manchette",
@@ -3146,6 +3539,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Bell of Awakening #2",
   "mandatory": true,
   "name": "BT: Bell of Awakening #2 rung",
@@ -3154,6 +3548,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Daughter of Chaos",
   "mandatory": false,
   "name": "BT: Daughter of Chaos Bonfire",
@@ -3162,6 +3557,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "BT: Homeward Bone - Pulled Lever After Quelaag",
@@ -3170,6 +3566,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Quelaag",
   "mandatory": false,
   "name": "BT: Soul of Quelaag",
@@ -3178,6 +3575,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "BT: Twin Humanities - Quelaag Drop",
@@ -3186,6 +3584,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Poison Mist",
   "mandatory": false,
   "name": "Eingyi: Pyromancy: Poison Mist",
@@ -3194,6 +3593,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Toxic Mist",
   "mandatory": false,
   "name": "Eingyi: Pyromancy: Toxic Mist",
@@ -3202,6 +3602,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Servant Roster",
   "mandatory": false,
   "name": "Eingyi: Servant Roster",
@@ -3210,6 +3611,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Lower Blighttown Entrance",
   "mandatory": false,
   "name": "BT: Fog Wall - Lower Blighttown Entrance",
@@ -3218,6 +3620,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Quelaag",
   "mandatory": false,
   "name": "BT: Boss Fog Wall - Quelaag",
@@ -3226,6 +3629,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Chaos Witch Quelaag Defeated",
   "mandatory": true,
   "name": "BT: Chaos Witch Quelaag Defeated",
@@ -3234,6 +3638,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Combustion",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Combustion",
@@ -3242,6 +3647,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fire Orb",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Fire Orb",
@@ -3250,6 +3656,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fire Whip",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Fire Whip",
@@ -3258,6 +3665,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fireball",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Fireball",
@@ -3266,6 +3674,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Firestorm",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Firestorm",
@@ -3274,6 +3683,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Great Combustion",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Great Combustion",
@@ -3282,6 +3692,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Great Fireball",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Great Fireball",
@@ -3290,6 +3701,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Undead Rapport",
   "mandatory": false,
   "name": "Quelana of Izalith: Pyromancy: Undead Rapport",
@@ -3298,6 +3710,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "East Wood Grain Ring",
   "mandatory": false,
   "name": "Shiva of the East: East Wood Grain Ring",
@@ -3306,6 +3719,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 6,
+  "found": true,
   "item": "Cracked Red Eye Orb",
   "mandatory": false,
   "name": "NL: Cracked Red Eye Orb - New Londo",
@@ -3314,6 +3728,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "NL: Humanity - Lower New Londo Ruins",
@@ -3322,6 +3737,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "NL: Large Soul of a Proud Knight - Corpse before Illusory Wall",
@@ -3330,6 +3746,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "NL: Large Soul of a Proud Knight - Corpse in Shed",
@@ -3338,6 +3755,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "NL: Large Soul of a Proud Knight - Corpse on Stairs",
@@ -3346,6 +3764,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "NL: Large Soul of a Proud Knight - Right Path after Stairs",
@@ -3354,6 +3773,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "NL: Soul of a Brave Warrior - New Londo Stairs",
@@ -3362,6 +3782,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "NL: Titanite Chunk - Chest before Four Kings",
@@ -3370,6 +3791,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "NL: Titanite Chunk - Chest behind Illusory Wall",
@@ -3378,6 +3800,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Very Large Ember",
   "mandatory": false,
   "name": "NL: Very Large Ember",
@@ -3386,6 +3809,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - New Londo (Lower)",
   "mandatory": false,
   "name": "NL: Fog Wall - New Londo (Lower)",
@@ -3394,6 +3818,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Leather Armor",
   "mandatory": false,
   "name": "UB: Black Leather Armor",
@@ -3402,6 +3827,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Leather Boots",
   "mandatory": false,
   "name": "UB: Black Leather Boots",
@@ -3410,6 +3836,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Leather Gloves",
   "mandatory": false,
   "name": "UB: Black Leather Gloves",
@@ -3418,6 +3845,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Large Soul of a Lost Undead - Barrel outside Capra",
@@ -3426,6 +3854,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Large Soul of a Lost Undead - Hallway to Depths",
@@ -3434,6 +3863,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Mail Breaker",
   "mandatory": false,
   "name": "UB: Mail Breaker",
@@ -3442,6 +3872,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Target Shield",
   "mandatory": false,
   "name": "UB: Target Shield",
@@ -3450,6 +3881,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Thief Mask",
   "mandatory": false,
   "name": "UB: Thief Mask",
@@ -3458,6 +3890,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "UB: Twin Humanities - Lower Burg Torch Hollows",
@@ -3466,6 +3899,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg -> Lower Undead Burg opened",
@@ -3474,6 +3908,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg Female Merchant Shortcut opened",
@@ -3482,6 +3917,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "UB: Homeward Bone - Capra Demon Drop",
@@ -3490,6 +3926,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "UB: Humanity - Capra Demon Drop",
@@ -3498,6 +3935,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Key to Depths",
   "mandatory": false,
   "name": "UB: Key to Depths",
@@ -3506,6 +3944,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcerer Boots",
   "mandatory": false,
   "name": "UB: Sorcerer Boots",
@@ -3514,6 +3953,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcerer Cloak",
   "mandatory": false,
   "name": "UB: Sorcerer Cloak",
@@ -3522,6 +3962,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcerer Gauntlets",
   "mandatory": false,
   "name": "UB: Sorcerer Gauntlets",
@@ -3530,6 +3971,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcerer Hat",
   "mandatory": false,
   "name": "UB: Sorcerer Hat",
@@ -3538,6 +3980,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcerer's Catalyst",
   "mandatory": false,
   "name": "UB: Sorcerer's Catalyst",
@@ -3546,6 +3989,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Capra Demon",
   "mandatory": false,
   "name": "UB: Boss Fog Wall - Capra Demon",
@@ -3554,6 +3998,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Capra Demon Defeated",
   "mandatory": false,
   "name": "UB: Capra Demon Defeated",
@@ -3562,6 +4007,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Female Undead Merchant: Humanity",
@@ -3570,6 +4016,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 4,
+  "found": false,
   "item": "Transient Curse",
   "mandatory": false,
   "name": "Female Undead Merchant: Transient Curse",
@@ -3578,6 +4025,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "NL: New Londo Ruins Door to the Seal opened",
@@ -3586,6 +4034,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA: Undead Asylum - Boss Door opened",
@@ -3594,6 +4043,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Undead Asylum - Courtyard",
   "mandatory": false,
   "name": "UA: Undead Asylum - Courtyard Bonfire",
@@ -3602,6 +4052,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Undead Asylum - Interior",
   "mandatory": false,
   "name": "UA: Undead Asylum - Interior Bonfire",
@@ -3610,6 +4061,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Asylum Demon Defeated",
   "mandatory": false,
   "name": "UA: Asylum Demon Defeated",
@@ -3618,6 +4070,7 @@
  {
   "category": "SKIP",
   "count": 1,
+  "found": false,
   "item": "Big Pilgrim's Key",
   "mandatory": true,
   "name": "UA: Big Pilgrim's Key",
@@ -3626,6 +4079,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "UA: Humanity - Asylum Demon Drop",
@@ -3634,6 +4088,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "UA: Soul of a Lost Undead - Outside Asylum",
@@ -3642,6 +4097,7 @@
  {
   "category": "SKIP",
   "count": 1,
+  "found": false,
   "item": "Estus Flask",
   "mandatory": false,
   "name": "UA: Estus Flask",
@@ -3650,6 +4106,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Northern Undead Asylum",
   "mandatory": false,
   "name": "UA: Fog Wall - Northern Undead Asylum",
@@ -3658,6 +4115,7 @@
  {
   "category": "SKIP",
   "count": 1,
+  "found": false,
   "item": "Undead Asylum F2 East Key",
   "mandatory": true,
   "name": "UA: Undead Asylum F2 East Key",
@@ -3666,6 +4124,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA: Undead Asylum Shortcut Door opened",
@@ -3674,6 +4133,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA: Undead Asylum Big Pilgrim Door opened",
@@ -3682,6 +4142,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA: Undead Asylum F2 East Door opened",
@@ -3690,6 +4151,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Shield",
   "mandatory": false,
   "name": "UA2: Black Knight Shield - Black Knight Drop, By Starting Cell",
@@ -3698,6 +4160,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Sword",
   "mandatory": false,
   "name": "UA2: Black Knight Sword - Black Knight Drop, Hallway Before Fog",
@@ -3706,6 +4169,7 @@
  {
   "category": "NPC_DROP",
   "count": 1,
+  "found": false,
   "item": "Crest Shield",
   "mandatory": false,
   "name": "UA2: Crest Shield",
@@ -3714,6 +4178,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "UA2: Homeward Bone - Stray Demon Drop",
@@ -3722,6 +4187,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "UA2: Humanity - Stray Demon Drop",
@@ -3730,6 +4196,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "UA2: Red Titanite Chunk - Black Knight Drop, By Starting Cell",
@@ -3738,6 +4205,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "UA2: Red Titanite Chunk - Black Knight Drop, Hallway Before Fog",
@@ -3746,6 +4214,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Stray Demon Defeated",
   "mandatory": false,
   "name": "UA2: Stray Demon Defeated",
@@ -3754,6 +4223,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Titanite Slab",
   "mandatory": false,
   "name": "UA2: Titanite Slab - Stray Demon Drop",
@@ -3762,6 +4232,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rusted Iron Ring",
   "mandatory": false,
   "name": "UA2: Rusted Iron Ring",
@@ -3770,6 +4241,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Peculiar Doll",
   "mandatory": false,
   "name": "UA2: Peculiar Doll",
@@ -3778,6 +4250,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA2: Undead Asylum F2 West Door opened",
@@ -3786,6 +4259,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "OS: Humanity - Corpse Near Bonfire",
@@ -3794,6 +4268,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Oolacile Sanctuary",
   "mandatory": false,
   "name": "OS: Oolacile Sanctuary Bonfire",
@@ -3802,6 +4277,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 6,
+  "found": false,
   "item": "Gold Pine Resin",
   "mandatory": false,
   "name": "Elizabeth: Gold Pine Resin",
@@ -3810,6 +4286,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Carving: VERY GOOD!",
   "mandatory": false,
   "name": "OT: Carving: VERY GOOD! - Mimic, Outside Platform",
@@ -3818,6 +4295,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Crest Key",
   "mandatory": false,
   "name": "OT: Crest Key - Mimic Drop, By Fireplace",
@@ -3826,6 +4304,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "OT: Extra Titanite - Crystal Lizard Drop, Little Isolated Rooftop",
@@ -3834,6 +4313,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Carving: I'M SORRY!",
   "mandatory": false,
   "name": "OT: I'm Sorry Carving - Lone Sorceress",
@@ -3842,6 +4322,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "OT: Large Soul of a Proud Knight - Early Oolacile Rooftop",
@@ -3850,6 +4331,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Oolacile Township",
   "mandatory": false,
   "name": "OT: Oolacile Township Bonfire",
@@ -3858,6 +4340,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Oolacile Township Dungeon",
   "mandatory": false,
   "name": "OT: Oolacile Township Dungeon Bonfire",
@@ -3866,6 +4349,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rubbish",
   "mandatory": false,
   "name": "OT: Rubbish - Outside of Door",
@@ -3874,6 +4358,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Dark Fog",
   "mandatory": false,
   "name": "OT: Sorcery: Dark Fog",
@@ -3882,6 +4367,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Dark Orb",
   "mandatory": false,
   "name": "OT: Sorcery: Dark Orb",
@@ -3890,6 +4376,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "OT: Soul of a Brave Warrior - By First Sorceress",
@@ -3898,6 +4385,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "OT: Soul of a Brave Warrior - Corpse in Corner of Statue Hallway",
@@ -3906,6 +4394,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "OT: Soul of a Brave Warrior - Wooden Platform",
@@ -3914,6 +4403,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "OT: Soul of a Hero - 2F Behind Stairs To Gough",
@@ -3922,6 +4412,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "OT: Soul of a Hero - Stair Ledge",
@@ -3930,6 +4421,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "OT: Twin Humanities - Drop onto Roof",
@@ -3938,6 +4430,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "OT: Twinkling Titanite - Crystal Lizard Drop, Little Isolated Rooftop",
@@ -3946,6 +4439,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "OT: Red Titanite Chunk - In Chest behind Illusory Wall",
@@ -3954,6 +4448,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Silver Pendant",
   "mandatory": false,
   "name": "OT: Silver Pendant",
@@ -3962,6 +4457,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Bloodshield",
   "mandatory": false,
   "name": "PW: Bloodshield",
@@ -3970,6 +4466,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Egg Vermifuge",
   "mandatory": false,
   "name": "PW: Egg Vermifuge - Painted World",
@@ -3978,6 +4475,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold Coin",
   "mandatory": false,
   "name": "PW: Gold Coin - Painted World",
@@ -3986,6 +4484,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Large Soul of a Proud Knight - Ambush after Building",
@@ -3994,6 +4493,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Large Soul of a Proud Knight - Painted World Undead Dragon",
@@ -4002,6 +4502,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Painted World",
   "mandatory": false,
   "name": "PW: Painted World Bonfire",
@@ -4010,6 +4511,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Painting Guardian Gloves",
   "mandatory": false,
   "name": "PW: Painting Guardian Gloves",
@@ -4018,6 +4520,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Painting Guardian Hood",
   "mandatory": false,
   "name": "PW: Painting Guardian Hood",
@@ -4026,6 +4529,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Painting Guardian Robe",
   "mandatory": false,
   "name": "PW: Painting Guardian Robe",
@@ -4034,6 +4538,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Painting Guardian Waistcloth",
   "mandatory": false,
   "name": "PW: Painting Guardian Waistcloth",
@@ -4042,6 +4547,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Sign Soapstone",
   "mandatory": false,
   "name": "PW: Red Sign Soapstone",
@@ -4050,6 +4556,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Corpse Hanging out of Hole",
@@ -4058,6 +4565,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Corpse at Backside Tower Corner",
@@ -4066,6 +4574,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Painted World Albino Rats",
@@ -4074,6 +4583,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Painted World Tower",
@@ -4082,6 +4592,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - Corpse up First Staircase",
@@ -4090,6 +4601,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - Painted World Corvid Ambush",
@@ -4098,6 +4610,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "PW: Twin Humanities - Painted World",
@@ -4106,6 +4619,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "PW: Undead Dragon in Painted World",
@@ -4114,6 +4628,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Cleric Robe",
   "mandatory": false,
   "name": "PW: Black Cleric Robe",
@@ -4122,6 +4637,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Manchette",
   "mandatory": false,
   "name": "PW: Black Manchette",
@@ -4130,6 +4646,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Tights",
   "mandatory": false,
   "name": "PW: Black Tights",
@@ -4138,6 +4655,7 @@
  {
   "category": "FROZEN_BLACKSMITH",
   "count": 1,
+  "found": true,
   "item": "Dark Ember",
   "mandatory": false,
   "name": "PW: Dark Ember",
@@ -4146,6 +4664,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Mask of Velka",
   "mandatory": false,
   "name": "PW: Mask of Velka",
@@ -4154,6 +4673,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Miracle: Vow of Silence",
   "mandatory": false,
   "name": "PW: Miracle: Vow of Silence",
@@ -4162,6 +4682,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Velka's Rapier",
   "mandatory": false,
   "name": "PW: Velka's Rapier",
@@ -4170,6 +4691,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Annex Key",
   "mandatory": false,
   "name": "PW: Annex Key",
@@ -4178,6 +4700,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Painted World",
   "mandatory": false,
   "name": "PW: Fog Wall - Painted World",
@@ -4186,6 +4709,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "PW: Humanity - Painted World Courtyard",
@@ -4194,6 +4718,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "PW: Humanity - Painted World Hanging Body",
@@ -4202,6 +4727,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Large Soul of a Proud Knight - Jeremiah",
@@ -4210,6 +4736,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "PW: Large Titanite Shard",
@@ -4218,6 +4745,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Notched Whip",
   "mandatory": false,
   "name": "PW: Notched Whip",
@@ -4226,6 +4754,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Pyromancy: Acid Surge",
   "mandatory": false,
   "name": "PW: Pyromancy: Acid Surge",
@@ -4234,6 +4763,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Pyromancy: Fire Surge",
   "mandatory": false,
   "name": "PW: Pyromancy: Fire Surge - Engorged Zombie Drop",
@@ -4242,6 +4772,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Ring of Sacrifice",
   "mandatory": false,
   "name": "PW: Ring of Sacrifice - Painted World",
@@ -4250,6 +4781,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Next to Ground Floor Stairs",
@@ -4258,6 +4790,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "PW: Soul of a Brave Warrior - Painted World Bonewheels",
@@ -4266,6 +4799,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - By Hanging Corpse",
@@ -4274,6 +4808,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - Corpse near Bonewheels",
@@ -4282,6 +4817,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - Jeremiah 1",
@@ -4290,6 +4826,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "PW: Soul of a Proud Knight - Jeremiah 2",
@@ -4298,6 +4835,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Crossbreed Priscilla",
   "mandatory": false,
   "name": "PW: Boss Fog Wall - Crossbreed Priscilla",
@@ -4306,6 +4844,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Crossbreed Priscilla Defeated",
   "mandatory": false,
   "name": "PW: Crossbreed Priscilla Defeated",
@@ -4314,6 +4853,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "PW: Homeward Bone - Return to Anor Londo",
@@ -4322,6 +4862,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Priscilla",
   "mandatory": false,
   "name": "PW: Soul of Priscilla",
@@ -4330,6 +4871,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "PW: Twin Humanities - Crossbreed Priscilla Drop",
@@ -4338,6 +4880,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Xanthous Crown",
   "mandatory": false,
   "name": "PW: Xanthous Crown",
@@ -4346,6 +4889,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Xanthous Gloves",
   "mandatory": false,
   "name": "PW: Xanthous Gloves",
@@ -4354,6 +4898,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Xanthous Overcoat",
   "mandatory": false,
   "name": "PW: Xanthous Overcoat",
@@ -4362,6 +4907,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Xanthous Waistcloth",
   "mandatory": false,
   "name": "PW: Xanthous Waistcloth",
@@ -4370,6 +4916,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Slab",
   "mandatory": false,
   "name": "RW: Blue Titanite Slab - Hidden Chest at Pool",
@@ -4378,6 +4925,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Elizabeth's Mushroom",
   "mandatory": false,
   "name": "RW: Elizabeth's Mushroom",
@@ -4386,6 +4934,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Titanite",
   "mandatory": false,
   "name": "RW: Extra Titanite - Crystal Lizard Drop, After Bridge With Kalameet Jumpscare",
@@ -4394,6 +4943,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Red Titanite",
   "mandatory": false,
   "name": "RW: Extra Titanite - Crystal Lizard Drop, Entry To Kalameet's Arena",
@@ -4402,6 +4952,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "RW: Extra Titanite - Crystal Lizard Drop, Near Elevator Top",
@@ -4410,6 +4961,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gold Coin",
   "mandatory": false,
   "name": "RW: Gold Coin - Down the Slope",
@@ -4418,6 +4970,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 8,
+  "found": true,
   "item": "Gough's Great Arrow",
   "mandatory": false,
   "name": "RW: Gough's Great Arrow",
@@ -4426,6 +4979,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Guardian Armor",
   "mandatory": false,
   "name": "RW: Guardian Armor",
@@ -4434,6 +4988,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Guardian Gauntlets",
   "mandatory": false,
   "name": "RW: Guardian Gauntlets",
@@ -4442,6 +4997,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Guardian Helm",
   "mandatory": false,
   "name": "RW: Guardian Helm",
@@ -4450,6 +5006,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Guardian Leggings",
   "mandatory": false,
   "name": "RW: Guardian Leggings",
@@ -4458,6 +5015,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Brave Warrior",
   "mandatory": false,
   "name": "RW: Large Soul of a Brave Warrior - Back of Ravine",
@@ -4466,6 +5024,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "RW: Large Soul of a Proud Knight - Edge of Cliff",
@@ -4474,6 +5033,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "RW: Soul of a Brave Warrior - Outside Elevator",
@@ -4482,6 +5042,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "RW: Soul of a Brave Warrior - Up The Slope",
@@ -4490,6 +5051,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "RW: Soul of a Brave Warrior 1 - Kalameet Arena",
@@ -4498,6 +5060,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "RW: Soul of a Brave Warrior 2 - Kalameet Arena",
@@ -4506,6 +5069,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "RW: Soul of a Hero - Kalameet Arena",
@@ -4514,6 +5078,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "RW: Soul of a Proud Knight - Behind Tower",
@@ -4522,6 +5087,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "RW: Twinkling Titanite - Crystal Lizard Drop, After Bridge With Kalameet Jumpscare",
@@ -4530,6 +5096,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "RW: Twinkling Titanite - Crystal Lizard Drop, Entry To Kalameet's Arena",
@@ -4538,6 +5105,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "RW: Twinkling Titanite - Crystal Lizard Drop, Near Elevator Top",
@@ -4546,6 +5114,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Black Dragon Kalameet Defeated",
   "mandatory": false,
   "name": "RW: Black Dragon Kalameet Defeated",
@@ -4554,6 +5123,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Calamity Ring",
   "mandatory": false,
   "name": "RW: Calamity Ring",
@@ -4562,6 +5132,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 3,
+  "found": true,
   "item": "Gough's Great Arrow",
   "mandatory": false,
   "name": "RW: Gough's Great Arrow - Kalemeet's Arena",
@@ -4570,6 +5141,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Gough's Greatbow",
   "mandatory": false,
   "name": "RW: Gough's Greatbow - Kalameet reward",
@@ -4578,6 +5150,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Slab",
   "mandatory": false,
   "name": "RW: Titanite Slab - Kalameet's Arena Behind Waterfall",
@@ -4586,6 +5159,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Artorias",
   "mandatory": false,
   "name": "RW: Boss Fog Wall - Artorias",
@@ -4594,6 +5168,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Dark Silver Tracer",
   "mandatory": false,
   "name": "RW: Dark Silver Tracer - Lord's Blade Ciaran",
@@ -4602,6 +5177,7 @@
  {
   "category": "MISSABLE_DROP",
   "count": 1,
+  "found": false,
   "item": "Gold Tracer",
   "mandatory": false,
   "name": "RW: Gold Tracer - Lord's Blade Ciaran",
@@ -4610,6 +5186,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Artorias the Abysswalker Defeated",
   "mandatory": false,
   "name": "RW: Knight Artorias Defeated",
@@ -4618,6 +5195,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Soul of Artorias",
   "mandatory": false,
   "name": "RW: Soul of Artorias",
@@ -4626,6 +5204,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Carving: THANK YOU!",
   "mandatory": false,
   "name": "Hawkeye Gough: Carving: Carving: THANK YOU!",
@@ -4634,6 +5213,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Carving: HELLO!",
   "mandatory": false,
   "name": "Hawkeye Gough: Carving: HELLO!",
@@ -4642,6 +5222,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gough's Armor",
   "mandatory": false,
   "name": "Hawkeye Gough: Gough's Armor - Drop Added To Shop",
@@ -4650,6 +5231,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gough's Gauntlets",
   "mandatory": false,
   "name": "Hawkeye Gough: Gough's Gauntlets - Drop Added To Shop",
@@ -4658,6 +5240,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gough's Helm",
   "mandatory": false,
   "name": "Hawkeye Gough: Gough's Helm - Drop Added To Shop",
@@ -4666,6 +5249,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Gough's Leggings",
   "mandatory": false,
   "name": "Hawkeye Gough: Gough's Leggings - Drop Added To Shop",
@@ -4674,6 +5258,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chester's Gloves",
   "mandatory": false,
   "name": "Marvelous Chester: Chester's Gloves - Drop Added To Shop",
@@ -4682,6 +5267,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chester's Long Coat",
   "mandatory": false,
   "name": "Marvelous Chester: Chester's Long Coat - Drop Added To Shop",
@@ -4690,6 +5276,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chester's Trousers",
   "mandatory": false,
   "name": "Marvelous Chester: Chester's Trousers - Drop Added To Shop",
@@ -4698,6 +5285,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 13,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Marvelous Chester: Humanity",
@@ -4706,6 +5294,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Snickering Top Hat",
   "mandatory": false,
   "name": "Marvelous Chester: Snickering Top Hat - Drop Added To Shop",
@@ -4714,6 +5303,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Sanctuary Garden",
   "mandatory": false,
   "name": "SG: Sanctuary Garden Bonfire",
@@ -4722,6 +5312,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Sanctuary Guardian",
   "mandatory": false,
   "name": "SG: Boss Fog Wall - Sanctuary Guardian",
@@ -4730,6 +5321,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Guardian Soul",
   "mandatory": false,
   "name": "SG: Guardian Soul",
@@ -4738,6 +5330,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "SG: Humanity - Sanctuary Guardian Drop",
@@ -4746,6 +5339,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Sanctuary Guardian Defeated",
   "mandatory": false,
   "name": "SG: Sanctuary Guardian Defeated",
@@ -4754,6 +5348,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "SF: Demon Titanite - Drop from Titanite Demon in Pit 1",
@@ -4762,6 +5357,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "SF: Demon Titanite - Drop from Titanite Demon in Pit 2",
@@ -4770,6 +5366,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "SF: Demon Titanite - Drop from Titanite Demon in Pit 3",
@@ -4778,6 +5375,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "SF: Demon Titanite - Drop from Titanite Demon in Pit 4",
@@ -4786,6 +5384,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "SF: Large Soul of a Proud Knight - Corpse after Ladder out of Pit",
@@ -4794,6 +5393,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 2,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "SF: Large Titanite Shard - Sen's Fortress Trap Chest",
@@ -4802,6 +5402,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Ring of Steel Protection",
   "mandatory": false,
   "name": "SF: Ring of Steel Protection",
@@ -4810,6 +5411,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Scythe",
   "mandatory": false,
   "name": "SF: Scythe",
@@ -4818,6 +5420,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "SF: Sen's Fortress Main Gate opened",
@@ -4826,6 +5429,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Shotel",
   "mandatory": false,
   "name": "SF: Shotel",
@@ -4834,6 +5438,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "SF: Soul of a Brave Warrior - Sen's Fortress Entrance",
@@ -4842,6 +5447,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "SF: Soul of a Brave Warrior - Sen's Fortress Pit",
@@ -4850,6 +5456,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "SF: Soul of a Hero - Sen's Fortress Cage",
@@ -4858,6 +5465,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Sorcerer Boots",
   "mandatory": false,
   "name": "SF: Black Sorcerer Boots",
@@ -4866,6 +5474,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Sorcerer Cloak",
   "mandatory": false,
   "name": "SF: Black Sorcerer Cloak",
@@ -4874,6 +5483,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Sorcerer Gauntlets",
   "mandatory": false,
   "name": "SF: Black Sorcerer Gauntlets",
@@ -4882,6 +5492,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Black Sorcerer Hat",
   "mandatory": false,
   "name": "SF: Black Sorcerer Hat",
@@ -4890,6 +5501,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Covetous Gold Serpent Ring",
   "mandatory": false,
   "name": "SF: Covetous Gold Serpent Ring",
@@ -4898,6 +5510,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Sen's Fortress #1 (Outside Stairs)",
   "mandatory": false,
   "name": "SF: Fog Wall - Sen's Fortress #1 (Outside Stairs)",
@@ -4906,6 +5519,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "SF: Large Soul of a Proud Knight - Sen's Fortress Ball Dropdown",
@@ -4914,6 +5528,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "SF: Large Titanite Shard - Guarded by Serpent Soldier",
@@ -4922,6 +5537,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Lightning Spear",
   "mandatory": false,
   "name": "SF: Lightning Spear",
@@ -4930,6 +5546,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Slumbering Dragoncrest Ring",
   "mandatory": false,
   "name": "SF: Slumbering Dragoncrest Ring",
@@ -4938,6 +5555,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Hush",
   "mandatory": false,
   "name": "SF: Sorcery: Hush",
@@ -4946,6 +5564,7 @@
  {
   "category": "BOSS_SOUL",
   "count": 1,
+  "found": false,
   "item": "Core of an Iron Golem",
   "mandatory": false,
   "name": "SF: Core of an Iron Golem",
@@ -4954,6 +5573,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "SF: Humanity - Iron Golem Drop",
@@ -4962,6 +5582,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Cage Key",
   "mandatory": false,
   "name": "SF: Cage Key",
@@ -4970,6 +5591,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Divine Blessing",
   "mandatory": false,
   "name": "SF: Divine Blessing - Sen's Fortress",
@@ -4978,6 +5600,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Flame Stoneplate Ring",
   "mandatory": false,
   "name": "SF: Flame Stoneplate Ring",
@@ -4986,6 +5609,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Sen's Fortress #2 (Upper Entrance)",
   "mandatory": false,
   "name": "SF: Fog Wall - Sen's Fortress #2 (Upper Entrance)",
@@ -4994,6 +5618,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Brave Warrior",
   "mandatory": false,
   "name": "SF: Large Soul of a Brave Warrior - Sen's Fortress above Bonfire",
@@ -5002,6 +5627,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Large Titanite Shard",
   "mandatory": false,
   "name": "SF: Large Titanite Shard - Corpse bombed by Giant",
@@ -5010,6 +5636,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rare Ring of Sacrifice",
   "mandatory": false,
   "name": "SF: Rare Ring of Sacrifice - Sen's Fortress",
@@ -5018,6 +5645,7 @@
  {
   "category": "NPC_DROP",
   "count": 1,
+  "found": false,
   "item": "Ricard's Rapier",
   "mandatory": false,
   "name": "SF: Ricard's Rapier",
@@ -5026,6 +5654,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Sen's Fortress",
   "mandatory": false,
   "name": "SF: Sen's Fortress Bonfire",
@@ -5034,6 +5663,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 12,
+  "found": true,
   "item": "Sniper Bolt",
   "mandatory": false,
   "name": "SF: Sniper Bolt",
@@ -5042,6 +5672,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sniper Crossbow",
   "mandatory": false,
   "name": "SF: Sniper Crossbow",
@@ -5050,6 +5681,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Balder Armor",
   "mandatory": false,
   "name": "Crestfallen Merchant: Balder Armor",
@@ -5058,6 +5690,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Balder Gauntlets",
   "mandatory": false,
   "name": "Crestfallen Merchant: Balder Gauntlets",
@@ -5066,6 +5699,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Balder Helm",
   "mandatory": false,
   "name": "Crestfallen Merchant: Balder Helm",
@@ -5074,6 +5708,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Balder Leggings",
   "mandatory": false,
   "name": "Crestfallen Merchant: Balder Leggings",
@@ -5082,6 +5717,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Balder Shield",
   "mandatory": false,
   "name": "Crestfallen Merchant: Balder Shield",
@@ -5090,6 +5726,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Catarina Armor",
   "mandatory": false,
   "name": "Crestfallen Merchant: Catarina Armor",
@@ -5098,6 +5735,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Catarina Gauntlets",
   "mandatory": false,
   "name": "Crestfallen Merchant: Catarina Gauntlets",
@@ -5106,6 +5744,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Catarina Helm",
   "mandatory": false,
   "name": "Crestfallen Merchant: Catarina Helm",
@@ -5114,6 +5753,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Catarina Leggings",
   "mandatory": false,
   "name": "Crestfallen Merchant: Catarina Leggings",
@@ -5122,6 +5762,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Greataxe",
   "mandatory": false,
   "name": "Crestfallen Merchant: Greataxe",
@@ -5130,6 +5771,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Greatsword",
   "mandatory": false,
   "name": "Crestfallen Merchant: Greatsword",
@@ -5138,6 +5780,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Spell Stoneplate Ring",
   "mandatory": false,
   "name": "Crestfallen Merchant: Spell Stoneplate Ring",
@@ -5146,6 +5789,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Steel Armor",
   "mandatory": false,
   "name": "Crestfallen Merchant: Steel Armor",
@@ -5154,6 +5798,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Steel Gauntlets",
   "mandatory": false,
   "name": "Crestfallen Merchant: Steel Gauntlets",
@@ -5162,6 +5807,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Steel Helm",
   "mandatory": false,
   "name": "Crestfallen Merchant: Steel Helm",
@@ -5170,6 +5816,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Steel Leggings",
   "mandatory": false,
   "name": "Crestfallen Merchant: Steel Leggings",
@@ -5178,6 +5825,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Thunder Stoneplate Ring",
   "mandatory": false,
   "name": "Crestfallen Merchant: Thunder Stoneplate Ring",
@@ -5186,6 +5834,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Tower Shield",
   "mandatory": false,
   "name": "Crestfallen Merchant: Tower Shield",
@@ -5194,6 +5843,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Iron Golem",
   "mandatory": false,
   "name": "SF: Boss Fog Wall - Iron Golem",
@@ -5202,6 +5852,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Iron Golem Defeated",
   "mandatory": true,
   "name": "SF: Iron Golem Defeated",
@@ -5210,6 +5861,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Four Kings",
   "mandatory": false,
   "name": "NL: Boss Fog Wall - Four Kings",
@@ -5218,6 +5870,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Four Kings Defeated",
   "mandatory": false,
   "name": "TA: Four Kings Defeated",
@@ -5226,6 +5879,7 @@
  {
   "category": "LORD_SOUL",
   "count": 1,
+  "found": false,
   "item": "Bequeathed Lord Soul Shard (Four Kings)",
   "mandatory": true,
   "name": "TA: Bequeathed Lord Soul Shard (Four Kings)",
@@ -5234,6 +5888,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 4,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "TA: Humanity x4 - Four Kings Drop",
@@ -5242,6 +5897,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - The Abyss",
   "mandatory": false,
   "name": "TA: The Abyss Bonfire",
@@ -5250,6 +5906,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Catacombs - Necromancer Cave",
   "mandatory": false,
   "name": "TC: Catacombs - Necromancer Cave Bonfire",
@@ -5258,6 +5915,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Greataxe",
   "mandatory": false,
   "name": "TC: Black Knight Greataxe - Black Knight Drop",
@@ -5266,6 +5924,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Catacombs - Past Illusory Wall",
   "mandatory": false,
   "name": "TC: Catacombs - Past Illusory Wall Bonfire",
@@ -5274,6 +5933,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "TC: Catacombs Door 2 opened",
@@ -5282,6 +5942,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Catacombs",
   "mandatory": false,
   "name": "TC: Catacombs Vamos Bonfire",
@@ -5290,6 +5951,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Darkmoon Seance Ring",
   "mandatory": false,
   "name": "TC: Darkmoon Seance Ring",
@@ -5298,6 +5960,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra White Titanite",
   "mandatory": false,
   "name": "TC: Extra Titanite - Crystal Lizard Drop, Higher In Secret Statue Tunnel",
@@ -5306,6 +5969,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra White Titanite",
   "mandatory": false,
   "name": "TC: Extra Titanite - Crystal Lizard Drop, Lower In Secret Statue Tunnel",
@@ -5314,6 +5978,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 3,
+  "found": true,
   "item": "Eye of Death",
   "mandatory": false,
   "name": "TC: Eye of Death - Catacombs Titanite Demon",
@@ -5322,6 +5987,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Great Scythe",
   "mandatory": false,
   "name": "TC: Great Scythe",
@@ -5330,6 +5996,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "TC: Green Titanite Shard - On Platform near Vamos",
@@ -5338,6 +6005,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Holy Robe",
   "mandatory": false,
   "name": "TC: Holy Robe",
@@ -5346,6 +6014,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Holy Trousers",
   "mandatory": false,
   "name": "TC: Holy Trousers",
@@ -5354,6 +6023,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "TC: Large Soul of a Nameless Soldier - Above Black Knight",
@@ -5362,6 +6032,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "TC: Large Soul of a Nameless Soldier - Catacombs Above Bonewheels",
@@ -5370,6 +6041,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "TC: Large Soul of a Nameless Soldier - Room before First Rotating Bridge",
@@ -5378,6 +6050,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Lucerne",
   "mandatory": false,
   "name": "TC: Lucerne",
@@ -5386,6 +6059,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Mace",
   "mandatory": false,
   "name": "TC: Mace",
@@ -5394,6 +6068,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Miracle: Tranquil Walk of Peace",
   "mandatory": false,
   "name": "TC: Miracle: Tranquil Walk of Peace",
@@ -5402,6 +6077,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Priest's Hat",
   "mandatory": false,
   "name": "TC: Priest's Hat",
@@ -5410,6 +6086,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "TC: Soul of a Proud Knight - After Second Switch",
@@ -5418,6 +6095,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "TC: Soul of a Proud Knight - Black Knight Ledge",
@@ -5426,6 +6104,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "TC: Soul of a Proud Knight - First Spiral Stairway Lower",
@@ -5434,6 +6113,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "TC: Soul of a Proud Knight - First Spiral Stairway Upper",
@@ -5442,6 +6122,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "TC: Titanite Demon near Tomb",
@@ -5450,6 +6131,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Traveling Gloves",
   "mandatory": false,
   "name": "TC: Traveling Gloves",
@@ -5458,6 +6140,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "TC: Twinkling Titanite - Crystal Lizard Drop, Higher In Secret Statue Tunnel",
@@ -5466,6 +6149,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "TC: Twinkling Titanite - Crystal Lizard Drop, Lower In Secret Statue Tunnel",
@@ -5474,6 +6158,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "TC: White Titanite Chunk - Black Knight Drop",
@@ -5482,6 +6167,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "TC: Homeward Bone - Pinwheel Drop",
@@ -5490,6 +6176,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "TC: Humanity - Pinwheel Drop",
@@ -5498,6 +6185,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Rite of Kindling",
   "mandatory": false,
   "name": "TC: Rite of Kindling",
@@ -5506,6 +6194,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "TC: Soul of a Proud Knight - Above Pinwheel",
@@ -5514,6 +6203,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "TC: Catacombs Door 1 opened",
@@ -5522,6 +6212,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Catacombs",
   "mandatory": false,
   "name": "TC: Fog Wall - Catacombs",
@@ -5530,6 +6221,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Pinwheel",
   "mandatory": false,
   "name": "TC: Boss Fog Wall - Pinwheel",
@@ -5538,6 +6230,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Pinwheel Defeated",
   "mandatory": true,
   "name": "TC: Pinwheel Defeated",
@@ -5546,6 +6239,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Hammer of Vamos",
   "mandatory": false,
   "name": "Vamos: Hammer of Vamos - Drop Added To Shop",
@@ -5554,6 +6248,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Royal Helm",
   "mandatory": false,
   "name": "Vamos: Royal Helm - Drop Added To Shop",
@@ -5562,6 +6257,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Crystal Knight Shield",
   "mandatory": false,
   "name": "DA: Crystal Knight Shield - Mimic Drop, 2nd Floor",
@@ -5570,6 +6266,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Duke's Archives - Entrance",
   "mandatory": false,
   "name": "DA: Duke's Archives - Entrance Bonfire",
@@ -5578,6 +6275,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Blue Titanite",
   "mandatory": false,
   "name": "DA: Extra Titanite - Crystal Lizard Drop, Path To Seath's Study",
@@ -5586,6 +6284,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DA: Soul of a Brave Warrior - Archives Under Stairs",
@@ -5594,6 +6293,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "DA: Twinkling Titanite - Archives Balcony",
@@ -5602,6 +6302,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "DA: Twinkling Titanite - Archives Chest",
@@ -5610,6 +6311,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "DA: Twinkling Titanite - Crystal Lizard Drop, Path To Seath's Study",
@@ -5618,6 +6320,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DA: Large Soul of a Brave Warrior - Archives Cell",
@@ -5626,6 +6329,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "DA: Soul of a Brave Warrior - Archives Cell Scafolding",
@@ -5634,6 +6338,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Archive Prison Extra Key",
   "mandatory": false,
   "name": "DA: Archive Prison Extra Key",
@@ -5642,6 +6347,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "DA: Duke's Archives Cell Door opened",
@@ -5650,6 +6356,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Archive Tower Giant Cell Key",
   "mandatory": false,
   "name": "DA: Archive Tower Giant Cell Key",
@@ -5658,6 +6365,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Avelyn",
   "mandatory": false,
   "name": "DA: Avelyn",
@@ -5666,6 +6374,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "DA: Blue Titanite Chunk - Archives Chest",
@@ -5674,6 +6383,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crystal Ember",
   "mandatory": false,
   "name": "DA: Crystal Ember",
@@ -5682,6 +6392,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Duke's Archives",
   "mandatory": false,
   "name": "DA: Duke's Archives Balcony Bonfire",
@@ -5690,6 +6401,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "DA: Duke's Archives Bookshelf Door opened",
@@ -5698,6 +6410,7 @@
  {
   "category": "MIMIC_DROP",
   "count": 1,
+  "found": false,
   "item": "Enchanted Falchion",
   "mandatory": false,
   "name": "DA: Enchanted Falchion - Mimic Drop, Behind Bookcase Door",
@@ -5706,6 +6419,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Gauntlets of the Channelers",
   "mandatory": false,
   "name": "DA: Gauntlets of the Channelers",
@@ -5714,6 +6428,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 20,
+  "found": true,
   "item": "Prism Stone",
   "mandatory": false,
   "name": "DA: Prism Stone - Duke's Archives",
@@ -5722,6 +6437,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Robe of the Channelers",
   "mandatory": false,
   "name": "DA: Robe of the Channelers",
@@ -5730,6 +6446,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Six-Eyed Helm of the Channelers",
   "mandatory": false,
   "name": "DA: Six-Eyed Helm of the Channelers",
@@ -5738,6 +6455,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Strong Magic Shield",
   "mandatory": false,
   "name": "DA: Sorcery: Strong Magic Shield",
@@ -5746,6 +6464,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "DA: Twinkling Titanite - Archives Chest 2",
@@ -5754,6 +6473,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Waistcloth of the Channelers",
   "mandatory": false,
   "name": "DA: Waistcloth of the Channelers",
@@ -5762,6 +6482,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Archive Tower Cell Key",
   "mandatory": true,
   "name": "DA: Archive Tower Cell Key",
@@ -5770,6 +6491,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Seath First Encounter",
   "mandatory": false,
   "name": "DA: Boss Fog Wall - Seath First Encounter",
@@ -5778,6 +6500,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Duke's Archives - Cell",
   "mandatory": false,
   "name": "DA: Duke's Archives Cell Bonfire",
@@ -5786,6 +6509,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Crystal Magic Weapon",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Crystal Magic Weapon",
@@ -5794,6 +6518,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Crystal Soul Spear",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Crystal Soul Spear",
@@ -5802,6 +6527,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Great Heavy Soul Arrow",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Great Heavy Soul Arrow",
@@ -5810,6 +6536,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Great Soul Arrow",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Great Soul Arrow",
@@ -5818,6 +6545,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Heavy Soul Arrow",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Heavy Soul Arrow",
@@ -5826,6 +6554,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Homing Crystal Soulmass",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Homing Crystal Soulmass",
@@ -5834,6 +6563,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Homing Soulmass",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Homing Soulmass",
@@ -5842,6 +6572,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Magic Shield",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Magic Shield",
@@ -5850,6 +6581,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Magic Weapon",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Magic Weapon",
@@ -5858,6 +6590,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Soul Arrow",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Soul Arrow",
@@ -5866,6 +6599,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Soul Spear",
   "mandatory": false,
   "name": "Big Hat Logan: Sorcery: Soul Spear",
@@ -5874,6 +6608,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "DA: Blue Titanite Chunk - Archives Courtyard",
@@ -5882,6 +6617,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crystalline Armor",
   "mandatory": false,
   "name": "DA: Crystalline Armor",
@@ -5890,6 +6626,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crystalline Gauntlets",
   "mandatory": false,
   "name": "DA: Crystalline Gauntlets",
@@ -5898,6 +6635,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crystalline Helm",
   "mandatory": false,
   "name": "DA: Crystalline Helm",
@@ -5906,6 +6644,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crystalline Leggings",
   "mandatory": false,
   "name": "DA: Crystalline Leggings",
@@ -5914,6 +6653,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Duke's Archives Courtyard Entrance",
   "mandatory": false,
   "name": "DA: Fog Wall - Duke's Archives Courtyard Entrance",
@@ -5922,6 +6662,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Magic Ember",
   "mandatory": false,
   "name": "DA: Large Magic Ember",
@@ -5930,6 +6671,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Great Hero",
   "mandatory": false,
   "name": "DA: Soul of a Great Hero - Seath Room",
@@ -5938,6 +6680,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Fire Keeper Soul (Duke's Archives)",
   "mandatory": false,
   "name": "DA: Fire Keeper Soul - Archives Giant Cell",
@@ -5946,6 +6689,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Broken Pendant",
   "mandatory": false,
   "name": "DA: Broken Pendant",
@@ -5954,6 +6698,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Archive Tower Giant Door Key",
   "mandatory": true,
   "name": "DA: Archive Tower Giant Door Key",
@@ -5962,6 +6707,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Maiden Gloves",
   "mandatory": false,
   "name": "DA: Maiden Gloves",
@@ -5970,6 +6716,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Maiden Hood",
   "mandatory": false,
   "name": "DA: Maiden Hood",
@@ -5978,6 +6725,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Maiden Robe",
   "mandatory": false,
   "name": "DA: Maiden Robe",
@@ -5986,6 +6734,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Maiden Skirt",
   "mandatory": false,
   "name": "DA: Maiden Skirt",
@@ -5994,6 +6743,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Miracle: Bountiful Sunlight",
   "mandatory": false,
   "name": "DA: Miracle: Bountiful Sunlight - Pisaca Drop",
@@ -6002,6 +6752,7 @@
  {
   "category": "GUARANTEED_DROP",
   "count": 1,
+  "found": false,
   "item": "Miracle: Soothing Sunlight",
   "mandatory": false,
   "name": "DA: Miracle: Soothing Sunlight - Pisaca Drop",
@@ -6010,6 +6761,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Seance Ring",
   "mandatory": false,
   "name": "DA: White Seance Ring",
@@ -6018,6 +6770,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "GH: Blue Titanite Chunk - Drop on Branch into Hole",
@@ -6026,6 +6779,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Titanite Chunk",
   "mandatory": false,
   "name": "GH: Blue Titanite Chunk - Second Last Drop before Floor",
@@ -6034,6 +6788,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Cloranthy Ring",
   "mandatory": false,
   "name": "GH: Chloranthy Ring",
@@ -6042,6 +6797,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, 2nd Platform By Top Ladder, Left",
@@ -6050,6 +6806,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, 2nd Platform By Top Ladder, Right",
@@ -6058,6 +6815,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Above Red Titanite Chunk Location, Behind Branch",
@@ -6066,6 +6824,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Basilisk Overlook, Left",
@@ -6074,6 +6833,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Basilisk Overlook, Middle",
@@ -6082,6 +6842,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Basilisk Overlook, Right",
@@ -6090,6 +6851,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Near End of Hallway To Basilisk Overlook",
@@ -6098,6 +6860,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Near Top, End of Hallway Dead End",
@@ -6106,6 +6869,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Near Top, Start of Hallway To Dead End",
@@ -6114,6 +6878,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra GH Titanite",
   "mandatory": false,
   "name": "GH: Extra Titanite - Crystal Lizard Drop, Start of Hallway To Basilisk Overlook",
@@ -6122,6 +6887,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "GH: Large Soul of a Nameless Soldier - Corpse Entry to Basilisks",
@@ -6130,6 +6896,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "GH: Large Soul of a Nameless Soldier - Corpse on Lower Floor with Basilisks",
@@ -6138,6 +6905,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "GH: Red Titanite Chunk - Last Drop before Floor",
@@ -6146,6 +6914,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Titanite Chunk",
   "mandatory": false,
   "name": "GH: Red Titanite Chunk - Near Top Branch Drop",
@@ -6154,6 +6923,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - The Great Hollow",
   "mandatory": false,
   "name": "GH: The Great Hollow Bonfire",
@@ -6162,6 +6932,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "GH: Titanite Chunk - Corpse on Mushroom",
@@ -6170,6 +6941,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "GH: Titanite Chunk - Drop on Top Branch",
@@ -6178,6 +6950,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, 2nd Platform By Top Ladder, Left",
@@ -6186,6 +6959,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, 2nd Platform By Top Ladder, Right",
@@ -6194,6 +6968,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Above Red Titanite Chunk Location, Behind Branch",
@@ -6202,6 +6977,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Basilisk Overlook, Left",
@@ -6210,6 +6986,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Basilisk Overlook, Middle",
@@ -6218,6 +6995,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Basilisk Overlook, Right",
@@ -6226,6 +7004,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Near End of Hallway To Basilisk Overlook",
@@ -6234,6 +7013,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Near Top, End of Hallway Dead End",
@@ -6242,6 +7022,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Near Top, Start of Hallway To Dead End",
@@ -6250,6 +7031,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "GH: Twinkling Titanite - Crystal Lizard Drop, Start of Hallway To Basilisk Overlook",
@@ -6258,6 +7040,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "GH: White Titanite Chunk - Drop below Floor",
@@ -6266,6 +7049,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "GH: White Titanite Chunk - Third Last Drop before Floor",
@@ -6274,6 +7058,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 3,
+  "found": true,
   "item": "Eye of Death",
   "mandatory": false,
   "name": "TotG: Eye of Death - Upper Giant Coffin",
@@ -6282,6 +7067,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "TotG: Humanity - Corpse on Ledge",
@@ -6290,6 +7076,7 @@
  {
   "category": "FROZEN_BLACKSMITH",
   "count": 1,
+  "found": true,
   "item": "Large Divine Ember",
   "mandatory": false,
   "name": "TotG: Large Divine Ember",
@@ -6298,6 +7085,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Giant Coffin Drop",
@@ -6306,6 +7094,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Ledge Overlooking Pinwheel",
@@ -6314,6 +7103,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Patches Pit 1",
@@ -6322,6 +7112,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Patches Pit 2",
@@ -6330,6 +7121,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Right after Green Light Slide",
@@ -6338,6 +7130,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Proud Knight",
   "mandatory": false,
   "name": "TotG: Large Soul of a Proud Knight - Upper Giant Coffin",
@@ -6346,6 +7139,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Skull Lantern",
   "mandatory": false,
   "name": "TotG: Skull Lantern",
@@ -6354,6 +7148,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "TotG: Soul of a Brave Warrior - Lower Giant Coffin",
@@ -6362,6 +7157,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Tomb of the Giants",
   "mandatory": false,
   "name": "TotG: Tomb of the Giants Patches Bonfire",
@@ -6370,6 +7166,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "TotG: White Titanite Chunk - Patches Kick",
@@ -6378,6 +7175,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Altar of the Gravelord",
   "mandatory": false,
   "name": "TotG: Altar of the Gravelord Bonfire",
@@ -6386,6 +7184,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "TotG: Humanity - Nito Drop",
@@ -6394,6 +7193,7 @@
  {
   "category": "LORD_SOUL",
   "count": 1,
+  "found": false,
   "item": "Lord Soul (Nito)",
   "mandatory": true,
   "name": "TotG: Lord Soul (Nito)",
@@ -6402,6 +7202,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Halberd",
   "mandatory": false,
   "name": "TotG: Black Knight Halberd - Black Knight Drop",
@@ -6410,6 +7211,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Covetous Silver Serpent Ring",
   "mandatory": false,
   "name": "TotG: Covetous Silver Serpent Ring",
@@ -6418,6 +7220,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Effigy Shield",
   "mandatory": false,
   "name": "TotG: Effigy Shield",
@@ -6426,6 +7229,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Tomb of the Giants",
   "mandatory": false,
   "name": "TotG: Fog Wall - Tomb of the Giants",
@@ -6434,6 +7238,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 2,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "TotG: Humanity - Paladin Leeroy",
@@ -6442,6 +7247,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Grant",
   "mandatory": false,
   "name": "TotG: Paladin Leeroy Loot",
@@ -6450,6 +7256,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "TotG: Soul of a Brave Warrior - Behind Bone Archer",
@@ -6458,6 +7265,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Brave Warrior",
   "mandatory": false,
   "name": "TotG: Soul of a Brave Warrior - Lower Tomb of the Giants",
@@ -6466,6 +7274,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Tomb of the Giants",
   "mandatory": false,
   "name": "TotG: Tomb of the Giants Bonfire",
@@ -6474,6 +7283,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "TotG: White Titanite Chunk - Black Knight Drop",
@@ -6482,6 +7292,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "TotG: White Titanite Chunk - Lower Tomb of the Giants",
@@ -6490,6 +7301,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra White Titanite",
   "mandatory": false,
   "name": "TotG: Extra Titanite - Crystal Lizard Drop, Start of Cave",
@@ -6498,6 +7310,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Paladin Armor",
   "mandatory": false,
   "name": "TotG: Paladin Armor",
@@ -6506,6 +7319,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Paladin Gauntlets",
   "mandatory": false,
   "name": "TotG: Paladin Gauntlets",
@@ -6514,6 +7328,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Paladin Helm",
   "mandatory": false,
   "name": "TotG: Paladin Helm",
@@ -6522,6 +7337,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Paladin Leggings",
   "mandatory": false,
   "name": "TotG: Paladin Leggings",
@@ -6530,6 +7346,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "TotG: Soul of a Hero - Outside Nito",
@@ -6538,6 +7355,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Hero",
   "mandatory": false,
   "name": "TotG: Soul of a Hero - Pinwheel Clone Room Entryway",
@@ -6546,6 +7364,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "TotG: Twinkling Titanite - Crystal Lizard Drop, Start of Cave",
@@ -6554,6 +7373,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Chunk",
   "mandatory": false,
   "name": "TotG: White Titanite Chunk - Outside Nito",
@@ -6562,6 +7382,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "White Titanite Slab",
   "mandatory": false,
   "name": "TotG: White Titanite Slab - Outside Nito",
@@ -6570,6 +7391,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Nito",
   "mandatory": false,
   "name": "TotG: Boss Fog Wall - Nito",
@@ -6578,6 +7400,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Gravelord Nito Defeated",
   "mandatory": true,
   "name": "TotG: Gravelord Nito Defeated",
@@ -6586,6 +7409,7 @@
  {
   "category": "SKIP",
   "count": 1,
+  "found": true,
   "item": "Dungeon Cell Key",
   "mandatory": true,
   "name": "UA: Dungeon Cell Key",
@@ -6594,6 +7418,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UA: Undead Asylum Cell Door opened",
@@ -6602,6 +7427,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg Basement opened",
@@ -6610,6 +7436,7 @@
  {
   "category": "CORPSE_PROG_ITEM",
   "count": 1,
+  "found": true,
   "item": "Basement Key",
   "mandatory": false,
   "name": "UP: Basement Key",
@@ -6618,6 +7445,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "UP: Berenike Knight",
@@ -6626,6 +7454,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Fire Keeper Soul (Undead Parish)",
   "mandatory": false,
   "name": "UP: Fire Keeper Soul - Undead Parish",
@@ -6634,6 +7463,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Halberd",
   "mandatory": false,
   "name": "UP: Halberd",
@@ -6642,6 +7472,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "UP: Humanity - Parish Barrel",
@@ -6650,6 +7481,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Knight Shield",
   "mandatory": false,
   "name": "UP: Knight Shield",
@@ -6658,6 +7490,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "UP: Large Soul of a Nameless Soldier - Parish Window",
@@ -6666,6 +7499,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Undead Parish",
   "mandatory": false,
   "name": "UP: Undead Parish Bonfire",
@@ -6674,6 +7508,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Bastard Sword",
   "mandatory": false,
   "name": "Andre of Astora: Bastard Sword",
@@ -6682,6 +7517,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Battle Axe",
   "mandatory": false,
   "name": "Andre of Astora: Battle Axe",
@@ -6690,6 +7526,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Blacksmith Hammer",
   "mandatory": false,
   "name": "Andre of Astora: Blacksmith Hammer - Drop Added To Shop",
@@ -6698,6 +7535,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Broadsword",
   "mandatory": false,
   "name": "Andre of Astora: Broadsword",
@@ -6706,6 +7544,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Caduceus Kite Shield",
   "mandatory": false,
   "name": "Andre of Astora: Caduceus Kite Shield",
@@ -6714,6 +7553,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Caestus",
   "mandatory": false,
   "name": "Andre of Astora: Caestus",
@@ -6722,6 +7562,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Crest of Artorias",
   "mandatory": false,
   "name": "Andre of Astora: Crest of Artorias",
@@ -6730,6 +7571,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 3,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Andre of Astora: Humanity - Drop Added To Shop",
@@ -6738,6 +7580,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Large Leather Shield",
   "mandatory": false,
   "name": "Andre of Astora: Large Leather Shield",
@@ -6746,6 +7589,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Longsword",
   "mandatory": false,
   "name": "Andre of Astora: Longsword",
@@ -6754,6 +7598,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Pike",
   "mandatory": false,
   "name": "Andre of Astora: Pike",
@@ -6762,6 +7607,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Tower Kite Shield",
   "mandatory": false,
   "name": "Andre of Astora: Tower Kite Shield",
@@ -6770,6 +7616,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Warpick",
   "mandatory": false,
   "name": "Andre of Astora: Warpick",
@@ -6778,6 +7625,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Andre of Astora Access",
   "mandatory": false,
   "name": "UP: Andre of Astora",
@@ -6786,6 +7634,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 4,
+  "found": true,
   "item": "Alluring Skull",
   "mandatory": false,
   "name": "UP: Alluring Skull",
@@ -6794,6 +7643,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Greatsword",
   "mandatory": false,
   "name": "UP: Black Knight Greatsword - Black Knight Drop, in Tower",
@@ -6802,6 +7652,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "UP: Large Soul of a Lost Undead - Hollow Room Rafters",
@@ -6810,6 +7661,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Mystery Key",
   "mandatory": false,
   "name": "UP: Mystery Key",
@@ -6818,6 +7670,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "UP: Titanite Chunk - Black Knight Drop, in Tower",
@@ -6826,6 +7679,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Bell Gargoyles Defeated",
   "mandatory": false,
   "name": "UP: Bell Gargoyles Defeated",
@@ -6834,6 +7688,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Bell of Awakening #1",
   "mandatory": true,
   "name": "UP: Bell of Awakening #1 rung",
@@ -6842,6 +7697,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Bell Gargoyles",
   "mandatory": false,
   "name": "UP: Boss Fog Wall - Bell Gargoyles",
@@ -6850,6 +7706,7 @@
  {
   "category": "BOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "UP: Twin Humanities - Bell Gargoyles Drop",
@@ -6858,6 +7715,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Undead Parish",
   "mandatory": false,
   "name": "UP: Fog Wall - Undead Parish",
@@ -6866,6 +7724,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Bloodbite Ring",
   "mandatory": false,
   "name": "Oswald of Carim: Bloodbite Ring",
@@ -6874,6 +7733,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Book of the Guilty",
   "mandatory": false,
   "name": "Oswald of Carim: Book of the Guilty",
@@ -6882,6 +7742,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Filler",
   "mandatory": false,
   "name": "Oswald of Carim: Indictment",
@@ -6890,6 +7751,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Miracle: Karmic Justice",
   "mandatory": false,
   "name": "Oswald of Carim: Miracle: Karmic Justice",
@@ -6898,6 +7760,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Poisonbite Ring",
   "mandatory": false,
   "name": "Oswald of Carim: Poisonbite Ring",
@@ -6906,6 +7769,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 5,
+  "found": false,
   "item": "Purging Stone",
   "mandatory": false,
   "name": "Oswald of Carim: Purging Stone",
@@ -6914,6 +7778,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 10,
+  "found": false,
   "item": "Ring of Sacrifice",
   "mandatory": false,
   "name": "Oswald of Carim: Rings of Sacrifice",
@@ -6922,6 +7787,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 2,
+  "found": false,
   "item": "Twin Humanities",
   "mandatory": false,
   "name": "Oswald of Carim: Twin Humanities - Drop Added To Shop",
@@ -6930,6 +7796,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Velka's Talisman",
   "mandatory": false,
   "name": "Oswald of Carim: Velka's Talisman",
@@ -6938,6 +7805,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Blighttown Catwalk",
   "mandatory": false,
   "name": "BT: Blighttown Catwalk Bonfire",
@@ -6946,6 +7814,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 3,
+  "found": true,
   "item": "Blooming Purple Moss Clump",
   "mandatory": false,
   "name": "BT: Blooming Purple Moss Clump - Suspended Walkway",
@@ -6954,6 +7823,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Eagle Shield",
   "mandatory": false,
   "name": "BT: Eagle Shield",
@@ -6962,6 +7832,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "BT: Humanity - Blighttown Swaying Bridge",
@@ -6970,6 +7841,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Iaito",
   "mandatory": false,
   "name": "BT: Iaito",
@@ -6978,6 +7850,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "BT: Large Soul of a Nameless Soldier - Corpse at Left Ramp",
@@ -6986,6 +7859,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "BT: Large Soul of a Nameless Soldier - Wall Hugger",
@@ -6994,6 +7868,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Pyromancy: Power Within",
   "mandatory": false,
   "name": "BT: Pyromancy: Power Within",
@@ -7002,6 +7877,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Shadow Garb",
   "mandatory": false,
   "name": "BT: Shadow Garb",
@@ -7010,6 +7886,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Shadow Gauntlets",
   "mandatory": false,
   "name": "BT: Shadow Gauntlets",
@@ -7018,6 +7895,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Shadow Leggings",
   "mandatory": false,
   "name": "BT: Shadow Leggings",
@@ -7026,6 +7904,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Shadow Mask",
   "mandatory": false,
   "name": "BT: Shadow Mask",
@@ -7034,6 +7913,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Soul of a Proud Knight - Below Shadow Set",
@@ -7042,6 +7922,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Soul of a Proud Knight - Blighttown Entrance Dropoff",
@@ -7050,6 +7931,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Soul of a Proud Knight - Corpse in Wooden Structure near Third Catwalk",
@@ -7058,6 +7940,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Soul of a Proud Knight - Corpse on Wooden Structure Ledge",
@@ -7066,6 +7949,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Whip",
   "mandatory": false,
   "name": "BT: Whip",
@@ -7074,6 +7958,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crimson Gloves",
   "mandatory": false,
   "name": "BT: Crimson Gloves",
@@ -7082,6 +7967,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crimson Robe",
   "mandatory": false,
   "name": "BT: Crimson Robe",
@@ -7090,6 +7976,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Crimson Waistcloth",
   "mandatory": false,
   "name": "BT: Crimson Waistcloth",
@@ -7098,6 +7985,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Fire Keeper Soul (Blighttown)",
   "mandatory": false,
   "name": "BT: Fire Keeper Soul - Blighttown",
@@ -7106,6 +7994,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Key to New Londo Ruins",
   "mandatory": false,
   "name": "BT: Key to New Londo Ruins",
@@ -7114,6 +8003,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Mask of the Sealer",
   "mandatory": false,
   "name": "BT: Mask of the Sealer",
@@ -7122,6 +8012,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 1,
+  "found": true,
   "item": "Sorcery: Remedy",
   "mandatory": false,
   "name": "BT: Sorcery: Remedy",
@@ -7130,6 +8021,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "BT: Soul of a Proud Knight - Blighttown Fire Keeper Soul",
@@ -7138,6 +8030,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Tin Banishment Catalyst",
   "mandatory": false,
   "name": "BT: Tin Banishment Catalyst",
@@ -7146,6 +8039,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Estoc",
   "mandatory": false,
   "name": "NL: Estoc",
@@ -7154,6 +8048,7 @@
  {
   "category": "CORPSE_USEFUL_ITEM",
   "count": 1,
+  "found": true,
   "item": "Fire Keeper Soul (New Londo)",
   "mandatory": false,
   "name": "NL: Fire Keeper Soul - New Londo",
@@ -7162,6 +8057,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Parrying Dagger",
   "mandatory": false,
   "name": "NL: Parrying Dagger",
@@ -7170,6 +8066,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "NL: Soul of a Nameless Soldier - New Londo Entrance",
@@ -7178,6 +8075,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Transient Curse",
   "mandatory": false,
   "name": "NL: Transient Curse - 2x Transient Curses from Corpse inside Pot behind Wall",
@@ -7186,6 +8084,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Transient Curse",
   "mandatory": false,
   "name": "NL: Transient Curse - Banshee",
@@ -7194,6 +8093,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 2,
+  "found": true,
   "item": "Transient Curse",
   "mandatory": false,
   "name": "NL: Transient Curse - Before Ghosts",
@@ -7202,6 +8102,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Composite Bow",
   "mandatory": false,
   "name": "NL: Composite Bow",
@@ -7210,6 +8111,7 @@
  {
   "category": "CORPSE_RING_ITEM",
   "count": 1,
+  "found": true,
   "item": "Cursebite Ring",
   "mandatory": false,
   "name": "NL: Cursebite Ring",
@@ -7218,6 +8120,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - New Londo (Upper)",
   "mandatory": false,
   "name": "NL: Fog Wall - New Londo (Upper)",
@@ -7226,6 +8129,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Green Titanite Shard",
   "mandatory": false,
   "name": "NL: Green Titanite Shard - New Londo",
@@ -7234,6 +8138,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "NL: Humanity - New Londo Ledge",
@@ -7242,6 +8147,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 16,
+  "found": true,
   "item": "Large Arrow",
   "mandatory": false,
   "name": "NL: Large Arrow",
@@ -7250,6 +8156,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "NL: Large Soul of a Nameless Soldier - Corpse before Seal",
@@ -7258,6 +8165,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "NL: Large Soul of a Nameless Soldier - Near Ladder Shortcut",
@@ -7266,6 +8174,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rare Ring of Sacrifice",
   "mandatory": false,
   "name": "NL: Rare Ring of Sacrifice - New Londo Roof",
@@ -7274,6 +8183,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "NL: Soul of a Proud Knight - New Londo Back Corridor",
@@ -7282,6 +8192,7 @@
  {
   "category": "MISSABLE_SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Resist Curse",
   "mandatory": false,
   "name": "Ingward: Sorcery: Resist Curse",
@@ -7290,6 +8201,7 @@
  {
   "category": "NPC_PROG_ITEM",
   "count": 1,
+  "found": false,
   "item": "Key to the Seal",
   "mandatory": false,
   "name": "NL: Key to the Seal",
@@ -7298,6 +8210,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcerer's Catalyst",
   "mandatory": false,
   "name": "Rickert of Vinheim: Sorcerer's Catalyst",
@@ -7306,6 +8219,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Heavy Soul Arrow",
   "mandatory": false,
   "name": "Rickert of Vinheim: Sorcery: Heavy Soul Arrow",
@@ -7314,6 +8228,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Sorcery: Soul Arrow",
   "mandatory": false,
   "name": "Rickert of Vinheim: Sorcery: Soul Arrow",
@@ -7322,6 +8237,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 5,
+  "found": true,
   "item": "Black Firebomb",
   "mandatory": false,
   "name": "UB: Black Firebomb - Side House Chest",
@@ -7330,6 +8246,7 @@
  {
   "category": "BK_WEAPON",
   "count": 1,
+  "found": false,
   "item": "Black Knight Sword",
   "mandatory": false,
   "name": "UB: Black Knight Sword - Black Knight Drop",
@@ -7338,6 +8255,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Blue Tearstone Ring",
   "mandatory": false,
   "name": "UB: Blue Tearstone Ring",
@@ -7346,6 +8264,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 1,
+  "found": false,
   "item": "Extra Titanite",
   "mandatory": false,
   "name": "UB: Extra Titanite - Crystal Lizard Drop, In Barrel Before Taurus Demon",
@@ -7354,6 +8273,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Light Crossbow",
   "mandatory": false,
   "name": "UB: Light Crossbow",
@@ -7362,6 +8282,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Firebomb",
   "mandatory": false,
   "name": "UB: Orange Guidance Soapstone",
@@ -7370,6 +8291,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Soul of a Lost Undead - Firebomb Throwers",
@@ -7378,6 +8300,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Soul of a Lost Undead - Upper Burg Fogwall House",
@@ -7386,6 +8309,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 16,
+  "found": true,
   "item": "Standard Bolt",
   "mandatory": false,
   "name": "UB: Standard Bolt",
@@ -7394,6 +8318,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 10,
+  "found": true,
   "item": "Throwing Knife",
   "mandatory": false,
   "name": "UB: Throwing Knife",
@@ -7402,6 +8327,7 @@
  {
   "category": "BK_DROP",
   "count": 1,
+  "found": false,
   "item": "Titanite Chunk",
   "mandatory": false,
   "name": "UB: Titanite Chunk - Black Knight Drop",
@@ -7410,6 +8336,7 @@
  {
   "category": "CRYSTAL_LIZARD",
   "count": 2,
+  "found": false,
   "item": "Twinkling Titanite",
   "mandatory": false,
   "name": "UB: Twinkling Titanite - Crystal Lizard Drop, In Barrel Before Taurus Demon",
@@ -7418,6 +8345,7 @@
  {
   "category": "ENEMY_DROP",
   "count": 1,
+  "found": false,
   "item": "Uchigatana",
   "mandatory": false,
   "name": "UB: Uchigatana",
@@ -7426,6 +8354,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Undead Burg",
   "mandatory": false,
   "name": "UB: Undead Burg Bonfire",
@@ -7434,6 +8363,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Wooden Shield",
   "mandatory": false,
   "name": "UB: Wooden Shield",
@@ -7442,6 +8372,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "UB: Humanity - Undead Burg Entrance Wall",
@@ -7450,6 +8381,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Large Soul of a Lost Undead - Barrel Drop",
@@ -7458,6 +8390,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Rubbish",
   "mandatory": false,
   "name": "UB: Rubbish - Undead Burg",
@@ -7466,6 +8399,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Soul of a Lost Undead - Window Corpse",
@@ -7474,6 +8408,7 @@
  {
   "category": "FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Fog Wall Key - Undead Burg",
   "mandatory": false,
   "name": "UB: Fog Wall - Undead Burg",
@@ -7482,6 +8417,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Claymore",
   "mandatory": false,
   "name": "UB: Claymore",
@@ -7490,6 +8426,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Lost Undead",
   "mandatory": false,
   "name": "UB: Large Soul of a Lost Undead - After Taurus",
@@ -7498,6 +8435,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "UB: Soul of a Nameless Soldier - Hellkite Bridge",
@@ -7506,6 +8444,7 @@
  {
   "category": "BONFIRE",
   "count": 1,
+  "found": false,
   "item": "Bonfire Warp Unlock - Sunlight Altar",
   "mandatory": false,
   "name": "UB: Sunlight Altar Bonfire",
@@ -7514,6 +8453,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg Sunlight Altar opened",
@@ -7522,6 +8462,7 @@
  {
   "category": "MISSABLE_NPC_ITEM",
   "count": 1,
+  "found": false,
   "item": "White Sign Soapstone",
   "mandatory": false,
   "name": "UB: White Sign Soapstone",
@@ -7530,6 +8471,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Buckler",
   "mandatory": false,
   "name": "Male Undead Merchant: Buckler",
@@ -7538,6 +8480,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chain Armor",
   "mandatory": false,
   "name": "Male Undead Merchant: Chain Armor",
@@ -7546,6 +8489,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chain Helm",
   "mandatory": false,
   "name": "Male Undead Merchant: Chain Helm",
@@ -7554,6 +8498,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Chain Leggings",
   "mandatory": false,
   "name": "Male Undead Merchant: Chain Leggings",
@@ -7562,6 +8507,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Club",
   "mandatory": false,
   "name": "Male Undead Merchant: Club",
@@ -7570,6 +8516,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Dagger",
   "mandatory": false,
   "name": "Male Undead Merchant: Dagger",
@@ -7578,6 +8525,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Dried Finger",
   "mandatory": false,
   "name": "Male Undead Merchant: Dried Finger",
@@ -7586,6 +8534,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "East-West Shield",
   "mandatory": false,
   "name": "Male Undead Merchant: East-West Shield",
@@ -7594,6 +8543,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Hand Axe",
   "mandatory": false,
   "name": "Male Undead Merchant: Hand Axe",
@@ -7602,6 +8552,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Heater Shield",
   "mandatory": false,
   "name": "Male Undead Merchant: Heater Shield",
@@ -7610,6 +8561,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "Male Undead Merchant: Humanity - Drop Added To Shop",
@@ -7618,6 +8570,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Leather Gauntlets",
   "mandatory": false,
   "name": "Male Undead Merchant: Leather Gauntlets",
@@ -7626,6 +8579,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Leather Shield",
   "mandatory": false,
   "name": "Male Undead Merchant: Leather Shield",
@@ -7634,6 +8588,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Orange Guidance Soapstone",
   "mandatory": false,
   "name": "Male Undead Merchant: Orange Guidance Soapstone",
@@ -7642,6 +8597,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Rapier",
   "mandatory": false,
   "name": "Male Undead Merchant: Rapier",
@@ -7650,6 +8606,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Reinforced Club",
   "mandatory": false,
   "name": "Male Undead Merchant: Reinforced Club",
@@ -7658,6 +8615,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Residence Key",
   "mandatory": false,
   "name": "Male Undead Merchant: Residence Key",
@@ -7666,6 +8624,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Scimitar",
   "mandatory": false,
   "name": "Male Undead Merchant: Scimitar",
@@ -7674,6 +8633,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Short Bow",
   "mandatory": false,
   "name": "Male Undead Merchant: Short Bow",
@@ -7682,6 +8642,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Shortsword",
   "mandatory": false,
   "name": "Male Undead Merchant: Shortsword",
@@ -7690,6 +8651,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Small Leather Shield",
   "mandatory": false,
   "name": "Male Undead Merchant: Small Leather Shield",
@@ -7698,6 +8660,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Spear",
   "mandatory": false,
   "name": "Male Undead Merchant: Spear",
@@ -7706,6 +8669,7 @@
  {
   "category": "SHOP_ITEM",
   "count": 1,
+  "found": false,
   "item": "Uchigatana",
   "mandatory": false,
   "name": "Male Undead Merchant: Uchigatana - Drop Added To Shop",
@@ -7714,6 +8678,7 @@
  {
   "category": "SHOP_EXTENDED_ITEM",
   "count": 1,
+  "found": false,
   "item": "Warrior's Round Shield",
   "mandatory": false,
   "name": "Male Undead Merchant: Warrior's Round Shield",
@@ -7722,6 +8687,7 @@
  {
   "category": "EVENT",
   "count": 1,
+  "found": false,
   "item": "Male Undead Merchant Access",
   "mandatory": false,
   "name": "UB: Male Undead Merchant",
@@ -7730,6 +8696,7 @@
  {
   "category": "CHEST_ITEM",
   "count": 3,
+  "found": true,
   "item": "Gold Pine Resin",
   "mandatory": false,
   "name": "UB: Gold Pine Resin - 3x Gold Pine Resin in Chest behind Locked Door",
@@ -7738,6 +8705,7 @@
  {
   "category": "BOSS_FOG_WALL",
   "count": 1,
+  "found": false,
   "item": "Boss Fog Wall Key - Taurus Demon",
   "mandatory": false,
   "name": "UB: Boss Fog Wall - Taurus Demon",
@@ -7746,6 +8714,7 @@
  {
   "category": "BOSS_BONE",
   "count": 1,
+  "found": false,
   "item": "Homeward Bone",
   "mandatory": false,
   "name": "UB: Homeward Bone - Taurus Demon Drop",
@@ -7754,6 +8723,7 @@
  {
   "category": "BOSS_HUMANITY",
   "count": 1,
+  "found": false,
   "item": "Humanity",
   "mandatory": false,
   "name": "UB: Humanity - Taurus Demon Drop",
@@ -7762,6 +8732,7 @@
  {
   "category": "BOSS",
   "count": 1,
+  "found": false,
   "item": "Taurus Demon Defeated",
   "mandatory": true,
   "name": "UB: Taurus Demon Defeated",
@@ -7770,6 +8741,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Astora's Straight Sword",
   "mandatory": false,
   "name": "VotD: Astora's Straight Sword",
@@ -7778,6 +8750,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brigand Armor",
   "mandatory": false,
   "name": "VotD: Brigand Armor",
@@ -7786,6 +8759,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brigand Gauntlets",
   "mandatory": false,
   "name": "VotD: Brigand Gauntlets",
@@ -7794,6 +8768,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brigand Hood",
   "mandatory": false,
   "name": "VotD: Brigand Hood",
@@ -7802,6 +8777,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Brigand Trousers",
   "mandatory": false,
   "name": "VotD: Brigand Trousers",
@@ -7810,6 +8786,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Dragon Crest Shield",
   "mandatory": false,
   "name": "VotD: Dragon Crest Shield",
@@ -7818,6 +8795,7 @@
  {
   "category": "MINIBOSS_DROP",
   "count": 1,
+  "found": false,
   "item": "Dragon Scale",
   "mandatory": false,
   "name": "VotD: Dragon Scale - Undead Dragon Drop",
@@ -7826,6 +8804,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Humanity",
   "mandatory": false,
   "name": "VotD: Humanity - Corpse in Small Cave",
@@ -7834,6 +8813,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Large Soul of a Nameless Soldier",
   "mandatory": false,
   "name": "VotD: Large Soul of a Nameless Soldier - New Londo Door",
@@ -7842,6 +8822,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Red Tearstone Ring",
   "mandatory": false,
   "name": "VotD: Red Tearstone Ring",
@@ -7850,6 +8831,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Soul of a Proud Knight",
   "mandatory": false,
   "name": "VotD: Soul of a Proud Knight - Undead Dragon",
@@ -7858,6 +8840,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": true,
   "item": "Spider Shield",
   "mandatory": false,
   "name": "VotD: Spider Shield - Brigand Armor Set",
@@ -7866,6 +8849,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": false,
   "item": "Beatrice's Catalyst",
   "mandatory": false,
   "name": "VotD: Beatrice's Catalyst",
@@ -7874,6 +8858,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": false,
   "item": "Witch Cloak",
   "mandatory": false,
   "name": "VotD: Witch Cloak",
@@ -7882,6 +8867,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": false,
   "item": "Witch Gloves",
   "mandatory": false,
   "name": "VotD: Witch Gloves",
@@ -7890,6 +8876,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": false,
   "item": "Witch Hat",
   "mandatory": false,
   "name": "VotD: Witch Hat",
@@ -7898,6 +8885,7 @@
  {
   "category": "CORPSE_ITEM",
   "count": 1,
+  "found": false,
   "item": "Witch Skirt",
   "mandatory": false,
   "name": "VotD: Witch Skirt",
@@ -7906,6 +8894,7 @@
  {
   "category": "NPC_DROP",
   "count": 1,
+  "found": false,
   "item": "Havel's Ring",
   "mandatory": false,
   "name": "UB: Havel's Ring",
@@ -7914,6 +8903,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg Watchtower Lower opened",
@@ -7922,6 +8912,7 @@
  {
   "category": "DOOR",
   "count": 1,
+  "found": false,
   "item": "Door Filler",
   "mandatory": false,
   "name": "UB: Undead Burg Watchtower Upper opened",
