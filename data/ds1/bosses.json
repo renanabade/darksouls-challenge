@@ -313,9 +313,9 @@
  {
   "earliestSphere": 10,
   "flag": 13,
-  "id": "4-kings",
+  "id": "four-kings",
   "mandatoryByGraph": true,
-  "name": "4 Kings",
+  "name": "Four Kings",
   "parts": [
    {
     "flags": [
