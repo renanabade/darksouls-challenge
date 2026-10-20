@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.4.0...darksouls-challenge-v0.5.0) (2026-10-20)
+
+
+### Features
+
+* **core:** difficulty budget, layered curse and group handicap ([a31eada](https://github.com/renanabade/darksouls-challenge/commit/a31eada453366bc33f87c0d93dcf0d8c24287c85))
+
 ## [0.4.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.3.0...darksouls-challenge-v0.4.0) (2026-10-20)
 
 
