@@ -371,9 +371,11 @@
  },
  {
   "from": "firelink-altar",
-  "note": "Kaathe carries the player back to the Abyss: m18_00 event 11806201 (reads Kaathe state flags 1672-1674 and 825). Return trip of the serpent route (2026-10-12).",
+  "note": "Kaathe carries the player back to the Abyss: m18_00 event 11806201 (reads Kaathe state flags 1672-1674 and 825). Return trip of the serpent route (2026-10-12). Needs the Four Kings dead (2026-10-20): flags 1672-1674 all follow 1671, set by m16_00 event 11600537 only when flag 13 (Four Kings defeated) is on.",
   "origin": "override",
-  "requires": true,
+  "requires": {
+   "has": "Four Kings Defeated"
+  },
   "to": "the-abyss-after-four-kings",
   "walkBack": false
  },
