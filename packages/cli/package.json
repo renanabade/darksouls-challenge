@@ -1,0 +1,21 @@
+{
+  "name": "@darksouls-challenge/cli",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Command line: generates a static challenge and prints its manual.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ds1-challenge": "./dist/main.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@darksouls-challenge/core": "workspace:*"
+  }
+}
