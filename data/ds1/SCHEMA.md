@@ -34,7 +34,7 @@ exports as long as the names do not change.
 | `treasures.json` | Game treasures only (corpse or chest): `region`, `map`, `lots` (lot chain heads), `container`, `hidden`, `eventControlled`, `rescue` (Firelink rescue chest for missed items), `perClass` (Asylum class kit), `deathDrop` (shown only when someone dies), `items` |
 | `bonfires.json` | `name`, `region`, `flag` (lit), `entityId`. Warping needs the Lordvessel and sitting at a bonfire |
 | `bosses.json` | `id`, `name`, `flag` (defeated), `region`, `mandatoryByGraph`, `earliestSphere`, `parts` (per body part: `hp`, `resist`, `immune` status list, `noDamage` damage types, NpcParam `flags`), `requires` (hard requirements with evidence) |
-| `milestones.json` | Progression flags (bosses, bells, Lordvessel, Lord Souls, Kiln): `id`, `name`, `flag`, `kind`, `region`, `earliestSphere` |
+| `milestones.json` | Progression flags (bosses, bells, Lordvessel, Lord Souls, Kiln): `id`, `name`, `flag`, `kind`, `region`, `earliestSphere`, `requires` (what reaching it means on the graph, as a requirement expression; boss milestones name the boss's death item) |
 | `merchants.json` | `id`, `name`, `regions` (graph regions holding their shop locations; a virtual region is shared by every merchant who sells there), ShopLineupParam `rows` range, `stock` (`kind`, `id`, `name`, `price`, `quantity` (-1 = unlimited)), `variants` (talk script, row range, flag conditions that select it) |
 | `weapons.json` | Every named weapon row: `family`, `infusion`, `category`, `melee`, `req` (str/dex/int/fth), `baseDamage`, `scaling`, `casts`, `hands`, `dmgType`, `weight` |
 | `armor.json` | Every named armor piece: `slot`, `weight`, `poise`, `defense`, `resist` |
