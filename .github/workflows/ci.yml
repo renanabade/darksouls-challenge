@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  # Run by the release workflow on its release PR branch (see release-please.yml).
+  workflow_dispatch:
 
 permissions:
   contents: read
