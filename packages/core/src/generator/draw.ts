@@ -1,4 +1,4 @@
-import { isMeleeWeapon } from "../build.js";
+import { isMeleeWeapon, SCHOOLS } from "../build.js";
 import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
 import type { ArgValue } from "../validator.js";
@@ -82,6 +82,8 @@ export interface Domains {
   readonly merchants: readonly string[];
   readonly weaponLocations: readonly string[];
   readonly weaponStyles: readonly string[];
+  /** Schools of magic some spell of the data set belongs to. */
+  readonly schools: readonly string[];
   readonly lordSouls: readonly string[];
 }
 
@@ -99,6 +101,7 @@ export function domainsOf(world: World): Domains {
     merchants: sorted(world.merchants.keys()),
     weaponLocations: sorted(weaponLocations.map((l) => l.name)),
     weaponStyles: sorted([...world.weapons.values()].filter(isMeleeWeapon).map((w) => w.category)),
+    schools: SCHOOLS.filter((s) => [...world.spells.values()].some((spell) => spell.school === s)),
     lordSouls: sorted(world.locations.filter((l) => l.category === "LORD_SOUL").map((l) => l.item)),
   };
 }
@@ -142,7 +145,10 @@ export function drawArgs(
         restrictions: fitCurse(rng.shuffle(restrictions.map((r) => r.id).sort()), difficulty),
       };
     case "phase-swap": {
-      const [before, after] = rng.shuffle(domains.weaponStyles);
+      // Schools of magic from medium up: switching to magic costs attributes, a catalyst and spells to buy,
+      // which punishes a casual player and is the novelty a bored veteran looks for (docs/07, workspace).
+      const styles = [...domains.weaponStyles, ...(difficulty === "easy" ? [] : domains.schools)];
+      const [before, after] = rng.shuffle(styles.sort());
       return {
         milestone: rng.pick(STRETCH_ENDS.slice(0, -1)),
         before: before ?? "",

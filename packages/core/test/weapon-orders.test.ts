@@ -78,7 +78,7 @@ const small: World = parseWorld({
       {
         name: "Knight",
         level: 5,
-        stats: { strength: 12, dexterity: 10, intelligence: 8, faith: 8 },
+        stats: { strength: 12, dexterity: 10, intelligence: 8, faith: 8, attunement: 10 },
       },
     ],
     gifts: [{ row: 1, items: ["(none)"] }],
@@ -149,7 +149,7 @@ describe("assigned weapon (existence)", () => {
       /Club cannot damage Wraith/,
     );
     expect(validate(small, setup(20), [assigned("throne: Crown Sword")]).problems).toEqual([
-      'Crown Sword at "throne: Crown Sword" cannot be taken before Wraith defeated',
+      'Crown Sword at "throne: Crown Sword" cannot be taken before the bosses until Wraith defeated',
     ]);
   });
 
@@ -278,11 +278,45 @@ describe("weapon orders on the DS1 data set", () => {
     expect(run("Deprived", 6, [swap]).problems).toEqual(["no dagger and halberd fit one build"]);
   });
 
-  it("assigns the Undead Parish halberd from the Asylum Demon to the first bell", () => {
+  describe("schools of magic as a style", () => {
+    const swap = (milestone: string, before: string, after: string) =>
+      order("phase-swap", { milestone, before, after });
+
+    it("lets a Sorcerer start with sorceries: the class kit has a catalyst and Soul Arrow", () => {
+      expect(run("Sorcerer", 20, [swap("bell-undead-parish", "sorcery", "sword")]).verdict).toBe(
+        "comfortable",
+      );
+    });
+
+    it("needs attunement for a slot: a Warrior has 8, and spends 2 points on it", () => {
+      // Soul Arrow with a Sorcerer's Catalyst: Intelligence 10 (the Warrior has 9) and Attunement 10.
+      const before = swap("bell-undead-parish", "sorcery", "dagger");
+      expect(run("Warrior", 6, [before]).problems).toEqual(["no sorcery and dagger fit one build"]);
+      expect(run("Warrior", 7, [before]).verdict).toBe("comfortable");
+    });
+
+    it("refuses pyromancy while Quelaag, whom fire does not hurt, is still to fight", () => {
+      expect(
+        run("Pyromancer", 30, [swap("bell-undead-parish", "pyromancy", "sword")]).verdict,
+      ).toBe("comfortable");
+      expect(
+        run("Pyromancer", 30, [swap("bell-undead-parish", "sword", "pyromancy")]).problems,
+      ).toEqual(["no pyromancy can be taken for after Undead Parish bell rung"]);
+    });
+
+    it("contradicts a curse of no magic", () => {
+      const curse = order("accumulated-curse", { restrictions: ["no-magic"] });
+      expect(
+        run("Sorcerer", 30, [swap("bell-undead-parish", "sorcery", "sword"), curse]).problems,
+      ).toContain('the restriction "no-magic" contradicts fighting with sorcery');
+    });
+  });
+
+  it("assigns the Undead Parish halberd from the Taurus Demon to the first bell", () => {
     const halberd = world.locations.find((l) => l.found === true && l.item === "Halberd");
     if (halberd === undefined) throw new Error("no halberd");
     const assigned = order("assigned-weapon", {
-      from: "boss-asylum-demon",
+      from: "boss-taurus-demon",
       until: "bell-undead-parish",
       location: halberd.name,
     });
@@ -290,5 +324,10 @@ describe("weapon orders on the DS1 data set", () => {
     expect(run("Pyromancer", 1, [assigned]).problems[0]).toMatch(
       /^Halberd needs \d+ attribute points/,
     );
+    // The Parish lies past the Taurus Demon: from the Asylum Demon on, the halberd comes too late for him.
+    expect(
+      run("Knight", 10, [{ ...assigned, args: { ...assigned.args, from: "boss-asylum-demon" } }])
+        .problems[0],
+    ).toMatch(/cannot be taken before the bosses/);
   });
 });

@@ -81,4 +81,8 @@ export const restrictions = [
     tier: "medium",
   },
   { id: "no-armor", text: "Do not wear armor.", effect: weightOnly, tier: "medium" },
+  // Not among the DS1 runs of the list, but run in other games of the series (No Lock in Bloodborne and Sekiro;
+  // No Parry in Demon's Souls, Dark Souls III, Sekiro): variety for players who have done the usual ones.
+  { id: "no-lock-on", text: "Do not lock on to enemies.", effect: weightOnly, tier: "medium" },
+  { id: "no-parry", text: "Do not parry.", effect: weightOnly, tier: "light" },
 ] as const satisfies readonly Restriction[];

@@ -35,6 +35,13 @@ function bossName(id: string, name: string): string {
   return BOSS_NAMES[id] ?? name;
 }
 
+/** A school of magic as a fighting style: your attacks are its spells, cast with a catalyst of the school. */
+const SCHOOL_STYLES: Readonly<Record<string, string>> = {
+  sorcery: "only sorceries for your attacks, cast with a catalyst",
+  miracle: "only miracles for your attacks, cast with a talisman",
+  pyromancy: "only pyromancies for your attacks, cast with a pyromancy flame",
+};
+
 const plural = (category: string): string =>
   category === "fist" ? "fist weapons" : category.endsWith("s") ? category : `${category}s`;
 
@@ -76,7 +83,7 @@ function value(world: World, kind: string, arg: ArgValue): string {
         .join(" ");
     }
     case "equipmentSet":
-      return `only ${plural(arg)}`;
+      return SCHOOL_STYLES[arg] ?? `only ${plural(arg)}`;
     default:
       return arg;
   }

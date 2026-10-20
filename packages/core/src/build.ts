@@ -6,9 +6,11 @@ import type { Checker } from "./check.js";
  * sources, are in the planning docs (docs/04-dados.md, "Fatos de combate").
  */
 
-export type Attribute = "str" | "dex" | "int" | "fth";
+export type Attribute = "str" | "dex" | "int" | "fth" | "att";
 export type Stats = Readonly<Record<Attribute, number>>;
 export type Element = "phys" | "magic" | "fire" | "thunder";
+export type School = "sorcery" | "miracle" | "pyromancy";
+export const SCHOOLS: readonly School[] = ["miracle", "pyromancy", "sorcery"];
 
 export interface Weapon {
   readonly id: number;
@@ -20,6 +22,19 @@ export interface Weapon {
   readonly requirements: Stats;
   /** Base damage per element at +0. */
   readonly damage: Readonly<Record<Element, number>>;
+  /** The schools of magic it casts, if it is a catalyst, a talisman or a pyromancy flame. */
+  readonly casts: readonly School[];
+}
+
+export interface Spell {
+  readonly name: string;
+  /** The name the item has in the world ("Sorcery: Soul Arrow"). */
+  readonly item: string;
+  readonly school: School;
+  readonly requirements: Pick<Stats, "int" | "fth">;
+  /** Attunement slots it takes. */
+  readonly slots: number;
+  readonly damage: Readonly<Record<Element, number>>;
 }
 
 export interface StartingClass {
@@ -27,6 +42,8 @@ export interface StartingClass {
   /** Soul level at the start. */
   readonly level: number;
   readonly stats: Stats;
+  /** What the class starts with: its equipment and its spells, by name. */
+  readonly kit: readonly string[];
 }
 
 export interface BossPart {
@@ -46,7 +63,7 @@ export interface Boss {
   readonly parts: readonly BossPart[];
 }
 
-const ATTRIBUTES: readonly Attribute[] = ["str", "dex", "int", "fth"];
+const ATTRIBUTES: readonly Attribute[] = ["str", "dex", "int", "fth", "att"];
 const ELEMENTS: readonly Element[] = ["phys", "magic", "fire", "thunder"];
 /** Element names as bosses.json writes them. */
 const ELEMENT_NAMES: Readonly<Record<string, Element>> = {
@@ -61,6 +78,7 @@ const CLASS_STATS: Readonly<Record<Attribute, string>> = {
   dex: "dexterity",
   int: "intelligence",
   fth: "faith",
+  att: "attunement",
 };
 
 /** Weapons that can be "your weapon": melee, and not a shield, a catalyst or ammunition. */
@@ -122,6 +140,9 @@ export function parseWeapons(check: Checker, raw: unknown): Map<string, Weapon> 
     const req = check.object(fields["req"], `${path}.req`) ?? {};
     const base = check.object(fields["baseDamage"], `${path}.baseDamage`) ?? {};
     const hands = check.object(fields["hands"], `${path}.hands`) ?? {};
+    // Absent in small test worlds: nothing casts.
+    const casts =
+      fields["casts"] === undefined ? {} : (check.object(fields["casts"], `${path}.casts`) ?? {});
     const weapon: Weapon = {
       id: check.integer(fields, "id", path),
       name: check.string(fields, "name", path),
@@ -133,6 +154,7 @@ export function parseWeapons(check: Checker, raw: unknown): Map<string, Weapon> 
         dex: check.integer(req, "dex", `${path}.req`),
         int: check.integer(req, "int", `${path}.req`),
         fth: check.integer(req, "fth", `${path}.req`),
+        att: 0,
       },
       damage: {
         phys: check.number(base, "phys", `${path}.baseDamage`),
@@ -140,6 +162,7 @@ export function parseWeapons(check: Checker, raw: unknown): Map<string, Weapon> 
         fire: check.number(base, "fire", `${path}.baseDamage`),
         thunder: check.number(base, "thunder", `${path}.baseDamage`),
       },
+      casts: SCHOOLS.filter((s) => check.boolean(casts, s, `${path}.casts`, false)),
     };
     // Unique weapons have one row per reinforcement level under the same name (the export labels them as
     // infusions; see the pipeline's data needs). The lowest id is the base weapon, the one found in the world.
@@ -158,13 +181,81 @@ export function parseClasses(check: Checker, raw: unknown): Map<string, Starting
     const stats = check.object(fields["stats"], `${path}.stats`) ?? {};
     const read = (a: Attribute): number => check.integer(stats, CLASS_STATS[a], `${path}.stats`);
     const name = check.string(fields, "name", path);
+    // The full kit: equipment by slot, and spells. Absent in small test worlds.
+    const kit =
+      fields["fullKit"] === undefined ? {} : (check.object(fields["fullKit"], path) ?? {});
+    const equipment =
+      kit["equipment"] === undefined
+        ? {}
+        : (check.object(kit["equipment"], `${path}.fullKit.equipment`) ?? {});
     classes.set(name, {
       name,
       level: check.integer(fields, "level", path),
       stats: Object.fromEntries(ATTRIBUTES.map((a) => [a, read(a)])) as Record<Attribute, number>,
+      kit: [
+        ...check.strings(Object.values(equipment), `${path}.fullKit.equipment`),
+        ...check.strings(kit["spells"] ?? [], `${path}.fullKit.spells`),
+      ],
     });
   }
   return classes;
+}
+
+/** Attunement a character needs for one spell slot (docs/04 in the workspace, "Sintonia"). */
+export const ATTUNEMENT_FOR_ONE_SLOT = 10;
+
+/**
+ * A spell cast with a catalyst, as something to fight with: the requirements of both, the attunement for
+ * one slot, and the spell's damage. Only one-slot spells: the attunement needed for two slots is not
+ * confirmed (docs/04), and leaving them out can only refuse a possible challenge, never accept an
+ * impossible one.
+ */
+export function spellKit(spell: Spell, catalyst: Weapon): Weapon | undefined {
+  if (spell.slots !== 1 || !catalyst.casts.includes(spell.school)) return undefined;
+  return {
+    id: catalyst.id,
+    name: `${spell.name} (with ${catalyst.name})`,
+    category: spell.school,
+    melee: false,
+    twoHandable: catalyst.twoHandable,
+    requirements: {
+      ...catalyst.requirements,
+      int: Math.max(catalyst.requirements.int, spell.requirements.int),
+      fth: Math.max(catalyst.requirements.fth, spell.requirements.fth),
+      att: ATTUNEMENT_FOR_ONE_SLOT,
+    },
+    damage: spell.damage,
+    casts: [],
+  };
+}
+
+export function parseSpells(check: Checker, raw: unknown): Map<string, Spell> {
+  const spells = new Map<string, Spell>();
+  for (const [i, value] of check.array(raw, "spells").entries()) {
+    const path = `spells[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    const req = check.object(fields["req"], `${path}.req`) ?? {};
+    const damage = check.object(fields["damage"], `${path}.damage`) ?? {};
+    const school = check.string(fields, "school", path);
+    if (!(SCHOOLS as readonly string[]).includes(school))
+      check.fail(`${path}.school`, `unknown school "${school}"`);
+    const spell: Spell = {
+      name: check.string(fields, "name", path),
+      item: check.string(fields, "item", path),
+      school: school as School,
+      requirements: {
+        int: check.integer(req, "int", `${path}.req`),
+        fth: check.integer(req, "fth", `${path}.req`),
+      },
+      slots: check.integer(fields, "slots", path),
+      damage: Object.fromEntries(
+        ELEMENTS.map((e) => [e, check.number(damage, e, `${path}.damage`)]),
+      ) as Record<Element, number>,
+    };
+    spells.set(spell.name, spell);
+  }
+  return spells;
 }
 
 /** Bosses, each linked to the BOSS location of its region (`deathItems`: region → items there). */
