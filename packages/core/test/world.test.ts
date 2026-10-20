@@ -34,6 +34,7 @@ const raw = (overrides: Partial<RawDataSet> = {}): RawDataSet => ({
     ],
   },
   bosses: [{ id: "the-boss", name: "The Boss", region: "arena" }],
+  merchants: [{ id: "trader", name: "Trader", regions: ["shop"] }],
   ...overrides,
 });
 
@@ -58,6 +59,14 @@ describe("parseWorld", () => {
 
   it("links each boss to the death item of its region, whatever the names", () => {
     expect(parseWorld(raw()).bosses.get("the-boss")?.defeatedItem).toBe("Boss Defeated");
+  });
+
+  it("reads merchants and checks their regions", () => {
+    expect(parseWorld(raw()).merchants.get("trader")?.regions).toEqual(["shop"]);
+    const merchants = [{ id: "trader", name: "Trader", regions: ["attic"] }];
+    expect(problemsOf(raw({ merchants }))).toEqual([
+      'unknown region "attic" at merchants[0].regions[0]',
+    ]);
   });
 
   it("rejects a boss whose region has no single death item", () => {
@@ -132,6 +141,7 @@ describe("parseWorld", () => {
       "expected a non-empty string at regions[2].area",
       "expected a boolean at regions[2].mandatory",
       '"has" must be a non-empty string at entrances[0].requires.has',
+      'unknown region "shop" at merchants[0].regions[0]',
     ]);
   });
 
@@ -151,6 +161,7 @@ describe("parseWorld", () => {
       'unknown region "cell" at locations[0].region',
       'unknown region "arena" at locations[1].region',
       'unknown region "arena" at bosses[0].region',
+      'unknown region "shop" at merchants[0].regions[0]',
     ]);
   });
 

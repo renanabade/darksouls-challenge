@@ -63,6 +63,13 @@ export interface Boss {
   readonly defeatedItem: string;
 }
 
+export interface Merchant {
+  readonly id: string;
+  readonly name: string;
+  /** Regions holding this merchant's shop locations. A virtual region is shared by every merchant selling there. */
+  readonly regions: readonly string[];
+}
+
 export interface World {
   readonly start: string;
   readonly goal: string;
@@ -71,6 +78,7 @@ export interface World {
   readonly locations: readonly Location[];
   readonly gifts: readonly StartingGift[];
   readonly bosses: ReadonlyMap<string, Boss>;
+  readonly merchants: ReadonlyMap<string, Merchant>;
 }
 
 /** The parsed JSON of each data set file, still untrusted. Reading the files is the caller's job. */
@@ -81,6 +89,7 @@ export interface RawDataSet {
   readonly locations: unknown;
   readonly classes: unknown;
   readonly bosses: unknown;
+  readonly merchants: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -285,6 +294,25 @@ export function parseWorld(raw: RawDataSet): World {
     bosses.set(id, { id, name, region: bossRegion, defeatedItem: deaths[0]?.item ?? "" });
   }
 
+  const merchants = new Map<string, Merchant>();
+  for (const [i, value] of check.array(raw.merchants, "merchants").entries()) {
+    const path = `merchants[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    const id = check.string(fields, "id", path);
+    const merchantRegions: string[] = [];
+    for (const [j, r] of check.array(fields["regions"], `${path}.regions`).entries()) {
+      if (typeof r !== "string" || r === "") {
+        check.fail(`${path}.regions[${String(j)}]`, "expected a non-empty string");
+        continue;
+      }
+      region(r, `${path}.regions[${String(j)}]`);
+      merchantRegions.push(r);
+    }
+    if (merchants.has(id)) check.fail(`${path}.id`, `duplicate merchant "${id}"`);
+    merchants.set(id, { id, name: check.string(fields, "name", path), regions: merchantRegions });
+  }
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
-  return { start, goal, regions, entrances, locations, gifts, bosses };
+  return { start, goal, regions, entrances, locations, gifts, bosses, merchants };
 }

@@ -23,6 +23,8 @@ const order = (id: string, args: Record<string, ArgValue> = {}): OrderInstance =
  * start → hall; hall → side, gate (a boss), tower (needs Key, found in the hall);
  * side → tower with the Master Key; tower → a (needs the first bell, rung in the tower);
  * a → b (needs Soul A); b → throne (needs both souls), where the goal boss is.
+ * Shops: the smith sells a Lantern at the forge; the smith and the trader both sell one at a shared
+ * (virtual) stall. tower → a also needs the Lantern.
  */
 const area = {
   start: "asylum",
@@ -33,6 +35,9 @@ const area = {
   a: "lords",
   b: "lords",
   throne: "throne",
+  forge: "hall",
+  market: "hall",
+  stall: null,
 };
 const loc = (region: string, item: string, category: string, found = false) => ({
   name: `${region}: ${item}`,
@@ -52,7 +57,11 @@ const raw = {
     { from: "hall", to: "gate", requires: true },
     { from: "hall", to: "tower", requires: { has: "Key" } },
     { from: "side", to: "tower", requires: { has: "Master Key" } },
-    { from: "tower", to: "a", requires: { has: BELLS[0] } },
+    { from: "tower", to: "a", requires: { all: [{ has: BELLS[0] }, { has: "Lantern" }] } },
+    { from: "hall", to: "forge", requires: true },
+    { from: "hall", to: "market", requires: true },
+    { from: "forge", to: "stall", requires: true },
+    { from: "market", to: "stall", requires: true },
     { from: "a", to: "b", requires: { has: "Soul A" } },
     { from: "b", to: "throne", requires: { all: [{ has: "Soul A" }, { has: "Soul B" }] } },
   ],
@@ -65,6 +74,8 @@ const raw = {
     loc("a", "Soul A", "LORD_SOUL"),
     loc("b", "Soul B", "LORD_SOUL"),
     loc("throne", "Lord Defeated", "BOSS"),
+    loc("forge", "Lantern", "SHOP_ITEM"),
+    loc("stall", "Lantern", "SHOP_ITEM"),
   ],
   classes: {
     gifts: [
@@ -75,6 +86,10 @@ const raw = {
   bosses: [
     { id: "gate-boss", name: "Gate Boss", region: "gate" },
     { id: "lord", name: "Lord", region: "throne" },
+  ],
+  merchants: [
+    { id: "smith", name: "Smith", regions: ["forge", "stall"] },
+    { id: "trader", name: "Trader", regions: ["market", "stall"] },
   ],
 };
 const small: World = parseWorld(raw);
@@ -123,6 +138,17 @@ describe("validate", () => {
     ]);
     expect(result.verdict).toBe("comfortable");
     expect(result.orders[1]?.exceptions).toEqual(["Key"]);
+  });
+
+  it("closes a merchant, keeping a shared shop open while another merchant sells there", () => {
+    const smith = validate(small, setup(), [order("closed-merchant", { merchant: "smith" })]);
+    expect(smith.orders[0]?.exceptions).toEqual([]);
+    const both = validate(small, setup(), [
+      order("closed-merchant", { merchant: "smith" }),
+      order("closed-merchant", { merchant: "trader" }),
+    ]);
+    expect(both.verdict).toBe("comfortable");
+    expect(both.orders.map((o) => o.exceptions)).toEqual([["Lantern"], []]);
   });
 
   it("reports which orders it cannot check yet", () => {
@@ -187,7 +213,7 @@ describe("validate on the DS1 data set", () => {
     }
   });
 
-  // Derived from the graph (data set 0.1.0), not from memory. The Master Key opens no boss before a bell.
+  // Derived from the graph (data set 0.2.0), not from memory. The Master Key opens no boss before a bell.
   it("finds the bosses that can die before any bell", () => {
     const before = (g = gift) =>
       [...world.bosses.keys()].filter(
@@ -220,8 +246,31 @@ describe("validate on the DS1 data set", () => {
     }
   });
 
-  it("leaves order 5 pending until the data set exports the found flag", () => {
-    const result = run([order("nothing-from-the-ground", { area: "undead-burg" })]);
-    expect(result.orders[0]?.support).toBe("pending");
+  const areas = [
+    ...new Set([...world.regions.values()].flatMap((r) => (r.area === null ? [] : [r.area]))),
+  ];
+
+  // The two found pickups the graph needs: the key on the corpse in the first cell, and the Archives chest key.
+  it("excepts in each area exactly the pickups the run cannot do without", () => {
+    const exceptions = Object.fromEntries(
+      areas.flatMap((area) => {
+        const result = run([order("nothing-from-the-ground", { area })]);
+        expect(result.verdict, area).toBe("comfortable");
+        const list = result.orders[0]?.exceptions ?? [];
+        return list.length > 0 ? [[area, list]] : [];
+      }),
+    );
+    expect(exceptions).toEqual({
+      "northern-undead-asylum": ["Dungeon Cell Key"],
+      "the-dukes-archives": ["Archive Tower Giant Door Key"],
+    });
+  });
+
+  it("can close any single merchant with no exception", () => {
+    for (const merchant of world.merchants.keys()) {
+      const result = run([order("closed-merchant", { merchant })]);
+      expect(result.verdict, merchant).toBe("comfortable");
+      expect(result.orders[0]?.exceptions, merchant).toEqual([]);
+    }
   });
 });
