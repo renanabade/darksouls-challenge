@@ -26,11 +26,11 @@ player and the tryhard were both served badly, and friends of different skill ha
   Each eased challenge is still validated.
 - **0 deaths** is allowed on extreme and reads "Do not die".
 
-| Considered                                         | Why not                                                                                     |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Generate each player's challenge from its own seed | Different orders for each player; the group is no longer playing the same run               |
-| Search for a structure valid at every difficulty   | Not needed: monotonic numbers make the hardest difficulty the worst case                    |
-| A curse sized by count                             | Four light restrictions are easier than two heavy ones; size does not measure difficulty    |
+| Considered                                         | Why not                                                                                  |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Generate each player's challenge from its own seed | Different orders for each player; the group is no longer playing the same run            |
+| Search for a structure valid at every difficulty   | Not needed: monotonic numbers make the hardest difficulty the worst case                 |
+| A curse sized by count                             | Four light restrictions are easier than two heavy ones; size does not measure difficulty |
 
 ## Consequences
 
