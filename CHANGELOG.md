@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.2.0...darksouls-challenge-v0.3.0) (2026-10-20)
+
+
+### Features
+
+* **core:** validate the curse, earned levels and phase swaps ([56fd143](https://github.com/renanabade/darksouls-challenge/commit/56fd143c8608ea6b36ec1bcb5dbe88b8477c35ed))
+
+
+### Bug Fixes
+
+* **data:** gate Kaathe's return to the Abyss on the Four Kings (v0.4.0) ([e803629](https://github.com/renanabade/darksouls-challenge/commit/e803629f97e478bc6d15b6060f46b31014ee5546))
+
 ## [0.2.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.1.0...darksouls-challenge-v0.2.0) (2026-10-20)
 
 
