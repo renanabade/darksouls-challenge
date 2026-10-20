@@ -182,6 +182,28 @@ describe("build restrictions and earned levels (worst case)", () => {
   });
 });
 
+describe("orders that contradict each other", () => {
+  it("allows only one order to choose your weapon", () => {
+    const first = order("first-weapon-of-area", { area: "yard", until: "brute-dead" });
+    const assigned = order("assigned-weapon", {
+      from: "brute-dead",
+      until: "wraith-dead",
+      location: "keep: Moon Blade",
+    });
+    expect(validate(small, setup(30), [first, assigned]).problems).toEqual([
+      "only one order can choose your weapon (first-weapon-of-area, assigned-weapon)",
+    ]);
+  });
+
+  it("refuses to wear what you find under a curse of no armor", () => {
+    const wear = order("wear-what-you-find", { area: "yard" });
+    const curse = order("accumulated-curse", { restrictions: ["no-armor"] });
+    expect(validate(small, setup(30), [wear, curse]).problems).toEqual([
+      'the restriction "no-armor" contradicts the order "wear-what-you-find"',
+    ]);
+  });
+});
+
 describe("phase swap (existence)", () => {
   const swap = (before: string, after: string) =>
     order("phase-swap", { milestone: "brute-dead", before, after });

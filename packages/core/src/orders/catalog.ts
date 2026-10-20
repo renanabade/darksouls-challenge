@@ -20,7 +20,7 @@ export const catalog = [
     id: "assigned-weapon",
     number: 2,
     title: "Assigned weapon",
-    text: "From {from} until {until}: your weapon is the one at {location}.",
+    text: "From {from} until {until}: your weapon is {location}.",
     params: {
       from: { kind: "milestone" },
       until: { kind: "milestone" },

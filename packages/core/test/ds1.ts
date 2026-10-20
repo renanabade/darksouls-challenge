@@ -15,6 +15,7 @@ export function readDataSet(): RawDataSet {
     merchants: read("merchants"),
     milestones: read("milestones"),
     weapons: read("weapons"),
+    areas: read("areas"),
   };
 }
 

@@ -57,6 +57,13 @@ export interface StartingGift {
   readonly items: readonly GiftItem[];
 }
 
+/** A place name of the game (PlaceNames), grouping regions. */
+export interface Area {
+  readonly id: string;
+  readonly name: string;
+  readonly dlc: boolean;
+}
+
 /** A fixed point of the progression (a boss, a bell, the Lordvessel...), as a requirement on the graph. */
 export interface Milestone {
   readonly id: string;
@@ -73,6 +80,8 @@ export interface Merchant {
 }
 
 export interface World {
+  /** The data set's version (meta.dataVersion); part of a challenge's identity. */
+  readonly dataVersion: string;
   readonly start: string;
   readonly goal: string;
   readonly regions: ReadonlyMap<string, Region>;
@@ -86,6 +95,7 @@ export interface World {
   readonly weapons: ReadonlyMap<string, Weapon>;
   /** Starting classes, by name. */
   readonly classes: ReadonlyMap<string, StartingClass>;
+  readonly areas: ReadonlyMap<string, Area>;
 }
 
 /** The parsed JSON of each data set file, still untrusted. Reading the files is the caller's job. */
@@ -97,9 +107,10 @@ export interface RawDataSet {
   readonly classes: unknown;
   readonly bosses: unknown;
   readonly merchants: unknown;
-  /** Absent means none: small test worlds need no milestones or weapons. */
+  /** Absent means none: small test worlds need no milestones, weapons or area names. */
   readonly milestones?: unknown;
   readonly weapons?: unknown;
+  readonly areas?: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -273,8 +284,22 @@ export function parseWorld(raw: RawDataSet): World {
   const weapons = parseWeapons(check, raw.weapons ?? []);
   const classList = parseClasses(check, classes["classes"] ?? []);
 
+  const areas = new Map<string, Area>();
+  for (const [i, value] of check.array(raw.areas ?? [], "areas").entries()) {
+    const path = `areas[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    const area: Area = {
+      id: check.string(fields, "id", path),
+      name: check.string(fields, "name", path),
+      dlc: check.boolean(fields, "dlc", path),
+    };
+    areas.set(area.id, area);
+  }
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
   return {
+    dataVersion: typeof meta["dataVersion"] === "string" ? meta["dataVersion"] : "",
     start,
     goal,
     regions,
@@ -286,5 +311,6 @@ export function parseWorld(raw: RawDataSet): World {
     milestones,
     weapons,
     classes: classList,
+    areas,
   };
 }

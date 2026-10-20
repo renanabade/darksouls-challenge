@@ -30,7 +30,7 @@ export const restrictions = [
   { id: "one-handed", text: "Never hold a weapon with both hands.", effect: { kind: "oneHanded" } },
   {
     id: "no-rings",
-    text: "Do not wear rings, except the ones the run requires.",
+    text: "Do not wear rings.",
     effect: { kind: "noItemsOfKind", itemKind: "ring" },
   },
   { id: "no-level-ups", text: "Do not level up.", effect: { kind: "noLevelUps" } },
