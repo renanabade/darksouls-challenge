@@ -357,3 +357,41 @@ describe("weapon orders on the DS1 data set", () => {
     ).toMatch(/cannot be taken before the bosses/);
   });
 });
+
+describe("element fights (block 12)", () => {
+  const fight = (id: string, boss: string, element: string) => order(id, { boss, element });
+
+  it("needs something that deals the element before the boss falls, within the build", () => {
+    expect(validate(small, setup(12), [fight("exploit-weakness", "wraith", "magic")]).verdict).toBe(
+      "comfortable",
+    );
+    expect(
+      validate(small, setup(11), [fight("exploit-weakness", "wraith", "magic")]).problems,
+    ).toEqual(["nothing that deals magic against Wraith fits the build"]);
+    // The Moon Blade lies past the Brute.
+    expect(
+      validate(small, setup(20), [fight("against-the-grain", "brute", "magic")]).problems,
+    ).toEqual(["nothing that deals magic can be taken before Brute"]);
+    expect(validate(small, setup(20), [fight("against-the-grain", "wraith", "fire")]).verdict).toBe(
+      "impossible",
+    );
+  });
+
+  it("refuses two elements for one fight, and an element while an order chooses your weapon", () => {
+    const both = [
+      fight("exploit-weakness", "wraith", "magic"),
+      fight("against-the-grain", "wraith", "fire"),
+    ];
+    expect(validate(small, setup(20), both).problems).toContain(
+      "Wraith cannot be fought only with magic and only with fire",
+    );
+    const assigned = order("assigned-weapon", {
+      from: "brute-dead",
+      until: "wraith-dead",
+      location: "keep: Moon Blade",
+    });
+    expect(
+      validate(small, setup(20), [assigned, fight("exploit-weakness", "wraith", "magic")]).problems,
+    ).toEqual(["assigned-weapon chooses your weapon, and exploit-weakness the element of a fight"]);
+  });
+});

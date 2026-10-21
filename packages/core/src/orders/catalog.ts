@@ -318,4 +318,32 @@ export const catalog = [
     command: { kind: "prohibit", action: "restriction", restriction: "restriction" },
     validation: { static: "worstCase", live: "worstCase" },
   },
+  // Block 12: the bosses' defenses per element (NpcParam). The element is drawn from the boss: the one it
+  // defends worst, or the one it resists most without being immune.
+  {
+    id: "exploit-weakness",
+    number: 22,
+    weight: { difficulty: 1, friction: 1 },
+    title: "Exploit the weakness",
+    text: "Against {boss}: fight only with {element}, what it defends worst. Every attack that hits it must deal {element} damage.",
+    params: { boss: { kind: "boss" }, element: { kind: "element" } },
+    trigger: { kind: "enterArena", boss: "boss" },
+    scope: { kind: "fight", boss: "boss" },
+    command: { kind: "require", action: "dealElement", element: "element" },
+    validation: { static: "existence", live: "existence" },
+    advice: "Weapons, spells and thrown items all count, as long as they deal it.",
+  },
+  {
+    id: "against-the-grain",
+    number: 23,
+    weight: { difficulty: 3, friction: 1 },
+    title: "Against the grain",
+    text: "Against {boss}: fight only with {element}, what it resists most. Every attack that hits it must deal {element} damage.",
+    params: { boss: { kind: "boss" }, element: { kind: "element" } },
+    trigger: { kind: "enterArena", boss: "boss" },
+    scope: { kind: "fight", boss: "boss" },
+    command: { kind: "require", action: "dealElement", element: "element" },
+    validation: { static: "existence", live: "existence" },
+    advice: "Weapons, spells and thrown items all count, as long as they deal it.",
+  },
 ] as const satisfies readonly OrderTemplate[];

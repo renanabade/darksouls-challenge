@@ -4,6 +4,7 @@ import {
   chaptersOf,
   CURVES,
   curveOffsets,
+  elementalDefenses,
   generate,
   generateGroup,
   orderText,
@@ -144,6 +145,14 @@ describe("generate on the DS1 data set", () => {
           if (boss !== undefined) expect(world.regions.get(boss.region)?.area).not.toBe(forbidden);
         }
         if (template.id === "dry-fight") expect(noEstus.has(chapter)).toBe(false);
+        // Block 12: the element follows the boss's defenses, never a boss the graph lets the run skip (G7).
+        if (template.id === "exploit-weakness" || template.id === "against-the-grain") {
+          expect(["asylum-demon", "bell-gargoyles"]).not.toContain(args["boss"]);
+          const defenses = (boss ? elementalDefenses(boss) : []).map((d) => d.element);
+          expect(args["element"]).toBe(
+            template.id === "exploit-weakness" ? defenses[0] : defenses.at(-1),
+          );
+        }
         if (template.id === "wear-what-you-find") expect(pickups(area, "armor")).toBeGreaterThan(0);
         if (template.id === "nothing-from-the-ground")
           expect(pickups(area)).toBeGreaterThanOrEqual(5);

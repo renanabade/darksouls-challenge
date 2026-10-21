@@ -118,6 +118,8 @@ function value(world: World, kind: string, arg: ArgValue): string {
     }
     case "equipmentSet":
       return SCHOOL_STYLES[arg] ?? `only ${plural(arg)}`;
+    case "element":
+      return arg === "thunder" ? "lightning" : arg;
     case "restriction": {
       // "...: do not roll."
       const text = restrictions.find((r) => r.id === arg)?.text ?? arg;

@@ -49,6 +49,8 @@ export interface StartingClass {
 export interface BossPart {
   /** Elements that deal this part no damage at all. */
   readonly noDamage: readonly Element[];
+  /** Flat defense per element (NpcParam def_*): the higher, the less of it gets through. */
+  readonly defense?: Readonly<Record<Element, number>>;
 }
 
 export interface Boss {
@@ -122,6 +124,24 @@ export function pointsToWield(
     (sum, a) => sum + Math.max(0, Math.max(0, ...list.map((w) => need(a, w))) - stats[a]),
     0,
   );
+}
+
+/** The elements besides physical damage. */
+export const ELEMENTAL: readonly Element[] = ["magic", "fire", "thunder"];
+
+/**
+ * A boss's defense against each element that hurts every part of it (the mean over its parts), weakest
+ * first. Empty when the data set has no defenses for it.
+ */
+export function elementalDefenses(boss: Boss): { element: Element; defense: number }[] {
+  if (boss.parts.length === 0 || boss.parts.some((p) => p.defense === undefined)) return [];
+  return ELEMENTAL.filter((e) => boss.parts.every((p) => !p.noDamage.includes(e)))
+    .map((element) => ({
+      element,
+      defense:
+        boss.parts.reduce((sum, p) => sum + (p.defense?.[element] ?? 0), 0) / boss.parts.length,
+    }))
+    .sort((a, b) => a.defense - b.defense);
 }
 
 /** True when the weapon hurts every part of the boss: some element of its damage is not nullified there. */
@@ -288,7 +308,17 @@ export function parseBosses(
         if (element === undefined) check.fail(`${partPath}.noDamage`, `unknown element "${name}"`);
         else noDamage.push(element);
       }
-      parts.push({ noDamage });
+      // Absent in small test worlds and before data 0.6.0.
+      const raw =
+        partFields["defense"] === undefined
+          ? undefined
+          : check.object(partFields["defense"], `${partPath}.defense`);
+      const defense =
+        raw &&
+        (Object.fromEntries(
+          ELEMENTS.map((e) => [e, check.number(raw, e, `${partPath}.defense`)]),
+        ) as Record<Element, number>);
+      parts.push(defense ? { noDamage, defense } : { noDamage });
     }
     if (bosses.has(id)) check.fail(`${path}.id`, `duplicate boss "${id}"`);
     bosses.set(id, {
