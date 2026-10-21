@@ -49,7 +49,7 @@ Soul, the Kiln): a few rules for the whole journey, and each chapter's own rules
 only the numbers (level cap, deaths, attempts, the size of the curse) follow each player's difficulty.
 
 Difficulty: `easy`, `medium`, `hard`, `extreme`. Curve (how difficulty moves across the chapters): `constant`,
-`rising`, `peaks`, `rollercoaster`. Length: `short` (a handful of rules), `full` (one to three per chapter) or
+`rising`, `peaks`, `rollercoaster`. Length: `short` (a handful of rules, in four acts), `full` (one to three per chapter) or
 `epic` (three to five). Curve, class, starting gift (row in `data/ds1/classes.json`) and soul level cap are drawn
 from the seed unless given.
 

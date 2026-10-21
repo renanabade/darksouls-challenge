@@ -1,7 +1,7 @@
 import { catalog, type Difficulty, type OrderTemplate } from "../orders/index.js";
 import { validate, type ArgValue, type OrderInstance, type Setup } from "../validator.js";
 import type { StartingGift, World } from "../world.js";
-import { chaptersOf } from "./chapters.js";
+import { chaptersOf, type Chapter } from "./chapters.js";
 import { CURVES, curveOffsets, shifted, type Curve } from "./curve.js";
 import { DIFFICULTIES, domainsOf, drawArgs, fitCurse, rangeOf, type DrawContext } from "./draw.js";
 import { Random } from "./random.js";
@@ -33,6 +33,8 @@ export interface GeneratedOrder {
 export interface ChapterPlan {
   /** The milestone that ends the chapter. */
   readonly goal: string;
+  /** Every milestone the chapter covers, the goal last: more than one in an act of a short journey. */
+  readonly goals: readonly string[];
   readonly areas: readonly string[];
   readonly bosses: readonly string[];
   /** Steps away from the challenge's difficulty (the curve); shared by every player of a group. */
@@ -51,7 +53,7 @@ export interface Challenge {
 }
 
 /** Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw. */
-export const GENERATOR_VERSION = "4";
+export const GENERATOR_VERSION = "5";
 
 /** Soul level cap per difficulty (Proposto, to tune by playing); never below the class's level. */
 const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
@@ -71,12 +73,22 @@ const JOURNEY_ORDERS: Readonly<Record<Length, readonly [number, number]>> = {
   epic: [4, 6],
 };
 const CHAPTER_ORDERS: Readonly<Record<Length, readonly [number, number]>> = {
-  short: [0, 1],
+  short: [1, 2],
   full: [1, 3],
   epic: [3, 5],
 };
 /** The Asylum has one area and one boss. */
-const FIRST_CHAPTER_MAX = 1;
+const ASYLUM_MAX = 1;
+/**
+ * A short journey has too few rules for nine chapters, most of which were left empty (the evaluation of
+ * 2026-10-21), so it groups them in four acts: the Asylum and the first bell, the second bell and the
+ * Lordvessel, the Lord Souls, the Kiln. The sizes are counts of chapters, in order.
+ */
+const ACTS: Readonly<Record<Length, readonly number[] | undefined>> = {
+  short: [2, 2, 4, 1],
+  full: undefined,
+  epic: undefined,
+};
 
 /** Orders that rule the whole journey; every other static order belongs to a chapter. */
 const JOURNEY_TEMPLATES = new Set([
@@ -88,12 +100,16 @@ const JOURNEY_TEMPLATES = new Set([
   "earned-levels",
   "earned-upgrades",
 ]);
-/** Orders a chapter can only take in one place: before the first bell, or with a milestone to start after. */
-const ONLY_IN_CHAPTER: Readonly<Record<string, (k: number) => boolean>> = {
-  "boss-before-bell": (k) => k === 1,
-  "assigned-weapon": (k) => k > 0,
-  "chapter-restriction": (k) => k > 0,
-};
+/**
+ * Orders a chapter can only take in one place: the chapter of the first bell, or one with a milestone to
+ * start after (by the chapter's index and the milestones it covers).
+ */
+const ONLY_IN_CHAPTER: Readonly<Record<string, (k: number, goals: readonly string[]) => boolean>> =
+  {
+    "boss-before-bell": (_k, goals) => goals.includes("bell-undead-parish"),
+    "assigned-weapon": (k) => k > 0,
+    "chapter-restriction": (k) => k > 0,
+  };
 
 /**
  * Weight-only orders that no other order contradicts: they never make a set impossible, so the generator
@@ -159,10 +175,14 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
   }
   if (lordOrder === undefined)
     throw new Error(`no order of the Lord Souls validates for ${config.seed}`);
-  const chapters = chaptersOf(world, lordOrder.args["order"] as readonly string[]);
-  const offsets = curveOffsets(curve, chapters.length, rng);
+  const chapters = actsOf(
+    chaptersOf(world, lordOrder.args["order"] as readonly string[], rng),
+    ACTS[config.length],
+  );
+  const offsets = curveOffsets(curve, chapters.length, config.difficulty, rng);
   const plans: ChapterPlan[] = chapters.map((c, k) => ({
     goal: c.goal,
+    goals: c.goals,
     areas: c.areas,
     bosses: c.bosses,
     offset: offsets[k] ?? 0,
@@ -194,9 +214,9 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
           areasSoFar: chapters.slice(0, k + 1).flatMap((c) => c.areas),
         },
       },
-      target: Math.min(rng.int(min, max), k === 0 ? FIRST_CHAPTER_MAX : Infinity),
+      target: Math.min(rng.int(min, max), chapter.goal === ASYLUM ? ASYLUM_MAX : Infinity),
       pool: statics.filter(
-        (t) => !JOURNEY_TEMPLATES.has(t.id) && (ONLY_IN_CHAPTER[t.id]?.(k) ?? true),
+        (t) => !JOURNEY_TEMPLATES.has(t.id) && (ONLY_IN_CHAPTER[t.id]?.(k, chapter.goals) ?? true),
       ),
     });
   });
@@ -228,7 +248,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
         if (args === undefined) break;
         const targets = targetsOf(args).map((t) => `${template.id}|${t}`);
         if (targets.some((t) => usedTargets.has(t))) continue;
-        if (pointless(template, args, chosen)) continue;
+        if (pointless(world, template, args, chapter, chosen)) continue;
         const next = [...chosen, { template, args, ...(chapter !== undefined && { chapter }) }];
         if (
           !WEIGHT_ONLY_ALWAYS_FITS.has(template.id) ||
@@ -284,28 +304,78 @@ function targetsOf(args: Readonly<Record<string, ArgValue>>): string[] {
   });
 }
 
+const ASYLUM = "boss-asylum-demon";
+
+/** The chapters grouped in acts of the given sizes, each act ending at its last chapter's goal. */
+function actsOf(
+  chapters: readonly Chapter[],
+  sizes: readonly number[] | undefined,
+): (Chapter & { goals: readonly string[] })[] {
+  if (sizes === undefined) return chapters.map((c) => ({ ...c, goals: [c.goal] }));
+  const ends = sizes.map((_, i) => sizes.slice(0, i + 1).reduce((a, b) => a + b, 0));
+  if (ends.at(-1) !== chapters.length)
+    throw new Error(
+      `acts of ${String(ends.at(-1))} chapters for a journey of ${String(chapters.length)}`,
+    );
+  return ends.map((end, i) => {
+    const group = chapters.slice(ends[i - 1] ?? 0, end);
+    const all = (pick: (c: Chapter) => readonly string[]) =>
+      [...new Set(group.flatMap(pick))].sort();
+    return {
+      goal: group.at(-1)?.goal ?? "",
+      goals: group.map((c) => c.goal),
+      areas: all((c) => c.areas),
+      requiredAreas: all((c) => c.requiredAreas),
+      bosses: all((c) => c.bosses),
+    };
+  });
+}
+
 /**
- * An order that would ask nothing on top of the others (the analysis of 2026-10-21): attempts against a
- * boss that the deaths of the whole run already limit more tightly (every lost attempt is a death), or a
- * chapter restriction the curse already holds.
+ * An order that would ask nothing on top of the others (the analyses of 2026-10-21): attempts against a
+ * boss that the deaths of the whole run already limit more tightly (every lost attempt is a death); a
+ * chapter restriction the curse already holds; an order about an area the journey forbids, or about a
+ * boss in it; a fight without Estus in a chapter that already forbids Estus, or the other way round.
  */
 function pointless(
+  world: World,
   template: OrderTemplate,
   args: Readonly<Record<string, ArgValue>>,
-  chosen: readonly OrderInstance[],
+  chapter: number | undefined,
+  chosen: readonly (OrderInstance & { chapter?: number })[],
 ): boolean {
   const journey = (id: string, param: string) =>
     chosen.find((o) => o.template.id === id)?.args[param];
-  if (template.id === "counted-attempts") {
-    const lives = journey("run-lives", "deaths");
-    const attempts = args["attempts"];
-    return typeof lives === "number" && typeof attempts === "number" && attempts - 1 >= lives;
+  const forbidden = chosen.flatMap((o) =>
+    o.template.id === "forbidden-area" ? [o.args["area"]] : [],
+  );
+  const boss = typeof args["boss"] === "string" ? world.bosses.get(args["boss"]) : undefined;
+  const bossArea = boss === undefined ? undefined : world.regions.get(boss.region)?.area;
+  if (forbidden.some((a) => a === args["area"] || (bossArea != null && a === bossArea)))
+    return true;
+  const inChapter = (id: string, restriction?: string) =>
+    chosen.some(
+      (o) =>
+        o.chapter === chapter &&
+        o.template.id === id &&
+        (restriction === undefined || o.args["restriction"] === restriction),
+    );
+  switch (template.id) {
+    case "counted-attempts": {
+      const lives = journey("run-lives", "deaths");
+      const attempts = args["attempts"];
+      return typeof lives === "number" && typeof attempts === "number" && attempts - 1 >= lives;
+    }
+    case "chapter-restriction": {
+      const curse = journey("accumulated-curse", "restrictions");
+      if (typeof curse === "object" && curse.includes(args["restriction"] as string)) return true;
+      return args["restriction"] === "no-estus" && inChapter("dry-fight");
+    }
+    case "dry-fight":
+      return inChapter("chapter-restriction", "no-estus");
+    default:
+      return false;
   }
-  if (template.id === "chapter-restriction") {
-    const curse = journey("accumulated-curse", "restrictions");
-    return typeof curse === "object" && curse.includes(args["restriction"] as string);
-  }
-  return false;
 }
 
 function templateOf(id: string): OrderTemplate {

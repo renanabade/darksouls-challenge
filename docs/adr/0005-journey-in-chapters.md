@@ -48,3 +48,26 @@ set covers every area, boss, item and merchant of the game, and the challenges u
   refused, an impossible one never accepted.
 - The graph has no boss gates yet (data need G7): it lets the first bell ring without the Bell Gargoyles, and the
   run leave the Asylum without its Demon. The generator treats those bosses as required.
+
+## Revision after the evaluation of 20 journeys (2026-10-21)
+
+Twenty journeys were measured: chapters of 1, 6, 5, 9, 2, 2, 2, 2 and 1 areas (every detour in its first
+chapter: the Lordvessel's held Sen's, Anor Londo, the Painted World and the whole DLC); 36 of 180 chapters
+empty, most in short journeys; peaks at extreme identical to a constant curve; a rollercoaster that could end
+the run on its easiest chapter; and four orders that asked nothing (an order in a forbidden area, a fight
+without Estus in a chapter that already forbids Estus). Renan approved:
+
+- **Detours drawn among their chapters.** An area made only of detours is drawn among the chapters from the
+  first that reaches it to the last before the Kiln, smaller chapters first, and no later than the chapter of a
+  required area it leads into (the Depths before Blighttown's). What each goal needs never moves. Chapters now
+  differ from seed to seed; `chaptersOf` without a generator keeps the first-chapter layout.
+- **Valleys at extreme.** Where nothing is above the chosen level, peaks become two chapters a step below. The
+  rollercoaster changes level, not just offset, at the edges too.
+- **The end is the climax.** The last chapter is never below the chosen level.
+- **Four acts for a short journey.** The Asylum and the first bell, the second bell and the Lordvessel, the Lord
+  Souls, the Kiln; one or two rules each. A chapter now lists every milestone it covers (`goals`).
+- **No order in a forbidden area** (nor about a boss in it), and no fight without Estus in a chapter without Estus.
+
+`GENERATOR_VERSION` is 5. In the same twenty configurations, empty chapters fell to 4 of 145 and no order asks
+nothing. Still open for blocks 12 to 14: six kinds of order make most chapter rules, and a journey touches about
+a fifth of the bosses and areas.
