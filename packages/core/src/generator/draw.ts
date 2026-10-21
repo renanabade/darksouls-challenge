@@ -82,6 +82,8 @@ export function fitCurse(ids: readonly string[], difficulty: Difficulty): string
  * analysis of 20 generated challenges (2026-10-21) found it drawn for areas with two items.
  */
 const MIN_PICKUPS = 5;
+/** What an errand sends the player for: equipment and spells, not consumables or keys. */
+const ERRAND_KINDS = new Set(["weapon", "armor", "ring", "spell"]);
 /** The restriction no chapter takes: levels are the level orders' business, and they last the whole run. */
 const NOT_FOR_A_CHAPTER = new Set(["no-level-ups"]);
 
@@ -94,6 +96,8 @@ export interface Domains {
   readonly areasWithBonfires: readonly string[];
   /** Areas with crystal lizards. */
   readonly areasWithLizards: readonly string[];
+  /** Equipment and spells to pick up from a corpse or chest, by area (location names). */
+  readonly errands: ReadonlyMap<string, readonly string[]>;
   /** How many chests each area holds, for areas with at least two. */
   readonly chestsByArea: ReadonlyMap<string, number>;
   /** The bonfires of each area with more than one, by location name. */
@@ -163,6 +167,16 @@ function readDomains(world: World): Domains {
     areasWithPickups: sorted([...pickups].filter(([, n]) => n >= MIN_PICKUPS).map(([a]) => a)),
     areasWithBonfires: areasOf(world.locations.filter((l) => l.category === "BONFIRE")),
     areasWithLizards: areasOf(world.locations.filter((l) => l.category === CRYSTAL_LIZARD)),
+    errands: new Map(
+      sorted(found.flatMap((l) => areaOf(l.region) ?? [])).flatMap((area) => {
+        const names = sorted(
+          found
+            .filter((l) => areaOf(l.region) === area && ERRAND_KINDS.has(l.kind ?? ""))
+            .map((l) => l.name),
+        );
+        return names.length > 0 ? [[area, names] as const] : [];
+      }),
+    ),
     chestsByArea: new Map(
       [...counts(world.chests.flatMap((c) => areaOf(c.region) ?? []))].filter(([, n]) => n >= 2),
     ),
@@ -345,6 +359,16 @@ function drawInChapter(
       return area === undefined || chests === undefined
         ? undefined
         : { area, chests, until: chapter.until };
+    }
+    case "errand": {
+      const area = areaFrom([...domains.errands.keys()]);
+      const names = area === undefined ? undefined : domains.errands.get(area);
+      return names === undefined ? undefined : { location: rng.pick(names), until: chapter.until };
+    }
+    // A detour of the chapter, or a way through it that has another: the graph decides which.
+    case "the-other-way": {
+      const areas = chapter.areas.filter((a) => !chapter.requiredAreas.includes(a));
+      return areas.length > 0 ? { area: rng.pick(areas), until: chapter.until } : undefined;
     }
     case "one-bonfire": {
       const area = areaFrom([...domains.bonfiresByArea.keys()]);

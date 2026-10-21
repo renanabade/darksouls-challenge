@@ -105,6 +105,7 @@ function value(world: World, kind: string, arg: ArgValue): string {
       return milestonePhrase(world, arg);
     case "merchant":
       return world.merchants.get(arg)?.name ?? arg;
+    case "location":
     case "weaponLocation": {
       // "the Halberd found in Undead Parish", plus DSAP's landmark when its name has one
       // ("UP: Halberd - On the bridge").
@@ -233,12 +234,19 @@ export function renderManual(world: World, challenge: Challenge): string {
     ids.map((id) => of(id) ?? id).join(", ");
   const journey = challenge.orders.filter((o) => o.chapter === undefined).map(rule);
   const part = challenge.chapters.some((c) => c.goals.length > 1) ? "Act" : "Chapter";
+  const forbidden = new Set(
+    challenge.orders.flatMap((o) => (o.template.id === "forbidden-area" ? [o.args["area"]] : [])),
+  );
+  const areaName = (id: string) => {
+    const name = world.areas.get(id)?.name ?? id;
+    return forbidden.has(id) ? `${name} (forbidden)` : name;
+  };
   const chapters = challenge.chapters.flatMap((chapter, k) => {
     const orders = challenge.orders.filter((o) => o.chapter === k);
     if (orders.length === 0) return [];
     const about = [
       `Until ${milestonePhrase(world, chapter.goal)}`,
-      `**Areas:** ${names(chapter.areas, (id) => world.areas.get(id)?.name)}`,
+      `**Areas:** ${names(chapter.areas, areaName)}`,
       chapter.bosses.length > 0 &&
         `**Bosses:** ${names(chapter.bosses, (id) => {
           const boss = world.bosses.get(id);

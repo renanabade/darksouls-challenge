@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
   catalog,
+  generate,
   InvalidOrderError,
   orderText,
   parseWorld,
+  renderManual,
   validate,
   type ArgValue,
   type OrderInstance,
@@ -58,6 +60,42 @@ describe("area orders", () => {
       validate(world, setup, [{ ...all, args: { ...all.args, chests: chests + 1 } }]),
     ).toThrow(InvalidOrderError);
   });
+
+  // Block 14: errands and routes.
+  it("sends the player for a pickup only when it can be taken in time", () => {
+    const found = world.locations.find(
+      (l) => l.found === true && l.kind === "weapon" && l.region.startsWith("anor-londo"),
+    );
+    if (found === undefined) throw new Error("no weapon to find in Anor Londo");
+    const errand = (until: string) => order("errand", { location: found.name, until });
+    expect(validate(world, setup, [errand("both-bells")]).verdict).toBe("impossible");
+    expect(validate(world, setup, [errand("lordvessel-placed")]).verdict).toBe("comfortable");
+  });
+
+  it("closes an area until a milestone only when another way exists", () => {
+    const closed = (area: string, until: string) => order("the-other-way", { area, until });
+    expect(validate(world, setup, [closed("depths", "both-bells")]).verdict).toBe("comfortable");
+    expect(validate(world, setup, [closed("undead-parish", "bell-undead-parish")]).verdict).toBe(
+      "impossible",
+    );
+    const hunt = order("lizard-hunt", { area: "crystal-cave", until: "boss-gwyn-lord-of-cinder" });
+    expect(
+      validate(world, setup, [hunt, closed("crystal-cave", "boss-gwyn-lord-of-cinder")]).problems,
+    ).toContain("lizard-hunt sends you into crystal-cave, which the-other-way closes");
+  });
+
+  it("marks the journey's forbidden area in its chapter", () => {
+    for (const seed of ["forbid-1", "forbid-2", "forbid-3", "forbid-4", "forbid-5", "forbid-6"]) {
+      const challenge = generate(world, { seed, difficulty: "medium", length: "full" });
+      const area = challenge.orders.find((o) => o.template.id === "forbidden-area")?.args["area"];
+      if (typeof area !== "string") continue;
+      expect(renderManual(world, challenge)).toContain(
+        `${world.areas.get(area)?.name ?? area} (forbidden)`,
+      );
+      return;
+    }
+    throw new Error("no sample journey forbids an area");
+  }, 60_000);
 
   it("names a bonfire without its area code", () => {
     const one = order("one-bonfire", {

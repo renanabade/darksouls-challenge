@@ -35,7 +35,9 @@ export type ParamKind =
   /** A bonfire, by the name of its location ("AL: Darkmoon Tomb Bonfire"). */
   | "bonfire"
   /** A number read from the game data, not drawn by difficulty (how many chests an area holds). */
-  | "tally";
+  | "tally"
+  /** An item location, by name: a corpse or chest pickup. */
+  | "location";
 
 export interface ParamSpec {
   readonly kind: ParamKind;
@@ -84,6 +86,7 @@ export type Command =
   | { readonly kind: "require"; readonly action: "defeatBoss"; readonly boss: string }
   | { readonly kind: "require"; readonly action: "dealElement"; readonly element: string }
   | { readonly kind: "require"; readonly action: "killCrystalLizards"; readonly area: string }
+  | { readonly kind: "require"; readonly action: "takeItem"; readonly location: string }
   | {
       readonly kind: "require";
       readonly action: "openChests";
@@ -202,6 +205,7 @@ export function paramRefsOf(order: OrderTemplate): { param: string; kind: ParamK
       if (command.action === "defeatBoss") add(command.boss, "boss");
       if (command.action === "dealElement") add(command.element, "element");
       if (command.action === "killCrystalLizards") add(command.area, "area");
+      if (command.action === "takeItem") add(command.location, "location");
       if (command.action === "openChests") {
         add(command.area, "area");
         add(command.chests, "tally");

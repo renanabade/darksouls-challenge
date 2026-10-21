@@ -497,6 +497,39 @@ export function validate(
         break;
       }
 
+      // Existence: the pickup can be reached before the milestone. Only forbidden areas count: the orders that
+      // forbid pickups forbid using them, never taking them.
+      case "errand": {
+        const name = stringArg(args, "location", label);
+        const location = world.locations.find((l) => l.name === name && l.found === true);
+        if (location === undefined)
+          throw new InvalidOrderError(`${label}: "${name}" is not a corpse or chest pickup`);
+        const until = milestoneArg(world, args, "until", label);
+        checks.push((c) =>
+          run(
+            { regions: c.regions, locations: new Set() },
+            new Set(itemsOf(until.requires)),
+          ).regions.has(location.region)
+            ? undefined
+            : `${location.item} cannot be taken before ${until.name}`,
+        );
+        break;
+      }
+
+      // Existence: the milestone can still be reached without the area.
+      case "the-other-way": {
+        const area = stringArg(args, "area", label);
+        const regions = areaRegions(world, area, label);
+        const until = milestoneArg(world, args, "until", label);
+        checks.push((c) => {
+          const without = { regions: new Set([...c.regions, ...regions]), locations: c.locations };
+          return holds(run(without), until.requires)
+            ? undefined
+            : `${until.name} cannot be reached without entering ${area}`;
+        });
+        break;
+      }
+
       default:
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
     }
@@ -546,6 +579,25 @@ export function validate(
   const fight = elementFights[0];
   if (chooser !== undefined && fight !== undefined)
     checks.push(() => `${chooser.id} chooses your weapon, and ${fight.id} the element of a fight`);
+  // Something to do in an area before a milestone, and the same area closed until that milestone.
+  const placeOf = (o: OrderInstance): string | undefined => {
+    if (typeof o.args["area"] === "string") return o.args["area"];
+    const location = world.locations.find((l) => l.name === o.args["location"]);
+    return location && (world.regions.get(location.region)?.area ?? undefined);
+  };
+  for (const closed of orders.filter((o) => o.template.id === "the-other-way")) {
+    const errand = orders.find(
+      (o) =>
+        ["lizard-hunt", "every-chest", "errand"].includes(o.template.id) &&
+        placeOf(o) === closed.args["area"] &&
+        o.args["until"] === closed.args["until"],
+    );
+    if (errand !== undefined)
+      checks.push(
+        () =>
+          `${errand.template.id} sends you into ${String(closed.args["area"])}, which the-other-way closes`,
+      );
+  }
   // Armor picked up must be worn, and nothing picked up may be worn: not both in one area.
   const areasOf = (id: string) =>
     orders.filter((o) => o.template.id === id).map((o) => o.args["area"]);
