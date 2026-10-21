@@ -43,8 +43,15 @@ function lordSoulOf(world: World, id: string): string {
   return [...itemsOf(requires)].find((i) => souls.has(i)) ?? id;
 }
 
-/** A chapter's name, from the milestone that ends it: "The first bell", "Lord Soul: Nito". */
-export function chapterTitle(world: World, goal: string): string {
+/**
+ * A chapter's name, from the milestones it covers: "The first bell", "Lord Soul: Nito". An act of a short
+ * journey takes its last milestone's name, and the act of the four Lord Souls is "The Lord Souls".
+ */
+export function chapterTitle(world: World, goals: string | readonly string[]): string {
+  const list = typeof goals === "string" ? [goals] : goals;
+  const goal = list.at(-1) ?? "";
+  if (list.length > 1 && list.every((g) => world.milestones.get(g)?.kind === "lord-souls"))
+    return "The Lord Souls";
   const fixed: Readonly<Record<string, string>> = {
     "boss-asylum-demon": "The Asylum",
     "bell-undead-parish": "The first bell",
@@ -215,6 +222,7 @@ export function renderManual(world: World, challenge: Challenge): string {
   const names = (ids: readonly string[], of: (id: string) => string | undefined) =>
     ids.map((id) => of(id) ?? id).join(", ");
   const journey = challenge.orders.filter((o) => o.chapter === undefined).map(rule);
+  const part = challenge.chapters.some((c) => c.goals.length > 1) ? "Act" : "Chapter";
   const chapters = challenge.chapters.flatMap((chapter, k) => {
     const orders = challenge.orders.filter((o) => o.chapter === k);
     if (orders.length === 0) return [];
@@ -229,7 +237,7 @@ export function renderManual(world: World, challenge: Challenge): string {
       `**Difficulty:** ${chapter.difficulty}`,
     ].filter(Boolean);
     return [
-      `## Chapter ${String(k + 1)}: ${chapterTitle(world, chapter.goal)}`,
+      `## ${part} ${String(k + 1)}: ${chapterTitle(world, chapter.goals)}`,
       "",
       about.join(" · "),
       "",

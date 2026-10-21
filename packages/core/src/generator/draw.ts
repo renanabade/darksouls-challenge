@@ -298,8 +298,11 @@ function drawInChapter(
       if (b === undefined) return undefined;
       return { attempts: rng.int(...rangeOf(template, "attempts", difficulty)), boss: b };
     }
-    case "boss-before-bell":
-      return { boss: rng.pick(domains.bossesBeforeBell) };
+    case "boss-before-bell": {
+      // A boss of this chapter: with detours drawn among chapters, the others may be met later.
+      const bosses = domains.bossesBeforeBell.filter((b) => chapter.bosses.includes(b));
+      return bosses.length > 0 ? { boss: rng.pick(bosses) } : undefined;
+    }
     case "chapter-restriction": {
       const tiers = CURSE[difficulty].tiers;
       const ids = restrictions

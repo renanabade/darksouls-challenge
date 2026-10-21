@@ -96,8 +96,7 @@ describe("generate on the DS1 data set", () => {
         const chapter = challenge.chapters[order.chapter];
         const { area, boss } = order.args;
         if (typeof area === "string") expect(chapter?.areas).toContain(area);
-        if (typeof boss === "string" && order.template.id !== "boss-before-bell")
-          expect(chapter?.bosses).toContain(boss);
+        if (typeof boss === "string") expect(chapter?.bosses).toContain(boss);
       }
     }
     const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
@@ -127,8 +126,24 @@ describe("generate on the DS1 data set", () => {
         expect(curse ?? []).not.toContain("no-level-ups");
       }
       const deaths = challenge.orders.find((o) => o.template.id === "run-lives")?.args["deaths"];
-      for (const { template, args } of challenge.orders) {
+      const forbidden = challenge.orders.find((o) => o.template.id === "forbidden-area")?.args[
+        "area"
+      ];
+      const noEstus = new Set(
+        challenge.orders.flatMap((o) =>
+          o.template.id === "chapter-restriction" && o.args["restriction"] === "no-estus"
+            ? [o.chapter]
+            : [],
+        ),
+      );
+      for (const { template, args, chapter } of challenge.orders) {
         const area = args["area"] as string;
+        const boss = world.bosses.get(args["boss"] as string);
+        if (forbidden !== undefined && template.id !== "forbidden-area") {
+          expect(area).not.toBe(forbidden);
+          if (boss !== undefined) expect(world.regions.get(boss.region)?.area).not.toBe(forbidden);
+        }
+        if (template.id === "dry-fight") expect(noEstus.has(chapter)).toBe(false);
         if (template.id === "wear-what-you-find") expect(pickups(area, "armor")).toBeGreaterThan(0);
         if (template.id === "nothing-from-the-ground")
           expect(pickups(area)).toBeGreaterThanOrEqual(5);
@@ -187,12 +202,36 @@ describe("chapters", () => {
     const bosses = chapters.flatMap((c) => c.bosses);
     expect(bosses.sort()).toEqual([...world.bosses.keys()].sort());
   });
+
+  // The evaluation of 20 journeys (2026-10-21): every detour in its first chapter gave chapters of 1 to 9
+  // areas, the same for every seed.
+  it("draws detours among their chapters, balancing the chapters and keeping the way in order", () => {
+    const drawn = Array.from({ length: 30 }, (_, i) =>
+      chaptersOf(world, lords, new Random(`balance-${String(i)}`)),
+    );
+    const widest = (cs: Chapter[]) => Math.max(...cs.map((c) => c.areas.length));
+    const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
+    expect(mean(drawn.map(widest))).toBeLessThan(widest(chapters));
+    expect(new Set(drawn.map((cs) => JSON.stringify(cs.map((c) => c.areas)))).size).toBeGreaterThan(
+      5,
+    );
+    const chapterOf = (cs: Chapter[], area: string) => cs.findIndex((c) => c.areas.includes(area));
+    for (const cs of drawn) {
+      expect(cs.flatMap((c) => c.bosses).sort()).toEqual([...world.bosses.keys()].sort());
+      // What each goal needs never moves; a detour never comes before its way in, nor after the Lord Souls.
+      for (const [k, c] of chapters.entries())
+        expect(cs[k]?.requiredAreas).toEqual(c.requiredAreas);
+      expect(chapterOf(cs, "depths")).toBeLessThanOrEqual(chapterOf(cs, "blighttown"));
+      expect(chapterOf(cs, "ash-lake")).toBeGreaterThanOrEqual(chapterOf(cs, "the-great-hollow"));
+      expect(cs.at(-1)?.areas).toEqual(["kiln-of-the-first-flame"]);
+    }
+  });
 });
 
 describe("difficulty curves", () => {
   it("keeps every offset within two steps, rising for the rising curve", () => {
     for (const curve of CURVES) {
-      const offsets = curveOffsets(curve, 9, new Random(curve));
+      const offsets = curveOffsets(curve, 9, "medium", new Random(curve));
       expect(offsets).toHaveLength(9);
       for (const o of offsets) expect(Math.abs(o)).toBeLessThanOrEqual(2);
       if (curve === "constant") expect(new Set(offsets)).toEqual(new Set([0]));
@@ -202,6 +241,27 @@ describe("difficulty curves", () => {
       if (curve === "peaks") expect(offsets.filter((o) => o === 2)).toHaveLength(2);
       if (curve === "rollercoaster")
         for (let k = 1; k < 9; k++) expect(offsets[k]).not.toBe(offsets[k - 1]);
+    }
+  });
+
+  it("turns peaks into valleys at extreme, and never ends below the chosen level", () => {
+    for (let i = 0; i < 50; i++) {
+      const valleys = curveOffsets("peaks", 9, "extreme", new Random(`valley-${String(i)}`));
+      expect(valleys.filter((o) => o === -1)).toHaveLength(2);
+      expect(valleys.filter((o) => o !== -1).every((o) => o === 0)).toBe(true);
+      // The rollercoaster changes level at the edges too, but for the last step back up.
+      for (const level of ["easy", "extreme"] as const) {
+        const ride = curveOffsets("rollercoaster", 9, level, new Random(`ride-${String(i)}`)).map(
+          (o) => shifted(level, o),
+        );
+        for (let k = 1; k < 8; k++) expect(ride[k]).not.toBe(ride[k - 1]);
+      }
+      for (const curve of CURVES)
+        for (const chapters of [4, 9])
+          for (const level of ["easy", "extreme"] as const)
+            expect(
+              curveOffsets(curve, chapters, level, new Random(`end-${String(i)}`)).at(-1),
+            ).toBeGreaterThanOrEqual(0);
     }
   });
 
@@ -326,6 +386,19 @@ describe("manual", () => {
     const numbers = [...manual.matchAll(/^(\d+)\. \*\*/gm)].map((m) => Number(m[1]));
     expect(numbers).toEqual(numbers.map((_, i) => i + 1));
     expect(numbers).toHaveLength(challenge.orders.length);
+  }, 30_000);
+
+  it("groups a short journey in four acts, with rules in each", () => {
+    for (const seed of ["act-1", "act-2", "act-3"]) {
+      const challenge = generate(world, { seed, difficulty: "medium", length: "short" });
+      expect(challenge.chapters.map((c) => c.goals.length)).toEqual([2, 2, 4, 1]);
+      expect(challenge.chapters[0]?.areas).toContain("northern-undead-asylum");
+      for (const k of [0, 1, 2, 3]) expect(challenge.orders.map((o) => o.chapter)).toContain(k);
+      const manual = renderManual(world, challenge);
+      expect(manual).toContain("## Act 1: The first bell");
+      expect(manual).toContain("## Act 3: The Lord Souls");
+      expect(manual).not.toContain("## Chapter");
+    }
   }, 30_000);
 
   it("writes a chapter restriction as the chapter's stretch", () => {
