@@ -1,15 +1,20 @@
 import { catalog, type Difficulty, type OrderTemplate } from "../orders/index.js";
 import { validate, type ArgValue, type OrderInstance, type Setup } from "../validator.js";
 import type { StartingGift, World } from "../world.js";
-import { DIFFICULTIES, domainsOf, drawArgs, fitCurse, rangeOf } from "./draw.js";
+import { chaptersOf } from "./chapters.js";
+import { CURVES, curveOffsets, shifted, type Curve } from "./curve.js";
+import { DIFFICULTIES, domainsOf, drawArgs, fitCurse, rangeOf, type DrawContext } from "./draw.js";
 import { Random } from "./random.js";
 
-export type Length = "short" | "full";
+export type Length = "short" | "full" | "epic";
+export const LENGTHS: readonly Length[] = ["short", "full", "epic"];
 
 export interface GeneratorConfig {
   readonly seed: string;
   readonly difficulty: Difficulty;
   readonly length: Length;
+  /** How difficulty moves across the chapters; drawn by the seed when absent. */
+  readonly curve?: Curve;
   /** Fixed by the player; drawn by the seed when absent. */
   readonly startingClass?: string;
   readonly giftRow?: number;
@@ -20,18 +25,33 @@ export interface GeneratedOrder {
   readonly template: OrderTemplate;
   readonly args: Readonly<Record<string, ArgValue>>;
   readonly exceptions: readonly string[];
+  /** The index of the order's chapter; absent for a rule of the whole journey. */
+  readonly chapter?: number;
+}
+
+/** A chapter as the challenge plays it: its stretch of the run and its place on the curve. */
+export interface ChapterPlan {
+  /** The milestone that ends the chapter. */
+  readonly goal: string;
+  readonly areas: readonly string[];
+  readonly bosses: readonly string[];
+  /** Steps away from the challenge's difficulty (the curve); shared by every player of a group. */
+  readonly offset: number;
+  readonly difficulty: Difficulty;
 }
 
 export interface Challenge {
   readonly config: GeneratorConfig;
   readonly dataVersion: string;
   readonly setup: Required<Setup>;
-  /** In catalog order. */
+  readonly curve: Curve;
+  readonly chapters: readonly ChapterPlan[];
+  /** The rules of the whole journey first (in catalog order), then each chapter's, chapter by chapter. */
   readonly orders: readonly GeneratedOrder[];
 }
 
 /** Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw. */
-export const GENERATOR_VERSION = "3";
+export const GENERATOR_VERSION = "4";
 
 /** Soul level cap per difficulty (Proposto, to tune by playing); never below the class's level. */
 const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
@@ -40,18 +60,62 @@ const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
   hard: [18, 30],
   extreme: [1, 12],
 };
-/** Orders in a challenge (docs/02, "Ritmo"). */
-const ORDER_COUNTS: Readonly<Record<Length, readonly [number, number]>> = {
-  short: [4, 6],
-  full: [8, 12],
+
+/**
+ * How many orders a journey has (Proposto): rules of the whole journey, and rules of each chapter. A short
+ * challenge stays a handful of good rules; an epic one has rules for every area of the run.
+ */
+const JOURNEY_ORDERS: Readonly<Record<Length, readonly [number, number]>> = {
+  short: [2, 3],
+  full: [3, 5],
+  epic: [4, 6],
 };
+const CHAPTER_ORDERS: Readonly<Record<Length, readonly [number, number]>> = {
+  short: [0, 1],
+  full: [1, 3],
+  epic: [3, 5],
+};
+/** The Asylum has one area and one boss. */
+const FIRST_CHAPTER_MAX = 1;
+
+/** Orders that rule the whole journey; every other static order belongs to a chapter. */
+const JOURNEY_TEMPLATES = new Set([
+  "closed-merchant",
+  "run-lives",
+  "accumulated-curse",
+  "phase-swap",
+  "forbidden-area",
+  "earned-levels",
+  "earned-upgrades",
+]);
+/** Orders a chapter can only take in one place: before the first bell, or with a milestone to start after. */
+const ONLY_IN_CHAPTER: Readonly<Record<string, (k: number) => boolean>> = {
+  "boss-before-bell": (k) => k === 1,
+  "assigned-weapon": (k) => k > 0,
+  "chapter-restriction": (k) => k > 0,
+};
+
+/**
+ * Weight-only orders that no other order contradicts: they never make a set impossible, so the generator
+ * adds them without validating the whole set again (a journey validates dozens of times). "Wear what you
+ * find" is left out: it contradicts "no armor" and "nothing from the ground". The challenge is validated
+ * once more as a whole before it is handed out.
+ */
+const WEIGHT_ONLY_ALWAYS_FITS = new Set([
+  "no-bonfire",
+  "dry-fight",
+  "counted-attempts",
+  "run-lives",
+  "earned-upgrades",
+]);
+
 /** Fresh parameters tried for an order before it is left out. */
 const ATTEMPTS = 6;
 
 /**
- * The budget of a challenge (docs/07 in the workspace). Difficulty: the average weight an order may have,
- * so an easy challenge is mostly light orders; hard and extreme have no ceiling. Friction (time, searching,
- * repetition) has a ceiling by length, because no profile enjoys a challenge made of chores.
+ * The budget (docs/07 in the workspace). Difficulty: the average weight an order may have, so an easy
+ * chapter is mostly light orders; hard and extreme have no ceiling. Friction (time, searching, repetition)
+ * has a ceiling per order, because no profile enjoys a challenge made of chores.
  */
 const DIFFICULTY_PER_ORDER: Readonly<Record<Difficulty, number>> = {
   easy: 1.5,
@@ -59,7 +123,7 @@ const DIFFICULTY_PER_ORDER: Readonly<Record<Difficulty, number>> = {
   hard: Infinity,
   extreme: Infinity,
 };
-const FRICTION_BUDGET: Readonly<Record<Length, number>> = { short: 4, full: 8 };
+const FRICTION_PER_ORDER = 0.75;
 /**
  * How the candidate orders are shuffled: heavier orders come first more often as the difficulty grows
  * (weight raised to this power), so a tryhard gets the heavy orders without always getting the same ones.
@@ -72,65 +136,193 @@ const WEIGHT_BIAS: Readonly<Record<Difficulty, number>> = {
 };
 
 /**
- * Generates a static challenge: draws the setup, then adds orders one at a time in a shuffled order,
- * keeping an order only when it fits the budget and the whole set still validates as comfortable. An order
- * whose parameters fail is retried with new ones, then left out (the "repair" of docs/03). Same config and
+ * Generates a static challenge as a journey in chapters (docs/01 in the workspace): the run is cut at its
+ * milestones (the Asylum, the bells, the Lordvessel, each Lord Soul in a drawn order, the Kiln); the
+ * journey gets a few rules for the whole run, and each chapter its own rules about its areas and bosses,
+ * at the chapter's place on the difficulty curve. Orders are added one at a time, in a shuffled order,
+ * and kept only when they fit the budget and the whole set still validates as comfortable. Same config and
  * data, same challenge.
  */
 export function generate(world: World, config: GeneratorConfig): Challenge {
   const rng = new Random(`${config.seed}|${world.dataVersion}|${GENERATOR_VERSION}`);
   const setup = drawSetup(world, config, rng);
   const domains = domainsOf(world);
-  const target = rng.int(...ORDER_COUNTS[config.length]);
-  const difficultyBudget = target * DIFFICULTY_PER_ORDER[config.difficulty];
-  const bias = WEIGHT_BIAS[config.difficulty];
+  const curve = config.curve ?? rng.pick(CURVES);
+  const levelsLocked = setup.levelCap <= (world.classes.get(setup.startingClass)?.level ?? 1);
 
-  const candidates = rng.weightedShuffle(
-    catalog.filter((t: OrderTemplate) => t.validation.static !== undefined && t.optIn !== true),
-    (t) => t.weight.difficulty ** bias,
+  // The Lord Souls' order is the backbone of the later chapters, so it is drawn first and always kept.
+  const lordTemplate = templateOf("lord-order");
+  let lordOrder: OrderInstance | undefined;
+  for (let attempt = 0; attempt < ATTEMPTS * 4 && lordOrder === undefined; attempt++) {
+    const candidate = { template: lordTemplate, args: { order: rng.shuffle(domains.lordSouls) } };
+    if (validate(world, setup, [candidate]).verdict === "comfortable") lordOrder = candidate;
+  }
+  if (lordOrder === undefined)
+    throw new Error(`no order of the Lord Souls validates for ${config.seed}`);
+  const chapters = chaptersOf(world, lordOrder.args["order"] as readonly string[]);
+  const offsets = curveOffsets(curve, chapters.length, rng);
+  const plans: ChapterPlan[] = chapters.map((c, k) => ({
+    goal: c.goal,
+    areas: c.areas,
+    bosses: c.bosses,
+    offset: offsets[k] ?? 0,
+    difficulty: shifted(config.difficulty, offsets[k] ?? 0),
+  }));
+
+  const sections: { context: DrawContext; target: number; pool: OrderTemplate[] }[] = [];
+  const statics = catalog.filter(
+    (t: OrderTemplate) =>
+      t.validation.static !== undefined && t.optIn !== true && t.id !== "lord-order",
   );
-  let chosen: OrderInstance[] = [];
-  let exceptions: readonly (readonly string[])[] = [];
-  let difficulty = 0;
-  let friction = 0;
-  const usedAreas = new Set<string>();
-  for (const template of candidates) {
-    if (chosen.length >= target) break;
-    // Leave room for the orders still to come, at the lightest weight.
-    const after = difficulty + template.weight.difficulty + (target - chosen.length - 1);
-    if (after > difficultyBudget) continue;
-    if (friction + template.weight.friction > FRICTION_BUDGET[config.length]) continue;
-    for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
-      const args = drawArgs(template, domains, config.difficulty, rng);
-      if (args === undefined) break;
-      const area = args["area"];
-      if (typeof area === "string" && usedAreas.has(area)) continue; // one order per area
-      const next = [...chosen, { template, args }];
-      const result = validate(world, setup, next);
-      if (result.verdict !== "comfortable" || !result.complete) continue;
-      chosen = next;
-      exceptions = result.orders.map((o) => o.exceptions);
-      difficulty += template.weight.difficulty;
-      friction += template.weight.friction;
-      if (typeof area === "string") usedAreas.add(area);
-      break;
+  sections.push({
+    context: { difficulty: config.difficulty, levelsLocked },
+    target: rng.int(...JOURNEY_ORDERS[config.length]),
+    pool: statics.filter((t) => JOURNEY_TEMPLATES.has(t.id)),
+  });
+  chapters.forEach((chapter, k) => {
+    const [min, max] = CHAPTER_ORDERS[config.length];
+    sections.push({
+      context: {
+        difficulty: plans[k]?.difficulty ?? config.difficulty,
+        levelsLocked,
+        chapter: {
+          from: k === 0 ? chapter.goal : (chapters[k - 1]?.goal ?? chapter.goal),
+          until: chapter.goal,
+          areas: chapter.areas,
+          requiredAreas: chapter.requiredAreas,
+          bosses: chapter.bosses,
+          areasSoFar: chapters.slice(0, k + 1).flatMap((c) => c.areas),
+        },
+      },
+      target: Math.min(rng.int(min, max), k === 0 ? FIRST_CHAPTER_MAX : Infinity),
+      pool: statics.filter(
+        (t) => !JOURNEY_TEMPLATES.has(t.id) && (ONLY_IN_CHAPTER[t.id]?.(k) ?? true),
+      ),
+    });
+  });
+  const frictionBudget = FRICTION_PER_ORDER * sections.reduce((sum, s) => sum + s.target, 0);
+
+  let chosen: (OrderInstance & { chapter?: number })[] = [lordOrder];
+  let friction = lordTemplate.weight.friction;
+  const uses = new Map<string, number>();
+  // An area or a boss may gather several rules, but never the same rule twice.
+  const usedTargets = new Set<string>();
+  for (const [index, section] of sections.entries()) {
+    const chapter = index === 0 ? undefined : index - 1;
+    const { difficulty } = section.context;
+    const budget = section.target * DIFFICULTY_PER_ORDER[difficulty];
+    let spent = 0;
+    let added = 0;
+    // Orders already in the journey come later more often, so chapters do not repeat one another.
+    const candidates = rng.weightedShuffle(
+      section.pool,
+      (t) => t.weight.difficulty ** WEIGHT_BIAS[difficulty] / (1 + (uses.get(t.id) ?? 0)),
+    );
+    for (const template of candidates) {
+      if (added >= section.target) break;
+      // Leave room for the orders still to come, at the lightest weight.
+      if (spent + template.weight.difficulty + (section.target - added - 1) > budget) continue;
+      if (friction + template.weight.friction > frictionBudget) continue;
+      for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
+        const args = drawArgs(template, domains, section.context, rng);
+        if (args === undefined) break;
+        const targets = targetsOf(args).map((t) => `${template.id}|${t}`);
+        if (targets.some((t) => usedTargets.has(t))) continue;
+        if (pointless(template, args, chosen)) continue;
+        const next = [...chosen, { template, args, ...(chapter !== undefined && { chapter }) }];
+        if (
+          !WEIGHT_ONLY_ALWAYS_FITS.has(template.id) ||
+          template.validation.static !== "weightOnly"
+        ) {
+          const result = validate(world, setup, next);
+          if (result.verdict !== "comfortable" || !result.complete) continue;
+        }
+        chosen = next;
+        spent += template.weight.difficulty;
+        friction += template.weight.friction;
+        added++;
+        uses.set(template.id, (uses.get(template.id) ?? 0) + 1);
+        targets.forEach((t) => usedTargets.add(t));
+        break;
+      }
     }
   }
 
-  const orders = chosen
-    .map((o, i) => ({ ...o, exceptions: exceptions[i] ?? [] }))
-    .sort((a, b) => a.template.number - b.template.number);
-  return { config, dataVersion: world.dataVersion, setup, orders };
+  return finish(world, config, setup, curve, plans, chosen);
+}
+
+/** The challenge in manual order, with each order's automatic exceptions from one last validation. */
+function finish(
+  world: World,
+  config: GeneratorConfig,
+  setup: Required<Setup>,
+  curve: Curve,
+  chapters: readonly ChapterPlan[],
+  orders: readonly (OrderInstance & { chapter?: number })[],
+): Challenge {
+  const sorted = [...orders].sort(
+    (a, b) => (a.chapter ?? -1) - (b.chapter ?? -1) || a.template.number - b.template.number,
+  );
+  const result = validate(world, setup, sorted);
+  if (result.verdict !== "comfortable" || !result.complete)
+    throw new Error(`seed ${config.seed} does not validate: ${result.problems.join("; ")}`);
+  return {
+    config,
+    dataVersion: world.dataVersion,
+    setup,
+    curve,
+    chapters,
+    orders: sorted.map((o, i) => ({ ...o, exceptions: result.orders[i]?.exceptions ?? [] })),
+  };
+}
+
+/** The areas, bosses and restrictions an order is about. */
+function targetsOf(args: Readonly<Record<string, ArgValue>>): string[] {
+  return ["area", "boss", "restriction"].flatMap((name) => {
+    const value = args[name];
+    return typeof value === "string" ? [`${name}:${value}`] : [];
+  });
+}
+
+/**
+ * An order that would ask nothing on top of the others (the analysis of 2026-10-21): attempts against a
+ * boss that the deaths of the whole run already limit more tightly (every lost attempt is a death), or a
+ * chapter restriction the curse already holds.
+ */
+function pointless(
+  template: OrderTemplate,
+  args: Readonly<Record<string, ArgValue>>,
+  chosen: readonly OrderInstance[],
+): boolean {
+  const journey = (id: string, param: string) =>
+    chosen.find((o) => o.template.id === id)?.args[param];
+  if (template.id === "counted-attempts") {
+    const lives = journey("run-lives", "deaths");
+    const attempts = args["attempts"];
+    return typeof lives === "number" && typeof attempts === "number" && attempts - 1 >= lives;
+  }
+  if (template.id === "chapter-restriction") {
+    const curse = journey("accumulated-curse", "restrictions");
+    return typeof curse === "object" && curse.includes(args["restriction"] as string);
+  }
+  return false;
+}
+
+function templateOf(id: string): OrderTemplate {
+  const template = catalog.find((t: OrderTemplate) => t.id === id);
+  if (template === undefined) throw new Error(`no order "${id}" in the catalog`);
+  return template;
 }
 
 /**
  * One challenge for a group of players of different skill (docs/07 in the workspace): the same seed gives
- * everyone the same orders, areas, bosses, weapons, class and gift; only the numbers follow each player's
- * difficulty. The structure is generated for the hardest difficulty of the group, then eased for each
- * player. Every number is monotonic (a higher level cap, more deaths, attempts or points, fewer
- * restrictions never make a run impossible), so a structure possible for the hardest player is possible
- * for all; each eased challenge is still validated. The hardest player gets exactly the solo challenge.
- * Returns one challenge per difficulty given, in the same order.
+ * everyone the same orders, chapters, curve, areas, bosses, weapons, class and gift; only the numbers
+ * follow each player's difficulty. The structure is generated for the hardest difficulty of the group,
+ * then eased for each player: each chapter keeps its offset on the curve from the player's own difficulty.
+ * Every number is monotonic (a higher level cap, more deaths, attempts or points, fewer restrictions never
+ * make a run impossible), so a structure possible for the hardest player is possible for all; each eased
+ * challenge is still validated. The hardest player gets exactly the solo challenge. Returns one challenge
+ * per difficulty given, in the same order.
  */
 export function generateGroup(
   world: World,
@@ -157,33 +349,39 @@ function ease(world: World, base: Challenge, difficulty: Difficulty): Challenge 
   const levelCap =
     base.config.levelCap ??
     Math.max(classLevel, rescale(base.setup.levelCap, LEVEL_CAPS[from], LEVEL_CAPS[difficulty]));
+  const chapters = base.chapters.map((c) => ({ ...c, difficulty: shifted(difficulty, c.offset) }));
 
-  const orders: OrderInstance[] = base.orders.map(({ template, args }) => {
+  const orders = base.orders.map(({ template, args, chapter }) => {
+    const levels =
+      chapter === undefined
+        ? { from, to: difficulty }
+        : {
+            from: base.chapters[chapter]?.difficulty ?? from,
+            to: chapters[chapter]?.difficulty ?? difficulty,
+          };
     const eased: Record<string, ArgValue> = { ...args };
     for (const [name, spec] of Object.entries(template.params)) {
       const arg = args[name];
       if (spec.kind === "count" && typeof arg === "number")
         eased[name] = rescale(
           arg,
-          rangeOf(template, name, from),
-          rangeOf(template, name, difficulty),
+          rangeOf(template, name, levels.from),
+          rangeOf(template, name, levels.to),
         );
       if (spec.kind === "restrictionList" && typeof arg === "object")
-        eased[name] = fitCurse(arg, difficulty);
+        eased[name] = fitCurse(arg, levels.to);
     }
-    return { template, args: eased };
+    return { template, args: eased, ...(chapter !== undefined && { chapter }) };
   });
 
-  const setup = { ...base.setup, levelCap };
-  const result = validate(world, setup, orders);
-  if (result.verdict !== "comfortable" || !result.complete)
-    throw new Error(`the ${difficulty} version of seed ${base.config.seed} does not validate`);
-  return {
-    config: { ...base.config, difficulty },
-    dataVersion: base.dataVersion,
-    setup,
-    orders: orders.map((o, i) => ({ ...o, exceptions: result.orders[i]?.exceptions ?? [] })),
-  };
+  return finish(
+    world,
+    { ...base.config, difficulty },
+    { ...base.setup, levelCap },
+    base.curve,
+    chapters,
+    orders,
+  );
 }
 
 const rank = (d: Difficulty): number => DIFFICULTIES.indexOf(d);

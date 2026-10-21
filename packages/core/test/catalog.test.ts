@@ -14,8 +14,8 @@ const orders: readonly OrderTemplate[] = catalog;
 const each = it.each(orders.map((o) => [o.number, o.id, o] as const));
 
 describe("catalog", () => {
-  it("has the twenty orders of the catalog document, each once", () => {
-    expect(orders.map((o) => o.number)).toEqual(Array.from({ length: 20 }, (_, i) => i + 1));
+  it("has the orders of the catalog document, numbered from 1, each once", () => {
+    expect(orders.map((o) => o.number)).toEqual(Array.from({ length: 21 }, (_, i) => i + 1));
     expect(new Set(orders.map((o) => o.id)).size).toBe(orders.length);
   });
 

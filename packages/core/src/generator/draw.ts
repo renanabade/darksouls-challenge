@@ -1,8 +1,10 @@
-import { isMeleeWeapon, SCHOOLS } from "../build.js";
+import { isMeleeWeapon, SCHOOLS, type Boss } from "../build.js";
 import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
+import { reach } from "../reach.js";
+import { evaluate } from "../requirement.js";
 import type { ArgValue } from "../validator.js";
-import type { World } from "../world.js";
+import type { Location, World } from "../world.js";
 import type { Random } from "./random.js";
 
 /**
@@ -75,44 +77,120 @@ export function fitCurse(ids: readonly string[], difficulty: Difficulty): string
   return fitted;
 }
 
+/**
+ * Fewest corpse and chest pickups an area needs for "nothing from the ground" to cost anything: the
+ * analysis of 20 generated challenges (2026-10-21) found it drawn for areas with two items.
+ */
+const MIN_PICKUPS = 5;
+/** The restriction no chapter takes: levels are the level orders' business, and they last the whole run. */
+const NOT_FOR_A_CHAPTER = new Set(["no-level-ups"]);
+
 export interface Domains {
   readonly areas: readonly string[];
   readonly areasWithWeapons: readonly string[];
+  /** Areas with armor to pick up, the only ones where "wear what you find" asks anything. */
+  readonly areasWithArmor: readonly string[];
+  readonly areasWithPickups: readonly string[];
+  readonly areasWithBonfires: readonly string[];
   readonly bosses: readonly string[];
+  /** Bosses the first bell does not need: defeating one of the others before it asks nothing. */
+  readonly bossesBeforeBell: readonly string[];
   readonly merchants: readonly string[];
   readonly weaponLocations: readonly string[];
+  /** The area of each weapon location, by the location's name. */
+  readonly weaponLocationAreas: ReadonlyMap<string, string>;
   readonly weaponStyles: readonly string[];
   /** Schools of magic some spell of the data set belongs to. */
   readonly schools: readonly string[];
   readonly lordSouls: readonly string[];
 }
 
+const domainsCache = new WeakMap<World, Domains>();
+
+/** What the generator draws from, read once per world. */
 export function domainsOf(world: World): Domains {
+  let domains = domainsCache.get(world);
+  if (domains === undefined) domainsCache.set(world, (domains = readDomains(world)));
+  return domains;
+}
+
+function readDomains(world: World): Domains {
   const sorted = (xs: Iterable<string>): string[] => [...new Set(xs)].sort();
   const areaOf = (region: string): string | null => world.regions.get(region)?.area ?? null;
-  const weaponLocations = world.locations.filter((l) => {
+  const areasOf = (locations: readonly Location[]): string[] =>
+    sorted(locations.flatMap((l) => areaOf(l.region) ?? []));
+  const found = world.locations.filter((l) => l.found === true);
+  const weaponLocations = found.filter((l) => {
     const weapon = world.weapons.get(l.item);
-    return l.found === true && weapon !== undefined && isMeleeWeapon(weapon);
+    return weapon !== undefined && isMeleeWeapon(weapon);
   });
+  const pickups = new Map<string, number>();
+  for (const area of found.flatMap((l) => areaOf(l.region) ?? []))
+    pickups.set(area, (pickups.get(area) ?? 0) + 1);
+  const bell = world.milestones.get("bell-undead-parish");
+  // The graph has no boss gates yet (data need G7): a bell in the same region as a boss can be rung, by
+  // the graph, without defeating the boss. Such a boss is taken as one the bell needs.
+  const bellRegions = new Set(
+    world.locations.filter((l) => l.item.startsWith("Bell of Awakening")).map((l) => l.region),
+  );
+  const ringable = (boss: Boss): boolean => {
+    if (bell === undefined) return true;
+    // The first boss opens the run, a gate the graph does not hold either.
+    if (bellRegions.has(boss.region) || `boss-${boss.id}` === RUN_START) return false;
+    const r = reach(world, { forbiddenItems: new Set([boss.defeatedItem]) });
+    return evaluate(bell.requires, {
+      has: (i) => r.items.has(i),
+      reached: (id) => r.regions.has(id),
+    });
+  };
   return {
     areas: sorted([...world.regions.values()].flatMap((r) => (r.area === null ? [] : [r.area]))),
-    areasWithWeapons: sorted(weaponLocations.flatMap((l) => areaOf(l.region) ?? [])),
+    areasWithWeapons: areasOf(weaponLocations),
+    areasWithArmor: areasOf(found.filter((l) => l.kind === "armor")),
+    areasWithPickups: sorted([...pickups].filter(([, n]) => n >= MIN_PICKUPS).map(([a]) => a)),
+    areasWithBonfires: areasOf(world.locations.filter((l) => l.category === "BONFIRE")),
     bosses: sorted(world.bosses.keys()),
+    bossesBeforeBell: sorted([...world.bosses.values()].filter(ringable).map((b) => b.id)),
     merchants: sorted(world.merchants.keys()),
     weaponLocations: sorted(weaponLocations.map((l) => l.name)),
+    weaponLocationAreas: new Map(
+      weaponLocations.flatMap((l) => {
+        const area = areaOf(l.region);
+        return area === null ? [] : [[l.name, area] as const];
+      }),
+    ),
     weaponStyles: sorted([...world.weapons.values()].filter(isMeleeWeapon).map((w) => w.category)),
     schools: SCHOOLS.filter((s) => [...world.spells.values()].some((spell) => spell.school === s)),
     lordSouls: sorted(world.locations.filter((l) => l.category === "LORD_SOUL").map((l) => l.item)),
   };
 }
 
-/** Parameters for one order, or undefined when the order is not generated (live only, opt-in). */
+/** Where an order is drawn: its difficulty, and the chapter it belongs to (none for the whole journey). */
+export interface DrawContext {
+  readonly difficulty: Difficulty;
+  readonly chapter?: {
+    /** The milestone the chapter starts after, and the one that ends it. */
+    readonly from: string;
+    readonly until: string;
+    readonly areas: readonly string[];
+    readonly requiredAreas: readonly string[];
+    readonly bosses: readonly string[];
+    /** Areas of this chapter and the ones before it, where a weapon for it can come from. */
+    readonly areasSoFar: readonly string[];
+  };
+  /** True when the level cap is the class's level: no order about levels would ask anything. */
+  readonly levelsLocked: boolean;
+}
+
+/** Parameters for one order, or undefined when the order cannot be drawn here. */
 export function drawArgs(
   template: OrderTemplate,
   domains: Domains,
-  difficulty: Difficulty,
+  context: DrawContext,
   rng: Random,
 ): Record<string, ArgValue> | undefined {
+  const { difficulty, chapter } = context;
+  if (chapter !== undefined) return drawInChapter(template, domains, context, chapter, rng);
   const count = (param: string): number => rng.int(...rangeOf(template, param, difficulty));
   const stretch = (): { from: string; until: string } => {
     const i = rng.int(0, STRETCH_ENDS.length - 1);
@@ -140,10 +218,13 @@ export function drawArgs(
       return { attempts: count("attempts"), boss: rng.pick(domains.bosses) };
     case "run-lives":
       return { deaths: count("deaths") };
-    case "accumulated-curse":
-      return {
-        restrictions: fitCurse(rng.shuffle(restrictions.map((r) => r.id).sort()), difficulty),
-      };
+    case "accumulated-curse": {
+      const ids = restrictions
+        .map((r) => r.id)
+        .filter((id) => !(context.levelsLocked && id === "no-level-ups"))
+        .sort();
+      return { restrictions: fitCurse(rng.shuffle(ids), difficulty) };
+    }
     case "phase-swap": {
       // Schools of magic from medium up: switching to magic costs attributes, a catalyst and spells to buy,
       // which punishes a casual player and is the novelty a bored veteran looks for (docs/07, workspace).
@@ -158,9 +239,75 @@ export function drawArgs(
     case "lord-order":
       return { order: rng.shuffle(domains.lordSouls) };
     case "earned-levels":
+      if (context.levelsLocked) return undefined;
       return { condition: rng.pick(CONDITIONS), points: count("points") };
     case "earned-upgrades":
       return {};
+    default:
+      return undefined;
+  }
+}
+
+/**
+ * An order of one chapter: its area or boss comes from the chapter, and a phase is the chapter itself.
+ * An easy chapter keeps to the areas its goal needs: a casual player may never visit a detour, and an
+ * order there would ask nothing of them (docs/07 in the workspace).
+ */
+function drawInChapter(
+  template: OrderTemplate,
+  domains: Domains,
+  context: DrawContext,
+  chapter: NonNullable<DrawContext["chapter"]>,
+  rng: Random,
+): Record<string, ArgValue> | undefined {
+  const { difficulty } = context;
+  const pool =
+    difficulty === "easy" && chapter.requiredAreas.length > 0
+      ? chapter.requiredAreas
+      : chapter.areas;
+  const areaFrom = (domain: readonly string[]): string | undefined => {
+    const areas = pool.filter((a) => domain.includes(a));
+    return areas.length > 0 ? rng.pick(areas) : undefined;
+  };
+  const boss = (): string | undefined =>
+    chapter.bosses.length > 0 ? rng.pick(chapter.bosses) : undefined;
+  const one = <K extends string>(name: K, value: string | undefined) =>
+    value === undefined ? undefined : ({ [name]: value } as Record<K, string>);
+  switch (template.id) {
+    case "first-weapon-of-area": {
+      const area = areaFrom(domains.areasWithWeapons);
+      return area === undefined ? undefined : { area, until: chapter.until };
+    }
+    case "assigned-weapon": {
+      const locations = domains.weaponLocations.filter((name) =>
+        chapter.areasSoFar.includes(domains.weaponLocationAreas.get(name) ?? ""),
+      );
+      if (locations.length === 0) return undefined;
+      return { from: chapter.from, until: chapter.until, location: rng.pick(locations) };
+    }
+    case "wear-what-you-find":
+      return one("area", areaFrom(domains.areasWithArmor));
+    case "nothing-from-the-ground":
+      return one("area", areaFrom(domains.areasWithPickups));
+    case "no-bonfire":
+      return one("area", areaFrom(domains.areasWithBonfires));
+    case "dry-fight":
+      return one("boss", boss());
+    case "counted-attempts": {
+      const b = boss();
+      if (b === undefined) return undefined;
+      return { attempts: rng.int(...rangeOf(template, "attempts", difficulty)), boss: b };
+    }
+    case "boss-before-bell":
+      return { boss: rng.pick(domains.bossesBeforeBell) };
+    case "chapter-restriction": {
+      const tiers = CURSE[difficulty].tiers;
+      const ids = restrictions
+        .filter((r) => tiers.includes(r.tier) && !NOT_FOR_A_CHAPTER.has(r.id))
+        .map((r) => r.id)
+        .sort();
+      return { from: chapter.from, until: chapter.until, restriction: rng.pick(ids) };
+    }
     default:
       return undefined;
   }

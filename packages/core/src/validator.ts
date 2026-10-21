@@ -173,6 +173,29 @@ export function validate(
   // order is read, because a shared shop closes only when all its merchants are closed.
   const exceptionOrders: { result: { exceptions: string[] }; candidates: () => Location[] }[] = [];
   const closedMerchants = new Set<string>();
+  // Orders that choose your weapon: when each one starts and ends, and every weapon it may hand you.
+  const weaponPhases: {
+    id: string;
+    starts: (r: Reach) => boolean;
+    until: Milestone | undefined;
+    weapons: (c: Constraints) => Weapon[];
+  }[] = [];
+  // Worst case: a restriction of a curse or of one chapter applies to the whole run.
+  const restrict = (id: string, result: { exceptions: string[] }, label: string): void => {
+    activeRestrictions.add(id);
+    const restriction = restrictions.find((r) => r.id === id);
+    if (restriction === undefined)
+      throw new InvalidOrderError(`${label}: unknown restriction "${id}"`);
+    const effect: RestrictionEffect = restriction.effect;
+    if (effect.kind === "oneHanded") twoHanding = false;
+    if (effect.kind === "noLevelUps") noLevelUps = true;
+    if (effect.kind === "noItemsOfKind") {
+      exceptionOrders.push({
+        result,
+        candidates: () => world.locations.filter((l) => l.kind === effect.itemKind),
+      });
+    }
+  };
 
   for (const [index, { template, args }] of orders.entries()) {
     const label = `order ${String(index)} (${template.id})`;
@@ -252,14 +275,22 @@ export function validate(
         const regions = areaRegions(world, area, label);
         const until = milestoneArg(world, args, "until", label);
         build(label);
+        const areaWeapons = (c: Constraints): Weapon[] =>
+          world.locations
+            .filter((l) => l.found === true && regions.has(l.region) && !c.locations.has(l))
+            .flatMap((l) => world.weapons.get(l.item) ?? [])
+            .filter(isMeleeWeapon);
+        weaponPhases.push({
+          id: template.id,
+          starts: (r) => [...regions].some((id) => r.regions.has(id)),
+          until,
+          weapons: areaWeapons,
+        });
         checks.push((c) => {
           const before = run(c, new Set(itemsOf(until.requires)));
           if (![...regions].some((r) => before.regions.has(r)))
             return `${area} cannot be entered before ${until.name}`;
-          const weapons = world.locations
-            .filter((l) => l.found === true && regions.has(l.region) && !c.locations.has(l))
-            .flatMap((l) => world.weapons.get(l.item) ?? [])
-            .filter(isMeleeWeapon);
+          const weapons = areaWeapons(c);
           if (weapons.length === 0) return `there is no weapon to find in ${area}`;
           const enterArea: Requirement = { any: [...regions].map((r) => ({ region: r })) };
           const beforeArea = new Set(bossesRequiredFor(c, `area:${area}`, enterArea));
@@ -288,6 +319,12 @@ export function validate(
         if (weapon === undefined || !isMeleeWeapon(weapon))
           throw new InvalidOrderError(`${label}: "${name}" does not hold a melee weapon`);
         build(label);
+        weaponPhases.push({
+          id: template.id,
+          starts: (r) => holds(r, from.requires),
+          until,
+          weapons: () => [weapon],
+        });
         checks.push((c) => {
           const done = new Set(bossesRequiredFor(c, `milestone:${from.id}`, from.requires));
           const stretch = bossesRequiredFor(c, `milestone:${until.id}`, until.requires).filter(
@@ -306,21 +343,13 @@ export function validate(
       // Worst case: the player chooses the boss order, so every restriction on the list may apply from the
       // start. Checking them all at once never accepts an impossible list (it may refuse a possible one).
       case "accumulated-curse":
-        for (const id of listArg(args, "restrictions", label)) {
-          activeRestrictions.add(id);
-          const restriction = restrictions.find((r) => r.id === id);
-          if (restriction === undefined)
-            throw new InvalidOrderError(`${label}: unknown restriction "${id}"`);
-          const effect: RestrictionEffect = restriction.effect;
-          if (effect.kind === "oneHanded") twoHanding = false;
-          if (effect.kind === "noLevelUps") noLevelUps = true;
-          if (effect.kind === "noItemsOfKind") {
-            exceptionOrders.push({
-              result,
-              candidates: () => world.locations.filter((l) => l.kind === effect.itemKind),
-            });
-          }
-        }
+        for (const id of listArg(args, "restrictions", label)) restrict(id, result, label);
+        break;
+
+      case "chapter-restriction":
+        milestoneArg(world, args, "from", label);
+        milestoneArg(world, args, "until", label);
+        restrict(stringArg(args, "restriction", label), result, label);
         break;
 
       // Worst case: the player may never earn a point.
@@ -345,6 +374,13 @@ export function validate(
         }
         const kit = world.classes.get(setup.startingClass ?? "")?.kit ?? [];
         build(label);
+        // Its two styles rule your weapon for the whole run; its own check fits them in one build.
+        weaponPhases.push({
+          id: template.id,
+          starts: () => true,
+          until: undefined,
+          weapons: () => [],
+        });
         checks.push((c) => {
           const [before, after] = styles as [string, string];
           // What the player can hold by then: pickups and purchases in reach, and the class's kit, which is
@@ -401,11 +437,43 @@ export function validate(
 
   // Orders that contradict each other whatever the world allows.
   const ids = orders.map((o) => o.template.id);
-  const choosers = orders.filter((o) => ["assign", "swap"].includes(o.template.command.kind));
-  if (choosers.length > 1) {
-    const names = choosers.map((o) => o.template.id).join(", ");
-    checks.push(() => `only one order can choose your weapon (${names})`);
+  // Two orders may choose your weapon only one after the other: one ends before the other can start.
+  const endsBefore = (
+    c: Constraints,
+    a: (typeof weaponPhases)[number],
+    b: (typeof weaponPhases)[number],
+  ) => a.until !== undefined && !b.starts(run(c, new Set(itemsOf(a.until.requires))));
+  for (const [i, a] of weaponPhases.entries()) {
+    for (const b of weaponPhases.slice(i + 1)) {
+      checks.push((c) =>
+        endsBefore(c, a, b) || endsBefore(c, b, a)
+          ? undefined
+          : `${a.id} and ${b.id} would choose your weapon at the same time`,
+      );
+    }
   }
+  // Attributes only grow, so one build must wield every weapon the orders may hand you, at any time.
+  if (weaponPhases.length > 1) {
+    checks.push((c) => {
+      const problem = weaponProblem(
+        weaponPhases.flatMap((p) => p.weapons(c)),
+        "weapon orders",
+        [],
+      );
+      return problem && `${problem} (every weapon the orders may hand you)`;
+    });
+  }
+  // Armor picked up must be worn, and nothing picked up may be worn: not both in one area.
+  const areasOf = (id: string) =>
+    orders.filter((o) => o.template.id === id).map((o) => o.args["area"]);
+  const wearArea = areasOf("wear-what-you-find").find((a) =>
+    areasOf("nothing-from-the-ground").includes(a),
+  );
+  if (wearArea !== undefined)
+    checks.push(
+      () =>
+        `"wear-what-you-find" and "nothing-from-the-ground" contradict each other in ${String(wearArea)}`,
+    );
   for (const [restriction, template] of CONFLICTS) {
     if (activeRestrictions.has(restriction) && ids.includes(template))
       checks.push(() => `the restriction "${restriction}" contradicts the order "${template}"`);

@@ -37,15 +37,21 @@ Generate a challenge (prints its manual; `--json` for data):
 
 ```sh
 pnpm generate --seed ashen-one --difficulty medium --length full
+pnpm generate --seed ashen-one --difficulty hard --length epic --curve peaks
 pnpm generate --seed ashen-one --class Knight --gift 2406 --level-cap 30
 pnpm generate --seed ashen-one --players "easy,extreme"
 ```
 
+A challenge is a journey in chapters, cut at the run's milestones (the Asylum, the bells, the Lordvessel, each Lord
+Soul, the Kiln): a few rules for the whole journey, and each chapter's own rules about its areas and bosses.
+
 `--players` generates one challenge for a group of players of different skill: everyone gets the same orders, and
 only the numbers (level cap, deaths, attempts, the size of the curse) follow each player's difficulty.
 
-Difficulty: `easy`, `medium`, `hard`, `extreme`. Length: `short` (4–6 orders) or `full` (8–12). Class, starting
-gift (row in `data/ds1/classes.json`) and soul level cap are drawn from the seed unless given.
+Difficulty: `easy`, `medium`, `hard`, `extreme`. Curve (how difficulty moves across the chapters): `constant`,
+`rising`, `peaks`, `rollercoaster`. Length: `short` (a handful of rules), `full` (one to three per chapter) or
+`epic` (three to five). Curve, class, starting gift (row in `data/ds1/classes.json`) and soul level cap are drawn
+from the seed unless given.
 
 Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), checked on commit. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and

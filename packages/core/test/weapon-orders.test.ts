@@ -183,16 +183,42 @@ describe("build restrictions and earned levels (worst case)", () => {
 });
 
 describe("orders that contradict each other", () => {
-  it("allows only one order to choose your weapon", () => {
+  const assigned = order("assigned-weapon", {
+    from: "brute-dead",
+    until: "wraith-dead",
+    location: "keep: Moon Blade",
+  });
+
+  it("lets two orders choose your weapon one after the other, with one build for all", () => {
     const first = order("first-weapon-of-area", { area: "yard", until: "brute-dead" });
-    const assigned = order("assigned-weapon", {
+    // Heavy Axe (8 Strength points) and Moon Blade (7 Intelligence points): 15 of the Knight's 15.
+    expect(validate(small, setup(20), [first, assigned]).verdict).toBe("comfortable");
+    expect(validate(small, setup(19), [first, assigned]).problems).toEqual([
+      "Club and Heavy Axe and Moon Blade need 15 attribute points; the build leaves 14 (every weapon the orders may hand you)",
+    ]);
+  });
+
+  it("refuses two orders that choose your weapon at the same time", () => {
+    const first = order("first-weapon-of-area", { area: "yard", until: "wraith-dead" });
+    expect(validate(small, setup(40), [first, assigned]).problems).toContain(
+      "first-weapon-of-area and assigned-weapon would choose your weapon at the same time",
+    );
+    const swap = order("phase-swap", { milestone: "brute-dead", before: "hammer", after: "sword" });
+    expect(validate(small, setup(40), [swap, assigned]).problems).toContain(
+      "phase-swap and assigned-weapon would choose your weapon at the same time",
+    );
+  });
+
+  it("applies a chapter restriction to the whole run, the worst case", () => {
+    const yard = order("first-weapon-of-area", { area: "yard", until: "brute-dead" });
+    const chapter = order("chapter-restriction", {
       from: "brute-dead",
       until: "wraith-dead",
-      location: "keep: Moon Blade",
+      restriction: "one-handed",
     });
-    expect(validate(small, setup(30), [first, assigned]).problems).toEqual([
-      "only one order can choose your weapon (first-weapon-of-area, assigned-weapon)",
-    ]);
+    expect(validate(small, setup(20), [yard, chapter]).problems[0]).toMatch(
+      /^Heavy Axe needs 18 attribute points/,
+    );
   });
 
   it("refuses to wear what you find under a curse of no armor", () => {
