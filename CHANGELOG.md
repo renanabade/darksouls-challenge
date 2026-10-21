@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.9.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.8.0...darksouls-challenge-v0.9.0) (2026-10-21)
+
+
+### Features
+
+* **orders:** area rules for lizards, chests and bonfires (24 to 26) ([ccd7c04](https://github.com/renanabade/darksouls-challenge/commit/ccd7c04ae86b7fcce0d0cab17ce4b8a1d25ed3ab))
+* **orders:** boss fights by element (orders 22 and 23) ([d6b8efe](https://github.com/renanabade/darksouls-challenge/commit/d6b8efe406a3bd24499ebe5d2f4096cac6dfdbfd))
+* **orders:** errands and the other way (orders 27 and 28) ([021e372](https://github.com/renanabade/darksouls-challenge/commit/021e3723a4b13b3ed9701e5b73aaa0534533ad41))
+
 ## [0.8.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.7.0...darksouls-challenge-v0.8.0) (2026-10-21)
 
 
