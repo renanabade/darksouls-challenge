@@ -2,7 +2,7 @@
 /**
  * Generates a static challenge and prints its manual (Markdown, or JSON with --json).
  *
- *   pnpm generate --seed ashen-one --difficulty medium --length full
+ *   pnpm generate --seed ashen-one --difficulty medium --length epic --curve rising
  *   pnpm generate --seed ashen-one --class Knight --gift 2406 --level-cap 30 --json
  *   pnpm generate --seed ashen-one --players easy,hard   (one challenge for a group, with handicap)
  *
@@ -12,18 +12,17 @@ import { randomBytes } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import {
+  CURVES,
   DIFFICULTIES,
   generate,
   generateGroup,
+  LENGTHS,
   orderText,
   parseWorld,
   renderManual,
   type Challenge,
-  type Length,
   type RawDataSet,
 } from "@darksouls-challenge/core";
-
-const LENGTHS: readonly Length[] = ["short", "full"];
 
 function readDataSet(dir: URL): RawDataSet {
   const read = (file: string): unknown =>
@@ -56,6 +55,7 @@ function main(): void {
       difficulty: { type: "string", default: "medium" },
       players: { type: "string" },
       length: { type: "string", default: "full" },
+      curve: { type: "string" },
       class: { type: "string" },
       gift: { type: "string" },
       "level-cap": { type: "string" },
@@ -70,6 +70,7 @@ function main(): void {
   const config = {
     seed: values.seed ?? randomBytes(4).toString("hex"),
     length: oneOf("length", values.length, LENGTHS),
+    ...(values.curve !== undefined && { curve: oneOf("curve", values.curve, CURVES) }),
     ...(values.class !== undefined && { startingClass: values.class }),
     ...(values.gift !== undefined && { giftRow: Number(values.gift) }),
     ...(values["level-cap"] !== undefined && { levelCap: Number(values["level-cap"]) }),
@@ -92,6 +93,7 @@ function main(): void {
       ...challenge,
       orders: challenge.orders.map((o) => ({
         id: o.template.id,
+        ...(o.chapter !== undefined && { chapter: o.chapter }),
         args: o.args,
         exceptions: o.exceptions,
         text: orderText(world, o),

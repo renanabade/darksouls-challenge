@@ -1,7 +1,7 @@
 import type { OrderTemplate } from "./model.js";
 
 /**
- * The twenty orders of the catalog (docs/02 in the planning workspace), as data.
+ * The orders of the catalog (docs/02 in the planning workspace), as data.
  * Texts are the manual's wording; numbers match the catalog document.
  */
 export const catalog = [
@@ -300,5 +300,22 @@ export const catalog = [
     command: { kind: "assign", action: "weapon", source: "fitsStats", weapon: "weapon" },
     validation: { live: "actualCase" },
     asks: "strengthAndDexterity",
+  },
+  {
+    // A restriction of the vocabulary for one chapter of the journey (docs/01, "Jornada em capítulos").
+    id: "chapter-restriction",
+    number: 21,
+    weight: { difficulty: 2, friction: 0 },
+    title: "Chapter restriction",
+    text: "From the moment {from} until {until}: {restriction}",
+    params: {
+      from: { kind: "milestone" },
+      until: { kind: "milestone" },
+      restriction: { kind: "restriction" },
+    },
+    trigger: { kind: "milestone", milestone: { param: "from" } },
+    scope: { kind: "phase", from: { param: "from" }, until: { param: "until" } },
+    command: { kind: "prohibit", action: "restriction", restriction: "restriction" },
+    validation: { static: "worstCase", live: "worstCase" },
   },
 ] as const satisfies readonly OrderTemplate[];

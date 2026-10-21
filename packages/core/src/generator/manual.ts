@@ -1,4 +1,5 @@
 import { restrictions } from "../orders/index.js";
+import { itemsOf } from "../requirement.js";
 import type { ArgValue } from "../validator.js";
 import type { World } from "../world.js";
 import type { Challenge, GeneratedOrder } from "./generate.js";
@@ -19,11 +20,8 @@ function milestonePhrase(world: World, id: string): string {
     "kiln-open": "the Kiln of the First Flame opens",
   };
   if (fixed[id] !== undefined) return fixed[id];
-  const slot = /^lord-souls-placed-(\d)$/.exec(id)?.[1];
-  if (slot !== undefined) {
-    const ordinal = ["first", "second", "third", "fourth"][Number(slot) - 1] ?? slot;
-    return `you place your ${ordinal} Lord Soul`;
-  }
+  // Each lord-souls milestone is one soul placed in the Lordvessel, not the n-th soul placed.
+  if (milestone.kind === "lord-souls") return `you place the ${lordSoulOf(world, id)}`;
   if (milestone.kind === "boss") {
     const boss = [...world.bosses.values()].find((b) => `boss-${b.id}` === id);
     return `you defeat ${boss ? bossName(boss.id, boss.name) : milestone.name}`;
@@ -33,6 +31,35 @@ function milestonePhrase(world: World, id: string): string {
 
 function bossName(id: string, name: string): string {
   return BOSS_NAMES[id] ?? name;
+}
+
+/** The Lord Soul a lord-souls milestone places, e.g. "Lord Soul (Nito)". */
+function lordSoulOf(world: World, id: string): string {
+  const souls = new Set(
+    world.locations.filter((l) => l.category === "LORD_SOUL").map((l) => l.item),
+  );
+  const requires = world.milestones.get(id)?.requires;
+  if (requires === undefined) return id;
+  return [...itemsOf(requires)].find((i) => souls.has(i)) ?? id;
+}
+
+/** A chapter's name, from the milestone that ends it: "The first bell", "Lord Soul: Nito". */
+export function chapterTitle(world: World, goal: string): string {
+  const fixed: Readonly<Record<string, string>> = {
+    "boss-asylum-demon": "The Asylum",
+    "bell-undead-parish": "The first bell",
+    "both-bells": "The second bell",
+    "lordvessel-placed": "The Lordvessel",
+  };
+  if (fixed[goal] !== undefined) return fixed[goal];
+  const milestone = world.milestones.get(goal);
+  if (milestone?.kind === "lord-souls") {
+    const soul = lordSoulOf(world, goal);
+    return `Lord Soul: ${/\(([^)]+)\)/.exec(soul)?.[1] ?? soul}`;
+  }
+  if (milestone !== undefined && itemsOf(milestone.requires).has(world.goal))
+    return "The First Flame";
+  return milestone?.name ?? goal;
 }
 
 /** A school of magic as a fighting style: your attacks are its spells, cast with a catalyst of the school. */
@@ -84,6 +111,11 @@ function value(world: World, kind: string, arg: ArgValue): string {
     }
     case "equipmentSet":
       return SCHOOL_STYLES[arg] ?? `only ${plural(arg)}`;
+    case "restriction": {
+      // "...: do not roll."
+      const text = restrictions.find((r) => r.id === arg)?.text ?? arg;
+      return text.charAt(0).toLowerCase() + text.slice(1);
+    }
     default:
       return arg;
   }
@@ -165,29 +197,61 @@ function cursed(order: GeneratedOrder, restriction: string): boolean {
   return Array.isArray(list) && list.includes(restriction);
 }
 
-/** The manual as Markdown: the challenge's settings, then one numbered order per line. */
+/**
+ * The manual as Markdown: the challenge's settings, the rules of the whole journey, then each chapter with
+ * its stretch, areas, bosses, difficulty and rules. Rules are numbered across the manual, so players can
+ * refer to "rule 14". A chapter with no rules is left out.
+ */
 export function renderManual(world: World, challenge: Challenge): string {
   const { config, setup } = challenge;
   const gift = setup.gift.items.map((i) =>
     i.count > 1 ? `${i.item} x${String(i.count)}` : i.item,
   );
+  let number = 0;
+  const rule = (o: GeneratedOrder): string => {
+    const advice = o.template.advice ? ` _${o.template.advice}_` : "";
+    return `${String(++number)}. **${o.template.title}.** ${orderText(world, o)}${advice}`;
+  };
+  const names = (ids: readonly string[], of: (id: string) => string | undefined) =>
+    ids.map((id) => of(id) ?? id).join(", ");
+  const journey = challenge.orders.filter((o) => o.chapter === undefined).map(rule);
+  const chapters = challenge.chapters.flatMap((chapter, k) => {
+    const orders = challenge.orders.filter((o) => o.chapter === k);
+    if (orders.length === 0) return [];
+    const about = [
+      `Until ${milestonePhrase(world, chapter.goal)}`,
+      `**Areas:** ${names(chapter.areas, (id) => world.areas.get(id)?.name)}`,
+      chapter.bosses.length > 0 &&
+        `**Bosses:** ${names(chapter.bosses, (id) => {
+          const boss = world.bosses.get(id);
+          return boss && bossName(boss.id, boss.name);
+        })}`,
+      `**Difficulty:** ${chapter.difficulty}`,
+    ].filter(Boolean);
+    return [
+      `## Chapter ${String(k + 1)}: ${chapterTitle(world, chapter.goal)}`,
+      "",
+      about.join(" · "),
+      "",
+      ...orders.map(rule),
+      "",
+    ];
+  });
   const lines = [
     `# Dark Souls challenge — seed ${config.seed}`,
     "",
     `- **Class:** ${setup.startingClass}`,
     `- **Starting gift:** ${gift.length > 0 ? gift.join(", ") : "none"}`,
     `- **Soul level cap:** ${String(setup.levelCap)}`,
-    `- **Difficulty:** ${config.difficulty} · **Length:** ${config.length}`,
+    `- **Difficulty:** ${config.difficulty} · **Curve:** ${challenge.curve} · **Length:** ${config.length}`,
     "",
     "Follow every order. Break one, and the challenge is over: there is no penalty, only the end.",
     "",
-    "## Orders",
+    "## Rules of the journey",
     "",
-    ...challenge.orders.map((o, i) => {
-      const advice = o.template.advice ? ` _${o.template.advice}_` : "";
-      return `${String(i + 1)}. **${o.template.title}.** ${orderText(world, o)}${advice}`;
-    }),
+    ...journey,
     "",
+    ...chapters,
     ...definitions(challenge),
     `<sub>Data ${challenge.dataVersion}. Same seed and settings, same challenge.</sub>`,
     "",
