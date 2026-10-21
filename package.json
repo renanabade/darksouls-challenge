@@ -1,6 +1,6 @@
 {
   "name": "darksouls-challenge",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "description": "Challenge generator for Dark Souls: every run is a set of self-imposed orders, checked to be possible.",
   "license": "MIT",

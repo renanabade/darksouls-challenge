@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.6.0...darksouls-challenge-v0.7.0) (2026-10-21)
+
+
+### Features
+
+* **core:** the challenge as a journey in chapters ([dc6948a](https://github.com/renanabade/darksouls-challenge/commit/dc6948a55085c854dc378446be5e4fded3cbf410))
+
 ## [0.6.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.5.0...darksouls-challenge-v0.6.0) (2026-10-20)
 
 
