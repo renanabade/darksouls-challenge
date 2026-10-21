@@ -120,6 +120,9 @@ function value(world: World, kind: string, arg: ArgValue): string {
       return SCHOOL_STYLES[arg] ?? `only ${plural(arg)}`;
     case "element":
       return arg === "thunder" ? "lightning" : arg;
+    case "bonfire":
+      // "AL: Darkmoon Tomb Bonfire" → "Darkmoon Tomb Bonfire"
+      return arg.replace(/^[^:]+:\s*/, "");
     case "restriction": {
       // "...: do not roll."
       const text = restrictions.find((r) => r.id === arg)?.text ?? arg;
@@ -193,6 +196,11 @@ const DEFINITIONS: readonly {
       o.template.id === "nothing-from-the-ground" ||
       cursed(o, "no-consumables") ||
       cursed(o, "no-rings"),
+  },
+  {
+    term: "Chest",
+    text: "a treasure chest placed in the world. A mimic is not one, even though it looks like one.",
+    applies: (o) => o.template.id === "every-chest",
   },
   {
     term: "Consumable",

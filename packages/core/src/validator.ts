@@ -75,6 +75,8 @@ export class InvalidOrderError extends Error {
 }
 
 export const BELLS: readonly string[] = ["Bell of Awakening #1", "Bell of Awakening #2"];
+/** The location category of a crystal lizard's drop: one or more per lizard. */
+export const CRYSTAL_LIZARD = "CRYSTAL_LIZARD";
 /** Location categories of things bought from a merchant. */
 const SHOP = new Set(["SHOP_ITEM", "SHOP_EXTENDED_ITEM", "MISSABLE_SHOP_ITEM"]);
 
@@ -466,6 +468,31 @@ export function validate(
           return sources.some((w) => weaponProblem(w, label, []) === undefined)
             ? undefined
             : `nothing that deals ${e} against ${boss.name} fits the build`;
+        });
+        break;
+      }
+
+      // Existence: every crystal lizard, or every chest, of the area can be reached before the milestone.
+      case "lizard-hunt":
+      case "every-chest": {
+        const area = stringArg(args, "area", label);
+        const regions = areaRegions(world, area, label);
+        const until = milestoneArg(world, args, "until", label);
+        const lizards = template.id === "lizard-hunt";
+        const places = (
+          lizards ? world.locations.filter((l) => l.category === CRYSTAL_LIZARD) : world.chests
+        ).filter((p) => regions.has(p.region));
+        if (places.length === 0)
+          throw new InvalidOrderError(
+            `${label}: no ${lizards ? "crystal lizards" : "chests"} in ${area}`,
+          );
+        if (!lizards && args["chests"] !== places.length)
+          throw new InvalidOrderError(`${label}: ${area} holds ${String(places.length)} chests`);
+        checks.push((c) => {
+          const before = run(c, new Set(itemsOf(until.requires)));
+          return places.every((p) => before.regions.has(p.region))
+            ? undefined
+            : `not every ${lizards ? "crystal lizard" : "chest"} of ${area} can be reached before ${until.name}`;
         });
         break;
       }
