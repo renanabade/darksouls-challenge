@@ -100,6 +100,12 @@ export interface World {
   /** Starting classes, by name. */
   readonly classes: ReadonlyMap<string, StartingClass>;
   readonly areas: ReadonlyMap<string, Area>;
+  /** Treasure chests placed in the world (not the Firelink rescue chest), one per chest. */
+  readonly chests: readonly Chest[];
+}
+
+export interface Chest {
+  readonly region: string;
 }
 
 /** The parsed JSON of each data set file, still untrusted. Reading the files is the caller's job. */
@@ -116,6 +122,7 @@ export interface RawDataSet {
   readonly weapons?: unknown;
   readonly spells?: unknown;
   readonly areas?: unknown;
+  readonly treasures?: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -303,6 +310,18 @@ export function parseWorld(raw: RawDataSet): World {
     areas.set(area.id, area);
   }
 
+  const chests: Chest[] = [];
+  for (const [i, value] of check.array(raw.treasures ?? [], "treasures").entries()) {
+    const path = `treasures[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    if (check.string(fields, "container", path) !== "chest") continue;
+    if (check.boolean(fields, "rescue", path) || check.boolean(fields, "deathDrop", path)) continue;
+    const id = check.string(fields, "region", path);
+    region(id, `${path}.region`);
+    chests.push({ region: id });
+  }
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
   return {
     dataVersion: typeof meta["dataVersion"] === "string" ? meta["dataVersion"] : "",
@@ -319,5 +338,6 @@ export function parseWorld(raw: RawDataSet): World {
     spells,
     classes: classList,
     areas,
+    chests,
   };
 }

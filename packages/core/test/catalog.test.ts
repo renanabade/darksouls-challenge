@@ -15,7 +15,7 @@ const each = it.each(orders.map((o) => [o.number, o.id, o] as const));
 
 describe("catalog", () => {
   it("has the orders of the catalog document, numbered from 1, each once", () => {
-    expect(orders.map((o) => o.number)).toEqual(Array.from({ length: 23 }, (_, i) => i + 1));
+    expect(orders.map((o) => o.number)).toEqual(Array.from({ length: 26 }, (_, i) => i + 1));
     expect(new Set(orders.map((o) => o.id)).size).toBe(orders.length);
   });
 

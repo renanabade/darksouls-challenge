@@ -3,7 +3,7 @@ import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
 import { reach } from "../reach.js";
 import { evaluate } from "../requirement.js";
-import type { ArgValue } from "../validator.js";
+import { CRYSTAL_LIZARD, type ArgValue } from "../validator.js";
 import type { Location, World } from "../world.js";
 import type { Random } from "./random.js";
 
@@ -92,6 +92,12 @@ export interface Domains {
   readonly areasWithArmor: readonly string[];
   readonly areasWithPickups: readonly string[];
   readonly areasWithBonfires: readonly string[];
+  /** Areas with crystal lizards. */
+  readonly areasWithLizards: readonly string[];
+  /** How many chests each area holds, for areas with at least two. */
+  readonly chestsByArea: ReadonlyMap<string, number>;
+  /** The bonfires of each area with more than one, by location name. */
+  readonly bonfiresByArea: ReadonlyMap<string, readonly string[]>;
   readonly bosses: readonly string[];
   /** Bosses the first bell does not need: defeating one of the others before it asks nothing. */
   readonly bossesBeforeBell: readonly string[];
@@ -118,6 +124,11 @@ export function domainsOf(world: World): Domains {
 
 function readDomains(world: World): Domains {
   const sorted = (xs: Iterable<string>): string[] => [...new Set(xs)].sort();
+  const counts = (xs: readonly string[]): Map<string, number> => {
+    const tally = new Map<string, number>();
+    for (const x of [...xs].sort()) tally.set(x, (tally.get(x) ?? 0) + 1);
+    return tally;
+  };
   const areaOf = (region: string): string | null => world.regions.get(region)?.area ?? null;
   const areasOf = (locations: readonly Location[]): string[] =>
     sorted(locations.flatMap((l) => areaOf(l.region) ?? []));
@@ -151,6 +162,29 @@ function readDomains(world: World): Domains {
     areasWithArmor: areasOf(found.filter((l) => l.kind === "armor")),
     areasWithPickups: sorted([...pickups].filter(([, n]) => n >= MIN_PICKUPS).map(([a]) => a)),
     areasWithBonfires: areasOf(world.locations.filter((l) => l.category === "BONFIRE")),
+    areasWithLizards: areasOf(world.locations.filter((l) => l.category === CRYSTAL_LIZARD)),
+    chestsByArea: new Map(
+      [...counts(world.chests.flatMap((c) => areaOf(c.region) ?? []))].filter(([, n]) => n >= 2),
+    ),
+    bonfiresByArea: new Map(
+      sorted(
+        world.locations
+          .filter((l) => l.category === "BONFIRE")
+          .flatMap((l) => areaOf(l.region) ?? []),
+      )
+        .map(
+          (area) =>
+            [
+              area,
+              sorted(
+                world.locations
+                  .filter((l) => l.category === "BONFIRE" && areaOf(l.region) === area)
+                  .map((l) => l.name),
+              ),
+            ] as const,
+        )
+        .filter(([, names]) => names.length > 1),
+    ),
     bosses: sorted(world.bosses.keys()),
     bossesBeforeBell: sorted([...world.bosses.values()].filter(ringable).map((b) => b.id)),
     // Not the bosses the graph lets the run pass without (G7): what "before the boss" holds would be wrong.
@@ -301,6 +335,24 @@ function drawInChapter(
       return one("area", areaFrom(domains.areasWithPickups));
     case "no-bonfire":
       return one("area", areaFrom(domains.areasWithBonfires));
+    case "lizard-hunt": {
+      const area = areaFrom(domains.areasWithLizards);
+      return area === undefined ? undefined : { area, until: chapter.until };
+    }
+    case "every-chest": {
+      const area = areaFrom([...domains.chestsByArea.keys()]);
+      const chests = area === undefined ? undefined : domains.chestsByArea.get(area);
+      return area === undefined || chests === undefined
+        ? undefined
+        : { area, chests, until: chapter.until };
+    }
+    case "one-bonfire": {
+      const area = areaFrom([...domains.bonfiresByArea.keys()]);
+      const bonfires = area === undefined ? undefined : domains.bonfiresByArea.get(area);
+      return area === undefined || bonfires === undefined
+        ? undefined
+        : { area, bonfire: rng.pick(bonfires) };
+    }
     case "dry-fight":
       return one("boss", boss());
     case "counted-attempts": {

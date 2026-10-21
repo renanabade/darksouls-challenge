@@ -31,7 +31,11 @@ export type ParamKind =
   | "equipmentSet"
   | "lordSoulOrder"
   /** A damage element other than physical: magic, fire or thunder (lightning). */
-  | "element";
+  | "element"
+  /** A bonfire, by the name of its location ("AL: Darkmoon Tomb Bonfire"). */
+  | "bonfire"
+  /** A number read from the game data, not drawn by difficulty (how many chests an area holds). */
+  | "tally";
 
 export interface ParamSpec {
   readonly kind: ParamKind;
@@ -68,6 +72,7 @@ export type Scope =
 export type Command =
   | { readonly kind: "prohibit"; readonly action: "useItemsPickedUp" }
   | { readonly kind: "prohibit"; readonly action: "restAtBonfire" }
+  | { readonly kind: "prohibit"; readonly action: "restAtBonfireBut"; readonly bonfire: string }
   | { readonly kind: "prohibit"; readonly action: "useEstus" }
   | { readonly kind: "prohibit"; readonly action: "buyFrom"; readonly merchant: string }
   | { readonly kind: "prohibit"; readonly action: "enterArea"; readonly area: string }
@@ -78,6 +83,13 @@ export type Command =
   | { readonly kind: "require"; readonly action: "lordSoulsInOrder"; readonly order: string }
   | { readonly kind: "require"; readonly action: "defeatBoss"; readonly boss: string }
   | { readonly kind: "require"; readonly action: "dealElement"; readonly element: string }
+  | { readonly kind: "require"; readonly action: "killCrystalLizards"; readonly area: string }
+  | {
+      readonly kind: "require";
+      readonly action: "openChests";
+      readonly area: string;
+      readonly chests: string;
+    }
   | {
       readonly kind: "limit";
       readonly action: "attempts" | "deaths" | "levelUps" | "weaponUpgrades";
@@ -179,6 +191,7 @@ export function paramRefsOf(order: OrderTemplate): { param: string; kind: ParamK
   switch (command.kind) {
     case "prohibit":
       if (command.action === "buyFrom") add(command.merchant, "merchant");
+      if (command.action === "restAtBonfireBut") add(command.bonfire, "bonfire");
       if (command.action === "enterArea") add(command.area, "area");
       if (command.action === "useWeapon") add(command.weapon, "weapon");
       if (command.action === "restriction") add(command.restriction, "restriction");
@@ -188,6 +201,11 @@ export function paramRefsOf(order: OrderTemplate): { param: string; kind: ParamK
       if (command.action === "lordSoulsInOrder") add(command.order, "lordSoulOrder");
       if (command.action === "defeatBoss") add(command.boss, "boss");
       if (command.action === "dealElement") add(command.element, "element");
+      if (command.action === "killCrystalLizards") add(command.area, "area");
+      if (command.action === "openChests") {
+        add(command.area, "area");
+        add(command.chests, "tally");
+      }
       break;
     case "limit":
       if (typeof command.max === "string") add(command.max, "count");

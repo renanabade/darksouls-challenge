@@ -119,6 +119,7 @@ const ONLY_IN_CHAPTER: Readonly<Record<string, (k: number, goals: readonly strin
  */
 const WEIGHT_ONLY_ALWAYS_FITS = new Set([
   "no-bonfire",
+  "one-bonfire",
   "dry-fight",
   "counted-attempts",
   "run-lives",
@@ -373,6 +374,12 @@ function pointless(
     }
     case "dry-fight":
       return inChapter("chapter-restriction", "no-estus");
+    // Resting at one bonfire of an area asks nothing where no bonfire of it may be used, and the other way round.
+    case "one-bonfire":
+    case "no-bonfire": {
+      const other = template.id === "one-bonfire" ? "no-bonfire" : "one-bonfire";
+      return chosen.some((o) => o.template.id === other && o.args["area"] === args["area"]);
+    }
     default:
       return false;
   }
