@@ -350,10 +350,24 @@ function pointless(
   const forbidden = chosen.flatMap((o) =>
     o.template.id === "forbidden-area" ? [o.args["area"]] : [],
   );
-  const boss = typeof args["boss"] === "string" ? world.bosses.get(args["boss"]) : undefined;
-  const bossArea = boss === undefined ? undefined : world.regions.get(boss.region)?.area;
-  if (forbidden.some((a) => a === args["area"] || (bossArea != null && a === bossArea)))
-    return true;
+  // The area an order sends the player into: its own, its boss's, or its pickup's.
+  const placeOf = (a: Readonly<Record<string, ArgValue>>): string | undefined => {
+    if (typeof a["area"] === "string") return a["area"];
+    const b = typeof a["boss"] === "string" ? world.bosses.get(a["boss"]) : undefined;
+    const location = world.locations.find((l) => l.name === a["location"]);
+    const region = b?.region ?? location?.region;
+    return region === undefined ? undefined : (world.regions.get(region)?.area ?? undefined);
+  };
+  const place = placeOf(args);
+  if (place !== undefined && forbidden.includes(place)) return true;
+  // An area closed for the chapter (the other way) takes no other order of the chapter, and the other way round.
+  const closedTogether = chosen.some(
+    (o) =>
+      o.chapter === chapter &&
+      (o.template.id === "the-other-way") !== (template.id === "the-other-way") &&
+      placeOf(o.args) === place,
+  );
+  if (place !== undefined && chapter !== undefined && closedTogether) return true;
   const inChapter = (id: string, restriction?: string) =>
     chosen.some(
       (o) =>
