@@ -1,6 +1,8 @@
 export {
   ATTUNEMENT_FOR_ONE_SLOT,
   damages,
+  ELEMENTAL,
+  elementalDefenses,
   isMeleeWeapon,
   pointsToWield,
   SCHOOLS,

@@ -7,6 +7,12 @@
   "name": "Gaping Dragon",
   "parts": [
    {
+    "defense": {
+     "fire": 49,
+     "magic": 53,
+     "phys": 76,
+     "thunder": 38
+    },
     "flags": [],
     "hp": 2589,
     "immune": [
@@ -34,6 +40,12 @@
   "name": "Bell Gargoyles",
   "parts": [
    {
+    "defense": {
+     "fire": 77,
+     "magic": 81,
+     "phys": 105,
+     "thunder": 82
+    },
     "flags": [],
     "hp": 833,
     "immune": [],
@@ -47,6 +59,12 @@
     }
    },
    {
+    "defense": {
+     "fire": 77,
+     "magic": 81,
+     "phys": 105,
+     "thunder": 82
+    },
     "flags": [],
     "hp": 833,
     "immune": [],
@@ -71,6 +89,12 @@
   "name": "Crossbreed Priscilla",
   "parts": [
    {
+    "defense": {
+     "fire": 65,
+     "magic": 97,
+     "phys": 108,
+     "thunder": 65
+    },
     "flags": [],
     "hp": 920,
     "immune": [],
@@ -95,6 +119,12 @@
   "name": "Great Grey Wolf Sif",
   "parts": [
    {
+    "defense": {
+     "fire": 70,
+     "magic": 75,
+     "phys": 100,
+     "thunder": 75
+    },
     "flags": [],
     "hp": 1560,
     "immune": [],
@@ -119,6 +149,12 @@
   "name": "Pinwheel",
   "parts": [
    {
+    "defense": {
+     "fire": 67,
+     "magic": 71,
+     "phys": 84,
+     "thunder": 55
+    },
     "flags": [],
     "hp": 780,
     "immune": [],
@@ -143,6 +179,12 @@
   "name": "Gravelord Nito",
   "parts": [
    {
+    "defense": {
+     "fire": 81,
+     "magic": 87,
+     "phys": 116,
+     "thunder": 116
+    },
     "flags": [],
     "hp": 1877,
     "immune": [
@@ -171,6 +213,12 @@
   "name": "Chaos Witch Quelaag",
   "parts": [
    {
+    "defense": {
+     "fire": 9999,
+     "magic": 104,
+     "phys": 116,
+     "thunder": 93
+    },
     "flags": [],
     "hp": 1744,
     "immune": [
@@ -200,6 +248,12 @@
   "name": "Bed of Chaos",
   "parts": [
    {
+    "defense": {
+     "fire": 9999,
+     "magic": 9999,
+     "phys": 999,
+     "thunder": 9999
+    },
     "flags": [],
     "hp": 999,
     "immune": [
@@ -221,6 +275,12 @@
     }
    },
    {
+    "defense": {
+     "fire": 4995,
+     "magic": 699,
+     "phys": 999,
+     "thunder": 999
+    },
     "flags": [],
     "hp": 999,
     "immune": [
@@ -249,6 +309,12 @@
   "name": "Iron Golem",
   "parts": [
    {
+    "defense": {
+     "fire": 131,
+     "magic": 140,
+     "phys": 175,
+     "thunder": 105
+    },
     "flags": [],
     "hp": 1440,
     "immune": [
@@ -277,6 +343,12 @@
   "name": "Ornstein and Smough",
   "parts": [
    {
+    "defense": {
+     "fire": 107,
+     "magic": 92,
+     "phys": 142,
+     "thunder": 710
+    },
     "flags": [
      "isWeakA"
     ],
@@ -292,6 +364,12 @@
     }
    },
    {
+    "defense": {
+     "fire": 104,
+     "magic": 90,
+     "phys": 138,
+     "thunder": 690
+    },
     "flags": [
      "isWeakA"
     ],
@@ -318,6 +396,12 @@
   "name": "Four Kings",
   "parts": [
    {
+    "defense": {
+     "fire": 74,
+     "magic": 79,
+     "phys": 115,
+     "thunder": 68
+    },
     "flags": [
      "isWeakB"
     ],
@@ -337,6 +421,12 @@
     }
    },
    {
+    "defense": {
+     "fire": 74,
+     "magic": 79,
+     "phys": 115,
+     "thunder": 68
+    },
     "flags": [
      "isWeakB"
     ],
@@ -374,6 +464,12 @@
   "name": "Seath the Scaleless",
   "parts": [
    {
+    "defense": {
+     "fire": 69,
+     "magic": 230,
+     "phys": 115,
+     "thunder": 69
+    },
     "flags": [],
     "hp": 2210,
     "immune": [
@@ -402,6 +498,12 @@
   "name": "Gwyn, Lord of Cinder",
   "parts": [
    {
+    "defense": {
+     "fire": 83,
+     "magic": 89,
+     "phys": 118,
+     "thunder": 590
+    },
     "flags": [
      "isWeakA"
     ],
@@ -431,6 +533,12 @@
   "name": "Asylum Demon",
   "parts": [
    {
+    "defense": {
+     "fire": 66,
+     "magic": 62,
+     "phys": 83,
+     "thunder": 54
+    },
     "flags": [
      "isDemon"
     ],
@@ -457,6 +565,12 @@
   "name": "Taurus Demon",
   "parts": [
    {
+    "defense": {
+     "fire": 88,
+     "magic": 77,
+     "phys": 103,
+     "thunder": 67
+    },
     "flags": [
      "isDemon"
     ],
@@ -483,6 +597,12 @@
   "name": "Capra Demon",
   "parts": [
    {
+    "defense": {
+     "fire": 100,
+     "magic": 94,
+     "phys": 125,
+     "thunder": 81
+    },
     "flags": [
      "isDemon"
     ],
@@ -509,6 +629,12 @@
   "name": "Moonlight Butterfly",
   "parts": [
    {
+    "defense": {
+     "fire": 61,
+     "magic": 128,
+     "phys": 102,
+     "thunder": 82
+    },
     "flags": [],
     "hp": 1004,
     "immune": [
@@ -537,6 +663,12 @@
   "name": "Sanctuary Guardian",
   "parts": [
    {
+    "defense": {
+     "fire": 160,
+     "magic": 256,
+     "phys": 100,
+     "thunder": 352
+    },
     "flags": [],
     "hp": 1024,
     "immune": [],
@@ -561,6 +693,12 @@
   "name": "Knight Artorias",
   "parts": [
    {
+    "defense": {
+     "fire": 212,
+     "magic": 229,
+     "phys": 133,
+     "thunder": 197
+    },
     "flags": [],
     "hp": 1500,
     "immune": [
@@ -589,6 +727,12 @@
   "name": "Manus, Father of the Abyss",
   "parts": [
    {
+    "defense": {
+     "fire": 208,
+     "magic": 256,
+     "phys": 108,
+     "thunder": 240
+    },
     "flags": [],
     "hp": 2666,
     "immune": [
@@ -617,6 +761,12 @@
   "name": "Black Dragon Kalameet",
   "parts": [
    {
+    "defense": {
+     "fire": 300,
+     "magic": 300,
+     "phys": 156,
+     "thunder": 254
+    },
     "flags": [],
     "hp": 2000,
     "immune": [
@@ -633,6 +783,12 @@
     }
    },
    {
+    "defense": {
+     "fire": 300,
+     "magic": 300,
+     "phys": 156,
+     "thunder": 254
+    },
     "flags": [],
     "hp": 2000,
     "immune": [
@@ -660,6 +816,12 @@
   "name": "Demon Firesage",
   "parts": [
    {
+    "defense": {
+     "fire": 71,
+     "magic": 67,
+     "phys": 89,
+     "thunder": 58
+    },
     "flags": [
      "isDemon"
     ],
@@ -686,6 +848,12 @@
   "name": "Ceaseless Discharge",
   "parts": [
    {
+    "defense": {
+     "fire": 9999,
+     "magic": 77,
+     "phys": 110,
+     "thunder": 88
+    },
     "flags": [],
     "hp": 1750,
     "immune": [
@@ -716,6 +884,12 @@
   "name": "Centipede Demon",
   "parts": [
    {
+    "defense": {
+     "fire": 9999,
+     "magic": 61,
+     "phys": 94,
+     "thunder": 75
+    },
     "flags": [
      "isDemon"
     ],
@@ -744,6 +918,12 @@
   "name": "Gwyndolin",
   "parts": [
    {
+    "defense": {
+     "fire": 63,
+     "magic": 102,
+     "phys": 102,
+     "thunder": 102
+    },
     "flags": [
      "isWeakA"
     ],
@@ -770,6 +950,12 @@
   "name": "Stray Demon",
   "parts": [
    {
+    "defense": {
+     "fire": 69,
+     "magic": 65,
+     "phys": 86,
+     "thunder": 56
+    },
     "flags": [
      "isDemon"
     ],

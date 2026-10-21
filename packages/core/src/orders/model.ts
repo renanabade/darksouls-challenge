@@ -29,7 +29,9 @@ export type ParamKind =
   | "restriction"
   | "restrictionList"
   | "equipmentSet"
-  | "lordSoulOrder";
+  | "lordSoulOrder"
+  /** A damage element other than physical: magic, fire or thunder (lightning). */
+  | "element";
 
 export interface ParamSpec {
   readonly kind: ParamKind;
@@ -75,6 +77,7 @@ export type Command =
   | { readonly kind: "require"; readonly action: "wearArmorPickedUp" }
   | { readonly kind: "require"; readonly action: "lordSoulsInOrder"; readonly order: string }
   | { readonly kind: "require"; readonly action: "defeatBoss"; readonly boss: string }
+  | { readonly kind: "require"; readonly action: "dealElement"; readonly element: string }
   | {
       readonly kind: "limit";
       readonly action: "attempts" | "deaths" | "levelUps" | "weaponUpgrades";
@@ -184,6 +187,7 @@ export function paramRefsOf(order: OrderTemplate): { param: string; kind: ParamK
     case "require":
       if (command.action === "lordSoulsInOrder") add(command.order, "lordSoulOrder");
       if (command.action === "defeatBoss") add(command.boss, "boss");
+      if (command.action === "dealElement") add(command.element, "element");
       break;
     case "limit":
       if (typeof command.max === "string") add(command.max, "count");

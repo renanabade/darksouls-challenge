@@ -1,4 +1,4 @@
-import { isMeleeWeapon, SCHOOLS, type Boss } from "../build.js";
+import { elementalDefenses, isMeleeWeapon, SCHOOLS, type Boss, type Element } from "../build.js";
 import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
 import { reach } from "../reach.js";
@@ -95,6 +95,8 @@ export interface Domains {
   readonly bosses: readonly string[];
   /** Bosses the first bell does not need: defeating one of the others before it asks nothing. */
   readonly bossesBeforeBell: readonly string[];
+  /** The elements that hurt each boss, weakest defense first (bosses with none are left out). */
+  readonly bossElements: ReadonlyMap<string, readonly Element[]>;
   readonly merchants: readonly string[];
   readonly weaponLocations: readonly string[];
   /** The area of each weapon location, by the location's name. */
@@ -151,6 +153,14 @@ function readDomains(world: World): Domains {
     areasWithBonfires: areasOf(world.locations.filter((l) => l.category === "BONFIRE")),
     bosses: sorted(world.bosses.keys()),
     bossesBeforeBell: sorted([...world.bosses.values()].filter(ringable).map((b) => b.id)),
+    // Not the bosses the graph lets the run pass without (G7): what "before the boss" holds would be wrong.
+    bossElements: new Map(
+      [...world.bosses.values()].flatMap((b) => {
+        if (bellRegions.has(b.region) || `boss-${b.id}` === RUN_START) return [];
+        const elements = elementalDefenses(b).map((d) => d.element);
+        return elements.length > 0 ? [[b.id, elements] as const] : [];
+      }),
+    ),
     merchants: sorted(world.merchants.keys()),
     weaponLocations: sorted(weaponLocations.map((l) => l.name)),
     weaponLocationAreas: new Map(
@@ -297,6 +307,20 @@ function drawInChapter(
       const b = boss();
       if (b === undefined) return undefined;
       return { attempts: rng.int(...rangeOf(template, "attempts", difficulty)), boss: b };
+    }
+    // The element comes from the boss: the one it defends worst, or the one it resists most (when that is
+    // another element).
+    case "exploit-weakness":
+    case "against-the-grain": {
+      const weakest = template.id === "exploit-weakness";
+      const options = chapter.bosses.filter(
+        (b) => (domains.bossElements.get(b)?.length ?? 0) > (weakest ? 0 : 1),
+      );
+      if (options.length === 0) return undefined;
+      const b = rng.pick(options);
+      const elements = domains.bossElements.get(b) ?? [];
+      const element = weakest ? elements[0] : elements.at(-1);
+      return element === undefined ? undefined : { boss: b, element };
     }
     case "boss-before-bell": {
       // A boss of this chapter: with detours drawn among chapters, the others may be met later.

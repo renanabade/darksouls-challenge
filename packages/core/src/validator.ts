@@ -1,10 +1,12 @@
 import {
   damages,
+  ELEMENTAL,
   isMeleeWeapon,
   pointsToWield,
   SCHOOLS,
   spellKit,
   type Boss,
+  type Element,
   type Stats,
   type Weapon,
 } from "./build.js";
@@ -167,6 +169,30 @@ export function validate(
     }
     return undefined;
   };
+
+  // What the player can hold in a reach: pickups and purchases there, and the class's kit, which is
+  // picked up in the Asylum before any boss.
+  const kit = world.classes.get(setup.startingClass ?? "")?.kit ?? [];
+  const held = (c: Constraints, r: Reach): Set<string> =>
+    new Set([
+      ...kit,
+      ...world.locations
+        .filter((l) => !c.locations.has(l) && r.regions.has(l.region))
+        .map((l) => l.item),
+    ]);
+  // Things to fight with among the items: melee weapons, and each catalyst held with each spell held.
+  const armory = (items: ReadonlySet<string>, spells: boolean): Weapon[] => {
+    const weapons = [...items].flatMap((i) => world.weapons.get(i) ?? []);
+    const known = spells
+      ? [...world.spells.values()].filter((s) => items.has(s.item) || items.has(s.name))
+      : [];
+    return [
+      ...weapons.filter(isMeleeWeapon),
+      ...weapons.flatMap((catalyst) => known.flatMap((s) => spellKit(s, catalyst) ?? [])),
+    ];
+  };
+  // Fights that must deal one element (block 12).
+  const elementFights: { id: string; boss: Boss; element: Element }[] = [];
 
   const results: { id: string; support: Support; exceptions: string[] }[] = [];
   // Orders that forbid locations but except what the game requires. Candidates are listed once every
@@ -372,7 +398,6 @@ export function validate(
           )
             throw new InvalidOrderError(`${label}: no melee weapons of category "${style}"`);
         }
-        const kit = world.classes.get(setup.startingClass ?? "")?.kit ?? [];
         build(label);
         // Its two styles rule your weapon for the whole run; its own check fits them in one build.
         weaponPhases.push({
@@ -383,23 +408,9 @@ export function validate(
         });
         checks.push((c) => {
           const [before, after] = styles as [string, string];
-          // What the player can hold by then: pickups and purchases in reach, and the class's kit, which is
-          // picked up in the Asylum before any boss.
-          const available = (r: Reach, style: string): Weapon[] => {
-            const items = new Set([
-              ...kit,
-              ...world.locations
-                .filter((l) => !c.locations.has(l) && r.regions.has(l.region))
-                .map((l) => l.item),
-            ]);
-            const held = [...items].flatMap((i) => world.weapons.get(i) ?? []);
-            if (!isSchool(style))
-              return held.filter((w) => isMeleeWeapon(w) && w.category === style);
-            const spells = [...world.spells.values()].filter(
-              (s) => s.school === style && (items.has(s.item) || items.has(s.name)),
-            );
-            return held.flatMap((catalyst) => spells.flatMap((s) => spellKit(s, catalyst) ?? []));
-          };
+          // What the player can hold by then, of the style.
+          const available = (r: Reach, style: string): Weapon[] =>
+            armory(held(c, r), isSchool(style)).filter((w) => w.category === style);
           // The first phase starts after the first boss, fought with the class's kit.
           const start = world.milestones.get(PHASE_SWAP_START);
           const done = new Set(
@@ -426,6 +437,35 @@ export function validate(
           if (b.length === 0) return `no ${after} can be taken for after ${milestone.name}`;
           const fits = a.some((x) => b.some((y) => weaponProblem([x, y], label, []) === undefined));
           return fits ? undefined : `no ${before} and ${after} fit one build`;
+        });
+        break;
+      }
+
+      // Existence: something that deals the element (a melee weapon, or a spell with its catalyst) can be
+      // taken before the boss falls and fits the build. Thrown items also count for the player, but are left
+      // out here: that can only refuse a possible fight, never accept an impossible one.
+      case "exploit-weakness":
+      case "against-the-grain": {
+        const boss = world.bosses.get(stringArg(args, "boss", label));
+        if (boss === undefined) throw new InvalidOrderError(`${label}: unknown boss`);
+        const element = stringArg(args, "element", label);
+        if (!(ELEMENTAL as readonly string[]).includes(element))
+          throw new InvalidOrderError(`${label}: unknown element "${element}"`);
+        const e = element as Element;
+        build(label);
+        elementFights.push({ id: template.id, boss, element: e });
+        checks.push((c) => {
+          if (boss.parts.some((p) => p.noDamage.includes(e)))
+            return `${boss.name} takes no ${e} damage`;
+          const items = held(c, run(c, new Set([boss.defeatedItem])));
+          const sources = armory(items, !activeRestrictions.has("no-magic")).filter(
+            (w) => w.damage[e] > 0,
+          );
+          if (sources.length === 0)
+            return `nothing that deals ${e} can be taken before ${boss.name}`;
+          return sources.some((w) => weaponProblem(w, label, []) === undefined)
+            ? undefined
+            : `nothing that deals ${e} against ${boss.name} fits the build`;
         });
         break;
       }
@@ -463,6 +503,22 @@ export function validate(
       return problem && `${problem} (every weapon the orders may hand you)`;
     });
   }
+  // One element per fight. And while an order chooses your weapon, it would also have to deal the element:
+  // until the validator knows which fights a weapon order covers, the two do not go together.
+  for (const [i, a] of elementFights.entries()) {
+    const other = elementFights
+      .slice(i + 1)
+      .find((b) => b.boss === a.boss && b.element !== a.element);
+    if (other !== undefined)
+      checks.push(
+        () =>
+          `${a.boss.name} cannot be fought only with ${a.element} and only with ${other.element}`,
+      );
+  }
+  const chooser = weaponPhases[0];
+  const fight = elementFights[0];
+  if (chooser !== undefined && fight !== undefined)
+    checks.push(() => `${chooser.id} chooses your weapon, and ${fight.id} the element of a fight`);
   // Armor picked up must be worn, and nothing picked up may be worn: not both in one area.
   const areasOf = (id: string) =>
     orders.filter((o) => o.template.id === id).map((o) => o.args["area"]);
