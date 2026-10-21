@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.7.0...darksouls-challenge-v0.8.0) (2026-10-21)
+
+
+### Features
+
+* **generator:** balanced chapters, acts and curves that hold at the edges ([6dfbc91](https://github.com/renanabade/darksouls-challenge/commit/6dfbc916a9807ad8899424f4da6f24e3b0e9a1a3))
+
 ## [0.7.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.6.0...darksouls-challenge-v0.7.0) (2026-10-21)
 
 
