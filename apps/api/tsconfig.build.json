@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    // NestJS injects by the constructor's parameter types: legacy decorators with emitted metadata.
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    // Constructor parameter properties are the NestJS idiom; they are not erasable syntax.
+    "erasableSyntaxOnly": false
+  },
+  "include": ["src"]
+}

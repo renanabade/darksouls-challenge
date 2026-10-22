@@ -1,2 +1,7 @@
 packages:
   - packages/*
+  - apps/*
+
+# @swc/core only checks its prebuilt binary on install; the optional platform package already has it.
+allowBuilds:
+  "@swc/core": false

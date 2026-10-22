@@ -18,6 +18,11 @@ export default defineConfig(
     },
   },
   {
+    // NestJS modules are empty classes carrying a decorator.
+    files: ["apps/**/*.ts"],
+    rules: { "@typescript-eslint/no-extraneous-class": ["error", { allowWithDecorator: true }] },
+  },
+  {
     files: ["**/*.js"],
     extends: [tseslint.configs.disableTypeChecked],
   },
