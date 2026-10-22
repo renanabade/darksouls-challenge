@@ -22,6 +22,7 @@ possible to finish.
 | `packages/core/`      | Domain core in pure TypeScript: world graph, order catalog, validator, generator    |
 | `packages/cli/`       | Command line that generates a challenge and prints its manual                       |
 | `packages/contracts/` | Boundary contracts: the generation request, the challenge document, the data loader |
+| `packages/db/`        | Prisma schema, migrations and the job repository (with the transactional outbox)    |
 | `apps/api/`           | NestJS API (in progress: health check)                                              |
 | `docs/adr/`           | Architecture decision records                                                       |
 
@@ -54,6 +55,8 @@ Difficulty: `easy`, `medium`, `hard`, `extreme`. Curve (how difficulty moves acr
 `rising`, `peaks`, `rollercoaster`. Length: `short` (a handful of rules, in four acts), `full` (one to three per chapter) or
 `epic` (three to five). Curve, class, starting gift (row in `data/ds1/classes.json`) and soul level cap are drawn
 from the seed unless given.
+
+Local services (PostgreSQL) run with Docker: `docker compose up -d`, then set`n`DATABASE_URL=postgresql://darksouls:darksouls@localhost:5432/darksouls`. The database tests run only when`n`DATABASE_URL` is set (CI always sets it).
 
 Run the API (port 3000 by default; `PORT`, `LOG_LEVEL` and `DATA_DIR` set in the environment):
 
