@@ -2,6 +2,9 @@ packages:
   - packages/*
   - apps/*
 
-# @swc/core only checks its prebuilt binary on install; the optional platform package already has it.
 allowBuilds:
+  # @swc/core only checks its prebuilt binary on install; the optional platform package already has it.
   "@swc/core": false
+  # Prisma downloads its schema engine (used by migrations) on install.
+  "@prisma/engines": true
+  prisma: true
