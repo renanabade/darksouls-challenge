@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    // Typecheck against the core's sources, so CI does not need a build first.
+    "paths": { "@darksouls-challenge/core": ["../core/src/index.ts"] }
+  },
+  "include": ["src", "test"]
+}

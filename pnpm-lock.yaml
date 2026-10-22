@@ -223,6 +223,9 @@ importers:
       '@darksouls-challenge/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@darksouls-challenge/messaging':
+        specifier: workspace:*
+        version: link:../../packages/messaging
       '@nestjs/apollo':
         specifier: ^14.0.3
         version: 14.0.3(@apollo/server@5.5.1(graphql@16.14.2))(@as-integrations/express5@1.1.2(@apollo/server@5.5.1(graphql@16.14.2))(express@5.3.0))(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@12.2.0)(@nestjs/graphql@14.0.3(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@12.2.0)(graphql@16.14.2)(reflect-metadata@0.2.2)(typescript@6.0.3))(graphql@16.14.2)
@@ -241,12 +244,21 @@ importers:
       '@nestjs/throttler':
         specifier: ^6.7.1
         version: 6.7.1(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@12.2.0)(reflect-metadata@0.2.2)
+      amqplib:
+        specifier: ^2.2.0
+        version: 2.2.0
       graphql:
         specifier: ^16.14.2
         version: 16.14.2
       graphql-query-complexity:
         specifier: ^2.0.0
         version: 2.0.0(graphql@16.14.2)
+      graphql-subscriptions:
+        specifier: ^3.0.0
+        version: 3.0.0(graphql@16.14.2)
+      graphql-ws:
+        specifier: ^6.4.1
+        version: 6.4.1(graphql@16.14.2)(ws@8.22.0)
       ioredis:
         specifier: ^6.0.0
         version: 6.0.0
@@ -265,6 +277,9 @@ importers:
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
+      ws:
+        specifier: ^8.22.0
+        version: 8.22.0
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -272,6 +287,30 @@ importers:
       '@nestjs/testing':
         specifier: ^12.2.0
         version: 12.2.0(@nestjs/common@12.2.0(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@12.2.0)(@nestjs/platform-express@12.2.0)
+
+  apps/worker:
+    dependencies:
+      '@darksouls-challenge/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@darksouls-challenge/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@darksouls-challenge/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@darksouls-challenge/messaging':
+        specifier: workspace:*
+        version: link:../../packages/messaging
+      amqplib:
+        specifier: ^2.2.0
+        version: 2.2.0
+      pino:
+        specifier: ^10.4.0
+        version: 10.4.0
+      zod:
+        specifier: ^4.6.7
+        version: 4.6.7
 
   packages/cli:
     dependencies:
@@ -311,6 +350,12 @@ importers:
       prisma:
         specifier: 7.10.1
         version: 7.10.1(@types/node@24.19.2)(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(typescript@6.0.3)
+
+  packages/messaging:
+    dependencies:
+      amqplib:
+        specifier: ^2.2.0
+        version: 2.2.0
 
 packages:
 
@@ -1364,6 +1409,10 @@ packages:
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
+  amqplib@2.2.0:
+    resolution: {integrity: sha512-VifzN9aHs/Q3zTruVHXh2yCisQyXexBN91CQ2E5iSyUKyNjH6ilYhJGte5AXZH/Bj1PaH7SwPhyuSf6Msd2udw==}
+    engines: {node: '>=18'}
+
   ansi-regex@6.4.0:
     resolution: {integrity: sha512-KzTVk2tCWAHtYrvvvaP8bJKJq2pVinhLcGEQdtLIYPbmNGNyYe8QwNaTUYQp2J7/vIsUKt5QCqAfUkYyG9DkOw==}
     engines: {node: '>=12'}
@@ -1906,6 +1955,11 @@ packages:
     peerDependencies:
       graphql: ^16.6.0 || ^17.0.0
 
+  graphql-subscriptions@3.0.0:
+    resolution: {integrity: sha512-kZCdevgmzDjGAOqH7GlDmQXYAkuHoKpMlJrqF40HMPhUhM5ZWSFSxCwD/nSi6AkaijmMfsFhoJRGJ27UseCvRA==}
+    peerDependencies:
+      graphql: ^15.7.2 || ^16.0.0
+
   graphql-tag@2.12.7:
     resolution: {integrity: sha512-xnE/NFzy+0eIesvAsREJZ284zTl/wYuBAvpsFSDhRGRdRHdnE90M21Q3xAWyYInb0J756c6x0pIQ62+vtvOs1Q==}
     engines: {node: '>=10'}
@@ -1914,6 +1968,22 @@ packages:
 
   graphql-ws@6.3.0:
     resolution: {integrity: sha512-qBAXPtFjWHF3QypDyNcBp8Rycd+rmofxUSJsu3bGI9QMMq7pImKBSLSg9hZ2ojIMbJ54T/LPjKBIeOUoJbNBnQ==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@fastify/websocket': ^10 || ^11
+      crossws: ~0.3 || ~0.4
+      graphql: ^15.10.1 || ^16 || ^17
+      ws: ^8
+    peerDependenciesMeta:
+      '@fastify/websocket':
+        optional: true
+      crossws:
+        optional: true
+      ws:
+        optional: true
+
+  graphql-ws@6.4.1:
+    resolution: {integrity: sha512-a3MzY5u+tCHHwuyimzxMAHZQ6TY7bOpkQURtKXE5kKIkBdsZ2axlb7sLzMpzGFO4guhws9FyMVB1onyX58pO4w==}
     engines: {node: '>=20'}
     peerDependencies:
       '@fastify/websocket': ^10 || ^11
@@ -4062,6 +4132,8 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
+  amqplib@2.2.0: {}
+
   ansi-regex@6.4.0: {}
 
   ansi-styles@6.2.3: {}
@@ -4610,12 +4682,22 @@ snapshots:
       graphql: 16.14.2
       lodash.get: 4.4.2
 
+  graphql-subscriptions@3.0.0(graphql@16.14.2):
+    dependencies:
+      graphql: 16.14.2
+
   graphql-tag@2.12.7(graphql@16.14.2):
     dependencies:
       graphql: 16.14.2
       tslib: 2.8.1
 
   graphql-ws@6.3.0(graphql@16.14.2)(ws@8.22.0):
+    dependencies:
+      graphql: 16.14.2
+    optionalDependencies:
+      ws: 8.22.0
+
+  graphql-ws@6.4.1(graphql@16.14.2)(ws@8.22.0):
     dependencies:
       graphql: 16.14.2
     optionalDependencies:

@@ -16,15 +16,17 @@ possible to finish.
 
 ## Repository layout
 
-| Path                  | What                                                                                |
-| --------------------- | ----------------------------------------------------------------------------------- |
-| `data/ds1/`           | The Dark Souls: Remastered data set and its schema (`data/ds1/SCHEMA.md`)           |
-| `packages/core/`      | Domain core in pure TypeScript: world graph, order catalog, validator, generator    |
-| `packages/cli/`       | Command line that generates a challenge and prints its manual                       |
-| `packages/contracts/` | Boundary contracts: the generation request, the challenge document, the data loader |
-| `packages/db/`        | Prisma schema, migrations and the job repository (with the transactional outbox)    |
-| `apps/api/`           | NestJS GraphQL API: options, generation requests, jobs                              |
-| `docs/adr/`           | Architecture decision records                                                       |
+| Path                  | What                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| `data/ds1/`           | The Dark Souls: Remastered data set and its schema (`data/ds1/SCHEMA.md`)             |
+| `packages/core/`      | Domain core in pure TypeScript: world graph, order catalog, validator, generator      |
+| `packages/cli/`       | Command line that generates a challenge and prints its manual                         |
+| `packages/contracts/` | Boundary contracts: the generation request, the challenge document, the data loader   |
+| `packages/db/`        | Prisma schema, migrations and the job repository (with the transactional outbox)      |
+| `packages/messaging/` | RabbitMQ topology and publishing with broker confirms                                 |
+| `apps/api/`           | NestJS GraphQL API: options, generation requests, jobs, `challengeReady` subscription |
+| `apps/worker/`        | Generation worker: consumes jobs from RabbitMQ, stores their challenges               |
+| `docs/adr/`           | Architecture decision records                                                         |
 
 ## Development
 
@@ -56,13 +58,18 @@ Difficulty: `easy`, `medium`, `hard`, `extreme`. Curve (how difficulty moves acr
 `epic` (three to five). Curve, class, starting gift (row in `data/ds1/classes.json`) and soul level cap are drawn
 from the seed unless given.
 
-Local services (PostgreSQL, Redis) run with Docker: `docker compose up -d`, then set`n`DATABASE_URL=postgresql://darksouls:darksouls@localhost:5432/darksouls`and`REDIS_URL=redis://localhost:6379`. The`ndatabase and Redis tests run only when those are`nset (CI always sets them).
+Local services (PostgreSQL, Redis, RabbitMQ) run with Docker: `docker compose up -d`, then set
+`DATABASE_URL=postgresql://darksouls:darksouls@localhost:5432/darksouls`, `REDIS_URL=redis://localhost:6379` and
+`RABBITMQ_URL=amqp://guest:guest@localhost:5672`. The database, Redis and broker tests run only when those are set
+(CI always sets them).
 
-Run the API (port 3000 by default; `DATABASE_URL` is required, and `PORT`, `LOG_LEVEL`, `DATA_DIR`, `REDIS_URL` and`n`GENERATION_LIMIT` are read from the environment):
+Run the API (port 3000 by default; `DATABASE_URL` is required, and `PORT`, `LOG_LEVEL`, `DATA_DIR`, `REDIS_URL`,
+`RABBITMQ_URL` and `GENERATION_LIMIT` are read from the environment):
 
 ```sh
 pnpm build
-node apps/api/dist/main.js   # POST /graphql, GET /health
+node apps/api/dist/main.js     # POST /graphql, GET /health, subscriptions over graphql-ws
+node apps/worker/dist/main.js  # needs DATABASE_URL and RABBITMQ_URL
 ```
 
 Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/), checked on commit. See

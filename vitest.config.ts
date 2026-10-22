@@ -21,6 +21,7 @@ export default defineConfig({
       "@darksouls-challenge/core": source("core"),
       "@darksouls-challenge/contracts": source("contracts"),
       "@darksouls-challenge/db": source("db"),
+      "@darksouls-challenge/messaging": source("messaging"),
     },
   },
   test: {
