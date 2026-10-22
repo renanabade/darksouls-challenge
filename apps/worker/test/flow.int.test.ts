@@ -8,16 +8,13 @@ import {
 } from "@darksouls-challenge/db";
 import { assertTopology, bodyOf, publish, TOPOLOGY } from "@darksouls-challenge/messaging";
 import { connect, type ChannelModel, type ConfirmChannel } from "amqplib";
-import { execFileSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
 import { pino } from "pino";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, inject, it } from "vitest";
 import { startWorker, type Worker } from "../src/worker.js";
 
-// The whole path through a real PostgreSQL and a real RabbitMQ: CI provides both; locally, set
-// DATABASE_URL and RABBITMQ_URL (throwaway: the database is truncated and the queues purged).
-const databaseUrl = process.env["DATABASE_URL"];
-const rabbitUrl = process.env["RABBITMQ_URL"];
+// The whole path through a real PostgreSQL and a real RabbitMQ, started by the global setup
+// (test/services.ts): the database is truncated and the queues purged.
+const { databaseUrl, rabbitUrl } = inject("services");
 
 const world = parseWorld(loadDataSet(new URL("../../../data/ds1/", import.meta.url)));
 
@@ -53,11 +50,6 @@ describe.skipIf(databaseUrl === undefined || rabbitUrl === undefined)(
     }
 
     beforeAll(async () => {
-      execFileSync("pnpm", ["exec", "prisma", "migrate", "deploy"], {
-        cwd: fileURLToPath(new URL("../../../packages/db", import.meta.url)),
-        shell: true,
-        stdio: "ignore",
-      });
       prisma = createPrismaClient(databaseUrl ?? "");
       repository = new ChallengeRepository(prisma);
       await prisma.$executeRawUnsafe(

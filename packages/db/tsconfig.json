@@ -8,5 +8,5 @@
       "@darksouls-challenge/contracts": ["../contracts/src/index.ts"]
     }
   },
-  "include": ["src", "test", "prisma.config.ts"]
+  "include": ["src", "test", "../../test/provided.d.ts", "prisma.config.ts"]
 }

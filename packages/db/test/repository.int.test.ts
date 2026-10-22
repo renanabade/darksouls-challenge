@@ -1,6 +1,4 @@
-import { execFileSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
-import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, beforeEach, describe, expect, inject, it } from "vitest";
 import {
   ChallengeRepository,
   createPrismaClient,
@@ -10,9 +8,9 @@ import {
   type PrismaClient,
 } from "../src/index.js";
 
-// Runs against a real PostgreSQL: CI provides one; locally, set DATABASE_URL (a throwaway database: it is
-// truncated before each test).
-const url = process.env["DATABASE_URL"];
+// Runs against a real PostgreSQL, started by the global setup (test/services.ts); it is truncated before each
+// test.
+const url = inject("services").databaseUrl;
 
 const job: NewJob = {
   game: "ds1",
@@ -30,11 +28,6 @@ describe.skipIf(url === undefined)("ChallengeRepository", () => {
   let repository: ChallengeRepository;
 
   beforeAll(() => {
-    execFileSync("pnpm", ["exec", "prisma", "migrate", "deploy"], {
-      cwd: fileURLToPath(new URL("..", import.meta.url)),
-      shell: true,
-      stdio: "ignore",
-    });
     prisma = createPrismaClient(url ?? "");
     repository = new ChallengeRepository(prisma);
   });

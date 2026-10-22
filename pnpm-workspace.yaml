@@ -7,6 +7,10 @@ allowBuilds:
   "@swc/core": false
   # Only prints a notice on install.
   "@apollo/protobufjs": false
+  protobufjs: false
+  # Testcontainers: optional native speedups for Docker over SSH, which the tests do not use.
+  ssh2: false
+  cpu-features: false
   # Prisma downloads its schema engine (used by migrations) on install.
   "@prisma/engines": true
   prisma: true
