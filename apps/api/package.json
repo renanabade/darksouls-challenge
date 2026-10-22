@@ -1,0 +1,29 @@
+{
+  "name": "@darksouls-challenge/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "NestJS API: generates and serves challenges.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@darksouls-challenge/contracts": "workspace:*",
+    "@darksouls-challenge/core": "workspace:*",
+    "@nestjs/common": "^12.2.0",
+    "@nestjs/core": "^12.2.0",
+    "@nestjs/platform-express": "^12.2.0",
+    "nestjs-pino": "^5.3.1",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^12.2.0"
+  }
+}
