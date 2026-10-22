@@ -5,16 +5,20 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { AppModule } from "../src/app.module.js";
 import { CONFIG, ConfigError, loadConfig, type Config } from "../src/config.js";
 
+const env = { DATABASE_URL: "postgresql://localhost:5432/unused" };
+
 describe("loadConfig", () => {
   it("defaults to port 3000 and the repository's data set", () => {
-    const config = loadConfig({});
+    const config = loadConfig(env);
     expect(config.port).toBe(3000);
     expect(config.dataDir.href).toMatch(/\/data\/ds1\/$/);
   });
 
   it("stops on a bad value", () => {
-    expect(() => loadConfig({ PORT: "http" })).toThrow(ConfigError);
-    expect(() => loadConfig({ LOG_LEVEL: "loud" })).toThrow(ConfigError);
+    expect(() => loadConfig({ ...env, PORT: "http" })).toThrow(ConfigError);
+    expect(() => loadConfig({ ...env, LOG_LEVEL: "loud" })).toThrow(ConfigError);
+    expect(() => loadConfig({})).toThrow(/DATABASE_URL/);
+    expect(() => loadConfig({ ...env, REDIS_URL: "http://x" })).toThrow(ConfigError);
   });
 });
 
@@ -23,7 +27,7 @@ describe("the API", () => {
   let url: string;
 
   beforeAll(async () => {
-    const config: Config = { ...loadConfig({}), logLevel: "silent" };
+    const config: Config = { ...loadConfig(env), logLevel: "silent" };
     const moduleRef = await Test.createTestingModule({ imports: [AppModule] })
       .overrideProvider(CONFIG)
       .useValue(config)

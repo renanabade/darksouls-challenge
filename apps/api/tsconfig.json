@@ -8,7 +8,8 @@
     // Typecheck against the packages' sources, so CI does not need a build first.
     "paths": {
       "@darksouls-challenge/core": ["../../packages/core/src/index.ts"],
-      "@darksouls-challenge/contracts": ["../../packages/contracts/src/index.ts"]
+      "@darksouls-challenge/contracts": ["../../packages/contracts/src/index.ts"],
+      "@darksouls-challenge/db": ["../../packages/db/src/index.ts"]
     }
   },
   "include": ["src", "test"]

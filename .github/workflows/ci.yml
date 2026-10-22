@@ -32,8 +32,16 @@ jobs:
         options: >-
           --health-cmd "pg_isready -U darksouls" --health-interval 5s --health-timeout 3s
           --health-retries 10
+      # Shared rate limit counters (apps/api).
+      redis:
+        image: redis:8-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
     env:
       DATABASE_URL: postgresql://darksouls:darksouls@localhost:5432/darksouls
+      REDIS_URL: redis://localhost:6379
     steps:
       # Actions pinned by commit SHA (tags can be moved); Dependabot keeps them current.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
