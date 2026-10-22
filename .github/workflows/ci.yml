@@ -18,7 +18,22 @@ jobs:
   check:
     name: Lint, typecheck, test, build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
+    services:
+      # A throwaway database for the database tests (packages/db), which migrate it themselves.
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: darksouls
+          POSTGRES_PASSWORD: darksouls
+          POSTGRES_DB: darksouls
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U darksouls" --health-interval 5s --health-timeout 3s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://darksouls:darksouls@localhost:5432/darksouls
     steps:
       # Actions pinned by commit SHA (tags can be moved); Dependabot keeps them current.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
