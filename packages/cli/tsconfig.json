@@ -3,7 +3,10 @@
   "compilerOptions": {
     "noEmit": true,
     // Typecheck against the core's sources, so CI does not need a build first.
-    "paths": { "@darksouls-challenge/core": ["../core/src/index.ts"] }
+    "paths": {
+      "@darksouls-challenge/core": ["../core/src/index.ts"],
+      "@darksouls-challenge/contracts": ["../contracts/src/index.ts"]
+    }
   },
   "include": ["src"]
 }

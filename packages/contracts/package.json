@@ -1,0 +1,25 @@
+{
+  "name": "@darksouls-challenge/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Boundary contracts: the generation request (Zod), the challenge document and the data set loader.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@darksouls-challenge/core": "workspace:*",
+    "zod": "^4.6.7"
+  }
+}

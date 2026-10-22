@@ -16,6 +16,8 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@darksouls-challenge/core": "workspace:*"
+    "@darksouls-challenge/contracts": "workspace:*",
+    "@darksouls-challenge/core": "workspace:*",
+    "zod": "^4.6.7"
   }
 }

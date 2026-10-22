@@ -8,46 +8,11 @@
  *
  * Without --seed, a random one is drawn and printed, so the challenge can be shared.
  */
-import { randomBytes } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 import { parseArgs } from "node:util";
-import {
-  CURVES,
-  DIFFICULTIES,
-  generate,
-  generateGroup,
-  LENGTHS,
-  orderText,
-  parseWorld,
-  renderManual,
-  type Challenge,
-  type RawDataSet,
-} from "@darksouls-challenge/core";
-
-function readDataSet(dir: URL): RawDataSet {
-  const read = (file: string): unknown =>
-    JSON.parse(readFileSync(new URL(`${file}.json`, dir), "utf8"));
-  return {
-    meta: read("meta"),
-    regions: read("regions"),
-    entrances: read("entrances"),
-    locations: read("locations"),
-    classes: read("classes"),
-    bosses: read("bosses"),
-    merchants: read("merchants"),
-    milestones: read("milestones"),
-    weapons: read("weapons"),
-    spells: read("spells"),
-    areas: read("areas"),
-    treasures: read("treasures"),
-  };
-}
-
-function oneOf<T extends string>(name: string, value: string, allowed: readonly T[]): T {
-  if (!(allowed as readonly string[]).includes(value))
-    throw new Error(`--${name} must be one of: ${allowed.join(", ")}`);
-  return value as T;
-}
+import { GenerationRequest, loadDataSet, runGeneration } from "@darksouls-challenge/contracts";
+import { parseWorld } from "@darksouls-challenge/core";
+import { z } from "zod";
 
 function main(): void {
   const { values } = parseArgs({
@@ -65,45 +30,25 @@ function main(): void {
     },
   });
   const dataDir = values.data
-    ? new URL(`file:///${values.data.replace(/\\/g, "/").replace(/\/?$/, "/")}`)
+    ? pathToFileURL(values.data.replace(/[\\/]?$/, "/"))
     : new URL("../../../data/ds1/", import.meta.url);
-  const world = parseWorld(readDataSet(dataDir));
-  const config = {
-    seed: values.seed ?? randomBytes(4).toString("hex"),
-    length: oneOf("length", values.length, LENGTHS),
-    ...(values.curve !== undefined && { curve: oneOf("curve", values.curve, CURVES) }),
-    ...(values.class !== undefined && { startingClass: values.class }),
-    ...(values.gift !== undefined && { giftRow: Number(values.gift) }),
-    ...(values["level-cap"] !== undefined && { levelCap: Number(values["level-cap"]) }),
-  };
-  const challenges: Challenge[] =
-    values.players === undefined
-      ? [
-          generate(world, {
-            ...config,
-            difficulty: oneOf("difficulty", values.difficulty, DIFFICULTIES),
-          }),
-        ]
-      : generateGroup(
-          world,
-          config,
-          values.players.split(/[\s,]+/).map((d) => oneOf("players", d, DIFFICULTIES)),
-        );
+  const world = parseWorld(loadDataSet(dataDir));
+  const parsed = GenerationRequest.safeParse({
+    seed: values.seed,
+    players: (values.players ?? values.difficulty).split(/[\s,]+/),
+    length: values.length,
+    curve: values.curve,
+    startingClass: values.class,
+    giftRow: values.gift === undefined ? undefined : Number(values.gift),
+    levelCap: values["level-cap"] === undefined ? undefined : Number(values["level-cap"]),
+  });
+  if (!parsed.success) throw new Error(z.prettifyError(parsed.error));
+  const documents = runGeneration(world, parsed.data);
   if (values.json) {
-    const json = challenges.map((challenge) => ({
-      ...challenge,
-      orders: challenge.orders.map((o) => ({
-        id: o.template.id,
-        ...(o.chapter !== undefined && { chapter: o.chapter }),
-        args: o.args,
-        exceptions: o.exceptions,
-        text: orderText(world, o),
-      })),
-    }));
-    const out = values.players === undefined ? json[0] : json;
+    const out = values.players === undefined ? documents[0] : documents;
     process.stdout.write(`${JSON.stringify(out, null, 2)}\n`);
   } else {
-    process.stdout.write(challenges.map((c) => renderManual(world, c)).join("\n---\n\n"));
+    process.stdout.write(documents.map((d) => d.manual).join("\n---\n\n"));
   }
 }
 
