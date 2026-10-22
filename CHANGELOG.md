@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.10.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.9.0...darksouls-challenge-v0.10.0) (2026-10-22)
+
+
+### Features
+
+* **api:** add the NestJS API foundation ([b0c6ae1](https://github.com/renanabade/darksouls-challenge/commit/b0c6ae1df42c0974853d1f01b688a5720849fed3))
+* **api:** serve generation through GraphQL, with limits ([2a4ed52](https://github.com/renanabade/darksouls-challenge/commit/2a4ed52c0282a9ddc22f7e15007f83b582115159))
+* **contracts:** share the generation request and the challenge document ([74e32c0](https://github.com/renanabade/darksouls-challenge/commit/74e32c02709a6470247c7f6d16a2e4d9d8602adc))
+* **db:** add the Prisma schema, the outbox and the job repository ([46adf7b](https://github.com/renanabade/darksouls-challenge/commit/46adf7b5aa1097398283a97a82f0f1ab3d1e0a04))
+* **worker:** generate challenges from a RabbitMQ queue ([e52de62](https://github.com/renanabade/darksouls-challenge/commit/e52de628a65d5995420323e6bc8ad663ef3f605d))
+
 ## [0.9.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.8.0...darksouls-challenge-v0.9.0) (2026-10-21)
 
 
