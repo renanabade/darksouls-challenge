@@ -1,0 +1,72 @@
+// The database of the challenge platform. Tables and columns are snake_case; the client's names are camelCase.
+
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated"
+  moduleFormat        = "esm"
+  importFileExtension = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// A generated challenge: one document per player, stored once and never recalculated.
+model Challenge {
+  id               String         @id @default(uuid(7)) @db.Uuid
+  /// The game it is for ("ds1"): every challenge carries one, so a second game needs no migration.
+  game             String
+  seed             String
+  /// The generation request, with the seed filled in: with the two versions, the challenge's identity.
+  request          Json
+  dataVersion      String         @map("data_version")
+  generatorVersion String         @map("generator_version")
+  /// The challenge documents, one per player, in the order of the request's players.
+  documents        Json
+  createdAt        DateTime       @default(now()) @map("created_at")
+  job              GenerationJob?
+
+  @@index([game, seed])
+  @@map("challenge")
+}
+
+enum JobStatus {
+  QUEUED
+  RUNNING
+  DONE
+  FAILED
+
+  @@map("job_status")
+}
+
+/// A request to generate a challenge, from the moment it is accepted until its challenge is stored.
+model GenerationJob {
+  id            String     @id @default(uuid(7)) @db.Uuid
+  status        JobStatus  @default(QUEUED)
+  game          String
+  /// The validated request, with the seed already drawn: a retried job generates the same challenge.
+  request       Json
+  /// The correlation ID of the request that created the job, carried into the worker's logs.
+  correlationId String     @map("correlation_id")
+  attempts      Int        @default(0)
+  error         String?
+  challengeId   String?    @unique @map("challenge_id") @db.Uuid
+  challenge     Challenge? @relation(fields: [challengeId], references: [id])
+  createdAt     DateTime   @default(now()) @map("created_at")
+  updatedAt     DateTime   @updatedAt @map("updated_at")
+
+  @@map("generation_job")
+}
+
+/// The transactional outbox: written in the same transaction as the change it announces, then published to the
+/// broker by a relay. A crash between the database and the broker cannot lose a job.
+model OutboxEvent {
+  id          BigInt    @id @default(autoincrement())
+  topic       String
+  payload     Json
+  createdAt   DateTime  @default(now()) @map("created_at")
+  publishedAt DateTime? @map("published_at")
+
+  @@index([publishedAt, id])
+  @@map("outbox_event")
+}
