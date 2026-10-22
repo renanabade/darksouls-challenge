@@ -39,9 +39,18 @@ jobs:
           - 6379:6379
         options: >-
           --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
+      # The generation queue (apps/worker).
+      rabbitmq:
+        image: rabbitmq:4-alpine
+        ports:
+          - 5672:5672
+        options: >-
+          --health-cmd "rabbitmq-diagnostics -q ping" --health-interval 10s --health-timeout 5s
+          --health-retries 12
     env:
       DATABASE_URL: postgresql://darksouls:darksouls@localhost:5432/darksouls
       REDIS_URL: redis://localhost:6379
+      RABBITMQ_URL: amqp://guest:guest@localhost:5672
     steps:
       # Actions pinned by commit SHA (tags can be moved); Dependabot keeps them current.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

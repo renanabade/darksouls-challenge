@@ -10,6 +10,8 @@ const Env = z.object({
   DATABASE_URL: z.url({ protocol: /^postgres(ql)?$/ }),
   /** Shared rate limit counters. Without it, each instance counts on its own, in memory. */
   REDIS_URL: z.url({ protocol: /^rediss?$/ }).optional(),
+  /** The broker. Without it, accepted jobs wait in the outbox. */
+  RABBITMQ_URL: z.url({ protocol: /^amqps?$/ }).optional(),
   /** Generation requests allowed per client per minute. */
   GENERATION_LIMIT: z.coerce.number().int().positive().default(10),
 });
@@ -20,6 +22,7 @@ export interface Config {
   readonly dataDir: URL;
   readonly databaseUrl: string;
   readonly redisUrl?: string;
+  readonly rabbitUrl?: string;
   readonly generationLimit: number;
 }
 
@@ -33,7 +36,8 @@ export function loadConfig(env: NodeJS.ProcessEnv): Config {
   const parsed = Env.safeParse(env);
   if (!parsed.success)
     throw new ConfigError(`invalid environment: ${z.prettifyError(parsed.error)}`);
-  const { PORT, LOG_LEVEL, DATA_DIR, DATABASE_URL, REDIS_URL, GENERATION_LIMIT } = parsed.data;
+  const { PORT, LOG_LEVEL, DATA_DIR, DATABASE_URL, REDIS_URL, RABBITMQ_URL, GENERATION_LIMIT } =
+    parsed.data;
   return {
     port: PORT,
     logLevel: LOG_LEVEL,
@@ -43,6 +47,7 @@ export function loadConfig(env: NodeJS.ProcessEnv): Config {
         : pathToFileURL(DATA_DIR.replace(/[\\/]?$/, "/")),
     databaseUrl: DATABASE_URL,
     ...(REDIS_URL !== undefined && { redisUrl: REDIS_URL }),
+    ...(RABBITMQ_URL !== undefined && { rabbitUrl: RABBITMQ_URL }),
     generationLimit: GENERATION_LIMIT,
   };
 }

@@ -91,6 +91,30 @@ describe.skipIf(url === undefined)("ChallengeRepository", () => {
     expect(after).toMatchObject({ status: "FAILED", error: "no such class", challengeId: null });
   });
 
+  it("relays each event once, even with two relays at the same time", async () => {
+    for (let i = 0; i < 6; i += 1) await repository.enqueue(job);
+    const seen: bigint[] = [];
+    const slowPublish = async (events: { id: bigint }[]) => {
+      seen.push(...events.map((e) => e.id));
+      await new Promise((resolve) => setTimeout(resolve, 50));
+    };
+    const counts = await Promise.all([
+      repository.relay(4, slowPublish),
+      repository.relay(4, slowPublish),
+    ]);
+    expect(counts.reduce((a, b) => a + b, 0)).toBe(6);
+    expect(new Set(seen).size).toBe(6);
+    expect(await repository.relay(4, slowPublish)).toBe(0);
+  });
+
+  it("keeps the events when publishing fails", async () => {
+    await repository.enqueue(job);
+    await expect(
+      repository.relay(10, () => Promise.reject(new Error("broker down"))),
+    ).rejects.toThrow("broker down");
+    expect(await repository.pendingEvents(10)).toHaveLength(1);
+  });
+
   it("hands the relay its events in order, once", async () => {
     await repository.enqueue(job);
     await repository.enqueue(job);

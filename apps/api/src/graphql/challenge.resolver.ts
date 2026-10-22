@@ -7,12 +7,15 @@ import { CURVES, DIFFICULTIES, LENGTHS, type World } from "@darksouls-challenge/
 import {
   ChallengeRepository,
   type Challenge as ChallengeRow,
+  type JobEvent,
   type JobWithChallenge,
 } from "@darksouls-challenge/db";
 import { Inject, UseGuards } from "@nestjs/common";
-import { Args, Context, ID, Mutation, Query, Resolver } from "@nestjs/graphql";
+import { Args, Context, ID, Mutation, Query, Resolver, Subscription } from "@nestjs/graphql";
+import type { PubSub } from "graphql-subscriptions";
 import { GraphQLError } from "graphql";
 import { z } from "zod";
+import { CHALLENGE_READY, PUB_SUB } from "../broker/broker.module.js";
 import { WORLD } from "../game/game.module.js";
 import { GqlThrottlerGuard } from "../throttle/throttle.module.js";
 import {
@@ -86,6 +89,7 @@ export class ChallengeResolver {
   constructor(
     @Inject(WORLD) private readonly world: World,
     @Inject(ChallengeRepository) private readonly repository: ChallengeRepository,
+    @Inject(PUB_SUB) private readonly pubSub: PubSub,
   ) {}
 
   @Query(() => Options)
@@ -134,5 +138,21 @@ export class ChallengeResolver {
       correlationId: typeof req.id === "string" ? req.id : "unknown",
     });
     return job({ ...created, challenge: null });
+  }
+
+  /**
+   * Fires once, when the job's challenge is stored. A client that subscribes after that misses it, so it
+   * subscribes first and then queries the job once, to cover a job that finished in between.
+   */
+  @Subscription(() => GenerationJob, {
+    filter: (payload: JobEvent, variables: { jobId: string }) => payload.jobId === variables.jobId,
+    async resolve(this: ChallengeResolver, payload: JobEvent) {
+      return this.job(payload.jobId);
+    },
+  })
+  // The argument declares the subscription's variable; the filter above reads it.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  challengeReady(@Args("jobId", { type: () => ID }) _jobId: string) {
+    return this.pubSub.asyncIterableIterator<JobEvent>(CHALLENGE_READY);
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "@darksouls-challenge/worker",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Generation worker: consumes generation jobs from RabbitMQ and stores their challenges.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@darksouls-challenge/contracts": "workspace:*",
+    "@darksouls-challenge/core": "workspace:*",
+    "@darksouls-challenge/db": "workspace:*",
+    "@darksouls-challenge/messaging": "workspace:*",
+    "amqplib": "^2.2.0",
+    "pino": "^10.4.0",
+    "zod": "^4.6.7"
+  }
+}

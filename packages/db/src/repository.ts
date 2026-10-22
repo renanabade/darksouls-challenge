@@ -144,6 +144,34 @@ export class ChallengeRepository {
     });
   }
 
+  /**
+   * One pass of the outbox relay: locks the oldest unpublished events, hands them to `publish` and marks them
+   * published, in one transaction. `SKIP LOCKED` lets several relays run at once without taking the same
+   * events. If the commit fails after `publish`, the events are published again on the next pass: delivery
+   * is at least once, and consumers are idempotent. Returns how many events were published.
+   */
+  async relay(limit: number, publish: (events: OutboxEvent[]) => Promise<void>): Promise<number> {
+    return this.prisma.$transaction(
+      async (tx) => {
+        const events = await tx.$queryRaw<OutboxEvent[]>`
+          SELECT id, topic, payload, created_at AS "createdAt", published_at AS "publishedAt"
+          FROM outbox_event
+          WHERE published_at IS NULL
+          ORDER BY id
+          LIMIT ${limit}
+          FOR UPDATE SKIP LOCKED`;
+        if (events.length === 0) return 0;
+        await publish(events);
+        await tx.outboxEvent.updateMany({
+          where: { id: { in: events.map((e) => e.id) } },
+          data: { publishedAt: new Date() },
+        });
+        return events.length;
+      },
+      { timeout: 15_000 },
+    );
+  }
+
   /** The oldest events the relay has not published yet. */
   async pendingEvents(limit: number): Promise<OutboxEvent[]> {
     return this.prisma.outboxEvent.findMany({

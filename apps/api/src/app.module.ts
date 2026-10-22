@@ -4,6 +4,7 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { LoggerModule } from "nestjs-pino";
 import { randomUUID } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
+import { BrokerModule } from "./broker/broker.module.js";
 import { CONFIG, ConfigModule, type Config } from "./config.js";
 import { DatabaseModule } from "./database.module.js";
 import { GameModule } from "./game/game.module.js";
@@ -38,11 +39,13 @@ export function requestId(request: IncomingMessage, response: ServerResponse): s
     DatabaseModule,
     RedisModule,
     ThrottleModule,
+    BrokerModule,
     // Code first: the schema is generated in memory from the decorated classes.
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
       sortSchema: true,
+      subscriptions: { "graphql-ws": true },
       context: ({ req, res }: { req: unknown; res: unknown }) => ({ req, res }),
       validationRules: [depthLimit(MAX_DEPTH)],
       plugins: [complexityLimit(MAX_COMPLEXITY)],

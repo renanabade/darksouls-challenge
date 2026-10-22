@@ -9,7 +9,8 @@
     "paths": {
       "@darksouls-challenge/core": ["../../packages/core/src/index.ts"],
       "@darksouls-challenge/contracts": ["../../packages/contracts/src/index.ts"],
-      "@darksouls-challenge/db": ["../../packages/db/src/index.ts"]
+      "@darksouls-challenge/db": ["../../packages/db/src/index.ts"],
+      "@darksouls-challenge/messaging": ["../../packages/messaging/src/index.ts"]
     }
   },
   "include": ["src", "test"]
