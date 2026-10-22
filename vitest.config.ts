@@ -20,6 +20,7 @@ export default defineConfig({
     alias: {
       "@darksouls-challenge/core": source("core"),
       "@darksouls-challenge/contracts": source("contracts"),
+      "@darksouls-challenge/db": source("db"),
     },
   },
   test: {

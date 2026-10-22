@@ -71,6 +71,10 @@ export class ChallengeRepository {
     });
   }
 
+  async findChallenge(id: string): Promise<Challenge | null> {
+    return this.prisma.challenge.findUnique({ where: { id } });
+  }
+
   async find(id: string): Promise<JobWithChallenge | null> {
     return this.prisma.generationJob.findUnique({ where: { id }, include: { challenge: true } });
   }
