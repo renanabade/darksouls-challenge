@@ -25,7 +25,27 @@ export default defineConfig({
     },
   },
   test: {
-    include: ["packages/*/test/**/*.test.ts", "apps/*/test/**/*.test.ts"],
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["packages/*/test/**/*.test.ts", "apps/*/test/**/*.test.ts"],
+          exclude: ["**/*.int.test.ts"],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          // Tests against real services: one file at a time, since they share the database and the queues.
+          name: "integration",
+          include: ["packages/*/test/**/*.int.test.ts", "apps/*/test/**/*.int.test.ts"],
+          fileParallelism: false,
+          // PostgreSQL, Redis and RabbitMQ in containers (see the file).
+          globalSetup: ["test/services.ts"],
+        },
+      },
+    ],
     coverage: {
       provider: "v8",
       include: ["packages/*/src/**", "apps/*/src/**"],

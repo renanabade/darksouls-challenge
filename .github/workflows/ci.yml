@@ -19,38 +19,10 @@ jobs:
     name: Lint, typecheck, test, build
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    services:
-      # A throwaway database for the database tests (packages/db), which migrate it themselves.
-      postgres:
-        image: postgres:17-alpine
-        env:
-          POSTGRES_USER: darksouls
-          POSTGRES_PASSWORD: darksouls
-          POSTGRES_DB: darksouls
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U darksouls" --health-interval 5s --health-timeout 3s
-          --health-retries 10
-      # Shared rate limit counters (apps/api).
-      redis:
-        image: redis:8-alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
-      # The generation queue (apps/worker).
-      rabbitmq:
-        image: rabbitmq:4-alpine
-        ports:
-          - 5672:5672
-        options: >-
-          --health-cmd "rabbitmq-diagnostics -q ping" --health-interval 10s --health-timeout 5s
-          --health-retries 12
+    # The integration tests start PostgreSQL, Redis and RabbitMQ themselves, with Testcontainers (the runner
+    # has Docker). Here a service that fails to start fails the run instead of skipping its tests.
     env:
-      DATABASE_URL: postgresql://darksouls:darksouls@localhost:5432/darksouls
-      REDIS_URL: redis://localhost:6379
-      RABBITMQ_URL: amqp://guest:guest@localhost:5672
+      REQUIRE_SERVICES: "1"
     steps:
       # Actions pinned by commit SHA (tags can be moved); Dependabot keeps them current.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

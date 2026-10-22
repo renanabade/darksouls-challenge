@@ -58,10 +58,14 @@ Difficulty: `easy`, `medium`, `hard`, `extreme`. Curve (how difficulty moves acr
 `epic` (three to five). Curve, class, starting gift (row in `data/ds1/classes.json`) and soul level cap are drawn
 from the seed unless given.
 
-Local services (PostgreSQL, Redis, RabbitMQ) run with Docker: `docker compose up -d`, then set
+The integration tests (`*.int.test.ts`) start PostgreSQL, Redis and RabbitMQ themselves with Testcontainers,
+which needs Docker; without it they are skipped with a warning. `pnpm vitest run --project unit` runs only the
+rest.
+
+To run the API and the worker locally, start the same services with `docker compose up -d` and set
 `DATABASE_URL=postgresql://darksouls:darksouls@localhost:5432/darksouls`, `REDIS_URL=redis://localhost:6379` and
-`RABBITMQ_URL=amqp://guest:guest@localhost:5672`. The database, Redis and broker tests run only when those are set
-(CI always sets them).
+`RABBITMQ_URL=amqp://guest:guest@localhost:5672`; apply the migrations with
+`pnpm --filter @darksouls-challenge/db migrate:deploy`.
 
 Run the API (port 3000 by default; `DATABASE_URL` is required, and `PORT`, `LOG_LEVEL`, `DATA_DIR`, `REDIS_URL`,
 `RABBITMQ_URL` and `GENERATION_LIMIT` are read from the environment):

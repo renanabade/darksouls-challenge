@@ -1,10 +1,10 @@
 import { Redis } from "ioredis";
 import { randomUUID } from "node:crypto";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, inject, it } from "vitest";
 import { RedisThrottlerStorage } from "../src/throttle/redis-storage.js";
 
-// Runs against a real Redis: CI provides one; locally, set REDIS_URL.
-const url = process.env["REDIS_URL"];
+// Runs against a real Redis, started by the global setup (test/services.ts).
+const url = inject("services").redisUrl;
 
 describe.skipIf(url === undefined)("RedisThrottlerStorage", () => {
   let redis: Redis;
