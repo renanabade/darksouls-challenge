@@ -7,6 +7,8 @@ import { readDataSet } from "./ds1.js";
 
 interface Merchant {
   readonly id: string;
+  readonly regions: readonly string[];
+  readonly leaves?: readonly { readonly flag: number; readonly when: string }[];
   readonly stock: readonly { readonly name: string | null }[];
   readonly exclusive?: readonly {
     readonly id: string;
@@ -32,6 +34,15 @@ describe("NPC state", () => {
   });
 
   const world = parseWorld(readDataSet());
+
+  // E15: Rhea is lost once two more main bosses die after she reaches the Parish, or once her stock is
+  // bought out; her shop, opened by the rescue in the Tomb of the Giants, stays on the graph.
+  it("records the two ways Rhea leaves, after the Tomb of the Giants", () => {
+    const rhea = merchants.get("rhea-of-thorolund");
+    expect(rhea?.leaves?.map((l) => l.flag)).toEqual([1177, 1181]);
+    const shop = reach(world, { forbiddenRegions: new Set(["tomb-of-the-giants"]) });
+    expect(rhea?.regions.some((r) => shop.regions.has(r))).toBe(false);
+  });
   const without = (item: string) => reach(world, { forbiddenItems: new Set([item]) }).regions;
 
   // E9: Domhnall comes to Firelink once both bells are rung, wherever the player has been.

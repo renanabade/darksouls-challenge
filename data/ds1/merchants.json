@@ -2292,6 +2292,16 @@
  },
  {
   "id": "rhea-of-thorolund",
+  "leaves": [
+   {
+    "flag": 1177,
+    "when": "Two more of the main bosses die after she reaches the Undead Parish."
+   },
+   {
+    "flag": 1181,
+    "when": "Every miracle and item of her stock is bought: she leaves the Undead Parish."
+   }
+  ],
   "name": "Rhea of Thorolund",
   "regions": [
    "firelink-shrine-rhea-of-thorolund"
