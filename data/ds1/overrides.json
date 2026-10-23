@@ -87,6 +87,18 @@
    "op": "condition",
    "source": "m14_01_00_00 Event_11410901 (flag 11410901, removes fogs 1411890 and 1411892 on death); MSB positions of objects 1411892 and 1411964",
    "value": {"has": "Centipede Demon Defeated"}
+  },
+  {
+   "file": "merchants",
+   "id": "E7",
+   "match": {"id": "domhnall-of-zena"},
+   "note": "The fight ends one of two ways. Ornstein (1510801) dying last unlocks his set; Smough (1510811) dying last unlocks Smough's. The other set stays hidden for the rest of the playthrough.",
+   "op": "replace",
+   "source": "m15_01_00_00 Event_11510001 (one branch disables flags 11807100-11807130, ShopLineupParam rows 1558-1561; the other disables flags 11807060-11807090, rows 1554-1557)",
+   "value": {"exclusive": [{"id": "ornstein-or-smough", "options": [
+    {"flag": 11510902, "items": ["Ornstein's Armor", "Ornstein's Gauntlets", "Ornstein's Helm", "Ornstein's Leggings"], "when": "Ornstein is killed last"},
+    {"flag": 11510903, "items": ["Smough's Armor", "Smough's Gauntlets", "Smough's Helm", "Smough's Leggings"], "when": "Smough is killed last"}
+   ]}]}
   }
  ]
 }

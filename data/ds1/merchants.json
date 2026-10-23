@@ -493,6 +493,33 @@
   ]
  },
  {
+  "exclusive": [
+   {
+    "id": "ornstein-or-smough",
+    "options": [
+     {
+      "flag": 11510902,
+      "items": [
+       "Ornstein's Armor",
+       "Ornstein's Gauntlets",
+       "Ornstein's Helm",
+       "Ornstein's Leggings"
+      ],
+      "when": "Ornstein is killed last"
+     },
+     {
+      "flag": 11510903,
+      "items": [
+       "Smough's Armor",
+       "Smough's Gauntlets",
+       "Smough's Helm",
+       "Smough's Leggings"
+      ],
+      "when": "Smough is killed last"
+     }
+    ]
+   }
+  ],
   "id": "domhnall-of-zena",
   "name": "Domhnall of Zena",
   "regions": [
