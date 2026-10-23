@@ -104,7 +104,9 @@ type Check = (constraints: Constraints) => string | undefined;
  * bosses are mandatory follows from the setup instead of a fixed list.
  */
 export function startingItems(world: World, setup: Setup): string[] {
-  const kit = world.classes.get(setup.startingClass ?? "")?.items ?? [];
+  const start = world.classes.get(setup.startingClass ?? "");
+  // The kit counts too: the Pyromancer's own Pyromancy Flame is what Quelana waits for (E13).
+  const kit = [...(start?.kit ?? []), ...(start?.items ?? [])];
   return [...new Set([...setup.gift.items.map((i) => i.item), ...kit])];
 }
 

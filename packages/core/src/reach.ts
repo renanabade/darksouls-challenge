@@ -1,5 +1,5 @@
 import { evaluate, type RequirementContext } from "./requirement.js";
-import type { Location, World } from "./world.js";
+import type { Entrance, Location, World } from "./world.js";
 
 export interface ReachOptions {
   /** What the player already holds at the start (a starting gift, for example). */
@@ -57,10 +57,29 @@ export function reach(world: World, options: ReachOptions = {}): Reach {
     has: (item) => items.has(item),
     reached: (region) => regions.has(region),
   };
+  // An entrance that must be crossed before an item is held: the player can cross it when it is open in
+  // the world without that item. Every state of the walk is one the player reaches with what it holds, so
+  // an entrance open while the item is not yet taken is crossable; only otherwise is the world without
+  // the item walked, once per item.
+  const without = new Map<string, Reach>();
+  const crossableBefore = (e: Entrance): boolean => {
+    if (e.before === undefined || forbiddenItems.has(e.before) || !items.has(e.before)) return true;
+    let early = without.get(e.before);
+    if (early === undefined) {
+      early = reach(world, { ...options, forbiddenItems: new Set([...forbiddenItems, e.before]) });
+      without.set(e.before, early);
+    }
+    return early.regions.has(e.to);
+  };
   for (let changed = true; changed;) {
     changed = false;
     for (const e of world.entrances) {
-      if (regions.has(e.from) && !regions.has(e.to) && evaluate(e.requires, context)) {
+      if (
+        regions.has(e.from) &&
+        !regions.has(e.to) &&
+        evaluate(e.requires, context) &&
+        crossableBefore(e)
+      ) {
         changed = enter(e.to) || changed;
       }
     }

@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { parseWorld, reach } from "../src/index.js";
+import { parseWorld, reach, startingItems } from "../src/index.js";
 import { readDataSet } from "./ds1.js";
 
 // NPC and shop state from the game's scripts (issue 38), checked on the exported data set.
@@ -57,5 +57,26 @@ describe("NPC state", () => {
     expect(sold.map((l) => l.item)).toContain("Sorcery: Soul Spear");
     const noCage = reach(world, { forbiddenRegions: new Set(["sens-fortress-after-cage-key"]) });
     expect(noCage.regions.has("firelink-shrine-big-hat-logan")).toBe(false);
+  });
+
+  // E13: Quelana waits for an upgraded Pyromancy Flame (Laurentius or Eingyi upgrades it), and leaves for
+  // good if the Bed of Chaos dies before she is met.
+  it("opens Quelana with a Pyromancy Flame and an upgrader, before the Bed of Chaos dies", () => {
+    const quelana = "lower-blighttown-quelana-of-izalith";
+    const laurentius = "firelink-shrine-laurentius-of-the-great-swamp";
+    const edge = world.entrances.find((e) => e.to === quelana);
+    expect(edge?.before).toBe("Bed of Chaos Defeated");
+    const noGift = { mode: "static", gift: { row: 0, items: [] } } as const;
+    const pyromancer = startingItems(world, { ...noGift, startingClass: "Pyromancer" });
+    const knight = startingItems(world, { ...noGift, startingClass: "Knight" });
+    const noLaurentius = new Set([laurentius]);
+    expect(pyromancer).toContain("Pyromancy Flame");
+    expect(
+      reach(world, { items: pyromancer, forbiddenRegions: noLaurentius }).regions.has(quelana),
+    ).toBe(true);
+    expect(
+      reach(world, { items: knight, forbiddenRegions: noLaurentius }).regions.has(quelana),
+    ).toBe(false);
+    expect(reach(world, { items: knight }).regions.has(quelana)).toBe(true);
   });
 });

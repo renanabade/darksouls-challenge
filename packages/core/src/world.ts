@@ -30,6 +30,11 @@ export interface Entrance {
   readonly requires: Requirement;
   /** False when the way back on foot is known not to exist. The way back, when it exists, is its own entrance. */
   readonly walkBack: boolean;
+  /**
+   * An item the entrance must be crossed before: once the player holds it, the way is gone for good unless
+   * it was crossed already (Quelana leaves if the Bed of Chaos dies before she was met).
+   */
+  readonly before?: string;
 }
 
 export interface Location {
@@ -193,6 +198,7 @@ export function parseWorld(raw: RawDataSet): World {
       to: check.string(fields, "to", path),
       requires: check.requirement(fields["requires"], `${path}.requires`),
       walkBack: check.boolean(fields, "walkBack", path, true),
+      ...(fields["before"] !== undefined && { before: check.string(fields, "before", path) }),
     });
   }
 

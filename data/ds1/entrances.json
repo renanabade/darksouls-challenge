@@ -633,10 +633,25 @@
   "walkBack": true
  },
  {
+  "before": "Bed of Chaos Defeated",
   "from": "lower-blighttown",
   "origin": "DSAP",
   "requires": {
-   "region": "firelink-shrine-laurentius-of-the-great-swamp"
+   "all": [
+    {
+     "has": "Pyromancy Flame"
+    },
+    {
+     "any": [
+      {
+       "region": "firelink-shrine-laurentius-of-the-great-swamp"
+      },
+      {
+       "region": "lower-blighttown-eingyi"
+      }
+     ]
+    }
+   ]
   },
   "to": "lower-blighttown-quelana-of-izalith",
   "walkBack": true
