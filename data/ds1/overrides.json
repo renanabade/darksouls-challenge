@@ -195,9 +195,9 @@
    "file": "entrances",
    "id": "E13",
    "match": {"from": "lower-blighttown", "to": "lower-blighttown-quelana-of-izalith"},
-   "note": "Quelana appears for a Pyromancy Flame +10 or an Ascended one, with no Laurentius requirement: the flame is upgraded by Laurentius or Eingyi (the shared talk menu 365). She leaves for good if the Bed of Chaos dies before she was spoken to.",
+   "note": "Quelana appears for a Pyromancy Flame +10 or an Ascended one, with no Laurentius requirement: the flame is upgraded by Laurentius or Eingyi. In both talks the upgrade state calls CollectJustPyromancyFlame, CombineMenuFlagAndEventFlag(365, 331) and OpenEquipmentChangeOfPurposeShop, a reinforcement menu that lists only the flame. Eingyi needs no egg head for it: his menu (t140616 State_3, the flame entry with required_flag -1, leading to State_96) is reached in his state 1281 through States 58, 61, 62 and 23; the egg head (state 1286, SpEffect 5213 or 5214 through flag 753) only widens his shop from rows 3200-3209 to 3200-3299. She leaves for good if the Bed of Chaos dies before she was spoken to.",
    "op": "replace",
-   "source": "m14_00_00_00 Event_11400536 (state 1291 and EnableCharacter(6170) once PlayerHasWeapon 1331000-1331500, Pyromancy Flame +10 to +15, or 1332000-1332500, Ascended +0 to +5); Event_11400539 (flag 1296 and DisableCharacter(6170) when flag 10, Bed of Chaos, is on in state 1290, or in 1291 with talk flag 71400061 off); talks t102613 and t140616 (CombineMenuFlagAndEventFlag 365, 331)",
+   "source": "m14_00_00_00 Event_11400536 (state 1291 and EnableCharacter(6170) once PlayerHasWeapon 1331000-1331500, Pyromancy Flame +10 to +15, or 1332000-1332500, Ascended +0 to +5); Event_11400539 (flag 1296 and DisableCharacter(6170) when flag 10, Bed of Chaos, is on in state 1290, or in 1291 with talk flag 71400061 off); talks t102613 State_82 and t140616 State_96 (CollectJustPyromancyFlame, CombineMenuFlagAndEventFlag 365, 331); m14_00_00_00 Event_11400531 (Eingyi state 1281 after talk flag 11400593) and Event_11400532 (state 1286 with flag 753)",
    "value": {"before": "Bed of Chaos Defeated", "requires": {"all": [{"has": "Pyromancy Flame"}, {"any": [{"region": "firelink-shrine-laurentius-of-the-great-swamp"}, {"region": "lower-blighttown-eingyi"}]}]}}
   },
   {
