@@ -436,12 +436,19 @@
  },
  {
   "from": "firelink-shrine",
+  "note": "Logan comes to Firelink once freed from his cage in Sen's Fortress.",
+  "origin": "override",
+  "requires": {
+   "region": "sens-fortress-after-cage-key"
+  },
+  "to": "firelink-shrine-big-hat-logan",
+  "walkBack": true
+ },
+ {
+  "from": "firelink-shrine",
   "origin": "DSAP",
   "requires": {
    "all": [
-    {
-     "region": "depths"
-    },
     {
      "has": "Bell of Awakening #1"
     },
@@ -1186,9 +1193,6 @@
     },
     {
      "region": "the-dukes-archives-giant-cell"
-    },
-    {
-     "region": "crystal-cave-after-seath"
     }
    ]
   },

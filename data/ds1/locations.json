@@ -2613,6 +2613,86 @@
   "category": "SHOP_ITEM",
   "count": 1,
   "found": false,
+  "item": "Sorcery: Great Heavy Soul Arrow",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Heavy Soul Arrow",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Great Soul Arrow",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Soul Arrow",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Heavy Soul Arrow",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Heavy Soul Arrow",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Homing Soulmass",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Homing Soulmass",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Magic Shield",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Shield",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Magic Weapon",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Weapon",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Soul Arrow",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Arrow",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
+  "item": "Sorcery: Soul Spear",
+  "kind": "spell",
+  "mandatory": false,
+  "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Spear",
+  "region": "firelink-shrine-big-hat-logan"
+ },
+ {
+  "category": "SHOP_ITEM",
+  "count": 1,
+  "found": false,
   "item": "Filler",
   "kind": "other",
   "mandatory": false,

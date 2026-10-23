@@ -1083,5 +1083,12 @@
   "mandatory": true,
   "name": "Undead Parish - Bell Tower",
   "virtual": false
+ },
+ {
+  "area": "firelink-shrine",
+  "id": "firelink-shrine-big-hat-logan",
+  "mandatory": false,
+  "name": "Firelink Shrine - Big Hat Logan",
+  "virtual": false
  }
 ]
