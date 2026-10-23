@@ -117,6 +117,7 @@ describe("generate on the DS1 data set", () => {
     // Issue 38, E15 to E18: what the scripts do to NPCs, told once at the end of every manual.
     const before = manual.slice(manual.indexOf("## Before you go"));
     for (const npc of [
+      "Lautrec of Carim",
       "Rhea of Thorolund",
       "Trusty Patches",
       "Solaire of Astora",

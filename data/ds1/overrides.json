@@ -260,6 +260,14 @@
   },
   {
    "file": "warnings",
+   "id": "E11-warning",
+   "note": "Freeing Lautrec does not decide it: left in his cell, he walks out on his own once the Bell Gargoyles are dead or both Fire Keeper Souls are taken.",
+   "op": "add",
+   "source": "m10_02_00_00 Event_11020555 (Anastacia, 6060, killed: state 1141, once both bells are rung, flag 11500200, or both Fire Keeper Souls are taken, flags 812 and 813, with Lautrec neither hostile nor dead, flags 1574 and 1575); m10_02_00_00 Event_11020410 (Lautrec leaves Firelink, state 1578, on the same trigger); m10_01_00_00 Event_11010552 (Lautrec leaves his cell unfreed, state 1577, once flag 3 or flags 812 and 813 are on); m10_02_00_00 Event_11020110 (the bonfire is out, flag 11020100, until 11020101 after talk t102606 sets 11020609) and Event_11020556 (state 1146 once the Black Eye Orb, lot 2034, is taken, flag 810)",
+   "value": {"id": "lautrec", "npc": "Lautrec of Carim", "text": "Once both bells are rung, or both Fire Keeper Souls (Undead Parish and Blighttown) are taken, Anastacia is killed and Lautrec leaves Firelink, whether or not you freed him. The Firelink Shrine bonfire stays out until her soul is returned to her, a quest that starts with the Black Eye Orb."}
+  },
+  {
+   "file": "warnings",
    "id": "E16",
    "op": "add",
    "source": "m13_01_00_00 Event_11310002 (cutscene 130110 or 130111 moves the player to region 1312120 once Patches is in state 1623, set by Event_11310540 after Pinwheel, flag 6, or Rhea's state 1173)",
