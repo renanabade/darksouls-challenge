@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { forbiddenAreaCutsOff } from "../src/generator/generate.js";
+import { forbiddenAreaCutsOff, reachableChapters } from "../src/generator/generate.js";
 import {
   catalog,
   chaptersOf,
@@ -67,21 +67,53 @@ describe("generate on the DS1 data set", () => {
   }, 30_000);
 
   // Royal Wood is the only way into the Township and the Chasm. Forbidding it must not leave those
-  // places, or their bosses, anywhere in the manual.
+  // places, or their bosses, anywhere in the manual. Built by hand, so no seed has to draw it.
   it("does not send the player past a forbidden area", () => {
-    const challenge = generate(world, {
-      seed: "ashen-one",
+    const template = (id: string) => {
+      const found = catalog.find((t) => t.id === id);
+      if (found === undefined) throw new Error(`no template ${id}`);
+      return found;
+    };
+    const forbid = { template: template("forbidden-area"), args: { area: "royal-wood" } };
+    const fight = { template: template("dry-fight"), args: { boss: "sanctuary-guardian" } };
+    const everything = {
+      goal: "kiln-open",
+      goals: ["kiln-open"],
+      areas: [...world.areas.keys()],
+      bosses: [...world.bosses.keys()],
+      offset: 0,
       difficulty: "medium",
-      length: "full",
+    } as const;
+    const [chapter] = reachableChapters(world, [everything], [forbid, fight], []);
+    if (chapter === undefined) throw new Error("no chapter");
+    expect(chapter.areas).toContain("royal-wood");
+    expect(chapter.areas).toContain("oolacile-sanctuary");
+    for (const area of ["oolacile-township", "chasm-of-the-abyss"])
+      expect(chapter.areas).not.toContain(area);
+    for (const boss of ["manus-father-of-the-abyss", "knight-artorias", "black-dragon-kalameet"])
+      expect(chapter.bosses).not.toContain(boss);
+    expect(chapter.bosses).toContain("sanctuary-guardian");
+    const base = generate(world, { seed: "ashen-one", difficulty: "medium", length: "full" });
+    expect(validate(world, base.setup, [forbid, fight]).verdict).toBe("comfortable");
+    const manual = renderManual(world, {
+      ...base,
+      chapters: [chapter],
+      orders: [
+        { ...forbid, exceptions: [] },
+        { ...fight, chapter: 0, exceptions: [] },
+      ],
     });
-    expect(challenge.orders.find((o) => o.template.id === "forbidden-area")?.args["area"]).toBe(
-      "royal-wood",
-    );
-    const manual = renderManual(world, challenge);
     for (const name of ["Oolacile Township", "Chasm of the Abyss", "Manus", "Kalameet"])
       expect(manual, name).not.toContain(name);
     expect(manual).toContain("Royal Wood (forbidden)");
     expect(manual).toContain("Oolacile Sanctuary");
+  });
+
+  it("ends every manual with what the scripts do to NPCs", () => {
+    const manual = renderManual(
+      world,
+      generate(world, { seed: "ashen-one", difficulty: "medium", length: "full" }),
+    );
     // Issue 38, E15 to E18: what the scripts do to NPCs, told once at the end of every manual.
     const before = manual.slice(manual.indexOf("## Before you go"));
     for (const npc of [
