@@ -211,6 +211,45 @@
     {"flag": 1177, "when": "Two more of the main bosses die after she reaches the Undead Parish."},
     {"flag": 1181, "when": "Every miracle and item of her stock is bought: she leaves the Undead Parish."}
    ]}
+  },
+  {
+   "file": "regions",
+   "id": "E18-region",
+   "match": {"id": "the-abyss-darkstalker-kaathe"},
+   "note": "Kaathe in the Abyss: DSAP gives him no region, so his shop had nowhere to be.",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 (EnableCharacter(6340), state 1671); talk t160634 (ShopLineupParam rows 6100-6199)",
+   "value": {"area": "the-abyss", "id": "the-abyss-darkstalker-kaathe", "mandatory": false, "name": "The Abyss - Darkstalker Kaathe", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E18-area",
+   "match": {"id": "the-abyss"},
+   "op": "replace",
+   "source": "m16_00_00_00: Kaathe appears in the Abyss",
+   "value": {"regions": ["the-abyss", "the-abyss-after-four-kings", "the-abyss-darkstalker-kaathe"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E18-entrance",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 (Kaathe appears once flag 13, Four Kings defeated, is on while flag 11800100, Lordvessel placed, is off)",
+   "value": {"before": "Lordvessel Placed", "from": "the-abyss-after-four-kings", "note": "Kaathe appears after the Four Kings only if the Lordvessel is not placed yet.", "origin": "override", "requires": true, "to": "the-abyss-darkstalker-kaathe", "walkBack": true}
+  },
+  {
+   "file": "locations",
+   "id": "E18-stock",
+   "op": "add",
+   "source": "ShopLineupParam row 6100 (talk t160634)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Cracked Red Eye Orb", "kind": "good", "mandatory": false, "name": "Darkstalker Kaathe: Cracked Red Eye Orb", "region": "the-abyss-darkstalker-kaathe"}
+  },
+  {
+   "file": "merchants",
+   "id": "E18",
+   "match": {"id": "darkstalker-kaathe"},
+   "op": "replace",
+   "source": "talk t160634 (flag 11600590 set in state 81, after the player says no, and in state 13, once his HP is at 90 or less); m16_00_00_00 Event_11600540 (state 1677 and DisableCharacter(6340) when 11600590 is on in state 1672 or 1678)",
+   "value": {"leaves": [{"flag": 1677, "when": "He is refused, or attacked: he leaves at once and for good."}], "regions": ["the-abyss-darkstalker-kaathe"]}
   }
  ]
 }

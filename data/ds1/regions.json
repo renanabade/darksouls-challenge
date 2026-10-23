@@ -1090,5 +1090,12 @@
   "mandatory": false,
   "name": "Firelink Shrine - Big Hat Logan",
   "virtual": false
+ },
+ {
+  "area": "the-abyss",
+  "id": "the-abyss-darkstalker-kaathe",
+  "mandatory": false,
+  "name": "The Abyss - Darkstalker Kaathe",
+  "virtual": false
  }
 ]
