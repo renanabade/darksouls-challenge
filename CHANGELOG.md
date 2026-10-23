@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.11.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.10.0...darksouls-challenge-v0.11.0) (2026-10-23)
+
+
+### Features
+
+* **core:** bonfire availability from the game scripts ([093c8ec](https://github.com/renanabade/darksouls-challenge/commit/093c8ec5824ba490f51503ad3b320cba2c345cfa)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **core:** mandatory bosses by configuration ([1267260](https://github.com/renanabade/darksouls-challenge/commit/1267260ae1591843b77b5d94511cff72d8b12079)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **generator:** draw with generator 6 on data 0.7.0 ([2d9953a](https://github.com/renanabade/darksouls-challenge/commit/2d9953a929cd4026280f54028d6c88d78931e79d)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **generator:** warn about NPCs in the manual ([ab94006](https://github.com/renanabade/darksouls-challenge/commit/ab940067246502ede3613bdde3739ababb1af240)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+
+
+### Bug Fixes
+
+* **core:** check every unavailable window of a one-bonfire target ([b60304f](https://github.com/renanabade/darksouls-challenge/commit/b60304f56bca0f2784d5c5258aaebd65060f91fc)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **core:** close a before entrance for an item held from the start ([2be2606](https://github.com/renanabade/darksouls-challenge/commit/2be2606ef98f9fa865947107158ae049bf0de024)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **core:** leave unmodeled bonfires out of one-bonfire ([4b64d48](https://github.com/renanabade/darksouls-challenge/commit/4b64d4846bfabf7c79e5ddae544bd58aca44e4b0))
+* **core:** reject one-bonfire orders that name an unmodeled bonfire ([1434e85](https://github.com/renanabade/darksouls-challenge/commit/1434e85743c7209eba29ef364ce1d03f845e5a63))
+* **core:** reject orders whose target a forbidden area cuts off ([8ebd835](https://github.com/renanabade/darksouls-challenge/commit/8ebd835adf3bbd6fb5f10f1db0ea839621bbc31c))
+* **core:** skip a forbidden area that cuts off an earlier order ([b8c85f9](https://github.com/renanabade/darksouls-challenge/commit/b8c85f95db5369febe9a4298646df2812d09ee1a))
+* **data:** chain the Hydra, Dusk and the DLC, and drop a comfort rule ([ddb92de](https://github.com/renanabade/darksouls-challenge/commit/ddb92ded051549ebfdba9a8ac7c28e3e6b2bffd1)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** gate Quelana on an upgraded flame and the Bed of Chaos ([5e5fe0a](https://github.com/renanabade/darksouls-challenge/commit/5e5fe0a2fec8ae0412dca9e97695fec775fcda9f)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** give Kaathe a region, and record how he leaves ([c3cf8ca](https://github.com/renanabade/darksouls-challenge/commit/c3cf8ca27294c75bae2577c9a257d6848022005e)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** make Domhnall's Ornstein and Smough sets exclusive ([c325046](https://github.com/renanabade/darksouls-challenge/commit/c325046ccfea51b736b727e88fff8200d56f940c)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** move Logan and Domhnall per the game scripts ([91a6b29](https://github.com/renanabade/darksouls-challenge/commit/91a6b2928e81f28a5d8f978d7e78eb88dc8279ea)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** record the two ways Rhea leaves ([c5f4a5d](https://github.com/renanabade/darksouls-challenge/commit/c5f4a5d744938fd3314d70d099c51ebcf1e4d4c2)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** say what turns the Darkmoon Knightess hostile ([d34bfa0](https://github.com/renanabade/darksouls-challenge/commit/d34bfa05e505d6255b522d9062520e11018c5688)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** warn about Lautrec and the Firelink Fire Keeper ([e34ca7c](https://github.com/renanabade/darksouls-challenge/commit/e34ca7c1b2e9c9c38d4b4cad87614224bebc6a2b)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+
+
+### Documentation
+
+* **adr:** format ADR 0011 ([c73bc36](https://github.com/renanabade/darksouls-challenge/commit/c73bc365c564b1b639599941e7727c9fd6975f4c)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+* **data:** cite the flame menu behind Quelana's upgraders ([53cb6cd](https://github.com/renanabade/darksouls-challenge/commit/53cb6cd5fe34927543ab2a7fdea378b79b23258a)), closes [#38](https://github.com/renanabade/darksouls-challenge/issues/38)
+
 ## [0.10.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.9.0...darksouls-challenge-v0.10.0) (2026-10-22)
 
 
