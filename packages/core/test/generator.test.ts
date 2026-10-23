@@ -384,7 +384,9 @@ describe("difficulty budget", () => {
     const orders = easy.flatMap((c) => c.orders);
     const friction = orders.reduce((sum, o) => sum + o.template.weight.friction, 0);
     expect(friction / orders.length).toBeLessThanOrEqual(1);
-  }, 60_000);
+    // 24 full journeys. Their cost follows the draws: generator 6's are about a quarter heavier than 5's
+    // with the same code, past the 60 s this test had on CI.
+  }, 180_000);
 });
 
 describe("group challenge (handicap)", () => {
