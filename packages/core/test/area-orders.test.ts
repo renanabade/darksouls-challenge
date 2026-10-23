@@ -12,6 +12,7 @@ import {
   type OrderTemplate,
   type Setup,
 } from "../src/index.js";
+import { domainsOf } from "../src/generator/draw.js";
 import { readDataSet } from "./ds1.js";
 
 const order = (id: string, args: Record<string, ArgValue>): OrderInstance => ({
@@ -96,6 +97,24 @@ describe("area orders", () => {
     }
     throw new Error("no sample journey forbids an area");
   }, 60_000);
+
+  // E11 and E12: those two bonfires are not always lit. One bonfire must not name them.
+  // No bonfire still may: it never asks the player to rest at one of them.
+  it("does not draw the Firelink Shrine bonfire or the first Anor Londo bonfire", () => {
+    const domains = domainsOf(world);
+    const offered = [...domains.bonfiresByArea.values()].flat();
+    expect(offered).not.toContain("FS: Firelink Shrine Bonfire");
+    expect(offered).not.toContain("AL: Anor Londo Bonfire");
+    expect(domains.bonfiresByArea.get("anor-londo")).toEqual([
+      "AL: Anor Londo - Residence Bonfire",
+      "AL: Chamber of the Princess Bonfire",
+      "AL: Darkmoon Tomb Bonfire",
+    ]);
+    expect(domains.bonfiresByArea.has("firelink-shrine")).toBe(false);
+    expect(domains.areasWithBonfires).toEqual(
+      expect.arrayContaining(["firelink-shrine", "anor-londo"]),
+    );
+  });
 
   it("names a bonfire without its area code", () => {
     const one = order("one-bonfire", {
