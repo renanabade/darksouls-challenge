@@ -60,10 +60,15 @@ export function reach(world: World, options: ReachOptions = {}): Reach {
   // An entrance that must be crossed before an item is held: the player can cross it when it is open in
   // the world without that item. Every state of the walk is one the player reaches with what it holds, so
   // an entrance open while the item is not yet taken is crossable; only otherwise is the world without
-  // the item walked, once per item.
+  // the item walked, once per item. An item held from the start closes the entrance from the start.
+  // Each entrance is judged on its own item: two entrances with different items are not asked to be
+  // crossed in one order (ADR 0011).
+  const held = new Set(options.items ?? []);
   const without = new Map<string, Reach>();
   const crossableBefore = (e: Entrance): boolean => {
-    if (e.before === undefined || forbiddenItems.has(e.before) || !items.has(e.before)) return true;
+    if (e.before === undefined || forbiddenItems.has(e.before)) return true;
+    if (held.has(e.before)) return false;
+    if (!items.has(e.before)) return true;
     let early = without.get(e.before);
     if (early === undefined) {
       early = reach(world, { ...options, forbiddenItems: new Set([...forbiddenItems, e.before]) });

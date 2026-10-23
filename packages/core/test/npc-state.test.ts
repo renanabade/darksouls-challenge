@@ -45,6 +45,8 @@ describe("NPC state", () => {
     const edge = world.entrances.find((e) => e.to === "the-abyss-darkstalker-kaathe");
     expect(edge?.before).toBe("Lordvessel Placed");
     expect(reach(world).regions.has("the-abyss-darkstalker-kaathe")).toBe(true);
+    const placed = reach(world, { items: ["Lordvessel Placed"] });
+    expect(placed.regions.has("the-abyss-darkstalker-kaathe")).toBe(false);
     expect(without("Four Kings Defeated").has("the-abyss-darkstalker-kaathe")).toBe(false);
   });
 
@@ -101,5 +103,7 @@ describe("NPC state", () => {
       reach(world, { items: knight, forbiddenRegions: noLaurentius }).regions.has(quelana),
     ).toBe(false);
     expect(reach(world, { items: knight }).regions.has(quelana)).toBe(true);
+    const bedDead = reach(world, { items: [...knight, "Bed of Chaos Defeated"] });
+    expect(bedDead.regions.has(quelana)).toBe(false);
   });
 });

@@ -83,6 +83,30 @@ describe("reach", () => {
     expect(reach(closing("start")).regions.has("shop")).toBe(true);
     expect(reach(closing("after")).regions.has("shop")).toBe(false);
     expect(reach(closing("after"), { items: ["Flame"] }).regions.has("shop")).toBe(true);
+    // Holding the item from the start closes the entrance from the start.
+    const deadFromTheStart = { items: ["Flame", "Boss Defeated"] };
+    expect(reach(closing("start"), deadFromTheStart).regions.has("shop")).toBe(false);
+  });
+
+  // a needs Y and closes on X; b needs X and closes on Y. Each opens alone (take Y, cross a; take X, cross
+  // b), but no single order crosses both. reach() judges each entrance on its own item (ADR 0011).
+  it("judges each closing entrance on its own item, not jointly", () => {
+    const crossed = parseWorld({
+      meta: { start: "start", goal: "X" },
+      regions: ["start", "a", "b"].map((id) => ({ id, name: id, area: "x", mandatory: false })),
+      entrances: [
+        { from: "start", to: "a", requires: { has: "Y" }, before: "X" },
+        { from: "start", to: "b", requires: { has: "X" }, before: "Y" },
+      ],
+      locations: [
+        { name: "1", region: "start", item: "X", count: 1, category: "KEY", mandatory: false },
+        { name: "2", region: "start", item: "Y", count: 1, category: "KEY", mandatory: false },
+      ],
+      classes: { gifts: [] },
+      bosses: [],
+      merchants: [],
+    });
+    expect(sorted(reach(crossed).regions)).toEqual(["a", "b", "start"]);
   });
 });
 
