@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { UNMODELED_BONFIRES } from "../src/bonfires.js";
+import { alwaysLit } from "../src/bonfires.js";
 import {
   BELLS,
   catalog,
@@ -314,16 +314,19 @@ describe("validate on the DS1 data set", () => {
     );
   });
 
-  it("rejects a one-bonfire order that names a bonfire whose availability is not modeled", () => {
-    expect([...UNMODELED_BONFIRES]).toEqual([
-      "FS: Firelink Shrine Bonfire",
+  // Issue 38, E11 and E12: the game's scripts put these bonfires out, or add them late.
+  it("rejects a one-bonfire order that names a bonfire out for part of the run", () => {
+    const windowed = world.locations.filter((l) => l.category === "BONFIRE" && !alwaysLit(l));
+    expect(windowed.map((l) => l.name).sort()).toEqual([
       "AL: Anor Londo Bonfire",
+      "AL: Chamber of the Princess Bonfire",
+      "FS: Firelink Shrine Bonfire",
     ]);
-    for (const bonfire of UNMODELED_BONFIRES) {
+    for (const { name: bonfire, unavailable } of windowed) {
       const result = run([order("one-bonfire", { area: "anor-londo", bonfire })]);
       expect(result.verdict, bonfire).toBe("impossible");
       expect(result.problems, bonfire).toEqual([
-        `${bonfire} cannot be the one bonfire until its availability is modeled`,
+        `${bonfire} cannot be the one bonfire: ${unavailable?.[0]?.why ?? ""}`,
       ]);
     }
     expect(

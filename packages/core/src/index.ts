@@ -48,6 +48,7 @@ export {
   WorldParseError,
   type Area,
   type Entrance,
+  type BonfireWindow,
   type GiftItem,
   type Location,
   type Merchant,

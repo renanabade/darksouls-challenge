@@ -166,6 +166,30 @@
   {"file": "locations", "id": "E8-7", "op": "add", "source": "ShopLineupParam row 5006 (talk t102603)",
    "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Weapon", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Weapon", "region": "firelink-shrine-big-hat-logan"}},
   {"file": "locations", "id": "E8-8", "op": "add", "source": "ShopLineupParam row 5007 (talk t102603)",
-   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Shield", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Shield", "region": "firelink-shrine-big-hat-logan"}}
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Shield", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Shield", "region": "firelink-shrine-big-hat-logan"}},
+  {
+   "file": "locations",
+   "id": "E11",
+   "match": {"name": "FS: Firelink Shrine Bonfire"},
+   "op": "replace",
+   "source": "m10_02_00_00 Event_11020555 (Anastacia, state 1141, is killed once both bells are rung, flag 11500200, or both Fire Keeper Souls are picked up, flags 812 and 813, while Lautrec is neither hostile nor dead, flags 1574 and 1575); Event_11020110 (the bonfire is out, flag 11020100, until flag 11020101 after talk t102606 sets 11020609)",
+   "value": {"unavailable": [{"from": {"all": [{"has": "Bell of Awakening #1"}, {"has": "Bell of Awakening #2"}]}, "until": null, "why": "Lautrec kills Anastacia once both bells are rung (or both Fire Keeper Souls are taken); the fire is out until her soul is brought back."}]}
+  },
+  {
+   "file": "locations",
+   "id": "E12",
+   "match": {"name": "AL: Anor Londo Bonfire"},
+   "op": "replace",
+   "source": "m15_01_00_00 Event_11510533 (flag 151 when the Darkmoon Knightess, 6010, dies) and Event_151 (the bonfire, object 1511960, is out from then on); Event_11510501 (she turns hostile when attacked, or with flag 1232, 1241 or 1242: Gwynevere dead, Gwyndolin hostile or dead)",
+   "value": {"unavailable": [{"from": {"region": "anor-londo-gwyndolin"}, "until": null, "why": "The Darkmoon Knightess turns hostile once Gwyndolin is challenged or Gwynevere killed; her bonfire goes out for good when she dies."}]}
+  },
+  {
+   "file": "locations",
+   "id": "E12-chamber",
+   "match": {"name": "AL: Chamber of the Princess Bonfire"},
+   "op": "replace",
+   "source": "m15_01_00_00 Constructor (RegisterBonfire for object 1511950 only when flag 12, Ornstein and Smough defeated, is on)",
+   "value": {"unavailable": [{"from": true, "until": {"has": "Ornstein and Smough Defeated"}, "why": "The bonfire only exists once Ornstein and Smough are dead."}]}
+  }
  ]
 }
