@@ -36,7 +36,7 @@
   "earliestSphere": 4,
   "flag": 3,
   "id": "bell-gargoyles",
-  "mandatoryByGraph": false,
+  "mandatoryByGraph": true,
   "name": "Bell Gargoyles",
   "parts": [
    {
@@ -880,7 +880,7 @@
   "earliestSphere": 11,
   "flag": 11410901,
   "id": "centipede-demon",
-  "mandatoryByGraph": false,
+  "mandatoryByGraph": true,
   "name": "Centipede Demon",
   "parts": [
    {

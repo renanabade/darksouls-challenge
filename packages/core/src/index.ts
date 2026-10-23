@@ -33,6 +33,7 @@ export {
 export {
   BELLS,
   InvalidOrderError,
+  startingItems,
   validate,
   type ArgValue,
   type OrderInstance,

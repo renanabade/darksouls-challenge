@@ -1975,7 +1975,7 @@
   "found": false,
   "item": "Centipede Demon Defeated",
   "kind": "other",
-  "mandatory": false,
+  "mandatory": true,
   "name": "DR: Centipede Demon Defeated",
   "region": "demon-ruins-centipede-demon"
  },
@@ -8555,18 +8555,8 @@
   "found": false,
   "item": "Bell Gargoyles Defeated",
   "kind": "other",
-  "mandatory": false,
-  "name": "UP: Bell Gargoyles Defeated",
-  "region": "undead-parish-bell-gargoyles"
- },
- {
-  "category": "EVENT",
-  "count": 1,
-  "found": false,
-  "item": "Bell of Awakening #1",
-  "kind": "other",
   "mandatory": true,
-  "name": "UP: Bell of Awakening #1 rung",
+  "name": "UP: Bell Gargoyles Defeated",
   "region": "undead-parish-bell-gargoyles"
  },
  {
@@ -8588,6 +8578,16 @@
   "mandatory": false,
   "name": "UP: Twin Humanities - Bell Gargoyles Drop",
   "region": "undead-parish-bell-gargoyles"
+ },
+ {
+  "category": "EVENT",
+  "count": 1,
+  "found": false,
+  "item": "Bell of Awakening #1",
+  "kind": "other",
+  "mandatory": true,
+  "name": "UP: Bell of Awakening #1 rung",
+  "region": "undead-parish-bell-tower"
  },
  {
   "category": "FOG_WALL",

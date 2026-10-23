@@ -1,6 +1,7 @@
 import { catalog, type Difficulty, type OrderTemplate } from "../orders/index.js";
 import { reachWithoutAreas, regionsInArea } from "../reach.js";
 import {
+  startingItems,
   unreachableTarget,
   validate,
   type ArgValue,
@@ -232,7 +233,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
 
   let chosen: (OrderInstance & { chapter?: number })[] = [lordOrder];
   let friction = lordTemplate.weight.friction;
-  const held = setup.gift.items.map((i) => i.item);
+  const held = startingItems(world, setup);
   const uses = new Map<string, number>();
   // An area or a boss may gather several rules, but never the same rule twice.
   const usedTargets = new Set<string>();
@@ -304,12 +305,7 @@ function finish(
     dataVersion: world.dataVersion,
     setup,
     curve,
-    chapters: reachableChapters(
-      world,
-      chapters,
-      sorted,
-      setup.gift.items.map((i) => i.item),
-    ),
+    chapters: reachableChapters(world, chapters, sorted, startingItems(world, setup)),
     orders: sorted.map((o, i) => ({ ...o, exceptions: result.orders[i]?.exceptions ?? [] })),
   };
 }

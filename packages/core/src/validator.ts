@@ -99,6 +99,16 @@ interface Constraints {
 type Check = (constraints: Constraints) => string | undefined;
 
 /**
+ * What the player holds when the run starts: the starting gift and the class's own items. Both open the
+ * graph (the Master Key, from the Thief's kit or as a gift, makes the Taurus Demon optional), so which
+ * bosses are mandatory follows from the setup instead of a fixed list.
+ */
+export function startingItems(world: World, setup: Setup): string[] {
+  const kit = world.classes.get(setup.startingClass ?? "")?.items ?? [];
+  return [...new Set([...setup.gift.items.map((i) => i.item), ...kit])];
+}
+
+/**
  * Validates a set of orders on the world graph. The orders are checked together: every forbidden area
  * and every forbidden pickup applies to every other check, so a combination that is impossible is
  * refused even when each order alone is possible.
@@ -108,7 +118,7 @@ export function validate(
   setup: Setup,
   orders: readonly OrderInstance[],
 ): ValidationResult {
-  const startItems = setup.gift.items.map((i) => i.item);
+  const startItems = startingItems(world, setup);
   const run = (c: Constraints, forbiddenItems?: ReadonlySet<string>): Reach =>
     reach(world, {
       items: startItems,
