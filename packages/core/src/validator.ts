@@ -534,9 +534,9 @@ export function validate(
         const bonfire = stringArg(args, "bonfire", label);
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
         const location = locationNamed(world, bonfire);
-        const window = location?.unavailable?.[0];
-        if (location !== undefined && !alwaysLit(location) && window !== undefined)
-          checks.push(() => `${bonfire} cannot be the one bonfire: ${window.why}`);
+        if (location !== undefined && !alwaysLit(location))
+          for (const window of location.unavailable ?? [])
+            checks.push(() => `${bonfire} cannot be the one bonfire: ${window.why}`);
         break;
       }
 
