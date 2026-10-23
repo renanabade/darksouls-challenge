@@ -199,6 +199,18 @@
    "op": "replace",
    "source": "m14_00_00_00 Event_11400536 (state 1291 and EnableCharacter(6170) once PlayerHasWeapon 1331000-1331500, Pyromancy Flame +10 to +15, or 1332000-1332500, Ascended +0 to +5); Event_11400539 (flag 1296 and DisableCharacter(6170) when flag 10, Bed of Chaos, is on in state 1290, or in 1291 with talk flag 71400061 off); talks t102613 and t140616 (CombineMenuFlagAndEventFlag 365, 331)",
    "value": {"before": "Bed of Chaos Defeated", "requires": {"all": [{"has": "Pyromancy Flame"}, {"any": [{"region": "firelink-shrine-laurentius-of-the-great-swamp"}, {"region": "lower-blighttown-eingyi"}]}]}}
+  },
+  {
+   "file": "merchants",
+   "id": "E15",
+   "match": {"id": "rhea-of-thorolund"},
+   "note": "Rhea sells in the Undead Parish (6072, talk t101607) once rescued in the Tomb of the Giants. The window does not close a way on the graph, since the player can visit her right after the rescue, so it is recorded for the manual rather than the walk.",
+   "op": "replace",
+   "source": "m10_01_00_00 Event_11010533 (state 1175 in the Parish after talk flag 11310590; the boss counter, EventValue 600, starts again there); common Event_690 (counts the deaths of the bosses with flags 2 to 15 while flag 1175 is on); m10_01_00_00 Event_11010537 (state 1177 at a count of 2, flags 1196 and 1198 off) and Event_11010534 (state 1181 and DisableCharacter(6072) once common Event_724 sees all nine shop flags 11017050-11017130)",
+   "value": {"leaves": [
+    {"flag": 1177, "when": "Two more of the main bosses die after she reaches the Undead Parish."},
+    {"flag": 1181, "when": "Every miracle and item of her stock is bought: she leaves the Undead Parish."}
+   ]}
   }
  ]
 }
