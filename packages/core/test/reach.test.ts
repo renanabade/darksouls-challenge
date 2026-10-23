@@ -46,6 +46,44 @@ describe("reach", () => {
   it("never enters forbidden regions, nor goes through them", () => {
     expect(sorted(reach(small, { forbiddenRegions: new Set(["a"]) }).regions)).toEqual(["start"]);
   });
+
+  // start → boss (its death item) → after; start → shop, which closes for good once the boss is dead.
+  // The shop needs a Flame, found either at the start or only past the boss.
+  const closing = (flameAt: "start" | "after"): World =>
+    parseWorld({
+      meta: { start: "start", goal: "Boss Defeated" },
+      regions: ["start", "boss", "after", "shop"].map((id) => ({
+        id,
+        name: id,
+        area: "x",
+        mandatory: false,
+      })),
+      entrances: [
+        { from: "start", to: "boss", requires: true },
+        { from: "boss", to: "after", requires: { has: "Boss Defeated" } },
+        { from: "start", to: "shop", requires: { has: "Flame" }, before: "Boss Defeated" },
+      ],
+      locations: [
+        {
+          name: "1",
+          region: "boss",
+          item: "Boss Defeated",
+          count: 1,
+          category: "BOSS",
+          mandatory: true,
+        },
+        { name: "2", region: flameAt, item: "Flame", count: 1, category: "KEY", mandatory: false },
+      ],
+      classes: { gifts: [] },
+      bosses: [],
+      merchants: [],
+    });
+
+  it("crosses an entrance that closes on an item only if it opens without that item", () => {
+    expect(reach(closing("start")).regions.has("shop")).toBe(true);
+    expect(reach(closing("after")).regions.has("shop")).toBe(false);
+    expect(reach(closing("after"), { items: ["Flame"] }).regions.has("shop")).toBe(true);
+  });
 });
 
 describe("reach on the DS1 data set", () => {
