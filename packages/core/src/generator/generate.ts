@@ -314,7 +314,7 @@ function finish(
  * The chapter the player reads. A forbidden area stays, marked closed; areas and bosses that can only be
  * reached through one are left out, so the manual does not send the player somewhere the orders closed.
  */
-function reachableChapters(
+export function reachableChapters(
   world: World,
   chapters: readonly ChapterPlan[],
   orders: readonly OrderInstance[],
