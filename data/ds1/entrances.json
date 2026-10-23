@@ -135,7 +135,14 @@
   "from": "darkroot-basin",
   "origin": "DSAP",
   "requires": {
-   "has": "Princess Dusk Rescued"
+   "all": [
+    {
+     "has": "Princess Dusk Rescued"
+    },
+    {
+     "has": "Darkroot Basin Hydra Defeated"
+    }
+   ]
   },
   "to": "darkroot-basin-princess-dusk",
   "walkBack": false
@@ -1128,7 +1135,14 @@
   "from": "the-dukes-archives",
   "origin": "DSAP",
   "requires": {
-   "has": "Princess Dusk Rescued"
+   "all": [
+    {
+     "has": "Princess Dusk Rescued"
+    },
+    {
+     "has": "Darkroot Basin Hydra Defeated"
+    }
+   ]
   },
   "to": "the-dukes-archives-golem-after-dusk-rescue",
   "walkBack": true
@@ -1397,9 +1411,7 @@
  {
   "from": "upper-blighttown-depths-side",
   "origin": "DSAP",
-  "requires": {
-   "has": "Lordvessel"
-  },
+  "requires": true,
   "to": "lower-blighttown",
   "walkBack": true
  },
