@@ -181,7 +181,7 @@
    "match": {"name": "AL: Anor Londo Bonfire"},
    "op": "replace",
    "source": "m15_01_00_00 Event_11510533 (flag 151 when the Darkmoon Knightess, 6010, dies) and Event_151 (the bonfire, object 1511960, is out from then on); Event_11510501 (she turns hostile when attacked, or with flag 1232, 1241 or 1242: Gwynevere dead, Gwyndolin hostile or dead)",
-   "value": {"unavailable": [{"from": {"region": "anor-londo-gwyndolin"}, "until": null, "why": "The Darkmoon Knightess turns hostile once Gwyndolin is challenged or Gwynevere killed; her bonfire goes out for good when she dies."}]}
+   "value": {"unavailable": [{"from": {"region": "anor-londo-gwyndolin"}, "until": null, "why": "The Darkmoon Knightess turns hostile once Gwynevere is killed or Gwyndolin attacked; her bonfire goes out for good when she dies."}]}
   },
   {
    "file": "locations",
