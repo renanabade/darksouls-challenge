@@ -269,7 +269,14 @@
   "from": "demon-ruins-centipede-demon",
   "origin": "DSAP",
   "requires": {
-   "has": "Orange Charred Ring"
+   "all": [
+    {
+     "has": "Orange Charred Ring"
+    },
+    {
+     "has": "Centipede Demon Defeated"
+    }
+   ]
   },
   "to": "lost-izalith",
   "walkBack": true
@@ -1389,6 +1396,16 @@
  },
  {
   "from": "undead-parish-bell-gargoyles",
+  "note": "Exit fog of the Bell Gargoyles, removed on their death.",
+  "origin": "override",
+  "requires": {
+   "has": "Bell Gargoyles Defeated"
+  },
+  "to": "undead-parish-bell-tower",
+  "walkBack": true
+ },
+ {
+  "from": "undead-parish-bell-tower",
   "origin": "DSAP",
   "requires": true,
   "to": "undead-parish-oswald-of-carim",

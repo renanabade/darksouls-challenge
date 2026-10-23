@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseWorld, reach, type World } from "../src/index.js";
+import { parseWorld, reach, startingItems, type World } from "../src/index.js";
 import { readDataSet, readMandatory } from "./ds1.js";
 
 /** start → a (needs Key, found in start) → b (needs Gem, found in a); c needs b reached and the Gem. */
@@ -92,6 +92,31 @@ describe("reach on the DS1 data set", () => {
       expect(withoutHydra.regions.has(closed), closed).toBe(false);
     expect(withoutHydra.items.has("Broken Pendant")).toBe(false);
     expect(withoutHydra.items.has(world.goal)).toBe(true);
+  });
+
+  // E4/E5: the Bell Gargoyles' and the Centipede Demon's exit fogs go only on their death.
+  it("waits for the Bell Gargoyles and the Centipede Demon", () => {
+    const without = (boss: string) =>
+      reach(world, { forbiddenItems: new Set([`${boss} Defeated`]) });
+    const gargoyles = without("Bell Gargoyles");
+    expect(gargoyles.items.has("Bell of Awakening #1")).toBe(false);
+    expect(gargoyles.regions.has("undead-parish-oswald-of-carim")).toBe(false);
+    expect(without("Centipede Demon").regions.has("lost-izalith")).toBe(false);
+  });
+
+  // E6: which bosses a run needs follows from what it starts with. The Thief starts with the Master Key.
+  it("leaves the Taurus Demon optional with the Master Key, from the class or the gift", () => {
+    const needsTaurus = (items: readonly string[]) =>
+      !reach(world, { items, forbiddenItems: new Set(["Taurus Demon Defeated"]) }).items.has(
+        world.goal,
+      );
+    const noGift = { mode: "static", gift: { row: 0, items: [] } } as const;
+    const masterKeyGift = world.gifts.find((g) => g.items.some((i) => i.item === "Master Key"));
+    if (masterKeyGift === undefined) throw new Error("no Master Key gift");
+    const knight = { mode: "static", gift: masterKeyGift, startingClass: "Knight" } as const;
+    expect(needsTaurus(startingItems(world, { ...noGift, startingClass: "Knight" }))).toBe(true);
+    expect(needsTaurus(startingItems(world, { ...noGift, startingClass: "Thief" }))).toBe(false);
+    expect(needsTaurus(startingItems(world, knight))).toBe(false);
   });
 
   // E3: the walk down from the Depths side of Blighttown needs no Lordvessel (a DSAP comfort rule).

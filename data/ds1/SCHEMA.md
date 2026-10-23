@@ -42,7 +42,7 @@ exports as long as the names do not change.
 | `classes.json` | Starting classes (level, stats, cell kit and full kit) and starting gifts |
 | `traps.json` | Places with no walking exit: `exits` (`means`: jump, warp, darksign, homeward-bone, serpent, key, death; with `requires`), `notWorking` |
 | `scripted-deaths.json` | Deaths caused by scripts; `countsAsDeath` false only for unavoidable, mandatory deaths (Seath's capture) |
-| `mandatory.json` | Items and regions on every path to the goal, by removal analysis on this graph |
+| `mandatory.json` | Items and regions on every path to the goal, by removal analysis on this graph (after the overrides, with no starting item) |
 | `overrides.json` | Not generated: the corrections the export applies on top of the DSAP graph (below) |
 
 ## Overrides
@@ -59,7 +59,7 @@ DSAP graph is reviewed in the open, and the export applies it, in order, every t
 
 - `file` is a list file of this data set (`entrances`, `locations`, `merchants`, `bonfires`, ...); `match` picks
   exactly one record by the fields it lists (ids as exported).
-- `op`: `add` appends `value` (nothing may match it yet); `remove` drops the record; `replace` sets the fields in
+- `op`: `add` appends `value` (nothing may match it yet: its `match` when given, else all of `value`); `remove` drops the record; `replace` sets the fields in
   `value`; `condition` adds `value` to the record's requirement (`field`, default `requires`) with an `all`.
 - `source` cites the game: an event, flag, talk script, map or param row, or an in-game test. Never a private path.
 - The export stops when a `match` finds no record or more than one, so a renamed region breaks the export instead of
@@ -68,8 +68,10 @@ DSAP graph is reviewed in the open, and the export applies it, in order, every t
 
 ## Known limits
 
-- `mandatoryByGraph` for bosses depends on boss gates in the graph; some fogs that only open on a boss's death are not
-  yet encoded (e.g. Bell Gargoyles shows as not mandatory). Do not use it for the "bypassable boss" orders yet.
+- `mandatoryByGraph` for bosses depends on boss gates in the graph; the Bell Gargoyles and the Centipede Demon gates
+  are encoded by overrides, but other fogs that only open on a boss's death may not be. Do not use it for the
+  "bypassable boss" orders yet. It holds for a run with no starting item: the core computes which bosses a run needs
+  from its class and gift (the Master Key makes the Taurus Demon optional).
 - Walking edges are assumed two-way unless the pipeline lists them as one-way (`walkBack: false`).
 - The Gravelord coffin (Catacombs ↔ covenant room by Nito) is not in the graph, and covenant rewards (e.g. Gravelord
   Sword) are not locations yet.

@@ -43,7 +43,10 @@ function overrideProblems(o: Override, data: (file: string) => unknown): string[
   const rows = data(o.file);
   if (!Array.isArray(rows)) return [...problems, `${o.id}: ${o.file} is not a list file`];
   const list = rows as Row[];
-  const match = o.match ?? (o.value as Row);
+  // An added record is found by its `match` when it has one (the export recomputes derived fields such
+  // as `mandatory`), else by all of its fields; a replaced one by its match with the new fields on top.
+  const match =
+    o.op === "replace" ? { ...o.match, ...(o.value as Row) } : (o.match ?? (o.value as Row));
   const hits = list.filter((r) => matches(r, match));
   if (o.op === "remove") {
     if (hits.length > 0) problems.push(`${o.id}: the removed record is still there`);
@@ -52,8 +55,6 @@ function overrideProblems(o: Override, data: (file: string) => unknown): string[
   if (hits.length !== 1)
     return [...problems, `${o.id}: target matches ${String(hits.length)} records`];
   const [row] = hits as [Row];
-  if (o.op === "add" && !matches(row, o.value as Row)) problems.push(`${o.id}: not added`);
-  if (o.op === "replace" && !matches(row, o.value as Row)) problems.push(`${o.id}: not replaced`);
   if (o.op === "condition" && !contains(row[o.field ?? "requires"], o.value))
     problems.push(`${o.id}: condition not applied`);
   return problems;
@@ -82,7 +83,14 @@ describe("data overrides", () => {
       overrideProblems({ ...base, id: "T", op: "add", ...o }, data);
     expect(check({ op: "condition", match: { from: "b" }, value: { has: "y" } })).toEqual([]);
     expect(check({ op: "replace", match: { from: "a" }, value: { requires: true } })).toEqual([]);
+    expect(check({ op: "replace", match: { from: "x" }, value: { from: "a" } })).toEqual([]);
+    expect(check({ op: "replace", match: { from: "a" }, value: { requires: false } })).toEqual([
+      "T: target matches 0 records",
+    ]);
     expect(check({ op: "add", value: { from: "a", to: "b" } })).toEqual([]);
+    expect(
+      check({ op: "add", match: { from: "b" }, value: { from: "b", mandatory: true } }),
+    ).toEqual([]);
     expect(check({ op: "remove", match: { from: "z" } })).toEqual([]);
     expect(check({ op: "remove", match: { from: "a" } })).toEqual([
       "T: the removed record is still there",

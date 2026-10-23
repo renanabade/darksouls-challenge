@@ -1076,5 +1076,12 @@
   "mandatory": false,
   "name": "Watchtower Basement",
   "virtual": false
+ },
+ {
+  "area": "undead-parish",
+  "id": "undead-parish-bell-tower",
+  "mandatory": true,
+  "name": "Undead Parish - Bell Tower",
+  "virtual": false
  }
 ]

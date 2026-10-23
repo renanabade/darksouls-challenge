@@ -44,6 +44,8 @@ export interface StartingClass {
   readonly stats: Stats;
   /** What the class starts with: its equipment and its spells, by name. */
   readonly kit: readonly string[];
+  /** The items the class starts with (the Thief's Master Key), by name: they open the graph like a gift. */
+  readonly items: readonly string[];
 }
 
 export interface BossPart {
@@ -216,6 +218,7 @@ export function parseClasses(check: Checker, raw: unknown): Map<string, Starting
         ...check.strings(Object.values(equipment), `${path}.fullKit.equipment`),
         ...check.strings(kit["spells"] ?? [], `${path}.fullKit.spells`),
       ],
+      items: check.strings(kit["items"] ?? [], `${path}.fullKit.items`),
     });
   }
   return classes;

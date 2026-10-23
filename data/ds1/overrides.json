@@ -36,6 +36,57 @@
    "op": "replace",
    "source": "m14_00_00_00: the same walk as the free DSAP edge upper-blighttown-depths-side -> lower-blighttown-fog -> lower-blighttown",
    "value": {"requires": true}
+  },
+  {
+   "file": "regions",
+   "id": "E5-tower",
+   "match": {"id": "undead-parish-bell-tower"},
+   "note": "The bell tower, behind the Bell Gargoyles' exit fog: the bell lever (object 1011110, z 134.5) and Oswald (talk t101637, z 135) are past fog 1011992 (z 131); the arena is around z 105 and its entry fog 1011990 at z 74.",
+   "op": "add",
+   "source": "m10_01_00_00 MSB positions of objects 1011110, 1011990, 1011992 and of Oswald (t101637)",
+   "value": {"area": "undead-parish", "id": "undead-parish-bell-tower", "mandatory": false, "name": "Undead Parish - Bell Tower", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E5-area",
+   "match": {"id": "undead-parish"},
+   "op": "replace",
+   "source": "m10_01_00_00: the bell tower is part of the Undead Parish map",
+   "value": {"regions": ["undead-parish", "undead-parish-andre-of-astora", "undead-parish-before-fog", "undead-parish-bell-gargoyles", "undead-parish-bell-tower", "undead-parish-fog", "undead-parish-oswald-of-carim"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E5-fog",
+   "note": "The exit fog 1011992 has no walk-through prompt and is removed only when both gargoyles are dead.",
+   "op": "add",
+   "source": "m10_01_00_00 Event_11010001 (EnableFlag(3), then DisableObject(1011990) and DisableObject(1011992)); Event_11015390 (the walk-through prompt is only at the entry fog, region 1012998)",
+   "value": {"from": "undead-parish-bell-gargoyles", "note": "Exit fog of the Bell Gargoyles, removed on their death.", "origin": "override", "requires": {"has": "Bell Gargoyles Defeated"}, "to": "undead-parish-bell-tower", "walkBack": true}
+  },
+  {
+   "file": "entrances",
+   "id": "E5-oswald",
+   "match": {"from": "undead-parish-bell-gargoyles", "to": "undead-parish-oswald-of-carim"},
+   "op": "replace",
+   "source": "m10_01_00_00 MSB: Oswald (t101637) stands in the bell tower, past fog 1011992",
+   "value": {"from": "undead-parish-bell-tower"}
+  },
+  {
+   "file": "locations",
+   "id": "E5-bell",
+   "match": {"name": "UP: Bell of Awakening #1 rung"},
+   "op": "replace",
+   "source": "m10_01_00_00 Event_11010700 (the bell lever, object action 11010700 on object 1011110, in the bell tower)",
+   "value": {"region": "undead-parish-bell-tower"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E4",
+   "match": {"from": "demon-ruins-centipede-demon", "to": "lost-izalith"},
+   "note": "The exit fog 1411892 (x 216) stands between the Centipede Demon's arena (x 204) and the first Lost Izalith bonfire (object 1411964, x 230); it has no walk-through prompt and goes only on the demon's death.",
+   "op": "condition",
+   "source": "m14_01_00_00 Event_11410901 (flag 11410901, removes fogs 1411890 and 1411892 on death); MSB positions of objects 1411892 and 1411964",
+   "value": {"has": "Centipede Demon Defeated"}
   }
  ]
 }
