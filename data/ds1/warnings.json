@@ -5,6 +5,11 @@
   "text": "He appears in the Abyss after the Four Kings only if the Lordvessel is not placed yet. Refuse him or attack him, and he leaves for good."
  },
  {
+  "id": "lautrec",
+  "npc": "Lautrec of Carim",
+  "text": "Once both bells are rung, or both Fire Keeper Souls (Undead Parish and Blighttown) are taken, Anastacia is killed and Lautrec leaves Firelink, whether or not you freed him. The Firelink Shrine bonfire stays out until her soul is returned to her, a quest that starts with the Black Eye Orb."
+ },
+ {
   "id": "patches",
   "npc": "Trusty Patches",
   "text": "In the Tomb of the Giants, once Pinwheel is dead or Rhea has set out there, he waits by a ledge and kicks you into the pit below. It is a cutscene, not a death."
