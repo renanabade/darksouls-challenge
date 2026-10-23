@@ -1,0 +1,22 @@
+[
+ {
+  "id": "kaathe",
+  "npc": "Darkstalker Kaathe",
+  "text": "He appears in the Abyss after the Four Kings only if the Lordvessel is not placed yet. Refuse him or attack him, and he leaves for good."
+ },
+ {
+  "id": "patches",
+  "npc": "Trusty Patches",
+  "text": "In the Tomb of the Giants, once Pinwheel is dead or Rhea has set out there, he waits by a ledge and kicks you into the pit below. It is a cutscene, not a death."
+ },
+ {
+  "id": "rhea",
+  "npc": "Rhea of Thorolund",
+  "text": "Once rescued in the Tomb of the Giants, she sells in the Undead Parish. She is lost if two more main bosses die before you visit her, and she leaves once her whole stock is bought."
+ },
+ {
+  "id": "solaire",
+  "npc": "Solaire of Astora",
+  "text": "In Lost Izalith, kill the four Chaos Bugs before you speak to him there, or he is lost to the Sunlight Maggot."
+ }
+]

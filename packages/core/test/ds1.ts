@@ -18,6 +18,7 @@ export function readDataSet(): RawDataSet {
     spells: read("spells"),
     areas: read("areas"),
     treasures: read("treasures"),
+    warnings: read("warnings"),
   };
 }
 

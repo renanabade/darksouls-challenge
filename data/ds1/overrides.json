@@ -250,6 +250,34 @@
    "op": "replace",
    "source": "talk t160634 (flag 11600590 set in state 81, after the player says no, and in state 13, once his HP is at 90 or less); m16_00_00_00 Event_11600540 (state 1677 and DisableCharacter(6340) when 11600590 is on in state 1672 or 1678)",
    "value": {"leaves": [{"flag": 1677, "when": "He is refused, or attacked: he leaves at once and for good."}], "regions": ["the-abyss-darkstalker-kaathe"]}
+  },
+  {
+   "file": "warnings",
+   "id": "E15-warning",
+   "op": "add",
+   "source": "m10_01_00_00 Event_11010537 and Event_11010534; common Event_690",
+   "value": {"id": "rhea", "npc": "Rhea of Thorolund", "text": "Once rescued in the Tomb of the Giants, she sells in the Undead Parish. She is lost if two more main bosses die before you visit her, and she leaves once her whole stock is bought."}
+  },
+  {
+   "file": "warnings",
+   "id": "E16",
+   "op": "add",
+   "source": "m13_01_00_00 Event_11310002 (cutscene 130110 or 130111 moves the player to region 1312120 once Patches is in state 1623, set by Event_11310540 after Pinwheel, flag 6, or Rhea's state 1173)",
+   "value": {"id": "patches", "npc": "Trusty Patches", "text": "In the Tomb of the Giants, once Pinwheel is dead or Rhea has set out there, he waits by a ledge and kicks you into the pit below. It is a cutscene, not a death."}
+  },
+  {
+   "file": "warnings",
+   "id": "E17",
+   "op": "add",
+   "source": "m14_01_00_00 Event_11410541 (state 1504 when talk t141628 sets flag 11410590 while any of characters 1410410-1410413 is alive) and Event_11410542 (state 1505 once all four are dead and Solaire, 6286, is alive)",
+   "value": {"id": "solaire", "npc": "Solaire of Astora", "text": "In Lost Izalith, kill the four Chaos Bugs before you speak to him there, or he is lost to the Sunlight Maggot."}
+  },
+  {
+   "file": "warnings",
+   "id": "E18-warning",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 and Event_11600540; talk t160634",
+   "value": {"id": "kaathe", "npc": "Darkstalker Kaathe", "text": "He appears in the Abyss after the Four Kings only if the Lordvessel is not placed yet. Refuse him or attack him, and he leaves for good."}
   }
  ]
 }

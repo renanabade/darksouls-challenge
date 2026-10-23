@@ -51,6 +51,7 @@ export {
   type BonfireWindow,
   type GiftItem,
   type Location,
+  type NpcWarning,
   type Merchant,
   type Milestone,
   type RawDataSet,
