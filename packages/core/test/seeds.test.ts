@@ -3,9 +3,10 @@ import { describe, expect, it } from "vitest";
 import { generate, parseWorld, renderManual, validate, type Difficulty } from "../src/index.js";
 import { readDataSet } from "./ds1.js";
 
-// Slow: about a second per short journey on a Windows laptop, where the suite already runs close to its
-// timeouts. CI on Linux runs them on every pull request; on Windows, set SLOW=1 to run them.
-const skip = process.platform === "win32" && process.env["SLOW"] !== "1";
+// Slow: about a second per short journey on a Windows laptop. Run beside the other tests, they take the CPU
+// the generator tests need within their timeouts, so they run only with SLOW=1: in CI, in a job of their own
+// on every pull request (.github/workflows/ci.yml); locally, SLOW=1 pnpm exec vitest run seeds.
+const skip = process.env["SLOW"] !== "1";
 const difficulties: readonly Difficulty[] = ["easy", "medium", "hard", "extreme"];
 const difficulty = (i: number): Difficulty => difficulties[i % difficulties.length] ?? "medium";
 const HOUR = 3_600_000;
