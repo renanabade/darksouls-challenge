@@ -34,13 +34,13 @@ lost at the next export, and nothing would say where it came from.
   Master Key gift both make the Taurus Demon optional.
 - **One version bump at the end.** `GENERATOR_VERSION` 6 and data 0.7.0 together, once every override is in.
 
-| Considered | Why not |
-| --- | --- |
-| Hand edits to the exported JSON | Lost at the next export; no source per fix |
-| The export pipeline in this repository | Brings the GPL tools and the game's files with it; two pipelines to keep in step |
+| Considered                                                | Why not                                                                                                                                    |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Hand edits to the exported JSON                           | Lost at the next export; no source per fix                                                                                                 |
+| The export pipeline in this repository                    | Brings the GPL tools and the game's files with it; two pipelines to keep in step                                                           |
 | Counting state in `reach()` (bosses killed, items bought) | The walk would no longer be a fixed point over sets; the windows that need counts (Rhea) never close a way, since the player can act first |
-| A `not` in requirement expressions | Breaks the monotone walk; `before` asks the one question needed (is it open without the item?) and keeps it |
-| Keeping a version 5 generator next to version 6 | Twice the code for old seeds; decided against in issue 38 |
+| A `not` in requirement expressions                        | Breaks the monotone walk; `before` asks the one question needed (is it open without the item?) and keeps it                                |
+| Keeping a version 5 generator next to version 6           | Twice the code for old seeds; decided against in issue 38                                                                                  |
 
 ## Consequences
 
