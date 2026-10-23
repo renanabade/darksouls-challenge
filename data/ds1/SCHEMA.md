@@ -43,6 +43,28 @@ exports as long as the names do not change.
 | `traps.json` | Places with no walking exit: `exits` (`means`: jump, warp, darksign, homeward-bone, serpent, key, death; with `requires`), `notWorking` |
 | `scripted-deaths.json` | Deaths caused by scripts; `countsAsDeath` false only for unavoidable, mandatory deaths (Seath's capture) |
 | `mandatory.json` | Items and regions on every path to the goal, by removal analysis on this graph |
+| `overrides.json` | Not generated: the corrections the export applies on top of the DSAP graph (below) |
+
+## Overrides
+
+`overrides.json` is the one file here written by hand. It is versioned with the product so every correction to the
+DSAP graph is reviewed in the open, and the export applies it, in order, every time it runs:
+
+```json
+{ "overrides": [
+  { "id": "E9", "file": "entrances", "match": { "from": "<region id>", "to": "<region id>" },
+    "op": "condition", "value": { "has": "<item>" }, "source": "m10_00_00_00 Event_11000532" }
+] }
+```
+
+- `file` is a list file of this data set (`entrances`, `locations`, `merchants`, `bonfires`, ...); `match` picks
+  exactly one record by the fields it lists (ids as exported).
+- `op`: `add` appends `value` (nothing may match it yet); `remove` drops the record; `replace` sets the fields in
+  `value`; `condition` adds `value` to the record's requirement (`field`, default `requires`) with an `all`.
+- `source` cites the game: an event, flag, talk script, map or param row, or an in-game test. Never a private path.
+- The export stops when a `match` finds no record or more than one, so a renamed region breaks the export instead of
+  dropping the fix. The product tests (`packages/core/test/overrides.test.ts`) check that every override is applied
+  to the exported files and cites the game.
 
 ## Known limits
 
