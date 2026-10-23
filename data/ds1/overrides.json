@@ -99,6 +99,73 @@
     {"flag": 11510902, "items": ["Ornstein's Armor", "Ornstein's Gauntlets", "Ornstein's Helm", "Ornstein's Leggings"], "when": "Ornstein is killed last"},
     {"flag": 11510903, "items": ["Smough's Armor", "Smough's Gauntlets", "Smough's Helm", "Smough's Leggings"], "when": "Smough is killed last"}
    ]}]}
-  }
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E9",
+   "match": {"from": "firelink-shrine", "to": "firelink-shrine-domhnall-of-zena"},
+   "note": "Domhnall moves from the Depths to Firelink once both bells are rung. His starting state (flag 1430) is set at the start of the game, so meeting him in the Depths is not needed.",
+   "op": "replace",
+   "source": "m10_02_00_00 Event_11020412 (enables Domhnall 6261 at Firelink when flag 1430 and both bell flags 11010700 and 11400200 are on, flags 1434 and 1435 off); common Preconstructor (EnableFlag(1430))",
+   "value": {"requires": {"all": [{"has": "Bell of Awakening #1"}, {"has": "Bell of Awakening #2"}]}}
+  },
+  {
+   "file": "entrances",
+   "id": "E14",
+   "match": {"from": "the-dukes-archives-after-archive-tower-giant-door-key", "to": "the-dukes-archives-big-hat-logan"},
+   "note": "Logan sells in the Archives once freed from the Giant Cell. Seath's death only turns him hollow later.",
+   "op": "replace",
+   "source": "m17_00_00_00 Event_11700530 (state 1093 in the cell once flag 1092 is on), Event_11700531 (state 1094 when the Giant Cell, ObjAct 27401 flag 61700320, is opened), Event_11700533 (Seath, flag 14, only for state 1099)",
+   "value": {"requires": {"all": [{"region": "sens-fortress-after-cage-key"}, {"region": "the-dukes-archives-giant-cell"}]}}
+  },
+  {
+   "file": "regions",
+   "id": "E8-region",
+   "match": {"id": "firelink-shrine-big-hat-logan"},
+   "note": "Logan's shop at Firelink, between his rescue in Sen's Fortress and his move to the Archives.",
+   "op": "add",
+   "source": "m10_02_00_00 Event_11020550 (Logan 6031 at Firelink in state 1092, after flag 1091 from the Sen's Fortress cage and talk flag 11500594); talk t102603 (ShopLineupParam rows 5000-5019)",
+   "value": {"area": "firelink-shrine", "id": "firelink-shrine-big-hat-logan", "mandatory": false, "name": "Firelink Shrine - Big Hat Logan", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E8-area",
+   "match": {"id": "firelink-shrine"},
+   "op": "replace",
+   "source": "m10_02_00_00: Logan stands at Firelink Shrine",
+   "value": {"regions": ["firelink-shrine", "firelink-shrine-after-undead-parish-elevator", "firelink-shrine-big-hat-logan", "firelink-shrine-domhnall-of-zena", "firelink-shrine-domhnall-of-zena-after-gwyndolin", "firelink-shrine-domhnall-of-zena-after-iron-golem", "firelink-shrine-domhnall-of-zena-after-o-s", "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias", "firelink-shrine-griggs-of-vinheim", "firelink-shrine-griggs-of-vinheim-after-logan-leaves", "firelink-shrine-laurentius-of-the-great-swamp", "firelink-shrine-petrus-of-thorolund", "firelink-shrine-rhea-of-thorolund", "firelink-shrine-trusty-patches"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E8-entrance",
+   "op": "add",
+   "source": "m15_00_00_00 Event_11500531 (state 1091 once the cage, ObjAct flag 11500112, is opened); m10_02_00_00 Event_11020550",
+   "value": {"from": "firelink-shrine", "note": "Logan comes to Firelink once freed from his cage in Sen's Fortress.", "origin": "override", "requires": {"region": "sens-fortress-after-cage-key"}, "to": "firelink-shrine-big-hat-logan", "walkBack": true}
+  },
+  {
+   "file": "merchants",
+   "id": "E8-merchant",
+   "match": {"id": "logan"},
+   "op": "replace",
+   "source": "talk t102603 (m10_02_00_00, ShopLineupParam rows 5000-5019) and t170603 (m17_00_00_00)",
+   "value": {"regions": ["firelink-shrine-big-hat-logan", "the-dukes-archives-big-hat-logan"]}
+  },
+  {"file": "locations", "id": "E8-1", "op": "add", "source": "ShopLineupParam row 5000 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-2", "op": "add", "source": "ShopLineupParam row 5001 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Great Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-3", "op": "add", "source": "ShopLineupParam row 5002 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Heavy Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Heavy Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-4", "op": "add", "source": "ShopLineupParam row 5003 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Great Heavy Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Heavy Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-5", "op": "add", "source": "ShopLineupParam row 5004 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Homing Soulmass", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Homing Soulmass", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-6", "op": "add", "source": "ShopLineupParam row 5005 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Soul Spear", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Spear", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-7", "op": "add", "source": "ShopLineupParam row 5006 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Weapon", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Weapon", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-8", "op": "add", "source": "ShopLineupParam row 5007 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Shield", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Shield", "region": "firelink-shrine-big-hat-logan"}}
  ]
 }
