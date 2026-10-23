@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { UNMODELED_BONFIRES } from "../src/bonfires.js";
 import {
   BELLS,
   catalog,
@@ -311,6 +312,26 @@ describe("validate on the DS1 data set", () => {
     expect(past([order("forbidden-area", { area: "oolacile-township" })]).problems).toContain(
       "forbidden-area: Oolacile Township cannot be reached",
     );
+  });
+
+  it("rejects a one-bonfire order that names a bonfire whose availability is not modeled", () => {
+    expect([...UNMODELED_BONFIRES]).toEqual([
+      "FS: Firelink Shrine Bonfire",
+      "AL: Anor Londo Bonfire",
+    ]);
+    for (const bonfire of UNMODELED_BONFIRES) {
+      const result = run([order("one-bonfire", { area: "anor-londo", bonfire })]);
+      expect(result.verdict, bonfire).toBe("impossible");
+      expect(result.problems, bonfire).toEqual([
+        `${bonfire} cannot be the one bonfire until its availability is modeled`,
+      ]);
+    }
+    expect(
+      run([order("one-bonfire", { area: "anor-londo", bonfire: "AL: Darkmoon Tomb Bonfire" })])
+        .problems,
+    ).toEqual([]);
+    expect(run([order("no-bonfire", { area: "firelink-shrine" })]).verdict).toBe("comfortable");
+    expect(run([order("no-bonfire", { area: "anor-londo" })]).verdict).toBe("comfortable");
   });
 
   it("can close any single merchant with no exception", () => {
