@@ -46,6 +46,17 @@ export interface Location {
   readonly found?: boolean;
   /** weapon, armor, ring, spell, good, or other (graph events and renamed items). Undefined in older data. */
   readonly kind?: string;
+  /** Bonfires only: when it cannot be rested at, from the game's scripts. Absent for a bonfire always lit. */
+  readonly unavailable?: readonly BonfireWindow[];
+}
+
+/** A stretch of the run in which a bonfire is out or missing. */
+export interface BonfireWindow {
+  /** When the bonfire goes out (true: from the start). */
+  readonly from: Requirement;
+  /** When it can be rested at again; null when it never comes back, or its return is not modeled. */
+  readonly until: Requirement | null;
+  readonly why: string;
 }
 
 export interface GiftItem {
@@ -202,6 +213,21 @@ export function parseWorld(raw: RawDataSet): World {
       ...location,
       ...(fields["found"] !== undefined && { found: check.boolean(fields, "found", path) }),
       ...(fields["kind"] !== undefined && { kind: check.string(fields, "kind", path) }),
+      ...(fields["unavailable"] !== undefined && {
+        unavailable: check.array(fields["unavailable"], `${path}.unavailable`).flatMap((w, j) => {
+          const at = `${path}.unavailable[${String(j)}]`;
+          const window = check.object(w, at);
+          if (window === undefined) return [];
+          return [
+            {
+              from: check.requirement(window["from"], `${at}.from`),
+              until:
+                window["until"] === null ? null : check.requirement(window["until"], `${at}.until`),
+              why: check.string(window, "why", at),
+            },
+          ];
+        }),
+      }),
     });
   }
 

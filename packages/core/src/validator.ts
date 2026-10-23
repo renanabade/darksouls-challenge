@@ -1,4 +1,4 @@
-import { UNMODELED_BONFIRES } from "./bonfires.js";
+import { alwaysLit } from "./bonfires.js";
 import {
   damages,
   ELEMENTAL,
@@ -527,14 +527,14 @@ export function validate(
         break;
       }
 
-      // Weight only, except the bonfires whose availability is not modeled yet (issue 38, E11 and E12).
+      // Weight only, except a bonfire that is out or missing for part of the run (issue 38, E11 and E12).
       case "one-bonfire": {
         const bonfire = stringArg(args, "bonfire", label);
         result.support = validation === "weightOnly" ? "weightOnly" : "pending";
-        if (UNMODELED_BONFIRES.has(bonfire))
-          checks.push(
-            () => `${bonfire} cannot be the one bonfire until its availability is modeled`,
-          );
+        const location = locationNamed(world, bonfire);
+        const window = location?.unavailable?.[0];
+        if (location !== undefined && !alwaysLit(location) && window !== undefined)
+          checks.push(() => `${bonfire} cannot be the one bonfire: ${window.why}`);
         break;
       }
 

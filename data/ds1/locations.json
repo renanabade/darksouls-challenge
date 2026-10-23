@@ -47,7 +47,16 @@
   "kind": "other",
   "mandatory": false,
   "name": "AL: Anor Londo Bonfire",
-  "region": "anor-londo"
+  "region": "anor-londo",
+  "unavailable": [
+   {
+    "from": {
+     "region": "anor-londo-gwyndolin"
+    },
+    "until": null,
+    "why": "The Darkmoon Knightess turns hostile once Gwyndolin is challenged or Gwynevere killed; her bonfire goes out for good when she dies."
+   }
+  ]
  },
  {
   "category": "MIMIC_DROP",
@@ -187,7 +196,16 @@
   "kind": "other",
   "mandatory": false,
   "name": "AL: Chamber of the Princess Bonfire",
-  "region": "anor-londo-after-gwyndolin"
+  "region": "anor-londo-after-gwyndolin",
+  "unavailable": [
+   {
+    "from": true,
+    "until": {
+     "has": "Ornstein and Smough Defeated"
+    },
+    "why": "The bonfire only exists once Ornstein and Smough are dead."
+   }
+  ]
  },
  {
   "category": "CHEST_ITEM",
@@ -2437,7 +2455,23 @@
   "kind": "other",
   "mandatory": false,
   "name": "FS: Firelink Shrine Bonfire",
-  "region": "firelink-shrine"
+  "region": "firelink-shrine",
+  "unavailable": [
+   {
+    "from": {
+     "all": [
+      {
+       "has": "Bell of Awakening #1"
+      },
+      {
+       "has": "Bell of Awakening #2"
+      }
+     ]
+    },
+    "until": null,
+    "why": "Lautrec kills Anastacia once both bells are rung (or both Fire Keeper Souls are taken); the fire is out until her soul is brought back."
+   }
+  ]
  },
  {
   "category": "CHEST_ITEM",

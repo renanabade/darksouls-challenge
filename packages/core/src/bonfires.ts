@@ -1,11 +1,11 @@
+import type { Location } from "./world.js";
+
 /**
- * Bonfires "one bonfire" must not name until their availability is modeled (issue 38, E11 and E12).
- * E11: the Firelink Shrine bonfire goes out after both bells, until Lautrec dies (flags 812 and 813,
- * flag 11500200). E12: the first Anor Londo bonfire, the Darkmoon Knightess's (object 1511960), goes out
- * with her (m15_01_00_00 Event_151). "No bonfire" still allows these areas: it never asks the player to
- * rest at one of them.
+ * A bonfire "one bonfire" may name: one with no window in which it is out or missing (issue 38, E11
+ * and E12, from the game's scripts in locations.json). The order holds for the whole run in its area, so
+ * any window would leave the player no bonfire for part of it. "No bonfire" may still name the area: it
+ * never asks the player to rest at one.
  */
-export const UNMODELED_BONFIRES: ReadonlySet<string> = new Set([
-  "FS: Firelink Shrine Bonfire",
-  "AL: Anor Londo Bonfire",
-]);
+export function alwaysLit(bonfire: Location): boolean {
+  return (bonfire.unavailable ?? []).length === 0;
+}

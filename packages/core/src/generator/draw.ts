@@ -1,4 +1,4 @@
-import { UNMODELED_BONFIRES } from "../bonfires.js";
+import { alwaysLit } from "../bonfires.js";
 import { elementalDefenses, isMeleeWeapon, SCHOOLS, type Boss, type Element } from "../build.js";
 import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
@@ -139,7 +139,7 @@ function readDomains(world: World): Domains {
     sorted(locations.flatMap((l) => areaOf(l.region) ?? []));
   const found = world.locations.filter((l) => l.found === true);
   const bonfires = world.locations.filter((l) => l.category === "BONFIRE");
-  const stableBonfires = bonfires.filter((l) => !UNMODELED_BONFIRES.has(l.name));
+  const stableBonfires = bonfires.filter(alwaysLit);
   const weaponLocations = found.filter((l) => {
     const weapon = world.weapons.get(l.item);
     return weapon !== undefined && isMeleeWeapon(weapon);
