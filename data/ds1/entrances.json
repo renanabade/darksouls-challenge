@@ -1073,6 +1073,15 @@
   "walkBack": false
  },
  {
+  "before": "Lordvessel Placed",
+  "from": "the-abyss-after-four-kings",
+  "note": "Kaathe appears after the Four Kings only if the Lordvessel is not placed yet.",
+  "origin": "override",
+  "requires": true,
+  "to": "the-abyss-darkstalker-kaathe",
+  "walkBack": true
+ },
+ {
   "from": "the-catacombs",
   "origin": "DSAP",
   "requires": true,

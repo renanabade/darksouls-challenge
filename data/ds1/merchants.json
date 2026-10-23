@@ -453,8 +453,16 @@
  },
  {
   "id": "darkstalker-kaathe",
+  "leaves": [
+   {
+    "flag": 1677,
+    "when": "He is refused, or attacked: he leaves at once and for good."
+   }
+  ],
   "name": "Darkstalker Kaathe",
-  "regions": [],
+  "regions": [
+   "the-abyss-darkstalker-kaathe"
+  ],
   "rows": [
    6100,
    6199

@@ -34,6 +34,19 @@ describe("NPC state", () => {
   });
 
   const world = parseWorld(readDataSet());
+  const without = (item: string) => reach(world, { forbiddenItems: new Set([item]) }).regions;
+
+  // E18: Kaathe appears after the Four Kings only while the Lordvessel is not placed, and leaves for
+  // good once refused or attacked.
+  it("opens Kaathe after the Four Kings, before the Lordvessel is placed", () => {
+    const kaathe = merchants.get("darkstalker-kaathe");
+    expect(kaathe?.regions).toEqual(["the-abyss-darkstalker-kaathe"]);
+    expect(kaathe?.leaves?.map((l) => l.flag)).toEqual([1677]);
+    const edge = world.entrances.find((e) => e.to === "the-abyss-darkstalker-kaathe");
+    expect(edge?.before).toBe("Lordvessel Placed");
+    expect(reach(world).regions.has("the-abyss-darkstalker-kaathe")).toBe(true);
+    expect(without("Four Kings Defeated").has("the-abyss-darkstalker-kaathe")).toBe(false);
+  });
 
   // E15: Rhea is lost once two more main bosses die after she reaches the Parish, or once her stock is
   // bought out; her shop, opened by the rescue in the Tomb of the Giants, stays on the graph.
@@ -43,7 +56,6 @@ describe("NPC state", () => {
     const shop = reach(world, { forbiddenRegions: new Set(["tomb-of-the-giants"]) });
     expect(rhea?.regions.some((r) => shop.regions.has(r))).toBe(false);
   });
-  const without = (item: string) => reach(world, { forbiddenItems: new Set([item]) }).regions;
 
   // E9: Domhnall comes to Firelink once both bells are rung, wherever the player has been.
   it("brings Domhnall to Firelink after both bells", () => {
