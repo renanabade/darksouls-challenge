@@ -16,7 +16,7 @@ import {
   type OrderTemplate,
   type RestrictionEffect,
 } from "./orders/index.js";
-import { reach, type Reach } from "./reach.js";
+import { reach, reachWithoutRegions, regionsInArea, type Reach } from "./reach.js";
 import { evaluate, itemsOf, type Requirement } from "./requirement.js";
 import type { Location, Milestone, StartingGift, World } from "./world.js";
 
@@ -618,6 +618,39 @@ export function validate(
     checks.push(() => `the restriction "no-magic" contradicts fighting with ${schools}`);
   }
 
+  // Every order is about a place the player can still reach once the forbidden areas are closed.
+  // The forbidden area itself is checked against the other forbiddances only: closing it is the order.
+  // One reach per distinct forbidden set, shared with the generator (see reachWithoutRegions).
+  if (orders.some((o) => o.template.id === "forbidden-area")) {
+    for (const { template, args } of orders) {
+      if (template.id === "forbidden-area") {
+        const area = args["area"];
+        if (typeof area !== "string") continue;
+        const own = new Set(regionsInArea(world, area));
+        checks.push((c) => {
+          const others = [...c.regions].filter((id) => !own.has(id));
+          if (others.length === 0) return undefined;
+          const place = unreachableTarget(
+            world,
+            args,
+            reachWithoutRegions(world, others, startItems).regions,
+          );
+          return place === undefined ? undefined : `${template.id}: ${place} cannot be reached`;
+        });
+        continue;
+      }
+      checks.push((c) => {
+        if (c.regions.size === 0) return undefined;
+        const place = unreachableTarget(
+          world,
+          args,
+          reachWithoutRegions(world, c.regions, startItems).regions,
+        );
+        return place === undefined ? undefined : `${template.id}: ${place} cannot be reached`;
+      });
+    }
+  }
+
   // Automatic exceptions, once every other constraint is known. Each candidate location is forbidden in
   // turn; one that breaks a check stays allowed and goes on the list. Checks only get harder as more is
   // forbidden, so every item on the list is needed by the final set: the list cannot be shortened.
@@ -647,6 +680,51 @@ export function validate(
     orders: results,
     complete: results.every((r) => r.support !== "pending"),
   };
+}
+
+/**
+ * The place an order is about, when that place cannot be visited in `reached`.
+ * Undefined when the order is not about a place, or the place can still be visited.
+ * An area is open when any of its regions was reached; a boss, a pickup and a bonfire need their own
+ * region; a merchant needs any of their shops.
+ */
+export function unreachableTarget(
+  world: World,
+  args: Readonly<Record<string, ArgValue>>,
+  reached: ReadonlySet<string>,
+): string | undefined {
+  const area = args["area"];
+  if (typeof area === "string") {
+    const regions = regionsInArea(world, area);
+    if (regions.length > 0 && regions.every((id) => !reached.has(id)))
+      return world.areas.get(area)?.name ?? area;
+  }
+  const bossId = args["boss"];
+  if (typeof bossId === "string") {
+    const boss = world.bosses.get(bossId);
+    if (boss !== undefined && !reached.has(boss.region)) return boss.name;
+  }
+  const locationName = args["location"];
+  if (typeof locationName === "string") {
+    const location = world.locations.find((l) => l.name === locationName);
+    if (location !== undefined && !reached.has(location.region)) return location.item;
+  }
+  const bonfire = args["bonfire"];
+  if (typeof bonfire === "string") {
+    const location = world.locations.find((l) => l.name === bonfire);
+    if (location !== undefined && !reached.has(location.region)) return location.name;
+  }
+  const merchantId = args["merchant"];
+  if (typeof merchantId === "string") {
+    const merchant = world.merchants.get(merchantId);
+    if (
+      merchant !== undefined &&
+      merchant.regions.length > 0 &&
+      merchant.regions.every((id) => !reached.has(id))
+    )
+      return merchant.name;
+  }
+  return undefined;
 }
 
 function stringArg(args: Readonly<Record<string, ArgValue>>, name: string, label: string): string {

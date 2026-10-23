@@ -63,6 +63,24 @@ describe("generate on the DS1 data set", () => {
     );
   }, 30_000);
 
+  // Royal Wood is the only way into the Township and the Chasm. Forbidding it must not leave those
+  // places, or their bosses, anywhere in the manual.
+  it("does not send the player past a forbidden area", () => {
+    const challenge = generate(world, {
+      seed: "ashen-one",
+      difficulty: "medium",
+      length: "full",
+    });
+    expect(challenge.orders.find((o) => o.template.id === "forbidden-area")?.args["area"]).toBe(
+      "royal-wood",
+    );
+    const manual = renderManual(world, challenge);
+    for (const name of ["Oolacile Township", "Chasm of the Abyss", "Manus", "Kalameet"])
+      expect(manual, name).not.toContain(name);
+    expect(manual).toContain("Royal Wood (forbidden)");
+    expect(manual).toContain("Oolacile Sanctuary");
+  });
+
   it("respects a class, gift and level cap the player fixes", () => {
     const challenge = generate(world, {
       seed: "fixed",

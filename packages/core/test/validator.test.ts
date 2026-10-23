@@ -267,6 +267,26 @@ describe("validate on the DS1 data set", () => {
     });
   });
 
+  it("rejects an order whose place lies past a forbidden area", () => {
+    const past = (orders: OrderInstance[]) =>
+      run([order("forbidden-area", { area: "royal-wood" }), ...orders]);
+    expect(past([order("no-bonfire", { area: "oolacile-township" })]).problems).toContain(
+      "no-bonfire: Oolacile Township cannot be reached",
+    );
+    expect(past([order("dry-fight", { boss: "manus-father-of-the-abyss" })]).problems).toContain(
+      "dry-fight: Manus, Father of the Abyss cannot be reached",
+    );
+    expect(past([order("dry-fight", { boss: "knight-artorias" })]).verdict).toBe("impossible");
+    expect(past([order("dry-fight", { boss: "black-dragon-kalameet" })]).verdict).toBe(
+      "impossible",
+    );
+    // The sanctuary is the way into the woods, so it stays open when the woods are closed.
+    expect(past([order("dry-fight", { boss: "sanctuary-guardian" })]).verdict).toBe("comfortable");
+    expect(past([order("forbidden-area", { area: "oolacile-township" })]).problems).toContain(
+      "forbidden-area: Oolacile Township cannot be reached",
+    );
+  });
+
   it("can close any single merchant with no exception", () => {
     for (const merchant of world.merchants.keys()) {
       const result = run([order("closed-merchant", { merchant })]);

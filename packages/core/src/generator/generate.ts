@@ -1,5 +1,12 @@
 import { catalog, type Difficulty, type OrderTemplate } from "../orders/index.js";
-import { validate, type ArgValue, type OrderInstance, type Setup } from "../validator.js";
+import { reachWithoutAreas, regionsInArea } from "../reach.js";
+import {
+  unreachableTarget,
+  validate,
+  type ArgValue,
+  type OrderInstance,
+  type Setup,
+} from "../validator.js";
 import type { StartingGift, World } from "../world.js";
 import { chaptersOf, type Chapter } from "./chapters.js";
 import { CURVES, curveOffsets, shifted, type Curve } from "./curve.js";
@@ -225,6 +232,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
 
   let chosen: (OrderInstance & { chapter?: number })[] = [lordOrder];
   let friction = lordTemplate.weight.friction;
+  const held = setup.gift.items.map((i) => i.item);
   const uses = new Map<string, number>();
   // An area or a boss may gather several rules, but never the same rule twice.
   const usedTargets = new Set<string>();
@@ -249,7 +257,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
         if (args === undefined) break;
         const targets = targetsOf(args).map((t) => `${template.id}|${t}`);
         if (targets.some((t) => usedTargets.has(t))) continue;
-        if (pointless(world, template, args, chapter, chosen)) continue;
+        if (pointless(world, template, args, chapter, chosen, held)) continue;
         const next = [...chosen, { template, args, ...(chapter !== undefined && { chapter }) }];
         if (
           !WEIGHT_ONLY_ALWAYS_FITS.has(template.id) ||
@@ -292,9 +300,43 @@ function finish(
     dataVersion: world.dataVersion,
     setup,
     curve,
-    chapters,
+    chapters: reachableChapters(
+      world,
+      chapters,
+      sorted,
+      setup.gift.items.map((i) => i.item),
+    ),
     orders: sorted.map((o, i) => ({ ...o, exceptions: result.orders[i]?.exceptions ?? [] })),
   };
+}
+
+/**
+ * The chapter the player reads. A forbidden area stays, marked closed; areas and bosses that can only be
+ * reached through one are left out, so the manual does not send the player somewhere the orders closed.
+ */
+function reachableChapters(
+  world: World,
+  chapters: readonly ChapterPlan[],
+  orders: readonly OrderInstance[],
+  items: readonly string[],
+): readonly ChapterPlan[] {
+  const forbidden = orders.flatMap((o) => {
+    const area = o.args["area"];
+    return o.template.id === "forbidden-area" && typeof area === "string" ? [area] : [];
+  });
+  if (forbidden.length === 0) return chapters;
+  const closed = new Set(forbidden);
+  const reached = reachWithoutAreas(world, forbidden, items).regions;
+  const open = (area: string): boolean =>
+    closed.has(area) || regionsInArea(world, area).some((id) => reached.has(id));
+  return chapters.map((chapter) => ({
+    ...chapter,
+    areas: chapter.areas.filter(open),
+    bosses: chapter.bosses.filter((id) => {
+      const region = world.bosses.get(id)?.region;
+      return region === undefined || region === "" || reached.has(region);
+    }),
+  }));
 }
 
 /** The areas, bosses and restrictions an order is about. */
@@ -335,8 +377,9 @@ function actsOf(
 /**
  * An order that would ask nothing on top of the others (the analyses of 2026-10-21): attempts against a
  * boss that the deaths of the whole run already limit more tightly (every lost attempt is a death); a
- * chapter restriction the curse already holds; an order about an area the journey forbids, or about a
- * boss in it; a fight without Estus in a chapter that already forbids Estus, or the other way round.
+ * chapter restriction the curse already holds; an order about a place the journey can no longer reach
+ * once its forbidden areas are closed; a fight without Estus in a chapter that already forbids Estus,
+ * or the other way round.
  */
 function pointless(
   world: World,
@@ -344,12 +387,14 @@ function pointless(
   args: Readonly<Record<string, ArgValue>>,
   chapter: number | undefined,
   chosen: readonly (OrderInstance & { chapter?: number })[],
+  items: readonly string[],
 ): boolean {
   const journey = (id: string, param: string) =>
     chosen.find((o) => o.template.id === id)?.args[param];
-  const forbidden = chosen.flatMap((o) =>
-    o.template.id === "forbidden-area" ? [o.args["area"]] : [],
-  );
+  const forbidden = chosen.flatMap((o) => {
+    const area = o.args["area"];
+    return o.template.id === "forbidden-area" && typeof area === "string" ? [area] : [];
+  });
   // The area an order sends the player into: its own, its boss's, or its pickup's.
   const placeOf = (a: Readonly<Record<string, ArgValue>>): string | undefined => {
     if (typeof a["area"] === "string") return a["area"];
@@ -359,7 +404,12 @@ function pointless(
     return region === undefined ? undefined : (world.regions.get(region)?.area ?? undefined);
   };
   const place = placeOf(args);
-  if (place !== undefined && forbidden.includes(place)) return true;
+  // One reach per distinct forbidden set (see reachWithoutAreas), shared with the validator.
+  if (
+    forbidden.length > 0 &&
+    unreachableTarget(world, args, reachWithoutAreas(world, forbidden, items).regions) !== undefined
+  )
+    return true;
   // An area closed for the chapter (the other way) takes no other order of the chapter, and the other way round.
   const closedTogether = chosen.some(
     (o) =>
