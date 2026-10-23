@@ -325,10 +325,31 @@ describe("validate on the DS1 data set", () => {
     for (const { name: bonfire, unavailable } of windowed) {
       const result = run([order("one-bonfire", { area: "anor-londo", bonfire })]);
       expect(result.verdict, bonfire).toBe("impossible");
-      expect(result.problems, bonfire).toEqual([
-        `${bonfire} cannot be the one bonfire: ${unavailable?.[0]?.why ?? ""}`,
-      ]);
+      expect(result.problems, bonfire).toEqual(
+        (unavailable ?? []).map((w) => `${bonfire} cannot be the one bonfire: ${w.why}`),
+      );
     }
+    // Every window counts, not only the first.
+    const raw = readDataSet();
+    const twice = parseWorld({
+      ...raw,
+      locations: (raw.locations as Record<string, unknown>[]).map((l) =>
+        l["name"] === "AL: Darkmoon Tomb Bonfire"
+          ? {
+              ...l,
+              unavailable: [
+                { from: true, until: { has: "Bell of Awakening #1" }, why: "first" },
+                { from: { has: "Lordvessel" }, until: null, why: "second" },
+              ],
+            }
+          : l,
+      ),
+    });
+    const tomb = order("one-bonfire", { area: "anor-londo", bonfire: "AL: Darkmoon Tomb Bonfire" });
+    expect(validate(twice, { mode: "static", gift }, [tomb]).problems).toEqual([
+      "AL: Darkmoon Tomb Bonfire cannot be the one bonfire: first",
+      "AL: Darkmoon Tomb Bonfire cannot be the one bonfire: second",
+    ]);
     expect(
       run([order("one-bonfire", { area: "anor-londo", bonfire: "AL: Darkmoon Tomb Bonfire" })])
         .problems,
