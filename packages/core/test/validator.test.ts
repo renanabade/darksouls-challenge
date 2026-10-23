@@ -140,6 +140,32 @@ describe("validate", () => {
     expect(result.orders[1]?.exceptions).toEqual(["Key"]);
   });
 
+  it("keeps a merchant who still has one reachable shop when another is cut off", () => {
+    const world = parseWorld({
+      ...raw,
+      regions: [...raw.regions, { id: "deep", name: "deep", area: "wild", mandatory: false }],
+      entrances: [...raw.entrances, { from: "hall", to: "deep", requires: true }],
+      merchants: [
+        ...raw.merchants,
+        { id: "wanderer", name: "Wanderer", regions: ["market", "deep"] },
+        { id: "hermit", name: "Hermit", regions: ["deep"] },
+      ],
+    });
+    // market stays open. One reachable shop is enough: the order is about the merchant, not every stall.
+    const kept = validate(world, setup(), [
+      order("forbidden-area", { area: "wild" }),
+      order("closed-merchant", { merchant: "wanderer" }),
+    ]);
+    expect(kept.verdict).toBe("comfortable");
+    expect(kept.problems).toEqual([]);
+    const cut = validate(world, setup(), [
+      order("forbidden-area", { area: "wild" }),
+      order("closed-merchant", { merchant: "hermit" }),
+    ]);
+    expect(cut.verdict).toBe("impossible");
+    expect(cut.problems).toContain("closed-merchant: Hermit cannot be reached");
+  });
+
   it("closes a merchant, keeping a shared shop open while another merchant sells there", () => {
     const smith = validate(small, setup(), [order("closed-merchant", { merchant: "smith" })]);
     expect(smith.orders[0]?.exceptions).toEqual([]);

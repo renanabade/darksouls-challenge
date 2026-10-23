@@ -682,6 +682,21 @@ export function validate(
   };
 }
 
+const locationsByName = new WeakMap<World, ReadonlyMap<string, Location>>();
+
+/** The first location of a name, computed once per world. The same name keeps the first row, as `find` did. */
+function locationNamed(world: World, name: string): Location | undefined {
+  let map = locationsByName.get(world);
+  if (map === undefined) {
+    const built = new Map<string, Location>();
+    for (const location of world.locations)
+      if (!built.has(location.name)) built.set(location.name, location);
+    map = built;
+    locationsByName.set(world, map);
+  }
+  return map.get(name);
+}
+
 /**
  * The place an order is about, when that place cannot be visited in `reached`.
  * Undefined when the order is not about a place, or the place can still be visited.
@@ -706,12 +721,12 @@ export function unreachableTarget(
   }
   const locationName = args["location"];
   if (typeof locationName === "string") {
-    const location = world.locations.find((l) => l.name === locationName);
+    const location = locationNamed(world, locationName);
     if (location !== undefined && !reached.has(location.region)) return location.item;
   }
   const bonfire = args["bonfire"];
   if (typeof bonfire === "string") {
-    const location = world.locations.find((l) => l.name === bonfire);
+    const location = locationNamed(world, bonfire);
     if (location !== undefined && !reached.has(location.region)) return location.name;
   }
   const merchantId = args["merchant"];

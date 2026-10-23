@@ -258,6 +258,10 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
         const targets = targetsOf(args).map((t) => `${template.id}|${t}`);
         if (targets.some((t) => usedTargets.has(t))) continue;
         if (pointless(world, template, args, chapter, chosen, held)) continue;
+        // A forbidden area drawn after another order can close the only way to that order. Try another
+        // area. The validation at the end must not be what rejects the draw.
+        if (template.id === "forbidden-area" && forbiddenAreaCutsOff(world, args, chosen, held))
+          continue;
         const next = [...chosen, { template, args, ...(chapter !== undefined && { chapter }) }];
         if (
           !WEIGHT_ONLY_ALWAYS_FITS.has(template.id) ||
@@ -371,6 +375,42 @@ function actsOf(
       requiredAreas: all((c) => c.requiredAreas),
       bosses: all((c) => c.bosses),
     };
+  });
+}
+
+/**
+ * True when closing this area would leave an order already drawn with nowhere to go.
+ * A forbidden area already drawn is judged without its own regions: closing that area is the order.
+ * A merchant stays when any of their shops can still be reached.
+ */
+export function forbiddenAreaCutsOff(
+  world: World,
+  args: Readonly<Record<string, ArgValue>>,
+  chosen: readonly OrderInstance[],
+  items: readonly string[],
+): boolean {
+  const area = args["area"];
+  if (typeof area !== "string") return false;
+  const areas = [
+    ...chosen.flatMap((order) => {
+      const id = order.args["area"];
+      return order.template.id === "forbidden-area" && typeof id === "string" ? [id] : [];
+    }),
+    area,
+  ];
+  const reached = reachWithoutAreas(world, areas, items).regions;
+  return chosen.some((order) => {
+    if (order.template.id === "forbidden-area") {
+      const own = order.args["area"];
+      if (typeof own !== "string") return false;
+      const others = areas.filter((id) => id !== own);
+      if (others.length === 0) return false;
+      return (
+        unreachableTarget(world, order.args, reachWithoutAreas(world, others, items).regions) !==
+        undefined
+      );
+    }
+    return unreachableTarget(world, order.args, reached) !== undefined;
   });
 }
 

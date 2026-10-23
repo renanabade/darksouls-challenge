@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { forbiddenAreaCutsOff } from "../src/generator/generate.js";
 import {
   catalog,
   chaptersOf,
@@ -14,10 +15,12 @@ import {
   restrictions,
   shifted,
   validate,
+  type ArgValue,
   type Challenge,
   type Chapter,
   type Difficulty,
   type Length,
+  type OrderInstance,
   type OrderTemplate,
 } from "../src/index.js";
 import { readDataSet } from "./ds1.js";
@@ -452,5 +455,129 @@ describe("manual", () => {
     expect(orderText(world, assigned)).toMatch(
       /^From the moment you defeat Taurus Demon until you have rung both bells: your weapon is the Halberd/,
     );
+  });
+});
+
+describe("a forbidden area drawn after another order", () => {
+  // parish → deep (wild) → grove (woods). The woods have no other entrance.
+  // The Wanderer sells in the parish and in the wild; the Hermit sells only in the wild.
+  const loc = (region: string, item: string, category: string, found = false) => ({
+    name: `${region}: ${item}`,
+    region,
+    item,
+    count: 1,
+    category,
+    mandatory: false,
+    found,
+  });
+  const weapon = (id: number, name: string, category: string) => ({
+    id,
+    name,
+    category,
+    melee: true,
+    hands: { both: true },
+    req: { str: 10, dex: 0, int: 0, fth: 0 },
+    baseDamage: { phys: 100, magic: 0, fire: 0, thunder: 0 },
+  });
+  const milestone = (id: string, name: string, kind: string, requires: unknown) => ({
+    id,
+    name,
+    kind,
+    requires,
+  });
+  const bell = "Bell of Awakening #1";
+  const bell2 = "Bell of Awakening #2";
+  const world = parseWorld({
+    meta: { start: "asylum", goal: "Gwyn Defeated" },
+    regions: [
+      ["asylum", "asylum"],
+      ["parish", "parish"],
+      ["stall", "parish"],
+      ["blight", "blight"],
+      ["altar", "altar"],
+      ["kiln", "kiln"],
+      ["deep", "wild"],
+      ["grove", "woods"],
+    ].map(([id, area]) => ({ id, name: id, area, mandatory: false })),
+    entrances: [
+      { from: "asylum", to: "parish", requires: true },
+      { from: "parish", to: "stall", requires: true },
+      { from: "parish", to: "blight", requires: { has: bell } },
+      { from: "blight", to: "altar", requires: { has: bell2 } },
+      { from: "altar", to: "kiln", requires: { has: "Lordvessel" } },
+      { from: "parish", to: "deep", requires: true },
+      { from: "deep", to: "grove", requires: true },
+    ],
+    locations: [
+      loc("asylum", "Asylum Demon Defeated", "BOSS"),
+      loc("parish", bell, "EVENT"),
+      loc("parish", "Club", "CORPSE_ITEM", true),
+      loc("parish", "Shortsword", "CORPSE_ITEM", true),
+      loc("blight", bell2, "EVENT"),
+      loc("altar", "Lordvessel", "EVENT"),
+      loc("kiln", "Gwyn Defeated", "BOSS"),
+      loc("stall", "Moss", "SHOP_ITEM"),
+      loc("deep", "Moss", "SHOP_ITEM"),
+    ],
+    classes: {
+      classes: [
+        {
+          name: "Knight",
+          level: 5,
+          stats: { strength: 12, dexterity: 10, intelligence: 8, faith: 8, attunement: 10 },
+        },
+      ],
+      gifts: [{ row: 1, items: ["(none)"] }],
+    },
+    bosses: [
+      { id: "asylum-demon", name: "Asylum Demon", region: "asylum" },
+      { id: "gwyn", name: "Gwyn", region: "kiln" },
+    ],
+    merchants: [
+      { id: "wanderer", name: "Wanderer", regions: ["stall", "deep"] },
+      { id: "hermit", name: "Hermit", regions: ["deep"] },
+    ],
+    milestones: [
+      milestone("boss-asylum-demon", "Asylum", "boss", { has: "Asylum Demon Defeated" }),
+      milestone("bell-undead-parish", "First bell", "bell", { has: bell }),
+      milestone("both-bells", "Both bells", "bell", { all: [{ has: bell }, { has: bell2 }] }),
+      milestone("lordvessel-obtained", "Lordvessel", "item", { has: "Lordvessel" }),
+      milestone("lordvessel-placed", "Lordvessel placed", "item", { has: "Lordvessel" }),
+      milestone("kiln-open", "Kiln", "area", { region: "kiln" }),
+      milestone("gwyn-dead", "Gwyn", "boss", { has: "Gwyn Defeated" }),
+    ],
+    weapons: [weapon(1, "Club", "hammer"), weapon(2, "Shortsword", "sword")],
+  });
+  const drawn = (id: string, args: Record<string, ArgValue>): OrderInstance => {
+    const template = catalog.find((o) => o.id === id);
+    if (template === undefined) throw new Error(`no order ${id}`);
+    return { template, args };
+  };
+
+  it("skips the draw when the area would cut off an order already chosen", () => {
+    // no-bonfire is weight-only, so the draw loop would have kept it without validating the set.
+    // Closing the wild is the only way the woods then fail, and that failure must happen here.
+    const woods = drawn("no-bonfire", { area: "woods" });
+    expect(forbiddenAreaCutsOff(world, { area: "wild" }, [woods], [])).toBe(true);
+    expect(forbiddenAreaCutsOff(world, { area: "blight" }, [woods], [])).toBe(false);
+    const township = drawn("forbidden-area", { area: "woods" });
+    expect(forbiddenAreaCutsOff(world, { area: "wild" }, [township], [])).toBe(true);
+    const hermit = drawn("closed-merchant", { merchant: "hermit" });
+    expect(forbiddenAreaCutsOff(world, { area: "wild" }, [hermit], [])).toBe(true);
+    // The parish stall is still open, so the Wanderer is not a reason to skip the draw.
+    const wanderer = drawn("closed-merchant", { merchant: "wanderer" });
+    expect(forbiddenAreaCutsOff(world, { area: "wild" }, [wanderer], [])).toBe(false);
+
+    for (const seed of ["cut-off", "later-area", "reroll", "merchant-first"]) {
+      const challenge = generate(world, { seed, difficulty: "easy", length: "full" });
+      const forbidden = challenge.orders.flatMap((o) =>
+        o.template.id === "forbidden-area" && o.args["area"] === "wild" ? [o] : [],
+      );
+      const closed = challenge.orders.some(
+        (o) => o.template.id === "closed-merchant" && o.args["merchant"] === "hermit",
+      );
+      expect(forbidden.length > 0 && closed, seed).toBe(false);
+      expect(validate(world, challenge.setup, challenge.orders).verdict, seed).toBe("comfortable");
+    }
   });
 });

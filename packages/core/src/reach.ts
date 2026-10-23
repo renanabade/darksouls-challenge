@@ -87,6 +87,11 @@ export function regionsInArea(world: World, area: string): readonly string[] {
   return map.get(area) ?? [];
 }
 
+/**
+ * One map per world, dropped with the world. Each entry is one forbidden-region set times one
+ * starting-gift item set: the combinations a world is actually asked about, not an unbounded log.
+ * A challenge draws a handful of forbidden areas and one gift, so the map stays small without a cap.
+ */
 const reachCache = new WeakMap<World, Map<string, Reach>>();
 
 /**
