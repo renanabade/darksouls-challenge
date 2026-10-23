@@ -61,7 +61,7 @@ export interface Challenge {
 }
 
 /** Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw. */
-export const GENERATOR_VERSION = "5";
+export const GENERATOR_VERSION = "6";
 
 /** Soul level cap per difficulty (Proposto, to tune by playing); never below the class's level. */
 const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
