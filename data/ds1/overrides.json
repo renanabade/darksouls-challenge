@@ -1,3 +1,41 @@
 {
- "overrides": []
+ "overrides": [
+  {
+   "file": "locations",
+   "id": "E1",
+   "note": "The Hydra's death is a graph event, so the golem that holds Dusk can wait for it.",
+   "op": "add",
+   "source": "m12_00_00_00 Event_11200801 (on the death of the Darkroot Basin Hydra, sets flag 11200801)",
+   "value": {"category": "EVENT", "count": 1, "found": false, "item": "Darkroot Basin Hydra Defeated", "kind": "other", "mandatory": false, "name": "DB: Darkroot Basin Hydra Defeated", "region": "darkroot-basin"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E2-dusk",
+   "match": {"from": "darkroot-basin", "to": "darkroot-basin-princess-dusk"},
+   "note": "Dusk is freed by killing the Golden Crystal Golem 1200200, which is only enabled after the Hydra dies. Flag 703, the other way in, is written by no event script and is read as off.",
+   "op": "condition",
+   "source": "m12_00_00_00 Event_11200800 (EnableCharacter(1200200) waits for flag 11200801 or flag 703); Event_11200530 (Dusk state flag 1121 once the golem is dead)",
+   "value": {"has": "Darkroot Basin Hydra Defeated"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E2-pendant",
+   "match": {"from": "the-dukes-archives", "to": "the-dukes-archives-golem-after-dusk-rescue"},
+   "note": "The Broken Pendant, which opens the DLC portal, drops only once Dusk was freed: Hydra, then Dusk, then the Pendant, then the DLC.",
+   "op": "condition",
+   "source": "m17_00_00_00 Event_11700700 (AwardItemLot 27100200 needs golem 1700510 dead, flag 11200530 and flag 1121 off); m12_00_00_00 Event_11200800",
+   "value": {"has": "Darkroot Basin Hydra Defeated"}
+  },
+  {
+   "file": "entrances",
+   "id": "E3",
+   "match": {"from": "upper-blighttown-depths-side", "to": "lower-blighttown"},
+   "note": "DSAP asks for the Lordvessel on this walk as a comfort rule. The walk down from the Depths side is open, as DSAP's own free edge through lower-blighttown-fog shows.",
+   "op": "replace",
+   "source": "m14_00_00_00: the same walk as the free DSAP edge upper-blighttown-depths-side -> lower-blighttown-fog -> lower-blighttown",
+   "value": {"requires": true}
+  }
+ ]
 }

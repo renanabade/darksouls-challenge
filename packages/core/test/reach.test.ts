@@ -80,4 +80,25 @@ describe("reach on the DS1 data set", () => {
     );
     expect(found.sort()).toEqual([...mandatory.regions].sort());
   });
+
+  // Issue 38, E1/E2: the golem that holds Dusk appears once the Hydra is dead, and the Broken Pendant that opens
+  // the DLC drops only after Dusk is freed.
+  it("chains the Hydra, Dusk, the Broken Pendant and the DLC", () => {
+    const withoutHydra = reach(world, {
+      forbiddenItems: new Set(["Darkroot Basin Hydra Defeated"]),
+    });
+    expect(withoutHydra.regions.has("darkroot-basin")).toBe(true);
+    for (const closed of ["darkroot-basin-princess-dusk", "sanctuary-garden", "oolacile-township"])
+      expect(withoutHydra.regions.has(closed), closed).toBe(false);
+    expect(withoutHydra.items.has("Broken Pendant")).toBe(false);
+    expect(withoutHydra.items.has(world.goal)).toBe(true);
+  });
+
+  // E3: the walk down from the Depths side of Blighttown needs no Lordvessel (a DSAP comfort rule).
+  it("walks down Blighttown from the Depths without the Lordvessel", () => {
+    const edge = world.entrances.find(
+      (e) => e.from === "upper-blighttown-depths-side" && e.to === "lower-blighttown",
+    );
+    expect(edge?.requires).toBe(true);
+  });
 });

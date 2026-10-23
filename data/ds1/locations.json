@@ -1140,6 +1140,16 @@
   "region": "darkroot-basin"
  },
  {
+  "category": "EVENT",
+  "count": 1,
+  "found": false,
+  "item": "Darkroot Basin Hydra Defeated",
+  "kind": "other",
+  "mandatory": false,
+  "name": "DB: Darkroot Basin Hydra Defeated",
+  "region": "darkroot-basin"
+ },
+ {
   "category": "MINIBOSS_DROP",
   "count": 1,
   "found": false,
