@@ -1,3 +1,4 @@
+import { UNMODELED_BONFIRES } from "./bonfires.js";
 import {
   damages,
   ELEMENTAL,
@@ -513,6 +514,17 @@ export function validate(
             ? undefined
             : `${location.item} cannot be taken before ${until.name}`,
         );
+        break;
+      }
+
+      // Weight only, except the bonfires whose availability is not modeled yet (issue 38, E11 and E12).
+      case "one-bonfire": {
+        const bonfire = stringArg(args, "bonfire", label);
+        result.support = validation === "weightOnly" ? "weightOnly" : "pending";
+        if (UNMODELED_BONFIRES.has(bonfire))
+          checks.push(
+            () => `${bonfire} cannot be the one bonfire until its availability is modeled`,
+          );
         break;
       }
 

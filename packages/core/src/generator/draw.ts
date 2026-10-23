@@ -1,3 +1,4 @@
+import { UNMODELED_BONFIRES } from "../bonfires.js";
 import { elementalDefenses, isMeleeWeapon, SCHOOLS, type Boss, type Element } from "../build.js";
 import type { Difficulty, OrderTemplate } from "../orders/index.js";
 import { restrictions, type Tier } from "../orders/index.js";
@@ -82,17 +83,6 @@ export function fitCurse(ids: readonly string[], difficulty: Difficulty): string
  * analysis of 20 generated challenges (2026-10-21) found it drawn for areas with two items.
  */
 const MIN_PICKUPS = 5;
-/**
- * Bonfires "one bonfire" must not hand out until their availability is modeled (issue 38, E11 and E12).
- * E11: the Firelink Shrine bonfire goes out after both bells, until Lautrec dies (flags 812 and 813,
- * flag 11500200). E12: the first Anor Londo bonfire, the Darkmoon Knightess's (object 1511960), goes out
- * with her (m15_01_00_00 Event_151). "No bonfire" still draws these areas: it never asks the player to
- * rest at one of them.
- */
-const UNMODELED_BONFIRES = new Set<string>([
-  "FS: Firelink Shrine Bonfire",
-  "AL: Anor Londo Bonfire",
-]);
 /** What an errand sends the player for: equipment and spells, not consumables or keys. */
 const ERRAND_KINDS = new Set(["weapon", "armor", "ring", "spell"]);
 /** The restriction no chapter takes: levels are the level orders' business, and they last the whole run. */
