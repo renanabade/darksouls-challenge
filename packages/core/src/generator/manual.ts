@@ -279,10 +279,17 @@ export function renderManual(world: World, challenge: Challenge): string {
     "",
     ...chapters,
     ...definitions(challenge),
+    ...warnings(world),
     `<sub>Data ${challenge.dataVersion}. Same seed and settings, same challenge.</sub>`,
     "",
   ];
   return lines.join("\n");
+}
+
+/** NPCs the game's scripts can lose or turn, whatever the orders: not orders, just what the game hides. */
+function warnings(world: World): string[] {
+  if (world.warnings.length === 0) return [];
+  return ["## Before you go", "", ...world.warnings.map((w) => `- **${w.npc}:** ${w.text}`), ""];
 }
 
 function definitions(challenge: Challenge): string[] {

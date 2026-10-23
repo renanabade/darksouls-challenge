@@ -118,6 +118,14 @@ export interface World {
   readonly areas: ReadonlyMap<string, Area>;
   /** Treasure chests placed in the world (not the Firelink rescue chest), one per chest. */
   readonly chests: readonly Chest[];
+  /** What the manual tells the player about NPCs the scripts can lose or turn (warnings.json). */
+  readonly warnings: readonly NpcWarning[];
+}
+
+export interface NpcWarning {
+  readonly id: string;
+  readonly npc: string;
+  readonly text: string;
 }
 
 export interface Chest {
@@ -139,6 +147,7 @@ export interface RawDataSet {
   readonly spells?: unknown;
   readonly areas?: unknown;
   readonly treasures?: unknown;
+  readonly warnings?: unknown;
 }
 
 export class WorldParseError extends Error {
@@ -354,6 +363,18 @@ export function parseWorld(raw: RawDataSet): World {
     chests.push({ region: id });
   }
 
+  const warnings: NpcWarning[] = [];
+  for (const [i, value] of check.array(raw.warnings ?? [], "warnings").entries()) {
+    const path = `warnings[${String(i)}]`;
+    const fields = check.object(value, path);
+    if (fields === undefined) continue;
+    warnings.push({
+      id: check.string(fields, "id", path),
+      npc: check.string(fields, "npc", path),
+      text: check.string(fields, "text", path),
+    });
+  }
+
   if (check.problems.length > 0) throw new WorldParseError(check.problems);
   return {
     dataVersion: typeof meta["dataVersion"] === "string" ? meta["dataVersion"] : "",
@@ -371,5 +392,6 @@ export function parseWorld(raw: RawDataSet): World {
     classes: classList,
     areas,
     chests,
+    warnings,
   };
 }

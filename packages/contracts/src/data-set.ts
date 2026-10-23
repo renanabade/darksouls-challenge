@@ -14,6 +14,7 @@ const FILES = [
   "spells",
   "areas",
   "treasures",
+  "warnings",
 ] as const satisfies readonly (keyof RawDataSet)[];
 
 /**

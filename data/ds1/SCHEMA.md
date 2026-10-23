@@ -43,6 +43,7 @@ exports as long as the names do not change.
 | `traps.json` | Places with no walking exit: `exits` (`means`: jump, warp, darksign, homeward-bone, serpent, key, death; with `requires`), `notWorking` |
 | `scripted-deaths.json` | Deaths caused by scripts; `countsAsDeath` false only for unavoidable, mandatory deaths (Seath's capture) |
 | `mandatory.json` | Items and regions on every path to the goal, by removal analysis on this graph (after the overrides, with no starting item) |
+| `warnings.json` | What the manual tells the player about NPCs the scripts can lose or turn: `id`, `npc`, `text`. Filled by overrides only, each citing its scripts |
 | `overrides.json` | Not generated: the corrections the export applies on top of the DSAP graph (below) |
 
 ## Overrides

@@ -82,6 +82,15 @@ describe("generate on the DS1 data set", () => {
       expect(manual, name).not.toContain(name);
     expect(manual).toContain("Royal Wood (forbidden)");
     expect(manual).toContain("Oolacile Sanctuary");
+    // Issue 38, E15 to E18: what the scripts do to NPCs, told once at the end of every manual.
+    const before = manual.slice(manual.indexOf("## Before you go"));
+    for (const npc of [
+      "Rhea of Thorolund",
+      "Trusty Patches",
+      "Solaire of Astora",
+      "Darkstalker Kaathe",
+    ])
+      expect(before, npc).toContain(`- **${npc}:**`);
   });
 
   it("respects a class, gift and level cap the player fixes", () => {
