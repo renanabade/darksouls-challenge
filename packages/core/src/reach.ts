@@ -67,3 +67,62 @@ export function reach(world: World, options: ReachOptions = {}): Reach {
   }
   return { regions, items };
 }
+
+const regionsByArea = new WeakMap<World, ReadonlyMap<string, readonly string[]>>();
+
+/** The regions of one area, in world order. Computed once per world. */
+export function regionsInArea(world: World, area: string): readonly string[] {
+  let map = regionsByArea.get(world);
+  if (map === undefined) {
+    const built = new Map<string, string[]>();
+    for (const region of world.regions.values()) {
+      if (region.area === null) continue;
+      const list = built.get(region.area);
+      if (list === undefined) built.set(region.area, [region.id]);
+      else list.push(region.id);
+    }
+    map = built;
+    regionsByArea.set(world, map);
+  }
+  return map.get(area) ?? [];
+}
+
+const reachCache = new WeakMap<World, Map<string, Reach>>();
+
+/**
+ * Everything still reachable once the given regions are closed. The walk runs once per distinct set of
+ * regions and starting items; a later call with the same key returns the cached reach.
+ */
+export function reachWithoutRegions(
+  world: World,
+  forbiddenRegions: Iterable<string>,
+  items: Iterable<string> = [],
+): Reach {
+  const regions = [...new Set(forbiddenRegions)].sort();
+  const held = [...new Set(items)].sort();
+  const key = `${regions.join("\0")}\n${held.join("\0")}`;
+  let cache = reachCache.get(world);
+  if (cache === undefined) reachCache.set(world, (cache = new Map<string, Reach>()));
+  const hit = cache.get(key);
+  if (hit !== undefined) return hit;
+  const result = reach(world, {
+    forbiddenRegions: new Set(regions),
+    ...(held.length > 0 ? { items: held } : {}),
+  });
+  cache.set(key, result);
+  return result;
+}
+
+/**
+ * Everything still reachable once the given areas are closed. Uses the same cache as
+ * `reachWithoutRegions`: one walk per distinct set of areas and starting items, never one per order.
+ */
+export function reachWithoutAreas(
+  world: World,
+  areas: readonly string[],
+  items: Iterable<string> = [],
+): Reach {
+  const regionIds: string[] = [];
+  for (const area of [...new Set(areas)].sort()) regionIds.push(...regionsInArea(world, area));
+  return reachWithoutRegions(world, regionIds, items);
+}
