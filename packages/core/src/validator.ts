@@ -222,7 +222,16 @@ export function validate(
     weapons: (c: Constraints) => Weapon[];
   }[] = [];
   // Worst case: a restriction of a curse or of one chapter applies to the whole run.
-  const restrict = (id: string, result: { exceptions: string[] }, label: string): void => {
+  // A chapter's restriction on items lasts until the chapter's goal: its exceptions are only what the
+  // chapter needs, and can be obtained by the time it ends.
+  const chapterExceptions: { result: { exceptions: string[] }; kind: string; until: Milestone }[] =
+    [];
+  const restrict = (
+    id: string,
+    result: { exceptions: string[] },
+    label: string,
+    until?: Milestone,
+  ): void => {
     activeRestrictions.add(id);
     const restriction = restrictions.find((r) => r.id === id);
     if (restriction === undefined)
@@ -230,7 +239,9 @@ export function validate(
     const effect: RestrictionEffect = restriction.effect;
     if (effect.kind === "oneHanded") twoHanding = false;
     if (effect.kind === "noLevelUps") noLevelUps = true;
-    if (effect.kind === "noItemsOfKind") {
+    if (effect.kind === "noItemsOfKind" && until !== undefined)
+      chapterExceptions.push({ result, kind: effect.itemKind, until });
+    else if (effect.kind === "noItemsOfKind") {
       exceptionOrders.push({
         result,
         candidates: () => world.locations.filter((l) => l.kind === effect.itemKind),
@@ -389,8 +400,12 @@ export function validate(
 
       case "chapter-restriction":
         milestoneArg(world, args, "from", label);
-        milestoneArg(world, args, "until", label);
-        restrict(stringArg(args, "restriction", label), result, label);
+        restrict(
+          stringArg(args, "restriction", label),
+          result,
+          label,
+          milestoneArg(world, args, "until", label),
+        );
         break;
 
       // Worst case: the player may never earn a point.
@@ -691,6 +706,26 @@ export function validate(
         constraints.locations.add(location);
         if (failures(constraints).length > 0) {
           constraints.locations.delete(location);
+          if (!result.exceptions.includes(location.item)) result.exceptions.push(location.item);
+        }
+      }
+    }
+    // The same, for a chapter: each item of the kind is forbidden in turn until the chapter's goal; one
+    // without which the goal cannot be reached is an exception. An item the chapter cannot obtain is never
+    // needed for its goal, so the list holds only what the chapter itself needs.
+    for (const { result, kind, until } of chapterExceptions) {
+      const pickups = world.locations.filter(
+        (l) => l.kind === kind && !constraints.locations.has(l),
+      );
+      const forbidden = new Set([...constraints.locations, ...pickups]);
+      const reachesGoal = () =>
+        holds(run({ regions: constraints.regions, locations: forbidden }), until.requires);
+      if (reachesGoal()) continue;
+      pickups.forEach((l) => forbidden.delete(l));
+      for (const location of pickups) {
+        forbidden.add(location);
+        if (!reachesGoal()) {
+          forbidden.delete(location);
           if (!result.exceptions.includes(location.item)) result.exceptions.push(location.item);
         }
       }

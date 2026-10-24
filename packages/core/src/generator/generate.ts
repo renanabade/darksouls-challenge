@@ -61,7 +61,7 @@ export interface Challenge {
 }
 
 /** Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw. */
-export const GENERATOR_VERSION = "6";
+export const GENERATOR_VERSION = "7";
 
 /** Soul level cap per difficulty (Proposto, to tune by playing); never below the class's level. */
 const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
@@ -84,6 +84,17 @@ const CHAPTER_ORDERS: Readonly<Record<Length, readonly [number, number]>> = {
   short: [1, 2],
   full: [1, 3],
   epic: [3, 5],
+};
+/**
+ * Most rules a manual holds, the order of the Lord Souls included (Proposto): past this, a journey reads as
+ * a list of chores. Chapters with the most rules give one up first, the later chapter on a tie.
+ */
+const MAX_ORDERS: Readonly<Record<Length, number>> = { short: 10, full: 18, epic: 25 };
+/** Most times an order is drawn in one run (Proposto): these repeat the same chore, area after area. */
+const RUN_CAPS: Readonly<Record<string, number>> = {
+  errand: 2,
+  "every-chest": 1,
+  "counted-attempts": 3,
 };
 /** The Asylum has one area and one boss. */
 const ASYLUM_MAX = 1;
@@ -229,6 +240,15 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
       ),
     });
   });
+  // The Lord Souls' order is one of the rules.
+  for (
+    let total = 1 + sections.reduce((sum, s) => sum + s.target, 0);
+    total > MAX_ORDERS[config.length];
+    total--
+  ) {
+    const most = sections.reduce((a, b) => (b.target >= a.target ? b : a));
+    most.target--;
+  }
   const frictionBudget = FRICTION_PER_ORDER * sections.reduce((sum, s) => sum + s.target, 0);
 
   let chosen: (OrderInstance & { chapter?: number })[] = [lordOrder];
@@ -250,6 +270,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
     );
     for (const template of candidates) {
       if (added >= section.target) break;
+      if ((uses.get(template.id) ?? 0) >= (RUN_CAPS[template.id] ?? Infinity)) continue;
       // Leave room for the orders still to come, at the lightest weight.
       if (spent + template.weight.difficulty + (section.target - added - 1) > budget) continue;
       if (friction + template.weight.friction > frictionBudget) continue;
@@ -311,32 +332,42 @@ function finish(
 }
 
 /**
- * The chapter the player reads. A forbidden area stays, marked closed; areas and bosses that can only be
- * reached through one are left out, so the manual does not send the player somewhere the orders closed.
+ * The chapter the player reads. An area closed in the chapter (forbidden for the run, or "the other way"
+ * of that chapter) is left out, and so are the areas and bosses that can only be reached through one, so
+ * the manual does not send the player somewhere the orders closed.
  */
 export function reachableChapters(
   world: World,
   chapters: readonly ChapterPlan[],
-  orders: readonly OrderInstance[],
+  orders: readonly (OrderInstance & { chapter?: number })[],
   items: readonly string[],
 ): readonly ChapterPlan[] {
-  const forbidden = orders.flatMap((o) => {
+  const areaOf = (o: OrderInstance): string[] => {
     const area = o.args["area"];
-    return o.template.id === "forbidden-area" && typeof area === "string" ? [area] : [];
+    return typeof area === "string" ? [area] : [];
+  };
+  const forbidden = orders.flatMap((o) => (o.template.id === "forbidden-area" ? areaOf(o) : []));
+  return chapters.map((chapter, k) => {
+    const closed = [
+      ...forbidden,
+      ...orders.flatMap((o) =>
+        o.template.id === "the-other-way" && o.chapter === k ? areaOf(o) : [],
+      ),
+    ];
+    if (closed.length === 0) return chapter;
+    const reached = reachWithoutAreas(world, closed, items).regions;
+    return {
+      ...chapter,
+      areas: chapter.areas.filter(
+        (area) =>
+          !closed.includes(area) && regionsInArea(world, area).some((id) => reached.has(id)),
+      ),
+      bosses: chapter.bosses.filter((id) => {
+        const region = world.bosses.get(id)?.region;
+        return region === undefined || region === "" || reached.has(region);
+      }),
+    };
   });
-  if (forbidden.length === 0) return chapters;
-  const closed = new Set(forbidden);
-  const reached = reachWithoutAreas(world, forbidden, items).regions;
-  const open = (area: string): boolean =>
-    closed.has(area) || regionsInArea(world, area).some((id) => reached.has(id));
-  return chapters.map((chapter) => ({
-    ...chapter,
-    areas: chapter.areas.filter(open),
-    bosses: chapter.bosses.filter((id) => {
-      const region = world.bosses.get(id)?.region;
-      return region === undefined || region === "" || reached.has(region);
-    }),
-  }));
 }
 
 /** The areas, bosses and restrictions an order is about. */

@@ -294,6 +294,16 @@ describe("weapon orders on the DS1 data set", () => {
     expect(result.orders[0]?.exceptions).toEqual(["Covenant of Artorias", "Orange Charred Ring"]);
   });
 
+  it("excepts from a chapter's 'no rings' only the rings that chapter needs", () => {
+    const chapter = (from: string, until: string) =>
+      order("chapter-restriction", { from, until, restriction: "no-rings" });
+    const early = run("Knight", 30, [chapter("boss-asylum-demon", "bell-undead-parish")]);
+    expect(early.verdict).toBe("comfortable");
+    expect(early.orders[0]?.exceptions).toEqual([]);
+    const late = run("Knight", 30, [chapter("lordvessel-placed", "kiln-open")]);
+    expect(late.orders[0]?.exceptions).toEqual(["Covenant of Artorias", "Orange Charred Ring"]);
+  });
+
   it("swaps fighting style at the Lordvessel when one build fits both", () => {
     const swap = order("phase-swap", {
       milestone: "lordvessel-obtained",

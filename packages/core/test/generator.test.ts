@@ -86,7 +86,7 @@ describe("generate on the DS1 data set", () => {
     } as const;
     const [chapter] = reachableChapters(world, [everything], [forbid, fight], []);
     if (chapter === undefined) throw new Error("no chapter");
-    expect(chapter.areas).toContain("royal-wood");
+    expect(chapter.areas).not.toContain("royal-wood");
     expect(chapter.areas).toContain("oolacile-sanctuary");
     for (const area of ["oolacile-township", "chasm-of-the-abyss"])
       expect(chapter.areas).not.toContain(area);
@@ -105,8 +105,37 @@ describe("generate on the DS1 data set", () => {
     });
     for (const name of ["Oolacile Township", "Chasm of the Abyss", "Manus", "Kalameet"])
       expect(manual, name).not.toContain(name);
-    expect(manual).toContain("Royal Wood (forbidden)");
+    expect(manual).not.toContain("**Areas:** Royal Wood");
     expect(manual).toContain("Oolacile Sanctuary");
+  });
+
+  // An area "the other way" closes for a chapter is not listed in that chapter, nor what lies past it;
+  // the next chapter lists it again.
+  it("leaves out of a chapter the area its other way closes", () => {
+    const template = (id: string) => {
+      const found = catalog.find((t) => t.id === id);
+      if (found === undefined) throw new Error(`no template ${id}`);
+      return found;
+    };
+    const plan = {
+      goal: "kiln-open",
+      goals: ["kiln-open"],
+      areas: [...world.areas.keys()],
+      bosses: [...world.bosses.keys()],
+      offset: 0,
+      difficulty: "medium",
+    } as const;
+    const other = {
+      template: template("the-other-way"),
+      args: { area: "royal-wood", until: "kiln-open" },
+      chapter: 0,
+    };
+    const [closed, open] = reachableChapters(world, [plan, plan], [other], []);
+    expect(closed?.areas).not.toContain("royal-wood");
+    expect(closed?.areas).not.toContain("oolacile-township");
+    expect(closed?.bosses).not.toContain("knight-artorias");
+    expect(open?.areas).toContain("royal-wood");
+    expect(open?.bosses).toContain("knight-artorias");
   });
 
   it("ends every manual with what the scripts do to NPCs", () => {
@@ -159,12 +188,20 @@ describe("generate on the DS1 data set", () => {
         if (order.chapter === undefined) continue;
         const chapter = challenge.chapters[order.chapter];
         const { area, boss } = order.args;
-        if (typeof area === "string") expect(chapter?.areas).toContain(area);
+        // The area the other way closes is the one place of the chapter the player is not sent.
+        if (order.template.id === "the-other-way") expect(chapter?.areas).not.toContain(area);
+        else if (typeof area === "string") expect(chapter?.areas).toContain(area);
         if (typeof boss === "string") expect(chapter?.bosses).toContain(boss);
       }
+      const count = (id: string) => challenge.orders.filter((o) => o.template.id === id).length;
+      expect(count("errand")).toBeLessThanOrEqual(2);
+      expect(count("every-chest")).toBeLessThanOrEqual(1);
+      expect(count("counted-attempts")).toBeLessThanOrEqual(3);
     }
     const mean = (xs: number[]) => xs.reduce((a, b) => a + b, 0) / xs.length;
-    expect(Math.max(...sizes.short)).toBeLessThanOrEqual(13);
+    expect(Math.max(...sizes.short)).toBeLessThanOrEqual(10);
+    expect(Math.max(...sizes.full)).toBeLessThanOrEqual(18);
+    expect(Math.max(...sizes.epic)).toBeLessThanOrEqual(25);
     expect(mean(sizes.short)).toBeLessThan(mean(sizes.full));
     expect(mean(sizes.full)).toBeLessThan(mean(sizes.epic));
     expect(Math.min(...sizes.epic)).toBeGreaterThanOrEqual(20);
