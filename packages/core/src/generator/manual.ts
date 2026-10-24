@@ -150,8 +150,10 @@ export function orderText(world: World, order: GeneratedOrder): string {
     if (arg !== undefined) text = text.replaceAll(`{${name}}`, value(world, spec.kind, arg));
   }
   // Exceptions an order's restrictions add (e.g. the rings the run needs under "no rings").
-  if (!order.template.exceptions && order.exceptions.length > 0)
-    text += ` Allowed, because the run needs them: ${order.exceptions.join(", ")}.`;
+  if (!order.template.exceptions && order.exceptions.length > 0) {
+    const needs = order.chapter === undefined ? "the run needs" : "this stretch needs";
+    text += ` Allowed, because ${needs} them: ${order.exceptions.join(", ")}.`;
+  }
   return text.replace(
     /\b1 (points|deaths|attempts)\b/g,
     (_, word: string) => `1 ${word.slice(0, -1)}`,
@@ -234,13 +236,7 @@ export function renderManual(world: World, challenge: Challenge): string {
     ids.map((id) => of(id) ?? id).join(", ");
   const journey = challenge.orders.filter((o) => o.chapter === undefined).map(rule);
   const part = challenge.chapters.some((c) => c.goals.length > 1) ? "Act" : "Chapter";
-  const forbidden = new Set(
-    challenge.orders.flatMap((o) => (o.template.id === "forbidden-area" ? [o.args["area"]] : [])),
-  );
-  const areaName = (id: string) => {
-    const name = world.areas.get(id)?.name ?? id;
-    return forbidden.has(id) ? `${name} (forbidden)` : name;
-  };
+  const areaName = (id: string) => world.areas.get(id)?.name ?? id;
   const chapters = challenge.chapters.flatMap((chapter, k) => {
     const orders = challenge.orders.filter((o) => o.chapter === k);
     if (orders.length === 0) return [];
