@@ -12,5 +12,14 @@ export {
   type GeneratorConfig,
   type Length,
 } from "./generate.js";
-export { chapterTitle, orderText, renderManual } from "./manual.js";
+export {
+  chapterTitle,
+  describeChallenge,
+  orderText,
+  renderManual,
+  type ChallengeView,
+  type ChapterView,
+  type RuleView,
+} from "./manual.js";
+export { setupOptions, type SetupOptions } from "./options.js";
 export { Random } from "./random.js";

@@ -1,8 +1,9 @@
-import { restrictions } from "../orders/index.js";
+import { restrictions, type Difficulty } from "../orders/index.js";
 import { itemsOf } from "../requirement.js";
 import type { ArgValue } from "../validator.js";
 import type { World } from "../world.js";
-import type { Challenge, GeneratedOrder } from "./generate.js";
+import type { Curve } from "./curve.js";
+import { GENERATOR_VERSION, type Challenge, type GeneratedOrder, type Length } from "./generate.js";
 
 /** Boss names as the manual says them (decision of 2026-10-19). */
 const BOSS_NAMES: Readonly<Record<string, string>> = { "knight-artorias": "Artorias" };
@@ -217,79 +218,138 @@ function cursed(order: GeneratedOrder, restriction: string): boolean {
   return Array.isArray(list) && list.includes(restriction);
 }
 
+/** A rule as the player reads it, numbered across the manual so players can refer to "rule 14". */
+export interface RuleView {
+  readonly number: number;
+  readonly title: string;
+  readonly text: string;
+  readonly advice?: string;
+}
+
+export interface ChapterView {
+  /** "Chapter 2: The first bell"; an act of a short journey says "Act". */
+  readonly heading: string;
+  /** "you ring the bell of the Undead Parish". */
+  readonly until: string;
+  readonly areas: readonly string[];
+  readonly bosses: readonly string[];
+  readonly difficulty: Difficulty;
+  readonly rules: readonly RuleView[];
+}
+
 /**
- * The manual as Markdown: the challenge's settings, the rules of the whole journey, then each chapter with
- * its stretch, areas, bosses, difficulty and rules. Rules are numbered across the manual, so players can
- * refer to "rule 14". A chapter with no rules is left out.
+ * The challenge as the player reads it, in plain data: what the Markdown manual prints and what a page
+ * renders, with every name already resolved. A chapter with no rules is left out.
  */
-export function renderManual(world: World, challenge: Challenge): string {
+export interface ChallengeView {
+  readonly seed: string;
+  readonly generatorVersion: string;
+  readonly dataVersion: string;
+  readonly startingClass: string;
+  /** "Prism Stone x10". */
+  readonly gift: readonly string[];
+  readonly levelCap: number;
+  readonly difficulty: Difficulty;
+  readonly curve: Curve;
+  readonly length: Length;
+  readonly journey: readonly RuleView[];
+  readonly chapters: readonly ChapterView[];
+  /** Only the words the challenge uses. */
+  readonly definitions: readonly { readonly term: string; readonly text: string }[];
+  /** NPCs the game's scripts can lose or turn, whatever the orders: not orders, just what the game hides. */
+  readonly warnings: readonly { readonly npc: string; readonly text: string }[];
+}
+
+export function describeChallenge(world: World, challenge: Challenge): ChallengeView {
   const { config, setup } = challenge;
-  const gift = setup.gift.items.map((i) =>
-    i.count > 1 ? `${i.item} x${String(i.count)}` : i.item,
-  );
   let number = 0;
-  const rule = (o: GeneratedOrder): string => {
-    const advice = o.template.advice ? ` _${o.template.advice}_` : "";
-    return `${String(++number)}. **${o.template.title}.** ${orderText(world, o)}${advice}`;
-  };
-  const names = (ids: readonly string[], of: (id: string) => string | undefined) =>
-    ids.map((id) => of(id) ?? id).join(", ");
+  const rule = (o: GeneratedOrder): RuleView => ({
+    number: ++number,
+    title: o.template.title,
+    text: orderText(world, o),
+    ...(o.template.advice !== undefined && { advice: o.template.advice }),
+  });
   const journey = challenge.orders.filter((o) => o.chapter === undefined).map(rule);
   const part = challenge.chapters.some((c) => c.goals.length > 1) ? "Act" : "Chapter";
-  const areaName = (id: string) => world.areas.get(id)?.name ?? id;
-  const chapters = challenge.chapters.flatMap((chapter, k) => {
+  const chapters = challenge.chapters.flatMap((chapter, k): ChapterView[] => {
     const orders = challenge.orders.filter((o) => o.chapter === k);
     if (orders.length === 0) return [];
-    const about = [
-      `Until ${milestonePhrase(world, chapter.goal)}`,
-      `**Areas:** ${names(chapter.areas, areaName)}`,
-      chapter.bosses.length > 0 &&
-        `**Bosses:** ${names(chapter.bosses, (id) => {
-          const boss = world.bosses.get(id);
-          return boss && bossName(boss.id, boss.name);
-        })}`,
-      `**Difficulty:** ${chapter.difficulty}`,
-    ].filter(Boolean);
     return [
-      `## ${part} ${String(k + 1)}: ${chapterTitle(world, chapter.goals)}`,
-      "",
-      about.join(" · "),
-      "",
-      ...orders.map(rule),
-      "",
+      {
+        heading: `${part} ${String(k + 1)}: ${chapterTitle(world, chapter.goals)}`,
+        until: milestonePhrase(world, chapter.goal),
+        areas: chapter.areas.map((id) => world.areas.get(id)?.name ?? id),
+        bosses: chapter.bosses.map((id) => {
+          const boss = world.bosses.get(id);
+          return boss ? bossName(boss.id, boss.name) : id;
+        }),
+        difficulty: chapter.difficulty,
+        rules: orders.map(rule),
+      },
     ];
   });
+  return {
+    seed: config.seed,
+    generatorVersion: GENERATOR_VERSION,
+    dataVersion: challenge.dataVersion,
+    startingClass: setup.startingClass,
+    gift: setup.gift.items.map((i) => (i.count > 1 ? `${i.item} x${String(i.count)}` : i.item)),
+    levelCap: setup.levelCap,
+    difficulty: config.difficulty,
+    curve: challenge.curve,
+    length: config.length,
+    journey,
+    chapters,
+    definitions: DEFINITIONS.filter((d) => challenge.orders.some(d.applies)).map(
+      ({ term, text }) => ({ term, text }),
+    ),
+    warnings: world.warnings.map(({ npc, text }) => ({ npc, text })),
+  };
+}
+
+/**
+ * The manual as Markdown: the challenge's settings, the rules of the whole journey, then each chapter with
+ * its stretch, areas, bosses, difficulty and rules.
+ */
+export function renderManual(world: World, challenge: Challenge): string {
+  const view = describeChallenge(world, challenge);
+  const rule = (r: RuleView): string =>
+    `${String(r.number)}. **${r.title}.** ${r.text}${r.advice ? ` _${r.advice}_` : ""}`;
+  const notes = (title: string, list: readonly { term: string; text: string }[]): string[] =>
+    list.length === 0
+      ? []
+      : [`## ${title}`, "", ...list.map((n) => `- **${n.term}:** ${n.text}`), ""];
+  const chapters = view.chapters.flatMap((chapter) => {
+    const about = [
+      `Until ${chapter.until}`,
+      `**Areas:** ${chapter.areas.join(", ")}`,
+      chapter.bosses.length > 0 && `**Bosses:** ${chapter.bosses.join(", ")}`,
+      `**Difficulty:** ${chapter.difficulty}`,
+    ].filter(Boolean);
+    return [`## ${chapter.heading}`, "", about.join(" · "), "", ...chapter.rules.map(rule), ""];
+  });
   const lines = [
-    `# Dark Souls challenge — seed ${config.seed}`,
+    `# Dark Souls challenge — seed ${view.seed}`,
     "",
-    `- **Class:** ${setup.startingClass}`,
-    `- **Starting gift:** ${gift.length > 0 ? gift.join(", ") : "none"}`,
-    `- **Soul level cap:** ${String(setup.levelCap)}`,
-    `- **Difficulty:** ${config.difficulty} · **Curve:** ${challenge.curve} · **Length:** ${config.length}`,
+    `- **Class:** ${view.startingClass}`,
+    `- **Starting gift:** ${view.gift.length > 0 ? view.gift.join(", ") : "none"}`,
+    `- **Soul level cap:** ${String(view.levelCap)}`,
+    `- **Difficulty:** ${view.difficulty} · **Curve:** ${view.curve} · **Length:** ${view.length}`,
     "",
     "Follow every order. Break one, and the challenge is over: there is no penalty, only the end.",
     "",
     "## Rules of the journey",
     "",
-    ...journey,
+    ...view.journey.map(rule),
     "",
     ...chapters,
-    ...definitions(challenge),
-    ...warnings(world),
-    `<sub>Data ${challenge.dataVersion}. Same seed and settings, same challenge.</sub>`,
+    ...notes("Definitions", view.definitions),
+    ...notes(
+      "Before you go",
+      view.warnings.map((w) => ({ term: w.npc, text: w.text })),
+    ),
+    `<sub>Data ${view.dataVersion}. Same seed and settings, same challenge.</sub>`,
     "",
   ];
   return lines.join("\n");
-}
-
-/** NPCs the game's scripts can lose or turn, whatever the orders: not orders, just what the game hides. */
-function warnings(world: World): string[] {
-  if (world.warnings.length === 0) return [];
-  return ["## Before you go", "", ...world.warnings.map((w) => `- **${w.npc}:** ${w.text}`), ""];
-}
-
-function definitions(challenge: Challenge): string[] {
-  const used = DEFINITIONS.filter((d) => challenge.orders.some(d.applies));
-  if (used.length === 0) return [];
-  return ["## Definitions", "", ...used.map((d) => `- **${d.term}:** ${d.text}`), ""];
 }
