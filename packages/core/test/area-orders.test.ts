@@ -85,13 +85,14 @@ describe("area orders", () => {
     ).toContain("lizard-hunt sends you into crystal-cave, which the-other-way closes");
   });
 
-  it("marks the journey's forbidden area in its chapter", () => {
+  it("leaves the journey's forbidden area out of every chapter", () => {
     for (const seed of ["forbid-1", "forbid-2", "forbid-3", "forbid-4", "forbid-5", "forbid-6"]) {
       const challenge = generate(world, { seed, difficulty: "medium", length: "full" });
       const area = challenge.orders.find((o) => o.template.id === "forbidden-area")?.args["area"];
       if (typeof area !== "string") continue;
+      for (const chapter of challenge.chapters) expect(chapter.areas).not.toContain(area);
       expect(renderManual(world, challenge)).toContain(
-        `${world.areas.get(area)?.name ?? area} (forbidden)`,
+        `Do not enter ${world.areas.get(area)?.name ?? area}`,
       );
       return;
     }
