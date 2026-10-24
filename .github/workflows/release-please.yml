@@ -27,7 +27,8 @@ jobs:
           manifest-file: .release-please-manifest.json
       # A PR pushed with GITHUB_TOKEN does not trigger other workflows, so the required CI checks would never run
       # on the release PR. workflow_dispatch is the documented exception: run CI on the release branch explicitly.
-      - if: ${{ steps.release.outputs.prs_created == 'true' }}
+      # On the run that tags a release, prs_created can be true with no pr output; fromJSON('') then fails.
+      - if: ${{ steps.release.outputs.prs_created == 'true' && steps.release.outputs.pr != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: ${{ fromJSON(steps.release.outputs.pr).headBranchName }}
