@@ -1,0 +1,8 @@
+{
+  // Typecheck and lint against the core's sources, so CI does not need a build first. The build itself
+  // (tsconfig.json) uses the core as built: the bundler does not map the sources' ".js" imports to ".ts".
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": { "@darksouls-challenge/core": ["../../packages/core/src/index.ts"] }
+  }
+}

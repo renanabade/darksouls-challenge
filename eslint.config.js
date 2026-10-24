@@ -5,7 +5,17 @@ import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-  { ignores: ["**/dist/", "**/coverage/", "data/", "packages/db/src/generated/"] },
+  {
+    ignores: [
+      "**/dist/",
+      "**/coverage/",
+      "data/",
+      "packages/db/src/generated/",
+      "apps/web/.next/",
+      "apps/web/out/",
+      "**/next-env.d.ts",
+    ],
+  },
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
@@ -13,6 +23,17 @@ export default defineConfig(
     languageOptions: {
       parserOptions: {
         projectService: { allowDefaultProject: ["*.js"] },
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    // The web app's own check config reads the core's sources (see apps/web/tsconfig.check.json).
+    files: ["apps/web/**/*.{ts,tsx}"],
+    languageOptions: {
+      parserOptions: {
+        projectService: false,
+        project: ["apps/web/tsconfig.check.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },

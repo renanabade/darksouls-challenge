@@ -1,0 +1,477 @@
+/*
+ * In the spirit of the game's menus, drawn from scratch: dark panels with thin gold rules that fade at
+ * their ends, parchment text, and a lit bar on the focused row. No image or texture from the game.
+ */
+:root {
+  --bg: #0b0a08;
+  --panel: rgb(24 21 17 / 94%);
+  --text: #e8e1cf;
+  --dim: #b3aa93;
+  --gold: #d4b26e;
+  --gold-soft: rgb(198 161 91 / 35%);
+  --ember: #d9783a;
+  --glow: rgb(198 161 91 / 16%);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -10%, rgb(217 120 58 / 10%), transparent 55%),
+    radial-gradient(ellipse at 50% 120%, rgb(0 0 0 / 90%), transparent 60%), var(--bg);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--gold);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 16px 32px;
+}
+
+/* Title */
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title h1 {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-shadow: 0 0 24px rgb(198 161 91 / 25%);
+}
+
+.title-small {
+  display: block;
+  font-size: 0.42em;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.tagline {
+  margin: 12px 0 0;
+  color: var(--dim);
+  font-style: italic;
+}
+
+/* Panels: a dark plate between two gold rules that fade out at both ends. */
+
+.panel {
+  position: relative;
+  background: var(--panel);
+  padding: 26px 30px;
+  margin-bottom: 24px;
+}
+
+.panel::before,
+.panel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-soft) 15%,
+    var(--gold) 50%,
+    var(--gold-soft) 85%,
+    transparent
+  );
+}
+
+.panel::before {
+  top: 0;
+}
+
+.panel::after {
+  bottom: 0;
+}
+
+.panel-title {
+  margin: 0 0 14px;
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* The settings menu */
+
+.menu {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: 8.5em minmax(0, 1fr);
+  align-items: center;
+  min-height: 46px;
+  padding: 0 10px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.menu-row.is-focused {
+  background: linear-gradient(90deg, transparent, var(--glow) 20%, var(--glow) 80%, transparent);
+  border-image: linear-gradient(90deg, transparent, var(--gold-soft), transparent) 1;
+}
+
+.menu-label {
+  font-family: var(--font-display), serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.menu-row.is-focused .menu-label {
+  color: var(--text);
+}
+
+.menu-value {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr) 2em;
+  align-items: center;
+  text-align: center;
+  outline: none;
+}
+
+.menu-value button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--gold);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 4px;
+}
+
+.menu-value button:hover {
+  color: var(--text);
+}
+
+.menu-choice {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu-input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--gold-soft);
+  color: var(--text);
+  font: inherit;
+  text-align: center;
+  padding: 4px 0;
+  outline: none;
+}
+
+.menu-input::placeholder {
+  color: var(--dim);
+  font-style: italic;
+}
+
+.menu-help {
+  min-height: 100%;
+}
+
+.help-title {
+  margin: 0 0 10px;
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+
+.help-body {
+  color: var(--dim);
+}
+
+.stats {
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(198 161 91 / 12%);
+}
+
+.stat dt {
+  color: var(--dim);
+}
+
+.stat dd {
+  margin: 0;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The prompt bar, like the game's confirm button. */
+
+.prompt {
+  display: block;
+  width: 100%;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, transparent, rgb(198 161 91 / 14%), transparent);
+  border: 0;
+  border-top: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--gold-soft);
+  font-family: var(--font-display), serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.prompt:hover:not(:disabled),
+.prompt:focus-visible {
+  background: linear-gradient(90deg, transparent, rgb(198 161 91 / 28%), transparent);
+  outline: none;
+}
+
+.prompt:disabled {
+  color: var(--dim);
+  cursor: progress;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 20px;
+}
+
+.actions .prompt {
+  width: auto;
+  min-width: 14em;
+}
+
+.kindling {
+  text-align: center;
+  color: var(--dim);
+  font-style: italic;
+  animation: flicker 2.4s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  50% {
+    color: var(--ember);
+  }
+}
+
+.notice {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-left: 2px solid var(--ember);
+  background: rgb(217 120 58 / 8%);
+}
+
+/* The challenge */
+
+.sheet-head {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.seed {
+  margin: 2px 0 18px;
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 20px;
+  margin: 0 0 18px;
+  text-align: left;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgb(198 161 91 / 12%);
+}
+
+.setting dt {
+  color: var(--dim);
+}
+
+.setting dd {
+  margin: 0;
+  text-align: right;
+}
+
+.oath {
+  margin: 0;
+  font-style: italic;
+  color: var(--dim);
+}
+
+.chapter-until {
+  margin: -8px 0 12px;
+  font-style: italic;
+  color: var(--dim);
+}
+
+.chapter-facts,
+.notes {
+  margin: 0 0 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.chapter-facts div,
+.notes div {
+  display: grid;
+  grid-template-columns: 8em minmax(0, 1fr);
+  gap: 12px;
+}
+
+.chapter-facts dt,
+.notes dt {
+  font-family: var(--font-display), serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding-top: 2px;
+}
+
+.chapter-facts dd,
+.notes dd {
+  margin: 0;
+}
+
+.chapter-facts div:last-child dd {
+  text-transform: capitalize;
+}
+
+.rules {
+  margin: 0;
+  padding-left: 2em;
+}
+
+.rules li {
+  margin-bottom: 14px;
+  padding-left: 4px;
+}
+
+.rules li::marker {
+  color: var(--gold);
+  font-family: var(--font-display), serif;
+}
+
+.rule-title {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.rule-advice {
+  color: var(--dim);
+}
+
+.fine,
+.footer {
+  text-align: center;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.footer {
+  margin-top: 48px;
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  .page {
+    padding-top: 28px;
+  }
+
+  .menu {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .menu-row {
+    grid-template-columns: 6.5em minmax(0, 1fr);
+  }
+
+  .panel {
+    padding: 18px 14px;
+  }
+
+  .settings {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .chapter-facts div,
+  .notes div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+.cap {
+  text-transform: capitalize;
+}

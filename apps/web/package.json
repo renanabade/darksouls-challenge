@@ -1,0 +1,23 @@
+{
+  "name": "@darksouls-challenge/web",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Static site: the challenge form and the generated challenge, generated in the browser by the core.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "typecheck": "tsc -p tsconfig.check.json"
+  },
+  "dependencies": {
+    "@darksouls-challenge/core": "workspace:*",
+    "next": "16.4.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  }
+}
