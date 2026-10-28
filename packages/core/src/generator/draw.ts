@@ -87,6 +87,11 @@ const MIN_PICKUPS = 5;
 const ERRAND_KINDS = new Set(["weapon", "armor", "ring", "spell"]);
 /** The restriction no chapter takes: levels are the level orders' business, and they last the whole run. */
 const NOT_FOR_A_CHAPTER = new Set(["no-level-ups"]);
+/**
+ * Areas whose only bonfire lights after the area's boss (the QA of 2026-10-27): the Abyss has none until
+ * the Four Kings fall, so "no bonfire" there asks nothing.
+ */
+const BONFIRE_AFTER_BOSS = new Set(["the-abyss"]);
 
 export interface Domains {
   readonly areas: readonly string[];
@@ -168,7 +173,7 @@ function readDomains(world: World): Domains {
     areasWithWeapons: areasOf(weaponLocations),
     areasWithArmor: areasOf(found.filter((l) => l.kind === "armor")),
     areasWithPickups: sorted([...pickups].filter(([, n]) => n >= MIN_PICKUPS).map(([a]) => a)),
-    areasWithBonfires: areasOf(bonfires),
+    areasWithBonfires: areasOf(bonfires).filter((a) => !BONFIRE_AFTER_BOSS.has(a)),
     areasWithLizards: areasOf(world.locations.filter((l) => l.category === CRYSTAL_LIZARD)),
     errands: new Map(
       sorted(found.flatMap((l) => areaOf(l.region) ?? [])).flatMap((area) => {

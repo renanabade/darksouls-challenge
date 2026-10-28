@@ -1,6 +1,7 @@
 import type { Stats } from "../build.js";
 import type { Difficulty } from "../orders/index.js";
 import type { World } from "../world.js";
+import { CURVES, type Curve } from "./curve.js";
 import { DIFFICULTIES } from "./draw.js";
 import { LENGTHS, type Length } from "./generate.js";
 
@@ -15,6 +16,7 @@ export interface SetupOptions {
   readonly gifts: readonly { readonly row: number; readonly label: string }[];
   readonly difficulties: readonly Difficulty[];
   readonly lengths: readonly Length[];
+  readonly curves: readonly Curve[];
 }
 
 export function setupOptions(world: World): SetupOptions {
@@ -35,5 +37,6 @@ export function setupOptions(world: World): SetupOptions {
       })),
     difficulties: DIFFICULTIES,
     lengths: LENGTHS,
+    curves: CURVES,
   };
 }

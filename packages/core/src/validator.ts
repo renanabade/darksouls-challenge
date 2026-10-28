@@ -224,13 +224,19 @@ export function validate(
   // Worst case: a restriction of a curse or of one chapter applies to the whole run.
   // A chapter's restriction on items lasts until the chapter's goal: its exceptions are only what the
   // chapter needs, and can be obtained by the time it ends.
-  const chapterExceptions: { result: { exceptions: string[] }; kind: string; until: Milestone }[] =
-    [];
+  // The Lord Souls in the order the run collects them, when an order says so: a chapter that starts
+  // after one of them starts after the ones before it too.
+  let lordOrder: readonly string[] = [];
+  const chapterExceptions: {
+    result: { exceptions: string[] };
+    kind: string;
+    stretch: { from: Milestone; until: Milestone };
+  }[] = [];
   const restrict = (
     id: string,
     result: { exceptions: string[] },
     label: string,
-    until?: Milestone,
+    stretch?: { from: Milestone; until: Milestone },
   ): void => {
     activeRestrictions.add(id);
     const restriction = restrictions.find((r) => r.id === id);
@@ -239,8 +245,8 @@ export function validate(
     const effect: RestrictionEffect = restriction.effect;
     if (effect.kind === "oneHanded") twoHanding = false;
     if (effect.kind === "noLevelUps") noLevelUps = true;
-    if (effect.kind === "noItemsOfKind" && until !== undefined)
-      chapterExceptions.push({ result, kind: effect.itemKind, until });
+    if (effect.kind === "noItemsOfKind" && stretch !== undefined)
+      chapterExceptions.push({ result, kind: effect.itemKind, stretch });
     else if (effect.kind === "noItemsOfKind") {
       exceptionOrders.push({
         result,
@@ -277,6 +283,7 @@ export function validate(
 
       case "lord-order": {
         const order = lordSoulOrder(world, args, label);
+        lordOrder = order;
         checks.push((c) => {
           for (const [k, soul] of order.entries()) {
             const later = order.slice(k + 1);
@@ -399,13 +406,10 @@ export function validate(
         break;
 
       case "chapter-restriction":
-        milestoneArg(world, args, "from", label);
-        restrict(
-          stringArg(args, "restriction", label),
-          result,
-          label,
-          milestoneArg(world, args, "until", label),
-        );
+        restrict(stringArg(args, "restriction", label), result, label, {
+          from: milestoneArg(world, args, "from", label),
+          until: milestoneArg(world, args, "until", label),
+        });
         break;
 
       // Worst case: the player may never earn a point.
@@ -710,16 +714,49 @@ export function validate(
         }
       }
     }
-    // The same, for a chapter: each item of the kind is forbidden in turn until the chapter's goal; one
-    // without which the goal cannot be reached is an exception. An item the chapter cannot obtain is never
-    // needed for its goal, so the list holds only what the chapter itself needs.
-    for (const { result, kind, until } of chapterExceptions) {
-      const pickups = world.locations.filter(
-        (l) => l.kind === kind && !constraints.locations.has(l),
+    // The same, for a chapter: each item of the kind is forbidden in turn from the chapter's start to its
+    // goal; one without which the goal cannot be reached is an exception. The chapter starts with its
+    // first milestone met (and, under an order of the Lord Souls, the souls collected before it), and
+    // with what the run can do before the chapter's own stretch: without its goal's items and the bosses
+    // only the goal needs. The items of the kind are left out: they cannot be used during the chapter,
+    // wherever they were found. So an item only an earlier chapter needs (the Covenant of Artorias, once
+    // the Four Kings fell) is no exception: the list holds what the chapter itself needs.
+    for (const { result, kind, stretch } of chapterExceptions) {
+      const { from, until } = stretch;
+      const ofKind = world.locations.filter((l) => l.kind === kind);
+      const kindItems = new Set(ofKind.map((l) => l.item));
+      const fromItems = itemsOf(from.requires);
+      const lastSoul = lordOrder.findLastIndex((soul) => fromItems.has(soul));
+      const done = [...fromItems, ...lordOrder.slice(0, lastSoul + 1)];
+      const doneKey = `done:${done.join("|")}`;
+      const doneBosses = new Set(
+        bossesRequiredFor(constraints, doneKey, { all: done.map((has) => ({ has })) }),
       );
+      const stretchBosses = bossesRequiredFor(
+        constraints,
+        `milestone:${until.id}`,
+        until.requires,
+      ).filter((b) => !doneBosses.has(b));
+      const goalItems = [...itemsOf(until.requires)].filter((i) => !done.includes(i));
+      const before = run(constraints, new Set([...goalItems, ...defeats(stretchBosses)]));
+      const reachesWith = (items: readonly string[], locations: ReadonlySet<Location>) =>
+        holds(
+          reach(world, {
+            items,
+            forbiddenRegions: constraints.regions,
+            forbiddenLocations: locations,
+          }),
+          until.requires,
+        );
+      // Held from the start, a boss's defeat closes the ways that are only open before it; when that
+      // cuts the goal off even with every item of the kind, the chapter is judged from the run's start.
+      const chapterStart = [...startItems, ...before.items, ...done].filter(
+        (i) => !kindItems.has(i),
+      );
+      const start = reachesWith(chapterStart, constraints.locations) ? chapterStart : startItems;
+      const pickups = ofKind.filter((l) => !constraints.locations.has(l));
       const forbidden = new Set([...constraints.locations, ...pickups]);
-      const reachesGoal = () =>
-        holds(run({ regions: constraints.regions, locations: forbidden }), until.requires);
+      const reachesGoal = () => reachesWith(start, forbidden);
       if (reachesGoal()) continue;
       pickups.forEach((l) => forbidden.delete(l));
       for (const location of pickups) {

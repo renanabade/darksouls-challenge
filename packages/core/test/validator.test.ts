@@ -294,6 +294,33 @@ describe("validate on the DS1 data set", () => {
     });
   });
 
+  // Issue 64: a chapter without rings was judged from the run's start, so the chapter of the Kiln was
+  // allowed the rings that only the earlier Lord Souls need.
+  it("excepts in a chapter without rings only what the chapter itself needs", () => {
+    const souls = [
+      "Lord Soul (Bed of Chaos)",
+      "Bequeathed Lord Soul Shard (Four Kings)",
+      "Bequeathed Lord Soul Shard (Seath)",
+      "Lord Soul (Nito)",
+    ];
+    const rings = (from: string, until: string, lords: OrderInstance[] = []) => {
+      const restriction = order("chapter-restriction", { from, until, restriction: "no-rings" });
+      const result = run([...lords, restriction]);
+      expect(result.verdict, `${from} → ${until}`).toBe("comfortable");
+      return result.orders.at(-1)?.exceptions;
+    };
+    expect(rings("lordvessel-placed", "lord-souls-placed-3")).toEqual(["Covenant of Artorias"]);
+    expect(rings("lordvessel-placed", "lord-souls-placed-2")).toEqual(["Orange Charred Ring"]);
+    // Nito's soul is the last one: the chapter of the Kiln fights none of the other Lords.
+    const lords = [order("lord-order", { order: souls })];
+    expect(rings("lord-souls-placed-1", "kiln-open", lords)).toEqual([]);
+    expect(rings("lord-souls-placed-1", "boss-gwyn-lord-of-cinder", lords)).toEqual([]);
+    // Without an order of the Lord Souls, any of them may still be ahead.
+    expect(rings("lord-souls-placed-1", "kiln-open")).toEqual(
+      expect.arrayContaining(["Covenant of Artorias", "Orange Charred Ring"]),
+    );
+  }, 60_000);
+
   it("rejects an order whose place lies past a forbidden area", () => {
     const past = (orders: OrderInstance[]) =>
       run([order("forbidden-area", { area: "royal-wood" }), ...orders]);

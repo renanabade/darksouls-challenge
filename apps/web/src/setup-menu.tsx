@@ -4,14 +4,14 @@ import type { Attribute, SetupOptions } from "@darksouls-challenge/core";
 import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import type { FormState } from "./permalink";
 
-type Row = "startingClass" | "giftRow" | "difficulty" | "length" | "seed";
-const ROWS: readonly Row[] = ["startingClass", "giftRow", "difficulty", "length", "seed"];
+type Row = "startingClass" | "giftRow" | "difficulty" | "length" | "code";
+const ROWS: readonly Row[] = ["startingClass", "giftRow", "difficulty", "length", "code"];
 const LABELS: Readonly<Record<Row, string>> = {
   startingClass: "Class",
   giftRow: "Gift",
   difficulty: "Difficulty",
   length: "Length",
-  seed: "Seed",
+  code: "Code",
 };
 const DRAWN = "Drawn by the seed";
 /** Rows whose values are the core's lowercase ids ("medium"), shown capitalized. */
@@ -53,7 +53,7 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
   const rows = useRef<Partial<Record<Row, HTMLElement | null>>>({});
 
   const choices: Readonly<
-    Record<Exclude<Row, "seed">, readonly { value: string; label: string }[]>
+    Record<Exclude<Row, "code">, readonly { value: string; label: string }[]>
   > = {
     startingClass: [
       { value: "", label: DRAWN },
@@ -67,7 +67,7 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
     length: options.lengths.map((l) => ({ value: l, label: l })),
   };
 
-  const cycle = (row: Exclude<Row, "seed">, step: number) => {
+  const cycle = (row: Exclude<Row, "code">, step: number) => {
     const list = choices[row];
     const index = list.findIndex((c) => c.value === form[row]);
     const next = list[(index + step + list.length) % list.length];
@@ -82,7 +82,7 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
       if (target !== undefined) rows.current[target]?.focus();
       return;
     }
-    if (row === "seed") return;
+    if (row === "code") return;
     const step = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
     if (step !== undefined) {
       event.preventDefault();
@@ -90,7 +90,7 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
     }
   };
 
-  const labelOf = (row: Exclude<Row, "seed">) =>
+  const labelOf = (row: Exclude<Row, "code">) =>
     choices[row].find((c) => c.value === form[row])?.label ?? DRAWN;
 
   return (
@@ -107,23 +107,24 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
           {ROWS.map((row) => (
             <li key={row} className={`menu-row${focused === row ? " is-focused" : ""}`}>
               <span className="menu-label">{LABELS[row]}</span>
-              {row === "seed" ? (
+              {row === "code" ? (
                 <input
                   ref={(el) => {
-                    rows.current.seed = el;
+                    rows.current.code = el;
                   }}
                   className="menu-input"
-                  value={form.seed}
-                  maxLength={64}
-                  placeholder="Random"
-                  aria-label="Seed"
+                  value={form.code}
+                  maxLength={32}
+                  placeholder="New challenge"
+                  aria-label="Challenge code (optional)"
+                  autoComplete="off"
                   spellCheck={false}
                   onFocus={() => {
-                    setFocused("seed");
+                    setFocused("code");
                   }}
-                  onKeyDown={onKey("seed")}
+                  onKeyDown={onKey("code")}
                   onChange={(event) => {
-                    onChange({ ...form, seed: event.target.value });
+                    onChange({ ...form, code: event.target.value });
                   }}
                 />
               ) : (
@@ -237,11 +238,11 @@ function Help({
           {LENGTH_NOTES[form.length]}
         </HelpText>
       );
-    case "seed":
+    case "code":
       return (
-        <HelpText title="Seed">
-          Same seed and settings, same challenge. Leave it empty for a random one, then share the
-          link.
+        <HelpText title="Challenge code">
+          Same code, same challenge. Leave it empty for a new challenge with the settings above. To
+          play a shared challenge, type its code: it brings its own settings.
         </HelpText>
       );
   }

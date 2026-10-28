@@ -35,7 +35,7 @@ describe.skipIf(skip)("many seeds (slow)", () => {
     HOUR,
   );
 
-  // Locks what generator 6 draws on data 0.7.0: twenty seeds per class, one hash per manual. A change here
+  // Locks what generator 8 draws on data 0.7.0: twenty seeds per class, one hash per manual. A change here
   // is a change of the challenges players share, and needs a version bump.
   it(
     "draws the same manuals for twenty seeds of each class",

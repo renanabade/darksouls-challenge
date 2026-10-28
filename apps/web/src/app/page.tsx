@@ -1,26 +1,39 @@
 "use client";
 
-import type { ChallengeView, GeneratorConfig } from "@darksouls-challenge/core";
+import {
+  CODE_DRAWS,
+  decodeChallengeCode,
+  encodeChallengeCode,
+  type ChallengeView,
+  type GeneratorConfig,
+} from "@darksouls-challenge/core";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChallengeSheet } from "../challenge-sheet";
-import { DEFAULT_FORM, fromQuery, toQuery, type FormState } from "../permalink";
+import {
+  configOf,
+  DEFAULT_FORM,
+  formOf,
+  fromQuery,
+  settingsOf,
+  toQuery,
+  versionNotices,
+  type FormState,
+} from "../permalink";
 import { SetupMenu } from "../setup-menu";
-import { useCore } from "../use-core";
+import { useCore, type Core } from "../use-core";
 
-/** A short random seed, so a challenge asked without one can still be shared. */
-function drawSeed(): string {
-  const bytes = crypto.getRandomValues(new Uint8Array(4));
-  return [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
+/** A random draw for a new challenge code. */
+function drawCode(): number {
+  const [value = 0] = crypto.getRandomValues(new Uint32Array(1));
+  return value % CODE_DRAWS;
 }
 
-function configOf(form: FormState, seed: string): GeneratorConfig {
-  return {
-    seed,
-    difficulty: form.difficulty,
-    length: form.length,
-    ...(form.startingClass !== "" && { startingClass: form.startingClass }),
-    ...(form.giftRow !== "" && { giftRow: Number(form.giftRow) }),
-  };
+/** A new code for the form's settings, so every challenge asked without one can be shared. */
+function newCode(core: Core, form: FormState): string {
+  return encodeChallengeCode(core.options, settingsOf(form), drawCode(), {
+    generator: core.generatorVersion,
+    data: core.dataVersion,
+  });
 }
 
 export default function Home() {
@@ -29,24 +42,25 @@ export default function Home() {
   const [view, setView] = useState<ChallengeView | undefined>(undefined);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
-  // The generator version of the link the page was opened with, when it is not this site's.
-  const [staleVersion, setStaleVersion] = useState<string | undefined>(undefined);
-  const [copied, setCopied] = useState(false);
+  // Why the challenge shown may not be the one that was shared: another version, a value dropped.
+  const [notices, setNotices] = useState<readonly string[]>([]);
+  const [copied, setCopied] = useState<"code" | "link" | undefined>(undefined);
   const sheet = useRef<HTMLDivElement>(null);
   const opened = useRef(false);
 
+  /**
+   * Generates a challenge under its address: "push" makes it a new entry of the history (back walks to the
+   * last one), "replace" corrects the address in place, "keep" leaves it as it is.
+   */
   const run = useCallback(
-    async (state: FormState) => {
-      if (core === undefined) return;
-      const seed = state.seed.trim() === "" ? drawSeed() : state.seed.trim();
-      const next = { ...state, seed };
-      setForm(next);
+    async (config: GeneratorConfig, query: string, address: "push" | "replace" | "keep") => {
       setBusy(true);
       setError(undefined);
       try {
-        const challenge = await generate(configOf(next, seed));
+        const challenge = await generate(config);
         setView(challenge);
-        window.history.replaceState(null, "", `?${toQuery(next, core.generatorVersion)}`);
+        if (address !== "keep" && window.location.search !== `?${query}`)
+          window.history[address === "push" ? "pushState" : "replaceState"](null, "", `?${query}`);
         sheet.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       } catch (e) {
         setError(e instanceof Error ? e.message : String(e));
@@ -54,19 +68,87 @@ export default function Home() {
         setBusy(false);
       }
     },
-    [core, generate],
+    [generate],
   );
 
-  // A link with a seed opens straight on its challenge.
+  /** What the address asks for, when the page opens or the history is walked. */
+  const openLink = useCallback(() => {
+    if (core === undefined) return;
+    const versions = { generator: core.generatorVersion, data: core.dataVersion };
+    const { link, notices: found } = fromQuery(window.location.search, core.options, versions);
+    setNotices(found);
+    if (link === undefined) {
+      setView(undefined);
+      return;
+    }
+    switch (link.kind) {
+      case "code":
+        setForm(formOf(link.code));
+        void run(link.code.config, toQuery(link.code.code), "keep");
+        return;
+      // A link from before the codes: its seed and settings, under the address it came with.
+      case "seed":
+        setForm(link.form);
+        void run(configOf(link.form, link.seed), "", "keep");
+        return;
+      // Settings without a seed: a new challenge with them, under its own code.
+      case "settings": {
+        setForm(link.form);
+        const code = newCode(core, link.form);
+        void run(configOf(link.form, code), toQuery(code), "replace");
+        return;
+      }
+    }
+  }, [core, run]);
+
+  // A link opens straight on its challenge.
   useEffect(() => {
     if (core === undefined || opened.current) return;
     opened.current = true;
-    const link = fromQuery(window.location.search, core.options);
-    if (link === undefined) return;
-    if (link.version !== undefined && link.version !== core.generatorVersion)
-      setStaleVersion(link.version);
-    void run(link.form);
-  }, [core, run]);
+    openLink();
+  }, [core, openLink]);
+
+  // Back and forward walk through the challenges.
+  useEffect(() => {
+    window.addEventListener("popstate", openLink);
+    return () => {
+      window.removeEventListener("popstate", openLink);
+    };
+  }, [openLink]);
+
+  const onGenerate = () => {
+    if (core === undefined) return;
+    const typed = form.code.trim();
+    // A typed code overrides the form: it brings its own settings.
+    if (typed !== "") {
+      const decoded = decodeChallengeCode(typed, core.options);
+      if (decoded === undefined) {
+        setNotices([
+          `"${typed.slice(0, 40)}" is not a challenge code. Check it, or clear the field for a new challenge.`,
+        ]);
+        return;
+      }
+      setNotices(
+        versionNotices(decoded, { generator: core.generatorVersion, data: core.dataVersion }),
+      );
+      setForm(formOf(decoded));
+      void run(decoded.config, toQuery(decoded.code), "push");
+      return;
+    }
+    setNotices([]);
+    const code = newCode(core, form);
+    setForm({ ...form, code: "" });
+    void run(configOf(form, code), toQuery(code), "push");
+  };
+
+  const copy = (what: "code" | "link", text: string) => {
+    void navigator.clipboard.writeText(text).then(() => {
+      setCopied(what);
+      window.setTimeout(() => {
+        setCopied(undefined);
+      }, 2000);
+    });
+  };
 
   return (
     <div className="page">
@@ -90,20 +172,16 @@ export default function Home() {
             onChange={(f) => {
               setForm(f);
             }}
-            onGenerate={() => {
-              setStaleVersion(undefined);
-              void run(form);
-            }}
+            onGenerate={onGenerate}
             busy={busy}
           />
         )}
 
-        {staleVersion !== undefined && (
-          <p className="notice" role="alert">
-            This link was made with generator {staleVersion}. This site runs generator{" "}
-            {core?.generatorVersion}, so the same seed and settings now give a different challenge.
+        {notices.map((notice) => (
+          <p key={notice} className="notice" role="alert">
+            {notice}
           </p>
-        )}
+        ))}
         {error !== undefined && (
           <p className="notice" role="alert">
             No challenge could be generated: {error}
@@ -114,19 +192,25 @@ export default function Home() {
           {view !== undefined && (
             <>
               <div className="actions">
+                {view.code !== undefined && (
+                  <button
+                    type="button"
+                    className="prompt"
+                    onClick={() => {
+                      copy("code", view.code ?? "");
+                    }}
+                  >
+                    {copied === "code" ? "Code copied" : "Copy code"}
+                  </button>
+                )}
                 <button
                   type="button"
                   className="prompt"
                   onClick={() => {
-                    void navigator.clipboard.writeText(window.location.href).then(() => {
-                      setCopied(true);
-                      window.setTimeout(() => {
-                        setCopied(false);
-                      }, 2000);
-                    });
+                    copy("link", window.location.href);
                   }}
                 >
-                  {copied ? "Link copied" : "Copy link"}
+                  {copied === "link" ? "Link copied" : "Copy link"}
                 </button>
               </div>
               <ChallengeSheet view={view} />
