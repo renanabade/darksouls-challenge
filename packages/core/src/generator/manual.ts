@@ -2,6 +2,7 @@ import { restrictions, type Difficulty } from "../orders/index.js";
 import { itemsOf } from "../requirement.js";
 import type { ArgValue } from "../validator.js";
 import type { World } from "../world.js";
+import { isChallengeCode } from "./code.js";
 import type { Curve } from "./curve.js";
 import { GENERATOR_VERSION, type Challenge, type GeneratedOrder, type Length } from "./generate.js";
 
@@ -243,6 +244,8 @@ export interface ChapterView {
  */
 export interface ChallengeView {
   readonly seed: string;
+  /** The seed, when it is a challenge code: what to show and share. A legacy seed has none. */
+  readonly code?: string;
   readonly generatorVersion: string;
   readonly dataVersion: string;
   readonly startingClass: string;
@@ -290,6 +293,7 @@ export function describeChallenge(world: World, challenge: Challenge): Challenge
   });
   return {
     seed: config.seed,
+    ...(isChallengeCode(config.seed) && { code: config.seed }),
     generatorVersion: GENERATOR_VERSION,
     dataVersion: challenge.dataVersion,
     startingClass: setup.startingClass,
@@ -330,7 +334,7 @@ export function renderManual(world: World, challenge: Challenge): string {
     return [`## ${chapter.heading}`, "", about.join(" · "), "", ...chapter.rules.map(rule), ""];
   });
   const lines = [
-    `# Dark Souls challenge — seed ${view.seed}`,
+    `# Dark Souls challenge — ${view.code === undefined ? "seed" : "code"} ${view.seed}`,
     "",
     `- **Class:** ${view.startingClass}`,
     `- **Starting gift:** ${view.gift.length > 0 ? view.gift.join(", ") : "none"}`,
@@ -349,7 +353,7 @@ export function renderManual(world: World, challenge: Challenge): string {
       "Before you go",
       view.warnings.map((w) => ({ term: w.npc, text: w.text })),
     ),
-    `<sub>Data ${view.dataVersion}. Same seed and settings, same challenge.</sub>`,
+    `<sub>Data ${view.dataVersion}. ${view.code === undefined ? "Same seed and settings" : "Same code"}, same challenge.</sub>`,
     "",
   ];
   return lines.join("\n");

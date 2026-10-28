@@ -1,4 +1,13 @@
 export { chaptersOf, type Chapter } from "./chapters.js";
+export {
+  CODE_DRAWS,
+  dataToken,
+  decodeChallengeCode,
+  encodeChallengeCode,
+  isChallengeCode,
+  type ChallengeCode,
+  type CodeOptions,
+} from "./code.js";
 export { CURVES, curveOffsets, shifted, type Curve } from "./curve.js";
 export { CONDITIONS, DIFFICULTIES, STRETCH_ENDS } from "./draw.js";
 export {
