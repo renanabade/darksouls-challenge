@@ -1,16 +1,18 @@
 /*
- * In the spirit of the game's menus, drawn from scratch: dark panels with thin gold rules that fade at
- * their ends, parchment text, and a lit bar on the focused row. No image or texture from the game.
+ * In the spirit of the game's menus and the fan wikis' infoboxes, drawn from scratch: flat dark panels
+ * with hairline frames, dense label/value tables, and a flat raised bar on the selected row. Gold is
+ * kept for names (items, bosses, areas). No image or texture from the game.
  */
 :root {
-  --bg: #0b0a08;
-  --panel: rgb(24 21 17 / 94%);
-  --text: #e8e1cf;
-  --dim: #b3aa93;
-  --gold: #d4b26e;
-  --gold-soft: rgb(198 161 91 / 35%);
-  --ember: #d9783a;
-  --glow: rgb(198 161 91 / 16%);
+  --bg: #0a0a09;
+  --panel: #141311;
+  --panel-raised: #211f1b;
+  --line: #3a352d;
+  --frame: #6b6150;
+  --text: #d9d4c7;
+  --dim: #8f887a;
+  --name: #c8b07a;
+  --ember: #a8432a;
   color-scheme: dark;
 }
 
@@ -24,20 +26,16 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body), Georgia, serif;
-  font-size: 19px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at 50% -10%, rgb(217 120 58 / 10%), transparent 55%),
-    radial-gradient(ellipse at 50% 120%, rgb(0 0 0 / 90%), transparent 60%), var(--bg);
-  background-attachment: fixed;
 }
 
 a {
-  color: var(--gold);
+  color: var(--text);
 }
 
 button {
@@ -45,86 +43,92 @@ button {
   color: inherit;
 }
 
+p {
+  margin: 0;
+}
+
 .page {
-  max-width: 1040px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 48px 16px 32px;
+  padding: 40px 16px 32px;
 }
 
 /* Title */
 
 .title {
-  text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .title h1 {
   margin: 0;
   font-family: var(--font-display), serif;
   font-weight: 400;
-  font-size: clamp(2.2rem, 7vw, 3.6rem);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text);
-  text-shadow: 0 0 24px rgb(198 161 91 / 25%);
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
 }
 
 .title-small {
   display: block;
-  font-size: 0.42em;
-  letter-spacing: 0.5em;
-  color: var(--gold);
-  margin-bottom: 4px;
+  font-size: 0.45em;
+  letter-spacing: 0.04em;
+  color: var(--dim);
 }
 
 .tagline {
-  margin: 12px 0 0;
+  margin-top: 8px;
   color: var(--dim);
   font-style: italic;
 }
 
-/* Panels: a dark plate between two gold rules that fade out at both ends. */
+/* Panels and frames: a flat plate with a hairline border. */
 
 .panel {
-  position: relative;
   background: var(--panel);
-  padding: 26px 30px;
-  margin-bottom: 24px;
-}
-
-.panel::before,
-.panel::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold-soft) 15%,
-    var(--gold) 50%,
-    var(--gold-soft) 85%,
-    transparent
-  );
-}
-
-.panel::before {
-  top: 0;
-}
-
-.panel::after {
-  bottom: 0;
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  margin-bottom: 16px;
 }
 
 .panel-title {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-family: var(--font-display), serif;
   font-weight: 400;
   font-size: 1.1rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.frame {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.frame-head {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--panel-raised);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.frame-head h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  font: inherit;
+}
+
+.chapter-difficulty {
+  font-size: 0.85rem;
+  color: var(--dim);
+  white-space: nowrap;
 }
 
 /* The settings menu */
@@ -132,36 +136,33 @@ button {
 .menu {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 20px;
+  gap: 16px;
   align-items: start;
 }
 
 .menu ul {
   list-style: none;
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   padding: 0;
 }
 
 .menu-row {
   display: grid;
-  grid-template-columns: 8.5em minmax(0, 1fr);
+  grid-template-columns: 7em minmax(0, 1fr);
   align-items: center;
-  min-height: 46px;
+  min-height: 42px;
   padding: 0 10px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--line);
 }
 
 .menu-row.is-focused {
-  background: linear-gradient(90deg, transparent, var(--glow) 20%, var(--glow) 80%, transparent);
-  border-image: linear-gradient(90deg, transparent, var(--gold-soft), transparent) 1;
+  background: var(--panel-raised);
 }
 
 .menu-label {
   font-family: var(--font-display), serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
   color: var(--dim);
 }
 
@@ -181,7 +182,7 @@ button {
   background: none;
   border: 0;
   cursor: pointer;
-  color: var(--gold);
+  color: var(--frame);
   font-size: 1.4rem;
   line-height: 1;
   padding: 4px;
@@ -201,7 +202,7 @@ button {
   width: 100%;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--gold-soft);
+  border-bottom: 1px solid var(--frame);
   color: var(--text);
   font: inherit;
   text-align: center;
@@ -218,12 +219,26 @@ button {
   min-height: 100%;
 }
 
+.menu-help-folded {
+  display: none;
+}
+
+.menu-help-folded summary {
+  cursor: pointer;
+  font-family: var(--font-display), serif;
+  color: var(--dim);
+}
+
+.menu-help-folded[open] summary {
+  margin-bottom: 8px;
+}
+
 .help-title {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-family: var(--font-display), serif;
   font-weight: 400;
   font-size: 1.15rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
 }
 
 .help-body {
@@ -233,13 +248,13 @@ button {
 .stats {
   margin: 0;
   display: grid;
-  gap: 4px;
 }
 
 .stat {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(198 161 91 / 12%);
+  border-bottom: 1px solid var(--line);
+  padding: 2px 0;
 }
 
 .stat dt {
@@ -252,26 +267,24 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
-/* The prompt bar, like the game's confirm button. */
+/* The prompt bar, like the game's confirm button: a flat bar in a hairline frame. */
 
 .prompt {
   display: block;
   width: 100%;
-  padding: 10px 18px;
-  background: linear-gradient(90deg, transparent, rgb(198 161 91 / 14%), transparent);
-  border: 0;
-  border-top: 1px solid var(--gold-soft);
-  border-bottom: 1px solid var(--gold-soft);
+  min-height: 44px;
+  padding: 8px 18px;
+  background: var(--panel);
+  border: 1px solid var(--frame);
   font-family: var(--font-display), serif;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 .prompt:hover:not(:disabled),
 .prompt:focus-visible {
-  background: linear-gradient(90deg, transparent, rgb(198 161 91 / 28%), transparent);
+  background: var(--panel-raised);
   outline: none;
 }
 
@@ -280,198 +293,329 @@ button {
   cursor: progress;
 }
 
-.actions {
+.result {
   display: flex;
-  justify-content: center;
-  margin: 28px 0 20px;
+  flex-direction: column;
+}
+
+.actions {
+  order: -1;
+  display: flex;
+  gap: 12px;
+  margin: 20px 0 16px;
 }
 
 .actions .prompt {
   width: auto;
-  min-width: 14em;
+  min-width: 11em;
 }
 
 .kindling {
-  text-align: center;
   color: var(--dim);
   font-style: italic;
-  animation: flicker 2.4s ease-in-out infinite;
-}
-
-@keyframes flicker {
-  50% {
-    color: var(--ember);
-  }
 }
 
 .notice {
-  margin: 20px 0;
-  padding: 12px 16px;
-  border-left: 2px solid var(--ember);
-  background: rgb(217 120 58 / 8%);
+  margin: 16px 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ember);
+  background: var(--panel);
 }
 
 /* The challenge */
 
-.sheet-head {
-  text-align: center;
+.infobox {
+  padding: 16px 18px;
+  border-color: var(--frame);
+  /* The double rule of an infobox: the frame outside, a hairline inset 3px inside it. */
+  box-shadow:
+    inset 0 0 0 3px var(--panel),
+    inset 0 0 0 4px var(--line);
 }
 
 .eyebrow {
-  margin: 0;
-  font-family: var(--font-display), serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--dim);
-}
-
-.seed {
-  margin: 2px 0 18px;
-  font-family: var(--font-display), serif;
-  font-weight: 400;
-  font-size: 2rem;
-  letter-spacing: 0.08em;
-  overflow-wrap: anywhere;
-}
-
-.settings {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px 20px;
-  margin: 0 0 18px;
-  text-align: left;
-}
-
-.setting {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  border-bottom: 1px solid rgb(198 161 91 / 12%);
-}
-
-.setting dt {
-  color: var(--dim);
-}
-
-.setting dd {
-  margin: 0;
-  text-align: right;
-}
-
-.oath {
-  margin: 0;
-  font-style: italic;
-  color: var(--dim);
-}
-
-.chapter-until {
-  margin: -8px 0 12px;
-  font-style: italic;
-  color: var(--dim);
-}
-
-.chapter-facts,
-.notes {
-  margin: 0 0 14px;
-  display: grid;
-  gap: 6px;
-}
-
-.chapter-facts div,
-.notes div {
-  display: grid;
-  grid-template-columns: 8em minmax(0, 1fr);
-  gap: 12px;
-}
-
-.chapter-facts dt,
-.notes dt {
   font-family: var(--font-display), serif;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--dim);
-  padding-top: 2px;
 }
 
-.chapter-facts dd,
-.notes dd {
+.code {
+  margin: 0 0 10px;
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+/* A label/value table: dim small-caps labels, values in text color, hairlines between the rows. */
+
+.facts {
   margin: 0;
 }
 
-.chapter-facts div:last-child dd {
-  text-transform: capitalize;
+.fact {
+  display: grid;
+  grid-template-columns: 7.5em minmax(0, 1fr);
+  gap: 12px;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--line);
 }
+
+.fact dt {
+  font-family: var(--font-display), serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--dim);
+  padding-top: 1px;
+}
+
+.fact dd {
+  margin: 0;
+}
+
+.infobox .fact {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.infobox .facts {
+  margin-bottom: 12px;
+}
+
+.oath {
+  font-style: italic;
+  color: var(--dim);
+}
+
+.name {
+  color: var(--name);
+}
+
+.names {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-until {
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--dim);
+  letter-spacing: 0;
+}
+
+/* Rules: the game's menu rows, with the advice under each like an item's flavor text. */
 
 .rules {
+  list-style: none;
   margin: 0;
-  padding-left: 2em;
+  padding: 0;
 }
 
-.rules li {
-  margin-bottom: 14px;
-  padding-left: 4px;
+.rule {
+  position: relative;
+  padding: 8px 12px 8px 30px;
+  border-bottom: 1px solid var(--line);
 }
 
-.rules li::marker {
-  color: var(--gold);
-  font-family: var(--font-display), serif;
+.rule:last-child {
+  border-bottom: 0;
+}
+
+.rule:hover {
+  background: var(--panel-raised);
+}
+
+.rule::before {
+  content: "◆";
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  font-size: 0.6rem;
+  color: var(--frame);
 }
 
 .rule-title {
-  color: var(--gold);
-  font-weight: 600;
+  font-family: var(--font-display), serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-right: 2px;
 }
 
 .rule-advice {
   color: var(--dim);
+  font-style: italic;
 }
 
 .fine,
 .footer {
-  text-align: center;
   color: var(--dim);
   font-size: 0.85rem;
 }
 
 .footer {
-  margin-top: 48px;
+  margin-top: 40px;
+}
+
+.cap {
+  text-transform: capitalize;
 }
 
 @media (max-width: 760px) {
   html,
   body {
     font-size: 16px;
+    line-height: 1.35;
   }
 
   .page {
-    padding-top: 28px;
+    padding: 20px 12px 24px;
+  }
+
+  .title {
+    margin-bottom: 16px;
   }
 
   .menu {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .menu-row {
-    grid-template-columns: 6.5em minmax(0, 1fr);
+    gap: 0;
   }
 
   .panel {
-    padding: 18px 14px;
+    padding: 12px;
   }
 
-  .settings {
+  .panel,
+  .frame {
+    margin-bottom: 12px;
+  }
+
+  /* The label over the value, so a class name is never cut. */
+  .menu-row {
     grid-template-columns: minmax(0, 1fr);
+    padding: 2px 8px;
+    line-height: 1.35;
   }
 
-  .chapter-facts div,
-  .notes div {
+  .menu-label {
+    font-size: 0.85rem;
+  }
+
+  .menu-help {
+    display: none;
+  }
+
+  .menu-help-folded {
+    display: block;
+  }
+
+  .fact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+    padding: 4px 10px;
+  }
+
+  .fact-short {
+    grid-template-columns: 7em minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .names li {
+    padding: 0 6px;
+    border: 1px solid var(--line);
+    background: var(--panel-raised);
+    font-size: 0.95rem;
+  }
+
+  .infobox {
+    padding: 12px 14px;
+  }
+
+  /* The six settings as two columns of label over value. */
+  .infobox .facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+
+  .infobox .fact {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
   }
-}
 
-.cap {
-  text-transform: capitalize;
+  /* A definition or warning runs on from its term, like a rule from its title. */
+  .notes .fact {
+    display: block;
+  }
+
+  .notes dt,
+  .notes dd {
+    display: inline;
+  }
+
+  .notes dt::after {
+    content: ". ";
+  }
+
+  .code {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+
+  .frame-head {
+    padding: 6px 10px;
+  }
+
+  .chapter-until {
+    font-size: 0.8rem;
+  }
+
+  .menu-row {
+    min-height: 0;
+  }
+
+  .rule {
+    padding: 5px 10px 5px 24px;
+  }
+
+  .rule::before {
+    left: 9px;
+    top: 7px;
+  }
+
+  /* Generate, and the copy buttons under the sheet, stay at the bottom of the screen. */
+  .menu-list .prompt,
+  .actions {
+    position: sticky;
+    bottom: 0;
+  }
+
+  .menu-list .prompt {
+    min-height: 48px;
+  }
+
+  .actions {
+    order: 0;
+    margin: 0;
+    padding: 8px 0;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+
+  .actions .prompt {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+  }
 }

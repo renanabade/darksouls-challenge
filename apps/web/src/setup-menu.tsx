@@ -46,7 +46,8 @@ interface Props {
 
 /**
  * The settings as a menu in the spirit of the game's character creation: a list of rows on the left, each
- * cycled with its arrows (or the arrow keys), and what the focused row means on the right.
+ * cycled with its arrows (or the arrow keys), and what the focused row means on the right (folded under
+ * the menu on a phone).
  */
 export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) {
   const [focused, setFocused] = useState<Row>("startingClass");
@@ -177,6 +178,11 @@ export function SetupMenu({ options, form, onChange, onGenerate, busy }: Props) 
       <aside className="panel menu-help" aria-live="polite">
         <Help row={focused} options={options} form={form} />
       </aside>
+      {/* On a phone the help folds away under the menu, so the challenge is a short scroll away. */}
+      <details className="panel menu-help-folded">
+        <summary>About {LABELS[focused].toLowerCase()}</summary>
+        <Help row={focused} options={options} form={form} />
+      </details>
     </form>
   );
 }

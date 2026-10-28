@@ -188,9 +188,11 @@ export default function Home() {
           </p>
         )}
 
-        <div ref={sheet}>
+        {/* The copy buttons come after the sheet, so on a phone they stay pinned under it. */}
+        <div ref={sheet} className="result">
           {view !== undefined && (
             <>
+              <ChallengeSheet view={view} />
               <div className="actions">
                 {view.code !== undefined && (
                   <button
@@ -213,7 +215,6 @@ export default function Home() {
                   {copied === "link" ? "Link copied" : "Copy link"}
                 </button>
               </div>
-              <ChallengeSheet view={view} />
             </>
           )}
         </div>
