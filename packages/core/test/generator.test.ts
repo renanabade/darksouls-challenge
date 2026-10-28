@@ -138,6 +138,54 @@ describe("generate on the DS1 data set", () => {
     expect(open?.bosses).toContain("knight-artorias");
   });
 
+  // Issue 64: the area moved out of its chapter was never listed again when no later chapter held it.
+  it("moves the area its other way closes, and what lies past it, to the next chapter", () => {
+    const template = (id: string) => {
+      const found = catalog.find((t) => t.id === id);
+      if (found === undefined) throw new Error(`no template ${id}`);
+      return found;
+    };
+    const plan = (areas: string[], bosses: string[]) =>
+      ({
+        goal: "kiln-open",
+        goals: ["kiln-open"],
+        areas,
+        bosses,
+        offset: 0,
+        difficulty: "medium",
+      }) as const;
+    const other = {
+      template: template("the-other-way"),
+      args: { area: "royal-wood", until: "kiln-open" },
+      chapter: 0,
+    };
+    const [closed, next] = reachableChapters(
+      world,
+      [
+        plan(["oolacile-sanctuary", "oolacile-township", "royal-wood"], ["knight-artorias"]),
+        plan(["kiln-of-the-first-flame"], ["gwyn-lord-of-cinder"]),
+      ],
+      [other],
+      [],
+    );
+    expect(closed?.areas).toEqual(["oolacile-sanctuary"]);
+    expect(closed?.bosses).toEqual([]);
+    expect(next?.areas).toEqual(["kiln-of-the-first-flame", "oolacile-township", "royal-wood"]);
+    expect(next?.bosses).toEqual(["gwyn-lord-of-cinder", "knight-artorias"]);
+  });
+
+  // The seed of issue 64: Darkroot Garden closed until the first bell came back nowhere.
+  it("lists Darkroot Garden again after the first bell in qa-6", () => {
+    const challenge = generate(world, { seed: "qa-6", difficulty: "medium", length: "full" });
+    const other = challenge.orders.find(
+      (o) => o.template.id === "the-other-way" && o.chapter === 1,
+    );
+    expect(other?.args["area"]).toBe("darkroot-garden");
+    expect(challenge.chapters[1]?.areas).not.toContain("darkroot-garden");
+    expect(challenge.chapters[2]?.areas).toContain("darkroot-garden");
+    expect(challenge.chapters[2]?.bosses).toContain("moonlight-butterfly");
+  }, 60_000);
+
   it("ends every manual with what the scripts do to NPCs", () => {
     const manual = renderManual(
       world,

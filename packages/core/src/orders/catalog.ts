@@ -182,9 +182,7 @@ export const catalog = [
     number: 13,
     weight: { difficulty: 2, friction: 1 },
     title: "Phase swap",
-    text:
-      "After the Asylum Demon and until {milestone}: {before}. " +
-      "After it: drop what does not fit and follow {after}.",
+    text: "After the Asylum Demon and until {milestone}: {before}. " + "From then on, use {after}.",
     params: {
       milestone: { kind: "milestone" },
       before: { kind: "equipmentSet" },

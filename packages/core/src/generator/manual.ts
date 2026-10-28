@@ -322,8 +322,9 @@ export function renderManual(world: World, challenge: Challenge): string {
   const chapters = view.chapters.flatMap((chapter) => {
     const about = [
       `Until ${chapter.until}`,
-      `**Areas:** ${chapter.areas.join(", ")}`,
-      chapter.bosses.length > 0 && `**Bosses:** ${chapter.bosses.join(", ")}`,
+      // Names hold commas ("Manus, Father of the Abyss"), so a list of them is cut by semicolons.
+      `**Areas:** ${chapter.areas.join("; ")}`,
+      chapter.bosses.length > 0 && `**Bosses:** ${chapter.bosses.join("; ")}`,
       `**Difficulty:** ${chapter.difficulty}`,
     ].filter(Boolean);
     return [`## ${chapter.heading}`, "", about.join(" · "), "", ...chapter.rules.map(rule), ""];

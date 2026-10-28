@@ -61,7 +61,7 @@ export interface Challenge {
 }
 
 /** Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw. */
-export const GENERATOR_VERSION = "7";
+export const GENERATOR_VERSION = "8";
 
 /** Soul level cap per difficulty (Proposto, to tune by playing); never below the class's level. */
 const LEVEL_CAPS: Readonly<Record<Difficulty, readonly [number, number]>> = {
@@ -96,6 +96,12 @@ const RUN_CAPS: Readonly<Record<string, number>> = {
   "every-chest": 1,
   "counted-attempts": 3,
 };
+/**
+ * Most fight orders in one run, together (the QA of 2026-10-27): "Dry fight" came in 19 of 20 runs, up to
+ * four times, and these three all ask the same thing of a boss fight.
+ */
+const FIGHT_ORDERS = new Set(["dry-fight", "exploit-weakness", "against-the-grain"]);
+const FIGHT_ORDERS_CAP = 3;
 /** The Asylum has one area and one boss. */
 const ASYLUM_MAX = 1;
 /**
@@ -255,6 +261,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
   let friction = lordTemplate.weight.friction;
   const held = startingItems(world, setup);
   const uses = new Map<string, number>();
+  let fightOrders = 0;
   // An area or a boss may gather several rules, but never the same rule twice.
   const usedTargets = new Set<string>();
   for (const [index, section] of sections.entries()) {
@@ -271,6 +278,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
     for (const template of candidates) {
       if (added >= section.target) break;
       if ((uses.get(template.id) ?? 0) >= (RUN_CAPS[template.id] ?? Infinity)) continue;
+      if (FIGHT_ORDERS.has(template.id) && fightOrders >= FIGHT_ORDERS_CAP) continue;
       // Leave room for the orders still to come, at the lightest weight.
       if (spent + template.weight.difficulty + (section.target - added - 1) > budget) continue;
       if (friction + template.weight.friction > frictionBudget) continue;
@@ -297,6 +305,7 @@ export function generate(world: World, config: GeneratorConfig): Challenge {
         friction += template.weight.friction;
         added++;
         uses.set(template.id, (uses.get(template.id) ?? 0) + 1);
+        if (FIGHT_ORDERS.has(template.id)) fightOrders++;
         targets.forEach((t) => usedTargets.add(t));
         break;
       }
@@ -334,7 +343,9 @@ function finish(
 /**
  * The chapter the player reads. An area closed in the chapter (forbidden for the run, or "the other way"
  * of that chapter) is left out, and so are the areas and bosses that can only be reached through one, so
- * the manual does not send the player somewhere the orders closed.
+ * the manual does not send the player somewhere the orders closed. What "the other way" closes opens again
+ * when its chapter ends: it moves to the next chapter, unless a later chapter lists it already. What the
+ * forbidden areas close is gone for the whole run.
  */
 export function reachableChapters(
   world: World,
@@ -347,26 +358,40 @@ export function reachableChapters(
     return typeof area === "string" ? [area] : [];
   };
   const forbidden = orders.flatMap((o) => (o.template.id === "forbidden-area" ? areaOf(o) : []));
+  const open = (closed: readonly string[]) => {
+    const reached = reachWithoutAreas(world, closed, items).regions;
+    return {
+      area: (area: string) =>
+        !closed.includes(area) && regionsInArea(world, area).some((id) => reached.has(id)),
+      boss: (id: string) => {
+        const region = world.bosses.get(id)?.region;
+        return region === undefined || region === "" || reached.has(region);
+      },
+    };
+  };
+  const forever = open(forbidden);
+  const later = (k: number, pick: (c: ChapterPlan) => readonly string[]) =>
+    new Set(chapters.slice(k + 1).flatMap(pick));
+  let carried: { areas: readonly string[]; bosses: readonly string[] } = { areas: [], bosses: [] };
   return chapters.map((chapter, k) => {
+    const merge = (own: readonly string[], more: readonly string[]) =>
+      more.length === 0 ? own : [...new Set([...more, ...own])].sort();
+    const areas = merge(chapter.areas, carried.areas);
+    const bosses = merge(chapter.bosses, carried.bosses);
     const closed = [
       ...forbidden,
       ...orders.flatMap((o) =>
         o.template.id === "the-other-way" && o.chapter === k ? areaOf(o) : [],
       ),
     ];
-    if (closed.length === 0) return chapter;
-    const reached = reachWithoutAreas(world, closed, items).regions;
-    return {
-      ...chapter,
-      areas: chapter.areas.filter(
-        (area) =>
-          !closed.includes(area) && regionsInArea(world, area).some((id) => reached.has(id)),
-      ),
-      bosses: chapter.bosses.filter((id) => {
-        const region = world.bosses.get(id)?.region;
-        return region === undefined || region === "" || reached.has(region);
-      }),
+    const now = closed.length === forbidden.length ? forever : open(closed);
+    const [laterAreas, laterBosses] = [later(k, (c) => c.areas), later(k, (c) => c.bosses)];
+    carried = {
+      areas: areas.filter((a) => forever.area(a) && !now.area(a) && !laterAreas.has(a)),
+      bosses: bosses.filter((b) => forever.boss(b) && !now.boss(b) && !laterBosses.has(b)),
     };
+    if (closed.length === 0 && areas === chapter.areas && bosses === chapter.bosses) return chapter;
+    return { ...chapter, areas: areas.filter(now.area), bosses: bosses.filter(now.boss) };
   });
 }
 
