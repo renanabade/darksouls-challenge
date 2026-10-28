@@ -6,7 +6,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "next build && node scripts/drop-sources.js",
     "dev": "next dev",
     "typecheck": "tsc -p tsconfig.check.json"
   },

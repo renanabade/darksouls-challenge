@@ -14,7 +14,7 @@ export function ChallengeSheet({ view }: { readonly view: ChallengeView }) {
   return (
     <article className="sheet">
       <header className="panel sheet-head">
-        <p className="eyebrow">Seed</p>
+        <p className="eyebrow">{view.code === undefined ? "Seed" : "Challenge code"}</p>
         <h2 className="seed">{view.seed}</h2>
         <dl className="settings">
           {settings.map(([term, value, cap]) => (
@@ -42,12 +42,12 @@ export function ChallengeSheet({ view }: { readonly view: ChallengeView }) {
           <dl className="chapter-facts">
             <div>
               <dt>Areas</dt>
-              <dd>{chapter.areas.join(", ")}</dd>
+              <dd>{chapter.areas.join("; ")}</dd>
             </div>
             {chapter.bosses.length > 0 && (
               <div>
                 <dt>Bosses</dt>
-                <dd>{chapter.bosses.join(", ")}</dd>
+                <dd>{chapter.bosses.join("; ")}</dd>
               </div>
             )}
             <div>
@@ -88,8 +88,10 @@ export function ChallengeSheet({ view }: { readonly view: ChallengeView }) {
       )}
 
       <p className="fine">
-        Generator {view.generatorVersion} · data {view.dataVersion}. Same seed and settings, same
-        challenge.
+        Generator {view.generatorVersion} · data {view.dataVersion}.{" "}
+        {view.code === undefined
+          ? "Same seed and settings, same challenge."
+          : "Same code, same challenge."}
       </p>
     </article>
   );
