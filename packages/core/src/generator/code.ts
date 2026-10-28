@@ -105,7 +105,7 @@ export function decodeChallengeCode(text: string, options: CodeOptions): Challen
   const match = FORMAT.exec(text.replace(/\s+/g, "").toUpperCase());
   if (match === null) return undefined;
   const [, generatorVersion = "", token = "", chars = ""] = match;
-  const digits = [...chars.replace(/O/g, "0").replace(/[IL]/g, "1")].map((c) =>
+  const digits = Array.from(chars.replace(/O/g, "0").replace(/[IL]/g, "1"), (c) =>
     ALPHABET.indexOf(c),
   );
   if (digits.some((d) => d < 0)) return undefined;
@@ -132,7 +132,8 @@ export function decodeChallengeCode(text: string, options: CodeOptions): Challen
   const difficulty = at<Difficulty>(options.difficulties, values.difficulty, false);
   const length = at<Length>(options.lengths, values.length, false);
   const curve = at<Curve>(options.curves, values.curve);
-  if ([startingClass, giftRow, difficulty, length, curve].includes(null)) return undefined;
+  if (difficulty == null || length == null) return undefined;
+  if (startingClass === null || giftRow === null || curve === null) return undefined;
   const code = `${generatorVersion}.${token}-${digits.map((d) => ALPHABET[d] ?? "").join("")}${ALPHABET[check] ?? ""}`;
   return {
     code,
@@ -140,11 +141,11 @@ export function decodeChallengeCode(text: string, options: CodeOptions): Challen
     dataToken: token,
     config: {
       seed: code,
-      difficulty: difficulty as Difficulty,
-      length: length as Length,
-      ...(curve != null && { curve }),
-      ...(startingClass != null && { startingClass }),
-      ...(giftRow != null && { giftRow }),
+      difficulty,
+      length,
+      ...(curve !== undefined && { curve }),
+      ...(startingClass !== undefined && { startingClass }),
+      ...(giftRow !== undefined && { giftRow }),
       ...(values.levelCap > 0 && { levelCap: values.levelCap }),
     },
   };
