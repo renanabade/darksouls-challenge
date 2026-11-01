@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.12.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.11.0...darksouls-challenge-v0.12.0) (2026-11-01)
+
+
+### Features
+
+* **web:** static front that generates in the browser, deployed to Cloudflare Pages ([86889ad](https://github.com/renanabade/darksouls-challenge/commit/86889add63dc8f00a1ddd378c950a309c98c2094))
+
+
+### Bug Fixes
+
+* **generator:** scoped chapter exceptions, closed areas out of chapters, rule caps (generator 7) ([6ace95f](https://github.com/renanabade/darksouls-challenge/commit/6ace95f8a9f95dd593ab22bab427956b34c11753))
+
+
+### Documentation
+
+* add cloud session setup instructions ([fe48e18](https://github.com/renanabade/darksouls-challenge/commit/fe48e18fe902d29801a63a72e952ff0a427e88c5))
+
 ## [0.11.0](https://github.com/renanabade/darksouls-challenge/compare/darksouls-challenge-v0.10.0...darksouls-challenge-v0.11.0) (2026-10-23)
 
 
