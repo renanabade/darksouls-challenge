@@ -1,0 +1,22 @@
+# Build output
+bin/
+obj/
+artifacts/
+TestResults/
+*.user
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors (shared settings go in .editorconfig)
+.idea/
+.vs/
+.vscode/*
+!.vscode/extensions.json
