@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <WasmFingerprintAssets>false</WasmFingerprintAssets>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DarkSoulsChallenge.Core\DarkSoulsChallenge.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The core runs in the browser, on the same data set. -->
+    <EmbeddedResource Include="..\..\data\ds1\meta.json;..\..\data\ds1\regions.json;..\..\data\ds1\entrances.json;..\..\data\ds1\locations.json;..\..\data\ds1\classes.json;..\..\data\ds1\bosses.json;..\..\data\ds1\merchants.json;..\..\data\ds1\milestones.json;..\..\data\ds1\weapons.json;..\..\data\ds1\spells.json;..\..\data\ds1\areas.json;..\..\data\ds1\treasures.json;..\..\data\ds1\warnings.json"
+                      LogicalName="data.%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

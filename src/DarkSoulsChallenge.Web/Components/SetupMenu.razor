@@ -1,0 +1,158 @@
+<form class="menu" @onsubmit="Submit" @onsubmit:preventDefault="true">
+    <div class="panel menu-list">
+        <div class="menu-row" @onfocusin="@(() => _focused = "class")">
+            <label for="class">Class</label>
+            <select id="class" @bind="Form.StartingClass">
+                <option value="">Drawn by the seed</option>
+                @foreach (var option in Options.Classes)
+                {
+                    <option value="@option.Name">@option.Name</option>
+                }
+            </select>
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "gift")">
+            <label for="gift">Gift</label>
+            <select id="gift" @bind="Form.Gift">
+                <option value="">Drawn by the seed</option>
+                @foreach (var option in Options.Gifts)
+                {
+                    <option value="@option.Row">@option.Label</option>
+                }
+            </select>
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "difficulty")">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" @bind="Form.Difficulty">
+                @foreach (var option in Options.Difficulties)
+                {
+                    <option value="@option">@Capitalized(option.Name())</option>
+                }
+            </select>
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "length")">
+            <label for="length">Length</label>
+            <select id="length" @bind="Form.Length">
+                @foreach (var option in Options.Lengths)
+                {
+                    <option value="@option">@Capitalized(option.Name())</option>
+                }
+            </select>
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "curve")">
+            <label for="curve">Curve</label>
+            <select id="curve" @bind="Form.Curve">
+                <option value="">Drawn by the seed</option>
+                @foreach (var option in Options.Curves)
+                {
+                    <option value="@option">@Capitalized(option.Name())</option>
+                }
+            </select>
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "cap")">
+            <label for="cap">Level cap</label>
+            <input id="cap" type="number" min="1" max="@ChallengeCode.MaxLevelCap" placeholder="Drawn by the seed" @bind="Form.LevelCap" />
+        </div>
+        <div class="menu-row" @onfocusin="@(() => _focused = "code")">
+            <label for="code">Challenge code</label>
+            <input id="code" maxlength="@ChallengeRecordLength" placeholder="Optional" spellcheck="false" autocomplete="off" @bind="Form.Code" />
+        </div>
+    </div>
+    <aside class="panel menu-help only-wide" aria-live="polite">
+        <h3>@HelpTitle</h3>
+        @HelpBody
+    </aside>
+    <details class="panel menu-help only-narrow">
+        <summary>What this means</summary>
+        <h3>@HelpTitle</h3>
+        @HelpBody
+    </details>
+    <div class="actions">
+        <button class="prompt" type="submit" disabled="@Busy">@(Busy ? "Generating…" : "Generate")</button>
+        @Actions
+    </div>
+</form>
+
+@code {
+    private const int ChallengeRecordLength = 64;
+
+    private string _focused = "class";
+
+    /// <summary>What the form holds. An empty value is drawn by the seed.</summary>
+    public sealed class FormState
+    {
+        public string StartingClass { get; set; } = "";
+
+        public string Gift { get; set; } = "";
+
+        public Difficulty Difficulty { get; set; } = Difficulty.Medium;
+
+        public Length Length { get; set; } = Length.Full;
+
+        public string Curve { get; set; } = "";
+
+        public int? LevelCap { get; set; }
+
+        public string Code { get; set; } = "";
+    }
+
+    [Parameter, EditorRequired]
+    public required SetupOptions Options { get; set; }
+
+    [Parameter, EditorRequired]
+    public required FormState Form { get; set; }
+
+    [Parameter]
+    public bool Busy { get; set; }
+
+    [Parameter]
+    public EventCallback OnGenerate { get; set; }
+
+    /// <summary>More buttons, beside Generate.</summary>
+    [Parameter]
+    public RenderFragment? Actions { get; set; }
+
+    private Task Submit() => OnGenerate.InvokeAsync();
+
+    private static string Capitalized(string text) => $"{char.ToUpperInvariant(text[0])}{text[1..]}";
+
+    private string HelpTitle => _focused switch
+    {
+        "class" => Options.Classes.FirstOrDefault(c => c.Name == Form.StartingClass)?.Name ?? "Drawn by the seed",
+        "gift" => Options.Gifts.FirstOrDefault(g => g.Row.ToString(System.Globalization.CultureInfo.InvariantCulture) == Form.Gift)?.Label ?? "Drawn by the seed",
+        "difficulty" => Capitalized(Form.Difficulty.Name()),
+        "length" => Capitalized(Form.Length.Name()),
+        "curve" => Form.Curve.Length > 0 ? Form.Curve : "Drawn by the seed",
+        "cap" => "Soul level cap",
+        _ => "Challenge code",
+    };
+
+    private RenderFragment HelpBody => _focused switch
+    {
+        "class" when Options.Classes.FirstOrDefault(c => c.Name == Form.StartingClass) is { } chosen => @<dl class="stats">
+            <div><dt>Level</dt><dd>@chosen.Level</dd></div>
+            <div><dt>Strength</dt><dd>@chosen.Stats.Strength</dd></div>
+            <div><dt>Dexterity</dt><dd>@chosen.Stats.Dexterity</dd></div>
+            <div><dt>Intelligence</dt><dd>@chosen.Stats.Intelligence</dd></div>
+            <div><dt>Faith</dt><dd>@chosen.Stats.Faith</dd></div>
+            <div><dt>Attunement</dt><dd>@chosen.Stats.Attunement</dd></div>
+        </dl>,
+        "class" => @<p>The seed picks one of the @Options.Classes.Count classes.</p>,
+        "gift" => Form.Gift.Length > 0 ? @<p>What you carry from the start.</p> : @<p>The seed picks the gift you start with.</p>,
+        "difficulty" => Form.Difficulty switch
+        {
+            Difficulty.Easy => @<p>Light rules and a generous level cap. For a first replay.</p>,
+            Difficulty.Medium => @<p>Rules that change how you play, without asking for perfection.</p>,
+            Difficulty.Hard => @<p>Heavy rules and a low level cap. For players who know the game well.</p>,
+            _ => @<p>The heaviest rules, a level cap near the class's own. Expect to fail.</p>,
+        },
+        "length" => Form.Length switch
+        {
+            Length.Short => @<p>Four acts and a handful of rules.</p>,
+            Length.Full => @<p>Nine chapters, each with its own rules.</p>,
+            _ => @<p>Nine chapters with rules for every stretch of the run.</p>,
+        },
+        "curve" => @<p>How difficulty moves across the chapters. The difficulty you chose is the level it moves around.</p>,
+        "cap" => @<p>The highest soul level of the run. Never below your class's own.</p>,
+        _ => @<p>Paste a code to play exactly that challenge: it overrides everything above. Leave it empty for a new challenge.</p>,
+    };
+}

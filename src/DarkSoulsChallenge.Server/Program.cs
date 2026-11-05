@@ -49,6 +49,8 @@ if (builder.Configuration.GetValue("Generation:Background", true))
 var app = builder.Build();
 
 app.UseExceptionHandler();
+app.UseBlazorFrameworkFiles();
+app.UseStaticFiles();
 app.UseRateLimiter();
 
 if (app.Configuration.GetValue("Database:MigrateOnStart", true))
@@ -62,6 +64,8 @@ app.MapGet("/api/health", async (AppDbContext db, CancellationToken cancellation
         ? Results.Ok(new { status = "ok" })
         : Results.Problem("the database is unreachable", statusCode: StatusCodes.Status503ServiceUnavailable));
 app.MapChallengeEndpoints();
+app.MapFallback("/api/{*rest}", () => Results.NotFound());
+app.MapFallbackToFile("index.html");
 
 await app.RunAsync();
 

@@ -47,6 +47,15 @@ public sealed class ChallengeApiTests(ServerFixture server) : IAsyncLifetime
     }
 
     [Fact]
+    public async Task Hosts_the_site_and_answers_not_found_for_unknown_api_routes()
+    {
+        var page = await _client.GetAsync("/?c=ds1.8.07-0000000000", TestContext.Current.CancellationToken);
+        Assert.Equal(HttpStatusCode.OK, page.StatusCode);
+        Assert.Contains("blazor.webassembly.js", await page.Content.ReadAsStringAsync(TestContext.Current.CancellationToken), StringComparison.Ordinal);
+        Assert.Equal(HttpStatusCode.NotFound, (await _client.GetAsync("/api/nothing", TestContext.Current.CancellationToken)).StatusCode);
+    }
+
+    [Fact]
     public async Task Offers_what_a_client_may_fix()
     {
         var options = await _client.GetFromJsonAsync<JsonElement>("/api/options", TestContext.Current.CancellationToken);
