@@ -13,6 +13,9 @@ public sealed record ChallengeDocument
 {
     public required GeneratorConfig Config { get; init; }
 
+    /// <summary>What the player shares.</summary>
+    public required string Code { get; init; }
+
     public required string DataVersion { get; init; }
 
     public required string GeneratorVersion { get; init; }
@@ -35,6 +38,7 @@ public sealed record ChallengeDocument
         return new ChallengeDocument
         {
             Config = challenge.Config,
+            Code = challenge.Code,
             DataVersion = challenge.DataVersion,
             GeneratorVersion = Generator.Version,
             Setup = challenge.Setup,
@@ -57,6 +61,9 @@ public sealed record GenerationRequest
 {
     public const int MaxSeedLength = 64;
     public const int MaxPlayers = 8;
+
+    /// <summary>A challenge code: it fixes everything, and overrides the rest of the request but its players.</summary>
+    public string? Code { get; init; }
 
     public string? Seed { get; init; }
 
@@ -89,12 +96,21 @@ public sealed record GenerationRequest
 
         if (GiftRow < 0) problems.Add("the gift row cannot be negative");
         if (LevelCap <= 0) problems.Add("the level cap must be positive");
+        if (LevelCap > ChallengeCode.MaxLevelCap) problems.Add($"the level cap must be at most {ChallengeCode.MaxLevelCap}");
         return problems;
     }
 
     /// <summary>Generates the request's challenges, one per player, in the order of its players.</summary>
     public IReadOnlyList<ChallengeDocument> Run(World world)
     {
+        if (Code is not null)
+        {
+            if (!ChallengeCode.TryDecode(world, Code, out var decoded, out var problem)) throw new ArgumentException(problem);
+            return Generator.GenerateGroup(world, decoded!.Config, Players.Count == 1 ? [decoded.Config.Difficulty] : Players)
+                .Select(c => ChallengeDocument.From(world, c))
+                .ToList();
+        }
+
         var config = new GeneratorConfig(Seed?.Trim() ?? DrawSeed(), Players[0], Length)
         {
             Curve = Curve,
@@ -106,7 +122,8 @@ public sealed record GenerationRequest
     }
 
     /// <summary>Draws a short seed, so a challenge asked without one can still be shared.</summary>
-    public static string DrawSeed() => Convert.ToHexStringLower(RandomNumberGenerator.GetBytes(4));
+    public static string DrawSeed() =>
+        RandomNumberGenerator.GetInt32(1 << ChallengeCode.SeedBits).ToString(System.Globalization.CultureInfo.InvariantCulture);
 }
 
 /// <summary>Writes order arguments as plain JSON values: an id, a number, or a list of ids.</summary>

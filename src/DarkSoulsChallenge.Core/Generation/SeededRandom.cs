@@ -78,7 +78,7 @@ public sealed class SeededRandom
         return keyed.OrderByDescending(k => k.Key).Select(k => k.Item).ToList();
     }
 
-    private static uint Fnv1a(string text)
+    internal static uint Fnv1a(string text)
     {
         var hash = 0x811c9dc5;
         foreach (var unit in text)
