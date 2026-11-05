@@ -1,0 +1,291 @@
+{
+ "overrides": [
+  {
+   "file": "locations",
+   "id": "E1",
+   "note": "The Hydra's death is a graph event, so the golem that holds Dusk can wait for it.",
+   "op": "add",
+   "source": "m12_00_00_00 Event_11200801 (on the death of the Darkroot Basin Hydra, sets flag 11200801)",
+   "value": {"category": "EVENT", "count": 1, "found": false, "item": "Darkroot Basin Hydra Defeated", "kind": "other", "mandatory": false, "name": "DB: Darkroot Basin Hydra Defeated", "region": "darkroot-basin"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E2-dusk",
+   "match": {"from": "darkroot-basin", "to": "darkroot-basin-princess-dusk"},
+   "note": "Dusk is freed by killing the Golden Crystal Golem 1200200, which is only enabled after the Hydra dies. Flag 703, the other way in, is written by no event script and is read as off.",
+   "op": "condition",
+   "source": "m12_00_00_00 Event_11200800 (EnableCharacter(1200200) waits for flag 11200801 or flag 703); Event_11200530 (Dusk state flag 1121 once the golem is dead)",
+   "value": {"has": "Darkroot Basin Hydra Defeated"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E2-pendant",
+   "match": {"from": "the-dukes-archives", "to": "the-dukes-archives-golem-after-dusk-rescue"},
+   "note": "The Broken Pendant, which opens the DLC portal, drops only once Dusk was freed: Hydra, then Dusk, then the Pendant, then the DLC.",
+   "op": "condition",
+   "source": "m17_00_00_00 Event_11700700 (AwardItemLot 27100200 needs golem 1700510 dead, flag 11200530 and flag 1121 off); m12_00_00_00 Event_11200800",
+   "value": {"has": "Darkroot Basin Hydra Defeated"}
+  },
+  {
+   "file": "entrances",
+   "id": "E3",
+   "match": {"from": "upper-blighttown-depths-side", "to": "lower-blighttown"},
+   "note": "DSAP asks for the Lordvessel on this walk as a comfort rule. The walk down from the Depths side is open, as DSAP's own free edge through lower-blighttown-fog shows.",
+   "op": "replace",
+   "source": "m14_00_00_00: the same walk as the free DSAP edge upper-blighttown-depths-side -> lower-blighttown-fog -> lower-blighttown",
+   "value": {"requires": true}
+  },
+  {
+   "file": "regions",
+   "id": "E5-tower",
+   "match": {"id": "undead-parish-bell-tower"},
+   "note": "The bell tower, behind the Bell Gargoyles' exit fog: the bell lever (object 1011110, z 134.5) and Oswald (talk t101637, z 135) are past fog 1011992 (z 131); the arena is around z 105 and its entry fog 1011990 at z 74.",
+   "op": "add",
+   "source": "m10_01_00_00 MSB positions of objects 1011110, 1011990, 1011992 and of Oswald (t101637)",
+   "value": {"area": "undead-parish", "id": "undead-parish-bell-tower", "mandatory": false, "name": "Undead Parish - Bell Tower", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E5-area",
+   "match": {"id": "undead-parish"},
+   "op": "replace",
+   "source": "m10_01_00_00: the bell tower is part of the Undead Parish map",
+   "value": {"regions": ["undead-parish", "undead-parish-andre-of-astora", "undead-parish-before-fog", "undead-parish-bell-gargoyles", "undead-parish-bell-tower", "undead-parish-fog", "undead-parish-oswald-of-carim"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E5-fog",
+   "note": "The exit fog 1011992 has no walk-through prompt and is removed only when both gargoyles are dead.",
+   "op": "add",
+   "source": "m10_01_00_00 Event_11010001 (EnableFlag(3), then DisableObject(1011990) and DisableObject(1011992)); Event_11015390 (the walk-through prompt is only at the entry fog, region 1012998)",
+   "value": {"from": "undead-parish-bell-gargoyles", "note": "Exit fog of the Bell Gargoyles, removed on their death.", "origin": "override", "requires": {"has": "Bell Gargoyles Defeated"}, "to": "undead-parish-bell-tower", "walkBack": true}
+  },
+  {
+   "file": "entrances",
+   "id": "E5-oswald",
+   "match": {"from": "undead-parish-bell-gargoyles", "to": "undead-parish-oswald-of-carim"},
+   "op": "replace",
+   "source": "m10_01_00_00 MSB: Oswald (t101637) stands in the bell tower, past fog 1011992",
+   "value": {"from": "undead-parish-bell-tower"}
+  },
+  {
+   "file": "locations",
+   "id": "E5-bell",
+   "match": {"name": "UP: Bell of Awakening #1 rung"},
+   "op": "replace",
+   "source": "m10_01_00_00 Event_11010700 (the bell lever, object action 11010700 on object 1011110, in the bell tower)",
+   "value": {"region": "undead-parish-bell-tower"}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E4",
+   "match": {"from": "demon-ruins-centipede-demon", "to": "lost-izalith"},
+   "note": "The exit fog 1411892 (x 216) stands between the Centipede Demon's arena (x 204) and the first Lost Izalith bonfire (object 1411964, x 230); it has no walk-through prompt and goes only on the demon's death.",
+   "op": "condition",
+   "source": "m14_01_00_00 Event_11410901 (flag 11410901, removes fogs 1411890 and 1411892 on death); MSB positions of objects 1411892 and 1411964",
+   "value": {"has": "Centipede Demon Defeated"}
+  },
+  {
+   "file": "merchants",
+   "id": "E7",
+   "match": {"id": "domhnall-of-zena"},
+   "note": "The fight ends one of two ways. Ornstein (1510801) dying last unlocks his set; Smough (1510811) dying last unlocks Smough's. The other set stays hidden for the rest of the playthrough.",
+   "op": "replace",
+   "source": "m15_01_00_00 Event_11510001 (one branch disables flags 11807100-11807130, ShopLineupParam rows 1558-1561; the other disables flags 11807060-11807090, rows 1554-1557)",
+   "value": {"exclusive": [{"id": "ornstein-or-smough", "options": [
+    {"flag": 11510902, "items": ["Ornstein's Armor", "Ornstein's Gauntlets", "Ornstein's Helm", "Ornstein's Leggings"], "when": "Ornstein is killed last"},
+    {"flag": 11510903, "items": ["Smough's Armor", "Smough's Gauntlets", "Smough's Helm", "Smough's Leggings"], "when": "Smough is killed last"}
+   ]}]}
+  },
+  {
+   "field": "requires",
+   "file": "entrances",
+   "id": "E9",
+   "match": {"from": "firelink-shrine", "to": "firelink-shrine-domhnall-of-zena"},
+   "note": "Domhnall moves from the Depths to Firelink once both bells are rung. His starting state (flag 1430) is set at the start of the game, so meeting him in the Depths is not needed.",
+   "op": "replace",
+   "source": "m10_02_00_00 Event_11020412 (enables Domhnall 6261 at Firelink when flag 1430 and both bell flags 11010700 and 11400200 are on, flags 1434 and 1435 off); common Preconstructor (EnableFlag(1430))",
+   "value": {"requires": {"all": [{"has": "Bell of Awakening #1"}, {"has": "Bell of Awakening #2"}]}}
+  },
+  {
+   "file": "entrances",
+   "id": "E14",
+   "match": {"from": "the-dukes-archives-after-archive-tower-giant-door-key", "to": "the-dukes-archives-big-hat-logan"},
+   "note": "Logan sells in the Archives once freed from the Giant Cell. Seath's death only turns him hollow later.",
+   "op": "replace",
+   "source": "m17_00_00_00 Event_11700530 (state 1093 in the cell once flag 1092 is on), Event_11700531 (state 1094 when the Giant Cell, ObjAct 27401 flag 61700320, is opened), Event_11700533 (Seath, flag 14, only for state 1099)",
+   "value": {"requires": {"all": [{"region": "sens-fortress-after-cage-key"}, {"region": "the-dukes-archives-giant-cell"}]}}
+  },
+  {
+   "file": "regions",
+   "id": "E8-region",
+   "match": {"id": "firelink-shrine-big-hat-logan"},
+   "note": "Logan's shop at Firelink, between his rescue in Sen's Fortress and his move to the Archives.",
+   "op": "add",
+   "source": "m10_02_00_00 Event_11020550 (Logan 6031 at Firelink in state 1092, after flag 1091 from the Sen's Fortress cage and talk flag 11500594); talk t102603 (ShopLineupParam rows 5000-5019)",
+   "value": {"area": "firelink-shrine", "id": "firelink-shrine-big-hat-logan", "mandatory": false, "name": "Firelink Shrine - Big Hat Logan", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E8-area",
+   "match": {"id": "firelink-shrine"},
+   "op": "replace",
+   "source": "m10_02_00_00: Logan stands at Firelink Shrine",
+   "value": {"regions": ["firelink-shrine", "firelink-shrine-after-undead-parish-elevator", "firelink-shrine-big-hat-logan", "firelink-shrine-domhnall-of-zena", "firelink-shrine-domhnall-of-zena-after-gwyndolin", "firelink-shrine-domhnall-of-zena-after-iron-golem", "firelink-shrine-domhnall-of-zena-after-o-s", "firelink-shrine-domhnall-of-zena-under-aqueduct-after-artorias", "firelink-shrine-griggs-of-vinheim", "firelink-shrine-griggs-of-vinheim-after-logan-leaves", "firelink-shrine-laurentius-of-the-great-swamp", "firelink-shrine-petrus-of-thorolund", "firelink-shrine-rhea-of-thorolund", "firelink-shrine-trusty-patches"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E8-entrance",
+   "op": "add",
+   "source": "m15_00_00_00 Event_11500531 (state 1091 once the cage, ObjAct flag 11500112, is opened); m10_02_00_00 Event_11020550",
+   "value": {"from": "firelink-shrine", "note": "Logan comes to Firelink once freed from his cage in Sen's Fortress.", "origin": "override", "requires": {"region": "sens-fortress-after-cage-key"}, "to": "firelink-shrine-big-hat-logan", "walkBack": true}
+  },
+  {
+   "file": "merchants",
+   "id": "E8-merchant",
+   "match": {"id": "logan"},
+   "op": "replace",
+   "source": "talk t102603 (m10_02_00_00, ShopLineupParam rows 5000-5019) and t170603 (m17_00_00_00)",
+   "value": {"regions": ["firelink-shrine-big-hat-logan", "the-dukes-archives-big-hat-logan"]}
+  },
+  {"file": "locations", "id": "E8-1", "op": "add", "source": "ShopLineupParam row 5000 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-2", "op": "add", "source": "ShopLineupParam row 5001 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Great Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-3", "op": "add", "source": "ShopLineupParam row 5002 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Heavy Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Heavy Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-4", "op": "add", "source": "ShopLineupParam row 5003 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Great Heavy Soul Arrow", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Great Heavy Soul Arrow", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-5", "op": "add", "source": "ShopLineupParam row 5004 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Homing Soulmass", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Homing Soulmass", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-6", "op": "add", "source": "ShopLineupParam row 5005 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Soul Spear", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Soul Spear", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-7", "op": "add", "source": "ShopLineupParam row 5006 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Weapon", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Weapon", "region": "firelink-shrine-big-hat-logan"}},
+  {"file": "locations", "id": "E8-8", "op": "add", "source": "ShopLineupParam row 5007 (talk t102603)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Sorcery: Magic Shield", "kind": "spell", "mandatory": false, "name": "Big Hat Logan, Firelink Shrine: Sorcery: Magic Shield", "region": "firelink-shrine-big-hat-logan"}},
+  {
+   "file": "locations",
+   "id": "E11",
+   "match": {"name": "FS: Firelink Shrine Bonfire"},
+   "op": "replace",
+   "source": "m10_02_00_00 Event_11020555 (Anastacia, state 1141, is killed once both bells are rung, flag 11500200, or both Fire Keeper Souls are picked up, flags 812 and 813, while Lautrec is neither hostile nor dead, flags 1574 and 1575); Event_11020110 (the bonfire is out, flag 11020100, until flag 11020101 after talk t102606 sets 11020609)",
+   "value": {"unavailable": [{"from": {"all": [{"has": "Bell of Awakening #1"}, {"has": "Bell of Awakening #2"}]}, "until": null, "why": "Lautrec kills Anastacia once both bells are rung (or both Fire Keeper Souls are taken); the fire is out until her soul is brought back."}]}
+  },
+  {
+   "file": "locations",
+   "id": "E12",
+   "match": {"name": "AL: Anor Londo Bonfire"},
+   "op": "replace",
+   "source": "m15_01_00_00 Event_11510533 (flag 151 when the Darkmoon Knightess, 6010, dies) and Event_151 (the bonfire, object 1511960, is out from then on); Event_11510501 (she turns hostile when attacked, or with flag 1232, 1241 or 1242: Gwynevere dead, Gwyndolin hostile or dead)",
+   "value": {"unavailable": [{"from": {"region": "anor-londo-gwyndolin"}, "until": null, "why": "The Darkmoon Knightess turns hostile once Gwynevere is killed or Gwyndolin attacked; her bonfire goes out for good when she dies."}]}
+  },
+  {
+   "file": "locations",
+   "id": "E12-chamber",
+   "match": {"name": "AL: Chamber of the Princess Bonfire"},
+   "op": "replace",
+   "source": "m15_01_00_00 Constructor (RegisterBonfire for object 1511950 only when flag 12, Ornstein and Smough defeated, is on)",
+   "value": {"unavailable": [{"from": true, "until": {"has": "Ornstein and Smough Defeated"}, "why": "The bonfire only exists once Ornstein and Smough are dead."}]}
+  },
+  {
+   "file": "entrances",
+   "id": "E13",
+   "match": {"from": "lower-blighttown", "to": "lower-blighttown-quelana-of-izalith"},
+   "note": "Quelana appears for a Pyromancy Flame +10 or an Ascended one, with no Laurentius requirement: the flame is upgraded by Laurentius or Eingyi. In both talks the upgrade state calls CollectJustPyromancyFlame, CombineMenuFlagAndEventFlag(365, 331) and OpenEquipmentChangeOfPurposeShop, a reinforcement menu that lists only the flame. Eingyi needs no egg head for it: his menu (t140616 State_3, the flame entry with required_flag -1, leading to State_96) is reached in his state 1281 through States 58, 61, 62 and 23; the egg head (state 1286, SpEffect 5213 or 5214 through flag 753) only widens his shop from rows 3200-3209 to 3200-3299. She leaves for good if the Bed of Chaos dies before she was spoken to.",
+   "op": "replace",
+   "source": "m14_00_00_00 Event_11400536 (state 1291 and EnableCharacter(6170) once PlayerHasWeapon 1331000-1331500, Pyromancy Flame +10 to +15, or 1332000-1332500, Ascended +0 to +5); Event_11400539 (flag 1296 and DisableCharacter(6170) when flag 10, Bed of Chaos, is on in state 1290, or in 1291 with talk flag 71400061 off); talks t102613 State_82 and t140616 State_96 (CollectJustPyromancyFlame, CombineMenuFlagAndEventFlag 365, 331); m14_00_00_00 Event_11400531 (Eingyi state 1281 after talk flag 11400593) and Event_11400532 (state 1286 with flag 753)",
+   "value": {"before": "Bed of Chaos Defeated", "requires": {"all": [{"has": "Pyromancy Flame"}, {"any": [{"region": "firelink-shrine-laurentius-of-the-great-swamp"}, {"region": "lower-blighttown-eingyi"}]}]}}
+  },
+  {
+   "file": "merchants",
+   "id": "E15",
+   "match": {"id": "rhea-of-thorolund"},
+   "note": "Rhea sells in the Undead Parish (6072, talk t101607) once rescued in the Tomb of the Giants. The window does not close a way on the graph, since the player can visit her right after the rescue, so it is recorded for the manual rather than the walk.",
+   "op": "replace",
+   "source": "m10_01_00_00 Event_11010533 (state 1175 in the Parish after talk flag 11310590; the boss counter, EventValue 600, starts again there); common Event_690 (counts the deaths of the bosses with flags 2 to 15 while flag 1175 is on); m10_01_00_00 Event_11010537 (state 1177 at a count of 2, flags 1196 and 1198 off) and Event_11010534 (state 1181 and DisableCharacter(6072) once common Event_724 sees all nine shop flags 11017050-11017130)",
+   "value": {"leaves": [
+    {"flag": 1177, "when": "Two more of the main bosses die after she reaches the Undead Parish."},
+    {"flag": 1181, "when": "Every miracle and item of her stock is bought: she leaves the Undead Parish."}
+   ]}
+  },
+  {
+   "file": "regions",
+   "id": "E18-region",
+   "match": {"id": "the-abyss-darkstalker-kaathe"},
+   "note": "Kaathe in the Abyss: DSAP gives him no region, so his shop had nowhere to be.",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 (EnableCharacter(6340), state 1671); talk t160634 (ShopLineupParam rows 6100-6199)",
+   "value": {"area": "the-abyss", "id": "the-abyss-darkstalker-kaathe", "mandatory": false, "name": "The Abyss - Darkstalker Kaathe", "virtual": false}
+  },
+  {
+   "file": "areas",
+   "id": "E18-area",
+   "match": {"id": "the-abyss"},
+   "op": "replace",
+   "source": "m16_00_00_00: Kaathe appears in the Abyss",
+   "value": {"regions": ["the-abyss", "the-abyss-after-four-kings", "the-abyss-darkstalker-kaathe"]}
+  },
+  {
+   "file": "entrances",
+   "id": "E18-entrance",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 (Kaathe appears once flag 13, Four Kings defeated, is on while flag 11800100, Lordvessel placed, is off)",
+   "value": {"before": "Lordvessel Placed", "from": "the-abyss-after-four-kings", "note": "Kaathe appears after the Four Kings only if the Lordvessel is not placed yet.", "origin": "override", "requires": true, "to": "the-abyss-darkstalker-kaathe", "walkBack": true}
+  },
+  {
+   "file": "locations",
+   "id": "E18-stock",
+   "op": "add",
+   "source": "ShopLineupParam row 6100 (talk t160634)",
+   "value": {"category": "SHOP_ITEM", "count": 1, "found": false, "item": "Cracked Red Eye Orb", "kind": "good", "mandatory": false, "name": "Darkstalker Kaathe: Cracked Red Eye Orb", "region": "the-abyss-darkstalker-kaathe"}
+  },
+  {
+   "file": "merchants",
+   "id": "E18",
+   "match": {"id": "darkstalker-kaathe"},
+   "op": "replace",
+   "source": "talk t160634 (flag 11600590 set in state 81, after the player says no, and in state 13, once his HP is at 90 or less); m16_00_00_00 Event_11600540 (state 1677 and DisableCharacter(6340) when 11600590 is on in state 1672 or 1678)",
+   "value": {"leaves": [{"flag": 1677, "when": "He is refused, or attacked: he leaves at once and for good."}], "regions": ["the-abyss-darkstalker-kaathe"]}
+  },
+  {
+   "file": "warnings",
+   "id": "E15-warning",
+   "op": "add",
+   "source": "m10_01_00_00 Event_11010537 and Event_11010534; common Event_690",
+   "value": {"id": "rhea", "npc": "Rhea of Thorolund", "text": "Once rescued in the Tomb of the Giants, she sells in the Undead Parish. She is lost if two more main bosses die before you visit her, and she leaves once her whole stock is bought."}
+  },
+  {
+   "file": "warnings",
+   "id": "E11-warning",
+   "note": "Freeing Lautrec does not decide it: left in his cell, he walks out on his own once the Bell Gargoyles are dead or both Fire Keeper Souls are taken.",
+   "op": "add",
+   "source": "m10_02_00_00 Event_11020555 (Anastacia, 6060, killed: state 1141, once both bells are rung, flag 11500200, or both Fire Keeper Souls are taken, flags 812 and 813, with Lautrec neither hostile nor dead, flags 1574 and 1575); m10_02_00_00 Event_11020410 (Lautrec leaves Firelink, state 1578, on the same trigger); m10_01_00_00 Event_11010552 (Lautrec leaves his cell unfreed, state 1577, once flag 3 or flags 812 and 813 are on); m10_02_00_00 Event_11020110 (the bonfire is out, flag 11020100, until 11020101 after talk t102606 sets 11020609) and Event_11020556 (state 1146 once the Black Eye Orb, lot 2034, is taken, flag 810)",
+   "value": {"id": "lautrec", "npc": "Lautrec of Carim", "text": "Once both bells are rung, or both Fire Keeper Souls (Undead Parish and Blighttown) are taken, Anastacia is killed and Lautrec leaves Firelink, whether or not you freed him. The Firelink Shrine bonfire stays out until her soul is returned to her, a quest that starts with the Black Eye Orb."}
+  },
+  {
+   "file": "warnings",
+   "id": "E16",
+   "op": "add",
+   "source": "m13_01_00_00 Event_11310002 (cutscene 130110 or 130111 moves the player to region 1312120 once Patches is in state 1623, set by Event_11310540 after Pinwheel, flag 6, or Rhea's state 1173)",
+   "value": {"id": "patches", "npc": "Trusty Patches", "text": "In the Tomb of the Giants, once Pinwheel is dead or Rhea has set out there, he waits by a ledge and kicks you into the pit below. It is a cutscene, not a death."}
+  },
+  {
+   "file": "warnings",
+   "id": "E17",
+   "op": "add",
+   "source": "m14_01_00_00 Event_11410541 (state 1504 when talk t141628 sets flag 11410590 while any of characters 1410410-1410413 is alive) and Event_11410542 (state 1505 once all four are dead and Solaire, 6286, is alive)",
+   "value": {"id": "solaire", "npc": "Solaire of Astora", "text": "In Lost Izalith, kill the four Chaos Bugs before you speak to him there, or he is lost to the Sunlight Maggot."}
+  },
+  {
+   "file": "warnings",
+   "id": "E18-warning",
+   "op": "add",
+   "source": "m16_00_00_00 Event_11600537 and Event_11600540; talk t160634",
+   "value": {"id": "kaathe", "npc": "Darkstalker Kaathe", "text": "He appears in the Abyss after the Four Kings only if the Lordvessel is not placed yet. Refuse him or attack him, and he leaves for good."}
+  }
+ ]
+}
