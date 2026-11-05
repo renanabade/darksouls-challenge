@@ -1,24 +1,11 @@
 using DarkSoulsChallenge.Core;
+using DarkSoulsChallenge.Core.Api;
 using DarkSoulsChallenge.Core.Generation;
-using DarkSoulsChallenge.Core.Orders;
 using DarkSoulsChallenge.Server.Data;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace DarkSoulsChallenge.Server.Generation;
-
-/// <summary>A solo challenge to store: a code, or the settings to make one from. Settings left out are drawn by the seed.</summary>
-public sealed record CreateChallengeRequest(
-    string? Code = null,
-    string? Seed = null,
-    Difficulty Difficulty = Difficulty.Medium,
-    Length Length = Length.Full,
-    Curve? Curve = null,
-    string? StartingClass = null,
-    int? GiftRow = null,
-    int? LevelCap = null);
-
-public sealed record JobResponse(Guid Id, string Code, string Status, Guid? ChallengeId, string? Error);
 
 public static class ChallengeEndpoints
 {

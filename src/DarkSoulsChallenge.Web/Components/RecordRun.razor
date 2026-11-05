@@ -1,0 +1,83 @@
+@inject ApiClient Api
+
+<section class="record">
+    <h3 class="section-title">Finished it?</h3>
+    @if (_recorded is not null)
+    {
+        <p>Recorded for @_recorded.DisplayName: worth @_recorded.Score points. <a href="ranking">See the ranking.</a></p>
+    }
+    else if (!_signedIn)
+    {
+        <p class="fine"><a href="account">Sign in</a> to record this run on the ranking.</p>
+    }
+    else
+    {
+        <form class="panel form" @onsubmit="SubmitAsync" @onsubmit:preventDefault="true">
+            <div class="menu-row">
+                <label for="deaths">Deaths</label>
+                <input id="deaths" type="number" min="0" required @bind="_deaths" />
+            </div>
+            <div class="menu-row">
+                <label for="proof">Proof (optional)</label>
+                <input id="proof" type="url" maxlength="300" placeholder="https://…" @bind="_proof" />
+            </div>
+            <div class="form-actions">
+                <button class="prompt" type="submit" disabled="@_busy">@(_busy ? "Recording…" : "I followed every order")</button>
+            </div>
+        </form>
+        <p class="fine">It is your word: nobody checks it. Record it only if you broke no order.</p>
+    }
+    @if (_error is not null)
+    {
+        <p class="notice" role="alert">@_error</p>
+    }
+</section>
+
+@code {
+    private bool _signedIn;
+    private bool _busy;
+    private int _deaths;
+    private string _proof = "";
+    private string? _error;
+    private RunResponse? _recorded;
+    private string? _shownCode;
+
+    [Parameter, EditorRequired]
+    public required string Code { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (_shownCode != Code)
+        {
+            _shownCode = Code;
+            _recorded = null;
+            _error = null;
+            _deaths = 0;
+            _proof = "";
+        }
+
+        _signedIn = await Api.IsSignedInAsync();
+    }
+
+    private async Task SubmitAsync()
+    {
+        _busy = true;
+        _error = null;
+        try
+        {
+            _recorded = await Api.SubmitRunAsync(Code, _deaths, _proof);
+        }
+        catch (ApiException error)
+        {
+            _error = error.Message;
+        }
+        catch (HttpRequestException)
+        {
+            _error = "The server cannot be reached right now.";
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+}

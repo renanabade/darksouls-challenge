@@ -45,6 +45,7 @@ public sealed class ServerFixture : WebApplicationFactory<Program>, IAsyncLifeti
     {
         builder.UseSetting("ConnectionStrings:Default", ConnectionString);
         builder.UseSetting("RateLimits:GenerationPerMinute", "100000");
+        builder.UseSetting("RateLimits:AuthPerMinute", "100000");
 
         // The tests run the worker's steps themselves, so nothing races them. One test turns it back on.
         builder.UseSetting("Generation:Background", "false");
