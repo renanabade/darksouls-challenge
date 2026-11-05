@@ -95,12 +95,13 @@ public sealed class BrowserTests(ServerFixture server) : IAsyncLifetime
         Click("Create account");
         Type("name", name);
         Click("Save name");
+        WaitForText(By.ClassName("saved"), "Saved");
         Wait(By.CssSelector("a[href='ranking']")).Click();
         Wait(By.ClassName("page-title"));
         Wait(By.CssSelector("a[href='']")).Click();
 
         // Generate draws a new challenge, in the same tab, so the sign-in holds.
-        Type("length", "Short");
+        new SelectElement(Wait(By.Id("length"))).SelectByText("Short");
         Click("Generate");
         Wait(By.ClassName("code"));
         Type("deaths", "4");
