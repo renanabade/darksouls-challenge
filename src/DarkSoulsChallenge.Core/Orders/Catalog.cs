@@ -199,7 +199,7 @@ public static class Catalog
             Number = 13,
             Weight = new(2, 1),
             Title = "Phase swap",
-            Text = "After the Asylum Demon and until {milestone}: {before}. After it: drop what does not fit and follow {after}.",
+            Text = "After the Asylum Demon and until {milestone}: {before}. From then on, use {after}.",
             Params = Params(("milestone", P.Milestone), ("before", P.EquipmentSet), ("after", P.EquipmentSet)),
             Trigger = new Trigger.MilestoneReached(new MilestoneRef.Param("milestone")),
             Scope = new Scope.Phase(new MilestoneRef.Param("milestone")),

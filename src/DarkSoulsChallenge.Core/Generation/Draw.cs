@@ -93,6 +93,9 @@ public static class Draw
     /// </summary>
     private const int MinPickups = 5;
 
+    /// <summary>The Abyss's bonfire only exists after the Four Kings, so forbidding it costs nothing.</summary>
+    private const string NoBonfireAsksNothing = "the-abyss";
+
     /// <summary>What an errand sends the player for: equipment and spells, not consumables or keys.</summary>
     private static readonly HashSet<string> ErrandKinds = new(StringComparer.Ordinal) { "weapon", "armor", "ring", "spell" };
 
@@ -224,7 +227,7 @@ public static class Draw
             AreasWithWeapons = SortedSet(AreasIn(weaponLocations)),
             AreasWithArmor = SortedSet(AreasIn(found.Where(l => l.Kind == "armor"))),
             AreasWithPickups = SortedSet(pickups.Where(p => p.Value >= MinPickups).Select(p => p.Key)),
-            AreasWithBonfires = SortedSet(AreasIn(bonfires)),
+            AreasWithBonfires = SortedSet(AreasIn(bonfires).Where(a => a != NoBonfireAsksNothing)),
             AreasWithLizards = SortedSet(AreasIn(world.Locations.Where(l => l.Category == Validator.CrystalLizard))),
             Errands = errands,
             ChestsByArea = world.Chests.Select(c => AreaOf(c.Region)).OfType<string>()

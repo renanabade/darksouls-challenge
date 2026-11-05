@@ -104,6 +104,9 @@ public sealed record Chest(string Region);
 /// </summary>
 public sealed class World
 {
+    /// <summary>The game's short name, as challenge codes write it.</summary>
+    public string Game { get; init; } = "ds1";
+
     /// <summary>The data set's version; part of a challenge's identity.</summary>
     public required string DataVersion { get; init; }
 

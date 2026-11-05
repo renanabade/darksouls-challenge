@@ -114,6 +114,104 @@ public class GeneratorTests
     }
 
     [Fact]
+    public void Brings_back_what_a_chapters_other_way_closes_in_the_next_chapter_with_rules()
+    {
+        // Nothing in chapter 1 prints; the first chapter that prints after the closure lists what it hid.
+        ChapterPlan Plan(string goal, string[] areas, string[] bosses) => Everything() with { Goal = goal, Goals = [goal], Areas = areas, Bosses = bosses };
+        var chapters = Generator.ReachableChapters(
+            Ds1,
+            [
+                Plan("a", ["royal-wood", "oolacile-township"], ["knight-artorias"]),
+                Plan("b", ["depths"], []),
+                Plan("c", ["anor-londo"], ["gwyndolin"]),
+            ],
+            [
+                Order("the-other-way", new() { ["area"] = "royal-wood", ["until"] = "kiln-open" }, 0),
+                Order("dry-fight", new() { ["boss"] = "gwyndolin" }, 2),
+            ],
+            []);
+        Assert.Empty(chapters[0].Areas);
+        Assert.Empty(chapters[0].Bosses);
+        Assert.Contains("royal-wood", chapters[2].Areas);
+        Assert.Contains("oolacile-township", chapters[2].Areas);
+        Assert.Contains("knight-artorias", chapters[2].Bosses);
+    }
+
+    [Fact]
+    public void Never_brings_back_what_the_run_forbids()
+    {
+        var chapters = Generator.ReachableChapters(
+            Ds1,
+            [Everything(), Everything()],
+            [
+                Order("forbidden-area", new() { ["area"] = "royal-wood" }),
+                Order("the-other-way", new() { ["area"] = "royal-wood", ["until"] = "kiln-open" }, 0),
+            ],
+            []);
+        Assert.All(chapters, c => Assert.DoesNotContain("royal-wood", c.Areas));
+        Assert.All(chapters, c => Assert.DoesNotContain("knight-artorias", c.Bosses));
+    }
+
+    // Darkroot closed in one chapter once left Sif with no Darkroot listed later.
+    [Fact]
+    public void Across_many_seeds_a_closed_area_reappears_in_a_later_chapter()
+    {
+        var closures = 0;
+        foreach (var challenge in Enumerable.Range(0, 200)
+            .AsParallel()
+            .Select(i => Generator.Generate(Ds1, Config($"closed-{i}", Curves.Difficulties[i % 4], Length.Full))))
+        {
+            foreach (var order in challenge.Orders.Where(o => o.Template.Id == "the-other-way"))
+            {
+                var area = order.Args.Text("area")!;
+                var printed = challenge.Chapters
+                    .Where((_, k) => k > order.Chapter && challenge.Orders.Any(o => o.Chapter == k))
+                    .ToList();
+                if (printed.Count == 0) continue;
+                Assert.Contains(printed, chapter => chapter.Areas.Contains(area));
+                closures++;
+            }
+        }
+
+        Assert.True(closures > 20, $"only {closures} closures to look at");
+    }
+
+    [Fact]
+    public void Caps_the_rules_about_how_a_fight_is_fought_at_three_per_run()
+    {
+        foreach (var challenge in Enumerable.Range(0, 60)
+            .AsParallel()
+            .Select(i => Generator.Generate(Ds1, Config($"fights-{i}", Curves.Difficulties[i % 4], (Length)(i % 3)))))
+        {
+            Assert.True(challenge.Orders.Count(o => o.Template.Id is "dry-fight" or "exploit-weakness" or "against-the-grain") <= 3);
+        }
+    }
+
+    [Fact]
+    public void Leaves_the_Abyss_out_of_no_bonfire()
+    {
+        Assert.DoesNotContain("the-abyss", Draw.DomainsOf(Ds1).AreasWithBonfires);
+        Assert.Contains(Ds1.Locations, l => l.Category == "BONFIRE" && Ds1.Regions[l.Region].Area == "the-abyss");
+    }
+
+    [Fact]
+    public void Separates_bosses_with_a_dot_because_their_names_hold_commas()
+    {
+        var manual = Manual.Render(Ds1, Generator.Generate(Ds1, Config("dots", Difficulty.Medium, Length.Short)));
+        var line = manual.Split('\n').First(l => l.Contains("**Bosses:**", StringComparison.Ordinal) && l.Contains("Lord of Cinder", StringComparison.Ordinal));
+        Assert.Contains("Gwyn, Lord of Cinder", line, StringComparison.Ordinal);
+        var multiple = manual.Split('\n').First(l => l.Contains("**Bosses:** Asylum Demon", StringComparison.Ordinal));
+        Assert.Contains("Asylum Demon · ", multiple, StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void Writes_a_phase_swap_as_what_to_use_from_then_on()
+    {
+        var text = Manual.OrderText(Ds1, Generated("phase-swap", new() { ["milestone"] = "both-bells", ["before"] = "dagger", ["after"] = "curved sword" }));
+        Assert.Equal("After the Asylum Demon and until you have rung both bells: only daggers. From then on, use only curved swords.", text);
+    }
+
+    [Fact]
     public void Ends_every_manual_with_what_the_scripts_do_to_NPCs()
     {
         var manual = Manual.Render(Ds1, Generator.Generate(Ds1, Config("ashen-one", Difficulty.Medium, Length.Full)));

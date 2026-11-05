@@ -56,6 +56,9 @@ public sealed record Challenge
 {
     public required GeneratorConfig Config { get; init; }
 
+    /// <summary>What the player shares. In a group, the code of the hardest player's challenge, which holds the structure.</summary>
+    public required string Code { get; init; }
+
     public required string DataVersion { get; init; }
 
     public required Setup Setup { get; init; }
@@ -78,7 +81,7 @@ public sealed record Challenge
 public static class Generator
 {
     /// <summary>Version of the drawing rules; part of the seed, so a change in the rules never reuses an old draw.</summary>
-    public const string Version = "7";
+    public const string Version = "8";
 
     private const string Asylum = "boss-asylum-demon";
 
@@ -99,6 +102,11 @@ public static class Generator
         ["every-chest"] = 1,
         ["counted-attempts"] = 3,
     };
+
+    /// <summary>Rules about how one fight is fought: together they would crowd out every other rule of a run.</summary>
+    private static readonly HashSet<string> FightRules = new(StringComparer.Ordinal) { "dry-fight", "exploit-weakness", "against-the-grain" };
+
+    private const int FightRulesCap = 3;
 
     /// <summary>Orders that rule the whole journey; every other static order belongs to a chapter.</summary>
     private static readonly HashSet<string> JourneyTemplates = new(StringComparer.Ordinal)
@@ -221,7 +229,7 @@ public static class Generator
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(config);
-        var rng = new SeededRandom($"{config.Seed}|{world.DataVersion}|{Version}");
+        var rng = new SeededRandom($"{ChallengeCode.SeedNumber(config.Seed)}|{world.DataVersion}|{Version}");
         var setup = DrawSetup(world, config, rng);
         var domains = Draw.DomainsOf(world);
         var curve = config.Curve ?? rng.Pick(Curves.All);
@@ -308,6 +316,7 @@ public static class Generator
             {
                 if (added >= section.Target) break;
                 if (uses.GetValueOrDefault(template.Id) >= RunCaps.GetValueOrDefault(template.Id, int.MaxValue)) continue;
+                if (FightRules.Contains(template.Id) && FightRules.Sum(id => uses.GetValueOrDefault(id)) >= FightRulesCap) continue;
 
                 // Leave room for the orders still to come, at the lightest weight.
                 if (spent + template.Weight.Difficulty + (section.Target - added - 1) > budget) continue;
@@ -340,7 +349,7 @@ public static class Generator
             }
         }
 
-        return Finish(world, config, setup, curve, plans, chosen);
+        return Finish(world, config, ChallengeCode.Encode(world, config), setup, curve, plans, chosen);
     }
 
     /// <summary>
@@ -363,9 +372,10 @@ public static class Generator
     }
 
     /// <summary>
-    /// The chapter the player reads. An area closed in the chapter (forbidden for the run, or "the other way" of that
-    /// chapter) is left out, and so are the areas and bosses that can only be reached through one, so the manual does not
-    /// send the player somewhere the orders closed.
+    /// The chapters the player reads. An area forbidden for the run is left out, and so are the areas and bosses that can
+    /// only be reached through one, so the manual does not send the player somewhere the orders closed. An area "the other
+    /// way" closes for a chapter is only postponed: it and what lies past it come back in the next chapter with rules, so
+    /// Darkroot Garden closed once does not leave Sif with no Darkroot listed later.
     /// </summary>
     public static IReadOnlyList<ChapterPlan> ReachableChapters(
         World world,
@@ -377,25 +387,46 @@ public static class Generator
         ArgumentNullException.ThrowIfNull(chapters);
         ArgumentNullException.ThrowIfNull(orders);
         var forbidden = ForbiddenAreas(orders).ToList();
-        return chapters.Select((chapter, k) =>
+        var open = forbidden.Count > 0 ? Reachability.WithoutAreas(world, forbidden, items).Regions : null;
+        bool AreaOpen(string area, IReadOnlySet<string>? reached, IReadOnlyList<string> closed) =>
+            !closed.Contains(area) && (reached is null || world.RegionsInArea(area).Any(reached.Contains));
+        bool BossOpen(string id, IReadOnlySet<string>? reached)
         {
-            var closed = forbidden
-                .Concat(orders.Where(o => o.Template.Id == "the-other-way" && o.Chapter == k).Select(o => o.Args.Text("area")).OfType<string>())
-                .ToList();
-            if (closed.Count == 0) return chapter;
-            var reached = Reachability.WithoutAreas(world, closed, items).Regions;
-            return chapter with
+            var region = world.Bosses.GetValueOrDefault(id)?.Region;
+            return string.IsNullOrEmpty(region) || reached is null || reached.Contains(region);
+        }
+
+        var result = new List<ChapterPlan>();
+        var postponedAreas = new List<string>();
+        var postponedBosses = new List<string>();
+        for (var k = 0; k < chapters.Count; k++)
+        {
+            var chapter = chapters[k];
+            var index = k;
+            var otherWay = orders.Where(o => o.Template.Id == "the-other-way" && o.Chapter == index).Select(o => o.Args.Text("area")).OfType<string>().ToList();
+            var closed = forbidden.Concat(otherWay).ToList();
+            var reached = closed.Count > 0 ? Reachability.WithoutAreas(world, closed, items).Regions : null;
+            var areas = chapter.Areas.Union(postponedAreas, StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList();
+            var bosses = chapter.Bosses.Union(postponedBosses, StringComparer.Ordinal).Order(StringComparer.Ordinal).ToList();
+            result.Add(chapter with
             {
-                Areas = chapter.Areas
-                    .Where(area => !closed.Contains(area) && world.RegionsInArea(area).Any(reached.Contains))
-                    .ToList(),
-                Bosses = chapter.Bosses.Where(id =>
-                {
-                    var region = world.Bosses.GetValueOrDefault(id)?.Region;
-                    return string.IsNullOrEmpty(region) || reached.Contains(region);
-                }).ToList(),
-            };
-        }).ToList();
+                Areas = areas.Where(a => AreaOpen(a, reached, closed)).ToList(),
+                Bosses = bosses.Where(b => BossOpen(b, reached)).ToList(),
+            });
+
+            // What this chapter's other way hides waits for a later chapter; what the run forbids never comes back. A
+            // chapter with no rules is not printed, so what it would show goes on waiting.
+            var printed = orders.Any(o => o.Chapter == index);
+            postponedAreas = areas.Where(a => !AreaOpen(a, reached, closed) && AreaOpen(a, open, forbidden)).ToList();
+            postponedBosses = bosses.Where(b => !BossOpen(b, reached) && BossOpen(b, open)).ToList();
+            if (!printed)
+            {
+                postponedAreas.AddRange(areas.Where(a => AreaOpen(a, reached, closed) && !chapter.Areas.Contains(a)));
+                postponedBosses.AddRange(bosses.Where(b => BossOpen(b, reached) && !chapter.Bosses.Contains(b)));
+            }
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -425,6 +456,7 @@ public static class Generator
     private static Challenge Finish(
         World world,
         GeneratorConfig config,
+        string code,
         Setup setup,
         Curve curve,
         IReadOnlyList<ChapterPlan> chapters,
@@ -440,6 +472,7 @@ public static class Generator
         return new Challenge
         {
             Config = config,
+            Code = code,
             DataVersion = world.DataVersion,
             Setup = setup,
             Curve = curve,
@@ -601,6 +634,7 @@ public static class Generator
         return Finish(
             world,
             solo.Config with { Difficulty = difficulty },
+            solo.Code,
             solo.Setup with { LevelCap = levelCap },
             solo.Curve,
             chapters,

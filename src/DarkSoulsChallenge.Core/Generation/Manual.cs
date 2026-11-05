@@ -31,7 +31,8 @@ public sealed record ChallengeWarning(string Npc, string Text);
 /// </summary>
 public sealed record ChallengeView
 {
-    public required string Seed { get; init; }
+    /// <summary>The challenge code, the one thing a player shares.</summary>
+    public required string Code { get; init; }
 
     public required string GeneratorVersion { get; init; }
 
@@ -313,7 +314,7 @@ public static partial class Manual
 
         return new ChallengeView
         {
-            Seed = config.Seed,
+            Code = challenge.Code,
             GeneratorVersion = Generator.Version,
             DataVersion = challenge.DataVersion,
             StartingClass = setup.StartingClass ?? "",
@@ -348,7 +349,7 @@ public static partial class Manual
 
         var lines = new List<string>
         {
-            $"# Dark Souls challenge — seed {view.Seed}",
+            $"# Dark Souls challenge — {view.Code}",
             "",
             $"- **Class:** {view.StartingClass}",
             $"- **Starting gift:** {(view.Gift.Count > 0 ? string.Join(", ", view.Gift) : "none")}",
@@ -365,7 +366,7 @@ public static partial class Manual
         foreach (var chapter in view.Chapters)
         {
             var about = new List<string> { $"Until {chapter.Until}", $"**Areas:** {string.Join(", ", chapter.Areas)}" };
-            if (chapter.Bosses.Count > 0) about.Add($"**Bosses:** {string.Join(", ", chapter.Bosses)}");
+            if (chapter.Bosses.Count > 0) about.Add($"**Bosses:** {string.Join(" · ", chapter.Bosses)}");
             about.Add($"**Difficulty:** {chapter.Difficulty.Name()}");
             lines.Add($"## {chapter.Heading}");
             lines.Add("");
@@ -377,7 +378,7 @@ public static partial class Manual
 
         lines.AddRange(Notes("Definitions", view.Definitions.Select(d => (d.Term, d.Text)).ToList()));
         lines.AddRange(Notes("Before you go", view.Warnings.Select(w => (w.Npc, w.Text)).ToList()));
-        lines.Add($"<sub>Data {view.DataVersion}. Same seed and settings, same challenge.</sub>");
+        lines.Add($"<sub>Data {view.DataVersion}. Same code, same challenge.</sub>");
         lines.Add("");
         return string.Join('\n', lines);
     }

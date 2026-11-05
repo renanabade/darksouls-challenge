@@ -9,10 +9,12 @@ using DarkSoulsChallenge.Core.Orders;
 //   dotnet run --project src/DarkSoulsChallenge.Cli -- --seed ashen-one --difficulty medium --length epic --curve rising
 //   dotnet run --project src/DarkSoulsChallenge.Cli -- --seed ashen-one --class Knight --gift 2406 --level-cap 30 --json
 //   dotnet run --project src/DarkSoulsChallenge.Cli -- --seed ashen-one --players easy,hard
+//   dotnet run --project src/DarkSoulsChallenge.Cli -- --code ds1.8.07-K3F9QX2M7T
 //
-// Without --seed, a random one is drawn and printed, so the challenge can be shared.
+// Without --seed or --code, a seed is drawn. The manual prints the code, so the challenge can be shared.
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+var code = new Option<string?>("--code") { Description = "A challenge code: reproduces that challenge exactly, whatever the other settings." };
 var seed = new Option<string?>("--seed") { Description = "Same seed and settings, same challenge. Drawn when absent." };
 var difficulty = new Option<Difficulty>("--difficulty") { Description = "easy, medium, hard or extreme.", DefaultValueFactory = _ => Difficulty.Medium };
 var players = new Option<string?>("--players") { Description = "One difficulty per player, comma separated: a challenge for a group, with handicap." };
@@ -24,7 +26,7 @@ var levelCap = new Option<int?>("--level-cap") { Description = "Soul level cap. 
 var data = new Option<string?>("--data") { Description = "Directory of the data set. Defaults to data/ds1 of this repository." };
 var json = new Option<bool>("--json") { Description = "Print JSON instead of the manual." };
 
-var root = new RootCommand("Generates a Dark Souls challenge.") { seed, difficulty, players, length, curve, startingClass, gift, levelCap, data, json };
+var root = new RootCommand("Generates a Dark Souls challenge.") { code, seed, difficulty, players, length, curve, startingClass, gift, levelCap, data, json };
 root.SetAction(parsed =>
 {
     try
@@ -33,6 +35,7 @@ root.SetAction(parsed =>
         var playerList = parsed.GetValue(players);
         var request = new GenerationRequest
         {
+            Code = parsed.GetValue(code),
             Seed = parsed.GetValue(seed),
             Players = playerList is null ? [parsed.GetValue(difficulty)] : ParsePlayers(playerList),
             Length = parsed.GetValue(length),
