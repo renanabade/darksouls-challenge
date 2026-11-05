@@ -244,6 +244,60 @@ public class WeaponOrderTests
         Assert.Equal(["Covenant of Artorias", "Orange Charred Ring"], late.Orders[0].Exceptions);
     }
 
+    // From the chapter's start, not the run's: what lies behind the player is not what the chapter needs.
+    [Theory]
+    [InlineData("kiln-open", "boss-gwyn-lord-of-cinder")]
+    [InlineData("boss-asylum-demon", "bell-undead-parish")]
+    public void Excepts_no_ring_in_a_chapter_that_needs_none(string from, string until)
+    {
+        var chapter = Order("chapter-restriction", new() { ["from"] = from, ["until"] = until, ["restriction"] = "no-rings" });
+        var result = Run("Knight", 30, chapter);
+        Assert.Equal(Verdict.Comfortable, result.Verdict);
+        Assert.Empty(result.Orders[0].Exceptions);
+    }
+
+    [Theory]
+    [InlineData("lordvessel-placed", "lord-souls-placed-3", "Covenant of Artorias")] // the Four Kings, in the Abyss
+    [InlineData("lordvessel-placed", "lord-souls-placed-2", "Orange Charred Ring")] // the Bed of Chaos, past the lava
+    public void Excepts_only_the_ring_a_chapters_own_goal_needs(string from, string until, string ring)
+    {
+        var chapter = Order("chapter-restriction", new() { ["from"] = from, ["until"] = until, ["restriction"] = "no-rings" });
+        Assert.Equal([ring], Run("Knight", 30, chapter).Orders[0].Exceptions);
+    }
+
+    private static OrderInstance Lords() => Order("lord-order", new()
+    {
+        ["order"] = new[] { "Lord Soul (Nito)", "Bequeathed Lord Soul Shard (Seath)", "Bequeathed Lord Soul Shard (Four Kings)", "Lord Soul (Bed of Chaos)" },
+    });
+
+    // The Kiln's chapter starts with every soul placed, so it needs no ring, though the run as a whole needs two.
+    [Fact]
+    public void Excepts_no_ring_in_the_Kilns_chapter()
+    {
+        var kiln = Order("chapter-restriction", new() { ["from"] = "lord-souls-placed-2", ["until"] = "boss-gwyn-lord-of-cinder", ["restriction"] = "no-rings" });
+        var result = Run("Knight", 30, Lords(), kiln);
+        Assert.Equal(Verdict.Comfortable, result.Verdict);
+        Assert.Empty(result.Orders[1].Exceptions);
+    }
+
+    [Fact]
+    public void Excepts_the_rings_of_the_souls_still_ahead_by_the_order_of_the_Lords()
+    {
+        OrderInstance Chapter(string from, string until) => Order("chapter-restriction", new() { ["from"] = from, ["until"] = until, ["restriction"] = "no-rings" });
+
+        // After the Four Kings, only the Bed of Chaos is ahead. Before them, the Covenant is still needed too.
+        Assert.Equal(["Orange Charred Ring"], Run("Knight", 30, Lords(), Chapter("lord-souls-placed-3", "lord-souls-placed-2")).Orders[1].Exceptions);
+        Assert.Equal(["Covenant of Artorias"], Run("Knight", 30, Lords(), Chapter("lord-souls-placed-4", "lord-souls-placed-3")).Orders[1].Exceptions);
+    }
+
+    // Without the order of the Lords, any soul may still be ahead: the worst case.
+    [Fact]
+    public void Excepts_both_rings_when_the_souls_ahead_are_not_known()
+    {
+        var chapter = Order("chapter-restriction", new() { ["from"] = "lord-souls-placed-1", ["until"] = "boss-gwyn-lord-of-cinder", ["restriction"] = "no-rings" });
+        Assert.Equal(["Covenant of Artorias", "Orange Charred Ring"], Run("Knight", 30, chapter).Orders[0].Exceptions);
+    }
+
     [Fact]
     public void Swaps_fighting_style_at_the_Lordvessel_when_one_build_fits_both()
     {

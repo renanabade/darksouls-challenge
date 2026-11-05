@@ -51,7 +51,7 @@ internal sealed class ValidationRun
 
     private sealed record ExceptionOrder(ResultBuilder Result, Func<IReadOnlyList<Location>> Candidates);
 
-    private sealed record ChapterException(ResultBuilder Result, RestrictionEffect Effect, Milestone Until);
+    private sealed record ChapterException(ResultBuilder Result, Milestone From, Milestone Until);
 
     private readonly World _world;
     private readonly Setup _setup;
@@ -212,16 +212,16 @@ internal sealed class ValidationRun
             .ToList();
     }
 
-    private void Restrict(string id, ResultBuilder result, string label, Milestone? until = null)
+    private void Restrict(string id, ResultBuilder result, string label, (Milestone From, Milestone Until)? chapter = null)
     {
         _activeRestrictions.Add(id);
         var restriction = Restrictions.Find(id) ?? throw new InvalidOrderException($"{label}: unknown restriction \"{id}\"");
         if (restriction.Effect == RestrictionEffect.OneHanded) _twoHanding = false;
         if (restriction.Effect == RestrictionEffect.NoLevelUps) _noLevelUps = true;
         if (restriction.Effect != RestrictionEffect.NoRings) return;
-        if (until is not null)
+        if (chapter is { } stretch)
         {
-            _chapterExceptions.Add(new ChapterException(result, restriction.Effect, until));
+            _chapterExceptions.Add(new ChapterException(result, stretch.From, stretch.Until));
         }
         else
         {
@@ -274,8 +274,7 @@ internal sealed class ValidationRun
                 foreach (var id in ListArg(args, "restrictions", label)) Restrict(id, result, label);
                 break;
             case "chapter-restriction":
-                MilestoneArg(args, "from", label);
-                Restrict(StringArg(args, "restriction", label), result, label, MilestoneArg(args, "until", label));
+                Restrict(StringArg(args, "restriction", label), result, label, (MilestoneArg(args, "from", label), MilestoneArg(args, "until", label)));
                 break;
 
             // Worst case: the player may never earn a point.
@@ -742,15 +741,26 @@ internal sealed class ValidationRun
             }
         }
 
-        // The same, for a chapter: each item of the kind is forbidden in turn until the chapter's goal; one without
-        // which the goal cannot be reached is an exception. An item the chapter cannot obtain is never needed for its
-        // goal, so the list holds only what the chapter itself needs.
-        foreach (var (result, _, until) in _chapterExceptions)
+        // The same, for a chapter, from where the chapter starts: the player already holds what can be taken before the
+        // chapter's goal, except the rings themselves. Each ring is then forbidden in turn; one without which the goal
+        // cannot be reached is an exception. So the list holds only what the chapter itself needs: the Kiln's chapter needs
+        // no ring, though the run as a whole needs two.
+        foreach (var (result, from, until) in _chapterExceptions)
         {
             var pickups = RingLocations().Where(l => !_constraints.Locations.Contains(l)).ToList();
+            var rings = pickups.Select(l => l.Item).ToHashSet(StringComparer.Ordinal);
+            var behind = MilestonesBehind(from);
+            var done = behind.SelectMany(m => BossesRequiredFor(_constraints, $"milestone:{m.Id}", m.Requires)).ToHashSet();
+            var bossesAhead = BossesRequiredFor(_constraints, $"milestone:{until.Id}", until.Requires).Where(b => !done.Contains(b));
+            var stillAhead = SetOf(until.Requires.Items().Except(behind.SelectMany(m => m.Requires.Items()), StringComparer.Ordinal).Concat(Defeats(bossesAhead)));
+            var atChapterStart = Run(_constraints, stillAhead).Items.Where(i => !rings.Contains(i)).ToList();
             var forbidden = _constraints.Locations.Concat(pickups).ToHashSet();
-            bool ReachesGoal() =>
-                Run(new Constraints { Regions = _constraints.Regions, Locations = forbidden }).Satisfies(until.Requires);
+            bool ReachesGoal() => Reachability.Walk(_world, new ReachOptions
+            {
+                Items = atChapterStart,
+                ForbiddenRegions = _constraints.Regions,
+                ForbiddenLocations = forbidden,
+            }).Satisfies(until.Requires);
 
             if (ReachesGoal()) continue;
             forbidden.ExceptWith(pickups);
@@ -764,6 +774,20 @@ internal sealed class ValidationRun
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// The milestones a chapter starting at this one has behind it. Each Lord Soul's milestone holds only its own soul, so
+    /// the souls placed before it come from the journey's order of the Lords.
+    /// </summary>
+    private List<Milestone> MilestonesBehind(Milestone from)
+    {
+        var order = _orders.FirstOrDefault(o => o.Template.Id == "lord-order")?.Args.List("order");
+        if (from.Kind != "lord-souls" || order is null) return [from];
+        var placed = order.TakeWhile(soul => !from.Requires.Items().Contains(soul)).ToHashSet(StringComparer.Ordinal);
+        return _world.Milestones.Values
+            .Where(m => m == from || (m.Kind == "lord-souls" && m.Requires.Items().Any(placed.Contains)))
+            .ToList();
     }
 
     private static IEnumerable<string> Defeats(IEnumerable<Boss> bosses) => bosses.Select(b => b.DefeatedItem);
