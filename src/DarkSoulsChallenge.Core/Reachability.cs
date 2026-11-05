@@ -15,8 +15,18 @@ public sealed record ReachOptions
     public IReadOnlySet<Location>? ForbiddenLocations { get; init; }
 }
 
-public sealed record Reach(IReadOnlySet<string> Regions, IReadOnlySet<string> Items)
+public sealed class Reach
 {
+    internal Reach(IReadOnlySet<string> regions, IReadOnlySet<string> items)
+    {
+        Regions = regions;
+        Items = items;
+    }
+
+    public IReadOnlySet<string> Regions { get; }
+
+    public IReadOnlySet<string> Items { get; }
+
     /// <summary>Whether the requirement holds with what this reach holds and has reached.</summary>
     public bool Satisfies(Requirement requirement)
     {
@@ -28,88 +38,116 @@ public sealed record Reach(IReadOnlySet<string> Regions, IReadOnlySet<string> It
 public static class Reachability
 {
     /// <summary>
-    /// Everything the player can reach from the start, by fixed point: cross every entrance whose requirement
-    /// holds, take every item in the regions reached, and repeat until nothing changes. Each round only adds, so
-    /// the loop ends after at most one round per region.
+    /// Everything the player can reach from the start, by fixed point: cross every entrance whose requirement holds, take
+    /// every item in the regions reached, and repeat until nothing changes. Each round only adds, so the loop ends after at
+    /// most one round per region.
     /// </summary>
     public static Reach Walk(World world, ReachOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(world);
         options ??= new ReachOptions();
-        var forbiddenItems = options.ForbiddenItems;
-        var forbiddenRegions = options.ForbiddenRegions;
+        var graph = world.Graph;
         var forbiddenLocations = options.ForbiddenLocations;
-        var startingItems = options.Items?.ToList() ?? [];
+        var forbiddenItemNames = options.ForbiddenItems;
 
-        var itemsByRegion = new Dictionary<string, List<string>>(StringComparer.Ordinal);
-        foreach (var location in world.Locations)
+        var forbiddenRegion = new bool[graph.RegionNames.Length];
+        if (options.ForbiddenRegions is { } closed)
         {
-            if (forbiddenLocations?.Contains(location) == true) continue;
-            if (itemsByRegion.TryGetValue(location.Region, out var inRegion)) inRegion.Add(location.Item);
-            else itemsByRegion[location.Region] = [location.Item];
+            foreach (var region in closed)
+            {
+                if (graph.RegionIds.TryGetValue(region, out var id)) forbiddenRegion[id] = true;
+            }
         }
 
-        var regions = new HashSet<string>(StringComparer.Ordinal);
-        var items = new HashSet<string>(StringComparer.Ordinal);
-        void Take(string item)
+        var forbiddenItem = new bool[graph.ItemNames.Count];
+        if (forbiddenItemNames is not null)
         {
-            if (forbiddenItems?.Contains(item) != true) items.Add(item);
+            foreach (var item in forbiddenItemNames)
+            {
+                if (graph.ItemIds.TryGetValue(item, out var id)) forbiddenItem[id] = true;
+            }
         }
 
-        bool Enter(string region)
+        var regions = new bool[graph.RegionNames.Length];
+        var items = new bool[graph.ItemNames.Count];
+        var heldFromStart = new bool[graph.ItemNames.Count];
+
+        // What the player starts with but the graph never mentions (most of a class's kit).
+        HashSet<string>? extras = null;
+        foreach (var item in options.Items ?? [])
         {
-            if (regions.Contains(region) || forbiddenRegions?.Contains(region) == true) return false;
-            regions.Add(region);
-            if (itemsByRegion.TryGetValue(region, out var here)) here.ForEach(Take);
+            if (graph.ItemIds.TryGetValue(item, out var id))
+            {
+                heldFromStart[id] = true;
+                if (!forbiddenItem[id]) items[id] = true;
+            }
+            else if (forbiddenItemNames?.Contains(item) != true)
+            {
+                (extras ??= new HashSet<string>(StringComparer.Ordinal)).Add(item);
+            }
+        }
+
+        bool Enter(int region)
+        {
+            if (regions[region] || forbiddenRegion[region]) return false;
+            regions[region] = true;
+            foreach (var pickup in graph.Pickups[region])
+            {
+                if (forbiddenLocations?.Contains(pickup.Location) == true) continue;
+                if (!forbiddenItem[pickup.Item]) items[pickup.Item] = true;
+            }
+
             return true;
         }
 
-        startingItems.ForEach(Take);
-        Enter(world.Start);
+        if (graph.Start >= 0) Enter(graph.Start);
 
-        // An entrance that must be crossed before an item is held: the player can cross it when it is open in the
-        // world without that item. Every state of the walk is one the player reaches with what it holds, so an
-        // entrance open while the item is not yet taken is crossable; only otherwise is the world without the item
-        // walked, once per item. An item held from the start closes the entrance from the start. Each entrance is
-        // judged on its own item: two entrances with different items are not asked to be crossed in one order
-        // (ADR 0011).
-        var held = startingItems.ToHashSet(StringComparer.Ordinal);
-        var without = new Dictionary<string, Reach>(StringComparer.Ordinal);
-        bool CrossableBefore(Entrance e)
+        // An entrance that must be crossed before an item is held: the player can cross it when it is open in the world
+        // without that item. Every state of the walk is one the player reaches with what it holds, so an entrance open
+        // while the item is not yet taken is crossable; only otherwise is the world without the item walked, once per item.
+        // An item held from the start closes the entrance from the start. Each entrance is judged on its own item: two
+        // entrances with different items are not asked to be crossed in one order (ADR 0011).
+        Dictionary<int, Reach>? without = null;
+        bool CrossableBefore(in GraphIndex.Edge e)
         {
-            if (e.Before is not { } before || forbiddenItems?.Contains(before) == true) return true;
-            if (held.Contains(before)) return false;
-            if (!items.Contains(before)) return true;
+            var before = e.Before;
+            if (before < 0 || forbiddenItem[before]) return true;
+            if (heldFromStart[before]) return false;
+            if (!items[before]) return true;
+            without ??= [];
             if (!without.TryGetValue(before, out var early))
             {
-                var stricter = new HashSet<string>(forbiddenItems ?? new HashSet<string>(), StringComparer.Ordinal) { before };
+                var stricter = new HashSet<string>(forbiddenItemNames ?? new HashSet<string>(), StringComparer.Ordinal)
+                {
+                    graph.ItemNames[before],
+                };
                 early = Walk(world, options with { ForbiddenItems = stricter });
                 without[before] = early;
             }
 
-            return early.Regions.Contains(e.To);
+            return early.Regions.Contains(graph.RegionNames[e.To]);
         }
 
-        Func<string, bool> has = items.Contains;
-        Func<string, bool> reached = regions.Contains;
         for (var changed = true; changed;)
         {
             changed = false;
-            foreach (var e in world.Entrances)
+            foreach (ref readonly var e in graph.Edges.AsSpan())
             {
-                if (regions.Contains(e.From) && !regions.Contains(e.To) && e.Requires.Evaluate(has, reached) && CrossableBefore(e))
+                if (regions[e.From] && !regions[e.To] && e.Requires.Holds(items, regions) && CrossableBefore(in e))
                 {
                     changed = Enter(e.To) || changed;
                 }
             }
         }
 
-        return new Reach(regions, items);
+        return new Reach(
+            new FlagSet(regions, graph.RegionNames, graph.RegionIds),
+            new FlagSet(items, graph.ItemNames, graph.ItemIds, extras));
     }
 
     /// <summary>
-    /// Everything still reachable once the given regions are closed. The walk runs once per distinct set of regions
-    /// and starting items; a later call with the same key returns the cached reach.
+    /// Everything still reachable once the given regions are closed. The walk runs once per distinct set of regions and
+    /// starting items; a later call with the same key returns the cached reach.
     /// </summary>
     public static Reach WithoutRegions(World world, IEnumerable<string> forbiddenRegions, IEnumerable<string>? items = null)
     {
@@ -125,8 +163,8 @@ public static class Reachability
     }
 
     /// <summary>
-    /// Everything still reachable once the given areas are closed. Uses the same cache as <see cref="WithoutRegions"/>:
-    /// one walk per distinct set of areas and starting items, never one per order.
+    /// Everything still reachable once the given areas are closed. Uses the same cache as <see cref="WithoutRegions"/>: one
+    /// walk per distinct set of areas and starting items, never one per order.
     /// </summary>
     public static Reach WithoutAreas(World world, IEnumerable<string> areas, IEnumerable<string>? items = null)
     {
