@@ -49,6 +49,11 @@ else
         </div>
     </form>
 
+    @if (_saved)
+    {
+        <p class="fine saved" role="status">Saved.</p>
+    }
+
     <h3 class="section-title">Your runs</h3>
     @if (_runs.Count == 0)
     {
@@ -82,6 +87,7 @@ else
     private string? _error;
     private bool _loading = true;
     private bool _busy;
+    private bool _saved;
 
     protected override async Task OnInitializedAsync()
     {
@@ -112,7 +118,11 @@ else
         await LoadAsync();
     });
 
-    private Task SaveNameAsync() => RunAsync(async () => _profile = await Api.SetDisplayNameAsync(_name));
+    private Task SaveNameAsync() => RunAsync(async () =>
+    {
+        _profile = await Api.SetDisplayNameAsync(_name);
+        _saved = true;
+    });
 
     private Task SignOutAsync() => RunAsync(async () =>
     {
@@ -130,6 +140,7 @@ else
     private async Task RunAsync(Func<Task> action)
     {
         _busy = true;
+        _saved = false;
         _error = null;
         try
         {
