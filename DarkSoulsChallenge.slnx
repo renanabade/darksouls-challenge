@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/DarkSoulsChallenge.Cli/DarkSoulsChallenge.Cli.csproj" />
     <Project Path="src/DarkSoulsChallenge.Core/DarkSoulsChallenge.Core.csproj" />
   </Folder>
   <Folder Name="/tests/">
