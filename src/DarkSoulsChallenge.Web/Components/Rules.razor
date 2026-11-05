@@ -1,0 +1,21 @@
+<ol class="rules">
+    @foreach (var rule in Items)
+    {
+        <li value="@rule.Number">
+            <span class="rule-number">@rule.Number</span>
+            <div>
+                <span class="rule-title">@rule.Title</span>
+                <span class="rule-text">@rule.Text</span>
+                @if (rule.Advice is not null)
+                {
+                    <em class="rule-advice">@rule.Advice</em>
+                }
+            </div>
+        </li>
+    }
+</ol>
+
+@code {
+    [Parameter, EditorRequired]
+    public required IReadOnlyList<RuleView> Items { get; set; }
+}

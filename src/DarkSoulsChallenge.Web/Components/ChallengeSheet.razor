@@ -1,0 +1,91 @@
+<article class="sheet">
+    <header class="infobox">
+        <p class="eyebrow">Challenge code</p>
+        <h2 class="code" tabindex="-1" @ref="_heading">@View.Code</h2>
+        <table class="settings">
+            <tbody>
+                <tr><th scope="row">Class</th><td>@View.StartingClass</td></tr>
+                <tr><th scope="row">Gift</th><td>@(View.Gift.Count > 0 ? string.Join(", ", View.Gift) : "None")</td></tr>
+                <tr><th scope="row">Difficulty</th><td class="cap">@View.Difficulty.Name()</td></tr>
+                <tr><th scope="row">Length</th><td class="cap">@View.Length.Name()</td></tr>
+                <tr><th scope="row">Curve</th><td class="cap">@View.Curve.Name()</td></tr>
+                <tr><th scope="row">Level cap</th><td>@View.LevelCap</td></tr>
+            </tbody>
+        </table>
+    </header>
+    <p class="oath">Follow every order. Break one, and the challenge is over: there is no penalty, only the end.</p>
+
+    <section>
+        <h3 class="section-title">Rules of the journey</h3>
+        <Rules Items="View.Journey" />
+    </section>
+
+    @foreach (var chapter in View.Chapters)
+    {
+        <section class="chapter">
+            <table class="chapter-table">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            @chapter.Heading
+                            <span class="until">Until @chapter.Until</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Areas</th>
+                        <td>@foreach (var area in chapter.Areas) { <span class="name">@area</span> }</td>
+                    </tr>
+                    @if (chapter.Bosses.Count > 0)
+                    {
+                        <tr>
+                            <th scope="row">Bosses</th>
+                            <td>@foreach (var boss in chapter.Bosses) { <span class="name">@boss</span> }</td>
+                        </tr>
+                    }
+                    <tr><th scope="row">Difficulty</th><td class="cap">@chapter.Difficulty.Name()</td></tr>
+                </tbody>
+            </table>
+            <Rules Items="chapter.Rules" />
+        </section>
+    }
+
+    @if (View.Definitions.Count > 0)
+    {
+        <section>
+            <h3 class="section-title">Definitions</h3>
+            <dl class="notes">
+                @foreach (var definition in View.Definitions)
+                {
+                    <div><dt>@definition.Term</dt><dd>@definition.Text</dd></div>
+                }
+            </dl>
+        </section>
+    }
+
+    @if (View.Warnings.Count > 0)
+    {
+        <section>
+            <h3 class="section-title">Before you go</h3>
+            <dl class="notes">
+                @foreach (var warning in View.Warnings)
+                {
+                    <div><dt>@warning.Npc</dt><dd>@warning.Text</dd></div>
+                }
+            </dl>
+        </section>
+    }
+
+    <p class="fine">Generator @View.GeneratorVersion · data @View.DataVersion. Same code, same challenge.</p>
+</article>
+
+@code {
+    private ElementReference _heading;
+
+    [Parameter, EditorRequired]
+    public required ChallengeView View { get; set; }
+
+    /// <summary>Brings the sheet into view, for keyboards and screen readers too.</summary>
+    public ValueTask FocusAsync() => _heading.FocusAsync();
+}

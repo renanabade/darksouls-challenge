@@ -1,0 +1,531 @@
+:root {
+    --background: #0a0a09;
+    --panel: #141311;
+    --raised: #211f1b;
+    --line: #3a352d;
+    --frame: #6b6150;
+    --text: #d9d4c7;
+    --dim: #8f887a;
+    --gold: #c8b07a;
+    --ember: #a8432a;
+    --display: "Marcellus SC", Georgia, serif;
+    --body: "EB Garamond", Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--background);
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font: 17px/1.5 var(--body);
+}
+
+a {
+    color: var(--text);
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 1px solid var(--gold);
+    outline-offset: 1px;
+}
+
+.page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+}
+
+.title h1 {
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+}
+
+.title h1 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.tagline {
+    color: var(--dim);
+    margin: 0 0 24px;
+}
+
+.kindling {
+    color: var(--dim);
+    font-style: italic;
+}
+
+.footer {
+    border-top: 1px solid var(--line);
+    color: var(--dim);
+    font-size: 0.875rem;
+    margin-top: 48px;
+    padding-top: 12px;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+}
+
+/* The setup, as rows of a game menu. */
+.menu {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 3fr 2fr;
+}
+
+.menu-row {
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    padding: 6px 12px;
+}
+
+.menu-row:last-child {
+    border-bottom: 0;
+}
+
+.menu-row:focus-within,
+.menu-row:hover {
+    background: var(--raised);
+}
+
+.menu-row label {
+    font-family: var(--display);
+}
+
+select,
+input {
+    appearance: none;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text);
+    font: inherit;
+    padding: 4px 6px;
+    width: 100%;
+}
+
+select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--frame) 50%), linear-gradient(135deg, var(--frame) 50%, transparent 50%);
+    background-position: calc(100% - 13px) 55%, calc(100% - 8px) 55%;
+    background-repeat: no-repeat;
+    background-size: 5px 5px;
+    padding-right: 22px;
+}
+
+select option {
+    background: var(--panel);
+    color: var(--text);
+}
+
+input::placeholder {
+    color: var(--dim);
+}
+
+select:focus,
+input:focus {
+    border-color: var(--frame);
+    outline: 0;
+}
+
+.menu-help {
+    padding: 12px;
+}
+
+.menu-help summary {
+    color: var(--dim);
+    cursor: pointer;
+    font-family: var(--display);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    list-style: none;
+}
+
+.menu-help summary::-webkit-details-marker {
+    display: none;
+}
+
+.menu-help h3 {
+    color: var(--gold);
+    font-size: 1.125rem;
+    margin-top: 8px;
+}
+
+.menu-help p {
+    margin: 8px 0 0;
+}
+
+.stats {
+    display: grid;
+    gap: 2px 16px;
+    grid-template-columns: 1fr 1fr;
+    margin: 8px 0 0;
+}
+
+.stats div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats dt {
+    color: var(--dim);
+}
+
+.stats dd {
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    grid-column: 1 / -1;
+}
+
+.prompt {
+    background: var(--panel);
+    border: 1px solid var(--frame);
+    color: var(--text);
+    cursor: pointer;
+    font: 1rem var(--display);
+    min-height: 40px;
+    padding: 6px 24px;
+}
+
+.prompt:hover:not(:disabled) {
+    background: var(--raised);
+    border-color: var(--gold);
+}
+
+.prompt:disabled {
+    color: var(--dim);
+    cursor: progress;
+}
+
+.notice {
+    border: 1px solid var(--ember);
+    margin: 16px 0;
+    padding: 8px 12px;
+}
+
+/* The sheet, as a wiki infobox. */
+.sheet {
+    margin-top: 32px;
+}
+
+.infobox {
+    background: var(--panel);
+    border: 3px double var(--frame);
+    padding: 16px;
+}
+
+.eyebrow {
+    color: var(--dim);
+    font-family: var(--display);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+.code {
+    color: var(--gold);
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.code:focus {
+    outline: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.settings th,
+.chapter-table tbody th {
+    color: var(--dim);
+    font-family: var(--display);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 8rem;
+}
+
+.settings th,
+.settings td,
+.chapter-table tbody th,
+.chapter-table tbody td {
+    border-top: 1px solid var(--line);
+    padding: 4px 8px;
+}
+
+.cap {
+    text-transform: capitalize;
+}
+
+.oath {
+    color: var(--dim);
+    font-style: italic;
+    margin: 16px 0 24px;
+}
+
+.section-title {
+    border-bottom: 1px solid var(--frame);
+    font-size: 1.25rem;
+    margin-top: 24px;
+    padding-bottom: 4px;
+}
+
+.chapter {
+    margin-top: 16px;
+}
+
+.chapter-table {
+    background: var(--panel);
+    border: 1px solid var(--frame);
+}
+
+.chapter-table thead th {
+    font-family: var(--display);
+    font-size: 1.125rem;
+    font-weight: 400;
+    padding: 8px;
+    text-align: left;
+}
+
+.until {
+    color: var(--dim);
+    display: block;
+    font-family: var(--body);
+    font-size: 0.9375rem;
+    font-style: italic;
+}
+
+.name {
+    color: var(--gold);
+    display: block;
+}
+
+.rules {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rules li {
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    padding: 8px;
+}
+
+.rules li:hover {
+    background: var(--raised);
+}
+
+.rule-number {
+    color: var(--frame);
+    font-family: var(--display);
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.rule-number::before {
+    content: "◆ ";
+    font-size: 0.625rem;
+}
+
+.rule-title {
+    display: block;
+    font-family: var(--display);
+    font-size: 1rem;
+}
+
+.rule-text {
+    display: block;
+}
+
+.rule-advice {
+    color: var(--dim);
+    display: block;
+    font-style: italic;
+}
+
+.notes {
+    margin: 0;
+}
+
+.notes div {
+    border-bottom: 1px solid var(--line);
+    padding: 8px;
+}
+
+.notes dt {
+    font-family: var(--display);
+}
+
+.notes dd {
+    margin: 0;
+}
+
+.fine {
+    color: var(--dim);
+    font-size: 0.875rem;
+    margin-top: 16px;
+}
+
+#blazor-error-ui {
+    background: var(--raised);
+    border-top: 1px solid var(--ember);
+    bottom: 0;
+    display: none;
+    left: 0;
+    padding: 8px 16px;
+    position: fixed;
+    right: 0;
+    z-index: 10;
+}
+
+.only-narrow {
+    display: none;
+}
+
+.only-wide h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 640px) {
+    .only-wide {
+        display: none;
+    }
+
+    .only-narrow {
+        display: block;
+    }
+
+    body {
+        line-height: 1.35;
+    }
+
+    .page {
+        padding: 12px 12px 76px;
+    }
+
+    .tagline {
+        margin-bottom: 12px;
+    }
+
+    .sheet {
+        margin-top: 16px;
+    }
+
+    .infobox {
+        padding: 10px;
+    }
+
+    .oath {
+        margin: 10px 0;
+    }
+
+    .section-title {
+        margin-top: 16px;
+    }
+
+    .rule-title,
+    .rule-text {
+        display: inline;
+    }
+
+    .rule-title::after {
+        content: ". ";
+    }
+
+    .notes div {
+        padding: 4px;
+    }
+
+    select,
+    input {
+        padding: 0 4px;
+    }
+
+    .title h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .menu-row {
+        gap: 0;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 3px 8px;
+    }
+
+    .menu-row label {
+        color: var(--dim);
+        font-size: 0.875rem;
+    }
+
+    .actions {
+        background: var(--background);
+        border-top: 1px solid var(--line);
+        bottom: 0;
+        left: 0;
+        padding: 8px 12px;
+        position: fixed;
+        right: 0;
+        z-index: 5;
+    }
+
+    .prompt {
+        flex: 1;
+        min-height: 48px;
+        padding: 6px;
+    }
+
+    .rules li {
+        gap: 6px;
+        grid-template-columns: 1.9rem minmax(0, 1fr);
+        padding: 4px;
+    }
+
+    .settings th,
+    .chapter-table tbody th {
+        width: 6rem;
+    }
+
+    .settings th,
+    .settings td,
+    .chapter-table tbody th,
+    .chapter-table tbody td {
+        padding: 3px 6px;
+    }
+}

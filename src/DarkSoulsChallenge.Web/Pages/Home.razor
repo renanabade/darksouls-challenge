@@ -1,0 +1,206 @@
+@page "/"
+@implements IDisposable
+@inject WorldLoader Worlds
+@inject NavigationManager Navigation
+@inject IJSRuntime Js
+
+<PageTitle>@(_view is null ? "Dark Souls Challenge" : $"{_view.Code} · Dark Souls Challenge")</PageTitle>
+
+@if (_world is null)
+{
+    <p class="kindling" role="status">@(_loadError ?? "Kindling the bonfire…")</p>
+}
+else
+{
+    <SetupMenu Options="_options!" Form="_form" Busy="_busy" OnGenerate="GenerateAsync">
+        <Actions>
+            @if (_view is not null)
+            {
+                <button type="button" class="prompt" @onclick="CopyLinkAsync">@(_copied ? "Link copied" : "Copy link")</button>
+            }
+        </Actions>
+    </SetupMenu>
+
+    @foreach (var notice in _notices)
+    {
+        <p class="notice" role="alert">@notice</p>
+    }
+
+    @if (_view is not null)
+    {
+        <ChallengeSheet @ref="_sheet" View="_view" />
+    }
+}
+
+@code {
+    private readonly SetupMenu.FormState _form = new();
+    private World? _world;
+    private SetupOptions? _options;
+    private ChallengeView? _view;
+    private ChallengeSheet? _sheet;
+    private IReadOnlyList<string> _notices = [];
+    private string? _loadError;
+    private bool _busy;
+    private bool _copied;
+    private bool _focusSheet;
+    private bool _keepNotices;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _world = await Worlds.GetAsync();
+            _options = SetupOptions.Of(_world);
+        }
+        catch (Exception error) when (error is InvalidOperationException or WorldParseException)
+        {
+            _loadError = $"The data set could not be loaded: {error.Message}";
+            return;
+        }
+
+        Navigation.LocationChanged += OnLocationChanged;
+        await ShowLinkAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_focusSheet && _sheet is not null)
+        {
+            _focusSheet = false;
+            await _sheet.FocusAsync();
+        }
+    }
+
+    public void Dispose() => Navigation.LocationChanged -= OnLocationChanged;
+
+    // Back and forward land here too: the page always shows what its address says.
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        await InvokeAsync(async () =>
+        {
+            await ShowLinkAsync();
+            StateHasChanged();
+        });
+    }
+
+    private static Dictionary<string, string> QueryOf(string uri)
+    {
+        var query = new Dictionary<string, string>(StringComparer.Ordinal);
+        var start = uri.IndexOf('?', StringComparison.Ordinal);
+        if (start < 0) return query;
+        var end = uri.IndexOf('#', StringComparison.Ordinal);
+        var text = end > start ? uri[(start + 1)..end] : uri[(start + 1)..];
+        foreach (var pair in text.Split('&', StringSplitOptions.RemoveEmptyEntries))
+        {
+            var parts = pair.Split('=', 2);
+            query[Uri.UnescapeDataString(parts[0])] = parts.Length > 1 ? Uri.UnescapeDataString(parts[1].Replace('+', ' ')) : "";
+        }
+
+        return query;
+    }
+
+    private async Task ShowLinkAsync()
+    {
+        var reading = ChallengeLink.Read(_world!, QueryOf(Navigation.Uri), GenerationRequest.DrawSeed);
+
+        // This page just moved the address itself, and what it had to say about the old one still stands.
+        if (_keepNotices) _keepNotices = false;
+        else _notices = reading.Notices;
+        if (reading.Config is null)
+        {
+            _view = null;
+            return;
+        }
+
+        if (_view?.Code != reading.Code) await DrawAsync(reading.Config);
+
+        // A link in any other form becomes the one link of this challenge.
+        var canonical = Navigation.ToAbsoluteUri(ChallengeLink.QueryOf(reading.Code!)).ToString();
+        if (!string.Equals(Navigation.Uri, canonical, StringComparison.Ordinal) && _view?.Code == reading.Code)
+        {
+            _keepNotices = true;
+            Navigation.NavigateTo(canonical, new NavigationOptions { ReplaceHistoryEntry = true });
+        }
+    }
+
+    private async Task DrawAsync(GeneratorConfig config)
+    {
+        _busy = true;
+        StateHasChanged();
+
+        // The core runs on the browser's only thread: give it the chance to paint "Generating…" first.
+        await Task.Delay(30);
+        try
+        {
+            _view = Manual.Describe(_world!, Generator.Generate(_world!, config));
+            _focusSheet = true;
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or InvalidOrderException)
+        {
+            _notices = [.. _notices, $"No challenge could be generated: {error.Message}"];
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task GenerateAsync()
+    {
+        _notices = [];
+        var typed = _form.Code.Trim();
+        _form.Code = "";
+
+        GeneratorConfig config;
+        if (typed.Length > 0)
+        {
+            if (!ChallengeCode.TryDecode(_world!, typed, out var decoded, out var problem))
+            {
+                _notices = [$"That code cannot be read: {problem}."];
+                return;
+            }
+
+            config = decoded!.Config;
+            if (!decoded.IsCurrent) _notices = [ChallengeLink.VersionNotice(_world!, decoded)];
+        }
+        else
+        {
+            config = new GeneratorConfig(GenerationRequest.DrawSeed(), _form.Difficulty, _form.Length)
+            {
+                Curve = Enum.TryParse<Curve>(_form.Curve, out var curve) ? curve : null,
+                StartingClass = _form.StartingClass.Length > 0 ? _form.StartingClass : null,
+                GiftRow = int.TryParse(_form.Gift, out var row) ? row : null,
+                LevelCap = _form.LevelCap,
+            };
+        }
+
+        if (config.LevelCap is <= 0 or > ChallengeCode.MaxLevelCap)
+        {
+            _notices = [$"The level cap must be from 1 to {ChallengeCode.MaxLevelCap}."];
+            return;
+        }
+
+        var code = ChallengeCode.Encode(_world!, config);
+        if (_view?.Code == code)
+        {
+            _focusSheet = true;
+            return;
+        }
+
+        await DrawAsync(config);
+        if (_view?.Code != code) return;
+
+        // A history entry per challenge, so back and forward walk through them.
+        _keepNotices = true;
+        Navigation.NavigateTo(ChallengeLink.QueryOf(code));
+    }
+
+    private async Task CopyLinkAsync()
+    {
+        await Js.InvokeVoidAsync("navigator.clipboard.writeText", Navigation.Uri);
+        _copied = true;
+        StateHasChanged();
+        await Task.Delay(2000);
+        _copied = false;
+    }
+}
