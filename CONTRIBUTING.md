@@ -20,7 +20,7 @@ dotnet test
 dotnet format --verify-no-changes
 ```
 
-The domain core (`src/DarkSoulsChallenge.Core`) is pure C# with no I/O.
+The domain core (`src/DarkSoulsChallenge.Core`) is pure C# and reads no files itself, so it runs in the browser too. The README says what the server and browser tests need.
 
 ## The data set
 
@@ -48,7 +48,7 @@ Types in use: `feat`, `fix`, `docs`, `test`, `refactor`, `build`, `ci`, `chore`.
 Architecture decisions are recorded in [`docs/adr/`](docs/adr). If your change makes one, add an ADR to the pull
 request.
 
-A change to what the generator draws bumps its version in the same pull request.
+A change to what the generator draws bumps its version in the same pull request, and writes the new snapshot: run the tests once with `UPDATE_SNAPSHOTS=1`.
 
 ## Licenses
 
