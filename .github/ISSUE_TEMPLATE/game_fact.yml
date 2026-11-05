@@ -1,0 +1,31 @@
+name: Wrong game fact
+description: The data set or a generated challenge gets a fact about the game wrong.
+labels: [data]
+body:
+  - type: textarea
+    id: fact
+    attributes:
+      label: The fact
+      description: What the data set or the challenge says, and where (file and entry, or order and seed).
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What is correct
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: >
+        Where this comes from: a game file (param, event script, map), a test in play (what you did, with which
+        character), or a source to check. Facts are never taken from memory.
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: Game version
+      placeholder: e.g. DARK SOULS REMASTERED, Steam build 10943698
