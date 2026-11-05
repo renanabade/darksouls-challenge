@@ -26,8 +26,8 @@ public abstract record Requirement
         Constant c => c.Value,
         Has h => has(h.Item),
         Region r => reached(r.Id),
-        All a => a.Children.All(child => child.Evaluate(has, reached)),
-        Any a => a.Children.Any(child => child.Evaluate(has, reached)),
+        All a => EvaluateAll(a.Children, has, reached),
+        Any a => EvaluateAny(a.Children, has, reached),
         _ => throw new InvalidOperationException($"unknown requirement {GetType().Name}"),
     };
 
@@ -101,6 +101,26 @@ public abstract record Requirement
             default:
                 throw new RequirementParseException($"unknown key \"{key}\"", path);
         }
+    }
+
+    private static bool EvaluateAll(IReadOnlyList<Requirement> children, Func<string, bool> has, Func<string, bool> reached)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            if (!children[i].Evaluate(has, reached)) return false;
+        }
+
+        return true;
+    }
+
+    private static bool EvaluateAny(IReadOnlyList<Requirement> children, Func<string, bool> has, Func<string, bool> reached)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            if (children[i].Evaluate(has, reached)) return true;
+        }
+
+        return false;
     }
 
     private static void Visit(Requirement requirement, Action<string> has, Action<string> region)

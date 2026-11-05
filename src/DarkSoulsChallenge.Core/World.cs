@@ -142,6 +142,7 @@ public sealed class World
     /// <summary>What the manual tells the player about NPCs the scripts can lose or turn.</summary>
     public required IReadOnlyList<NpcWarning> Warnings { get; init; }
 
+    private GraphIndex? _graph;
     private ILookup<string, string>? _regionsByArea;
     private Dictionary<string, Location>? _locationsByName;
 
@@ -150,6 +151,8 @@ public sealed class World
     /// about, not an unbounded log. A challenge draws a handful of forbidden areas and one gift.
     /// </summary>
     internal ConcurrentDictionary<string, Reach> ReachCache { get; } = new(StringComparer.Ordinal);
+
+    internal GraphIndex Graph => _graph ??= new GraphIndex(this);
 
     internal ConcurrentDictionary<string, object> GeneratorCache { get; } = new(StringComparer.Ordinal);
 
