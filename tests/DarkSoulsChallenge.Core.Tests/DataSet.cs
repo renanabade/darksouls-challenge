@@ -3,7 +3,11 @@ namespace DarkSoulsChallenge.Core.Tests;
 /// <summary>Finds the DS1 data set from the test binaries, by walking up to the repository root.</summary>
 internal static class DataSet
 {
-    public static string Directory { get; } = Find();
+    public static string Root { get; } = Find();
+
+    public static string Directory { get; } = Path.Combine(Root, "data", "ds1");
+
+    public static string References { get; } = Path.Combine(Root, "tests", "DarkSoulsChallenge.Core.Tests", "References");
 
     public static string PathOf(string file) => Path.Combine(Directory, file);
 
@@ -13,7 +17,7 @@ internal static class DataSet
         {
             if (File.Exists(Path.Combine(dir.FullName, "DarkSoulsChallenge.slnx")))
             {
-                return Path.Combine(dir.FullName, "data", "ds1");
+                return dir.FullName;
             }
         }
 
