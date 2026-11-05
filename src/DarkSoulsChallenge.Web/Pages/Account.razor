@@ -1,0 +1,151 @@
+@page "/account"
+@inject ApiClient Api
+
+<PageTitle>Account · Dark Souls Challenge</PageTitle>
+
+<h2 class="page-title">Account</h2>
+
+@if (_error is not null)
+{
+    <p class="notice" role="alert">@_error</p>
+}
+
+@if (_loading)
+{
+    <p class="kindling" role="status">Reading the covenant…</p>
+}
+else if (_profile is null)
+{
+    <form class="panel form" @onsubmit="SignInAsync" @onsubmit:preventDefault="true">
+        <div class="menu-row">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" required @bind="_email" />
+        </div>
+        <div class="menu-row">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="current-password" required @bind="_password" />
+        </div>
+        <div class="form-actions">
+            <button class="prompt" type="submit" disabled="@_busy">Sign in</button>
+            <button class="prompt" type="button" disabled="@_busy" @onclick="RegisterAsync">Create account</button>
+        </div>
+    </form>
+    <p class="fine">Passwords need at least 6 characters, with an upper-case letter, a lower-case letter, a digit and a symbol. Your email is never shown to anyone. No email is sent yet, so a forgotten password cannot be recovered.</p>
+}
+else
+{
+    <form class="panel form" @onsubmit="SaveNameAsync" @onsubmit:preventDefault="true">
+        <div class="menu-row">
+            <span class="field-label">Email</span>
+            <span>@_profile.Email</span>
+        </div>
+        <div class="menu-row">
+            <label for="name">Display name</label>
+            <input id="name" maxlength="32" autocomplete="nickname" placeholder="What the ranking shows" @bind="_name" />
+        </div>
+        <div class="form-actions">
+            <button class="prompt" type="submit" disabled="@_busy">Save name</button>
+            <button class="prompt" type="button" disabled="@_busy" @onclick="SignOutAsync">Sign out</button>
+        </div>
+    </form>
+
+    <h3 class="section-title">Your runs</h3>
+    @if (_runs.Count == 0)
+    {
+        <p class="fine">None yet. Finish a challenge, then record it on its page.</p>
+    }
+    else
+    {
+        <table class="data-table">
+            <thead><tr><th>Challenge</th><th>Score</th><th>Deaths</th><th></th></tr></thead>
+            <tbody>
+                @foreach (var run in _runs)
+                {
+                    <tr>
+                        <td><a class="name" href="@($"?c={run.Code}")">@run.Code</a></td>
+                        <td>@run.Score</td>
+                        <td>@run.Deaths</td>
+                        <td><button type="button" class="link-button" disabled="@_busy" @onclick="() => RemoveAsync(run.ChallengeId)">Remove</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+    private ProfileResponse? _profile;
+    private IReadOnlyList<RunResponse> _runs = [];
+    private string _email = "";
+    private string _password = "";
+    private string _name = "";
+    private string? _error;
+    private bool _loading = true;
+    private bool _busy;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await RunAsync(LoadAsync);
+        _loading = false;
+    }
+
+    private async Task LoadAsync()
+    {
+        _profile = null;
+        if (!await Api.IsSignedInAsync()) return;
+        _profile = await Api.GetProfileAsync();
+        _name = _profile?.DisplayName ?? "";
+        _runs = await Api.GetMyRunsAsync();
+    }
+
+    private Task SignInAsync() => RunAsync(async () =>
+    {
+        await Api.SignInAsync(_email.Trim(), _password);
+        _password = "";
+        await LoadAsync();
+    });
+
+    private Task RegisterAsync() => RunAsync(async () =>
+    {
+        await Api.RegisterAsync(_email.Trim(), _password);
+        _password = "";
+        await LoadAsync();
+    });
+
+    private Task SaveNameAsync() => RunAsync(async () => _profile = await Api.SetDisplayNameAsync(_name));
+
+    private Task SignOutAsync() => RunAsync(async () =>
+    {
+        await Api.SignOutAsync();
+        _profile = null;
+        _runs = [];
+    });
+
+    private Task RemoveAsync(Guid challengeId) => RunAsync(async () =>
+    {
+        await Api.DeleteRunAsync(challengeId);
+        _runs = await Api.GetMyRunsAsync();
+    });
+
+    private async Task RunAsync(Func<Task> action)
+    {
+        _busy = true;
+        _error = null;
+        try
+        {
+            await action();
+        }
+        catch (ApiException error)
+        {
+            _error = error.Message;
+        }
+        catch (HttpRequestException)
+        {
+            _error = "The server cannot be reached right now.";
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+}

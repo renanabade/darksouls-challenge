@@ -1,0 +1,66 @@
+@page "/ranking"
+@inject ApiClient Api
+
+<PageTitle>Ranking · Dark Souls Challenge</PageTitle>
+
+<h2 class="page-title">Ranking</h2>
+<p class="oath">Runs are the players' own word: nobody checks them. A harder challenge is worth more.</p>
+
+@if (_error is not null)
+{
+    <p class="notice" role="alert">@_error</p>
+}
+else if (_page is null)
+{
+    <p class="kindling" role="status">Counting the souls…</p>
+}
+else if (_page.Total == 0)
+{
+    <p class="fine">Nobody has recorded a run yet. Be the first.</p>
+}
+else
+{
+    <table class="data-table">
+        <thead><tr><th>#</th><th>Player</th><th>Score</th><th>Runs</th></tr></thead>
+        <tbody>
+            @foreach (var entry in _page.Entries)
+            {
+                <tr>
+                    <td>@entry.Rank</td>
+                    <td class="name">@entry.DisplayName</td>
+                    <td>@entry.Score</td>
+                    <td>@entry.Runs</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="form-actions">
+        <button class="prompt" type="button" disabled="@(_page.Offset == 0)" @onclick="() => LoadAsync(_page.Offset - PageSize)">Previous</button>
+        <button class="prompt" type="button" disabled="@(_page.Offset + PageSize >= _page.Total)" @onclick="() => LoadAsync(_page.Offset + PageSize)">Next</button>
+    </div>
+}
+
+@code {
+    private const int PageSize = 50;
+
+    private RankingPage? _page;
+    private string? _error;
+
+    protected override Task OnInitializedAsync() => LoadAsync(0);
+
+    private async Task LoadAsync(int offset)
+    {
+        try
+        {
+            _page = await Api.GetRankingAsync(Math.Max(0, offset), PageSize);
+        }
+        catch (HttpRequestException)
+        {
+            _error = "The server cannot be reached right now.";
+        }
+        catch (System.Text.Json.JsonException)
+        {
+            _error = "The server cannot be reached right now.";
+        }
+    }
+}

@@ -529,3 +529,89 @@ table {
         padding: 3px 6px;
     }
 }
+
+/* Navigation, accounts and the ranking. */
+.nav {
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+}
+
+.nav a {
+    color: var(--dim);
+    font-family: var(--display);
+    text-decoration: none;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--text);
+}
+
+.page-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.form {
+    max-width: 560px;
+}
+
+.field-label {
+    font-family: var(--display);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px;
+}
+
+.data-table {
+    background: var(--panel);
+    border: 1px solid var(--frame);
+    margin-top: 12px;
+}
+
+.data-table th {
+    color: var(--dim);
+    font-family: var(--display);
+    font-weight: 400;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    border-top: 1px solid var(--line);
+    overflow-wrap: anywhere;
+    padding: 4px 8px;
+}
+
+.data-table a.name {
+    display: inline;
+}
+
+.link-button {
+    background: none;
+    border: 0;
+    color: var(--dim);
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.link-button:hover {
+    color: var(--text);
+}
+
+.record {
+    margin-top: 24px;
+}
+
+.record .form {
+    margin-top: 12px;
+}
