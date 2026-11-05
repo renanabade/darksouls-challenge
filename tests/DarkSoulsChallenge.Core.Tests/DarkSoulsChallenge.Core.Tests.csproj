@@ -2,8 +2,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
-    <!-- Test names read as sentences. -->
-    <NoWarn>$(NoWarn);CA1707</NoWarn>
+    <!-- Test names read as sentences; Assert.Empty on a filter shows what broke; arrays are literal data. -->
+    <NoWarn>$(NoWarn);CA1707;CA1859;CA1861;xUnit2029</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="xunit.v3" />
