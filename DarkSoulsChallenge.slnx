@@ -2,8 +2,10 @@
   <Folder Name="/src/">
     <Project Path="src/DarkSoulsChallenge.Cli/DarkSoulsChallenge.Cli.csproj" />
     <Project Path="src/DarkSoulsChallenge.Core/DarkSoulsChallenge.Core.csproj" />
+    <Project Path="src/DarkSoulsChallenge.Server/DarkSoulsChallenge.Server.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/DarkSoulsChallenge.Core.Tests/DarkSoulsChallenge.Core.Tests.csproj" />
+    <Project Path="tests/DarkSoulsChallenge.Server.Tests/DarkSoulsChallenge.Server.Tests.csproj" />
   </Folder>
 </Solution>
