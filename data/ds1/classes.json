@@ -1,0 +1,515 @@
+{
+ "classes": [
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Hard Leather Armor",
+     "equip_Gaunt": "Hard Leather Gauntlets",
+     "equip_Helm": "Standard Helm",
+     "equip_Leg": "Hard Leather Boots",
+     "equip_Wep_Left": "Heater Shield",
+     "equip_Wep_Right": "Longsword"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Hard Leather Armor",
+     "equip_Gaunt": "Hard Leather Gauntlets",
+     "equip_Helm": "Standard Helm",
+     "equip_Leg": "Hard Leather Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 4,
+   "name": "Warrior",
+   "stats": {
+    "attunement": 8,
+    "dexterity": 13,
+    "endurance": 12,
+    "faith": 9,
+    "intelligence": 9,
+    "resistance": 11,
+    "strength": 13,
+    "vitality": 11
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Knight Armor",
+     "equip_Gaunt": "Knight Gauntlets",
+     "equip_Helm": "Knight Helm",
+     "equip_Leg": "Knight Leggings",
+     "equip_Wep_Left": "Tower Kite Shield",
+     "equip_Wep_Right": "Broadsword"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Knight Armor",
+     "equip_Gaunt": "Knight Gauntlets",
+     "equip_Helm": "Knight Helm",
+     "equip_Leg": "Knight Leggings",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 5,
+   "name": "Knight",
+   "stats": {
+    "attunement": 10,
+    "dexterity": 11,
+    "endurance": 10,
+    "faith": 11,
+    "intelligence": 9,
+    "resistance": 10,
+    "strength": 11,
+    "vitality": 14
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Wanderer Coat",
+     "equip_Gaunt": "Wanderer Manchette",
+     "equip_Helm": "Wanderer Hood",
+     "equip_Leg": "Wanderer Boots",
+     "equip_Wep_Left": "Leather Shield",
+     "equip_Wep_Right": "Scimitar"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Wanderer Coat",
+     "equip_Gaunt": "Wanderer Manchette",
+     "equip_Helm": "Wanderer Hood",
+     "equip_Leg": "Wanderer Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 3,
+   "name": "Wanderer",
+   "stats": {
+    "attunement": 11,
+    "dexterity": 14,
+    "endurance": 10,
+    "faith": 8,
+    "intelligence": 11,
+    "resistance": 12,
+    "strength": 10,
+    "vitality": 10
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Black Leather Armor",
+     "equip_Gaunt": "Black Leather Gloves",
+     "equip_Helm": "Thief Mask",
+     "equip_Leg": "Black Leather Boots",
+     "equip_Wep_Left": "Target Shield",
+     "equip_Wep_Right": "Bandit's Knife"
+    },
+    "items": [
+     "Master Key",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Black Leather Armor",
+     "equip_Gaunt": "Black Leather Gloves",
+     "equip_Helm": "Thief Mask",
+     "equip_Leg": "Black Leather Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Master Key",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 5,
+   "name": "Thief",
+   "stats": {
+    "attunement": 11,
+    "dexterity": 15,
+    "endurance": 9,
+    "faith": 11,
+    "intelligence": 12,
+    "resistance": 10,
+    "strength": 9,
+    "vitality": 9
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Brigand Armor",
+     "equip_Gaunt": "Brigand Gauntlets",
+     "equip_Helm": "Brigand Hood",
+     "equip_Leg": "Brigand Trousers",
+     "equip_Wep_Left": "Spider Shield",
+     "equip_Wep_Right": "Battle Axe"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Brigand Armor",
+     "equip_Gaunt": "Brigand Gauntlets",
+     "equip_Helm": "Brigand Hood",
+     "equip_Leg": "Brigand Trousers",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 4,
+   "name": "Bandit",
+   "stats": {
+    "attunement": 8,
+    "dexterity": 9,
+    "endurance": 14,
+    "faith": 10,
+    "intelligence": 8,
+    "resistance": 11,
+    "strength": 14,
+    "vitality": 12
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Leather Armor",
+     "equip_Arrow": "Standard Arrow",
+     "equip_Gaunt": "Leather Gloves",
+     "equip_Helm": "Head",
+     "equip_Leg": "Leather Boots",
+     "equip_Subwep_Right": "Short Bow",
+     "equip_Wep_Left": "Large Leather Shield",
+     "equip_Wep_Right": "Shortsword"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Leather Armor",
+     "equip_Gaunt": "Leather Gloves",
+     "equip_Helm": "Head",
+     "equip_Leg": "Leather Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 4,
+   "name": "Hunter",
+   "stats": {
+    "attunement": 9,
+    "dexterity": 14,
+    "endurance": 11,
+    "faith": 9,
+    "intelligence": 9,
+    "resistance": 11,
+    "strength": 12,
+    "vitality": 11
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Sorcerer Cloak",
+     "equip_Gaunt": "Sorcerer Gauntlets",
+     "equip_Helm": "Sorcerer Hat",
+     "equip_Leg": "Sorcerer Boots",
+     "equip_Subwep_Right": "Sorcerer's Catalyst",
+     "equip_Wep_Left": "Small Leather Shield",
+     "equip_Wep_Right": "Dagger"
+    },
+    "items": [
+     "Sorcery: Soul Arrow",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Soul Arrow"
+    ]
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Sorcerer Cloak",
+     "equip_Gaunt": "Sorcerer Gauntlets",
+     "equip_Helm": "Sorcerer Hat",
+     "equip_Leg": "Sorcerer Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Sorcery: Soul Arrow",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Soul Arrow"
+    ]
+   },
+   "level": 3,
+   "name": "Sorcerer",
+   "stats": {
+    "attunement": 15,
+    "dexterity": 11,
+    "endurance": 8,
+    "faith": 8,
+    "intelligence": 15,
+    "resistance": 8,
+    "strength": 9,
+    "vitality": 8
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Tattered Cloth Robe",
+     "equip_Gaunt": "Tattered Cloth Manchette",
+     "equip_Helm": "Tattered Cloth Hood",
+     "equip_Leg": "Heavy Boots",
+     "equip_Subwep_Right": "Pyromancy Flame",
+     "equip_Wep_Left": "Cracked Round Shield",
+     "equip_Wep_Right": "Hand Axe"
+    },
+    "items": [
+     "Pyromancy: Fireball",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Fireball"
+    ]
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Tattered Cloth Robe",
+     "equip_Gaunt": "Tattered Cloth Manchette",
+     "equip_Helm": "Tattered Cloth Hood",
+     "equip_Leg": "Heavy Boots",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Pyromancy: Fireball",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Fireball"
+    ]
+   },
+   "level": 1,
+   "name": "Pyromancer",
+   "stats": {
+    "attunement": 12,
+    "dexterity": 9,
+    "endurance": 11,
+    "faith": 8,
+    "intelligence": 10,
+    "resistance": 12,
+    "strength": 12,
+    "vitality": 10
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Holy Robe",
+     "equip_Gaunt": "Traveling Gloves",
+     "equip_Helm": "Head",
+     "equip_Leg": "Holy Trousers",
+     "equip_Subwep_Right": "Canvas Talisman",
+     "equip_Wep_Left": "East-West Shield",
+     "equip_Wep_Right": "Mace"
+    },
+    "items": [
+     "Miracle: Heal",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Heal"
+    ]
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Holy Robe",
+     "equip_Gaunt": "Traveling Gloves",
+     "equip_Helm": "Head",
+     "equip_Leg": "Holy Trousers",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Miracle: Heal",
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": [
+     "Heal"
+    ]
+   },
+   "level": 2,
+   "name": "Cleric",
+   "stats": {
+    "attunement": 11,
+    "dexterity": 8,
+    "endurance": 9,
+    "faith": 14,
+    "intelligence": 8,
+    "resistance": 11,
+    "strength": 12,
+    "vitality": 11
+   }
+  },
+  {
+   "fullKit": {
+    "equipment": {
+     "equip_Armer": "Body",
+     "equip_Gaunt": "Arms",
+     "equip_Helm": "Head",
+     "equip_Leg": "Legs",
+     "equip_Wep_Left": "Plank Shield",
+     "equip_Wep_Right": "Club"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "inCell": {
+    "equipment": {
+     "equip_Armer": "Body",
+     "equip_Gaunt": "Arms",
+     "equip_Helm": "Head",
+     "equip_Leg": "Legs",
+     "equip_Wep_Right": "Straight Sword Hilt"
+    },
+    "items": [
+     "Black Separation Crystal",
+     "Darksign"
+    ],
+    "spells": []
+   },
+   "level": 6,
+   "name": "Deprived",
+   "stats": {
+    "attunement": 11,
+    "dexterity": 11,
+    "endurance": 11,
+    "faith": 11,
+    "intelligence": 11,
+    "resistance": 11,
+    "strength": 11,
+    "vitality": 11
+   }
+  }
+ ],
+ "gifts": [
+  {
+   "items": [
+    "(none)"
+   ],
+   "row": 2400
+  },
+  {
+   "items": [
+    "Divine Blessing x3"
+   ],
+   "row": 2401
+  },
+  {
+   "items": [
+    "Black Firebomb x10"
+   ],
+   "row": 2402
+  },
+  {
+   "items": [
+    "Twin Humanities"
+   ],
+   "row": 2403
+  },
+  {
+   "items": [
+    "Binoculars"
+   ],
+   "row": 2404
+  },
+  {
+   "items": [
+    "Pendant"
+   ],
+   "row": 2405
+  },
+  {
+   "items": [
+    "Master Key"
+   ],
+   "row": 2406
+  },
+  {
+   "items": [
+    "Tiny Being's Ring"
+   ],
+   "row": 2407
+  },
+  {
+   "items": [
+    "Old Witch's Ring"
+   ],
+   "row": 2408
+  }
+ ]
+}

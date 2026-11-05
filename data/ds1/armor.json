@@ -1,0 +1,6074 @@
+[
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 12,
+   "phys": 22,
+   "slash": 15,
+   "strike": -1,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 400,
+  "id": 10000,
+  "level": 0,
+  "name": "Catarina Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 37,
+   "magic": 31,
+   "phys": 57,
+   "slash": 15,
+   "strike": -1,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 400,
+  "id": 11000,
+  "level": 0,
+  "name": "Catarina Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 34,
+   "curse": 0,
+   "disease": 24,
+   "poison": 24
+  },
+  "slot": "body",
+  "weight": 11.7
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 18,
+   "phys": 34,
+   "slash": 15,
+   "strike": -1,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 400,
+  "id": 12000,
+  "level": 0,
+  "name": "Catarina Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "arm",
+  "weight": 6.9
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 18,
+   "phys": 34,
+   "slash": 15,
+   "strike": -1,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 400,
+  "id": 13000,
+  "level": 0,
+  "name": "Catarina Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "leg",
+  "weight": 6.9
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 12,
+   "phys": 22,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 500,
+  "id": 20000,
+  "level": 0,
+  "name": "Paladin Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 22,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 5.0
+ },
+ {
+  "defense": {
+   "fire": 37,
+   "magic": 31,
+   "phys": 59,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 500,
+  "id": 21000,
+  "level": 0,
+  "name": "Paladin Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 34,
+   "curse": 57,
+   "disease": 24,
+   "poison": 24
+  },
+  "slot": "body",
+  "weight": 12.9
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 19,
+   "phys": 35,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 500,
+  "id": 22000,
+  "level": 0,
+  "name": "Paladin Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 34,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "arm",
+  "weight": 7.6
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 19,
+   "phys": 35,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 500,
+  "id": 23000,
+  "level": 0,
+  "name": "Paladin Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 34,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "leg",
+  "weight": 7.6
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 12,
+   "phys": 18,
+   "slash": 10,
+   "strike": 0,
+   "thrust": -6,
+   "thunder": 10
+  },
+  "durability": 300,
+  "id": 40000,
+  "level": 0,
+  "name": "Dark Mask",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 3.8
+ },
+ {
+  "defense": {
+   "fire": 31,
+   "magic": 30,
+   "phys": 45,
+   "slash": 10,
+   "strike": 0,
+   "thrust": -6,
+   "thunder": 27
+  },
+  "durability": 300,
+  "id": 41000,
+  "level": 0,
+  "name": "Dark Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 30,
+   "curse": 0,
+   "disease": 21,
+   "poison": 21
+  },
+  "slot": "body",
+  "weight": 9.8
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 18,
+   "phys": 27,
+   "slash": 10,
+   "strike": 0,
+   "thrust": -6,
+   "thunder": 15
+  },
+  "durability": 300,
+  "id": 42000,
+  "level": 0,
+  "name": "Dark Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "arm",
+  "weight": 5.8
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 18,
+   "phys": 27,
+   "slash": 10,
+   "strike": 0,
+   "thrust": -6,
+   "thunder": 15
+  },
+  "durability": 300,
+  "id": 43000,
+  "level": 0,
+  "name": "Dark Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 5.8
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 8,
+   "phys": 9,
+   "slash": 0,
+   "strike": 10,
+   "thrust": -10,
+   "thunder": 6
+  },
+  "durability": 200,
+  "id": 50000,
+  "level": 0,
+  "name": "Brigand Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 20,
+   "phys": 23,
+   "slash": 0,
+   "strike": 10,
+   "thrust": -10,
+   "thunder": 17
+  },
+  "durability": 200,
+  "id": 51000,
+  "level": 0,
+  "name": "Brigand Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 20,
+   "curse": 0,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "body",
+  "weight": 3.1
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 12,
+   "phys": 14,
+   "slash": 0,
+   "strike": 10,
+   "thrust": -10,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 52000,
+  "level": 0,
+  "name": "Brigand Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "arm",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 12,
+   "phys": 14,
+   "slash": 0,
+   "strike": 10,
+   "thrust": -10,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 53000,
+  "level": 0,
+  "name": "Brigand Trousers",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 5,
+   "phys": 9,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 200,
+  "id": 60000,
+  "level": 0,
+  "name": "Shadow Mask",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "head",
+  "weight": 0.9
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 12,
+   "phys": 23,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 200,
+  "id": 61000,
+  "level": 0,
+  "name": "Shadow Garb",
+  "poise": 0,
+  "resist": {
+   "blood": 39,
+   "curse": 0,
+   "disease": 47,
+   "poison": 47
+  },
+  "slot": "body",
+  "weight": 2.3
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 7,
+   "phys": 13,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 62000,
+  "level": 0,
+  "name": "Shadow Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 28,
+   "poison": 28
+  },
+  "slot": "arm",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 7,
+   "phys": 13,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 63000,
+  "level": 0,
+  "name": "Shadow Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 28,
+   "poison": 28
+  },
+  "slot": "leg",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 11,
+   "phys": 27,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 600,
+  "id": 70000,
+  "level": 0,
+  "name": "Black Iron Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 17,
+   "curse": 5,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "head",
+  "weight": 6.0
+ },
+ {
+  "defense": {
+   "fire": 51,
+   "magic": 30,
+   "phys": 68,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 600,
+  "id": 71000,
+  "level": 0,
+  "name": "Black Iron Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 43,
+   "curse": 13,
+   "disease": 25,
+   "poison": 25
+  },
+  "slot": "body",
+  "weight": 15.6
+ },
+ {
+  "defense": {
+   "fire": 30,
+   "magic": 17,
+   "phys": 40,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 600,
+  "id": 72000,
+  "level": 0,
+  "name": "Black Iron Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 25,
+   "curse": 8,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "arm",
+  "weight": 9.2
+ },
+ {
+  "defense": {
+   "fire": 30,
+   "magic": 17,
+   "phys": 40,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 600,
+  "id": 73000,
+  "level": 0,
+  "name": "Black Iron Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 25,
+   "curse": 8,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "leg",
+  "weight": 9.2
+ },
+ {
+  "defense": {
+   "fire": 26,
+   "magic": 19,
+   "phys": 40,
+   "slash": 15,
+   "strike": -13,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 700,
+  "id": 80000,
+  "level": 0,
+  "name": "Smough's Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 5,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "head",
+  "weight": 6.8
+ },
+ {
+  "defense": {
+   "fire": 66,
+   "magic": 52,
+   "phys": 106,
+   "slash": 15,
+   "strike": -13,
+   "thrust": 0,
+   "thunder": 59
+  },
+  "durability": 700,
+  "id": 81000,
+  "level": 0,
+  "name": "Smough's Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 54,
+   "curse": 9,
+   "disease": 28,
+   "poison": 28
+  },
+  "slot": "body",
+  "weight": 17.6
+ },
+ {
+  "defense": {
+   "fire": 40,
+   "magic": 31,
+   "phys": 61,
+   "slash": 15,
+   "strike": -13,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 700,
+  "id": 82000,
+  "level": 0,
+  "name": "Smough's Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 33,
+   "curse": 5,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "arm",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 40,
+   "magic": 31,
+   "phys": 61,
+   "slash": 15,
+   "strike": -13,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 700,
+  "id": 83000,
+  "level": 0,
+  "name": "Smough's Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 33,
+   "curse": 5,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "leg",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 18,
+   "phys": 20,
+   "slash": 14,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 300,
+  "id": 90000,
+  "level": 0,
+  "name": "Six-Eyed Helm of the Channelers",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "head",
+  "weight": 3.9
+ },
+ {
+  "defense": {
+   "fire": 45,
+   "magic": 45,
+   "phys": 53,
+   "slash": 14,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 35
+  },
+  "durability": 300,
+  "id": 91000,
+  "level": 0,
+  "name": "Robe of the Channelers",
+  "poise": 0,
+  "resist": {
+   "blood": 38,
+   "curse": 0,
+   "disease": 33,
+   "poison": 33
+  },
+  "slot": "body",
+  "weight": 10.1
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 13,
+   "phys": 17,
+   "slash": 14,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 300,
+  "id": 92000,
+  "level": 0,
+  "name": "Gauntlets of the Channelers",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 27,
+   "magic": 27,
+   "phys": 32,
+   "slash": 14,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 20
+  },
+  "durability": 300,
+  "id": 93000,
+  "level": 0,
+  "name": "Waistcloth of the Channelers",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "leg",
+  "weight": 6.0
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 10,
+   "phys": 18,
+   "slash": 16,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 500,
+  "id": 100000,
+  "level": 0,
+  "name": "Helm of Favor",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 8,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 30,
+   "magic": 23,
+   "phys": 48,
+   "slash": 16,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 500,
+  "id": 101000,
+  "level": 0,
+  "name": "Embraced Armor of Favor",
+  "poise": 0,
+  "resist": {
+   "blood": 28,
+   "curse": 22,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "body",
+  "weight": 11.7
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 10,
+   "phys": 21,
+   "slash": 16,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 500,
+  "id": 102000,
+  "level": 0,
+  "name": "Gauntlets of Favor",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 10,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 5.0
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 14,
+   "phys": 28,
+   "slash": 16,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 11
+  },
+  "durability": 500,
+  "id": 103000,
+  "level": 0,
+  "name": "Leggings of Favor",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 14,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "leg",
+  "weight": 6.9
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 12,
+   "phys": 18,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 500,
+  "id": 110000,
+  "level": 0,
+  "name": "Helm of the Wise",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 18,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "head",
+  "weight": 5.1
+ },
+ {
+  "defense": {
+   "fire": 34,
+   "magic": 31,
+   "phys": 47,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 25
+  },
+  "durability": 500,
+  "id": 111000,
+  "level": 0,
+  "name": "Armor of the Glorious",
+  "poise": 0,
+  "resist": {
+   "blood": 28,
+   "curse": 24,
+   "disease": 19,
+   "poison": 19
+  },
+  "slot": "body",
+  "weight": 13.3
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 7,
+   "phys": 11,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 500,
+  "id": 112000,
+  "level": 0,
+  "name": "Gauntlets of the Vanquisher",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 4,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "arm",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 10,
+   "phys": 14,
+   "slash": 15,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 500,
+  "id": 113000,
+  "level": 0,
+  "name": "Boots of the Explorer",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 5,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "leg",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 17,
+   "phys": 35,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 800,
+  "id": 120000,
+  "level": 0,
+  "name": "Stone Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 17,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 6.8
+ },
+ {
+  "defense": {
+   "fire": 54,
+   "magic": 45,
+   "phys": 91,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 54
+  },
+  "durability": 800,
+  "id": 121000,
+  "level": 0,
+  "name": "Stone Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 45,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 17.6
+ },
+ {
+  "defense": {
+   "fire": 33,
+   "magic": 27,
+   "phys": 54,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 800,
+  "id": 122000,
+  "level": 0,
+  "name": "Stone Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 33,
+   "magic": 27,
+   "phys": 54,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 800,
+  "id": 123000,
+  "level": 0,
+  "name": "Stone Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "leg",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 8,
+   "phys": 25,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 2
+  },
+  "durability": 150,
+  "id": 130000,
+  "level": 0,
+  "name": "Crystalline Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 4.2
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 21,
+   "phys": 59,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 150,
+  "id": 131000,
+  "level": 0,
+  "name": "Crystalline Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "body",
+  "weight": 10.9
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 12,
+   "phys": 37,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 4
+  },
+  "durability": 150,
+  "id": 132000,
+  "level": 0,
+  "name": "Crystalline Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "arm",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 12,
+   "phys": 37,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 4
+  },
+  "durability": 150,
+  "id": 133000,
+  "level": 0,
+  "name": "Crystalline Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "leg",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 12,
+   "phys": 12,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 400,
+  "id": 140000,
+  "level": 0,
+  "name": "Mask of the Sealer",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 8,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 1.5
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 33,
+   "phys": 32,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 24
+  },
+  "durability": 400,
+  "id": 141000,
+  "level": 0,
+  "name": "Crimson Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 21,
+   "disease": 21,
+   "poison": 21
+  },
+  "slot": "body",
+  "weight": 3.9
+ },
+ {
+  "defense": {
+   "fire": 4,
+   "magic": 7,
+   "phys": 7,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 5
+  },
+  "durability": 400,
+  "id": 142000,
+  "level": 0,
+  "name": "Crimson Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 4,
+   "curse": 4,
+   "disease": 4,
+   "poison": 4
+  },
+  "slot": "arm",
+  "weight": 0.8
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 29,
+   "phys": 29,
+   "slash": 0,
+   "strike": 10,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 400,
+  "id": 143000,
+  "level": 0,
+  "name": "Crimson Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 19,
+   "curse": 19,
+   "disease": 19,
+   "poison": 19
+  },
+  "slot": "leg",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 12,
+   "phys": 12,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 400,
+  "id": 150000,
+  "level": 0,
+  "name": "Mask of Velka",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 20,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 25,
+   "magic": 29,
+   "phys": 23,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 400,
+  "id": 151000,
+  "level": 0,
+  "name": "Black Cleric Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 13,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "body",
+  "weight": 3.9
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 14,
+   "phys": 11,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 400,
+  "id": 152000,
+  "level": 0,
+  "name": "Black Manchette",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 5,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 22,
+   "phys": 16,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 400,
+  "id": 153000,
+  "level": 0,
+  "name": "Black Tights",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 9,
+   "disease": 15,
+   "poison": 15
+  },
+  "slot": "leg",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 10,
+   "phys": 14,
+   "slash": 0,
+   "strike": 0,
+   "thrust": -2,
+   "thunder": 9
+  },
+  "durability": 350,
+  "id": 160000,
+  "level": 0,
+  "name": "Iron Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 2,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 21,
+   "phys": 35,
+   "slash": 0,
+   "strike": 0,
+   "thrust": -2,
+   "thunder": 19
+  },
+  "durability": 350,
+  "id": 161000,
+  "level": 0,
+  "name": "Armor of the Sun",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 10,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 9.0
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 10,
+   "phys": 17,
+   "slash": 0,
+   "strike": 0,
+   "thrust": -2,
+   "thunder": 9
+  },
+  "durability": 350,
+  "id": 162000,
+  "level": 0,
+  "name": "Iron Bracelet",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 2,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "arm",
+  "weight": 4.3
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 12,
+   "phys": 21,
+   "slash": 0,
+   "strike": 0,
+   "thrust": -2,
+   "thunder": 11
+  },
+  "durability": 350,
+  "id": 163000,
+  "level": 0,
+  "name": "Iron Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 2,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 5.3
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 10,
+   "phys": 12,
+   "slash": 20,
+   "strike": 0,
+   "thrust": -3,
+   "thunder": 3
+  },
+  "durability": 300,
+  "id": 170000,
+  "level": 0,
+  "name": "Chain Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 21,
+   "phys": 30,
+   "slash": 20,
+   "strike": 0,
+   "thrust": -3,
+   "thunder": 7
+  },
+  "durability": 300,
+  "id": 171000,
+  "level": 0,
+  "name": "Chain Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 20,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "body",
+  "weight": 6.0
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 10,
+   "phys": 12,
+   "slash": 20,
+   "strike": 0,
+   "thrust": -3,
+   "thunder": 4
+  },
+  "durability": 300,
+  "id": 172000,
+  "level": 0,
+  "name": "Leather Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "arm",
+  "weight": 3.6
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 14,
+   "phys": 18,
+   "slash": 20,
+   "strike": 0,
+   "thrust": -3,
+   "thunder": 5
+  },
+  "durability": 300,
+  "id": 173000,
+  "level": 0,
+  "name": "Chain Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 4.6
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 9,
+   "phys": 15,
+   "slash": 15,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 500,
+  "id": 180000,
+  "level": 0,
+  "name": "Cleric Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 4.8
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 23,
+   "phys": 40,
+   "slash": 15,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 15
+  },
+  "durability": 500,
+  "id": 181000,
+  "level": 0,
+  "name": "Cleric Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 12.5
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 24,
+   "slash": 15,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 500,
+  "id": 182000,
+  "level": 0,
+  "name": "Cleric Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "arm",
+  "weight": 7.4
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 24,
+   "slash": 15,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 500,
+  "id": 183000,
+  "level": 0,
+  "name": "Cleric Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 7.4
+ },
+ {
+  "defense": {
+   "fire": 24,
+   "magic": 5,
+   "phys": 6,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 80,
+  "id": 190000,
+  "level": 0,
+  "name": "Sunlight Maggot",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 10,
+   "phys": 17,
+   "slash": 9,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 250,
+  "id": 200000,
+  "level": 0,
+  "name": "Helm of Thorns",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "head",
+  "weight": 4.1
+ },
+ {
+  "defense": {
+   "fire": 33,
+   "magic": 28,
+   "phys": 45,
+   "slash": 9,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 20
+  },
+  "durability": 250,
+  "id": 201000,
+  "level": 0,
+  "name": "Armor of Thorns",
+  "poise": 0,
+  "resist": {
+   "blood": 26,
+   "curse": 0,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "body",
+  "weight": 10.5
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 16,
+   "phys": 26,
+   "slash": 9,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 250,
+  "id": 202000,
+  "level": 0,
+  "name": "Gauntlets of Thorns",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 6.2
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 16,
+   "phys": 26,
+   "slash": 9,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 250,
+  "id": 203000,
+  "level": 0,
+  "name": "Leggings of Thorns",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "leg",
+  "weight": 6.2
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 8,
+   "phys": 14,
+   "slash": 14,
+   "strike": -43,
+   "thrust": 0,
+   "thunder": 3
+  },
+  "durability": 250,
+  "id": 210000,
+  "level": 0,
+  "name": "Standard Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 20,
+   "phys": 26,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 23
+  },
+  "durability": 250,
+  "id": 211000,
+  "level": 0,
+  "name": "Hard Leather Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "body",
+  "weight": 5.9
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 12,
+   "phys": 13,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 250,
+  "id": 212000,
+  "level": 0,
+  "name": "Hard Leather Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "arm",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 12,
+   "phys": 13,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 250,
+  "id": 213000,
+  "level": 0,
+  "name": "Hard Leather Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 10,
+   "phys": 8,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 200,
+  "id": 220000,
+  "level": 0,
+  "name": "Sorcerer Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 0.9
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 27,
+   "phys": 20,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 200,
+  "id": 221000,
+  "level": 0,
+  "name": "Sorcerer Cloak",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "body",
+  "weight": 2.3
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 222000,
+  "level": 0,
+  "name": "Sorcerer Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "arm",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 223000,
+  "level": 0,
+  "name": "Sorcerer Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "leg",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 9,
+   "phys": 8,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 400,
+  "id": 230000,
+  "level": 0,
+  "name": "Tattered Cloth Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 1,
+   "disease": 23,
+   "poison": 23
+  },
+  "slot": "head",
+  "weight": 1.1
+ },
+ {
+  "defense": {
+   "fire": 30,
+   "magic": 23,
+   "phys": 21,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 400,
+  "id": 231000,
+  "level": 0,
+  "name": "Tattered Cloth Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 2,
+   "disease": 59,
+   "poison": 59
+  },
+  "slot": "body",
+  "weight": 2.7
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 14,
+   "phys": 12,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 400,
+  "id": 232000,
+  "level": 0,
+  "name": "Tattered Cloth Manchette",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 1,
+   "disease": 35,
+   "poison": 35
+  },
+  "slot": "arm",
+  "weight": 1.6
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 14,
+   "phys": 12,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 400,
+  "id": 233000,
+  "level": 0,
+  "name": "Heavy Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 1,
+   "disease": 35,
+   "poison": 35
+  },
+  "slot": "leg",
+  "weight": 1.6
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 5,
+   "phys": 7,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 250,
+  "id": 240000,
+  "level": 0,
+  "name": "Pharis's Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 20,
+   "phys": 24,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 23
+  },
+  "durability": 250,
+  "id": 241000,
+  "level": 0,
+  "name": "Leather Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 0,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "body",
+  "weight": 4.7
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 12,
+   "phys": 12,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 250,
+  "id": 242000,
+  "level": 0,
+  "name": "Leather Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "arm",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 12,
+   "phys": 12,
+   "slash": 0,
+   "strike": 6,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 250,
+  "id": 243000,
+  "level": 0,
+  "name": "Leather Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 31,
+   "phys": 3,
+   "slash": 0,
+   "strike": 20,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 150,
+  "id": 250000,
+  "level": 0,
+  "name": "Painting Guardian Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 6,
+   "disease": 30,
+   "poison": 30
+  },
+  "slot": "head",
+  "weight": 0.6
+ },
+ {
+  "defense": {
+   "fire": 29,
+   "magic": 34,
+   "phys": 9,
+   "slash": 0,
+   "strike": 20,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 150,
+  "id": 251000,
+  "level": 0,
+  "name": "Painting Guardian Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 32,
+   "curse": 16,
+   "disease": 78,
+   "poison": 78
+  },
+  "slot": "body",
+  "weight": 1.6
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 22,
+   "phys": 6,
+   "slash": 0,
+   "strike": 20,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 150,
+  "id": 252000,
+  "level": 0,
+  "name": "Painting Guardian Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 10,
+   "disease": 46,
+   "poison": 46
+  },
+  "slot": "arm",
+  "weight": 0.9
+ },
+ {
+  "defense": {
+   "fire": 22,
+   "magic": 30,
+   "phys": 22,
+   "slash": 0,
+   "strike": 20,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 150,
+  "id": 253000,
+  "level": 0,
+  "name": "Painting Guardian Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 10,
+   "disease": 51,
+   "poison": 51
+  },
+  "slot": "leg",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 22,
+   "magic": 16,
+   "phys": 32,
+   "slash": 13,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 18
+  },
+  "durability": 700,
+  "id": 270000,
+  "level": 0,
+  "name": "Ornstein's Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 8,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 5.5
+ },
+ {
+  "defense": {
+   "fire": 46,
+   "magic": 36,
+   "phys": 70,
+   "slash": 13,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 40
+  },
+  "durability": 700,
+  "id": 271000,
+  "level": 0,
+  "name": "Ornstein's Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 38,
+   "curse": 18,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "body",
+  "weight": 12.0
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 12,
+   "phys": 29,
+   "slash": 13,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 14
+  },
+  "durability": 700,
+  "id": 272000,
+  "level": 0,
+  "name": "Ornstein's Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 6,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "arm",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 28,
+   "magic": 20,
+   "phys": 40,
+   "slash": 13,
+   "strike": -5,
+   "thrust": 0,
+   "thunder": 24
+  },
+  "durability": 700,
+  "id": 273000,
+  "level": 0,
+  "name": "Ornstein's Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 12,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 7.0
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 6,
+   "phys": 17,
+   "slash": 24,
+   "strike": -5,
+   "thrust": -3,
+   "thunder": 7
+  },
+  "durability": 450,
+  "id": 280000,
+  "level": 0,
+  "name": "Eastern Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "head",
+  "weight": 4.7
+ },
+ {
+  "defense": {
+   "fire": 33,
+   "magic": 15,
+   "phys": 45,
+   "slash": 24,
+   "strike": -5,
+   "thrust": -3,
+   "thunder": 18
+  },
+  "durability": 450,
+  "id": 281000,
+  "level": 0,
+  "name": "Eastern Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 38,
+   "curse": 0,
+   "disease": 28,
+   "poison": 28
+  },
+  "slot": "body",
+  "weight": 12.3
+ },
+ {
+  "defense": {
+   "fire": 4,
+   "magic": 1,
+   "phys": 6,
+   "slash": 24,
+   "strike": -5,
+   "thrust": -3,
+   "thunder": 2
+  },
+  "durability": 450,
+  "id": 282000,
+  "level": 0,
+  "name": "Eastern Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 5,
+   "curse": 0,
+   "disease": 4,
+   "poison": 4
+  },
+  "slot": "arm",
+  "weight": 1.5
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 5,
+   "phys": 15,
+   "slash": 24,
+   "strike": -5,
+   "thrust": -3,
+   "thunder": 6
+  },
+  "durability": 450,
+  "id": 283000,
+  "level": 0,
+  "name": "Eastern Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "leg",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 3,
+   "magic": 15,
+   "phys": 18,
+   "slash": 0,
+   "strike": 54,
+   "thrust": -15,
+   "thunder": 8
+  },
+  "durability": 400,
+  "id": 290000,
+  "level": 0,
+  "name": "Xanthous Crown",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 35,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "head",
+  "weight": 5.0
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 37,
+   "phys": 32,
+   "slash": 0,
+   "strike": 12,
+   "thrust": -9,
+   "thunder": 23
+  },
+  "durability": 400,
+  "id": 291000,
+  "level": 0,
+  "name": "Xanthous Overcoat",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 0,
+   "disease": 29,
+   "poison": 29
+  },
+  "slot": "body",
+  "weight": 3.9
+ },
+ {
+  "defense": {
+   "fire": 4,
+   "magic": 22,
+   "phys": 18,
+   "slash": 0,
+   "strike": 12,
+   "thrust": -9,
+   "thunder": 14
+  },
+  "durability": 400,
+  "id": 292000,
+  "level": 0,
+  "name": "Xanthous Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "arm",
+  "weight": 2.3
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 39,
+   "phys": 32,
+   "slash": 0,
+   "strike": 12,
+   "thrust": -9,
+   "thunder": 23
+  },
+  "durability": 400,
+  "id": 293000,
+  "level": 0,
+  "name": "Xanthous Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 0,
+   "disease": 30,
+   "poison": 30
+  },
+  "slot": "leg",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 8,
+   "phys": 9,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 250,
+  "id": 300000,
+  "level": 0,
+  "name": "Thief Mask",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 14,
+   "magic": 20,
+   "phys": 23,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 16
+  },
+  "durability": 250,
+  "id": 301000,
+  "level": 0,
+  "name": "Black Leather Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 31,
+   "poison": 31
+  },
+  "slot": "body",
+  "weight": 3.1
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 12,
+   "phys": 13,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 250,
+  "id": 302000,
+  "level": 0,
+  "name": "Black Leather Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "arm",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 19,
+   "phys": 12,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 15
+  },
+  "durability": 250,
+  "id": 303000,
+  "level": 0,
+  "name": "Black Leather Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 31,
+   "poison": 31
+  },
+  "slot": "leg",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 9,
+   "phys": 8,
+   "slash": 0,
+   "strike": 18,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 350,
+  "id": 310000,
+  "level": 0,
+  "name": "Priest's Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 14,
+   "magic": 23,
+   "phys": 22,
+   "slash": 0,
+   "strike": 18,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 350,
+  "id": 311000,
+  "level": 0,
+  "name": "Holy Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 24,
+   "curse": 0,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "body",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 3,
+   "magic": 5,
+   "phys": 5,
+   "slash": 0,
+   "strike": 18,
+   "thrust": 0,
+   "thunder": 4
+  },
+  "durability": 350,
+  "id": 312000,
+  "level": 0,
+  "name": "Traveling Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 5,
+   "curse": 0,
+   "disease": 4,
+   "poison": 4
+  },
+  "slot": "arm",
+  "weight": 0.7
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 15,
+   "phys": 14,
+   "slash": 0,
+   "strike": 18,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 350,
+  "id": 313000,
+  "level": 0,
+  "name": "Holy Trousers",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "leg",
+  "weight": 2.0
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 11,
+   "phys": 21,
+   "slash": 13,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 6
+  },
+  "durability": 550,
+  "id": 320000,
+  "level": 0,
+  "name": "Black Knight Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 5.0
+ },
+ {
+  "defense": {
+   "fire": 48,
+   "magic": 29,
+   "phys": 57,
+   "slash": 13,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 17
+  },
+  "durability": 550,
+  "id": 321000,
+  "level": 0,
+  "name": "Black Knight Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 32,
+   "curse": 0,
+   "disease": 15,
+   "poison": 15
+  },
+  "slot": "body",
+  "weight": 13.0
+ },
+ {
+  "defense": {
+   "fire": 23,
+   "magic": 14,
+   "phys": 26,
+   "slash": 13,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 8
+  },
+  "durability": 550,
+  "id": 322000,
+  "level": 0,
+  "name": "Black Knight Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "arm",
+  "weight": 6.0
+ },
+ {
+  "defense": {
+   "fire": 26,
+   "magic": 15,
+   "phys": 30,
+   "slash": 13,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 9
+  },
+  "durability": 550,
+  "id": 323000,
+  "level": 0,
+  "name": "Black Knight Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 17,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 7.0
+ },
+ {
+  "defense": {
+   "fire": 2,
+   "magic": 11,
+   "phys": 5,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 150,
+  "id": 330000,
+  "level": 0,
+  "name": "Crown of Dusk",
+  "poise": 0,
+  "resist": {
+   "blood": 5,
+   "curse": 20,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 0.4
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 33,
+   "phys": 14,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 150,
+  "id": 331000,
+  "level": 0,
+  "name": "Antiquated Dress",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 26,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "body",
+  "weight": 1.0
+ },
+ {
+  "defense": {
+   "fire": 3,
+   "magic": 19,
+   "phys": 8,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 11
+  },
+  "durability": 150,
+  "id": 332000,
+  "level": 0,
+  "name": "Antiquated Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 16,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "arm",
+  "weight": 0.6
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 35,
+   "phys": 15,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 150,
+  "id": 333000,
+  "level": 0,
+  "name": "Antiquated Skirt",
+  "poise": 0,
+  "resist": {
+   "blood": 20,
+   "curse": 52,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "leg",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 12,
+   "phys": 9,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 7
+  },
+  "durability": 250,
+  "id": 340000,
+  "level": 0,
+  "name": "Witch Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 11,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "head",
+  "weight": 1.1
+ },
+ {
+  "defense": {
+   "fire": 20,
+   "magic": 43,
+   "phys": 33,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 26
+  },
+  "durability": 250,
+  "id": 341000,
+  "level": 0,
+  "name": "Witch Cloak",
+  "poise": 0,
+  "resist": {
+   "blood": 36,
+   "curse": 12,
+   "disease": 36,
+   "poison": 36
+  },
+  "slot": "body",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 18,
+   "phys": 14,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 11
+  },
+  "durability": 250,
+  "id": 342000,
+  "level": 0,
+  "name": "Witch Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 6,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "arm",
+  "weight": 1.7
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 27,
+   "phys": 17,
+   "slash": 0,
+   "strike": 11,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 250,
+  "id": 343000,
+  "level": 0,
+  "name": "Witch Skirt",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 8,
+   "disease": 28,
+   "poison": 28
+  },
+  "slot": "leg",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 7,
+   "phys": 15,
+   "slash": 16,
+   "strike": -3,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 450,
+  "id": 350000,
+  "level": 0,
+  "name": "Elite Knight Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 17,
+   "phys": 39,
+   "slash": 16,
+   "strike": -3,
+   "thrust": 0,
+   "thunder": 15
+  },
+  "durability": 450,
+  "id": 351000,
+  "level": 0,
+  "name": "Elite Knight Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 11.7
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 7,
+   "phys": 18,
+   "slash": 16,
+   "strike": -3,
+   "thrust": 0,
+   "thunder": 5
+  },
+  "durability": 450,
+  "id": 352000,
+  "level": 0,
+  "name": "Elite Knight Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 7,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "arm",
+  "weight": 3.7
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 11,
+   "phys": 23,
+   "slash": 16,
+   "strike": -3,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 450,
+  "id": 353000,
+  "level": 0,
+  "name": "Elite Knight Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 6.9
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 8,
+   "phys": 9,
+   "slash": 7,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 400,
+  "id": 360000,
+  "level": 0,
+  "name": "Wanderer Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 26,
+   "magic": 21,
+   "phys": 23,
+   "slash": 7,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 23
+  },
+  "durability": 400,
+  "id": 361000,
+  "level": 0,
+  "name": "Wanderer Coat",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 0,
+   "disease": 21,
+   "poison": 21
+  },
+  "slot": "body",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 12,
+   "phys": 14,
+   "slash": 7,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 400,
+  "id": 362000,
+  "level": 0,
+  "name": "Wanderer Manchette",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "arm",
+  "weight": 2.1
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 12,
+   "phys": 14,
+   "slash": 7,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 400,
+  "id": 363000,
+  "level": 0,
+  "name": "Wanderer Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "leg",
+  "weight": 2.1
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 10,
+   "phys": 8,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 200,
+  "id": 370000,
+  "level": 0,
+  "name": "Mage Smith Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 0.9
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 27,
+   "phys": 20,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 200,
+  "id": 371000,
+  "level": 0,
+  "name": "Mage Smith Coat",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "body",
+  "weight": 2.3
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 372000,
+  "level": 0,
+  "name": "Mage Smith Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "arm",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 373000,
+  "level": 0,
+  "name": "Mage Smith Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "leg",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 43,
+   "phys": 14,
+   "slash": 10,
+   "strike": 10,
+   "thrust": -10,
+   "thunder": 17
+  },
+  "durability": 250,
+  "id": 380000,
+  "level": 0,
+  "name": "Big Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "head",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 29,
+   "magic": 28,
+   "phys": 41,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 35
+  },
+  "durability": 250,
+  "id": 381000,
+  "level": 0,
+  "name": "Sage Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 49,
+   "curse": 0,
+   "disease": 49,
+   "poison": 49
+  },
+  "slot": "body",
+  "weight": 4.0
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 250,
+  "id": 382000,
+  "level": 0,
+  "name": "Traveling Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "arm",
+  "weight": 1.6
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 16,
+   "phys": 12,
+   "slash": 4,
+   "strike": 8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 250,
+  "id": 383000,
+  "level": 0,
+  "name": "Traveling Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "leg",
+  "weight": 1.6
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 6,
+   "phys": 14,
+   "slash": 16,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 5
+  },
+  "durability": 400,
+  "id": 390000,
+  "level": 0,
+  "name": "Knight Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 4.2
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 16,
+   "phys": 37,
+   "slash": 16,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 13
+  },
+  "durability": 400,
+  "id": 391000,
+  "level": 0,
+  "name": "Knight Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 10.9
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 7,
+   "phys": 17,
+   "slash": 16,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 4
+  },
+  "durability": 400,
+  "id": 392000,
+  "level": 0,
+  "name": "Knight Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "arm",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 10,
+   "phys": 22,
+   "slash": 16,
+   "strike": -5,
+   "thrust": -2,
+   "thunder": 8
+  },
+  "durability": 400,
+  "id": 393000,
+  "level": 0,
+  "name": "Knight Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 8,
+   "phys": 6,
+   "slash": 0,
+   "strike": 25,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 150,
+  "id": 400000,
+  "level": 0,
+  "name": "Dingy Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 9,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "head",
+  "weight": 0.8
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 33,
+   "phys": 23,
+   "slash": 0,
+   "strike": 25,
+   "thrust": 0,
+   "thunder": 25
+  },
+  "durability": 150,
+  "id": 401000,
+  "level": 0,
+  "name": "Dingy Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 35,
+   "curse": 35,
+   "disease": 26,
+   "poison": 26
+  },
+  "slot": "body",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 13,
+   "phys": 9,
+   "slash": 0,
+   "strike": 25,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 150,
+  "id": 402000,
+  "level": 0,
+  "name": "Dingy Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 14,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 27,
+   "phys": 13,
+   "slash": 0,
+   "strike": 25,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 150,
+  "id": 403000,
+  "level": 0,
+  "name": "Blood-Stained Skirt",
+  "poise": 0,
+  "resist": {
+   "blood": 29,
+   "curse": 29,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "leg",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 8,
+   "phys": 7,
+   "slash": 0,
+   "strike": 17,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 150,
+  "id": 410000,
+  "level": 0,
+  "name": "Maiden Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 3,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "head",
+  "weight": 0.8
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 22,
+   "phys": 19,
+   "slash": 0,
+   "strike": 17,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 150,
+  "id": 411000,
+  "level": 0,
+  "name": "Maiden Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 8,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "body",
+  "weight": 2.0
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 13,
+   "phys": 11,
+   "slash": 0,
+   "strike": 17,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 150,
+  "id": 412000,
+  "level": 0,
+  "name": "Maiden Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 5,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 27,
+   "phys": 14,
+   "slash": 0,
+   "strike": 17,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 150,
+  "id": 413000,
+  "level": 0,
+  "name": "Maiden Skirt",
+  "poise": 0,
+  "resist": {
+   "blood": 29,
+   "curse": 10,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "leg",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 10,
+   "phys": 21,
+   "slash": 15,
+   "strike": -6,
+   "thrust": -2,
+   "thunder": 14
+  },
+  "durability": 600,
+  "id": 420000,
+  "level": 0,
+  "name": "Silver Knight Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 1,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 4.8
+ },
+ {
+  "defense": {
+   "fire": 29,
+   "magic": 26,
+   "phys": 52,
+   "slash": 15,
+   "strike": -6,
+   "thrust": -2,
+   "thunder": 34
+  },
+  "durability": 600,
+  "id": 421000,
+  "level": 0,
+  "name": "Silver Knight Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 24,
+   "curse": 2,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "body",
+  "weight": 12.0
+ },
+ {
+  "defense": {
+   "fire": 14,
+   "magic": 12,
+   "phys": 25,
+   "slash": 15,
+   "strike": -6,
+   "thrust": -2,
+   "thunder": 16
+  },
+  "durability": 600,
+  "id": 422000,
+  "level": 0,
+  "name": "Silver Knight Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 1,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "arm",
+  "weight": 5.5
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 15,
+   "phys": 28,
+   "slash": 15,
+   "strike": -6,
+   "thrust": -2,
+   "thunder": 19
+  },
+  "durability": 600,
+  "id": 423000,
+  "level": 0,
+  "name": "Silver Knight Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 1,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "leg",
+  "weight": 6.5
+ },
+ {
+  "defense": {
+   "fire": 22,
+   "magic": 22,
+   "phys": 36,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 18
+  },
+  "durability": 900,
+  "id": 440000,
+  "level": 0,
+  "name": "Havel's Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 9,
+   "disease": 4,
+   "poison": 4
+  },
+  "slot": "head",
+  "weight": 7.5
+ },
+ {
+  "defense": {
+   "fire": 54,
+   "magic": 56,
+   "phys": 92,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 49
+  },
+  "durability": 900,
+  "id": 441000,
+  "level": 0,
+  "name": "Havel's Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 45,
+   "curse": 22,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "body",
+  "weight": 19.5
+ },
+ {
+  "defense": {
+   "fire": 32,
+   "magic": 32,
+   "phys": 54,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 29
+  },
+  "durability": 900,
+  "id": 442000,
+  "level": 0,
+  "name": "Havel's Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 13,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "arm",
+  "weight": 11.5
+ },
+ {
+  "defense": {
+   "fire": 32,
+   "magic": 32,
+   "phys": 54,
+   "slash": 15,
+   "strike": -15,
+   "thrust": 0,
+   "thunder": 29
+  },
+  "durability": 900,
+  "id": 443000,
+  "level": 0,
+  "name": "Havel's Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 13,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "leg",
+  "weight": 11.5
+ },
+ {
+  "defense": {
+   "fire": 11,
+   "magic": 12,
+   "phys": 22,
+   "slash": 13,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 11
+  },
+  "durability": 600,
+  "id": 450000,
+  "level": 0,
+  "name": "Brass Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 6,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 5.1
+ },
+ {
+  "defense": {
+   "fire": 25,
+   "magic": 27,
+   "phys": 48,
+   "slash": 13,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 25
+  },
+  "durability": 600,
+  "id": 451000,
+  "level": 0,
+  "name": "Brass Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 24,
+   "curse": 11,
+   "disease": 20,
+   "poison": 20
+  },
+  "slot": "body",
+  "weight": 10.9
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 14,
+   "phys": 24,
+   "slash": 13,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 600,
+  "id": 452000,
+  "level": 0,
+  "name": "Brass Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 6,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 5.4
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 16,
+   "phys": 26,
+   "slash": 13,
+   "strike": -4,
+   "thrust": 0,
+   "thunder": 15
+  },
+  "durability": 600,
+  "id": 453000,
+  "level": 0,
+  "name": "Brass Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 7,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "leg",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 22,
+   "magic": 15,
+   "phys": 11,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 400,
+  "id": 460000,
+  "level": 0,
+  "name": "Gold-Hemmed Black Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 36,
+   "poison": 36
+  },
+  "slot": "head",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 58,
+   "magic": 38,
+   "phys": 31,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 400,
+  "id": 461000,
+  "level": 0,
+  "name": "Gold-Hemmed Black Cloak",
+  "poise": 0,
+  "resist": {
+   "blood": 40,
+   "curse": 0,
+   "disease": 94,
+   "poison": 94
+  },
+  "slot": "body",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 24,
+   "magic": 13,
+   "phys": 12,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 400,
+  "id": 462000,
+  "level": 0,
+  "name": "Gold-Hemmed Black Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 32,
+   "poison": 32
+  },
+  "slot": "arm",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 49,
+   "magic": 27,
+   "phys": 23,
+   "slash": 0,
+   "strike": 7,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 400,
+  "id": 463000,
+  "level": 0,
+  "name": "Gold-Hemmed Black Skirt",
+  "poise": 0,
+  "resist": {
+   "blood": 32,
+   "curse": 0,
+   "disease": 78,
+   "poison": 78
+  },
+  "slot": "leg",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 16,
+   "magic": 17,
+   "phys": 35,
+   "slash": 17,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 700,
+  "id": 470000,
+  "level": 0,
+  "name": "Golem Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 17,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "head",
+  "weight": 6.3
+ },
+ {
+  "defense": {
+   "fire": 41,
+   "magic": 45,
+   "phys": 91,
+   "slash": 17,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 700,
+  "id": 471000,
+  "level": 0,
+  "name": "Golem Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 45,
+   "curse": 0,
+   "disease": 31,
+   "poison": 31
+  },
+  "slot": "body",
+  "weight": 16.4
+ },
+ {
+  "defense": {
+   "fire": 23,
+   "magic": 25,
+   "phys": 54,
+   "slash": 17,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 700,
+  "id": 472000,
+  "level": 0,
+  "name": "Golem Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 17,
+   "poison": 17
+  },
+  "slot": "arm",
+  "weight": 9.7
+ },
+ {
+  "defense": {
+   "fire": 23,
+   "magic": 25,
+   "phys": 54,
+   "slash": 17,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 700,
+  "id": 473000,
+  "level": 0,
+  "name": "Golem Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 17,
+   "poison": 17
+  },
+  "slot": "leg",
+  "weight": 9.7
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 6,
+   "phys": 10,
+   "slash": 11,
+   "strike": 0,
+   "thrust": -12,
+   "thunder": 4
+  },
+  "durability": 200,
+  "id": 480000,
+  "level": 0,
+  "name": "Hollow Soldier Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 7,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 16,
+   "phys": 26,
+   "slash": 11,
+   "strike": 0,
+   "thrust": -12,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 481000,
+  "level": 0,
+  "name": "Hollow Soldier Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "body",
+  "weight": 7.8
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 8,
+   "phys": 13,
+   "slash": 11,
+   "strike": 0,
+   "thrust": -12,
+   "thunder": 6
+  },
+  "durability": 200,
+  "id": 483000,
+  "level": 0,
+  "name": "Hollow Soldier Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "leg",
+  "weight": 1.5
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 8,
+   "phys": 16,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 5
+  },
+  "durability": 500,
+  "id": 490000,
+  "level": 0,
+  "name": "Steel Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 5.4
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 22,
+   "phys": 42,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 500,
+  "id": 491000,
+  "level": 0,
+  "name": "Steel Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 14.0
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 25,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 500,
+  "id": 492000,
+  "level": 0,
+  "name": "Steel Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "arm",
+  "weight": 8.3
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 25,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 500,
+  "id": 493000,
+  "level": 0,
+  "name": "Steel Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 8.3
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 8,
+   "phys": 8,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 4,
+   "thunder": 7
+  },
+  "durability": 250,
+  "id": 500000,
+  "level": 0,
+  "name": "Hollow Thief's Hood",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "head",
+  "weight": 1.1
+ },
+ {
+  "defense": {
+   "fire": 13,
+   "magic": 20,
+   "phys": 21,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 4,
+   "thunder": 18
+  },
+  "durability": 250,
+  "id": 501000,
+  "level": 0,
+  "name": "Hollow Thief's Leather Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 29,
+   "poison": 29
+  },
+  "slot": "body",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 11,
+   "phys": 12,
+   "slash": 0,
+   "strike": 9,
+   "thrust": 4,
+   "thunder": 10
+  },
+  "durability": 250,
+  "id": 503000,
+  "level": 0,
+  "name": "Hollow Thief's Tights",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 17,
+   "poison": 17
+  },
+  "slot": "leg",
+  "weight": 1.7
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 6,
+   "phys": 14,
+   "slash": 22,
+   "strike": -2,
+   "thrust": -4,
+   "thunder": 6
+  },
+  "durability": 450,
+  "id": 510000,
+  "level": 0,
+  "name": "Balder Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 4.2
+ },
+ {
+  "defense": {
+   "fire": 18,
+   "magic": 15,
+   "phys": 37,
+   "slash": 22,
+   "strike": -2,
+   "thrust": -4,
+   "thunder": 15
+  },
+  "durability": 450,
+  "id": 511000,
+  "level": 0,
+  "name": "Balder Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 20,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 10.9
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 7,
+   "phys": 17,
+   "slash": 22,
+   "strike": -2,
+   "thrust": -4,
+   "thunder": 5
+  },
+  "durability": 450,
+  "id": 512000,
+  "level": 0,
+  "name": "Balder Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "arm",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 10,
+   "phys": 22,
+   "slash": 22,
+   "strike": -2,
+   "thrust": -4,
+   "thunder": 9
+  },
+  "durability": 450,
+  "id": 513000,
+  "level": 0,
+  "name": "Balder Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 5,
+   "magic": 6,
+   "phys": 10,
+   "slash": 3,
+   "strike": -3,
+   "thrust": -5,
+   "thunder": 6
+  },
+  "durability": 250,
+  "id": 520000,
+  "level": 0,
+  "name": "Hollow Warrior Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 5,
+   "curse": 0,
+   "disease": 5,
+   "poison": 5
+  },
+  "slot": "head",
+  "weight": 2.6
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 16,
+   "phys": 24,
+   "slash": 3,
+   "strike": -3,
+   "thrust": -5,
+   "thunder": 17
+  },
+  "durability": 250,
+  "id": 521000,
+  "level": 0,
+  "name": "Hollow Warrior Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 13,
+   "poison": 13
+  },
+  "slot": "body",
+  "weight": 6.6
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 8,
+   "phys": 13,
+   "slash": 3,
+   "strike": -3,
+   "thrust": -5,
+   "thunder": 8
+  },
+  "durability": 250,
+  "id": 523000,
+  "level": 0,
+  "name": "Hollow Warrior Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "leg",
+  "weight": 1.4
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 13,
+   "phys": 27,
+   "slash": 13,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 600,
+  "id": 530000,
+  "level": 0,
+  "name": "Giant Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 6.3
+ },
+ {
+  "defense": {
+   "fire": 48,
+   "magic": 32,
+   "phys": 72,
+   "slash": 13,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 600,
+  "id": 531000,
+  "level": 0,
+  "name": "Giant Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 32,
+   "curse": 0,
+   "disease": 19,
+   "poison": 19
+  },
+  "slot": "body",
+  "weight": 16.4
+ },
+ {
+  "defense": {
+   "fire": 29,
+   "magic": 19,
+   "phys": 41,
+   "slash": 13,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 600,
+  "id": 532000,
+  "level": 0,
+  "name": "Giant Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 19,
+   "curse": 0,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "arm",
+  "weight": 9.7
+ },
+ {
+  "defense": {
+   "fire": 29,
+   "magic": 19,
+   "phys": 41,
+   "slash": 13,
+   "strike": -8,
+   "thrust": 0,
+   "thunder": 19
+  },
+  "durability": 600,
+  "id": 533000,
+  "level": 0,
+  "name": "Giant Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 19,
+   "curse": 0,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "leg",
+  "weight": 9.7
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 12,
+   "phys": 12,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 300,
+  "id": 540000,
+  "level": 0,
+  "name": "Crown of the Dark Sun",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 12,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 17,
+   "magic": 31,
+   "phys": 20,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 17
+  },
+  "durability": 80,
+  "id": 541000,
+  "level": 0,
+  "name": "Moonlight Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 31,
+   "disease": 23,
+   "poison": 23
+  },
+  "slot": "body",
+  "weight": 3.1
+ },
+ {
+  "defense": {
+   "fire": 3,
+   "magic": 5,
+   "phys": 3,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 3
+  },
+  "durability": 80,
+  "id": 542000,
+  "level": 0,
+  "name": "Moonlight Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 4,
+   "curse": 5,
+   "disease": 4,
+   "poison": 4
+  },
+  "slot": "arm",
+  "weight": 0.5
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 18,
+   "phys": 12,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 80,
+  "id": 543000,
+  "level": 0,
+  "name": "Moonlight Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 18,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "leg",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 16,
+   "phys": 16,
+   "slash": 15,
+   "strike": 8,
+   "thrust": -8,
+   "thunder": 21
+  },
+  "durability": 800,
+  "id": 550000,
+  "level": 0,
+  "name": "Crown of the Great Lord",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 20,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 3.0
+ },
+ {
+  "defense": {
+   "fire": 41,
+   "magic": 32,
+   "phys": 32,
+   "slash": 15,
+   "strike": 8,
+   "thrust": -8,
+   "thunder": 41
+  },
+  "durability": 400,
+  "id": 551000,
+  "level": 0,
+  "name": "Robe of the Great Lord",
+  "poise": 0,
+  "resist": {
+   "blood": 30,
+   "curse": 40,
+   "disease": 15,
+   "poison": 15
+  },
+  "slot": "body",
+  "weight": 6.0
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 15,
+   "phys": 15,
+   "slash": 15,
+   "strike": 8,
+   "thrust": -8,
+   "thunder": 19
+  },
+  "durability": 400,
+  "id": 552000,
+  "level": 0,
+  "name": "Bracelet of the Great Lord",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 18,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "arm",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 15,
+   "phys": 15,
+   "slash": 15,
+   "strike": 8,
+   "thrust": -8,
+   "thunder": 19
+  },
+  "durability": 400,
+  "id": 553000,
+  "level": 0,
+  "name": "Anklet of the Great Lord",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 18,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "leg",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 6,
+   "phys": 6,
+   "slash": 0,
+   "strike": 67,
+   "thrust": -17,
+   "thunder": 4
+  },
+  "durability": 150,
+  "id": 560000,
+  "level": 0,
+  "name": "Sack",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "head",
+  "weight": 0.6
+ },
+ {
+  "defense": {
+   "fire": 2,
+   "magic": 8,
+   "phys": 21,
+   "slash": 0,
+   "strike": -48,
+   "thrust": 0,
+   "thunder": 2
+  },
+  "durability": 300,
+  "id": 570000,
+  "level": 0,
+  "name": "Symbol of Avarice",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 10.0
+ },
+ {
+  "defense": {
+   "fire": 10,
+   "magic": 10,
+   "phys": 16,
+   "slash": 0,
+   "strike": -13,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 500,
+  "id": 580000,
+  "level": 0,
+  "name": "Royal Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "head",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 10,
+   "phys": 6,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 200,
+  "id": 590000,
+  "level": 0,
+  "name": "Mask of the Father",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 6,
+   "magic": 12,
+   "phys": 6,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 200,
+  "id": 600000,
+  "level": 0,
+  "name": "Mask of the Mother",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 10,
+   "phys": 6,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 200,
+  "id": 610000,
+  "level": 0,
+  "name": "Mask of the Child",
+  "poise": 0,
+  "resist": {
+   "blood": 6,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 1.2
+ },
+ {
+  "defense": {
+   "fire": 4,
+   "magic": 5,
+   "phys": 26,
+   "slash": 20,
+   "strike": -10,
+   "thrust": 0,
+   "thunder": 4
+  },
+  "durability": 600,
+  "id": 620000,
+  "level": 0,
+  "name": "Fang Boar Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 8,
+   "poison": 8
+  },
+  "slot": "head",
+  "weight": 8.0
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 15,
+   "phys": 15,
+   "slash": 27,
+   "strike": -18,
+   "thrust": -9,
+   "thunder": 15
+  },
+  "durability": 500,
+  "id": 630000,
+  "level": 0,
+  "name": "Gargoyle Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 0,
+   "disease": 19,
+   "poison": 19
+  },
+  "slot": "head",
+  "weight": 3.5
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 11,
+   "phys": 5,
+   "slash": 9,
+   "strike": 3,
+   "thrust": 0,
+   "thunder": 8
+  },
+  "durability": 200,
+  "id": 640000,
+  "level": 0,
+  "name": "Black Sorcerer Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 2,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "head",
+  "weight": 0.7
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 28,
+   "phys": 13,
+   "slash": 9,
+   "strike": 3,
+   "thrust": 0,
+   "thunder": 21
+  },
+  "durability": 200,
+  "id": 641000,
+  "level": 0,
+  "name": "Black Sorcerer Cloak",
+  "poise": 0,
+  "resist": {
+   "blood": 31,
+   "curse": 4,
+   "disease": 31,
+   "poison": 31
+  },
+  "slot": "body",
+  "weight": 1.8
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 17,
+   "phys": 8,
+   "slash": 9,
+   "strike": 3,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 200,
+  "id": 642000,
+  "level": 0,
+  "name": "Black Sorcerer Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 2,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "arm",
+  "weight": 1.0
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 17,
+   "phys": 8,
+   "slash": 9,
+   "strike": 3,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 200,
+  "id": 643000,
+  "level": 0,
+  "name": "Black Sorcerer Boots",
+  "poise": 0,
+  "resist": {
+   "blood": 18,
+   "curse": 2,
+   "disease": 18,
+   "poison": 18
+  },
+  "slot": "leg",
+  "weight": 1.0
+ },
+ {
+  "defense": {
+   "fire": 8,
+   "magic": 9,
+   "phys": 16,
+   "slash": 14,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 6
+  },
+  "durability": 500,
+  "id": 650000,
+  "level": 0,
+  "name": "Elite Cleric Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 5.1
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 23,
+   "phys": 41,
+   "slash": 14,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 15
+  },
+  "durability": 500,
+  "id": 651000,
+  "level": 0,
+  "name": "Elite Cleric Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 23,
+   "curse": 0,
+   "disease": 16,
+   "poison": 16
+  },
+  "slot": "body",
+  "weight": 13.3
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 24,
+   "slash": 14,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 500,
+  "id": 652000,
+  "level": 0,
+  "name": "Elite Cleric Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "arm",
+  "weight": 7.8
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 13,
+   "phys": 24,
+   "slash": 14,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 9
+  },
+  "durability": 500,
+  "id": 653000,
+  "level": 0,
+  "name": "Elite Cleric Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 14,
+   "curse": 0,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "leg",
+  "weight": 7.8
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 9,
+   "phys": 18,
+   "slash": 15,
+   "strike": -10,
+   "thrust": 5,
+   "thunder": 9
+  },
+  "durability": 600,
+  "id": 660000,
+  "level": 0,
+  "name": "Helm of Artorias",
+  "poise": 0,
+  "resist": {
+   "blood": 9,
+   "curse": 9,
+   "disease": 9,
+   "poison": 9
+  },
+  "slot": "head",
+  "weight": 4.2
+ },
+ {
+  "defense": {
+   "fire": 46,
+   "magic": 22,
+   "phys": 42,
+   "slash": 15,
+   "strike": -10,
+   "thrust": 5,
+   "thunder": 22
+  },
+  "durability": 600,
+  "id": 661000,
+  "level": 0,
+  "name": "Armor of Artorias",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 20,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "body",
+  "weight": 10.5
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 10,
+   "phys": 20,
+   "slash": 15,
+   "strike": -10,
+   "thrust": 5,
+   "thunder": 10
+  },
+  "durability": 600,
+  "id": 662000,
+  "level": 0,
+  "name": "Gauntlets of Artorias",
+  "poise": 0,
+  "resist": {
+   "blood": 10,
+   "curse": 9,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 4.6
+ },
+ {
+  "defense": {
+   "fire": 24,
+   "magic": 11,
+   "phys": 23,
+   "slash": 15,
+   "strike": -10,
+   "thrust": 5,
+   "thunder": 11
+  },
+  "durability": 600,
+  "id": 663000,
+  "level": 0,
+  "name": "Leggings of Artorias",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 10,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "leg",
+  "weight": 5.5
+ },
+ {
+  "defense": {
+   "fire": 12,
+   "magic": 10,
+   "phys": 13,
+   "slash": 5,
+   "strike": 0,
+   "thrust": 10,
+   "thunder": 8
+  },
+  "durability": 250,
+  "id": 670000,
+  "level": 0,
+  "name": "Porcelain Mask",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 11,
+   "disease": 19,
+   "poison": 19
+  },
+  "slot": "head",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 32,
+   "magic": 26,
+   "phys": 34,
+   "slash": 5,
+   "strike": 0,
+   "thrust": 10,
+   "thunder": 20
+  },
+  "durability": 250,
+  "id": 671000,
+  "level": 0,
+  "name": "Lord's Blade Robe",
+  "poise": 0,
+  "resist": {
+   "blood": 28,
+   "curse": 25,
+   "disease": 49,
+   "poison": 49
+  },
+  "slot": "body",
+  "weight": 6.4
+ },
+ {
+  "defense": {
+   "fire": 14,
+   "magic": 11,
+   "phys": 15,
+   "slash": 5,
+   "strike": 0,
+   "thrust": 10,
+   "thunder": 9
+  },
+  "durability": 250,
+  "id": 672000,
+  "level": 0,
+  "name": "Lord's Blade Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 12,
+   "curse": 11,
+   "disease": 22,
+   "poison": 22
+  },
+  "slot": "arm",
+  "weight": 2.8
+ },
+ {
+  "defense": {
+   "fire": 25,
+   "magic": 20,
+   "phys": 27,
+   "slash": 5,
+   "strike": 0,
+   "thrust": 10,
+   "thunder": 16
+  },
+  "durability": 250,
+  "id": 673000,
+  "level": 0,
+  "name": "Lord's Blade Waistcloth",
+  "poise": 0,
+  "resist": {
+   "blood": 22,
+   "curse": 20,
+   "disease": 38,
+   "poison": 38
+  },
+  "slot": "leg",
+  "weight": 5.0
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 14,
+   "phys": 25,
+   "slash": 5,
+   "strike": 0,
+   "thrust": -5,
+   "thunder": 11
+  },
+  "durability": 450,
+  "id": 680000,
+  "level": 0,
+  "name": "Gough's Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 6.5
+ },
+ {
+  "defense": {
+   "fire": 41,
+   "magic": 28,
+   "phys": 50,
+   "slash": 5,
+   "strike": 0,
+   "thrust": -5,
+   "thunder": 21
+  },
+  "durability": 450,
+  "id": 681000,
+  "level": 0,
+  "name": "Gough's Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 21,
+   "curse": 0,
+   "disease": 12,
+   "poison": 12
+  },
+  "slot": "body",
+  "weight": 13.0
+ },
+ {
+  "defense": {
+   "fire": 22,
+   "magic": 15,
+   "phys": 27,
+   "slash": 5,
+   "strike": 0,
+   "thrust": -5,
+   "thunder": 11
+  },
+  "durability": 450,
+  "id": 682000,
+  "level": 0,
+  "name": "Gough's Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 11,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "arm",
+  "weight": 7.0
+ },
+ {
+  "defense": {
+   "fire": 25,
+   "magic": 17,
+   "phys": 31,
+   "slash": 5,
+   "strike": 0,
+   "thrust": -5,
+   "thunder": 13
+  },
+  "durability": 450,
+  "id": 683000,
+  "level": 0,
+  "name": "Gough's Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 13,
+   "curse": 0,
+   "disease": 7,
+   "poison": 7
+  },
+  "slot": "leg",
+  "weight": 8.0
+ },
+ {
+  "defense": {
+   "fire": 19,
+   "magic": 23,
+   "phys": 41,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 23
+  },
+  "durability": 800,
+  "id": 690000,
+  "level": 0,
+  "name": "Guardian Helm",
+  "poise": 0,
+  "resist": {
+   "blood": 17,
+   "curse": 0,
+   "disease": 6,
+   "poison": 6
+  },
+  "slot": "head",
+  "weight": 7.2
+ },
+ {
+  "defense": {
+   "fire": 42,
+   "magic": 50,
+   "phys": 86,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 50
+  },
+  "durability": 800,
+  "id": 691000,
+  "level": 0,
+  "name": "Guardian Armor",
+  "poise": 0,
+  "resist": {
+   "blood": 42,
+   "curse": 0,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "body",
+  "weight": 17.0
+ },
+ {
+  "defense": {
+   "fire": 27,
+   "magic": 33,
+   "phys": 54,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 800,
+  "id": 692000,
+  "level": 0,
+  "name": "Guardian Gauntlets",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "arm",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 27,
+   "magic": 33,
+   "phys": 54,
+   "slash": 15,
+   "strike": -6,
+   "thrust": 0,
+   "thunder": 33
+  },
+  "durability": 800,
+  "id": 693000,
+  "level": 0,
+  "name": "Guardian Leggings",
+  "poise": 0,
+  "resist": {
+   "blood": 27,
+   "curse": 0,
+   "disease": 10,
+   "poison": 10
+  },
+  "slot": "leg",
+  "weight": 10.4
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 13,
+   "phys": 12,
+   "slash": 0,
+   "strike": 35,
+   "thrust": 0,
+   "thunder": 12
+  },
+  "durability": 300,
+  "id": 700000,
+  "level": 0,
+  "name": "Snickering Top Hat",
+  "poise": 0,
+  "resist": {
+   "blood": 19,
+   "curse": 0,
+   "disease": 14,
+   "poison": 14
+  },
+  "slot": "head",
+  "weight": 2.0
+ },
+ {
+  "defense": {
+   "fire": 21,
+   "magic": 30,
+   "phys": 27,
+   "slash": 0,
+   "strike": 35,
+   "thrust": 0,
+   "thunder": 28
+  },
+  "durability": 300,
+  "id": 701000,
+  "level": 0,
+  "name": "Chester's Long Coat",
+  "poise": 0,
+  "resist": {
+   "blood": 44,
+   "curse": 0,
+   "disease": 32,
+   "poison": 32
+  },
+  "slot": "body",
+  "weight": 4.5
+ },
+ {
+  "defense": {
+   "fire": 7,
+   "magic": 10,
+   "phys": 10,
+   "slash": 0,
+   "strike": 35,
+   "thrust": 0,
+   "thunder": 10
+  },
+  "durability": 300,
+  "id": 702000,
+  "level": 0,
+  "name": "Chester's Gloves",
+  "poise": 0,
+  "resist": {
+   "blood": 15,
+   "curse": 0,
+   "disease": 11,
+   "poison": 11
+  },
+  "slot": "arm",
+  "weight": 1.5
+ },
+ {
+  "defense": {
+   "fire": 15,
+   "magic": 21,
+   "phys": 19,
+   "slash": 0,
+   "strike": 35,
+   "thrust": 0,
+   "thunder": 20
+  },
+  "durability": 300,
+  "id": 703000,
+  "level": 0,
+  "name": "Chester's Trousers",
+  "poise": 0,
+  "resist": {
+   "blood": 31,
+   "curse": 0,
+   "disease": 23,
+   "poison": 23
+  },
+  "slot": "leg",
+  "weight": 3.2
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 17,
+   "phys": 17,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 11
+  },
+  "durability": 150,
+  "id": 710000,
+  "level": 0,
+  "name": "Bloated Head",
+  "poise": 0,
+  "resist": {
+   "blood": 16,
+   "curse": 10,
+   "disease": 32,
+   "poison": 32
+  },
+  "slot": "head",
+  "weight": 2.5
+ },
+ {
+  "defense": {
+   "fire": 9,
+   "magic": 22,
+   "phys": 14,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 13
+  },
+  "durability": 150,
+  "id": 720000,
+  "level": 0,
+  "name": "Bloated Sorcerer Head",
+  "poise": 0,
+  "resist": {
+   "blood": 8,
+   "curse": 15,
+   "disease": 38,
+   "poison": 38
+  },
+  "slot": "head",
+  "weight": 2.2
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 900000,
+  "level": 0,
+  "name": "Head",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 901000,
+  "level": 0,
+  "name": "Body",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "body",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 902000,
+  "level": 0,
+  "name": "Arms",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "arm",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 903000,
+  "level": 0,
+  "name": "Legs",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "leg",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 10,
+  "id": 950000,
+  "level": 0,
+  "name": "No Travel Gear / Head",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 10,
+  "id": 951000,
+  "level": 0,
+  "name": "No Travel Gear / Body",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "body",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 10,
+  "id": 952000,
+  "level": 0,
+  "name": "No Travel Gear / Arms",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "arm",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 10,
+  "id": 953000,
+  "level": 0,
+  "name": "No Travel Gear / Legs",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "leg",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 1000000,
+  "level": 0,
+  "name": "Dragon Head",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 1001000,
+  "level": 0,
+  "name": "Dragon Body",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "body",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 1002000,
+  "level": 0,
+  "name": "Dragon Arms",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "arm",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 1003000,
+  "level": 0,
+  "name": "Dragon Legs",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "leg",
+  "weight": 0.0
+ },
+ {
+  "defense": {
+   "fire": 0,
+   "magic": 0,
+   "phys": 0,
+   "slash": 0,
+   "strike": 0,
+   "thrust": 0,
+   "thunder": 0
+  },
+  "durability": 0,
+  "id": 1010000,
+  "level": 0,
+  "name": "Egg",
+  "poise": 0,
+  "resist": {
+   "blood": 0,
+   "curse": 0,
+   "disease": 0,
+   "poison": 0
+  },
+  "slot": "head",
+  "weight": 0.0
+ }
+]
