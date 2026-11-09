@@ -35,7 +35,7 @@ RUN JWT_SECRET=only-for-archiving-the-classes-never-for-tokens \
       -Dgeneration.background=false \
       -Dspring.jpa.properties.hibernate.boot.allow_jdbc_metadata_access=false \
       -Dspring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect \
-      -jar /app/darksouls-server.jar > /dev/null \
+      -jar /app/server.jar > /dev/null \
     && test -s /app/server.jsa
 
 USER darksouls
@@ -43,4 +43,4 @@ USER darksouls
 ENV LOGGING_STRUCTURED_FORMAT_CONSOLE=ecs
 EXPOSE 8080
 # One vCPU: the serial collector is what the JVM would choose there anyway.
-ENTRYPOINT ["java", "-XX:+UseSerialGC", "-XX:SharedArchiveFile=/app/server.jsa", "-XX:MaxRAMPercentage=75", "-jar", "/app/darksouls-server.jar"]
+ENTRYPOINT ["java", "-XX:+UseSerialGC", "-XX:SharedArchiveFile=/app/server.jsa", "-XX:MaxRAMPercentage=75", "-jar", "/app/server.jar"]
