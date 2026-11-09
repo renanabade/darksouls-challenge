@@ -11,7 +11,7 @@ one. A link had to carry every parameter, and it left out the data version, so a
 
 ## Decision
 
-A challenge is shared as one code: `ds1.8.07-K3F9QX2M7T`, the game, both versions and a payload. The payload is 50 bits in
+A challenge is shared as one code: `ds1.8.07-K39ZA00001`, the game, both versions and a payload. The payload is 50 bits in
 Crockford base32, case-insensitive, so it survives being read aloud or typed: seed (24), level cap (10), gift (5), class
 (4), curve (3), length (2), difficulty (2). A parameter left to the seed is stored as 0.
 

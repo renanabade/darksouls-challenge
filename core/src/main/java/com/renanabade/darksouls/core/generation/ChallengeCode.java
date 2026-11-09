@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 /**
- * The one thing a player shows and shares: <code>ds1.8.07-K3F9QX2M7T</code>, the game, both versions and a payload holding every
+ * The one thing a player shows and shares: <code>ds1.8.07-K39ZA00001</code>, the game, both versions and a payload holding every
  * parameter of a solo challenge and its seed. The payload is 50 bits in Crockford base32, case-insensitive. From the high bits:
  * seed (24), level cap (10), gift (5), class (4), curve (3), length (2), difficulty (2). Level cap, gift, class and curve are 0
  * when drawn by the seed. Group challenges stay on the CLI's --players.

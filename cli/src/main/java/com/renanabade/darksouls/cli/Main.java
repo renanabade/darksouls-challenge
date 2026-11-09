@@ -30,7 +30,7 @@ import picocli.CommandLine.Option;
  *   java -jar darksouls-challenge.jar --seed ashen-one --difficulty medium --length epic --curve rising
  *   java -jar darksouls-challenge.jar --seed ashen-one --class Knight --gift 2406 --level-cap 30 --json
  *   java -jar darksouls-challenge.jar --seed ashen-one --players easy,hard
- *   java -jar darksouls-challenge.jar --code ds1.8.07-K3F9QX2M7T
+ *   java -jar darksouls-challenge.jar --code ds1.8.07-K39ZA00001
  * </pre>
  *
  * Without --seed or --code, a seed is drawn. The manual prints the code, so the challenge can be shared.

@@ -10,7 +10,7 @@ told in the voice of a game master, and guarantees that every challenge it gener
 - **Orders** are the rules of a challenge ("never use a shield", "Gravelord Nito before the second bell").
 - Every order is checked against a model of the game: the progression graph, item locations, bosses, merchants and equipment. A
   challenge that cannot be finished is never generated.
-- A **challenge code** such as `ds1.8.07-K3F9QX2M7T` holds the game, both versions and every setting. Same code, same challenge, on
+- A **challenge code** such as `ds1.8.07-K39ZA00001` holds the game, both versions and every setting. Same code, same challenge, on
   any machine.
 - Players can sign in and record the challenges they finish on a ranking. A run is the player's own word.
 
