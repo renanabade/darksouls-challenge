@@ -6,7 +6,7 @@ RUN npm ci
 COPY web/ ./
 RUN npx ng build
 
-FROM maven:3.9-eclipse-temurin-21 AS server
+FROM maven:3.9-eclipse-temurin-26 AS server
 WORKDIR /build
 COPY pom.xml ./
 COPY core/pom.xml core/
