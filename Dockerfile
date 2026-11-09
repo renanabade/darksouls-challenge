@@ -19,7 +19,7 @@ COPY data data
 COPY --from=site /build/web/dist web/dist
 RUN mvn -q -B -pl server -am -DskipTests package
 
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:25-jre
 RUN useradd --system --no-create-home darksouls
 USER darksouls
 COPY --from=server /build/server/target/darksouls-server.jar /app/server.jar
