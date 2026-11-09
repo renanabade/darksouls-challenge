@@ -1,5 +1,5 @@
 # The site and the API, as one image. Configure it with JWT_SECRET and SPRING_DATASOURCE_URL, _USERNAME and _PASSWORD.
-FROM node:24-alpine AS site
+FROM node:26-alpine AS site
 WORKDIR /build/web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci
