@@ -46,3 +46,29 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: docker build --tag darksouls-challenge .
+
+      # The image on the resources the deploy gives it: if it does not start here, it will not start there.
+      - name: Run the image and ask it for a challenge
+        run: |
+          docker network create check
+          docker run -d --network check --name db -e POSTGRES_PASSWORD=postgres postgres:17
+          until docker exec db pg_isready -U postgres; do sleep 1; done
+          docker run -d --network check --name server --cpus=1 --memory=1g -p 8080:8080 \
+            -e JWT_SECRET=a-secret-for-this-check-and-nothing-else \
+            -e SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres \
+            -e SPRING_DATASOURCE_USERNAME=postgres \
+            -e SPRING_DATASOURCE_PASSWORD=postgres \
+            darksouls-challenge
+          for i in $(seq 1 120); do
+            curl -fs localhost:8080/api/health && break
+            sleep 1
+          done
+          curl -fs localhost:8080/api/health
+          docker logs server 2>&1 | grep -o 'Started DarkSoulsApplication in [^"]*' || true
+          curl -fs localhost:8080/ | grep -q app-root
+          curl -fs -w '\npreview: %{time_total}s\n' -o /dev/null 'localhost:8080/api/previews?seed=check&length=epic&difficulty=hard'
+          curl -fs 'localhost:8080/api/previews?seed=check&length=short' | grep -q '"view"'
+          docker stats --no-stream --format 'memory: {{.MemUsage}}' server
+      - name: Show the server's logs
+        if: failure()
+        run: docker logs server 2>&1 | tail -60
