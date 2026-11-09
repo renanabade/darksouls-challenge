@@ -13,7 +13,7 @@ How the public site is put on the air, and how to change it later. Why it is hos
 | The Cloudflare account  | [dash.cloudflare.com](https://dash.cloudflare.com), `renanabade` | Runs the Worker and the container                        |
 
 Containers need the Workers Paid plan (5 USD a month). The container sleeps after 15 minutes without requests, so the first request after
-that waits for it to start.
+that waits for it to start. While it is awake, its 3 GiB cost about 0.027 USD an hour, after the 25 GiB-hours a month the plan includes.
 
 ## The secrets
 

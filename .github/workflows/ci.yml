@@ -53,7 +53,7 @@ jobs:
           docker network create check
           docker run -d --network check --name db -e POSTGRES_PASSWORD=postgres postgres:17
           until docker exec db pg_isready -U postgres; do sleep 1; done
-          docker run -d --network check --name server --cpus=1 --memory=1g -p 8080:8080 \
+          docker run -d --network check --name server --cpus=1 --memory=3g -p 8080:8080 \
             -e JWT_SECRET=a-secret-for-this-check-and-nothing-else \
             -e SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres \
             -e SPRING_DATASOURCE_USERNAME=postgres \

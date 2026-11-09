@@ -12,6 +12,11 @@ A Worker in `deploy/` runs the image as a Cloudflare Container, one instance, wh
 disk are billed while it runs, so an idle site costs close to nothing, and the price of that is a slower first visit. PostgreSQL lives
 outside, because Cloudflare does not host it for a container.
 
+The instance has 1 vCPU, because the server took 12 seconds to start on one in CI, and the Worker waits 20 seconds for the port by default;
+the predefined types below a whole vCPU give it a quarter of one. A custom type asks for at least 3 GiB of memory per vCPU, so it has 3 GiB,
+of which the server uses about 300 MiB. At 0.0000025 USD per GiB-second, that is about 0.027 USD for each hour it is awake, after the 25
+GiB-hours a month the plan includes, or about 8 hours awake.
+
 The image is built by a manual GitHub Actions workflow, whose runner has Docker. Nothing needs Docker on a developer's machine.
 
 The container only hears from the Worker, so the rate limits read the player's address from `CF-Connecting-IP`. Cloudflare sets that header
