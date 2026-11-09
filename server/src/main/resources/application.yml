@@ -23,6 +23,17 @@ rate-limits:
   auth-per-minute: 20
   generation-per-minute: 30
   preview-per-minute: 60
+  # The header a trusted proxy puts the player's address in. Empty when clients reach the server directly: then anyone could forge it.
+  client-header: ""
+
+# On a port of their own, which the public never reaches.
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
 
 # app.jwt.secret has no default on purpose: without it (JWT_SECRET, at least 32 bytes) the server refuses to start, rather than sign
 # tokens with a key anyone could read here.

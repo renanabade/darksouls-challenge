@@ -23,5 +23,7 @@ FROM eclipse-temurin:21-jre
 RUN useradd --system --no-create-home darksouls
 USER darksouls
 COPY --from=server /build/server/target/darksouls-server.jar /app/server.jar
+# Logs one JSON object per line, for whatever reads them.
+ENV LOGGING_STRUCTURED_FORMAT_CONSOLE=ecs
 EXPOSE 8080
 ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75", "-jar", "/app/server.jar"]

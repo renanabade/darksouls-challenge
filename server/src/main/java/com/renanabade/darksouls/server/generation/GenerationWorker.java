@@ -8,6 +8,9 @@ import com.renanabade.darksouls.core.generation.ChallengeScore;
 import com.renanabade.darksouls.core.generation.CoreJson;
 import com.renanabade.darksouls.core.generation.Generator;
 import com.renanabade.darksouls.server.Ids;
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
 import java.time.Instant;
 import java.util.UUID;
 import org.slf4j.Logger;
@@ -36,6 +39,9 @@ public class GenerationWorker implements SmartLifecycle {
     private final GenerationSignal signal;
     private final TransactionTemplate transactions;
     private final boolean background;
+    private final Counter jobsDone;
+    private final Counter jobsFailed;
+    private final Timer duration;
     private volatile Thread thread;
 
     public GenerationWorker(
@@ -44,6 +50,7 @@ public class GenerationWorker implements SmartLifecycle {
             World world,
             GenerationSignal signal,
             PlatformTransactionManager transactionManager,
+            MeterRegistry meters,
             @Value("${generation.background}") boolean background) {
         this.jobs = jobs;
         this.challenges = challenges;
@@ -51,6 +58,9 @@ public class GenerationWorker implements SmartLifecycle {
         this.signal = signal;
         this.transactions = new TransactionTemplate(transactionManager);
         this.background = background;
+        jobsDone = meters.counter("generation.jobs", "outcome", "done");
+        jobsFailed = meters.counter("generation.jobs", "outcome", "failed");
+        duration = meters.timer("generation.duration");
     }
 
     /** Runs one queued job, if there is any. Returns whether there was one. */
@@ -61,9 +71,11 @@ public class GenerationWorker implements SmartLifecycle {
             var job = taken.get();
             try {
                 var existing = challenges.findByCode(job.code()).map(ChallengeRecord::id);
-                job.finish(existing.orElseGet(() -> generate(job.code())), Instant.now());
+                job.finish(existing.orElseGet(() -> duration.record(() -> generate(job.code()))), Instant.now());
+                jobsDone.increment();
             } catch (IllegalArgumentException | IllegalStateException | InvalidOrderException error) {
                 job.fail(error.getMessage(), Instant.now());
+                jobsFailed.increment();
                 LOG.warn("Could not generate {}", job.code(), error);
             }
 

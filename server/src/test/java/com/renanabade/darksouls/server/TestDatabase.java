@@ -3,52 +3,45 @@ package com.renanabade.darksouls.server;
 import io.zonky.test.db.postgres.embedded.EmbeddedPostgres;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.UUID;
+import org.testcontainers.DockerClientFactory;
+import org.testcontainers.postgresql.PostgreSQLContainer;
 
 /**
- * A real PostgreSQL for the tests: the job queue depends on its row locks, so a fake would not test it. CI gives one as a service, in
- * TEST_POSTGRES (a JDBC URL to a server where a database can be created). Without it, a real server starts from binaries in the test
- * dependencies, so the tests need nothing installed.
+ * A real PostgreSQL for the tests: the job queue depends on its row locks, so a fake would not test it. With Docker, as in CI, it is the
+ * version the project runs on, from Testcontainers. Without Docker, a real server starts from binaries in the test dependencies, so the tests
+ * need nothing installed.
  */
 final class TestDatabase {
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "postgres";
-    private static final String URL = create();
+    private record Connection(String url, String user, String password) {}
+
+    private static final Connection CONNECTION = start();
 
     private TestDatabase() {}
 
     static String url() {
-        return URL;
+        return CONNECTION.url();
     }
 
     static String user() {
-        return USER;
+        return CONNECTION.user();
     }
 
     static String password() {
-        return System.getenv("TEST_POSTGRES") != null ? PASSWORD : "";
+        return CONNECTION.password();
     }
 
-    private static String create() {
-        var admin = System.getenv("TEST_POSTGRES");
-        if (admin == null) {
-            try {
-                return EmbeddedPostgres.start().getJdbcUrl(USER, "postgres");
-            } catch (IOException error) {
-                throw new UncheckedIOException(error);
-            }
+    private static Connection start() {
+        if (DockerClientFactory.instance().isDockerAvailable()) {
+            // Testcontainers' own reaper removes it when the tests end.
+            var container = new PostgreSQLContainer("postgres:17");
+            container.start();
+            return new Connection(container.getJdbcUrl(), container.getUsername(), container.getPassword());
         }
 
-        var name = "darksouls_test_" + UUID.randomUUID().toString().replace("-", "");
-        try (var connection = DriverManager.getConnection(admin, USER, PASSWORD);
-                var statement = connection.createStatement()) {
-            statement.execute("CREATE DATABASE " + name);
-        } catch (SQLException error) {
-            throw new IllegalStateException(error);
+        try {
+            return new Connection(EmbeddedPostgres.start().getJdbcUrl("postgres", "postgres"), "postgres", "");
+        } catch (IOException error) {
+            throw new UncheckedIOException(error);
         }
-
-        return admin.substring(0, admin.lastIndexOf('/') + 1) + name;
     }
 }
