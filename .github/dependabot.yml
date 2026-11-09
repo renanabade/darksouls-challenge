@@ -15,6 +15,18 @@ updates:
     commit-message:
       prefix: build
       include: scope
+    ignore:
+      # Angular pins the TypeScript it supports: it moves when Angular does.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major, version-update:semver-minor]
+
+  - package-ecosystem: npm
+    directory: /deploy
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build
+      include: scope
 
   - package-ecosystem: docker
     directory: /
@@ -22,6 +34,11 @@ updates:
       interval: weekly
     commit-message:
       prefix: build
+    ignore:
+      # The project targets Java 21, and the Node of CI: their majors move on purpose, everywhere at once.
+      - dependency-name: eclipse-temurin
+      - dependency-name: maven
+      - dependency-name: node
 
   - package-ecosystem: github-actions
     directory: /

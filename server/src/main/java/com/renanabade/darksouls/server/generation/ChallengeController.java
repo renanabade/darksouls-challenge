@@ -9,7 +9,6 @@ import com.renanabade.darksouls.server.Ids;
 import com.renanabade.darksouls.server.config.ApiErrors;
 import java.net.URI;
 import java.time.Instant;
-import java.util.List;
 import java.util.UUID;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

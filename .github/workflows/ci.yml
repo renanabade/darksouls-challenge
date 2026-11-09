@@ -17,19 +17,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    services:
-      postgres:
-        image: postgres:17
-        env:
-          POSTGRES_PASSWORD: postgres
-        ports: ['5432:5432']
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
     env:
-      TEST_POSTGRES: jdbc:postgresql://localhost:5432/postgres
       TEST_BROWSER: '1'
     steps:
       # Actions pinned by commit SHA (tags can be moved); Dependabot keeps them current.
@@ -44,6 +32,7 @@ jobs:
           node-version: '24'
           cache: npm
           cache-dependency-path: web/package-lock.json
+      - run: ./mvnw -B spotless:check
       - run: npm ci
         working-directory: web
       - run: npx ng build

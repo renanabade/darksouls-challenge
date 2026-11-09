@@ -10,7 +10,6 @@ import com.renanabade.darksouls.core.generation.Curve;
 import com.renanabade.darksouls.core.generation.GenerationRequest;
 import com.renanabade.darksouls.core.generation.Length;
 import com.renanabade.darksouls.core.orders.Difficulty;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
