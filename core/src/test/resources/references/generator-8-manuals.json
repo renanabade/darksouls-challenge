@@ -1,0 +1,503 @@
+[
+  {
+    "seed": "ashen-one",
+    "difficulty": "easy",
+    "length": "short",
+    "code": "ds1.8.07-K39ZA00000",
+    "sha256": "e154bca060697090572fcdef50b2fa2a40398d4a40c9423fff56e75900a417f9"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "medium",
+    "length": "short",
+    "code": "ds1.8.07-K39ZA00001",
+    "sha256": "8ff0f8e3cfc15e38db98cba4f75e40b36e5fb42445edfe2d0583900a016f6d6d"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "hard",
+    "length": "short",
+    "code": "ds1.8.07-K39ZA00002",
+    "sha256": "5d8795ca42fe8033df02f4aa72c1812fa0eb23fd3221429088a64f2c96822c45"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "extreme",
+    "length": "short",
+    "code": "ds1.8.07-K39ZA00003",
+    "sha256": "a0dece9540190a14b63e1f208165becf06c3d6ce56ec582a95c9ec44a1593851"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "easy",
+    "length": "full",
+    "code": "ds1.8.07-K39ZA00004",
+    "sha256": "4b8e56bbc2f3172b816851dab72e641c5777ae343c9efa8929c55371abf524c9"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "medium",
+    "length": "full",
+    "code": "ds1.8.07-K39ZA00005",
+    "sha256": "ef09e71780b2c4aa10dd8063c128730a722566be56e3fdc9e07ca14fc93cf2ca"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "hard",
+    "length": "full",
+    "code": "ds1.8.07-K39ZA00006",
+    "sha256": "36334d6772eb2f01da5629ceea92973e5559bedc6de6a86621ec532fc4b0f1b8"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "extreme",
+    "length": "full",
+    "code": "ds1.8.07-K39ZA00007",
+    "sha256": "b35cd9221da03f860a3c2358961ed24c90e175345d7ca125de1acd0d65375f49"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "easy",
+    "length": "epic",
+    "code": "ds1.8.07-K39ZA00008",
+    "sha256": "8f32e0e92504084997d61b5821010ed3344f119f9593adb3763bd8c5be22fd57"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "medium",
+    "length": "epic",
+    "code": "ds1.8.07-K39ZA00009",
+    "sha256": "89837fd63a5c94c275993e0f7cb3d793e178930675478afb2f00ab88e3592262"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "hard",
+    "length": "epic",
+    "code": "ds1.8.07-K39ZA0000A",
+    "sha256": "bb2cf150f473a749cbd3b92d0aa887c9c30be5e287f1919ded9f95452bba2f00"
+  },
+  {
+    "seed": "ashen-one",
+    "difficulty": "extreme",
+    "length": "epic",
+    "code": "ds1.8.07-K39ZA0000B",
+    "sha256": "74b233d69f1e148e873d613578027e9305b1744dda716d57bd38045bc0a22668"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "easy",
+    "length": "short",
+    "code": "ds1.8.07-0089400000",
+    "sha256": "fe3d32b0268434ba75ddb1cd1d0896a252b44a401c096b35acad0d7382635818"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "medium",
+    "length": "short",
+    "code": "ds1.8.07-0089400001",
+    "sha256": "e8d97dd9103d4e9c4ef3b36c2f2b1e7196a41fed7caf3504fe9f852d1492f24f"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "hard",
+    "length": "short",
+    "code": "ds1.8.07-0089400002",
+    "sha256": "6b5f9b7e8c3ac0d806fe334e654c9cab81642f3d2cfa3bd72f2aa40d7af14aa1"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "extreme",
+    "length": "short",
+    "code": "ds1.8.07-0089400003",
+    "sha256": "f48ebd4c85a67efdfb5f6e696a6e312896ac5603416616f4ad13d6d31c60afb8"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "easy",
+    "length": "full",
+    "code": "ds1.8.07-0089400004",
+    "sha256": "0a833dbe1619a264135e3c640639904dacaf1a1f8e08a15be3cb72a9a00c5ecf"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "medium",
+    "length": "full",
+    "code": "ds1.8.07-0089400005",
+    "sha256": "04824e44dbf77c7f95c412a346226988e19d50a004481752a483c767bf11e862"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "hard",
+    "length": "full",
+    "code": "ds1.8.07-0089400006",
+    "sha256": "36f3fc09818b1f407b9ddcb94fad33da187b197cd44893f69de81c5b4d3b26ad"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "extreme",
+    "length": "full",
+    "code": "ds1.8.07-0089400007",
+    "sha256": "790994f3252cd4e91d4c79f52e4d33ea9399fa0c8649496fa462b2b86d600a54"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "easy",
+    "length": "epic",
+    "code": "ds1.8.07-0089400008",
+    "sha256": "2f9e8c77e2b855a70c55d1af8b2dbc9ee94bd8c8c0fde4934129283f28749cc4"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "medium",
+    "length": "epic",
+    "code": "ds1.8.07-0089400009",
+    "sha256": "7bde301d80339bd8ab09ffdf81c7e8d5ace56cb8c0bf9095db2f2ddc79904001"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "hard",
+    "length": "epic",
+    "code": "ds1.8.07-008940000A",
+    "sha256": "06989cb571461a8ba5d80aecbf0c18c315e5f41cb2f373c01d4ae5f963a2ea94"
+  },
+  {
+    "seed": "4242",
+    "difficulty": "extreme",
+    "length": "epic",
+    "code": "ds1.8.07-008940000B",
+    "sha256": "4160ccc118974dd7593c6363186bbed73217007db0480fa2328e05062a8caf31"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "easy",
+    "length": "short",
+    "code": "ds1.8.07-82RG000000",
+    "sha256": "90ef554189fa2dbc21e92b6377c066ed3afb1b6f0f4520a8ad24cae642e18a0a"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "medium",
+    "length": "short",
+    "code": "ds1.8.07-82RG000001",
+    "sha256": "b17c10ca37fbea3db05d982b885dd972ba1f3585411c7b3296f8b2d9bb813795"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "hard",
+    "length": "short",
+    "code": "ds1.8.07-82RG000002",
+    "sha256": "25859029fe7519cb0b24af5d30d0920d408e353c0ba04a7b617246fb60c9dd20"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "extreme",
+    "length": "short",
+    "code": "ds1.8.07-82RG000003",
+    "sha256": "aceaec6c80be2864b613ef4c0cc3aee0a12c1fe7ee8a5df763e603e8efdcc670"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "easy",
+    "length": "full",
+    "code": "ds1.8.07-82RG000004",
+    "sha256": "3bfabc3aa0a3047e057409475fef511ddbda3831768c26e35c57dce88cd33488"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "medium",
+    "length": "full",
+    "code": "ds1.8.07-82RG000005",
+    "sha256": "77b9e3f39f0dd2a4fa7832b1d12875a3bf9f371c22f42f84890c15003aac49eb"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "hard",
+    "length": "full",
+    "code": "ds1.8.07-82RG000006",
+    "sha256": "bbaafcb1bf10e668d1a90589b2bfd28845c04e3598a3714e0935af47ff009fe0"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "extreme",
+    "length": "full",
+    "code": "ds1.8.07-82RG000007",
+    "sha256": "bed5b4a088eed6477d6bb5d9c4c4781b79f19f1046ea4564a415fb0b5069c236"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "easy",
+    "length": "epic",
+    "code": "ds1.8.07-82RG000008",
+    "sha256": "a4802d7c1535ab821b4d81a1c6fa9fbc5a95eb80e9682cb85d409b3de1e76b1b"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "medium",
+    "length": "epic",
+    "code": "ds1.8.07-82RG000009",
+    "sha256": "210cf837482d41b40273956d9f7e176462034a761e290618ec75baa7c420bdc5"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "hard",
+    "length": "epic",
+    "code": "ds1.8.07-82RG00000A",
+    "sha256": "beaf1e15f05783db9e303fd6ecd8ccd6ea2a6f1ce6b673a9040341429992f537"
+  },
+  {
+    "seed": "gwyn",
+    "difficulty": "extreme",
+    "length": "epic",
+    "code": "ds1.8.07-82RG00000B",
+    "sha256": "eae24d13f86ac9c4659a554fae41065c3a7df59c37a7c8d9b8243803f67d5192"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "short",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000G",
+    "sha256": "bf0369a3166b1900ccde2c93b721f6b7effcae86a44b817c899fd76ecc8dc346"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "short",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000K",
+    "sha256": "d6344e3f3df69fc1c408d444de08bf031981eec5910308976187a38c1e63fcf3"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "full",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000M",
+    "sha256": "44a650f621a486c34d5a7e25086ab256c4c6987616307c2cec2ff9eae457feb4"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "full",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000Q",
+    "sha256": "6d2fb3200c8c83ac5a11a8ada9f6070de08e3a5ff06373eb77ab217f6ddc5a20"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "epic",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000R",
+    "sha256": "63b912eb4be3672859b3ab5104e673604ab1b2c4498611dba90146c5c9cd96e6"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "epic",
+    "curve": "constant",
+    "code": "ds1.8.07-63FYY0000V",
+    "sha256": "28b0d4066999cf3e01b7a6672700acadd740bc0743e55b9a6ba9c4cec3524503"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "short",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY00010",
+    "sha256": "3ebd6026179fef3c42b6c74977766bb2cd7afe4c8363305cd4fdeac5761dfe45"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "short",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY00013",
+    "sha256": "b5f754c6c8c39a9ab1bbf80f596a6b0bb19b1bb7ce3ffefe7f8a18ef6b412050"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "full",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY00014",
+    "sha256": "7cba867b450c25e8b08b0ca68a6572a9035512228b7a8fe61bba692347c71721"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "full",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY00017",
+    "sha256": "48d09490dc831af7ec0ba43ec2ff492fb8731d0b429b8b9b7be157869afd599c"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "epic",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY00018",
+    "sha256": "444b13152dcf96aa336bc11a0e614759c6cae76fc3afe084ce63370cfa480f4f"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "epic",
+    "curve": "rising",
+    "code": "ds1.8.07-63FYY0001B",
+    "sha256": "4a0f3a384e079ecf9b6969536d8c5f9e612f27b84e0c0ef78f6249fcf3e52179"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "short",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001G",
+    "sha256": "50dd1424e3e466dff1243ba6a5e49948de89b5dc62adf68bd7d662765d1537b1"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "short",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001K",
+    "sha256": "0522f44b78a837bb37e50524516910e0666090e378bf7623a3ef82c33b639216"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "full",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001M",
+    "sha256": "d1f58337ee1a770b23a243d5b60f3145c629f1743bc26fc086cead93930033b3"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "full",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001Q",
+    "sha256": "461b69a00b63c1da49c81cc3143c441f4d66a93d288b4961c18dc53abf94ceaa"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "epic",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001R",
+    "sha256": "c020d2426b49fc8e281ff8d57fe76bb0ccff6b35c5bd58d38b5bed5799875586"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "epic",
+    "curve": "peaks",
+    "code": "ds1.8.07-63FYY0001V",
+    "sha256": "84ff955a006ad974e95aa159600552f6224b3cebaa7bfaf91651c68e92876edf"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "short",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY00020",
+    "sha256": "12336bae5aab15c29fc0b25194e91e49fa88b97a8f7e49f48b99cd8ca794c101"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "short",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY00023",
+    "sha256": "4d25daa91055627baeadc049b3f145f6fa836a68c602959773d109b9fe4246bd"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "full",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY00024",
+    "sha256": "b680d7f70687ee564af8a29ac4ba3b227d5bd697fa02fda350301eb19e881e2d"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "full",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY00027",
+    "sha256": "aa146b6310d9aabd70e078649ae8d1568142356748eb37ec0629b0dd582bac29"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "easy",
+    "length": "epic",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY00028",
+    "sha256": "7d0defcb0b6aca7b4112ae838e8dd1b8ca4b7cf65baceb5941801d202836b402"
+  },
+  {
+    "seed": "curve-test",
+    "difficulty": "extreme",
+    "length": "epic",
+    "curve": "rollercoaster",
+    "code": "ds1.8.07-63FYY0002B",
+    "sha256": "ffaf4941a11061591fd5f47a9918e84ea21cedc2f931023ead4103fc1d95497a"
+  },
+  {
+    "seed": "fixed-1",
+    "difficulty": "hard",
+    "length": "full",
+    "class": "Knight",
+    "gift": 2406,
+    "levelCap": 30,
+    "code": "ds1.8.07-1NKZE1WEM6",
+    "sha256": "9c599ba76a96a8673f980d0ac7c7e1ebda13fd8beef190de292e3e241fc9720b"
+  },
+  {
+    "seed": "fixed-2",
+    "difficulty": "medium",
+    "length": "epic",
+    "class": "Thief",
+    "code": "ds1.8.07-1NMRM00109",
+    "sha256": "95262582a8104cf244f06d17044fd83176f9d2d2af21befe08b13433944108b5"
+  },
+  {
+    "seed": "fixed-3",
+    "difficulty": "extreme",
+    "length": "short",
+    "class": "Pyromancer",
+    "levelCap": 1,
+    "code": "ds1.8.07-1NNHT020R3",
+    "sha256": "e6a7bb0a468093bdc34fb9d59f357f0a235f86d4563691bb1b178b37fd308e9e"
+  },
+  {
+    "seed": "fixed-4",
+    "difficulty": "easy",
+    "length": "full",
+    "class": "Deprived",
+    "levelCap": 713,
+    "code": "ds1.8.07-1NG1HCJ0C4",
+    "sha256": "9b37fbdcdabab88fac839f7836b28371117194b07d1d031cce2b5e0310fc3a05"
+  },
+  {
+    "seed": "group-1",
+    "length": "full",
+    "players": "easy,hard",
+    "code": "ds1.8.07-RZYEC00006",
+    "sha256": "7bdfedd6f9c11dd2e2acc73cef83b297c74fb33a1030d46090b6b81397a822e1"
+  },
+  {
+    "seed": "group-2",
+    "length": "short",
+    "players": "easy,medium,hard,extreme",
+    "code": "ds1.8.07-RZXN600003",
+    "sha256": "3ef8ffdfa843bf7d2547cd272e9bc58b2b3fe43d3bd58ac28a477ade10e96de9"
+  },
+  {
+    "seed": "group-3",
+    "length": "epic",
+    "players": "extreme,easy",
+    "code": "ds1.8.07-RZWW00000B",
+    "sha256": "0b9bbf47fed3afa9f20ad5953eb5b51e39eae41faf730711bae4a681b9fb32f2"
+  }
+]

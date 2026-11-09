@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.renanabade.darksouls</groupId>
+    <artifactId>darksouls-challenge</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>darksouls-core</artifactId>
+  <name>darksouls-core</name>
+  <description>The domain core: world graph, validator and generator. No framework, no database.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>tools.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <!-- The data set travels with the core, so a jar and its data can never be of different versions. -->
+      <resource>
+        <directory>../data/ds1</directory>
+        <targetPath>data/ds1</targetPath>
+        <includes>
+          <include>meta.json</include>
+          <include>regions.json</include>
+          <include>entrances.json</include>
+          <include>locations.json</include>
+          <include>classes.json</include>
+          <include>bosses.json</include>
+          <include>merchants.json</include>
+          <include>milestones.json</include>
+          <include>weapons.json</include>
+          <include>spells.json</include>
+          <include>areas.json</include>
+          <include>treasures.json</include>
+          <include>warnings.json</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+</project>
