@@ -27,7 +27,15 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-          cache-dependency-path: deploy/package-lock.json
+          cache-dependency-path: |
+            deploy/package-lock.json
+            web/package-lock.json
+      # The site goes up as static assets, which the Worker serves without waking the server.
+      - name: Build the site
+        working-directory: web
+        run: |
+          npm ci
+          npx ng build
       - run: npm ci
       - name: Deploy the Worker and the container
         run: npx wrangler deploy

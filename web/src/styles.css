@@ -223,6 +223,27 @@ input:focus {
     cursor: progress;
 }
 
+/* The game that fills a wait for the server. */
+.waiting {
+    margin: 16px 0;
+}
+
+.waiting figcaption {
+    color: var(--dim);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.waiting canvas {
+    aspect-ratio: 4 / 1;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    cursor: pointer;
+    display: block;
+    touch-action: manipulation;
+    width: 100%;
+}
+
 .notice {
     border: 1px solid var(--ember);
     margin: 16px 0;

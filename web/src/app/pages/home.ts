@@ -5,15 +5,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ChallengeSheet } from '../components/challenge-sheet';
 import { RecordRun } from '../components/record-run';
 import { SetupMenu } from '../components/setup-menu';
+import { WaitingGame } from '../components/waiting-game';
 import { ChallengeRequest, ChallengeView, SetupOptions } from '../models';
 import { Api, messageOf } from '../services/api';
 
 const SITE = 'Dark Souls Challenge';
 const COPIED_MILLIS = 2000;
 
+/** A request this slow means the server was asleep: the game comes out. A quick one should not flash it. */
+const SLOW_MILLIS = 1200;
+
 @Component({
   selector: 'app-home',
-  imports: [ChallengeSheet, RecordRun, SetupMenu],
+  imports: [ChallengeSheet, RecordRun, SetupMenu, WaitingGame],
   template: `
     @if (options(); as loaded) {
       <app-setup-menu [options]="loaded" [busy]="busy()" (generate)="generate($event)">
@@ -21,6 +25,10 @@ const COPIED_MILLIS = 2000;
           <button type="button" class="prompt" (click)="copyLink()">{{ copied() ? 'Link copied' : 'Copy link' }}</button>
         }
       </app-setup-menu>
+
+      @if (slow()) {
+        <app-waiting-game message="The server is waking up, or forging your challenge…" />
+      }
 
       @for (notice of notices(); track notice) {
         <p class="notice" role="alert">{{ notice }}</p>
@@ -30,8 +38,10 @@ const COPIED_MILLIS = 2000;
         <app-challenge-sheet [view]="shown" />
         <app-record-run [code]="shown.code" />
       }
+    } @else if (loadError(); as error) {
+      <p class="kindling" role="status">{{ error }}</p>
     } @else {
-      <p class="kindling" role="status">{{ loadError() ?? 'Kindling the bonfire…' }}</p>
+      <app-waiting-game message="Kindling the bonfire: the server sleeps when nobody plays, and takes a few seconds to wake." />
     }
   `,
 })
@@ -49,6 +59,8 @@ export class Home {
   protected readonly notices = signal<string[]>([]);
   protected readonly loadError = signal<string | null>(null);
   protected readonly busy = signal(false);
+  protected readonly slow = signal(false);
+  private slowTimer: ReturnType<typeof setTimeout> | undefined;
   protected readonly copied = signal(false);
 
   /** This page just moved the address itself, and what it had to say about the old one still stands. */
@@ -58,6 +70,10 @@ export class Home {
   private latest = 0;
 
   constructor() {
+    // The server sleeps when nobody plays: it starts waking now, while the player reads and chooses.
+    this.api.wake();
+    this.destroyed.onDestroy(() => clearTimeout(this.slowTimer));
+
     this.api
       .options()
       .then((options) => this.options.set(options))
@@ -78,7 +94,7 @@ export class Home {
     }
 
     const ticket = ++this.latest;
-    if (Object.keys(query).length > 0) this.busy.set(true);
+    if (Object.keys(query).length > 0) this.setBusy(true);
     try {
       const preview = await this.api.previewOfLink(query);
       if (ticket !== this.latest) return;
@@ -93,14 +109,14 @@ export class Home {
     } catch (error) {
       if (ticket === this.latest) this.notices.set([messageOf(error)]);
     } finally {
-      if (ticket === this.latest) this.busy.set(false);
+      if (ticket === this.latest) this.setBusy(false);
     }
   }
 
   protected async generate(request: ChallengeRequest): Promise<void> {
     const ticket = ++this.latest;
     this.notices.set([]);
-    this.busy.set(true);
+    this.setBusy(true);
     try {
       const preview = await this.api.previewOfForm(request);
       if (ticket !== this.latest) return;
@@ -116,7 +132,17 @@ export class Home {
     } catch (error) {
       if (ticket === this.latest) this.notices.set([messageOf(error)]);
     } finally {
-      if (ticket === this.latest) this.busy.set(false);
+      if (ticket === this.latest) this.setBusy(false);
+    }
+  }
+
+  private setBusy(busy: boolean): void {
+    this.busy.set(busy);
+    clearTimeout(this.slowTimer);
+    if (busy) {
+      this.slowTimer = setTimeout(() => this.slow.set(true), SLOW_MILLIS);
+    } else {
+      this.slow.set(false);
     }
   }
 

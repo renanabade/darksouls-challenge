@@ -50,6 +50,11 @@ export class Api {
   private readonly session = inject(Session);
   private readonly options$ = this.http.get<SetupOptions>('api/options').pipe(shareReplay(1));
 
+  /** Asks the server to wake, without waiting for it. It sleeps when nobody plays, and takes a few seconds to start. */
+  wake(): void {
+    this.http.get('api/health').subscribe({ error: () => undefined });
+  }
+
   options(): Promise<SetupOptions> {
     return firstValueFrom(this.options$);
   }

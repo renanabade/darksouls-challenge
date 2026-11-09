@@ -7,13 +7,15 @@ How the public site is put on the air, and how to change it later. Why it is hos
 | Piece                   | Where                                                          | What it does                                             |
 | ----------------------- | -------------------------------------------------------------- | -------------------------------------------------------- |
 | The image               | `Dockerfile`                                                   | The site and the server in one container                 |
-| The Worker              | `deploy/`                                                      | Receives the requests and starts the container on demand |
-| The `Deploy` workflow   | `.github/workflows/deploy.yml`                                 | Builds the image, publishes both, hands over the secrets |
+| The site                | `web/`, built by the workflow                                  | Served by Cloudflare as static assets, never waking the server |
+| The Worker              | `deploy/`                                                      | Caches what does not change, starts the container on demand |
+| The `Deploy` workflow   | `.github/workflows/deploy.yml`                                 | Builds the site and the image, publishes them, hands over the secrets |
 | The database            | [Neon](https://neon.com), project `darksouls`                  | PostgreSQL; Flyway creates the tables on the first start |
 | The Cloudflare account  | [dash.cloudflare.com](https://dash.cloudflare.com), `renanabade` | Runs the Worker and the container                        |
 
-Containers need the Workers Paid plan (5 USD a month). The container sleeps after 15 minutes without requests, so the first request after
-that waits for it to start. While it is awake, its 3 GiB cost about 0.027 USD an hour, after the 25 GiB-hours a month the plan includes.
+Containers need the Workers Paid plan (5 USD a month). The container sleeps two minutes after its last request, and the next one waits
+for it to start, while the page shows a small game. While it is awake, its 3 GiB cost about 0.027 USD an hour, after the 25 GiB-hours a
+month the plan includes. [ADR 0019](adr/0019-waking-the-server.md) has how the waits and the cost are kept down.
 
 ## The secrets
 
