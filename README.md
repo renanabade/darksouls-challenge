@@ -16,7 +16,8 @@ told in the voice of a game master, and guarantees that every challenge it gener
 
 ## Stack
 
-Java 21, Spring Boot 4 (MVC, Security with JWT, Data JPA), PostgreSQL, Flyway, Angular 22, JUnit, Selenium, and GitHub Actions.
+Java 21, Spring Boot 4 (MVC, Security with JWT, Data JPA, Actuator), PostgreSQL, Flyway, Angular 22, JUnit, Testcontainers, Selenium,
+GitHub Actions and Cloudflare Containers.
 
 | Path        | What                                                 |
 | ----------- | ---------------------------------------------------- |
@@ -25,6 +26,7 @@ Java 21, Spring Boot 4 (MVC, Security with JWT, Data JPA), PostgreSQL, Flyway, A
 | `server/`   | REST API and host of the site, on PostgreSQL         |
 | `web/`      | The site, in Angular                                 |
 | `data/ds1/` | The data set and its schema (`SCHEMA.md`)            |
+| `deploy/`   | The Worker that runs the image on Cloudflare         |
 | `docs/adr/` | Architecture decision records                        |
 
 A few decisions worth a look:
@@ -37,15 +39,14 @@ A few decisions worth a look:
 
 ## Development
 
-Requires JDK 21 and Node 24. Nothing else: the tests start a real PostgreSQL from binaries in their own dependencies.
+Requires JDK 21 and Node 24. Nothing else: the tests use Testcontainers when Docker is there, as in CI, and otherwise start a real PostgreSQL
+from binaries in their own dependencies.
 
 ```sh
 ./mvnw test                     # the core and the API
 cd web && npm ci && npx ng build && cd ..
 TEST_BROWSER=1 ./mvnw test      # also the whole site, in Chrome
 ```
-
-CI gives the tests a PostgreSQL service instead, through `TEST_POSTGRES` (a JDBC URL to a server where a database can be created).
 
 ```sh
 # A challenge on the command line
@@ -62,7 +63,13 @@ cd web && npx ng serve
 ```
 
 The server refuses to start without `JWT_SECRET`: tokens signed with a key anyone can read would be no tokens at all. The `Dockerfile`
-builds the site and the server into one image.
+builds the site and the server into one image. Health and Prometheus metrics answer on port 8081, which the public never reaches, and
+`./mvnw spotless:apply` tidies the imports and whitespace CI checks.
+
+## Deploying
+
+The `Deploy` workflow runs by hand, from the Actions tab, and needs these repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
+`JWT_SECRET`, `DATABASE_URL` (JDBC), `DATABASE_USERNAME` and `DATABASE_PASSWORD`. See [ADR 0018](docs/adr/0018-hosting.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).
 

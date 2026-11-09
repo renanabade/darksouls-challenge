@@ -36,6 +36,6 @@ column transformer. The ranking is one aggregate query in `JdbcClient`, which re
 
 - The site and the API are one deployment, on a host that runs a container.
 - More instances would each have their own rate limits; that is acceptable until there are more instances.
-- Behind a proxy the rate limits key on the proxy's address, until the server is told to trust forwarded headers.
+- Behind a proxy, the rate limits read the player's address from a header named in the settings (ADR 0018).
 - Integration tests run on a real PostgreSQL, because the queue depends on its row locks. A test holds a row's lock on a second connection
   and checks that the worker skips it.

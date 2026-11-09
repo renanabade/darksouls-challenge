@@ -1,0 +1,30 @@
+# 18. Hosting on Cloudflare Containers
+
+- Status: accepted, with one thing to prove on the first deploy
+
+## Context
+
+The site and the API are one process, in one image, and it needs PostgreSQL. It is a fan project, idle most of the time.
+
+## Decision
+
+A Worker in `deploy/` runs the image as a Cloudflare Container, one instance, which sleeps after 15 minutes without requests. Memory and
+disk are billed while it runs, so an idle site costs close to nothing, and the price of that is a slower first visit. PostgreSQL lives
+outside, because Cloudflare does not host it for a container.
+
+The image is built by a manual GitHub Actions workflow, whose runner has Docker. Nothing needs Docker on a developer's machine.
+
+The container only hears from the Worker, so the rate limits read the player's address from `CF-Connecting-IP`. Cloudflare sets that header
+at its edge, so a client cannot choose it. The header is a setting, off by default: on a server reached directly, anyone could forge it.
+
+## To prove
+
+The docs say a container has internet access by default, and imply that ports other than 80 and 443 are reachable, but no page says that a
+TCP connection to port 5432 works. The first deploy answers that. If it does not work, the way the docs do support is a Worker in front of the
+database, through Hyperdrive, which would mean another host for this server rather than that bridge.
+
+## Consequences
+
+- Cold starts are the cost of sleeping. If they hurt, a native image is the next thing to try, or a longer `sleepAfter`.
+- One instance is what the in-memory rate limits assume.
+- The operations endpoints stay on a port the Worker never forwards to.
