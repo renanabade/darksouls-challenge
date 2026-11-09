@@ -1,0 +1,21 @@
+# Build output
+target/
+dist/
+node_modules/
+.angular/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors (shared settings go in .editorconfig)
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json

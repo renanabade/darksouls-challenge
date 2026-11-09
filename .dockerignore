@@ -1,0 +1,7 @@
+.git
+.github
+docs
+**/target
+web/node_modules
+web/dist
+web/.angular
