@@ -69,7 +69,8 @@ builds the site and the server into one image. Health and Prometheus metrics ans
 ## Deploying
 
 The `Deploy` workflow runs by hand, from the Actions tab, and needs these repository secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`,
-`JWT_SECRET`, `DATABASE_URL` (JDBC), `DATABASE_USERNAME` and `DATABASE_PASSWORD`. See [ADR 0018](docs/adr/0018-hosting.md).
+`JWT_SECRET`, `DATABASE_URL` (JDBC), `DATABASE_USERNAME` and `DATABASE_PASSWORD`. [docs/deploying.md](docs/deploying.md) has the
+steps, where each secret comes from and what to check when it fails; [ADR 0018](docs/adr/0018-hosting.md) has why.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow, [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [SECURITY.md](SECURITY.md).
 
