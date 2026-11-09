@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: darksouls-challenge
+  datasource:
+    url: jdbc:postgresql://localhost:5432/darksouls_challenge
+    username: postgres
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Flyway owns the schema.
+      ddl-auto: none
+  jackson:
+    default-property-inclusion: non_null
+  threads:
+    virtual:
+      enabled: true
+
+generation:
+  # Off in tests, which run the worker's steps themselves.
+  background: true
+
+rate-limits:
+  auth-per-minute: 20
+  generation-per-minute: 30
+  preview-per-minute: 60
+
+# app.jwt.secret has no default on purpose: without it (JWT_SECRET, at least 32 bytes) the server refuses to start, rather than sign
+# tokens with a key anyone could read here.
+app:
+  jwt:
+    secret: ${JWT_SECRET:}
