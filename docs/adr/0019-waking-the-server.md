@@ -20,7 +20,8 @@ At first the container served the site too, so opening the page woke it and ever
 - **The page wakes it as it opens**, with a call nobody waits for, so it starts while the player reads and chooses.
 - **Answers that cannot change are kept at the edge** with the Cache API: the options and the challenges of a link (a code always makes
   the same challenge) until the next deploy, whose version is in the cache key, and the ranking for 30 seconds. A link shared around then
-  wakes the server once per data center. Nothing personal is kept: a call with a token is never cached.
+  wakes the server once per data center. Nothing personal is kept: a call with a token is never cached. It works on the `workers.dev`
+  address too: the second call for the options came back from the cache in under 0.2 seconds.
 - **The image archives the classes the server loads as it starts** (CDS). The archive comes from a start at build time that stops once
   the context is up, with no database. Measured on a laptop, the start went from 4.6 to 2.9 seconds.
 - **A small game fills the wait**: a knight jumps flames and gathers souls while the server wakes or a challenge is generated. It only

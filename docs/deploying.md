@@ -27,7 +27,7 @@ one, save it again.
 | `CLOUDFLARE_ACCOUNT_ID` | `npx wrangler whoami` in `deploy/`, or the right column of the Cloudflare dashboard's home page          |
 | `CLOUDFLARE_API_TOKEN`  | Cloudflare → My Profile → API Tokens → Create Token: template *Edit Cloudflare Workers*, plus *Account → Containers → Edit*, limited to the account |
 | `JWT_SECRET`            | Random, made once: `openssl rand -base64 48 \| tr -d '\n'`                                                |
-| `DATABASE_URL`          | From Neon's *Connect*: `jdbc:postgresql://` followed by what comes after the `@`, for example `jdbc:postgresql://ep-xxx.aws.neon.tech/neondb?sslmode=require` |
+| `DATABASE_URL`          | From Neon's *Connect*: `jdbc:postgresql://` followed by what comes after the `@`, without `-pooler` in the host and with only `sslmode=require` after the `?`, for example `jdbc:postgresql://ep-xxx.us-east-2.aws.neon.tech/neondb?sslmode=require` |
 | `DATABASE_USERNAME`     | From Neon's *Connect*: what comes before the `:`, for example `neondb_owner`                               |
 | `DATABASE_PASSWORD`     | From Neon's *Connect*: what comes between the `:` and the `@`                                              |
 

@@ -25,8 +25,8 @@ at its edge, so a client cannot choose it. The header is a setting, off by defau
 
 ## Proved on the first deploy
 
-The docs say a container has internet access by default, but no page says that a TCP connection to port 5432 works. It does: on the
-first deploy the server reached Neon and was refused only for a wrong password.
+The docs say a container has internet access by default, but no page says that a TCP connection to port 5432 works. It does: the
+server connects to Neon's direct endpoint, and Flyway created the tables on its first start.
 
 ## Consequences
 
